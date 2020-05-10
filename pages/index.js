@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 
 export default function Home() {
@@ -28,7 +29,10 @@ export default function Home() {
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
-          <a href="https://github.com/zeit/next.js/tree/master/examples" className="card">
+          <a
+            href="https://github.com/zeit/next.js/tree/master/examples"
+            className="card"
+          >
             <h3>Examples &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
@@ -38,7 +42,9 @@ export default function Home() {
             className="card"
           >
             <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
+            <p>
+              Instantly deploy your Next.js site to a public URL with Vercel.
+            </p>
           </a>
         </div>
       </main>
@@ -49,7 +55,8 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+          Powered by{' '}
+          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
 
@@ -184,13 +191,14 @@ export default function Home() {
         }
       `}</style>
 
-      <style jsx global>{`
+      <style>{`
         html,
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-            Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
         }
 
         * {

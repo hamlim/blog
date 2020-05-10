@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "alias": ["matthamlin.me"],
+  "github": {
+    "enabled": true
+  },
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}
