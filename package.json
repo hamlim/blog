@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "now",
+    "deploy-prod": "now --prod"
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",

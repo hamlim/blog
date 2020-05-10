@@ -9,10 +9,8 @@ A personal site and blog
 
 ## Adding a Post
 
-TODO
-
-- Create mdx file in the `src/posts/` directory
-- Add route object to `src/posts.js`
+- Create mdx file in the `pages/posts/` directory
+- Add route object to `posts.js`
 - Done
 
 ## Deploying:
