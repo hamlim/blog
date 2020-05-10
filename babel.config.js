@@ -17,6 +17,7 @@ module.exports = function (api) {
     plugins: [
       'babel-plugin-styled-components',
       '@babel/plugin-transform-runtime',
+      '@babel/plugin-proposal-export-default-from',
     ],
     ignore:
       process.env.NODE_ENV !== 'test'

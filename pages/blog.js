@@ -1,15 +1,8 @@
 import * as React from 'react'
-import { Link as RouterLink } from '@matthamlin/reroute-browser'
-import {
-  H1,
-  Link,
-  Box,
-  Text,
-  List,
-  ListItem,
-} from '@matthamlin/component-library'
-import posts from './posts'
-import { Breadcrumbs, Crumb } from './breadcrumbs'
+import { H1, Box, Text, List, ListItem } from '@matthamlin/component-library'
+import posts from '../posts'
+import { Breadcrumbs, Crumb } from '../components/breadcrumbs'
+import Link from '../components/Link'
 
 export default function Blog() {
   return (
@@ -28,9 +21,7 @@ export default function Blog() {
         <List variant="base" as="ol">
           {posts.map((post, i) => (
             <ListItem key={post.title} mt={i !== 0 ? 6 : null}>
-              <Link as={RouterLink} to={`/blog/${post.to}`}>
-                {post.title}
-              </Link>
+              <Link to={post.absolute}>{post.title}</Link>
             </ListItem>
           ))}
         </List>

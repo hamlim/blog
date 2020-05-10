@@ -1,6 +1,12 @@
 import * as React from 'react'
-import { Link as RouterLink } from '@matthamlin/reroute-browser'
-import { H1, Link, Box, Text } from '@matthamlin/component-library'
+import {
+  H1,
+  Link,
+  Box,
+  Text,
+  VisuallyHidden,
+} from '@matthamlin/component-library'
+import LocalLink from '../components/Link'
 
 export default function Landing() {
   return (
@@ -12,13 +18,16 @@ export default function Landing() {
         Wayfair. In my free time I like to work on several different{' '}
         <Link as="a" href="https://github.com/hamlim">
           side projects
+          <VisuallyHidden forwardedAs="span">
+            (opens in new window)
+          </VisuallyHidden>
         </Link>
         , and somehow find time to write some blog posts as well.
       </Text>
       <Text pt={8}>
-        <Link fontSize={2} as={RouterLink} to="/blog">
+        <LocalLink fontSize={2} to="/blog">
           Go to Blog Posts
-        </Link>
+        </LocalLink>
       </Text>
     </>
   )

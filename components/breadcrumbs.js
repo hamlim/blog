@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Box, List, ListItem, Link, Text } from '@matthamlin/component-library'
-import { Link as RouterLink } from '@matthamlin/reroute-browser'
+import { Box, List, ListItem, Text } from '@matthamlin/component-library'
+import Link from './Link'
 
 export function Breadcrumbs({ children }) {
   return (
@@ -15,7 +15,7 @@ export function Breadcrumbs({ children }) {
 export function Crumb({ children, to }) {
   return (
     <ListItem>
-      <Link fontSize={2} as={RouterLink} to={to}>
+      <Link fontSize={2} to={to}>
         {children}
       </Link>
     </ListItem>

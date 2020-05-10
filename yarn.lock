@@ -496,6 +496,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/plugin-proposal-export-default-from@npm:^7.8.3":
+  version: 7.8.3
+  resolution: "@babel/plugin-proposal-export-default-from@npm:7.8.3"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.8.3
+    "@babel/plugin-syntax-export-default-from": ^7.8.3
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 3/90df1be42125e2548a033b91a6c0201dd169ec23752ed443b264c0ea18c7ababb009118fc7bee7435167354d5ee69e2e99567624a2ef34f76630ef92cf6ad9b6
+  languageName: node
+  linkType: hard
+
 "@babel/plugin-proposal-json-strings@npm:^7.8.3":
   version: 7.8.3
   resolution: "@babel/plugin-proposal-json-strings@npm:7.8.3"
@@ -624,6 +636,17 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0-0
   checksum: 3/134a6f37feac0e6d55f8188232e11798ccf699b02d50a4daf9c040f52a22ee32923a6a979443ecc865f4014937ffe67ac11b81aa5668b6792238c647314f41c9
+  languageName: node
+  linkType: hard
+
+"@babel/plugin-syntax-export-default-from@npm:^7.8.3":
+  version: 7.8.3
+  resolution: "@babel/plugin-syntax-export-default-from@npm:7.8.3"
+  dependencies:
+    "@babel/helper-plugin-utils": ^7.8.3
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: 3/4331e61e830437e9a5ac16dc478afad61f4dc4df8f56badb34c63e2d6aaedbfa5ae6ca5d648ab8757b1fb7f7d8876f4f63d3e69f8094461be2af037d8c1a0062
   languageName: node
   linkType: hard
 
@@ -1403,7 +1426,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.6":
+"@babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.6":
   version: 7.9.6
   resolution: "@babel/runtime@npm:7.9.6"
   dependencies:
@@ -1525,25 +1548,6 @@ __metadata:
     react: "*"
     react-dom: "*"
   checksum: 3/00ec23405fa06c30d58ac3e52c175c1b5d2d06686a43d106cf1e67bc3c3fc44ef30d6027bc98e45f4d2395194090d844371e1e8b72f1795263531f90acf30669
-  languageName: node
-  linkType: hard
-
-"@matthamlin/reroute-browser@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "@matthamlin/reroute-browser@npm:1.3.0"
-  peerDependencies:
-    "@matthamlin/reroute-core": "*"
-    react: "*"
-  checksum: 3/4601ff52250a301a705ab8ea163291838e69b07317c70b1b869a574d4ba609496e21593a8da887bf574cc12e2796985b86f924b5e62120724250b218769d0426
-  languageName: node
-  linkType: hard
-
-"@matthamlin/reroute-core@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@matthamlin/reroute-core@npm:1.2.0"
-  peerDependencies:
-    react: "*"
-  checksum: 3/87d0aad3537d90f5885a2dce9d72fbd81ef7f8e539c3fe3891467d9c5422d85600e6d853438fb1364923beda52c4a2e1cb64e6b202ed6605d2c1b75956f7bf26
   languageName: node
   linkType: hard
 
@@ -2446,18 +2450,16 @@ __metadata:
   dependencies:
     "@babel/cli": ^7.8.4
     "@babel/core": ^7.9.6
+    "@babel/plugin-proposal-export-default-from": ^7.8.3
     "@babel/plugin-transform-runtime": ^7.9.6
     "@babel/preset-env": ^7.9.6
     "@babel/preset-react": ^7.9.4
     "@babel/runtime": ^7.9.6
     "@matthamlin/component-library": ^3.2.0
-    "@matthamlin/reroute-browser": ^1.3.0
-    "@matthamlin/reroute-core": ^1.2.0
     "@mdx-js/loader": ^1.6.1
     "@mdx-js/react": ^1.6.1
     "@next/mdx": ^9.3.6
     babel-plugin-styled-components: ^1.10.7
-    history: ^4.10.1
     next: 9.3.7-canary.18
     prism-react-renderer: ^1.1.0
     react: experimental
@@ -4609,20 +4611,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"history@npm:^4.10.1":
-  version: 4.10.1
-  resolution: "history@npm:4.10.1"
-  dependencies:
-    "@babel/runtime": ^7.1.2
-    loose-envify: ^1.2.0
-    resolve-pathname: ^3.0.0
-    tiny-invariant: ^1.0.2
-    tiny-warning: ^1.0.0
-    value-equal: ^1.0.1
-  checksum: 3/3b302b54c08f61f040a265ae9608c6dba88260179b9ddfe542042465ccf79e2ff19e792cb70c6e0240e80bc00b29aad5308d1f277815b1e95662bd5b819c625b
-  languageName: node
-  linkType: hard
-
 "hmac-drbg@npm:^1.0.0":
   version: 1.0.1
   resolution: "hmac-drbg@npm:1.0.1"
@@ -5456,7 +5444,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.2.0, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -7439,13 +7427,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"resolve-pathname@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "resolve-pathname@npm:3.0.0"
-  checksum: 3/88ed8b3dd2b5cec68d35c319dc831cd879155da153208bb9c035f263cd9220fcf0af49158456871f64a181511f8e95c483c3700a958f4110f36e513b78cfd9f0
-  languageName: node
-  linkType: hard
-
 "resolve-url-loader@npm:3.1.1":
   version: 3.1.1
   resolution: "resolve-url-loader@npm:3.1.1"
@@ -8395,20 +8376,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"tiny-invariant@npm:^1.0.2":
-  version: 1.1.0
-  resolution: "tiny-invariant@npm:1.1.0"
-  checksum: 3/64318fbd77c451cfff23b57b9f3aef56594d9cea051a87dc538c9b371f97e8d474eaa2a7cbd60b8aa23f852393152495e8651b197607465fdf9c8ff134043b1b
-  languageName: node
-  linkType: hard
-
-"tiny-warning@npm:^1.0.0":
-  version: 1.0.3
-  resolution: "tiny-warning@npm:1.0.3"
-  checksum: 3/6cf9f66cb765b893976b8cd1c1310338861f30fb04d02ef2c8e0a748cbc2ed5acd8bb1954b78c15f640ad4116def67134d7d705f2a0c9bf27e6e2eb3e92bff29
-  languageName: node
-  linkType: hard
-
 "to-arraybuffer@npm:^1.0.0":
   version: 1.0.1
   resolution: "to-arraybuffer@npm:1.0.1"
@@ -8878,13 +8845,6 @@ fsevents@~2.1.2:
   bin:
     uuid: ./bin/uuid
   checksum: 3/1ce3f37e214d6d0dc94a6a9663a0365013ace66bc3fd5b203e6f5d2eeb978aaee1192367222386345d30b4c6a447928c501121aa84c637724bf105ef57284949
-  languageName: node
-  linkType: hard
-
-"value-equal@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "value-equal@npm:1.0.1"
-  checksum: 3/ae8cc7bbb2bebcaf78ecbf7669944cfc6e23f50361d0d97dc903abbfb9ce5111ce1dc5cb2575646db69636a84b2a3b224e2191088edc3442fb4669c2365af874
   languageName: node
   linkType: hard
 
