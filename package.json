@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",
-    "@matthamlin/component-library": "^3.2.0",
+    "@matthamlin/component-library": "^3.3.0",
     "@mdx-js/loader": "^1.6.1",
     "@mdx-js/react": "^1.6.1",
     "@next/mdx": "^9.3.6",

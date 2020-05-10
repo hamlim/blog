@@ -1526,28 +1526,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@matthamlin/base-styled@npm:1.1.0":
-  version: 1.1.0
-  resolution: "@matthamlin/base-styled@npm:1.1.0"
+"@matthamlin/base-styled@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@matthamlin/base-styled@npm:1.2.0"
   dependencies:
     "@styled-system/props": 5.1.4
-    styled-components: 5.0.0
-  checksum: 3/6d6e787ff9fc03e9937a3579e7983203761ef1c27a77af1b06c026917912119451e663a31fe8d9556738746cf29da1aaef8b9283be06ef4314033e5267fc8a20
+  peerDependencies:
+    styled-components: ^5
+  checksum: 3/ecae79cdce090a09ea04a3251afdc90d99a9a194d09e81feca9e8c3c05bf472fdeac758d2116aa0529915e3e3f196b5793742ab8d3242424298d498d173db9da
   languageName: node
   linkType: hard
 
-"@matthamlin/component-library@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "@matthamlin/component-library@npm:3.2.0"
+"@matthamlin/component-library@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@matthamlin/component-library@npm:3.3.0"
   dependencies:
-    "@matthamlin/base-styled": 1.1.0
+    "@matthamlin/base-styled": 1.2.0
     "@styled-system/props": 5.1.4
-    styled-components: 5.0.0
     styled-system: 5.0.12
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: 3/00ec23405fa06c30d58ac3e52c175c1b5d2d06686a43d106cf1e67bc3c3fc44ef30d6027bc98e45f4d2395194090d844371e1e8b72f1795263531f90acf30669
+    styled-components: ^5
+  checksum: 3/1b4cd6838b052e4de08924a7c357c5f7e98bed3dc777fdbc3e6c4af339c3ac047ff98e16c6231b2bddb33b4129854c25d3b23280fff16bedb33af0d3f15f7ec2
   languageName: node
   linkType: hard
 
@@ -2455,7 +2456,7 @@ __metadata:
     "@babel/preset-env": ^7.9.6
     "@babel/preset-react": ^7.9.4
     "@babel/runtime": ^7.9.6
-    "@matthamlin/component-library": ^3.2.0
+    "@matthamlin/component-library": ^3.3.0
     "@mdx-js/loader": ^1.6.1
     "@mdx-js/react": ^1.6.1
     "@next/mdx": ^9.3.6
