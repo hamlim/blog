@@ -8,9 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.3.6",
+    "@babel/runtime": "^7.9.6",
+    "@matthamlin/component-library": "^3.2.0",
+    "@matthamlin/reroute-browser": "^1.3.0",
+    "@matthamlin/reroute-core": "^1.2.0",
+    "@mdx-js/loader": "^1.6.1",
+    "@mdx-js/react": "^1.6.1",
+    "@next/mdx": "^9.3.6",
+    "history": "^4.10.1",
+    "next": "9.3.7-canary.18",
+    "prism-react-renderer": "^1.1.0",
     "react": "experimental",
-    "react-dom": "experimental"
+    "react-dom": "experimental",
+    "react-is": "^16.13.1",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -20,5 +31,8 @@
     "@babel/preset-react": "^7.9.4",
     "babel-plugin-styled-components": "^1.10.7",
     "schema-utils": "^2.6.6"
+  },
+  "resolutions": {
+    "styled-components": "5.1.0"
   }
 }
