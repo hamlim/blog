@@ -3,6 +3,5 @@
   "alias": ["matthamlin.me"],
   "github": {
     "enabled": true
-  },
-  "routes": [{ "src": "/.*", "dest": "/index.html" }]
+  }
 }
