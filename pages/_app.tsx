@@ -7,7 +7,7 @@ import Code from '../components/Code'
 import posts from '../posts'
 import Head from 'next/head'
 
-let { ThemeProvider, Box, H1, ListItem } = comps
+let { ThemeProvider, Box, H1 } = comps
 
 let { useMemo } = React
 
@@ -18,17 +18,17 @@ let Img = styled('img')`
 
 let components = {
   ...comps,
-  p: (props) => <comps.Text fontSize={2} mt={6} {...props} />,
-  h2: (props) => <comps.H2 mt={6} {...props} />,
-  h3: (props) => <comps.H3 mt={6} {...props} />,
-  h4: (props) => <comps.H4 mt={6} {...props} />,
-  ul: (props) => (
+  p: (props: any) => <comps.Text fontSize={2} mt={6} {...props} />,
+  h2: (props: any) => <comps.H2 mt={6} {...props} />,
+  h3: (props: any) => <comps.H3 mt={6} {...props} />,
+  h4: (props: any) => <comps.H4 mt={6} {...props} />,
+  ul: (props: any) => (
     <Box mt={6}>
       <comps.List variant="unordered" as="ul" {...props} />
     </Box>
   ),
-  li: (props) => <comps.ListItem {...props} />,
-  ol: (props) => (
+  li: (props: any) => <comps.ListItem {...props} />,
+  ol: (props: any) => (
     <Box mt={6}>
       <comps.List variant="ordered" as="ol" {...props} />
     </Box>
@@ -38,8 +38,8 @@ let components = {
   },
   code: Code,
   img: Img,
-  Spacer: (props) => <Box mb={6} {...props} />,
-  blockquote: (props) => (
+  Spacer: (props: any) => <Box mb={6} {...props} />,
+  blockquote: (props: any) => (
     <Box
       borderLeft="solid 2px"
       color="gray.8"

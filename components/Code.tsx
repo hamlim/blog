@@ -9,7 +9,7 @@ export default function Code({ children, className }) {
   return (
     <Highlight
       {...defaultProps}
-      theme={nightOwlLight}
+      theme={nightOwlLight as any}
       code={children}
       language={lang}
     >
