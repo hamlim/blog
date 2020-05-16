@@ -10,7 +10,7 @@ A personal site and blog
 ## Adding a Post
 
 - Create mdx file in the `pages/posts/` directory
-- Add route object to `posts.js`
+- Add route object to `posts.tsx`
 - Done
 
 ## Deploying:
