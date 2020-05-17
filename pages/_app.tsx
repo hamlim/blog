@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 import { Breadcrumbs, Crumb, Spacer } from '../components/breadcrumbs'
 import Code from '../components/Code'
-import posts from '../posts'
+import { allPosts as posts } from '../posts'
 import Head from 'next/head'
 
 let { ThemeProvider, Box, H1 } = comps

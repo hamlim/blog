@@ -1,4 +1,22 @@
-export default [
+export let topPosts = [
+  {
+    to: 'theme-first-ui-development',
+    title: 'Theme First UI Development',
+    absolute: '/posts/2019/july/theme-first-ui-development',
+  },
+  {
+    to: 'draft-pull-requests',
+    title: 'Draft Pull Requests',
+    absolute: '/posts/2020/march/draft-pull-requests',
+  },
+  {
+    to: 'maintenance-costs',
+    title: 'Maintenance Costs',
+    absolute: '/posts/2019/may/maintenance-costs',
+  },
+]
+
+export let allPosts = [
   {
     to: 'the-state-of-monorepos',
     title: 'The State of Monorepos',
