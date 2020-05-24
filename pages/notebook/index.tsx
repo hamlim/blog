@@ -2,7 +2,8 @@ import * as React from 'react'
 import { Breadcrumbs, Crumb } from '../../components/breadcrumbs'
 import { H1, Box, Text, List, ListItem } from '@matthamlin/component-library'
 import LocalLink from '../../components/Link'
-import notebook from '../../notebook'
+// this data is collected at build time
+import notebook from /* preval */ '../../notebook'
 
 export default function Notebook() {
   return (

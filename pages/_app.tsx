@@ -5,7 +5,8 @@ import { MDXProvider } from '@mdx-js/react'
 import { Breadcrumbs, Crumb, Spacer } from '../components/breadcrumbs'
 import Code from '../components/Code'
 import { allPosts as posts } from '../posts'
-import notebook from '../notebook'
+// this data is collected at build time
+import notebook from /* preval */ '../notebook'
 import Head from 'next/head'
 
 let { ThemeProvider, Box, H1 } = comps
