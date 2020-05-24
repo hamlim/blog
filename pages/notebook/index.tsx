@@ -1,13 +1,6 @@
 import * as React from 'react'
 import { Breadcrumbs, Crumb } from '../../components/breadcrumbs'
-import {
-  H1,
-  H3,
-  Box,
-  Text,
-  List,
-  ListItem,
-} from '@matthamlin/component-library'
+import { H1, Box, Text, List, ListItem } from '@matthamlin/component-library'
 import LocalLink from '../../components/Link'
 import notebook from '../../notebook'
 
