@@ -83,6 +83,15 @@ export default function Landing() {
           A note and todo list web application using plain text
         </ListItem>
       </List>
+
+      <H3 my={3}>Notebook</H3>
+      <Text mb={2}>
+        For content that I am still working on, and that I haven't published
+        fully to my blog yet, I store in my Notebook. These are rough thoughts
+        that I haven't had the time to fully piece together, or might not even
+        represent complete concepts yet!
+      </Text>
+      <LocalLink to="/notebook">Check them out</LocalLink>
     </>
   )
 }

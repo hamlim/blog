@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { Breadcrumbs, Crumb, Spacer } from '../components/breadcrumbs'
 import Code from '../components/Code'
 import { allPosts as posts } from '../posts'
+import notebook from '../notebook'
 import Head from 'next/head'
 
 let { ThemeProvider, Box, H1 } = comps
@@ -51,13 +52,18 @@ let components = {
   ),
 }
 
-function PostLayout({ children, post }) {
+function PostLayout({
+  children,
+  post,
+  section = 'Blog',
+  sectionLink = '/blog',
+}) {
   return (
     <MDXProvider components={components}>
       <Breadcrumbs>
         <Crumb to="/">Home</Crumb>
         <Spacer />
-        <Crumb to="/blog">Blog</Crumb>
+        <Crumb to={sectionLink}>{section}</Crumb>
       </Breadcrumbs>
       <H1>{post.title}</H1>
       {children}
@@ -96,10 +102,31 @@ export default function MyApp({ Component, pageProps, router }) {
     return post
   }, [pathname])
 
+  let notebookEntry = useMemo(() => {
+    let isNotebookEntry = pathname.startsWith('/notebook/')
+    if (!isNotebookEntry) {
+      return undefined
+    }
+    let entry = notebook.find((entry) => entry.link === pathname)
+    return entry
+  }, [pathname])
+
   if (post) {
     return (
       <Layout title={post?.title}>
         <PostLayout post={post}>
+          <Component {...pageProps} />
+        </PostLayout>
+      </Layout>
+    )
+  } else if (notebookEntry) {
+    return (
+      <Layout title={notebookEntry?.title}>
+        <PostLayout
+          post={notebookEntry}
+          section="Notebook"
+          sectionLink="/notebook"
+        >
           <Component {...pageProps} />
         </PostLayout>
       </Layout>
