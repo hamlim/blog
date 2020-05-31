@@ -18,11 +18,6 @@ export let topPosts = [
 
 export let allPosts = [
   {
-    to: 'the-state-of-monorepos',
-    title: 'The State of Monorepos',
-    absolute: '/posts/2020/may/the-state-of-monorepos',
-  },
-  {
     to: 'a-note-on-consistency',
     title: 'A Note On Consistency',
     absolute: '/posts/2020/may/a-note-on-consistency',

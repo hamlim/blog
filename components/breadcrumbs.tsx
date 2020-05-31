@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Box, List, ListItem, Text } from '@matthamlin/component-library'
+import { Box, List, ListItem, Text } from '@ds-pack/components'
 import Link from './Link'
 
 export function Breadcrumbs({ children }: { children: any }) {

@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",
-    "@matthamlin/component-library": "^3.3.0",
+    "@ds-pack/components": "^0.0.0-alpha.22",
     "@mdx-js/loader": "^1.6.1",
     "@mdx-js/react": "^1.6.1",
     "@next/mdx": "^9.3.6",

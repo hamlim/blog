@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as comps from '@matthamlin/component-library'
+import * as comps from '@ds-pack/components'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 import { Breadcrumbs, Crumb, Spacer } from '../components/breadcrumbs'
@@ -9,7 +9,7 @@ import { allPosts as posts } from '../posts'
 import notebook from /* preval */ '../notebook'
 import Head from 'next/head'
 
-let { ThemeProvider, Box, H1 } = comps
+let { ThemeProvider, Reset, Box, Heading } = comps
 
 let { useMemo } = React
 
@@ -21,36 +21,34 @@ let Img = styled('img')`
 let components = {
   ...comps,
   p: (props: any) => <comps.Text fontSize={2} mt={6} {...props} />,
-  h2: (props: any) => <comps.H2 mt={6} {...props} />,
-  h3: (props: any) => <comps.H3 mt={6} {...props} />,
-  h4: (props: any) => <comps.H4 mt={6} {...props} />,
+  h2: (props: any) => (
+    <Heading variant="h2" forwardedAs="h2" mt={6} {...props} />
+  ),
+  h3: (props: any) => (
+    <Heading variant="h3" forwardedAs="h3" mt={6} {...props} />
+  ),
+  h4: (props: any) => (
+    <Heading variant="subhead" forwardedAs="h4" mt={6} {...props} />
+  ),
   ul: (props: any) => (
     <Box mt={6}>
-      <comps.List variant="unordered" as="ul" {...props} />
+      <comps.List variant="unordered" forwardedAs="ul" {...props} />
     </Box>
   ),
   li: (props: any) => <comps.ListItem {...props} />,
   ol: (props: any) => (
     <Box mt={6}>
-      <comps.List variant="ordered" as="ol" {...props} />
+      <comps.List variant="ordered" forwardedAs="ol" {...props} />
     </Box>
   ),
   pre({ children }) {
     return <>{children}</>
   },
+  inlineCode: comps.InlineCode,
   code: Code,
   img: Img,
   Spacer: (props: any) => <Box mb={6} {...props} />,
-  blockquote: (props: any) => (
-    <Box
-      borderLeft="solid 2px"
-      color="gray.8"
-      pl={6}
-      mx={3}
-      forwardedAs="blockquote"
-      {...props}
-    />
-  ),
+  blockquote: comps.Blockquote,
   Mention: ({ children }) => (
     <comps.Link
       rel="noopener noreferrer"
@@ -63,7 +61,7 @@ let components = {
   ),
   Fig: ({ src, alt, caption }) => (
     <figure>
-      <img src={src} alt={alt} />
+      <Img src={src} alt={alt} />
       <Box forwardedAs="figcaption" color="gray.7" mx={4}>
         {caption}
       </Box>
@@ -84,7 +82,9 @@ function PostLayout({
         <Spacer />
         <Crumb to={sectionLink}>{section}</Crumb>
       </Breadcrumbs>
-      <H1>{post.title}</H1>
+      <Heading variant="lead" forwardedAs="h1">
+        {post.title}
+      </Heading>
       {children}
     </MDXProvider>
   )
@@ -93,6 +93,7 @@ function PostLayout({
 function Layout({ children, title = "Matt Hamlin's Blog" }) {
   return (
     <ThemeProvider>
+      <Reset />
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>{title}</title>

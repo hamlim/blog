@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight'
-import { useTheme } from '@matthamlin/component-library'
+import { useTheme } from '@ds-pack/components'
 
 export default function Code({ children, className }) {
   let lang = className.split('-')[1] || 'jsx'

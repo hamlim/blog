@@ -1,21 +1,22 @@
 import * as React from 'react'
 import {
-  H1,
+  Heading,
   Link,
   Box,
   Text,
   VisuallyHidden,
-  H3,
   List,
   ListItem,
-} from '@matthamlin/component-library'
+} from '@ds-pack/components'
 import LocalLink from '../components/Link'
 import { topPosts } from '../posts'
 
 export default function Landing() {
   return (
     <>
-      <H1 mb={8}>Hey 👋🏼</H1>
+      <Heading variant="lead" forwardedAs="h1" mb={8}>
+        Hey 👋🏼
+      </Heading>
       <Text fontSize={2}>
         Hey there, I'm Matt. I currently live and work in Boston as a software
         engineer working on design systems at Wayfair. In my free time I like to
@@ -33,7 +34,9 @@ export default function Landing() {
         as well.
       </Text>
 
-      <H3 my={3}>Popular blog posts:</H3>
+      <Heading variant="h3" forwardedAs="h3" my={3}>
+        Popular blog posts:
+      </Heading>
       <Box my={5}>
         <List variant="base" as="ol">
           {topPosts.map((post, i) => (
@@ -44,7 +47,9 @@ export default function Landing() {
         </List>
       </Box>
 
-      <H3 my={3}>Recent Side Projects</H3>
+      <Heading variant="h3" forwardedAs="h3" my={3}>
+        Recent Side Projects
+      </Heading>
       <Text mb={2}>
         I work on a variety of side projects in my free time, below are a few of
         them. Check out the rest on{' '}
@@ -84,7 +89,9 @@ export default function Landing() {
         </ListItem>
       </List>
 
-      <H3 my={3}>Notebook</H3>
+      <Heading variant="h3" forwardedAs="h3" my={3}>
+        Notebook
+      </Heading>
       <Text mb={2}>
         For content that I am still working on, and that I haven't published
         fully to my blog yet, I store in my Notebook. These are rough thoughts
