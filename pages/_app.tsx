@@ -51,6 +51,19 @@ let components = {
       {...props}
     />
   ),
+  Mention: ({ children }) => (
+    <comps.Link forwardedAs="a" href={`https://twitter.com/${children}`}>
+      {children}
+    </comps.Link>
+  ),
+  Fig: ({ src, alt, caption }) => (
+    <figure>
+      <img src={src} alt={alt} />
+      <Box forwardedAs="figcaption" color="gray.7" mx={4}>
+        {caption}
+      </Box>
+    </figure>
+  ),
 }
 
 function PostLayout({
