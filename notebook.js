@@ -29,7 +29,7 @@ function searchRecursive(dir, pattern) {
   return results
 }
 
-let mdxes = searchRecursive('./pages/notebook', '.mdx')
+let mdxes = searchRecursive('./pages/notebook', '.md')
 
 module.exports = mdxes.map((filepath) => {
   let filename = filepath
@@ -41,7 +41,7 @@ module.exports = mdxes.map((filepath) => {
     .map((hunk) => hunk[0].toUpperCase() + hunk.slice(1))
     .join(' ')
   return {
-    link: `/notebook/${filepath.split('pages/notebook/')[1].split('.mdx')[0]}`,
+    link: `/notebook/${filepath.split('pages/notebook/')[1].split('.md')[0]}`,
     title: filename,
   }
 })
