@@ -52,7 +52,12 @@ let components = {
     />
   ),
   Mention: ({ children }) => (
-    <comps.Link forwardedAs="a" href={`https://twitter.com/${children}`}>
+    <comps.Link
+      rel="noopener noreferrer"
+      target="_blank"
+      forwardedAs="a"
+      href={`https://twitter.com/${children}`}
+    >
       {children}
     </comps.Link>
   ),
