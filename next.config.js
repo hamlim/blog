@@ -1,4 +1,6 @@
-const withMDX = require('@next/mdx')()
+const withMDX = require('@next/mdx')({
+  extension: /\.(md|mdx)$/,
+})
 module.exports = withMDX({
   pageExtensions: ['md', 'mdx', 'jsx', 'js', 'ts', 'tsx'],
   experimental: {
