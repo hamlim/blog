@@ -26,6 +26,6 @@ This question, that of where are the boundaries of what is a design token has
 been what I have been thinking about the most recently.
 
 One of the early explorations in stressing the edges of the design tokens and
-theme boundaries has been <Mention>@jxnblk</Mention>'s library styled-system
-(and its more recent iteration, theme-ui). Specifically, both library's concept
-of `variant`'s.
+theme boundaries has been <TwitterMention>@jxnblk</TwitterMention>'s library
+styled-system (and its more recent iteration, theme-ui). Specifically, both
+library's concept of `variant`'s.

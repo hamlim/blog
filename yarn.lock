@@ -1098,10 +1098,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@ds-pack/components@^0.0.0-alpha.22":
-  version "0.0.0-alpha.22"
-  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.0-alpha.22.tgz#2f589e393acf36855f62aaa6ec1e7a67f6416013"
-  integrity sha512-2dyXV2BDcW3cpKvbrK8sg0oq98zcxf/KkAZGwLUuXNJ0WkdMnNgwVzMx4E4qq2Ro//XqXcCazBksecvWkGoijg==
+"@ds-pack/components@^0.0.0-alpha.23":
+  version "0.0.0-alpha.23"
+  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.0-alpha.23.tgz#89938a1455b202aa4724763244879e540640a70d"
+  integrity sha512-UoMM01gJvMQQQ5t/jpEknIHHscwJ/O+sia8mZ88kYQDwhDwlH0Ld+fkx+y5SmtVZWHy6iT57EiqkwdanT1ZHGA==
   dependencies:
     "@matthamlin/base-styled" "^1.2.0"
     "@matthamlin/use-refs" "^1.0.0"
