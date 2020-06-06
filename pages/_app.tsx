@@ -49,16 +49,6 @@ let components = {
   img: Img,
   Spacer: (props: any) => <Box mb={6} {...props} />,
   blockquote: comps.Blockquote,
-  Mention: ({ children }) => (
-    <comps.Link
-      rel="noopener noreferrer"
-      target="_blank"
-      forwardedAs="a"
-      href={`https://twitter.com/${children}`}
-    >
-      {children}
-    </comps.Link>
-  ),
   Fig: ({ src, alt, caption }) => (
     <figure>
       <Img src={src} alt={alt} />
