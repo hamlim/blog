@@ -1,12 +1,5 @@
 import * as React from 'react'
-import {
-  H1,
-  H3,
-  Box,
-  Text,
-  List,
-  ListItem,
-} from '@matthamlin/component-library'
+import { Box, Text, List, ListItem, Heading } from '@ds-pack/components'
 import { topPosts, allPosts } from '../posts'
 import { Breadcrumbs, Crumb } from '../components/breadcrumbs'
 import Link from '../components/Link'
@@ -17,14 +10,16 @@ export default function Blog() {
       <Breadcrumbs>
         <Crumb to="/">Home</Crumb>
       </Breadcrumbs>
-      <H1>Blog</H1>
+      <Heading variant="h1" forwardedAs="h1">
+        Blog
+      </Heading>
       <Text fontSize={2} mb={2}>
         Welcome to my Blog! Many of these posts are rough drafts that I work on
         here and there.
       </Text>
-      <H3 fontSize={2} mb={2}>
+      <Heading variant="h3" forwardedAs="h3" fontSize={2} mb={2}>
         Popular posts:
-      </H3>
+      </Heading>
       <Box my={5}>
         <List variant="base" as="ol">
           {topPosts.map((post, i) => (
@@ -34,9 +29,9 @@ export default function Blog() {
           ))}
         </List>
       </Box>
-      <H3 fontSize={2} py={7}>
+      <Heading variant="h3" forwardedAs="h3" fontSize={2} py={7}>
         All Posts:
-      </H3>
+      </Heading>
       <Box my={5}>
         <List variant="base" as="ol">
           {allPosts.map((post, i) => (

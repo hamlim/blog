@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Breadcrumbs, Crumb } from '../../components/breadcrumbs'
-import { H1, Box, Text, List, ListItem } from '@matthamlin/component-library'
+import { Heading, Box, Text, List, ListItem } from '@ds-pack/components'
 import LocalLink from '../../components/Link'
 // this data is collected at build time
 import notebook from /* preval */ '../../notebook'
@@ -11,7 +11,9 @@ export default function Notebook() {
       <Breadcrumbs>
         <Crumb to="/">Home</Crumb>
       </Breadcrumbs>
-      <H1>Notebook</H1>
+      <Heading variant="h1" forwardedAs="h1">
+        Notebook
+      </Heading>
       <Text fontSize={2} mb={2}>
         Welcome to my Notebook! Many of these posts are rough drafts that I work
         on here and there. For (slightly) more fully formed posts, checkout my{' '}
