@@ -1,13 +1,5 @@
 import * as React from 'react'
-import {
-  Heading,
-  Link,
-  Box,
-  Text,
-  VisuallyHidden,
-  List,
-  ListItem,
-} from '@ds-pack/components'
+import { Heading, Link, Box, Text, List, ListItem } from '@ds-pack/components'
 import LocalLink from '../components/Link'
 import { topPosts } from '../posts'
 
@@ -20,13 +12,7 @@ export default function Landing() {
       <Text fontSize={2}>
         Hey there, I'm Matt. I currently live and work in Boston as a software
         engineer working on design systems at Wayfair. In my free time I like to
-        work on several different{' '}
-        <Link forwardedAs="a" href="https://github.com/hamlim">
-          open source projects
-          <VisuallyHidden forwardedAs="span">
-            (opens in new window)
-          </VisuallyHidden>
-        </Link>
+        work on several different <LocalLink to="/projects">projects</LocalLink>
         , and somehow find time to write some{' '}
         <LocalLink fontSize={2} to="/blog">
           blog posts

@@ -143,8 +143,14 @@ export default function MyApp({ Component, pageProps, router }) {
     )
   }
 
+  let title
+
+  if (pathname.includes('/projects')) {
+    title = 'Projects'
+  }
+
   return (
-    <Layout>
+    <Layout title={title}>
       <Component {...pageProps} />
     </Layout>
   )
