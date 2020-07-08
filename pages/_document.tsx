@@ -20,6 +20,7 @@ export default class MyDocument extends Document {
         styles: (
           <>
             {initialProps.styles}
+            <style>{`.footnotes {margin-top: 2rem;}`}</style>
             {sheet.getStyleElement()}
           </>
         ),
