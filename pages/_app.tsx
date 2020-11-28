@@ -90,8 +90,8 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
       </Head>
       <Box display="flex" justifyContent="center" alignItems="center">
         <Box
-          maxWidth={['94vw', '80vw', '70ch']}
-          minWidth={['94vw', '80vw', '70ch']}
+          maxWidth={['94vw', '80vw', , '70ch']}
+          minWidth={['94vw', '80vw', , '70ch']}
           p={[3, , 7, 10]}
         >
           {children}
