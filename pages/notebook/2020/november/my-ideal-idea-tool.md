@@ -1,7 +1,7 @@
-I've been using [Roam](roamresearch.com) a lot as of late, I lucked out a few
-months ago (around March of 2020 or so) where there was a short gap of an open,
-public, and free beta period for the online tool and I've been secretly using it
-since then without paying for it (sorry Roam team!).
+I've been using [Roam](https://roamresearch.com) a lot as of late, I lucked out
+a few months ago (around March of 2020 or so) where there was a short gap of an
+open, public, and free beta period for the online tool and I've been secretly
+using it since then without paying for it (sorry Roam team!).
 
 It's been an interesting tool to learn and use, I've really enjoyed the
 flexibility and freedom to make pages and links between concepts and ideas using
@@ -37,5 +37,5 @@ I'd really love to play the role of some superior being and smash these two
 concepts into one tool, the interconnectedness offered by Roam, and the deep
 integration of runnable code and documentation.
 
-I think [MDX](mdxjs.com) has the highest liklihood of becoming something like
-this, but it feels like a low-fidelity mock-up of this concept.
+I think [MDX](https://dxjs.com) has the highest liklihood of becoming something
+like this, but it feels like a low-fidelity mock-up of this concept.
