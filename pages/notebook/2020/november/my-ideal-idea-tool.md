@@ -37,5 +37,5 @@ I'd really love to play the role of some superior being and smash these two
 concepts into one tool, the interconnectedness offered by Roam, and the deep
 integration of runnable code and documentation.
 
-I think [MDX](https://dxjs.com) has the highest liklihood of becoming something
+I think [MDX](https://mdxjs.com) has the highest liklihood of becoming something
 like this, but it feels like a low-fidelity mock-up of this concept.
