@@ -8,6 +8,7 @@ import { allPosts as posts } from '../posts'
 // this data is collected at build time
 import notebook from /* preval */ '../notebook'
 import Head from 'next/head'
+// adding a comment here seems to make the build work
 
 let { ThemeProvider, Reset, Box, Heading } = comps
 
