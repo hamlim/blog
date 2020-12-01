@@ -10,7 +10,7 @@ import { allPosts as posts } from '../posts'
 import notebook from /* preval */ '../notebook'
 import Head from 'next/head'
 
-let { ThemeProvider, Reset, Box, Heading, Text } = comps
+let { ThemeProvider, Reset, Box, Heading, Text, theme } = comps
 
 let { useMemo } = React
 
@@ -68,10 +68,10 @@ function PostLayout({
 }) {
   return (
     <MDXProvider components={components}>
-      <Breadcrumbs>
+      {/* <Breadcrumbs>
         <Spacer />
         <Crumb to={sectionLink}>{section}</Crumb>
-      </Breadcrumbs>
+      </Breadcrumbs> */}
       <Heading variant="lead" forwardedAs="h1">
         {post.title}
       </Heading>
@@ -82,7 +82,18 @@ function PostLayout({
 
 function Layout({ children, title = "Matt Hamlin's Blog" }) {
   return (
-    <ThemeProvider>
+    <ThemeProvider
+      theme={{
+        ...theme,
+        headings: {
+          ...theme.headings,
+          lead: {
+            ...theme.headings.lead,
+            fontSize: theme.fontSizes[3],
+          },
+        },
+      }}
+    >
       <Reset />
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -101,11 +112,12 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
             p={4}
             m="0 auto"
             display="flex"
+            flexDirection={['column', , 'row']}
             justifyContent="space-between"
             alignItems="center"
           >
             <Box display="flex" alignItems="center">
-              <Link fontSize={2} to="/" display="flex" alignItems="center">
+              <Link to="/" display="flex" alignItems="center">
                 <Text mr={2} forwardedAs="span" aria-label="Wave" role="img">
                   👋
                 </Text>{' '}
@@ -115,7 +127,7 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
             </Box>
             <Box>
               <Link to="/blog">Blog</Link> <Link to="/projects">Projects</Link>{' '}
-              <Link to="/tools">Tools</Link>
+              <Link to="/tools">Tools</Link> <Link to="/social">Social</Link>
             </Box>
           </Box>
         </Box>
@@ -196,6 +208,10 @@ export default function MyApp({ Component, pageProps, router }) {
 
   if (pathname.includes('/projects')) {
     title = 'Projects'
+  } else if (pathname.includes('/tools')) {
+    title = 'Tools'
+  } else if (pathname.includes('/social')) {
+    title = 'Social'
   }
 
   return (

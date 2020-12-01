@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { Box, List, ListItem, Text } from '@ds-pack/components'
+import { Box, Text } from '@ds-pack/components'
 import Link from './Link'
 
 export function Breadcrumbs({ children }: { children: any }) {
@@ -15,17 +15,9 @@ export function Breadcrumbs({ children }: { children: any }) {
 }
 
 export function Crumb({ children, to }: { children: any; to: string }) {
-  return (
-    <Link fontSize={2} to={to}>
-      {children}
-    </Link>
-  )
+  return <Link to={to}>{children}</Link>
 }
 
 export function Spacer() {
-  return (
-    <Text mx={4} fontSize={2}>
-      {'/'}
-    </Text>
-  )
+  return <Text mx={4}>{'/'}</Text>
 }
