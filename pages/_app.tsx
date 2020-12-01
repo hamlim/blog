@@ -21,6 +21,12 @@ let Img = styled('img')`
 
 let components = {
   ...comps,
+  ExternalLink: (props: any) => (
+    <comps.Link {...props} forwardedAs="a" target="_blank" rel="noopener" />
+  ),
+  a: (props: any) => (
+    <comps.Link {...props} forwardedAs="a" target="_blank" rel="noopener" />
+  ),
   p: (props: any) => <comps.Text fontSize={2} mt={6} {...props} />,
   h2: (props: any) => (
     <Heading variant="h2" forwardedAs="h2" mt={6} {...props} />
@@ -36,7 +42,7 @@ let components = {
       <comps.List variant="unordered" forwardedAs="ul" {...props} />
     </Box>
   ),
-  li: (props: any) => <comps.ListItem fontSize={2} {...props} />,
+  li: (props: any) => <comps.ListItem fontSize={2} mt={2} {...props} />,
   ol: (props: any) => (
     <Box mt={6}>
       <comps.List variant="ordered" forwardedAs="ol" {...props} />

@@ -18,6 +18,11 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    to: 'pair-code-reviews',
+    title: 'Pair Code Reviews',
+    absolute: '/posts/2020/december/pair-code-reviews',
+  },
+  {
     to: 'enhancing-slack',
     title: 'Enhancing Slack',
     absolute: '/posts/2020/july/enhancing-slack',
