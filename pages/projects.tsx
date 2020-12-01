@@ -8,14 +8,10 @@ import {
   List,
   ListItem,
 } from '@ds-pack/components'
-import { Breadcrumbs, Crumb } from '../components/breadcrumbs'
 
 export default function Projects() {
   return (
     <>
-      <Breadcrumbs>
-        <Crumb to="/">Home</Crumb>
-      </Breadcrumbs>
       <Heading variant="lead" forwardedAs="h1">
         Projects
       </Heading>

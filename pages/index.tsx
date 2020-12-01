@@ -7,7 +7,7 @@ export default function Landing() {
   return (
     <>
       <Heading variant="lead" forwardedAs="h1" mb={8}>
-        Hey 👋🏼
+        Hey 👋
       </Heading>
       <Text fontSize={2}>
         Hey there, I'm Matt. I currently live and work in Boston as a software

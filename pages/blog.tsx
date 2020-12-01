@@ -1,15 +1,11 @@
 import * as React from 'react'
 import { Box, Text, List, ListItem, Heading } from '@ds-pack/components'
 import { topPosts, allPosts } from '../posts'
-import { Breadcrumbs, Crumb } from '../components/breadcrumbs'
 import Link from '../components/Link'
 
 export default function Blog() {
   return (
     <>
-      <Breadcrumbs>
-        <Crumb to="/">Home</Crumb>
-      </Breadcrumbs>
       <Heading variant="h1" forwardedAs="h1">
         Blog
       </Heading>

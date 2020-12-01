@@ -3,14 +3,14 @@ import * as comps from '@ds-pack/components'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 import { Breadcrumbs, Crumb, Spacer } from '../components/breadcrumbs'
+import Link from '../components/Link'
 import Code from '../components/Code'
 import { allPosts as posts } from '../posts'
 // this data is collected at build time
 import notebook from /* preval */ '../notebook'
 import Head from 'next/head'
-// adding a comment here seems to make the build work
 
-let { ThemeProvider, Reset, Box, Heading } = comps
+let { ThemeProvider, Reset, Box, Heading, Text } = comps
 
 let { useMemo } = React
 
@@ -36,7 +36,7 @@ let components = {
       <comps.List variant="unordered" forwardedAs="ul" {...props} />
     </Box>
   ),
-  li: (props: any) => <comps.ListItem {...props} />,
+  li: (props: any) => <comps.ListItem fontSize={2} {...props} />,
   ol: (props: any) => (
     <Box mt={6}>
       <comps.List variant="ordered" forwardedAs="ol" {...props} />
@@ -69,7 +69,6 @@ function PostLayout({
   return (
     <MDXProvider components={components}>
       <Breadcrumbs>
-        <Crumb to="/">Home</Crumb>
         <Spacer />
         <Crumb to={sectionLink}>{section}</Crumb>
       </Breadcrumbs>
@@ -89,13 +88,62 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>{title}</title>
       </Head>
-      <Box display="flex" justifyContent="center" alignItems="center">
+      <Box display="flex" flexDirection="column" minHeight="100vh">
+        <Box
+          flexShrink={1}
+          forwardedAs="nav"
+          backgroundColor="gray.0"
+          color="black"
+        >
+          <Box
+            maxWidth={['94vw', '80vw', , '70ch']}
+            minWidth={['94vw', '80vw', , '70ch']}
+            p={4}
+            m="0 auto"
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Box display="flex" alignItems="center">
+              <Link fontSize={2} to="/" display="flex" alignItems="center">
+                <Text mr={2} forwardedAs="span" aria-label="Wave" role="img">
+                  👋
+                </Text>{' '}
+                Home
+              </Link>
+              <Box id="breadcrumbs-portal" />
+            </Box>
+            <Box>
+              <Link to="/blog">Blog</Link> <Link to="/projects">Projects</Link>{' '}
+              <Link to="/tools">Tools</Link>
+            </Box>
+          </Box>
+        </Box>
         <Box
           maxWidth={['94vw', '80vw', , '70ch']}
           minWidth={['94vw', '80vw', , '70ch']}
           p={[3, , 7, 10]}
+          m="0 auto"
+          flexGrow={1}
         >
           {children}
+        </Box>
+        <Box flexShrink={1} backgroundColor="gray.0" forwardedAs="footer">
+          <Box
+            maxWidth={['94vw', '80vw', , '70ch']}
+            minWidth={['94vw', '80vw', , '70ch']}
+            p={4}
+            m="0 auto"
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
+            <Text>
+              🐦 <comps.TwitterMention>immatthamlin</comps.TwitterMention> 👨‍💻{' '}
+              <comps.GitHubMention>hamlim</comps.GitHubMention>
+            </Text>
+          </Box>
         </Box>
       </Box>
     </ThemeProvider>
