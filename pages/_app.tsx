@@ -147,6 +147,7 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
             p={4}
             m="0 auto"
             display="flex"
+            flexDirection={['column', , 'row']}
             justifyContent="space-between"
             alignItems="center"
           >
