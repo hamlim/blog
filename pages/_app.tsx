@@ -2,17 +2,18 @@ import * as React from 'react'
 import * as comps from '@ds-pack/components'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
-import { Breadcrumbs, Crumb, Spacer } from '../components/breadcrumbs'
 import Link from '../components/Link'
 import Code from '../components/Code'
 import { allPosts as posts } from '../posts'
 // this data is collected at build time
 import notebook from /* preval */ '../notebook'
 import Head from 'next/head'
+import Router from 'next/router'
+import recordPageVisit from '../components/record-page'
 
 let { ThemeProvider, Reset, Box, Heading, Text, theme } = comps
 
-let { useMemo } = React
+let { useMemo, useEffect } = React
 
 let Img = styled('img')`
   max-width: 100%;
@@ -169,8 +170,13 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
   )
 }
 
+Router.events.on('routeChangeComplete', () => {
+  recordPageVisit()
+})
+
 export default function MyApp({ Component, pageProps, router }) {
   let { pathname } = router
+
   let post = useMemo(() => {
     let isBlogPost = pathname.startsWith('/posts/')
     if (!isBlogPost) {

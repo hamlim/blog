@@ -16,6 +16,7 @@
     "@mdx-js/react": "^1.6.1",
     "@next/mdx": "^9.3.6",
     "@types/react-dom": "^17.0.0",
+    "airtable": "^0.10.1",
     "next": "9.3.7-canary.18",
     "prism-react-renderer": "^1.1.0",
     "react": "experimental",
