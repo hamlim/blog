@@ -258,11 +258,7 @@ export default function MyApp({ Component, pageProps, router }) {
   } else if (notebookEntry) {
     return (
       <Layout title={notebookEntry?.title}>
-        <PostLayout
-          post={notebookEntry}
-          section="Notebook"
-          sectionLink="/notebook"
-        >
+        <PostLayout post={notebookEntry}>
           <Component {...pageProps} />
         </PostLayout>
       </Layout>
