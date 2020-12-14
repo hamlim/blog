@@ -10,7 +10,7 @@ export default function Code({ children, className }) {
     <Highlight
       {...defaultProps}
       theme={nightOwlLight as any}
-      code={children}
+      code={children.trim()}
       language={lang}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (

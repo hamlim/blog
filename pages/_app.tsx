@@ -13,12 +13,66 @@ import recordPageVisit from '../components/record-page'
 
 let { ThemeProvider, Reset, Box, Heading, Text, theme } = comps
 
-let { useMemo, useEffect } = React
+let { useMemo, useEffect, useState } = React
 
 let Img = styled('img')`
   max-width: 100%;
   height: auto;
 `
+
+function Time(props) {
+  return <Text forwardedAs="time" {...props} />
+}
+
+function TwitterButton() {
+  useEffect(() => {
+    const s = document.createElement('script')
+    s.setAttribute('src', 'https://platform.twitter.com/widgets.js')
+    s.setAttribute('async', 'true')
+    document.head.appendChild(s)
+  }, [])
+  return (
+    <>
+      <a
+        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        className="twitter-share-button"
+        data-size="large"
+        data-via="immatthamlin"
+        data-show-count="true"
+      >
+        Tweet
+      </a>
+    </>
+  )
+}
+
+function useClientOnly() {
+  let [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return mounted
+}
+
+function Mentions() {
+  let mounted = useClientOnly()
+  if (!mounted) {
+    return null
+  }
+  return (
+    <comps.Link
+      forwardedAs="a"
+      target="_blank"
+      rel="noopener"
+      href={`https://twitter.com/search?q=${encodeURIComponent(
+        typeof window !== 'undefined' ? window?.location.href : '',
+      )}`}
+    >
+      See discussion on Twitter
+    </comps.Link>
+  )
+}
 
 let components = {
   ...comps,
@@ -65,20 +119,14 @@ let components = {
       </Box>
     </figure>
   ),
+  Time,
+  TwitterButton,
+  Mentions,
 }
 
-function PostLayout({
-  children,
-  post,
-  section = 'Blog',
-  sectionLink = '/blog',
-}) {
+function PostLayout({ children, post }) {
   return (
     <MDXProvider components={components}>
-      {/* <Breadcrumbs>
-        <Spacer />
-        <Crumb to={sectionLink}>{section}</Crumb>
-      </Breadcrumbs> */}
       <Heading variant="lead" forwardedAs="h1">
         {post.title}
       </Heading>
@@ -176,6 +224,10 @@ Router.events.on('routeChangeComplete', () => {
 
 export default function MyApp({ Component, pageProps, router }) {
   let { pathname } = router
+
+  useEffect(() => {
+    recordPageVisit()
+  }, [])
 
   let post = useMemo(() => {
     let isBlogPost = pathname.startsWith('/posts/')

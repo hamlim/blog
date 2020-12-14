@@ -18,6 +18,11 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    to: 'nextjs-analytics-with-airtable',
+    title: 'NextJS Analytics with Airtable',
+    absolute: '/posts/2020/december/nextjs-analytics-with-airtable',
+  },
+  {
     to: 'pair-code-reviews',
     title: 'Pair Code Reviews',
     absolute: '/posts/2020/december/pair-code-reviews',
