@@ -13,7 +13,7 @@ export default function Link({
 }) {
   return (
     <RouterLink href={to} as={as} passHref>
-      <StyledLink {...props} forwardedAs="a" />
+      <StyledLink {...props} is="a" />
     </RouterLink>
   )
 }

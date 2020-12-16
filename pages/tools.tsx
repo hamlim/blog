@@ -10,7 +10,7 @@ import {
 export default function Tools() {
   return (
     <>
-      <Heading variant="lead" forwardedAs="h1">
+      <Heading variant="lead" is="h1">
         Tools
       </Heading>
       <Text>
@@ -19,19 +19,19 @@ export default function Tools() {
         this up to date every so often and see how it changes over time.
       </Text>
       <Box my={5}>
-        <Heading forwardedAs="h3" variant="h2">
+        <Heading is="h3" variant="h2">
           November, 2020
         </Heading>
         <Stack gap={2}>
-          <Heading forwardedAs="h4" variant="subhead">
+          <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
             <Text mb={2}>
-              <Text forwardedAs="strong" fontWeight="bold">
+              <Text is="strong" fontWeight="bold">
                 Phone
               </Text>{' '}
-              <Text forwardedAs="em" fontStyle="italics">
+              <Text is="em" fontStyle="italics">
                 Google Pixel 5
               </Text>
             </Text>
@@ -48,10 +48,10 @@ export default function Tools() {
           </Box>
           <Box>
             <Text mb={2}>
-              <Text forwardedAs="strong" fontWeight="bold">
+              <Text is="strong" fontWeight="bold">
                 Laptop
               </Text>{' '}
-              <Text forwardedAs="em" fontStyle="italics">
+              <Text is="em" fontStyle="italics">
                 MacBook Pro (early 2020) 13"
               </Text>
             </Text>
@@ -64,22 +64,22 @@ export default function Tools() {
               it dropped and I've loved it since.
             </Text>
           </Box>
-          <Heading forwardedAs="h4" variant="subhead">
+          <Heading is="h4" variant="subhead">
             Software
           </Heading>
           <Box>
             <Text mb={2}>
-              <Text forwardedAs="strong" fontWeight="bold">
+              <Text is="strong" fontWeight="bold">
                 Notes / Todos
               </Text>{' '}
-              <Text forwardedAs="em" fontStyle="italics">
+              <Text is="em" fontStyle="italics">
                 Roam Research
               </Text>
             </Text>
             <Text>
               For some reason I happened to sign up for{' '}
               <ExternalLink
-                forwardedAs="a"
+                is="a"
                 target="_blank"
                 rel="noopener"
                 href="https://roamresearch.com"
@@ -94,10 +94,10 @@ export default function Tools() {
           </Box>
           <Box>
             <Text mb={2}>
-              <Text forwardedAs="strong" fontWeight="bold">
+              <Text is="strong" fontWeight="bold">
                 Code
               </Text>{' '}
-              <Text forwardedAs="em" fontStyle="italics">
+              <Text is="em" fontStyle="italics">
                 VS Code (Insiders)
               </Text>
             </Text>
@@ -113,7 +113,7 @@ export default function Tools() {
           <Text>
             Interested in any particular part of setup? Feel free to ask me on{' '}
             <ExternalLink
-              forwardedAs="a"
+              is="a"
               rel="noopener"
               target="_blank"
               href="https://twitter.com/immatthamlin"

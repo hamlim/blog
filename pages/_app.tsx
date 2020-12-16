@@ -21,7 +21,7 @@ let Img = styled('img')`
 `
 
 function Time(props) {
-  return <Text forwardedAs="time" {...props} />
+  return <Text is="time" {...props} />
 }
 
 function TwitterButton() {
@@ -62,7 +62,7 @@ function Mentions() {
   }
   return (
     <comps.Link
-      forwardedAs="a"
+      is="a"
       target="_blank"
       rel="noopener"
       href={`https://twitter.com/search?q=${encodeURIComponent(
@@ -77,30 +77,24 @@ function Mentions() {
 let components = {
   ...comps,
   ExternalLink: (props: any) => (
-    <comps.Link {...props} forwardedAs="a" target="_blank" rel="noopener" />
+    <comps.Link {...props} is="a" target="_blank" rel="noopener" />
   ),
   a: (props: any) => (
-    <comps.Link {...props} forwardedAs="a" target="_blank" rel="noopener" />
+    <comps.Link {...props} is="a" target="_blank" rel="noopener" />
   ),
   p: (props: any) => <comps.Text fontSize={2} mt={6} {...props} />,
-  h2: (props: any) => (
-    <Heading variant="h2" forwardedAs="h2" mt={6} {...props} />
-  ),
-  h3: (props: any) => (
-    <Heading variant="h3" forwardedAs="h3" mt={6} {...props} />
-  ),
-  h4: (props: any) => (
-    <Heading variant="subhead" forwardedAs="h4" mt={6} {...props} />
-  ),
+  h2: (props: any) => <Heading variant="h2" is="h2" mt={6} {...props} />,
+  h3: (props: any) => <Heading variant="h3" is="h3" mt={6} {...props} />,
+  h4: (props: any) => <Heading variant="subhead" is="h4" mt={6} {...props} />,
   ul: (props: any) => (
     <Box mt={6}>
-      <comps.List variant="unordered" forwardedAs="ul" {...props} />
+      <comps.List variant="unordered" is="ul" {...props} />
     </Box>
   ),
   li: (props: any) => <comps.ListItem fontSize={2} mt={2} {...props} />,
   ol: (props: any) => (
     <Box mt={6}>
-      <comps.List variant="ordered" forwardedAs="ol" {...props} />
+      <comps.List variant="ordered" is="ol" {...props} />
     </Box>
   ),
   pre({ children }) {
@@ -114,7 +108,7 @@ let components = {
   Fig: ({ src, alt, caption }) => (
     <figure>
       <Img src={src} alt={alt} />
-      <Box forwardedAs="figcaption" color="gray.7" mx={4}>
+      <Box is="figcaption" color="gray.7" mx={4}>
         {caption}
       </Box>
     </figure>
@@ -127,7 +121,7 @@ let components = {
 function PostLayout({ children, post }) {
   return (
     <MDXProvider components={components}>
-      <Heading variant="lead" forwardedAs="h1">
+      <Heading variant="lead" is="h1">
         {post.title}
       </Heading>
       {children}
@@ -154,13 +148,8 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>{title}</title>
       </Head>
-      <Box display="flex" flexDirection="column" minHeight="100vh">
-        <Box
-          flexShrink={1}
-          forwardedAs="nav"
-          backgroundColor="gray.0"
-          color="black"
-        >
+      <Box is="main" display="flex" flexDirection="column" minHeight="100vh">
+        <Box flexShrink={1} is="nav" backgroundColor="gray.0" color="black">
           <Box
             maxWidth={['94vw', '80vw', , '70ch']}
             minWidth={['94vw', '80vw', , '70ch']}
@@ -173,7 +162,7 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
           >
             <Box display="flex" alignItems="center">
               <Link to="/" display="flex" alignItems="center">
-                <Text mr={2} forwardedAs="span" aria-label="Wave" role="img">
+                <Text mr={2} is="span" aria-label="Wave" role="img">
                   👋
                 </Text>{' '}
                 Home
@@ -195,7 +184,7 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
         >
           {children}
         </Box>
-        <Box flexShrink={1} backgroundColor="gray.0" forwardedAs="footer">
+        <Box flexShrink={1} backgroundColor="gray.0" is="footer">
           <Box
             maxWidth={['94vw', '80vw', , '70ch']}
             minWidth={['94vw', '80vw', , '70ch']}

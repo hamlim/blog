@@ -1,5 +1,5 @@
 <!-- prettier-ignore -->
-<Text forwardedAs="span" color="gray.8" fontStyle="italic">Published{' '}<Time>December 13th, 2020</Time></Text>{' '}<Mentions />
+<Text is="span" color="gray.8" fontStyle="italic">Published{' '}<Time>December 13th, 2020</Time></Text>{' '}<Mentions />
 
 I was recently looking for a quick and easy solution to track page hits on my
 personal site for another small feature add to the site (blog post on that when

@@ -12,7 +12,7 @@ import {
 export default function Projects() {
   return (
     <>
-      <Heading variant="lead" forwardedAs="h1">
+      <Heading variant="lead" is="h1">
         Projects
       </Heading>
       <Text>
@@ -23,95 +23,95 @@ export default function Projects() {
       <Text>
         You can find all of my open source projects on{' '}
         <Link
-          forwardedAs="a"
+          is="a"
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/hamlim"
         >
           GitHub
-          <VisuallyHidden forwardedAs="span">
-            (opens in new window)
-          </VisuallyHidden>
+          <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
         </Link>
         .
       </Text>
       <Box my={5}>
-        <List variant="base" forwardedAs="ul">
+        <List variant="base" is="ul">
           <ListItem>
             <Link
-              forwardedAs="a"
+              is="a"
               href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
               target="_blank"
               rel="noopener noreferrer"
             >
               Reroute
-              <VisuallyHidden forwardedAs="span">
-                (opens in new window)
-              </VisuallyHidden>
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             A React router package built for Suspense using hooks
           </ListItem>
           <ListItem mt={6}>
             <Link
-              forwardedAs="a"
+              is="a"
               href="https://github.com/hamlim/inline-mdx.macro"
               target="_blank"
               rel="noopener noreferrer"
             >
               inline-mdx.macro
-              <VisuallyHidden forwardedAs="span">
-                (opens in new window)
-              </VisuallyHidden>
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             A babel macro for converting inline{' '}
-            <Link forwardedAs="a" href="https://mdxjs.com">
+            <Link is="a" href="https://mdxjs.com">
               MDX
             </Link>{' '}
             in JavaScript files.
           </ListItem>
           <ListItem mt={6}>
             <Link
-              forwardedAs="a"
+              is="a"
               href="https://github.com/hamlim/notedo"
               target="_blank"
               rel="noopener noreferrer"
             >
               Notedo
-              <VisuallyHidden forwardedAs="span">
-                (opens in new window)
-              </VisuallyHidden>
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             A note and todo list web application using plain text.
           </ListItem>
           <ListItem mt={6}>
             <Link
-              forwardedAs="a"
+              is="a"
               href="https://github.com/ds-pack/components"
               target="_blank"
               rel="noopener noreferrer"
             >
               @ds-pack/components
-              <VisuallyHidden forwardedAs="span">
-                (opens in new window)
-              </VisuallyHidden>
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             A component library built on Styled-System, Styled-Components,
             React, and Typescript.
           </ListItem>
           <ListItem mt={6}>
             <Link
-              forwardedAs="a"
+              is="a"
               href="https://github.com/ds-pack/babel-plugin-docs"
               target="_blank"
               rel="noopener noreferrer"
             >
               @ds-pack/babel-plugin-docs
-              <VisuallyHidden forwardedAs="span">
-                (opens in new window)
-              </VisuallyHidden>
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             A collection of babel utilities (plugins, visitors) for transforming
             code related to design systems.
+          </ListItem>
+          <ListItem mt={6}>
+            <Link
+              is="a"
+              href="https://github.com/ds-pack/use-refs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              use-refs
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            Helpers and utilities for working with refs in React
           </ListItem>
         </List>
       </Box>

@@ -13,7 +13,7 @@ import {
 export default function Tools() {
   return (
     <>
-      <Heading variant="lead" forwardedAs="h1">
+      <Heading variant="lead" is="h1">
         Social
       </Heading>
       <Text>
@@ -21,24 +21,25 @@ export default function Tools() {
         different platforms:
       </Text>
       <Box my={5}>
-        <List variant="base" forwardedAs="ul">
+        <List variant="base" is="ul">
           <ListItem mb={2}>
-            <Text forwardedAs="strong" fontWeight="bold">
+            <Text is="strong" fontWeight="bold">
               Twitter:{' '}
             </Text>
             <TwitterMention>immatthamlin</TwitterMention>
           </ListItem>
           <ListItem mb={2}>
-            <Text forwardedAs="strong" fontWeight="bold">
+            <Text is="strong" fontWeight="bold">
               GitHub:{' '}
             </Text>
             <GitHubMention>hamlim</GitHubMention>
           </ListItem>
           <ListItem>
-            <Text forwardedAs="strong" fontWeight="bold">
+            <Text is="strong" fontWeight="bold">
               LinkedIn:{' '}
             </Text>
             <ExternalLink
+              is="a"
               target="_blank"
               rel="noopener"
               href="https://www.linkedin.com/in/hamlim/"

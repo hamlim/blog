@@ -7,7 +7,7 @@ import notebook from /* preval */ '../../notebook'
 export default function Notebook() {
   return (
     <>
-      <Heading variant="h1" forwardedAs="h1">
+      <Heading variant="h1" is="h1">
         Notebook
       </Heading>
       <Text fontSize={2} mb={2}>
@@ -16,7 +16,7 @@ export default function Notebook() {
         <LocalLink to="/blog">Blog</LocalLink>.
       </Text>
       <Box my={5}>
-        <List variant="base" as="ol">
+        <List variant="base" is="ol">
           {notebook.map((link, i) => (
             <ListItem key={link.title} mt={i !== 0 ? 6 : null}>
               <LocalLink to={link.link}>{link.title}</LocalLink>

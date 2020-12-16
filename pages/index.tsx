@@ -6,7 +6,7 @@ import { topPosts } from '../posts'
 export default function Landing() {
   return (
     <>
-      <Heading variant="lead" forwardedAs="h1" mb={8}>
+      <Heading variant="lead" is="h1" mb={8}>
         Hey 👋
       </Heading>
       <Text fontSize={2}>
@@ -20,11 +20,11 @@ export default function Landing() {
         as well.
       </Text>
 
-      <Heading variant="h3" forwardedAs="h3" my={3}>
+      <Heading variant="h3" is="h3" my={3}>
         Popular blog posts:
       </Heading>
       <Box my={5}>
-        <List variant="base" as="ol">
+        <List variant="ordered" is="ol">
           {topPosts.map((post, i) => (
             <ListItem key={post.title} mt={i !== 0 ? 6 : null}>
               <LocalLink to={post.absolute}>{post.title}</LocalLink>
@@ -33,21 +33,17 @@ export default function Landing() {
         </List>
       </Box>
 
-      <Heading variant="h3" forwardedAs="h3" my={3}>
+      <Heading variant="h3" is="h3" my={3}>
         Recent Side Projects
       </Heading>
       <Text mb={2}>
         I work on a variety of side projects in my free time, below are a few of
-        them. Check out the rest on{' '}
-        <Link forwardedAs="a" href="https://github.com/hamlim">
-          GitHub
-        </Link>
-        .
+        them. Check out the rest <LocalLink to="/projects">here</LocalLink>.
       </Text>
-      <List variant="unordered" forwardedAs="ul" mt={2}>
+      <List variant="unordered" is="ul" mt={2}>
         <ListItem mb={2}>
           <Link
-            forwardedAs="a"
+            is="a"
             href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
           >
             Reroute
@@ -55,27 +51,24 @@ export default function Landing() {
           A React router package built for Suspense using hooks
         </ListItem>
         <ListItem mb={2}>
-          <Link
-            forwardedAs="a"
-            href="https://github.com/hamlim/inline-mdx.macro"
-          >
+          <Link is="a" href="https://github.com/hamlim/inline-mdx.macro">
             inline-mdx.macro
           </Link>{' '}
           A babel macro for converting inline{' '}
-          <Link forwardedAs="a" href="https://mdxjs.com">
+          <Link is="a" href="https://mdxjs.com">
             MDX
           </Link>{' '}
           in JavaScript files.
         </ListItem>
         <ListItem mb={2}>
-          <Link forwardedAs="a" href="https://github.com/hamlim/notedo">
+          <Link is="a" href="https://github.com/hamlim/notedo">
             Notedo
           </Link>{' '}
           A note and todo list web application using plain text
         </ListItem>
       </List>
 
-      <Heading variant="h3" forwardedAs="h3" my={3}>
+      <Heading variant="h3" is="h3" my={3}>
         Notebook
       </Heading>
       <Text mb={2}>
