@@ -46,28 +46,17 @@ function TwitterButton() {
   )
 }
 
-function useClientOnly() {
-  let [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  return mounted
-}
-
 function Mentions() {
-  let mounted = useClientOnly()
-  if (!mounted) {
-    return null
-  }
+  let [url, setUrl] = useState('')
+  useEffect(() => {
+    setUrl(window.location.href)
+  }, [])
   return (
     <comps.Link
       is="a"
       target="_blank"
       rel="noopener"
-      href={`https://twitter.com/search?q=${encodeURIComponent(
-        typeof window !== 'undefined' ? window?.location.href : '',
-      )}`}
+      href={`https://twitter.com/search?q=${encodeURIComponent(url)}`}
     >
       See discussion on Twitter
     </comps.Link>
@@ -124,6 +113,14 @@ function PostLayout({ children, post }) {
       <Heading variant="lead" is="h1">
         {post.title}
       </Heading>
+      {post.date ? (
+        <>
+          <Text is="span" color="gray.8" fontStyle="italic">
+            Published <Time>{post.date}</Time>
+          </Text>{' '}
+        </>
+      ) : null}
+      <Mentions />
       {children}
     </MDXProvider>
   )
@@ -241,6 +238,11 @@ export default function MyApp({ Component, pageProps, router }) {
       <Layout title={post?.title}>
         <PostLayout post={post}>
           <Component {...pageProps} />
+          <Box mb={6} />
+          <Box mb={6} />
+          <div>
+            <TwitterButton />
+          </div>
         </PostLayout>
       </Layout>
     )

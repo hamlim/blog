@@ -18,21 +18,25 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    date: 'December 13th, 2020',
     to: 'nextjs-analytics-with-airtable',
     title: 'NextJS Analytics with Airtable',
     absolute: '/posts/2020/december/nextjs-analytics-with-airtable',
   },
   {
+    date: 'December 2nd, 2020',
     to: 'pair-code-reviews',
     title: 'Pair Code Reviews',
     absolute: '/posts/2020/december/pair-code-reviews',
   },
   {
+    date: 'July 8th, 2020',
     to: 'enhancing-slack',
     title: 'Enhancing Slack',
     absolute: '/posts/2020/july/enhancing-slack',
   },
   {
+    date: 'May 31st, 2020',
     to: 'a-note-on-consistency',
     title: 'A Note On Consistency',
     absolute: '/posts/2020/may/a-note-on-consistency',

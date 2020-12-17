@@ -1,6 +1,3 @@
-<!-- prettier-ignore -->
-<Text is="span" color="gray.8" fontStyle="italic">Published{' '}<Time>December 2nd, 2020</Time></Text>{' '}<Mentions />
-
 Code Review is a vital part of every development team's workflow, not only is it
 valuable to ensure the code is validated, both for syntax and business logic
 errors but also for enforcing consistent maintainable patterns. Another often
@@ -75,7 +72,3 @@ will save those for a follow up post.
 <!-- prettier-ignore -->
 I'd love to hear more about how your team handles and manages code reviews,
 reach out on [Twitter](https://twitter.com/immatthamlin) or via <ExternalLink href="mailto:matthewjameshamlin@gmail.com?subject=Code Reviews">email</ExternalLink>!
-
-<Spacer />
-
-<TwitterButton />

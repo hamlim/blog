@@ -1,6 +1,3 @@
-<!-- prettier-ignore -->
-<Text is="span" color="gray.8" fontStyle="italic">Published{' '}<Time>December 13th, 2020</Time></Text>{' '}<Mentions />
-
 I was recently looking for a quick and easy solution to track page hits on my
 personal site for another small feature add to the site (blog post on that when
 I get around to it!), and figured that I could probably spin up something very
@@ -165,7 +162,3 @@ Airtable records created when a visitor lands on one of the routes for your
 NextJS site! Let me know what you thought about this blog post by
 [tweeting at me](https://twitter.com/immatthamlin) or <ExternalLink href="mailto:matthewjameshamlin@gmail.com?subject=NextJS Analytics with Airtable">emailing
 me</ExternalLink>!
-
-<Spacer />
-
-<TwitterButton />
