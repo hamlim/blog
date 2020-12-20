@@ -18,6 +18,12 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    date: 'December 19th, 2020',
+    to: 'literate-programming',
+    title: 'Literate (web) Programming',
+    absolute: '/posts/2020/december/literate-programming',
+  },
+  {
     date: 'December 13th, 2020',
     to: 'nextjs-analytics-with-airtable',
     title: 'NextJS Analytics with Airtable',
