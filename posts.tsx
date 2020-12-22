@@ -18,6 +18,12 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    date: 'December 21st, 2020',
+    to: 'sandbox-part-1',
+    title: 'Building a Web Sandbox: Part 1',
+    absolute: '/posts/2020/december/sandbox-part-1',
+  },
+  {
     date: 'December 19th, 2020',
     to: 'literate-programming',
     title: 'Literate (web) Programming',
