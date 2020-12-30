@@ -10,6 +10,7 @@ import notebook from /* preval */ '../notebook'
 import Head from 'next/head'
 import Router from 'next/router'
 import recordPageVisit from '../components/record-page'
+import Image from 'next/image'
 
 let { ThemeProvider, Reset, Box, Heading, Text, theme } = comps
 
@@ -19,6 +20,27 @@ let Img = styled('img')`
   max-width: 100%;
   height: auto;
 `
+
+function Ref({ id }) {
+  return (
+    <Text is="sup" fontSize={0}>
+      <comps.Link id={`ref-${id}`} is="a" href={`#fd-${id}`}>
+        [{id}]
+      </comps.Link>
+    </Text>
+  )
+}
+
+function Footnote({ id, children }) {
+  return (
+    <Box id={id}>
+      <comps.Link is="a" href={`#ref-${id}`}>
+        [{id}]
+      </comps.Link>{' '}
+      - {children}
+    </Box>
+  )
+}
 
 function Time(props) {
   return <Text is="time" {...props} />
@@ -102,9 +124,49 @@ let components = {
       </Box>
     </figure>
   ),
+  Image: (props) => (
+    <Box mt={4}>
+      <Image
+        sizes="
+        94vw
+        (min-width: 40em) 80vw
+        (min-width: 80em) 70ch
+      "
+        {...props}
+      />
+    </Box>
+  ),
+  Figure: ({ src, alt, caption, width, height, layout, ...props }) => (
+    <Box is="figure" mt={4}>
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        layout={layout}
+        sizes="
+          94vw
+          (min-width: 40em) 80vw
+          (min-width: 80em) 70ch
+        "
+        {...props}
+      />
+      <Box
+        is="figcaption"
+        color="$gray.7"
+        px={4}
+        mt={4}
+        borderLeft="solid 4px $gray.4"
+      >
+        {caption}
+      </Box>
+    </Box>
+  ),
   Time,
   TwitterButton,
   Mentions,
+  Footnote,
+  Ref,
 }
 
 function PostLayout({ children, post }) {
