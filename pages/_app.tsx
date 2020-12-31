@@ -87,6 +87,7 @@ function Mentions() {
 
 let components = {
   ...comps,
+  Link,
   ExternalLink: (props: any) => (
     <comps.Link {...props} is="a" target="_blank" rel="noopener" />
   ),

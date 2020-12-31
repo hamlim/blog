@@ -18,6 +18,12 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    date: 'December 31st, 2020',
+    to: '2021-resolutions',
+    title: '2021: Resolutions',
+    absolute: '/posts/2020/december/2021',
+  },
+  {
     date: 'December 30th, 2020',
     to: '2020-year-in-review',
     title: '2020: Year in Review',
