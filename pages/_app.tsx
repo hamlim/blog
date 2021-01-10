@@ -24,7 +24,7 @@ let Img = styled('img')`
 function Ref({ id }) {
   return (
     <Text is="sup" fontSize={0}>
-      <comps.Link id={`ref-${id}`} is="a" href={`#fd-${id}`}>
+      <comps.Link id={`ref-${id}`} is="a" href={`#fn-${id}`}>
         [{id}]
       </comps.Link>
     </Text>
@@ -33,7 +33,7 @@ function Ref({ id }) {
 
 function Footnote({ id, children }) {
   return (
-    <Box id={id}>
+    <Box id={`fn-${id}`} _target={{ boxShadow: '$focusShadow' }}>
       <comps.Link is="a" href={`#ref-${id}`}>
         [{id}]
       </comps.Link>{' '}

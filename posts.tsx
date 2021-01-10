@@ -18,6 +18,12 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    date: 'January 9th, 2021',
+    to: 'computed-theme',
+    title: 'Computed Design Tokens',
+    absolute: '/posts/2021/january/computed-theme',
+  },
+  {
     date: 'December 31st, 2020',
     to: '2021-resolutions',
     title: '2021: Resolutions',

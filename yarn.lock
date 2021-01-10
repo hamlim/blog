@@ -1023,12 +1023,10 @@
   resolved "https://registry.yarnpkg.com/@ds-pack/base-styled/-/base-styled-1.0.0.tgz#42ae856087a2fecb5f45991e973b087594fc1a05"
   integrity sha512-qP5nGi2UpnJbZ+UiobEr2MeWumaaj4DAA8MIaAVagsew8+gQcpuoVzMn9jQukPa69ADuevdKxvgU6HTwRO7xHg==
 
-"@ds-pack/components@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.4.tgz#1c043b2167e4b15216099c327fb04c8ed81a43d2"
-  integrity sha512-uhT3kbRHnoFfg39LMvgJMVZ1ItV55Kt5uZgTJy6UftGKnIa+VKR+Dz4UgU07iynCbdaeuouMpGF8XCg2yNVqYA==
-  dependencies:
-    "@ds-pack/use-refs" "^1.0.0"
+"@ds-pack/components@0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.9.tgz#c457ec429d2ed951300ff0d570741682e12d8d7e"
+  integrity sha512-5K0sd/GY5F57HiNk/ZGgCclhOSL8w35krG08xOZzzLTKhY/MDyZtcULhFCuStitROjL+8OlyfEglm6duQPowKQ==
 
 "@ds-pack/use-refs@^1.0.0":
   version "1.0.0"

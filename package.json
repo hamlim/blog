@@ -12,7 +12,8 @@
   "dependencies": {
     "@babel/runtime": "^7.9.6",
     "@ds-pack/base-styled": "^1.0.0",
-    "@ds-pack/components": "0.0.4",
+    "@ds-pack/components": "0.0.9",
+    "@ds-pack/use-refs": "^1.0.0",
     "@mdx-js/loader": "^1.6.1",
     "@mdx-js/react": "^1.6.1",
     "@next/mdx": "^9.3.6",
@@ -43,6 +44,6 @@
     "typescript": "^4.1.3"
   },
   "resolutions": {
-    "styled-components": "5.1.0"
+    "styled-components": "5.2.1"
   }
 }
