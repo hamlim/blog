@@ -58,7 +58,84 @@ like:
 Color and background-color are both fairly basic style props that you could
 support, but you could support any prop at all through the config.
 
-## TODO
+### Responsive Styles
+
+In addition to basic props, you can also support styles that change at different
+breakpoints too! To do this you need to pass in a `breakpoints` array to the
+`createSimpleProps` function:
+
+```tsx highlight=10
+import createSimpleProps from 'simple-props'
+
+let simpleProps = createSimpleProps({
+  props: {
+    color: true,
+    bg: {
+      scale: 'color',
+      property: 'backgroundColor',
+    },
+  },
+  breakpoints: [200, 400, 600, 800],
+})
+```
+
+This config will now allow the style props to accept an object mapping a
+breakpoint to a particular style value:
+
+```tsx
+let style = simpleProps({
+  color: {
+    _: 'primary',
+    200: 'secondary',
+  },
+})
+```
+
+The `_` key is a special reserved key that indicates the value at all
+breakpoints, from there the rest of the key-value pairs represent a breakpoint
+and the value at that breakpoint!
+
+### Pseudo Selectors
+
+One additional feature that I stole from
+[system-props](https://github.com/roginfarrer/system-props) (and that library
+stole from Chakra) is the concept of "pseudo-props", or applying some styles
+based on a pseudo state. This can be configured by providing the `pseudoProps`
+config to `createSimpleProps`:
+
+```tsx highlight=10-13
+import createSimpleProps from 'simple-props'
+
+let simpleProps = createSimpleProps({
+  props: {
+    color: true,
+    bg: {
+      scale: 'color',
+      property: 'backgroundColor',
+    },
+  },
+  pseudoProps: {
+    _hover: '&:hover',
+    _focus: '&:focus',
+  },
+})
+```
+
+You can now use those pseudo props within the `simpleProps` function:
+
+```tsx
+let style = simpleProps({
+  _focus: {
+    color: 'primary',
+  },
+})
+```
+
+### Putting it All Together
+
+For an example of a fully configured usage of the `simple-props` library, feel
+free to look at this [CodeSandbox](https://codesandbox.io/s/simple-props-lf7po)
+or this code snippet:
 
 ```tsx
 import createSimpleProps from 'simple-props'
@@ -97,4 +174,12 @@ function Component() {
 }
 ```
 
-The above snippet is a fairly basic implementation
+<Spacer />
+
+---
+
+<Spacer />
+
+If you're using this new library and have feedback feel free to
+[open an issue](https://github.com/ds-pack/simple-props) or
+[tweet at me](https://twitter.com/immatthamlin)!
