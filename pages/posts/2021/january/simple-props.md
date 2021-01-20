@@ -1,3 +1,5 @@
+**Edit: Updated on January 19th, 2021**
+
 A few recent experiments that I've been thinking on have all been around
 exploring CSS variables or custom properties, from those explorations I just
 published a new package called
@@ -34,7 +36,7 @@ function Box(props) {
 }
 
 render(
-  <Box color="primary" bg="background">
+  <Box color="$primary" bg="$background">
     Hello World!
   </Box>,
 )
@@ -75,7 +77,6 @@ let simpleProps = createSimpleProps({
       property: 'backgroundColor',
     },
   },
-  breakpoints: [200, 400, 600, 800],
 })
 ```
 
@@ -85,8 +86,8 @@ breakpoint to a particular style value:
 ```tsx
 let style = simpleProps({
   color: {
-    _: 'primary',
-    200: 'secondary',
+    _: '$primary',
+    200: '$secondary',
   },
 })
 ```
@@ -126,7 +127,7 @@ You can now use those pseudo props within the `simpleProps` function:
 ```tsx
 let style = simpleProps({
   _focus: {
-    color: 'primary',
+    color: '$primary',
   },
 })
 ```
@@ -155,8 +156,6 @@ let simpleProps = createSimpleProps({
       property: 'backgroundColor',
     },
   },
-  // An array of supported breakpoint values
-  breakpoints: [400, 800, 1600],
   // A mapping of pseudo-prop name to pseudo-selector
   pseudoProps: {
     _hover: '&:hover',
@@ -166,7 +165,8 @@ let simpleProps = createSimpleProps({
 
 // what we get back is a function that we can call with some props:
 let styles = simpleProps({
-  color: 'primary',
+  color: '$primary',
+  bg: 'tomato',
 })
 
 function Component() {
