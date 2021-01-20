@@ -168,6 +168,13 @@ let components = {
   Mentions,
   Footnote,
   Ref,
+  Tweet(props) {
+    return (
+      <Box my={6}>
+        <blockquote className="twitter-tweet tw-align-center " {...props} />
+      </Box>
+    )
+  },
 }
 
 function PostLayout({ children, post }) {

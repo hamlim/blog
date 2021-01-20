@@ -18,6 +18,12 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    date: 'January 19th, 2021',
+    to: 'hack-sprint',
+    title: 'Hack Sprint',
+    absolute: '/posts/2021/january/hack-sprint',
+  },
+  {
     date: 'January 18th, 2021',
     to: 'simple-props',
     title: 'Simple Props',
