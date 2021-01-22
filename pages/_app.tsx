@@ -308,7 +308,6 @@ export default function MyApp({ Component, pageProps, router }) {
       return undefined
     }
     let post = posts.find((post) => post.absolute === pathname) || {}
-    console.log(Component.frontMatter)
     return { ...post, ...(Component.frontMatter || {}) }
   }, [pathname])
 
