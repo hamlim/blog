@@ -35,12 +35,12 @@ all.
 
 Yet, as we have learned from the past developments in the web, things were a
 changing. Companies like Fieldbook, Airtable, and services like
-<a href="https://www.producthunt.com/tech/formsubmit">formsubmit</a> began to
-rise and a new trend began to take place. Some web developers shifted away from
-working on server-side coding and began to couple the logic on the client-side
-scripts. With these new technologies and entire server-side app could be written
-with a few API calls, and a relatively small sized JS file to run in the
-browser. A complete web app will only consist of a few static files for views
+[formsubmit](https://www.producthunt.com/tech/formsubmit) began to rise and a
+new trend began to take place. Some web developers shifted away from working on
+server-side coding and began to couple the logic on the client-side scripts.
+With these new technologies and entire server-side app could be written with a
+few API calls, and a relatively small sized JS file to run in the browser. A
+complete web app will only consist of a few static files for views
 (html/MST/whatever template you choose) and controllers (JS) and the model will
 be stored on 3rd party services. One could even serve a complete functioning
 application through a CDN, and in fact many full applications can be served from
@@ -85,8 +85,6 @@ as client-side applications.
 ### Footnotes:
 
 [^1]:
-
-Mr. Doob was one of my most well remembered sites, with cool little
-experiments  
- written for Chrome. More information about these can be found <a  
-    href="http://mrdoob.com/">here</a>.
+    Mr. Doob was one of my most well remembered sites, with cool little
+    experiments written for Chrome. More information about these can be found
+    <a href="http://mrdoob.com/">here</a>.

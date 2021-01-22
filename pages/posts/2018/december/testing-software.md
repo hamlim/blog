@@ -38,12 +38,12 @@ deployed to production.
 A lot of our other learnings have been so simply summarized by this tweet by
 Guillermo Rauch:
 
-<blockquote className="twitter-tweet tw-align-center" data-lang="en">
+<Tweet>
   <p lang="en" dir="ltr">
     Write tests. Not too many. Mostly integration.
   </p>
   &mdash; Guillermo Rauch (@rauchg) <a href="https://twitter.com/rauchg/status/807626710350839808?ref_src=twsrc%5Etfw">December 10, 2016</a>
-</blockquote>
+</Tweet>
 
 This short tweet is packed with so much wisdom, the core takeaways we have had
 as a team have been:

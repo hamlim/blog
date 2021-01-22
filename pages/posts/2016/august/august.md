@@ -9,8 +9,8 @@ Where to start? There has been 4 months since my last post on my blog here. A
 lot has changed since that last post. First off I am now located in Boston
 Massachusetts. (Hopefully I spelled that correctly, I've had really bad luck
 with spelling it right on the first time). I am working at a company called
-<a href="http://wayfair.com">Wayfair</a> (and probably should say that I don't
-speak for the company at all).
+[Wayfair](http://wayfair.com) (and probably should say that I don't speak for
+the company at all).
 
 I have been working as a web developer crushing CSS and HTML bugs, as well as
 shipping several large new features for Wayfair and it's affiliated brands.
@@ -26,14 +26,14 @@ been as active as I would have liked with my personal projects, so now I have
 been focusing on side projects in the evenings and on the weekends.
 
 I have also been working on revising my diet, I bought
-<a href="https://www.soylent.com/product/coffiest/" class="link link--out">Coffiest</a>
-a week or two ago and have been addicted to it since the second one 😄. After I
-began to like that I decided to pull the trigger and bought some
-<a href="https://www.spacenutrientsstation.com" >"Space Food"</a>. This stuff is
-really odd at first but once you get used to it its actually quite interesting.
-I have begun to replace my lunches at work with simply a cup of powder and some
-water. Unfortunately I still have a ton of real food in my fridge that I need to
-go through first before completely switching over.
+[Coffiest](https://www.soylent.com/product/coffiest/) a week or two ago and have
+been addicted to it since the second one 😄. After I began to like that I
+decided to pull the trigger and bought some
+["Space Food"](https://www.spacenutrientsstation.com). This stuff is really odd
+at first but once you get used to it its actually quite interesting. I have
+begun to replace my lunches at work with simply a cup of powder and some water.
+Unfortunately I still have a ton of real food in my fridge that I need to go
+through first before completely switching over.
 
 The only things I really only need to change are my productivity habits/systems
 and also starting to get some bodyweight fitness activities into my daily

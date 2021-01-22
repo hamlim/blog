@@ -26,12 +26,12 @@ Wayback machine doesn’t seem to load (either that or it didn’t collect the c
 In fact I can only find one version of the site that has working css at all and
 unfortunately this version also rendered part of the site via JS so that doesn’t
 show up either[^1]. The version that I can find is
-<a href="http://web.archive.org/web/20160111084107/http://matthamlin.me/">here</a>.
-I had just found out about <a href="//getskeleton.com" >skeleton-css</a> and
-wanted to put it to use in my own website. I loved this version of my site, it
-was clean and also a bit colorful.
+[here](http://web.archive.org/web/20160111084107/http://matthamlin.me/). I had
+just found out about <a href="//getskeleton.com">skeleton-css</a> and wanted to
+put it to use in my own website. I loved this version of my site, it was clean
+and also a bit colorful.
 
-The current version of the site, shown below in case it changes in the future,
+<!-- The current version of the site, shown below in case it changes in the future,
 is broken down into basically 4 page types as it is now. The first is the
 <a href="#image1" class="link">home page</a> the second is
 <a href="#image2" class="link">my resume</a>, the third is my
@@ -61,7 +61,7 @@ a <a href="#image4" class="link">blog post</a>.
   <figcaption class="horizontal--center">
       Blog post Page
   </figcaption>
-</figure>
+</figure> -->
 
 ### The Design:
 

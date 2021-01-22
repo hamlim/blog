@@ -39,7 +39,7 @@ body of the post. This is because I want users to quickly read a bit about the
 article by reading the block quotes, and then if they want to read the article
 the block quotes offer extra value when reading.
 
-##### Footnotes:
+### Footnotes:
 
 [^1]:
     In newspaper’s people would flip through the pages and pull quotes were

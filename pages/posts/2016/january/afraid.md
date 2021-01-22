@@ -37,7 +37,7 @@ These thoughts keep me up far later at night than my friends at college.
 
 I brought this up on twitter a week or two ago as well, where I tweeted:
 
-<blockquote class="twitter-tweet tw-align-center" lang="en">
+<Tweet>
   <p lang="en" dir="ltr">
     It&#39;s so odd to think about events happening post-graduation for me this
     year.&mdash; Matt Hamlin (@immatthamlin){' '}
@@ -45,7 +45,7 @@ I brought this up on twitter a week or two ago as well, where I tweeted:
       January 18, 2016
     </a>
   </p>
-</blockquote>
+</Tweet>
 
 And its true, even just thinking about movie releases in December of this year
 is odd. Its almost as if it will end up being two completely separate periods

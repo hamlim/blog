@@ -10,7 +10,7 @@ So I might be a bit late to the party to write about Twitter considering a new
 10,000 character limit for tweets but I had a pretty interesting idea the other
 day which I expressed in this tweet:
 
-<blockquote className="twitter-tweet tw-align-center" data-lang="en">
+<Tweet>
   <p lang="en" dir="ltr">
     What if <a href="https://twitter.com/twitter">@twitter</a> is building
     "Instant Articles" that anyone can write?{' '}
@@ -20,10 +20,10 @@ day which I expressed in this tweet:
       January 6, 2016
     </a>
   </p>
-</blockquote>
+</Tweet>
 
 Facebook developed a service known as Instant Articles (written about
-<a  href="http://www.theverge.com/2015/5/13/8595263/facebooks-instant-articles-arrive-to-speed-up-the-news-feed">here</a>)
+[here](http://www.theverge.com/2015/5/13/8595263/facebooks-instant-articles-arrive-to-speed-up-the-news-feed))
 where publishers can partner with Facebook to upload their content to Facebook's
 servers in a lightweight format. Then this content can be loaded quickly within
 Facebook's applications. As I expressed in the tweet above, a great way for
@@ -42,7 +42,7 @@ everyone is used to, and if someone decides to post to these longer tweets, a
 simple button will be all that users will see so that these tweets don't
 overflow the feed like Owen Williams recently tweeted as a joke.
 
-<blockquote className="twitter-tweet tw-align-center" data-lang="en">
+<Tweet>
   <p lang="en" dir="ltr">
     H <br />E<br />Y<br />
     <br />J<br />U<br />S<br />T<br />
@@ -63,7 +63,7 @@ overflow the feed like Owen Williams recently tweeted as a joke.
       January 6, 2016
     </a>
   </p>
-</blockquote>
+</Tweet>
 
 A side note that probably needs to be made is that the current trend is to bash
 Twitter for becoming more like Facebook with now potentially longer tweets and

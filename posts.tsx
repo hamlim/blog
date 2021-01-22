@@ -14,6 +14,11 @@ export let topPosts = [
     title: 'Maintenance Costs',
     absolute: '/posts/2019/may/maintenance-costs',
   },
+  {
+    to: 'testing-software',
+    title: 'Testing Software',
+    absolute: '/posts/2018/december/testing-software',
+  },
 ]
 
 export let allPosts = [
@@ -221,7 +226,7 @@ export let allPosts = [
   {
     to: 'afraid',
     title: 'Afraid',
-    absolute: '/posts/2016/january/afriad',
+    absolute: '/posts/2016/january/afraid',
   },
   {
     to: '10,000-characters',

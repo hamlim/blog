@@ -15,10 +15,8 @@ beginning of the next year I figured I would go for another rewrite this time
 with the long term goal of doing the following:
 
 - Get the bootstrapping work out of the way and focus on the writing
-
 - Use this as an opportunity to test out personal projects like `native-bundler`
   and `reroute`
-
 - Be easy to setup and get running with simple additions as I go forward (i.e.
   scale out from an initial product)
 

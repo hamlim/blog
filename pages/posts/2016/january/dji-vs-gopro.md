@@ -20,16 +20,16 @@ DJI stepped into the camera market with their odd little DJI Osmo, a stabilizing
 video camera in a small compact form. The Osmo is built on the technology that
 DJI has developed for the camera systems on their drones. Meanwhile GoPro has
 countless rumors of them developing a
-<a class="link link--out link--article" href="http://techcrunch.com/2015/12/27/how-gopro-is-building-its-future-drone-platform-foundations/">drone
-platform</a> for them to build a great drone experience for customers.
+[drone platform](http://techcrunch.com/2015/12/27/how-gopro-is-building-its-future-drone-platform-foundations/)
+for them to build a great drone experience for customers.
 
 These companies do currently work together in some regards, with GoPro mounts
 for DJI drones but, as every technology company knows, its better to build your
 own version than it is to outsource to another company. We have seen this play
 out
-<a class="link link--out link--article" href="http://www.wired.com/2015/07/like-google-facebook-twitter-designs-computer-servers/">multiple</a>
-<a class="link link--out link--article" href="http://www.wired.com/2012/03/google-miner-helmet/">times</a>
-<a class="link link--out link--article" href="http://spectrum.ieee.org/cars-that-think/transportation/self-driving/uber-could-be-first-to-test-completely-driverless-cars-in-public">with</a>
+[multiple](http://www.wired.com/2015/07/like-google-facebook-twitter-designs-computer-servers/)
+[times](http://www.wired.com/2012/03/google-miner-helmet/)
+[with](http://spectrum.ieee.org/cars-that-think/transportation/self-driving/uber-could-be-first-to-test-completely-driverless-cars-in-public)
 other large tech companies.
 
 I really hope that we get to see these companies compete over their own

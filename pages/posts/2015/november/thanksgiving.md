@@ -1,5 +1,5 @@
 ---
-title: 'Thanksgiving',
+title: 'Thanksgiving'
 date: 'November 24th, 2015'
 tags:
   - 'thanks'

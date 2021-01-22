@@ -47,13 +47,13 @@ entire slide deck is
 <a href="https://speakerdeck.com/vjeux/react-css-in-js" data-css-link-article>available
 here</a> to read through.
 
-<div className="has-image">
+<!-- <div className="has-image">
   <img
     data-css-image
     src="../../../../../static/images/posts/TheGreatDebate/The_Slide.jpg"
     alt="The slide that started the great debate."
   />
-</div>
+</div> -->
 
 In the slide Christopher describes 7 issues with the way that CSS is currently
 spec'd out.
@@ -177,12 +177,10 @@ this great new technology and converts it into old technology. Sure this is
 great for the end users but it also feels like a way to relieve the pressure put
 on browser vendors to add these new standards to their parsing engines.
 
-So thats my take on the great CSS debate, feel free to reach out to me by
-<a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmatthamlin.me%2FPosts%2F2016%2FSeptember%2FSeptemberUpdate&via=immatthamlin&text=%20%20-&" className="link link--article">tweeting
-to me</a>,
-<a href="mailto:matthewjameshamlin@gmail.com" className="link link--article">emailing
-me</a> or
-<a data-footnote="+1 425 210 0980" href="sms:+14252100980" className="link link--article">texting
+<!-- prettier-ignore -->
+So thats my take on the great CSS debate, feel free to reach out to me by <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmatthamlin.me%2FPosts%2F2016%2FSeptember%2FSeptemberUpdate&via=immatthamlin&text=%20%20-&" className="link link--article">tweeting
+to me</a>, <a href="mailto:matthewjameshamlin@gmail.com" className="link link--article">emailing
+me</a> or <a data-footnote="+1 425 210 0980" href="sms:+14252100980" className="link link--article">texting
 me</a> with your thoughts on whether CSS is good. I would also love to learn how
 you use CSS either at work or on your own projects!
 
