@@ -1,6 +1,10 @@
-
-
-
+---
+title: 'Testing Software'
+date: 'December ??, 2018'
+tags:
+  - 'development'
+  - 'testing'
+---
 
 > Writing unit tests for code is surprisingly a hot button topic within software
 > development. Many developers have very strong opinions in how tests should be
