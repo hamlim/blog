@@ -50,7 +50,7 @@ module.exports = () => (tree, file) => {
   // because it has already been processed by mdx and nodes
   // have been created for it assuming it was a markdown content
   //
-  // remove the thematicBreak "<hr />" to first heading
+  // remove the thematicBreak "<hr />" to next immediate thematicBreak
   // --- => thematicBreak
   // title: this
   // date: 2020-12-12 => becomes heading
