@@ -1,8 +1,14 @@
+---
+title: '10,000 Characters'
+date: 'January 6th, 2016'
+tags:
+  - 'twitter'
+  - 'blogging'
+---
 
-
-
-
-So I might be a bit late to the party to write about Twitter considering a new 10,000 character limit for tweets but I had a pretty interesting idea the other day which I expressed in this tweet:
+So I might be a bit late to the party to write about Twitter considering a new
+10,000 character limit for tweets but I had a pretty interesting idea the other
+day which I expressed in this tweet:
 
 <blockquote className="twitter-tweet tw-align-center" data-lang="en">
   <p lang="en" dir="ltr">
@@ -16,13 +22,25 @@ So I might be a bit late to the party to write about Twitter considering a new 1
   </p>
 </blockquote>
 
-Facebook developed a service known as Instant Articles (written about <a  href="http://www.theverge.com/2015/5/13/8595263/facebooks-instant-articles-arrive-to-speed-up-the-news-feed">here</a>) where publishers can partner with Facebook to upload their content to Facebook's servers in a lightweight format. Then this content can be loaded quickly within Facebook's applications. As I expressed in the tweet above, a great way for Twitter to implement longer tweets would be in the form of simple "Instant Article"-like pages.
+Facebook developed a service known as Instant Articles (written about
+<a  href="http://www.theverge.com/2015/5/13/8595263/facebooks-instant-articles-arrive-to-speed-up-the-news-feed">here</a>)
+where publishers can partner with Facebook to upload their content to Facebook's
+servers in a lightweight format. Then this content can be loaded quickly within
+Facebook's applications. As I expressed in the tweet above, a great way for
+Twitter to implement longer tweets would be in the form of simple "Instant
+Article"-like pages.
 
-Lets say that I am reading my feed on Twitter, and I find a tweet that starts off as:
+Lets say that I am reading my feed on Twitter, and I find a tweet that starts
+off as:
 
 > _Some random blog post about Twitter and Facebook... [Read More]_
 
-So when I click on the Read More link, the full post slides over my feed from a side of the screen. I can then read the full post and then click back to the feed. This way these longer tweets will be hidden from the streamlined feed that everyone is used to, and if someone decides to post to these longer tweets, a simple button will be all that users will see so that these tweets don't overflow the feed like Owen Williams recently tweeted as a joke.
+So when I click on the Read More link, the full post slides over my feed from a
+side of the screen. I can then read the full post and then click back to the
+feed. This way these longer tweets will be hidden from the streamlined feed that
+everyone is used to, and if someone decides to post to these longer tweets, a
+simple button will be all that users will see so that these tweets don't
+overflow the feed like Owen Williams recently tweeted as a joke.
 
 <blockquote className="twitter-tweet tw-align-center" data-lang="en">
   <p lang="en" dir="ltr">
@@ -47,4 +65,12 @@ So when I click on the Read More link, the full post slides over my feed from a 
   </p>
 </blockquote>
 
-A side note that probably needs to be made is that the current trend is to bash Twitter for becoming more like Facebook with now potentially longer tweets and the recent change from Favorites to Likes, however this kind of implementation feels like a natural way to handle longer posts. Since the inception of the social network, many of the features of Twitter have been "developed" by the community (hashtags and at mentions are the most significant, to recent developments like tweetstorms and screenshorts) so it would only make sense for some simple application to implement some sort of longer tweet in a popular style for Twitter to pick it up and implement that format into the service.
+A side note that probably needs to be made is that the current trend is to bash
+Twitter for becoming more like Facebook with now potentially longer tweets and
+the recent change from Favorites to Likes, however this kind of implementation
+feels like a natural way to handle longer posts. Since the inception of the
+social network, many of the features of Twitter have been "developed" by the
+community (hashtags and at mentions are the most significant, to recent
+developments like tweetstorms and screenshorts) so it would only make sense for
+some simple application to implement some sort of longer tweet in a popular
+style for Twitter to pick it up and implement that format into the service.

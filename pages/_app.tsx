@@ -12,7 +12,7 @@ import Router from 'next/router'
 import recordPageVisit from '../components/record-page'
 import Image from 'next/image'
 
-let { ThemeProvider, Reset, Box, Heading, Text, theme } = comps
+let { ThemeProvider, Reset, Box, Heading, Text, theme, Stack } = comps
 
 let { useMemo, useEffect, useState } = React
 
@@ -192,6 +192,23 @@ function PostLayout({ children, post }) {
       ) : null}
       <Mentions />
       {children}
+      {post.tags ? (
+        <Box mt={3}>
+          <Heading variant="subhead" is="h4">
+            Tags:
+          </Heading>
+          <Stack inline gap={4}>
+            {post.tags.map((tag: string, index: number) => (
+              <Box key={tag}>
+                <Box color="primary" is="span">
+                  {tag}
+                </Box>
+                {index < post.tags.length - 1 ? ', ' : null}
+              </Box>
+            ))}
+          </Stack>
+        </Box>
+      ) : null}
     </MDXProvider>
   )
 }
@@ -290,8 +307,9 @@ export default function MyApp({ Component, pageProps, router }) {
     if (!isBlogPost) {
       return undefined
     }
-    let post = posts.find((post) => post.absolute === pathname)
-    return post
+    let post = posts.find((post) => post.absolute === pathname) || {}
+    console.log(Component.frontMatter)
+    return { ...post, ...(Component.frontMatter || {}) }
   }, [pathname])
 
   let notebookEntry = useMemo(() => {
@@ -300,7 +318,7 @@ export default function MyApp({ Component, pageProps, router }) {
       return undefined
     }
     let entry = notebook.find((entry) => entry.link === pathname)
-    return entry
+    return { ...entry, ...(Component.frontMatter || {}) }
   }, [pathname])
 
   if (post) {

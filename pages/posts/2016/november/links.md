@@ -1,21 +1,32 @@
+---
+title: 'Links'
+date: 'November 19th, 2016'
+tags:
+  - 'roundup'
+  - 'collection'
+---
 
+The web is one of the best things in the world. It has never been replicated and
+something may never reach the same kind of exposure that it has. The only
+problem with the web is that there is too much content to follow along with. I
+sometimes discover a really cool website, only to forget about it sometime
+later.
 
+If you think about it the web is ephemeral, not just in the sense that a website
+can be there one month and gone the next but that you can discover a website one
+day and then the next day completely forget about it.
 
-
-The web is one of the best things in the world. It has never been replicated and something may never reach the same kind of
-exposure that it has. The only problem with the web is that there is too much content to follow along with. I sometimes discover
-a really cool website, only to forget about it sometime later.
-
-If you think about it the web is ephemeral, not just in the sense that a website can be there one month and gone the next but that you
-can discover a website one day and then the next day completely forget about it.
-
-I decided I wanted to keep a directory of (some useful) links that I have stumbled upon. I will be adding more links to this list for as long
-as I remember to and also I plan on sorting this in the future so it is easy to navigate through.
+I decided I wanted to keep a directory of (some useful) links that I have
+stumbled upon. I will be adding more links to this list for as long as I
+remember to and also I plan on sorting this in the future so it is easy to
+navigate through.
 
 - [Spectral](http://jxnblk.com/Spectral/) - Color
 - [Monochrome](https://monochrome.jxnblk.com/) - Color
-- [Simple Icons](https://simpleicons.org/) - A collection of SVG Icons for random brands
-- [Papercraft](http://jxnblk.com/papercraft/) - A collection of cool SVG based letters
+- [Simple Icons](https://simpleicons.org/) - A collection of SVG Icons for
+  random brands
+- [Papercraft](http://jxnblk.com/papercraft/) - A collection of cool SVG based
+  letters
 - [UI Gradients](http://uigradients.com/#GreenBeach) - Sweet looking gradients
 - [CSS Reference](http://ref.openweb.io/CSS/) - A pretty cool CSS Reference page
 - [Over API](http://overapi.com/) - API's for a lot of common languages
@@ -23,7 +34,8 @@ as I remember to and also I plan on sorting this in the future so it is easy to 
 - [Awesome React Resources](https://github.com/enaqx/awesome-react)
 - [Awesome Hyper Resources](https://github.com/bnb/awesome-hyper)
 - [React using Shadow Dom](https://github.com/Wildhoney/ReactShadow)
-- [Intro to React](http://academy.plot.ly/react/1-introduction/) - Great resource for learning about React
+- [Intro to React](http://academy.plot.ly/react/1-introduction/) - Great
+  resource for learning about React
 - [Fitness Resources](http://liamrosen.com/fitness.html)
 - [React Components](http://devarchy.com/react-components)
 - [React Cheatsheet](http://ricostacruz.com/cheatsheets/react.html)
@@ -39,6 +51,9 @@ as I remember to and also I plan on sorting this in the future so it is easy to 
 - [Quartz](http://qz.com/) - One of my favorite news sites
 - [A blog about minimal design](http://www.minimallyminimal.com/)
 - [Great website about CSS animation](http://adamschwartz.co/magic-of-css/)
-- [CSS Reference](http://cssreference.io/) - A great little reference to some common CSS rules and declarations.
-- [React Patterns](http://reactpatterns.com) - Patterns to follow within React applications.
-- [Color Me](https://colorme.io/) - A cool interactive color tool showing you the css color function
+- [CSS Reference](http://cssreference.io/) - A great little reference to some
+  common CSS rules and declarations.
+- [React Patterns](http://reactpatterns.com) - Patterns to follow within React
+  applications.
+- [Color Me](https://colorme.io/) - A cool interactive color tool showing you
+  the css color function
