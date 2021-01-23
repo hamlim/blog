@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight'
-import { useTheme } from '@ds-pack/components'
 
 export default function Code({ children, className, ...props }) {
   let highlight = null
@@ -25,7 +24,6 @@ export default function Code({ children, className, ...props }) {
       .reduce((lines, line) => [...lines, ...line], [])
   }
   let lang = className.split('-')[1] || 'jsx'
-  let theme = useTheme()
   return (
     <Highlight
       {...defaultProps}
@@ -38,7 +36,7 @@ export default function Code({ children, className, ...props }) {
           className={className}
           style={{
             ...style,
-            marginTop: theme.space[3],
+            marginTop: `var(--space-3)`,
             overflow: 'auto',
           }}
         >
@@ -48,14 +46,14 @@ export default function Code({ children, className, ...props }) {
                 line,
                 key: i,
                 style: {
-                  paddingLeft: theme.space[3],
-                  paddingRight: theme.space[3],
-                  paddingTop: i === 0 ? theme.space[3] : null,
+                  paddingLeft: `var(--space-3)`,
+                  paddingRight: `var(--space-3)`,
+                  paddingTop: i === 0 ? `var(--space-3)` : null,
                   paddingBottom:
-                    i === tokens.length - 1 ? theme.space[3] : null,
+                    i === tokens.length - 1 ? `var(--space-3)` : null,
                   ...(highlight
                     ? highlight.includes(i)
-                      ? { backgroundColor: theme.colors.gray[1] }
+                      ? { backgroundColor: `var(--colors-gray-1)` }
                       : { opacity: 0.3 }
                     : {}),
                 },

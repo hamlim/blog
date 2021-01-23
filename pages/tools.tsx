@@ -18,16 +18,16 @@ export default function Tools() {
         I'd try to catalog those tools here, and I'm also going to try and keep
         this up to date every so often and see how it changes over time.
       </Text>
-      <Box my={5}>
+      <Box my="$5">
         <Heading is="h3" variant="h2">
           November, 2020
         </Heading>
-        <Stack gap={2}>
+        <Stack gap="$2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb={2}>
+            <Text mb="$2">
               <Text is="strong" fontWeight="bold">
                 Phone
               </Text>{' '}
@@ -47,7 +47,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb={2}>
+            <Text mb="$2">
               <Text is="strong" fontWeight="bold">
                 Laptop
               </Text>{' '}
@@ -68,7 +68,7 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb={2}>
+            <Text mb="$2">
               <Text is="strong" fontWeight="bold">
                 Notes / Todos
               </Text>{' '}
@@ -93,7 +93,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb={2}>
+            <Text mb="$2">
               <Text is="strong" fontWeight="bold">
                 Code
               </Text>{' '}

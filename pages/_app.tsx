@@ -94,18 +94,18 @@ let components = {
   a: (props: any) => (
     <comps.Link {...props} is="a" target="_blank" rel="noopener" />
   ),
-  p: (props: any) => <comps.Text fontSize={2} mt={6} {...props} />,
-  h2: (props: any) => <Heading variant="h2" is="h2" mt={6} {...props} />,
-  h3: (props: any) => <Heading variant="h3" is="h3" mt={6} {...props} />,
-  h4: (props: any) => <Heading variant="subhead" is="h4" mt={6} {...props} />,
+  p: (props: any) => <comps.Text fontSize="$2" mt="$6" {...props} />,
+  h2: (props: any) => <Heading variant="h2" is="h2" mt="$6" {...props} />,
+  h3: (props: any) => <Heading variant="h3" is="h3" mt="$6" {...props} />,
+  h4: (props: any) => <Heading variant="subhead" is="h4" mt="$6" {...props} />,
   ul: (props: any) => (
-    <Box mt={6}>
+    <Box mt="$6">
       <comps.List variant="unordered" is="ul" {...props} />
     </Box>
   ),
   li: (props: any) => <comps.ListItem fontSize={2} mt={2} {...props} />,
   ol: (props: any) => (
-    <Box mt={6}>
+    <Box mt="$6">
       <comps.List variant="ordered" is="ol" {...props} />
     </Box>
   ),
@@ -115,54 +115,61 @@ let components = {
   inlineCode: comps.InlineCode,
   code: Code,
   img: Img,
-  Spacer: (props: any) => <Box mb={6} {...props} />,
+  Spacer: (props: any) => <Box mb="$6" {...props} />,
   blockquote: comps.Blockquote,
-  Fig: ({ src, alt, caption }) => (
-    <figure>
-      <Img src={src} alt={alt} />
-      <Box is="figcaption" color="gray.7" mx={4}>
-        {caption}
-      </Box>
-    </figure>
-  ),
-  Image: (props) => (
-    <Box mt={4}>
-      <Image
-        sizes="
+  // Fig: ({ src, alt, caption }) => (
+  //   <figure>
+  //     <Img src={src} alt={alt} />
+  //     <Box is="figcaption" color="gray.7" mx={4}>
+  //       {caption}
+  //     </Box>
+  //   </figure>
+  // ),
+  Fig: comps.Figure,
+  Image(props) {
+    return (
+      <Box mt="$6">
+        <Image
+          sizes="
         94vw
         (min-width: 40em) 80vw
         (min-width: 80em) 70ch
       "
-        {...props}
-      />
-    </Box>
-  ),
-  Figure: ({ src, alt, caption, width, height, layout, ...props }) => (
-    <Box is="figure" mt={4}>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        layout={layout}
-        sizes="
+          {...props}
+        />
+      </Box>
+    )
+  },
+  Figure({ src, alt, caption, width, height, layout, ...props }) {
+    return (
+      <Box is="figure" mt={4}>
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          layout={layout}
+          sizes="
           94vw
           (min-width: 40em) 80vw
           (min-width: 80em) 70ch
         "
-        {...props}
-      />
-      <Box
-        is="figcaption"
-        color="$gray.7"
-        px={4}
-        mt={4}
-        borderLeft="solid 4px $gray.4"
-      >
-        {caption}
+          {...props}
+        />
+        <Box
+          is="figcaption"
+          color="$gray-7"
+          px="$4"
+          mt="$4"
+          borderLeftStyle="solid"
+          borderLeftWidth={4}
+          borderLeftColor="$gray-4"
+        >
+          {caption}
+        </Box>
       </Box>
-    </Box>
-  ),
+    )
+  },
   Time,
   TwitterButton,
   Mentions,
@@ -185,7 +192,7 @@ function PostLayout({ children, post }) {
       </Heading>
       {post.date ? (
         <>
-          <Text is="span" color="gray.8" fontStyle="italic">
+          <Text is="span" color="$gray-8" fontStyle="italic">
             Published <Time>{post.date}</Time>
           </Text>{' '}
         </>
@@ -193,11 +200,11 @@ function PostLayout({ children, post }) {
       <Mentions />
       {children}
       {post.tags ? (
-        <Box mt={3}>
+        <Box mt="$3">
           <Heading variant="subhead" is="h4">
             Tags:
           </Heading>
-          <Stack inline gap={4}>
+          <Stack inline gap="$4">
             {post.tags.map((tag: string, index: number) => (
               <Box key={tag}>
                 <Box color="primary" is="span">
@@ -233,20 +240,20 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
         <title>{title}</title>
       </Head>
       <Box is="main" display="flex" flexDirection="column" minHeight="100vh">
-        <Box flexShrink={1} is="nav" backgroundColor="gray.0" color="black">
+        <Box flexShrink={1} is="nav" backgroundColor="$gray-0" color="$black">
           <Box
-            maxWidth={['94vw', '80vw', , '70ch']}
-            minWidth={['94vw', '80vw', , '70ch']}
-            p={4}
+            maxWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
+            minWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
+            p="$4"
             m="0 auto"
             display="flex"
-            flexDirection={['column', , 'row']}
+            flexDirection={{ '20em': 'column', '60em': 'row' }}
             justifyContent="space-between"
             alignItems="center"
           >
             <Box display="flex" alignItems="center">
               <Link to="/" display="flex" alignItems="center">
-                <Text mr={2} is="span" aria-label="Wave" role="img">
+                <Text mr="$2" is="span" aria-label="Wave" role="img">
                   👋
                 </Text>{' '}
                 Home
@@ -260,19 +267,19 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
           </Box>
         </Box>
         <Box
-          maxWidth={['94vw', '80vw', , '70ch']}
-          minWidth={['94vw', '80vw', , '70ch']}
-          p={[3, , 7, 10]}
+          maxWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
+          minWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
+          p={{ '20em': '$3', '60em': '$7', '80em': '$10' }}
           m="0 auto"
           flexGrow={1}
         >
           {children}
         </Box>
-        <Box flexShrink={1} backgroundColor="gray.0" is="footer">
+        <Box flexShrink={1} backgroundColor="$gray-0" is="footer">
           <Box
-            maxWidth={['94vw', '80vw', , '70ch']}
-            minWidth={['94vw', '80vw', , '70ch']}
-            p={4}
+            maxWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
+            minWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
+            p="$4"
             m="0 auto"
             display="flex"
             flexDirection={['column', , 'row']}

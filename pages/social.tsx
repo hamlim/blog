@@ -20,15 +20,15 @@ export default function Tools() {
         I don't use much social media, but if you can follow me on a few
         different platforms:
       </Text>
-      <Box my={5}>
+      <Box my="$5">
         <List variant="base" is="ul">
-          <ListItem mb={2}>
+          <ListItem mb="$2">
             <Text is="strong" fontWeight="bold">
               Twitter:{' '}
             </Text>
             <TwitterMention>immatthamlin</TwitterMention>
           </ListItem>
-          <ListItem mb={2}>
+          <ListItem mb="$2">
             <Text is="strong" fontWeight="bold">
               GitHub:{' '}
             </Text>

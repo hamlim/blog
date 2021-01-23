@@ -1023,10 +1023,17 @@
   resolved "https://registry.yarnpkg.com/@ds-pack/base-styled/-/base-styled-1.0.0.tgz#42ae856087a2fecb5f45991e973b087594fc1a05"
   integrity sha512-qP5nGi2UpnJbZ+UiobEr2MeWumaaj4DAA8MIaAVagsew8+gQcpuoVzMn9jQukPa69ADuevdKxvgU6HTwRO7xHg==
 
-"@ds-pack/components@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.9.tgz#c457ec429d2ed951300ff0d570741682e12d8d7e"
-  integrity sha512-5K0sd/GY5F57HiNk/ZGgCclhOSL8w35krG08xOZzzLTKhY/MDyZtcULhFCuStitROjL+8OlyfEglm6duQPowKQ==
+"@ds-pack/components@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.11.tgz#4766bf5c496e6788efdb28c45afd8265d9be8c7e"
+  integrity sha512-HwlQLL3mwMjF02EWXz7ZwjGe9/gFONGdTF4RJKkESCmU0u8ydGT1qG4OPiEkGSup5/NOo1yv4byEfZI48wzcJA==
+  dependencies:
+    "@ds-pack/theme-to-css-vars" "^1.0.0"
+
+"@ds-pack/theme-to-css-vars@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ds-pack/theme-to-css-vars/-/theme-to-css-vars-1.0.0.tgz#06dd88f0847db7819b05db3cc5f86f0aca103fbf"
+  integrity sha512-9aNfcInBftzFnQq8q4s1hpCHXLfq3gF9uB4wEsB3sz+dlkzQFhTs/4UYxK59CmrfxhQOkIDHe/zPzpJZpWVdfQ==
 
 "@ds-pack/use-refs@^1.0.0":
   version "1.0.0"
@@ -5244,6 +5251,11 @@ simple-get@^4.0.0:
     decompress-response "^6.0.0"
     once "^1.3.1"
     simple-concat "^1.0.0"
+
+simple-props@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/simple-props/-/simple-props-0.5.0.tgz#9da5eabe026534d279f6b1e0ec82245f620cf5e0"
+  integrity sha512-FAIvMNdxzIrdmXQVgOxz8qBdt9z3dnINg7mMrRgXjFPbjPI1SsyFgCxdyOXl+7hirsej690q82SrrweoAn4VfA==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
