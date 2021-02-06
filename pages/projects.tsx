@@ -38,14 +38,14 @@ export default function Projects() {
           <ListItem>
             <Link
               is="a"
-              href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
+              href="https://github.com/ds-pack/simple-props"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Reroute
+              Simple Props
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
-            A React router package built for Suspense using hooks
+            A minimal, CSS variable backed style-prop library
           </ListItem>
           <ListItem mt="$6">
             <Link
@@ -62,18 +62,6 @@ export default function Projects() {
               MDX
             </Link>{' '}
             in JavaScript files.
-          </ListItem>
-          <ListItem mt="$6">
-            <Link
-              is="a"
-              href="https://github.com/hamlim/notedo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Notedo
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A note and todo list web application using plain text.
           </ListItem>
           <ListItem mt="$6">
             <Link
@@ -112,6 +100,30 @@ export default function Projects() {
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             Helpers and utilities for working with refs in React
+          </ListItem>
+          <ListItem mt="$6">
+            <Link
+              is="a"
+              href="https://github.com/hamlim/notedo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Notedo
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A note and todo list web application using plain text.
+          </ListItem>
+          <ListItem mt="$6">
+            <Link
+              is="a"
+              href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Reroute
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A React router package built for Suspense using hooks
           </ListItem>
         </List>
       </Box>
