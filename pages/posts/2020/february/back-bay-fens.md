@@ -1,3 +1,11 @@
+---
+title: 'February 20, 2020'
+date: February 20th, 2020
+tags:
+  - 'Pictures'
+  - 'Back Bay'
+---
+
 While walking home from work on Thursday Febrary 20th, I decided to walk through
 the Back Bay Fens area near Fenway.
 

@@ -1,3 +1,11 @@
+---
+title: 'Stateful Providers'
+date: March 28th, 2020
+tags:
+  - 'React'
+  - 'Development Patterns'
+---
+
 My team at Wayfair has been hard at work rebuilding our design system
 documentation site over the past few months.
 

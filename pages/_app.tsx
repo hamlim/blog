@@ -23,7 +23,7 @@ let Img = styled('img')`
 
 function Ref({ id }) {
   return (
-    <Text is="sup" fontSize={0}>
+    <Text is="sup" fontSize="$0">
       <comps.Link id={`ref-${id}`} is="a" href={`#fn-${id}`}>
         [{id}]
       </comps.Link>

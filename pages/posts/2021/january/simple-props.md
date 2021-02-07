@@ -1,3 +1,10 @@
+---
+title: 'Simple Props'
+date: January 18th, 2021
+tags:
+  - 'Side Projects'
+---
+
 **Edit: Updated on January 19th, 2021**
 
 A few recent experiments that I've been thinking on have all been around

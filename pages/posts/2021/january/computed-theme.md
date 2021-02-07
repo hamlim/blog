@@ -1,5 +1,13 @@
-<Text mt={3} fontSize={0} color="$colors.gray.4">Alternative titles: Dependent
-design tokens, computed theme values</Text>
+---
+title: 'Computed Design Tokens'
+date: January 9th, 2021
+tags:
+  - 'Design Systems'
+  - 'Theme'
+---
+
+<Text mt="$3" fontSize="$0" color="$gray-4">Alternative titles: Dependent design
+tokens, computed theme values</Text>
 
 For the past few weeks I've been working on updating the theme within my
 [`@ds-pack/components`](https://github.com/ds-pack/components) package,

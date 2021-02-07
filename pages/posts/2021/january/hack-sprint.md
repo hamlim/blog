@@ -1,3 +1,10 @@
+---
+title: 'Hack Sprint'
+date: January 19th, 2021
+tags:
+  - 'Hacking'
+---
+
 I've started to notice that I've spent a very large amount of my free time on my
 Xbox as of late, either grinding out gun camos in Call of Duty, or playing in
 the futuristic Night City of Cyberpunk. While I enjoy playing video games, a
