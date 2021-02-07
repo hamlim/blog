@@ -103,7 +103,7 @@ let components = {
       <comps.List variant="unordered" is="ul" {...props} />
     </Box>
   ),
-  li: (props: any) => <comps.ListItem fontSize={2} mt={2} {...props} />,
+  li: (props: any) => <comps.ListItem fontSize="$2" mt="$2" {...props} />,
   ol: (props: any) => (
     <Box mt="$6">
       <comps.List variant="ordered" is="ol" {...props} />
