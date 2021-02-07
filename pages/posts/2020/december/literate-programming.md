@@ -1,3 +1,10 @@
+---
+title: 'Literate (web) Programming'
+date: December 19th, 2020
+tags:
+  - 'Ideas'
+---
+
 I've been using [Roam](https://roamresearch.com) a lot as of late, I lucked out
 a few months ago (around March of 2020 or so) where there was a short gap of an
 open, public, and free beta period for the online tool and I've been secretly

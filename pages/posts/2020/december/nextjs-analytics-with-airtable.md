@@ -1,3 +1,10 @@
+---
+title: 'NextJS Analytics with Airtable'
+date: December 13th, 2020
+tags:
+  - 'Side Projects'
+---
+
 I was recently looking for a quick and easy solution to track page hits on my
 personal site for another small feature add to the site (blog post on that when
 I get around to it!), and figured that I could probably spin up something very

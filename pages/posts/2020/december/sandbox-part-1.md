@@ -1,3 +1,10 @@
+---
+title: 'Building a Web Sandbox: Part 1'
+date: December 21st, 2020
+tags:
+  - 'Side Projects'
+---
+
 Both at work and in my free time I've been working on an online browser-based
 live sandbox for interpreting JavaScript code and rendering output using React.
 Very much like tools such as [Codesandbox](https://codesandbox.io/),
