@@ -23,6 +23,12 @@ export let topPosts = [
 
 export let allPosts = [
   {
+    date: 'February 8th, 2021',
+    to: 'yw',
+    title: 'yw',
+    absolute: '/posts/2021/february/yw',
+  },
+  {
     date: 'January 19th, 2021',
     to: 'hack-sprint',
     title: 'Hack Sprint',

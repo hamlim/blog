@@ -298,9 +298,14 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
   )
 }
 
-Router.events.on('routeChangeComplete', () => {
-  recordPageVisit()
-})
+let hasAddedListener = false
+
+if (!hasAddedListener) {
+  Router.events.on('routeChangeComplete', () => {
+    recordPageVisit()
+  })
+  hasAddedListener = true
+}
 
 export default function MyApp({ Component, pageProps, router }) {
   let { pathname } = router
