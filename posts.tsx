@@ -1,4 +1,12 @@
-export let topPosts = [
+// cachebuster - v3
+import postData from /* preval */ './scripts/collect-post-data'
+
+let highlights = postData.filter((p) => p.frontMatter.highlight)
+
+export let topPosts = highlights
+
+/*
+[
   {
     to: 'theme-first-ui-development',
     title: 'Theme First UI Development',
@@ -21,7 +29,13 @@ export let topPosts = [
   },
 ]
 
-export let allPosts = [
+*/
+
+export let allPosts = postData
+
+/* 
+
+let oldAllPosts = [
   {
     date: 'February 8th, 2021',
     to: 'yw',
@@ -47,10 +61,10 @@ export let allPosts = [
     absolute: '/posts/2021/january/computed-theme',
   },
   {
-    date: 'December 31st, 2020',
+    date: 'January 1st, 2020',
     to: '2021-resolutions',
     title: '2021: Resolutions',
-    absolute: '/posts/2020/december/2021',
+    absolute: '/posts/2021/february/2021',
   },
   {
     date: 'December 30th, 2020',
@@ -325,3 +339,4 @@ export let allPosts = [
     absolute: '/posts/2015/november/a-new-look',
   },
 ]
+*/

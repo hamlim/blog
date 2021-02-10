@@ -1,11 +1,15 @@
-
-
-
+---
+title: 'Snapshot Testing'
+date: March 1st, 2019
+tags:
+  - 'Web Development'
+  - 'Testing'
+---
 
 The other day I noticed this really succinct and to the point tweet about
 snapshot tests from Mark Dalgleish:
 
-<blockquote className="twitter-tweet  tw-align-center" data-lang="en">
+<Tweet>
   <p lang="en" dir="ltr">
     Just deleted all component snapshot tests from our React component
     library—in favour of{" "}
@@ -19,7 +23,7 @@ snapshot tests from Mark Dalgleish:
   &mdash; Mark Dalgleish (@markdalgleish) <a href="https://twitter.com/markdalgleish/status/1100164862796214272?ref_src=twsrc%5Etfw">
     February 25, 2019
   </a>
-</blockquote>
+</Tweet>
 
 The valuable insight here being the following:
 

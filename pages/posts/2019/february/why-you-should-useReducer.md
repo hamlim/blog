@@ -1,6 +1,10 @@
-
-
-
+---
+title: "useReducer, don't useState"
+date: February 10th, 2019
+tags:
+  - 'Web Development'
+  - 'React'
+---
 
 > This blog post assumes you have a decent initial understanding of React Hooks.
 > I highly suggest starting with the
@@ -28,7 +32,7 @@ using a reducer function gives you the developer more control over the state
 merging.
 
 As an example of this expresivity that a reducer gives us, we can `useReducer`
-to implement an undo/redo state management solution [^1]:
+to implement an undo/redo state management solution<Ref id="1" />:
 
 ```jsx
 function init(initialState) {
@@ -41,7 +45,7 @@ function init(initialState) {
 function reducer(state, action) {
   const { past, future, present } = state
   switch (action.type) {
-    case "UNDO":
+    case 'UNDO':
       const previous = past[past.length - 1]
       const newPast = past.slice(0, past.length - 1)
       return {
@@ -49,7 +53,7 @@ function reducer(state, action) {
         present: previous,
         future: [present, ...future],
       }
-    case "REDO":
+    case 'REDO':
       const next = future[0]
       const newFuture = future.slice(1)
       return {
@@ -80,9 +84,10 @@ your own.
 This is mostly a more generic topic that permeates through other topics than
 just React Hooks, but the general take-away with the benefit of `useReducer`
 over `useState` is it builds on the concepts that many developers learned
-working with Redux within React applications[^2]. The concept of dispatching an
-action and having your reducer handle the state updating logic will allow these
-developers to more easily grasp this method of state management over `useState`.
+working with Redux within React applications<Ref id="2" />. The concept of
+dispatching an action and having your reducer handle the state updating logic
+will allow these developers to more easily grasp this method of state management
+over `useState`.
 
 One thing to note in this reasoning, is that even if you are building a project
 all by yourself, you can consider the future you that comes back to work on the
@@ -106,9 +111,9 @@ the test using some mocked state, and an action. We don't even need to `import`
 or use react at all within our test!
 
 ```jsx
-test("it supports undoing the state", () => {
+test('it supports undoing the state', () => {
   const state = { past: [{ count: 0 }], present: { count: 1 }, future: [] }
-  const newState = reducer(state, { type: "UNDO" })
+  const newState = reducer(state, { type: 'UNDO' })
   expect(newState.present.count).toBe(0)
 })
 ```
@@ -122,15 +127,19 @@ their use. However, I do think that `useReducer` when used as a replacement for
 complex state management happening within an old class based component or
 replacing a react-redux setup can be more maintainable.
 
-#### Footnotes:
+<Spacer />
 
-[^1]:
+---
 
-  Implementation taken from
-  [Redux Docs](https://redux.js.org/recipes/implementing-undo-history)
+<Spacer />
 
-[^2]:
+### Footnotes:
 
-  I do think there will still be a shift from developers used to Redux getting
-  into Hooks however, as middleware solutions like `redux-thunk` will need to be
-  re-implemented using `useEffect`.
+<Footnote id="1">Implementation taken from{' '}
+<ExternalLink href="https://redux.js.org/recipes/implementing-undo-history">Redux
+Docs</ExternalLink></Footnote>
+
+<Footnote id="2">I do think there will still be a shift from developers used to
+Redux getting into Hooks however, as middleware solutions like
+<InlineCode>redux-thunk</InlineCode> will need to be re-implemented using{' '}
+<InlineCode>useEffect</InlineCode>.</Footnote>

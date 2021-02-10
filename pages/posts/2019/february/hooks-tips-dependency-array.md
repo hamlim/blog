@@ -1,6 +1,10 @@
-
-
-
+---
+title: 'Hooks Tips Ep. 1 - The Dependency Array'
+date: February 2nd, 2019
+tags:
+  - 'Development Tips'
+  - 'React'
+---
 
 > This blog post is the first in what I expect to be a series on hooks, this
 > blog post assumes you have a decent initial understanding of them. I highly

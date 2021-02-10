@@ -1,3 +1,14 @@
+---
+title: 'Theme First UI Development'
+date: July 18th, 2019
+tags:
+  - 'Web Development'
+  - 'React'
+  - 'Design Tokens'
+  - 'Design Systems'
+highlight: true
+---
+
 A recent trend within the Frontend development space has been around enabling
 something I have been calling Theme First UI Development. Tools like Emotion,
 Styled-System, Theme-UI, React, and concepts like Design Systems, and Design

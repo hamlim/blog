@@ -1,8 +1,8 @@
 ---
 title: 'Weekend Projects'
-date: 'November ??, 2015'
+date: 'November 4th, 2015'
 tags:
-  - 'projects'
+  - 'Side Projects'
 ---
 
 Since I came home for Thanksgiving I figured I would have enough time to get

@@ -1,9 +1,10 @@
 ---
 title: 'Testing Software'
-date: 'December ??, 2018'
+date: 'December 1st, 2018'
 tags:
-  - 'development'
-  - 'testing'
+  - 'Web Development'
+  - 'Testing'
+highlight: true
 ---
 
 > Writing unit tests for code is surprisingly a hot button topic within software

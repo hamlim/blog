@@ -1,13 +1,17 @@
-
-
-
+---
+title: 'Summer 2019 - Bend Oregon'
+date: July 27th, 2019
+tags:
+  - 'Travel'
+  - 'Bend'
+---
 
 As with most summers recently, I had taken off two weeks in late July and early
 August to fly back out to the west coast to visit family and go camping to Bend
 Oregon. My family has been visiting Bend for the past 6+ years every summer,
 there's something up with the high desert around Central Oregon that is a
-welcome retreat from the rest of our average days. This blog post will mostly
-be in the form of short entries for each day during the trip. I will be posting
+welcome retreat from the rest of our average days. This blog post will mostly be
+in the form of short entries for each day during the trip. I will be posting
 photos from the trip in a follow-up post.
 
 ## July 20th

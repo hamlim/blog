@@ -1,3 +1,10 @@
+---
+title: 'The Rabbit Hole'
+date: April 4th, 2020
+tags:
+  - 'Side Projects'
+---
+
 I've been spending a bit more time than usual in the past two or so weeks on my
 side projects. For those that know me personally, I used to really enjoy
 spending time working on open source projects in my free time. However, over the

@@ -1,9 +1,9 @@
 ---
 title: 'Redesign'
-date: 'April ??, 2016'
+date: 'April 4th, 2016'
 tags:
-  - 'blog'
-  - 'redesign'
+  - 'Blog'
+  - 'Redesign'
 ---
 
 I recently redesigned my entire website for two reasons. The first was that I

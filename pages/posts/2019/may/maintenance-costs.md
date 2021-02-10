@@ -1,6 +1,10 @@
-
-
-
+---
+title: 'Maintenance Costs'
+date: May 19th, 2019
+tags:
+  - 'Web Development'
+highlight: true
+---
 
 One of the first large-scale projects I worked on at Wayfair as a software
 engineer was on our first ever desktop Grid system. It was late 2016, maybe

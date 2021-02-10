@@ -1,8 +1,8 @@
 ---
 title: 'Family Time'
-date: 'November ??, 2015'
+date: 'November 20th, 2015'
 tags:
-  - 'family'
+  - 'Family'
 ---
 
 This week(end) for me has been an amazing whirlwind of fun times with family

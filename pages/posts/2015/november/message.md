@@ -1,9 +1,9 @@
 ---
 title: 'The Message is in the Medium'
-date: 'November ??, 2015'
+date: 'November 3rd, 2015'
 tags:
-  - 'meta'
-  - 'communication'
+  - 'Meta'
+  - 'Communication'
 ---
 
 The above title is something that was taught to me in one of my introductory

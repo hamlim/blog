@@ -1,9 +1,9 @@
 ---
 title: 'Starting Fresh'
-date: 'December ??, 2018'
+date: 'December 5th, 2018'
 tags:
-  - 'blog'
-  - 'redesign'
+  - 'Blog'
+  - 'Redesign'
 ---
 
 Over the past two years or so I think I have tried to rewrite my personal site

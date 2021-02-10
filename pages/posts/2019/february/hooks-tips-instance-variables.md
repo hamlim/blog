@@ -1,6 +1,10 @@
-
-
-
+---
+title: 'Hooks Tips Ep. 2 - Migrating Instance Variables'
+date: February 5th, 2019
+tags:
+  - 'Development Tips'
+  - 'React'
+---
 
 > This blog post is part of a series on hooks, this blog post assumes you have a
 > decent initial understanding of React Hooks. I highly suggest starting with
@@ -21,7 +25,7 @@ class InstanceComponent extends React.Component {
   inputRef = null
   data = {
     someData: {
-      foo: "bar",
+      foo: 'bar',
     },
   }
 
@@ -39,7 +43,7 @@ function HookComponent() {
   const someTimer = React.useRef(null)
   const data = React.useRef({
     someData: {
-      foo: "bar",
+      foo: 'bar',
     },
   })
 
@@ -58,7 +62,7 @@ gives?
 function HookComponent() {
   const data = React.useRef({
     someData: {
-      foo: "bar",
+      foo: 'bar',
     },
   })
 
@@ -91,7 +95,7 @@ function UglyHooksComponent() {
     inputRef: React.createRef(),
     data: {
       someData: {
-        foo: "bar",
+        foo: 'bar',
       },
     },
   })
@@ -115,5 +119,5 @@ _Thanks to Dillon Curry for reviewing an earlier version of this post_
 
 [^1]:
 
-  I should write yet another blog post about why I have this preference, but for
-  now feel free to accept it as a pattern.
+I should write yet another blog post about why I have this preference, but for
+now feel free to accept it as a pattern.

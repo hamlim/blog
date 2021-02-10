@@ -1,9 +1,9 @@
 ---
 title: 'A New Resume'
-date: 'November ??, 2015'
+date: 'November 1st, 2015'
 tags:
-  - 'career'
-  - 'projects'
+  - 'Career'
+  - 'Side Projects'
 ---
 
 This weekend I set out to work on Bundles and to also work on my own website. I

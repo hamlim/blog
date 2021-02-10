@@ -1,3 +1,11 @@
+---
+title: 'A Note On Meetings'
+date: April 3rd, 2020
+tags:
+  - 'Meetings'
+  - 'Note'
+---
+
 My feelings on meetings (either in person or virtual) are a constant pendulum.
 When the meeting has clear value for me, I at best don't get disinterested by
 them and have the semblance of feeling productive. However, if there is limited

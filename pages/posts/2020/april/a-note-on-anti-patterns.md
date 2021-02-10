@@ -1,3 +1,11 @@
+---
+title: 'A Note On Anti-Patterns'
+date: April 2nd, 2020
+tags:
+  - 'Web Development'
+  - 'Note'
+---
+
 Developers often speak of patterns and anti-patterns in programming, usually
 identifying some new hyped pattern in programming as an anti-pattern. I
 personally don't believe there are any true anti-patterns in programming,

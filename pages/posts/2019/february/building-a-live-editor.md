@@ -1,6 +1,10 @@
-
-
-
+---
+title: 'Building a Live Editor'
+date: February 1st, 2019
+tags:
+  - 'Development Tips'
+  - 'Side Projects'
+---
 
 As I have been working on my personal blog, I wanted to include the ability to
 edit code on site, and also preview it live. I started using
@@ -52,7 +56,7 @@ is really easy to just start using:
   // Give it a value
   value={code}
   // Handle changes to the code
-  onValueChange={code => updateCode(code)}
+  onValueChange={(code) => updateCode(code)}
   // Provider it a function that returns a string or a React Node
   // to highlight the code
   highlight={highlighter}
@@ -96,7 +100,7 @@ function highlighter(code) {
 So wrapping it all up, we end up with an API that looks like this:
 
 ```jsx
-import { Provider, Editor, Preview } from "@matthamlin/react-preview-editor"
+import { Provider, Editor, Preview } from '@matthamlin/react-preview-editor'
 
 const code = `
 function App() {
@@ -111,7 +115,7 @@ render(
   <Provider code={code}>
     <Preview />
     <Editor />
-  </Provider>
+  </Provider>,
 )
 ```
 

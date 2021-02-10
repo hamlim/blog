@@ -1,4 +1,10 @@
-
+---
+title: 'React Error Boundaries'
+date: January 31st, 2019
+tags:
+  - 'Web Development'
+  - 'React'
+---
 
 The other week I got an email from a developer wondering if I could help them
 learn more about Error Boundaries within React.
@@ -91,7 +97,7 @@ boundary, you can `throw` from within a setState:
 // Feel free to toy around with the code and see the
 // actual output above!
 class Example extends Component {
-  handleChange = e => {
+  handleChange = (e) => {
     let {
       target: { value },
     } = e

@@ -16,7 +16,7 @@ in their local workflows as well!
 
 ## Script:
 
-```sh
+```bash
 yw() {
   yarn workspace $(yarn --json workspaces info | jq '.data' -r | jq "[keys][0] []" -r | fzf) $@
 }

@@ -1,11 +1,15 @@
-
-
-
+---
+title: 'Start Small, Accept Change'
+date: February 1st, 2019
+tags:
+  - 'Web Development'
+  - 'Side Projects'
+---
 
 As I have grown into a more experienced web developer, I have been thinking a
 lot more about this tweet by Joel Hooks:
 
-<blockquote className="twitter-tweet tw-align-center" data-lang="en">
+<Tweet>
   <p lang="en" dir="ltr">
     There’s a tendency to jump straight to step 32 of the “new thing” vs
     focusing on steps 1 and 2. <br />
@@ -21,12 +25,12 @@ lot more about this tweet by Joel Hooks:
   &mdash; Joel 🌧 (@jhooks) <a href="https://twitter.com/jhooks/status/1014615428897824768?ref_src=twsrc%5Etfw">
     July 4, 2018
   </a>
-</blockquote>
+</Tweet>
 
 I could spend the better part of a weekend just enumerating all the times that I
-jumped to a solution for a problem I was working on at the time.[^1] Skipping
-past the the important groundwork of framing the problem space, and evaluating,
-as well as reevaluating, the problem.
+jumped to a solution for a problem I was working on at the time.<Ref id="1" />
+Skipping past the the important groundwork of framing the problem space, and
+evaluating, as well as reevaluating, the problem.
 
 Its difficult as an engineer, to have the patience to step back and reevaluate a
 problem before jumping to a solution. It takes a lot of critical thinking to
@@ -46,7 +50,7 @@ web development):
 
 1. **Everything changes**
 2. **Most difficult technology problems are actually people problems at the
-   root**[^2]
+   root**<Ref id="2" />
 
 As with most advice however, the key takeaway here is that things change,
 specifically **code will change**. Don't feel like you need to write the correct
@@ -79,11 +83,19 @@ would generally expand it to be:
 
 > "Measure twice, cut once. Always prepare to buy more lumber."
 
-##### Footnotes
+<Spacer />
 
-[^1]:
+---
 
-  A part of me would like to think that I have gotten better at the skill of not
-  skipping that groundwork, but I know I still do make the same mistakes.
+<Spacer />
 
-[^2]: I should really write up a post all on its own on this point
+### Footnotes
+
+<Footnote id="1">
+A part of me would like to think that I have gotten better at the skill of not
+skipping that groundwork, but I know I still do make the same mistakes.
+</Footnote>
+
+<Footnote id="2">
+I should really write up a post all on its own on this point
+</Footnote>
