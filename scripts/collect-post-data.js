@@ -67,7 +67,7 @@ module.exports = mdxes
     const { text } = readingTime(content)
     frontMatter.timeToRead = text
 
-    let postDate = new Date(frontMatter.date.replace(/,|th|st|rd/g, ''))
+    let postDate = new Date(frontMatter.date.replace(/,|th|st|rd|nd/g, ''))
 
     let month = getMonth(postDate)
 
@@ -83,10 +83,10 @@ module.exports = mdxes
   })
   .sort((a, b) => {
     let aDate = a.frontMatter.date
-      ? new Date(a.frontMatter.date.replace(/,|th|st|rd/g, ''))
+      ? new Date(a.frontMatter.date.replace(/,|th|st|rd|nd/g, ''))
       : 0
     let bDate = b.frontMatter.date
-      ? new Date(b.frontMatter.date.replace(/,|th|st|rd/g, ''))
+      ? new Date(b.frontMatter.date.replace(/,|th|st|rd|nd/g, ''))
       : 0
     return aDate > bDate ? -1 : bDate > aDate ? 1 : 0
   })
