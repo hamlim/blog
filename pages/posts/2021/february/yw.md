@@ -4,7 +4,7 @@ date: February 8th, 2021
 tags:
   - 'Snippets'
   - 'Yarn'
-  - 'monorepos'
+  - 'Monorepos'
   - 'Development Tips'
 ---
 
