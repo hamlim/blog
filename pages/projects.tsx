@@ -7,6 +7,7 @@ import {
   VisuallyHidden,
   List,
   ListItem,
+  InlineCode,
 } from '@ds-pack/components'
 
 export default function Projects() {
@@ -73,8 +74,8 @@ export default function Projects() {
               @ds-pack/components
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
-            A component library built on Styled-System, Styled-Components,
-            React, and Typescript.
+            A component library built on Simple Props, Styled-Components, React,
+            and Typescript.
           </ListItem>
           <ListItem mt="$6">
             <Link
@@ -88,6 +89,19 @@ export default function Projects() {
             </Link>{' '}
             A collection of babel utilities (plugins, visitors) for transforming
             code related to design systems.
+          </ListItem>
+          <ListItem mt="$6">
+            <Link
+              is="a"
+              href="https://github.com/ds-pack/use-media"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @ds-pack/use-media
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A React hook for <InlineCode>window.matchMedia</InlineCode> that is
+            SSR safe.
           </ListItem>
           <ListItem mt="$6">
             <Link
