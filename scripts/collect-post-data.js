@@ -81,6 +81,9 @@ module.exports = mdxes
       year,
     }
   })
+  .filter((post) => {
+    return !post.frontMatter.draft
+  })
   .sort((a, b) => {
     let aDate = a.frontMatter.date
       ? new Date(a.frontMatter.date.replace(/,|th|st|rd|nd/g, ''))
