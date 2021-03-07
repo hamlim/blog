@@ -1023,10 +1023,10 @@
   resolved "https://registry.yarnpkg.com/@ds-pack/base-styled/-/base-styled-1.0.0.tgz#42ae856087a2fecb5f45991e973b087594fc1a05"
   integrity sha512-qP5nGi2UpnJbZ+UiobEr2MeWumaaj4DAA8MIaAVagsew8+gQcpuoVzMn9jQukPa69ADuevdKxvgU6HTwRO7xHg==
 
-"@ds-pack/components@0.0.15":
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.15.tgz#708985d6f9966929b7f71630c520b396dc8129f0"
-  integrity sha512-W0izmBpCnPjhctMG7ksZ44dzxNim+7jm6lP9Qb3N++se/Yg04uP8jSb6dfjO5A4s2O2A7upA1BmUmaaTtT/GBQ==
+"@ds-pack/components@0.0.18":
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.18.tgz#7f61c4d72bd1e47f08ba19a20ea4bd10cb774e91"
+  integrity sha512-aiedC5JHacovwXa2DeOvNMiGzC4nLoV5lx3YnL2cfs68smiJ7FB3+3zkfBAnmc2XMJxEtbqrMpcVi5GaKlOWRQ==
   dependencies:
     "@ds-pack/theme-to-css-vars" "^1.0.0"
 
@@ -4108,6 +4108,11 @@ nanomatch@^1.2.9:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+nanopop@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/nanopop/-/nanopop-2.1.0.tgz#23476513cee2405888afd2e8a4b54066b70b9e60"
+  integrity sha512-jGTwpFRexSH+fxappnGQtN9dspgE2ipa1aOjtR24igG0pv6JCxImIAmrLRHX+zUF5+1wtsFVbKyfP51kIGAVNw==
 
 napi-build-utils@^1.0.1:
   version "1.0.2"

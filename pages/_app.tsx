@@ -363,6 +363,8 @@ export default function MyApp({ Component, pageProps, router }) {
     title = 'Tools'
   } else if (pathname.includes('/social')) {
     title = 'Social'
+  } else if (pathname.includes('/colors')) {
+    title = 'Colors'
   }
 
   return (

@@ -78,6 +78,16 @@ export default function Landing() {
         represent complete concepts yet!
       </Text>
       <LocalLink to="/notebook">Check them out</LocalLink>
+
+      <Heading variant="h3" is="h3" my="$3">
+        Random
+      </Heading>
+      <Text mb="$2">
+        I sometimes hack on random ideas that don't really need their own domain
+        or might not really be worth throwing in their own repo, you can find
+        some of those in my Random part of the site.
+      </Text>
+      <LocalLink to="/aside">Check them out</LocalLink>
     </>
   )
 }
