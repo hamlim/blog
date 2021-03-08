@@ -109,6 +109,16 @@ let components = {
       <comps.List variant="ordered" is="ol" {...props} />
     </Box>
   ),
+  'li.ul': (props: any) => (
+    <Box mt="$2" ml="$4">
+      <comps.List variant="unordered" is="ul" {...props} />
+    </Box>
+  ),
+  'li.ol': (props: any) => (
+    <Box mt="$2" ml="$4">
+      <comps.List variant="ordered" is="ol" {...props} />
+    </Box>
+  ),
   pre({ children }) {
     return <>{children}</>
   },
