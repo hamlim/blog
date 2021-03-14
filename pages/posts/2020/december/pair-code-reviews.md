@@ -3,6 +3,7 @@ title: 'Pair Code Reviews'
 date: December 2nd, 2020
 tags:
   - 'Collaboration'
+  - 'Code Review'
 ---
 
 Code Review is a vital part of every development team's workflow, not only is it
