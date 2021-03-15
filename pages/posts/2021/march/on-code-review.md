@@ -1,10 +1,9 @@
 ---
-title: 'Pull Requests'
+title: 'On Code Review'
 date: March 15th, 2021
 tags:
   - 'Development Practices'
   - 'Code Review'
-draft: true
 ---
 
 I've written a decent amount about code review practices, particularly about
@@ -73,9 +72,9 @@ I don't use an explicit checklist for the above bullet points, and frequently
 I'll have other things in mind when reviewing a change that are specific to the
 code being changed.
 
-<!-- prettier-ignore -->
-I usually categorize most of my <abbr title="A small, usually insignificant suggested change to make the code more readable">"nitpick"</abbr> feedback under the third bullet point above, usually trying to frame the
-feedback as optional and also up for discussion.
+I usually categorize most of my "nitpick"<Ref id="3" /> feedback under the third
+bullet point above, usually trying to frame the feedback as optional and also up
+for discussion.
 
 ## Delivery:
 
@@ -87,8 +86,8 @@ the code review process feel hostile and a battle between the author and the
 code reviewer.
 
 For the first few years at my current job I remember some of the most critical
-feedback I recieved during my performance reviews from my peers and managers was
-around my code review etticate [TK].
+feedback I received during my performance reviews from my peers and managers was
+around my code review etiquette.
 
 I was super critical, straight to the point, and also frequently delivering my
 feedback in a way that made it seem like it should be done my way or not be done
@@ -102,7 +101,7 @@ code reviews with a very high bar for what we should consider merging into the
 codebase, frequently applying my own personal preferences and flavors on top of
 our existing styleguides.
 
-More recently, I've tried to take a more broad view of the changes, de-valuaing
+More recently, I've tried to take a more broad view of the changes, devaluaing
 my own internal preferences in favor of thinking about the code as belonging to
 everyone (both current contributors and future contributors).
 
@@ -110,7 +109,7 @@ These days, I try my best to both call out opinions as clearly as possible, and
 also phrase most feedback in the form of a question. I've seen both of these
 help to clear up the review for the author, and also approaches from a
 standpoint of the changeset being an opportunity for learning and discussion
-rather than an opportunity to meet some obsurdly high bar for standards.
+rather than an opportunity to meet some absurdly high bar for standards.
 
 These frequently look like:
 
@@ -151,3 +150,11 @@ I don't usually literally note these in my go-to note taking tool, but usually o
 <Footnote id="2">
 I don't usually review PRs that another team member is actively reviewing unless I'm interested in seeing the changes or either the author or other reviewers asked for more feedback/insight into the changesets. Part of the reason for avoiding doubling up on a PR is that I have full confidence in all the members of my team (and the other teams I frequently work with) to review any change being made to the codebase.
 </Footnote>
+
+<Spacer />
+
+<Footnote id="3">
+A small, usually insignificant suggested change to make the code more readable
+</Footnote>
+
+<Spacer />
