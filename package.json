@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "deploy": "now",
-    "deploy-prod": "now --prod"
+    "deploy-prod": "now --prod",
+    "new-post": "node scripts/new.mjs"
   },
   "dependencies": {
     "@babel/runtime": "^7.9.6",

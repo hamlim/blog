@@ -9,9 +9,7 @@ A personal site and blog
 
 ## Adding a Post
 
-- Create mdx file in the `pages/posts/` directory
-- Add route object to `posts.tsx`
-- Done
+Run `yarn new-post title="<title>" slug="<slug>"` to bootstrap a new blog post!
 
 ## Deploying:
 
@@ -46,4 +44,5 @@ date: string # format of `MONTH DD[th | st | rd], YEAR`
 tags:
   - 'string' # Usually capitalized
 highlight: boolean # Optional
+draft: boolean # Optional
 ```
