@@ -42,6 +42,12 @@ export default function Landing() {
       </Text>
       <List variant="unordered" is="ul" mt="$2">
         <ListItem mb="$2">
+          <Link is="a" href="https://github.com/ds-pack/simple-props">
+            Simple Props
+          </Link>{' '}
+          A minimal, CSS variable backed style-prop library
+        </ListItem>
+        <ListItem mb="$2">
           <Link
             is="a"
             href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"

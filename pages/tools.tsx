@@ -20,6 +20,113 @@ export default function Tools() {
       </Text>
       <Box my="$5">
         <Heading is="h3" variant="h2">
+          August, 2021
+        </Heading>
+        <Stack gap="$2">
+          <Heading is="h4" variant="subhead">
+            Hardware
+          </Heading>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Phone
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                Google Pixel 5
+              </Text>
+            </Text>
+            <Text>
+              I've continued to use the Pixel 5 over the past few months and
+              I've really come to enjoy using it. After seeing some of the news
+              about the new Pixel 6 phones coming out later this year I'm not
+              sure how I'll adjust to having a larger phone again.
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Laptop
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                MacBook Pro (early 2020) 13"
+              </Text>
+            </Text>
+            <Text>
+              I've continued to use this laptop for nearly everything I do
+              outside of work. It continues to be a great resource.
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Tablet / Laptop
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                Pixel Slate
+              </Text>
+            </Text>
+            <Text>
+              I've had an on-again/off-again relationship with my Pixel Slate, I
+              got it fairly late in it's supported release window, maybe only a
+              few months before the new pixelbook go devices were announced,
+              however as of late I've found the slate to serve well as a media
+              consumption device for reading, and watching, but also useful as a
+              temporary writing station with Obsidian and a syncing service.
+            </Text>
+          </Box>
+          <Heading is="h4" variant="subhead">
+            Software
+          </Heading>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Notes / Todos
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                Obsidian
+              </Text>
+            </Text>
+            <Text>
+              This is one of the larger notable changes from my previous update
+              here in{' '}
+              <ExternalLink is="a" href="#november-2020">
+                November
+              </ExternalLink>{' '}
+              - I have switched fully over to{' '}
+              <ExternalLink
+                is="a"
+                rel="noopener"
+                target="_blank"
+                href="https://obsidian.md/"
+              >
+                Obsidian
+              </ExternalLink>{' '}
+              from Roam. In between I used Google Keep for a bit, but found that
+              I really wanted more markdown support within my note taking
+              application. I should write a bit about my Obsidian setup, but for
+              now it's still very early in using it for me.
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Code
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                VS Code (Insiders)
+              </Text>
+            </Text>
+            <Text>
+              This pick hasn't changed all that much from my last update,
+              however I haven't really been writing much code over the past few
+              months outside of work.
+            </Text>
+          </Box>
+          <hr />
+        </Stack>
+      </Box>
+      <Box my="$5">
+        <Heading is="h3" variant="h2" id="november-2020">
           November, 2020
         </Heading>
         <Stack gap="$2">
