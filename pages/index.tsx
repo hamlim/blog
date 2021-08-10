@@ -24,9 +24,9 @@ export default function Landing() {
         Popular blog posts:
       </Heading>
       <Box my="$5">
-        <List variant="ordered" is="ol">
+        <List variant="base" is="ol">
           {topPosts.map((post, i) => (
-            <ListItem key={post.title} mt={i !== 0 ? '$6' : null}>
+            <ListItem key={post.title} mt={i !== 0 ? '$4' : null}>
               <LocalLink to={post.absolute}>{post.title}</LocalLink>
             </ListItem>
           ))}
@@ -36,18 +36,18 @@ export default function Landing() {
       <Heading variant="h3" is="h3" my="$3">
         Recent Side Projects
       </Heading>
-      <Text mb="$2">
+      <Text mb="$4">
         I work on a variety of side projects in my free time, below are a few of
-        them. Check out the rest <LocalLink to="/projects">here</LocalLink>.
+        them.
       </Text>
-      <List variant="unordered" is="ul" mt="$2">
-        <ListItem mb="$2">
+      <List variant="base" is="ul" mt="$2">
+        <ListItem mb="$4">
           <Link is="a" href="https://github.com/ds-pack/simple-props">
             Simple Props
           </Link>{' '}
           A minimal, CSS variable backed style-prop library
         </ListItem>
-        <ListItem mb="$2">
+        <ListItem mb="$4">
           <Link
             is="a"
             href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
@@ -56,7 +56,7 @@ export default function Landing() {
           </Link>{' '}
           A React router package built for Suspense using hooks
         </ListItem>
-        <ListItem mb="$2">
+        <ListItem mb="$4">
           <Link is="a" href="https://github.com/hamlim/inline-mdx.macro">
             inline-mdx.macro
           </Link>{' '}
@@ -73,6 +73,9 @@ export default function Landing() {
           A note and todo list web application using plain text
         </ListItem>
       </List>
+      <Text mb="$4">
+        Check out the rest <LocalLink to="/projects">here</LocalLink>.
+      </Text>
 
       <Heading variant="h3" is="h3" my="$3">
         Notebook
@@ -83,7 +86,7 @@ export default function Landing() {
         that I haven't had the time to fully piece together, or might not even
         represent complete concepts yet!
       </Text>
-      <LocalLink to="/notebook">Check them out</LocalLink>
+      <LocalLink to="/notebook">Give them a read</LocalLink>
 
       <Heading variant="h3" is="h3" my="$3">
         Random
@@ -94,6 +97,15 @@ export default function Landing() {
         some of those in my Random part of the site.
       </Text>
       <LocalLink to="/aside">Check them out</LocalLink>
+
+      <Heading variant="h3" is="h3" my="$3">
+        Bookshelf
+      </Heading>
+      <Text mb="$2">
+        I don't read too many books these days, however I'm loosely tracking the
+        ones I've read and the ones I want to read next here!
+      </Text>
+      <LocalLink to="/bookshelf">See them here</LocalLink>
     </>
   )
 }
