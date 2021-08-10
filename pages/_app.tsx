@@ -192,6 +192,26 @@ let components = {
       </Box>
     )
   },
+  TLDR(props: { children: React.ReactNode }) {
+    return (
+      <Box
+        is="details"
+        p="$2"
+        borderStyle="solid"
+        borderWidth="2px"
+        borderColor="$green-6"
+        mt="$4"
+        {...props}
+      >
+        <summary>
+          <Text is="strong" fontWeight="bold">
+            TL;DR:
+          </Text>
+        </summary>
+        {props.children}
+      </Box>
+    )
+  },
 }
 
 function PostLayout({ children, post }) {

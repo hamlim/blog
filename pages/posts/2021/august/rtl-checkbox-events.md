@@ -10,14 +10,12 @@ draft: false
 highlight: false
 ---
 
-<Box is="details" p="$2" borderStyle="solid" borderWidth="2px" borderColor="$green-6" mt="$4">
-
-<summary><Text is="strong" fontWeight="bold">TL;DR:</Text></summary>
+<TLDR>
 
 If you're testing a checkbox input element with React Testing Library, you'll
 want to fire a click event on the checkbox _not_ a change event!
 
-</Box>
+</TLDR>
 
 Read on to find out how I discovered this!
 
