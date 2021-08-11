@@ -15,9 +15,9 @@ highlight: false
 If you're testing a checkbox input element with React Testing Library, you'll
 want to fire a click event on the checkbox _not_ a change event!
 
-</TLDR>
-
 Read on to find out how I discovered this!
+
+</TLDR>
 
 I was recently refactoring about 70 individual Enzyme-based unit tests across
 our design system codebase at work to swap it for
