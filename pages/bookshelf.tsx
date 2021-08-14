@@ -34,6 +34,25 @@ export default function Projects() {
         if you have book recommendations!
       </Text>
       <Heading my="$5" variant="subhead" is="h3">
+        What I'm Currently Reading:
+      </Heading>
+      <Box my="$5">
+        <List variant="base" is="ul">
+          <ListItem>
+            <Link
+              is="a"
+              href="https://www.goodreads.com/book/show/44767458-dune"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Dune
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            by Frank Herbert
+          </ListItem>
+        </List>
+      </Box>
+      <Heading my="$5" variant="subhead" is="h3">
         Books I've Recently Read:
       </Heading>
       <Box my="$5">
@@ -72,7 +91,7 @@ export default function Projects() {
               The Martian Chronicles
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
-            by Ray Bradbury.
+            by Ray Bradbury
           </ListItem>
         </List>
       </Box>
@@ -81,18 +100,6 @@ export default function Projects() {
       </Heading>
       <Box my="$5">
         <List variant="base" is="ul">
-          <ListItem>
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/44767458-dune"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Dune
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Frank Herbert
-          </ListItem>
           <ListItem mt="$6">
             <Link
               is="a"
