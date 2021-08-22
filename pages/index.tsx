@@ -11,9 +11,10 @@ export default function Landing() {
       </Heading>
       <Text fontSize="$2">
         Hey there, I'm Matt. I currently live and work in Boston as a software
-        engineer working on design systems at Wayfair. In my free time I like to
-        work on several different <LocalLink to="/projects">projects</LocalLink>
-        , and somehow find time to write some{' '}
+        engineer working on Wayfair's Storefront Frontend Platform team. In my
+        free time I like to work on several different{' '}
+        <LocalLink to="/projects">projects</LocalLink>, and somehow find time to
+        write some{' '}
         <LocalLink fontSize="$2" to="/blog">
           blog posts
         </LocalLink>{' '}
