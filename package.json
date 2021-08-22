@@ -45,8 +45,5 @@
     "schema-utils": "latest",
     "stringify-object": "latest",
     "typescript": "latest"
-  },
-  "resolutions": {
-    "styled-components": "5.2.1"
   }
 }

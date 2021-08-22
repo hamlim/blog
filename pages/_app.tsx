@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import * as comps from '@ds-pack/components'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
@@ -13,8 +13,6 @@ import recordPageVisit from '../components/record-page'
 import Image from 'next/image'
 
 let { ThemeProvider, Reset, Box, Heading, Text, theme, Stack } = comps
-
-let { useMemo, useEffect, useState } = React
 
 let Img = styled('img')`
   max-width: 100%;
