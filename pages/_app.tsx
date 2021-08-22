@@ -1,86 +1,32 @@
-import { useMemo, useEffect, useState } from 'react'
+import { useMemo, useEffect } from 'react'
 import * as comps from '@ds-pack/components'
-import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
-import Link from '../components/Link'
-import Code from '../components/Code'
 import { allPosts as posts } from '../posts'
 // this data is collected at build time
-import notebook from /* preval */ '../notebook'
+import notebook from /* preval */ '../scripts/collect-notebook-entries'
 import Head from 'next/head'
 import Router from 'next/router'
 import recordPageVisit from '../components/record-page'
+import Link from '../components/Link'
+import Code from '../components/Code'
+import { Footnote, Ref } from '../components/Footnotes'
 import Image from 'next/image'
+import TwitterButton from '../components/TwitterButton'
+import Mentions from '../components/TwitterMentions'
 
-let { ThemeProvider, Reset, Box, Heading, Text, theme, Stack } = comps
-
-let Img = styled('img')`
-  max-width: 100%;
-  height: auto;
-`
-
-function Ref({ id }) {
-  return (
-    <Text is="sup" fontSize="$0">
-      <comps.Link id={`ref-${id}`} is="a" href={`#fn-${id}`}>
-        [{id}]
-      </comps.Link>
-    </Text>
-  )
-}
-
-function Footnote({ id, children }) {
-  return (
-    <Box id={`fn-${id}`} _target={{ boxShadow: '$focusShadow' }}>
-      <comps.Link is="a" href={`#ref-${id}`}>
-        [{id}]
-      </comps.Link>{' '}
-      - {children}
-    </Box>
-  )
-}
+let {
+  ThemeProvider,
+  Reset,
+  Box,
+  Heading,
+  Text,
+  Image: Img,
+  theme,
+  Stack,
+} = comps
 
 function Time(props) {
   return <Text is="time" {...props} />
-}
-
-function TwitterButton() {
-  useEffect(() => {
-    const s = document.createElement('script')
-    s.setAttribute('src', 'https://platform.twitter.com/widgets.js')
-    s.setAttribute('async', 'true')
-    document.head.appendChild(s)
-  }, [])
-  return (
-    <>
-      <a
-        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-        className="twitter-share-button"
-        data-size="large"
-        data-via="immatthamlin"
-        data-show-count="true"
-      >
-        Tweet
-      </a>
-    </>
-  )
-}
-
-function Mentions() {
-  let [url, setUrl] = useState('')
-  useEffect(() => {
-    setUrl(window.location.href)
-  }, [])
-  return (
-    <comps.Link
-      is="a"
-      target="_blank"
-      rel="noopener"
-      href={`https://twitter.com/search?q=${encodeURIComponent(url)}`}
-    >
-      See discussion on Twitter
-    </comps.Link>
-  )
 }
 
 let components = {
@@ -125,14 +71,6 @@ let components = {
   img: Img,
   Spacer: (props: any) => <Box mb="$6" {...props} />,
   blockquote: comps.Blockquote,
-  // Fig: ({ src, alt, caption }) => (
-  //   <figure>
-  //     <Img src={src} alt={alt} />
-  //     <Box is="figcaption" color="gray.7" mx={4}>
-  //       {caption}
-  //     </Box>
-  //   </figure>
-  // ),
   Fig: comps.Figure,
   Image(props) {
     return (
@@ -282,7 +220,7 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
             <Box display="flex" alignItems="center">
               <Link to="/" display="flex" alignItems="center">
                 <Text mr="$2" is="span" aria-label="Wave" role="img">
-                  👋
+                  🏡
                 </Text>{' '}
                 Home
               </Link>
