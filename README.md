@@ -46,3 +46,8 @@ tags:
 highlight: boolean # Optional
 draft: boolean # Optional
 ```
+
+### Notes:
+
+- Can't use a `src` directory since preval imports don't seem to resolve
+  correctly if the file is outside of the src directory
