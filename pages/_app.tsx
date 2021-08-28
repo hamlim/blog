@@ -208,6 +208,7 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
       <Box is="main" display="flex" flexDirection="column" minHeight="100vh">
         <Box flexShrink={1} is="nav" backgroundColor="$gray-0" color="$black">
           <Box
+            is="nav"
             maxWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
             minWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
             p="$4"
@@ -227,9 +228,11 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
               <Box id="breadcrumbs-portal" />
             </Box>
             <Box>
-              <Link to="/blog">Blog</Link> <Link to="/projects">Projects</Link>{' '}
-              <Link to="/bookshelf">Bookshelf</Link>{' '}
-              <Link to="/tools">Tools</Link> <Link to="/social">Social</Link>
+              <Link to="/blog">📝 Blog</Link>{' '}
+              <Link to="/projects">🧪 Projects</Link>{' '}
+              <Link to="/bookshelf">📚 Bookshelf</Link>{' '}
+              <Link to="/tools">🛠️ Tools</Link>{' '}
+              <Link to="/social">🗣 Social</Link>
             </Box>
           </Box>
         </Box>
