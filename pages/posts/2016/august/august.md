@@ -2,7 +2,7 @@
 title: 'August'
 date: 'August 20th, 2016'
 tags:
-  - 'recap'
+  - 'Recap'
 ---
 
 Where to start? There has been 4 months since my last post on my blog here. A

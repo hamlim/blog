@@ -2,8 +2,8 @@
 title: 'Redesign v5'
 date: 'August 24th, 2016'
 tags:
-  - 'blog'
-  - 'redesign'
+  - 'Blog'
+  - 'Redesign'
 ---
 
 Technically the name of this document is <var>designV5.html</var> however I

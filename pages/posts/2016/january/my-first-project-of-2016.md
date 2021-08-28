@@ -2,7 +2,7 @@
 title: 'My First Project of 2016'
 date: 'January 1st, 2016'
 tags:
-  - 'projects'
+  - 'Projects'
 ---
 
 So I wanted to quickly updated this post, I have decided to shift away from the

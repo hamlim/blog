@@ -2,7 +2,7 @@
 title: 'Thanksgiving'
 date: 'November 24th, 2015'
 tags:
-  - 'thanks'
+  - 'Thanks'
 ---
 
 Today is Thanksgiving day 2015 and right before I jump in the kitchen to help my

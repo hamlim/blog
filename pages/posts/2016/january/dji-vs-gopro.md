@@ -2,8 +2,8 @@
 title: 'DJI vs GoPro'
 date: 'January 1st, 2016'
 tags:
-  - 'tech'
-  - 'competition'
+  - 'Technology'
+  - 'Competition'
 ---
 
 2016 is going to be a large year for tech, with a lot of potential shown for new

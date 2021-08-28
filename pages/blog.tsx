@@ -68,7 +68,26 @@ function groupByYearAndMonth(posts: Array<Post>) {
     })
 }
 
-let grouped = groupByYearAndMonth(allPosts)
+function groupByTags(posts: Array<Post>) {
+  return Object.entries(
+    posts.reduce((grouped, post) => {
+      let {
+        frontMatter: { tags },
+      } = post
+      return tags.reduce((fin, tag) => {
+        return {
+          ...fin,
+          [tag]: fin[tag] ? [...fin[tag], post] : [post],
+        }
+      }, grouped)
+    }, {}),
+  ).sort(([tagA], [tagB]) => {
+    return tagA < tagB ? -1 : tagB < tagA ? 1 : 0
+  })
+}
+
+let groupedByYear = groupByYearAndMonth(allPosts)
+let groupedByTag = groupByTags(allPosts)
 
 function Control({ value, checked, onChange, children }) {
   return (
@@ -97,6 +116,9 @@ function SegmentedControl({ value, onChange }) {
       >
         Timeline
       </Control>
+      <Control value="tag" onChange={onChange} checked={value === 'tag'}>
+        By Tag
+      </Control>
     </Stack>
   )
 }
@@ -117,14 +139,14 @@ function Timeline() {
   return (
     <>
       <Stack inline gap="$2" mb="$4">
-        {grouped.map(([year]: [string]) => (
+        {groupedByYear.map(([year]: [string]) => (
           <StyledLink is="a" key={year} href={`#${year}`}>
             {year}
           </StyledLink>
         ))}
       </Stack>
       <List variant="base" is="ol">
-        {grouped.map(([year, months]: [string, any[]], i) => (
+        {groupedByYear.map(([year, months]: [string, any[]], i) => (
           <ListItem key={year} mt={i !== 0 ? '$6' : null}>
             <Heading
               is="h3"
@@ -161,6 +183,34 @@ function Timeline() {
   )
 }
 
+function Tagged() {
+  return (
+    <List variant="base" is="ol">
+      {groupedByTag.map(([tag, posts]: [string, Array<Post>], i) => (
+        <ListItem key={tag} mt={i !== 0 ? '$6' : null}>
+          <Heading
+            is="h3"
+            id={tag}
+            variant="h2"
+            _target={{ boxShadow: '$focusShadow' }}
+          >
+            {tag}
+          </Heading>
+          <Box pl="$3">
+            <List variant="base" is="ol">
+              {posts.map((post: Post) => (
+                <ListItem key={post.title} mt="$6">
+                  <Link to={post.absolute}>{post.title}</Link>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </ListItem>
+      ))}
+    </List>
+  )
+}
+
 export default function Blog() {
   let [value, setValue] = useState('all')
   return (
@@ -190,7 +240,15 @@ export default function Blog() {
 
       <SegmentedControl value={value} onChange={setValue} />
 
-      <Box my="$5">{value === 'all' ? <AllPosts /> : <Timeline />}</Box>
+      <Box my="$5">
+        {value === 'all' ? (
+          <AllPosts />
+        ) : value === 'timeline' ? (
+          <Timeline />
+        ) : (
+          <Tagged />
+        )}
+      </Box>
     </>
   )
 }

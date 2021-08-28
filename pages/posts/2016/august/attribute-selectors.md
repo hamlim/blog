@@ -2,7 +2,8 @@
 title: 'Attribute Selectors'
 date: 'August 21st, 2016'
 tags:
-  - 'css'
+  - 'CSS'
+  - 'Development'
 ---
 
 I have recently been reading a lot of interesting articles and looking at a few

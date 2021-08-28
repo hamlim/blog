@@ -2,7 +2,8 @@
 title: 'A New Look'
 date: 'November 1st, 2015'
 tags:
-  - 'blogging'
+  - 'Blogging'
+  - 'Redesign'
 ---
 
 I just setup Poole as a blogging style with Jekyll on this (my main website).

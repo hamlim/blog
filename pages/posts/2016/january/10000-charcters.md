@@ -2,8 +2,8 @@
 title: '10,000 Characters'
 date: 'January 6th, 2016'
 tags:
-  - 'twitter'
-  - 'blogging'
+  - 'Twitter'
+  - 'Blogging'
 ---
 
 So I might be a bit late to the party to write about Twitter considering a new

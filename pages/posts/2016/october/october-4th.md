@@ -2,8 +2,8 @@
 title: 'October 4th'
 date: 'October 4th, 2016'
 tags:
-  - 'technology'
-  - 'google'
+  - 'Technology'
+  - 'Google'
 ---
 
 ### Quick Look:

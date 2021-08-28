@@ -2,8 +2,8 @@
 title: 'My New Website'
 date: 'August 28th, 2016'
 tags:
-  - 'redesign'
-  - 'blog'
+  - 'Redesign'
+  - 'Blog'
 ---
 
 Over the past 2 or three weeks I have been both busy at work and also busy

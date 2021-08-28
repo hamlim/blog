@@ -2,8 +2,8 @@
 title: 'The Great CSS Debate'
 date: 'October 8th, 2016'
 tags:
-  - 'development'
-  - 'css'
+  - 'Development'
+  - 'CSS'
 ---
 
 If you aren't actively developing websites or web applications you might not

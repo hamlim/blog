@@ -2,8 +2,8 @@
 title: 'Pull Quotes'
 date: 'August 24th, 2016'
 tags:
-  - 'web content'
-  - 'blogging'
+  - 'Web'
+  - 'Blogging'
 ---
 
 I recently read <a href="https://adactio.com/journal/11102">this</a> interesting

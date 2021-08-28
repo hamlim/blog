@@ -2,8 +2,8 @@
 title: 'Links'
 date: 'November 19th, 2016'
 tags:
-  - 'roundup'
-  - 'collection'
+  - 'Roundup'
+  - 'Collection'
 ---
 
 The web is one of the best things in the world. It has never been replicated and

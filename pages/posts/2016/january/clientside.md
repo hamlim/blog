@@ -2,7 +2,7 @@
 title: 'Clientside'
 date: 'January 19th, 2016'
 tags:
-  - 'development'
+  - 'Development'
 ---
 
 Recent trend articles are always the popular kind of thing to post on a blog,

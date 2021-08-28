@@ -2,7 +2,7 @@
 title: 'Building in 2016'
 date: 'January 3rd, 2016'
 tags:
-  - 'projects'
+  - 'Projects'
 ---
 
 I often read about people who set impressive goals of number of projects to

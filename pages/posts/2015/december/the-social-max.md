@@ -2,7 +2,7 @@
 title: 'The Social Max'
 date: 'December 1st, 2015'
 tags:
-  - 'social'
+  - 'Social Media'
 ---
 
 A few days ago I tweeted about an idea I had on social networking. I tweeted

@@ -2,7 +2,7 @@
 title: 'Afraid'
 date: 'January 22nd, 2016'
 tags:
-  - 'meta'
+  - 'Meta'
 ---
 
 If you asked me any time in the past three years at college about if I wanted to

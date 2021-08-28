@@ -2,7 +2,7 @@
 title: 'Blogging vs Working'
 date: 'December 15th, 2015'
 tags:
-  - 'blogging'
+  - 'Blogging'
 ---
 
 From November 25th to December 1st I was posting a blog update once a day, I

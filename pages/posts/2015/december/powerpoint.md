@@ -2,8 +2,8 @@
 title: 'Powerpoint'
 date: 'December 2nd, 2015'
 tags:
-  - 'startups'
-  - 'ideas'
+  - 'Startups'
+  - 'Ideas'
 ---
 
 If you happen to be following the startup world (which is a fairly large
