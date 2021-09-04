@@ -17,7 +17,7 @@ export default function Tools() {
         Social
       </Heading>
       <Text>
-        I don't use much social media, but if you can follow me on a few
+        I don't use social media much, but you can connect with me on a few
         different platforms:
       </Text>
       <Box my="$5">
