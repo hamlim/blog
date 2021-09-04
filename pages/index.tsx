@@ -107,6 +107,14 @@ export default function Landing() {
         ones I've read and the ones I want to read next here!
       </Text>
       <LocalLink to="/bookshelf">See them here</LocalLink>
+
+      <Heading variant="h3" is="h3" my="$3">
+        Tools
+      </Heading>
+      <Text mb="$2">
+        I sometimes like to share a bit about the software and hardware that I'm using daily.
+      </Text>
+      <LocalLink to="/tools">See them here</LocalLink>
     </>
   )
 }

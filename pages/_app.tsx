@@ -231,7 +231,6 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
               <Link to="/blog">📝 Blog</Link>{' '}
               <Link to="/projects">🧪 Projects</Link>{' '}
               <Link to="/bookshelf">📚 Bookshelf</Link>{' '}
-              <Link to="/tools">🛠️ Tools</Link>{' '}
               <Link to="/social">🗣 Social</Link>
             </Box>
           </Box>
