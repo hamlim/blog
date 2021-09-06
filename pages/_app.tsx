@@ -122,12 +122,6 @@ let components = {
   Footnote,
   Ref,
   Tweet(props) {
-    useEffect(() => {
-      let s = document.createElement('script')
-      s.setAttribute('src', 'https://platform.twitter.com/widgets.js')
-      s.setAttribute('charset', 'utf-8')
-      document.head.appendChild(s)
-    }, [])
     return (
       <Box my={6}>
         <blockquote className="twitter-tweet tw-align-center" {...props} />

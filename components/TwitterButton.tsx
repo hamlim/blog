@@ -1,12 +1,4 @@
-import { useEffect } from 'react'
-
 export default function TwitterButton() {
-  useEffect(() => {
-    const s = document.createElement('script')
-    s.setAttribute('src', 'https://platform.twitter.com/widgets.js')
-    s.setAttribute('charset', 'utf-8')
-    document.head.appendChild(s)
-  }, [])
   return (
     <a
       href="https://twitter.com/share?ref_src=twsrc%5Etfw"
