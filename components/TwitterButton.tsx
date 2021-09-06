@@ -4,7 +4,7 @@ export default function TwitterButton() {
   useEffect(() => {
     const s = document.createElement('script')
     s.setAttribute('src', 'https://platform.twitter.com/widgets.js')
-    s.setAttribute('async', 'true')
+    s.setAttribute('charset', 'utf-8')
     document.head.appendChild(s)
   }, [])
   return (
