@@ -41,14 +41,14 @@ export default function Projects() {
           <ListItem>
             <Link
               is="a"
-              href="https://www.goodreads.com/book/show/54493401-project-hail-mary"
+              href="https://www.goodreads.com/book/show/7670.The_Andromeda_Strain"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Project Hail Mary
+              The Andromeda Strain
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
-            by Andy Weir
+            by Michael Crichton
           </ListItem>
         </List>
       </Box>
@@ -58,6 +58,18 @@ export default function Projects() {
       <Box my="$5">
         <List variant="base" is="ul">
           <ListItem>
+            <Link
+              is="a"
+              href="https://www.goodreads.com/book/show/54493401-project-hail-mary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Project Hail Mary
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            by Andy Weir
+          </ListItem>
+          <ListItem mt="$6">
             <Link
               is="a"
               href="https://www.goodreads.com/book/show/44767458-dune"
@@ -135,18 +147,6 @@ export default function Projects() {
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             by Isaac Asimov
-          </ListItem>
-          <ListItem mt="$6">
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/7670.The_Andromeda_Strain"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              The Andromeda Strain
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Michael Crichton
           </ListItem>
         </List>
       </Box>
