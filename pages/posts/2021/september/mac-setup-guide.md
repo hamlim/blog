@@ -76,6 +76,7 @@ list may change over time but these are the essentials that I use today.
   - Don't set it up to backup your computer, instead only sync the Obsidian
     vault folder
   - See [Obsidian Sync](../august/obsidian-sync) for more details
+- Install&nbsp;<ExternalLink href="https://www.sourcenoteapp.com/">SourceNote</ExternalLink>
 
 <Spacer />
 
