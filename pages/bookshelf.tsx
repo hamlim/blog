@@ -41,14 +41,14 @@ export default function Projects() {
           <ListItem>
             <Link
               is="a"
-              href="https://www.goodreads.com/book/show/7670.The_Andromeda_Strain"
+              href="https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama"
               target="_blank"
               rel="noopener noreferrer"
             >
-              The Andromeda Strain
+              Rendezvous with Rama
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
-            by Michael Crichton
+            by Arthur C. Clarke
           </ListItem>
         </List>
       </Box>
@@ -58,6 +58,18 @@ export default function Projects() {
       <Box my="$5">
         <List variant="base" is="ul">
           <ListItem>
+            <Link
+              is="a"
+              href="https://www.goodreads.com/book/show/7670.The_Andromeda_Strain"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              The Andromeda Strain
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            by Michael Crichton
+          </ListItem>
+          <ListItem mt="$6">
             <Link
               is="a"
               href="https://www.goodreads.com/book/show/54493401-project-hail-mary"
@@ -124,19 +136,7 @@ export default function Projects() {
       </Heading>
       <Box my="$5">
         <List variant="base" is="ul">
-          <ListItem mt="$6">
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Rendezvous with Rama
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Arthur C. Clarke
-          </ListItem>
-          <ListItem mt="$6">
+          <ListItem>
             <Link
               is="a"
               href="hhttps://www.goodreads.com/book/show/29579.Foundation"
