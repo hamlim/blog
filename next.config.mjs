@@ -1,12 +1,15 @@
-const frontmatter = require('./utils/frontmatter')
+import frontmatter from './utils/frontmatter.mjs'
 
-const withMDX = require('@next/mdx')({
+import createWithMdx from '@next/mdx'
+
+let withMDX = createWithMdx({
   extension: /\.(md|mdx)$/,
   options: {
     remarkPlugins: [frontmatter],
   },
 })
-module.exports = withMDX({
+
+export default withMDX({
   pageExtensions: ['md', 'mdx', 'jsx', 'js', 'ts', 'tsx'],
   experimental: {
     reactRefresh: true,

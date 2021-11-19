@@ -2,11 +2,11 @@
 // From: https://github.com/vercel/next.js/issues/10337
 
 // helps us in parsing the frontmatter from text content
-const matter = require('gray-matter')
+import matter from 'gray-matter'
 // helps us safely stringigy the frontmatter as a json object
-const stringifyObject = require('stringify-object')
+import stringifyObject from 'stringify-object'
 // helps us in getting the reading time for a given text
-const readingTime = require('reading-time')
+import readingTime from 'reading-time'
 
 // please make sure you have installed these dependencies
 // before proceeding further, or remove the require statements
@@ -20,7 +20,7 @@ const readingTime = require('reading-time')
  * @param file - the file node
  * @return void - it should mutate the tree if needed
  */
-module.exports = () => (tree, file) => {
+export default () => (tree, file) => {
   // we will get the frontMatter using `gray-matter`
   const { data: frontMatter, content } = matter(file.contents)
   // the frontMatter holds the json object of the frontmatter
