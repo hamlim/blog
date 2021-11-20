@@ -9,7 +9,8 @@ tags:
 ---
 
 A decent part of my day-to-day work is iterating on solving UI "problems" by
-using [[fast feedback systems]], such as web sandboxes / REPLs like
+using <Link to="/posts/2021/november/fast-feedback-systems">fast feedback
+systems</Link>, such as web sandboxes / REPLs like
 [CodeSandbox](https://codesandbox.io). As I iterate on these UI challenges, I
 tend to want to both look at the UI and also see a feed of the Console from
 devtools without the rest of the devtools panel taking up space on the screen.
