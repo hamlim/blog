@@ -35,9 +35,9 @@ looks like.
 It's worth noting, rarely do we follow the exact same process when doing pair
 code reviews, but usually they look like the following:
 
+<!-- prettier-ignore -->
 When an engineer has a pull request ready for review, they may reach out to
-another engineer that they had collaborated with (either through
-[[Pair Programming]] or some shared debugging) or had also been knowledgable of
+another engineer that they had collaborated with (either through <Link to="/posts/2021/november/pair-programming">Pair Programming</Link> or some shared debugging) or had also been knowledgable of
 the ticket they were working on to schedule a pair review.
 
 During the call, usually the author will be running the code locally so they can

@@ -36,6 +36,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          {/* TODO: Refactor to use next/script */}
           <script src="https://platform.twitter.com/widgets.js" />
         </body>
       </Html>
