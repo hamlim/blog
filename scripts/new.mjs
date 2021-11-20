@@ -100,6 +100,13 @@ draft: false
 highlight: false
 ---
 
+START_HERE
+
+<Spacer />
+
+---
+
+<Spacer />
 `
 
 fs.writeFileSync(path.join(folderPath, `${args.slug}.md`), template)
