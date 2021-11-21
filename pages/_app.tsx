@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import * as comps from '@ds-pack/components'
 import { MDXProvider } from '@mdx-js/react'
 import { allPosts as posts } from '../posts'
@@ -152,37 +152,42 @@ let components = {
 
 function PostLayout({ children, post }) {
   return (
-    <MDXProvider components={components}>
-      <Heading variant="lead" is="h1">
-        {post.title}
-      </Heading>
-      {post.date ? (
-        <>
-          <Text is="span" color="$gray-8" fontStyle="italic">
-            Published <Time>{post.date}</Time>
-          </Text>{' '}
-        </>
-      ) : null}
-      <Mentions />
-      {children}
-      {post.tags ? (
-        <Box mt="$3">
-          <Heading variant="subhead" is="h4">
-            Tags:
-          </Heading>
-          <Stack inline gap="$4">
-            {post.tags.map((tag: string, index: number) => (
-              <Box key={tag}>
-                <Box color="primary" is="span">
-                  {tag}
+    <>
+      <Head>
+        <script src="https://platform.twitter.com/widgets.js" />
+      </Head>
+      <MDXProvider components={components}>
+        <Heading variant="lead" is="h1">
+          {post.title}
+        </Heading>
+        {post.date ? (
+          <>
+            <Text is="span" color="$gray-8" fontStyle="italic">
+              Published <Time>{post.date}</Time>
+            </Text>{' '}
+          </>
+        ) : null}
+        <Mentions />
+        {children}
+        {post.tags ? (
+          <Box mt="$3">
+            <Heading variant="subhead" is="h4">
+              Tags:
+            </Heading>
+            <Stack inline gap="$4">
+              {post.tags.map((tag: string, index: number) => (
+                <Box key={tag}>
+                  <Box color="primary" is="span">
+                    {tag}
+                  </Box>
+                  {index < post.tags.length - 1 ? ', ' : null}
                 </Box>
-                {index < post.tags.length - 1 ? ', ' : null}
-              </Box>
-            ))}
-          </Stack>
-        </Box>
-      ) : null}
-    </MDXProvider>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
+      </MDXProvider>
+    </>
   )
 }
 
