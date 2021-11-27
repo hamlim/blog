@@ -18,27 +18,27 @@ interface Book {
 
 let books: Array<Book> = [
   {
-    title: 'Rendezvous with Rama',
-    author: 'Arthur C. Clarke',
-    url: 'https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama',
-    status: 'read',
-  },
-  {
     title: 'Rama II',
     author: 'Arthur C. Clarke',
     url: 'https://www.goodreads.com/book/show/112520.Rama_II',
     status: 'read',
   },
   {
-    title: 'The Andromeda Strain',
-    author: 'Michael Crichton',
-    url: 'https://www.goodreads.com/book/show/7670.The_Andromeda_Strain',
+    title: 'Rendezvous with Rama',
+    author: 'Arthur C. Clarke',
+    url: 'https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama',
     status: 'read',
   },
   {
     title: 'Project Hail Mary',
     author: 'Andy Weir',
     url: 'https://www.goodreads.com/book/show/54493401-project-hail-mary',
+    status: 'read',
+  },
+  {
+    title: 'The Andromeda Strain',
+    author: 'Michael Crichton',
+    url: 'https://www.goodreads.com/book/show/7670.The_Andromeda_Strain',
     status: 'read',
   },
   {
