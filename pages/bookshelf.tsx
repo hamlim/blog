@@ -9,6 +9,80 @@ import {
   ListItem,
 } from '@ds-pack/components'
 
+interface Book {
+  title: string
+  author: string
+  url: string
+  status: 'read' | 'reading' | 'to-read'
+}
+
+let books: Array<Book> = [
+  {
+    title: 'Rendezvous with Rama',
+    author: 'Arthur C. Clarke',
+    url: 'https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama',
+    status: 'read',
+  },
+  {
+    title: 'Rama II',
+    author: 'Arthur C. Clarke',
+    url: 'https://www.goodreads.com/book/show/112520.Rama_II',
+    status: 'read',
+  },
+  {
+    title: 'The Andromeda Strain',
+    author: 'Michael Crichton',
+    url: 'https://www.goodreads.com/book/show/7670.The_Andromeda_Strain',
+    status: 'read',
+  },
+  {
+    title: 'Project Hail Mary',
+    author: 'Andy Weir',
+    url: 'https://www.goodreads.com/book/show/54493401-project-hail-mary',
+    status: 'read',
+  },
+  {
+    title: 'Dune',
+    author: 'Frank Herbert',
+    url: 'https://www.goodreads.com/book/show/44767458-dune',
+    status: 'read',
+  },
+  {
+    title: '2001: A Space Odyssey',
+    author: 'Arthur C. Clarke',
+    url: 'https://www.goodreads.com/book/show/70535.2001',
+    status: 'read',
+  },
+  {
+    title: 'On The Road',
+    author: 'Jack Kerouac',
+    url: 'https://www.goodreads.com/book/show/70401.On_the_Road',
+    status: 'read',
+  },
+  {
+    title: 'The Martian Chronicles',
+    author: 'Ray Bradbury',
+    url: 'https://www.goodreads.com/book/show/76778.The_Martian_Chronicles',
+    status: 'read',
+  },
+  {
+    title: 'Airframe',
+    author: 'Michael Crichton',
+    url: 'https://www.goodreads.com/book/show/7667.Airframe',
+    status: 'reading',
+  },
+  {
+    title: 'Foundation',
+    author: 'Isaac Asimov',
+    url: 'https://www.goodreads.com/book/show/29579.Foundation',
+    status: 'to-read',
+  },
+]
+
+let reading = books.filter((book) => book.status === 'reading')
+let read = books.filter((book) => book.status === 'read')
+let toRead = books.filter((book) => book.status === 'to-read')
+
 export default function Projects() {
   return (
     <>
@@ -38,18 +112,20 @@ export default function Projects() {
       </Heading>
       <Box my="$5">
         <List variant="base" is="ul">
-          <ListItem>
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Rendezvous with Rama
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Arthur C. Clarke
-          </ListItem>
+          {reading.map((book, idx) => (
+            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+              <Link
+                is="a"
+                href={book.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {book.title}
+                <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+              </Link>{' '}
+              by {book.author}
+            </ListItem>
+          ))}
         </List>
       </Box>
       <Heading my="$5" variant="subhead" is="h3">
@@ -57,78 +133,20 @@ export default function Projects() {
       </Heading>
       <Box my="$5">
         <List variant="base" is="ul">
-          <ListItem>
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/7670.The_Andromeda_Strain"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              The Andromeda Strain
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Michael Crichton
-          </ListItem>
-          <ListItem mt="$6">
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/54493401-project-hail-mary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Project Hail Mary
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Andy Weir
-          </ListItem>
-          <ListItem mt="$6">
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/44767458-dune"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Dune
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Frank Herbert
-          </ListItem>
-          <ListItem mt="$6">
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/70535.2001"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              2001: A Space Odyssey
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Arthur C. Clarke
-          </ListItem>
-          <ListItem mt="$6">
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/70401.On_the_Road"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              On The Road
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Jack Kerouac
-          </ListItem>
-          <ListItem mt="$6">
-            <Link
-              is="a"
-              href="https://www.goodreads.com/book/show/76778.The_Martian_Chronicles"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              The Martian Chronicles
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Ray Bradbury
-          </ListItem>
+          {read.map((book, idx) => (
+            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+              <Link
+                is="a"
+                href={book.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {book.title}
+                <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+              </Link>{' '}
+              by {book.author}
+            </ListItem>
+          ))}
         </List>
       </Box>
       <Heading my="$5" variant="subhead" is="h3">
@@ -136,22 +154,24 @@ export default function Projects() {
       </Heading>
       <Box my="$5">
         <List variant="base" is="ul">
-          <ListItem>
-            <Link
-              is="a"
-              href="hhttps://www.goodreads.com/book/show/29579.Foundation"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Foundation
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            by Isaac Asimov
-          </ListItem>
+          {toRead.map((book, idx) => (
+            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+              <Link
+                is="a"
+                href={book.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {book.title}
+                <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+              </Link>{' '}
+              by {book.author}
+            </ListItem>
+          ))}
         </List>
       </Box>
       <Text is="small" color="$gray-8">
-        Last Updated: August 2021
+        Last Updated: November 2021
       </Text>
     </>
   )
