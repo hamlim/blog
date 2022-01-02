@@ -69,7 +69,25 @@ let books: Array<Book> = [
     title: 'Airframe',
     author: 'Michael Crichton',
     url: 'https://www.goodreads.com/book/show/7667.Airframe',
+    status: 'read',
+  },
+  {
+    title: 'Red Mars',
+    author: 'Kim Stanley Robinson',
+    url: 'https://www.goodreads.com/book/show/77507.Red_Mars',
+    status: 'read',
+  },
+  {
+    title: 'Green Mars',
+    author: 'Kim Stanley Robinson',
+    url: 'https://www.goodreads.com/book/show/77505.Green_Mars',
     status: 'reading',
+  },
+  {
+    title: 'Blue Mars',
+    author: 'Kim Stanley Robinson',
+    url: 'https://www.goodreads.com/book/show/77504.Blue_Mars',
+    status: 'to-read',
   },
   {
     title: 'Foundation',
@@ -171,7 +189,7 @@ export default function Projects() {
         </List>
       </Box>
       <Text is="small" color="$gray-8">
-        Last Updated: November 2021
+        Last Updated: January 2022
       </Text>
     </>
   )
