@@ -6,6 +6,7 @@ import {
   Stack,
   Link as ExternalLink,
 } from '@ds-pack/components'
+import Link from '../components/Link'
 
 export default function Tools() {
   return (
@@ -18,6 +19,99 @@ export default function Tools() {
         I'd try to catalog those tools here, and I'm also going to try and keep
         this up to date every so often and see how it changes over time.
       </Text>
+      <Box my="$5">
+        <Heading is="h3" variant="h2">
+          January, 2022
+        </Heading>
+        <Stack gap="$2">
+          <Heading is="h4" variant="subhead">
+            Hardware
+          </Heading>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Phone
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                iPhone 13 Pro Max
+              </Text>
+            </Text>
+            <Text>
+              I've{' '}
+              <Link to="/posts/2022/january/switching-to-iphone">
+                recently switched to using an iPhone
+              </Link>{' '}
+              as an experiment after using Android phones for the past 12 years
+              (7 of which have been with Google made devices) and so far I've
+              been enjoying it!
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Laptop
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                MacBook Pro (early 2020) 13"
+              </Text>
+            </Text>
+            <Text>
+              I've continued to use this laptop for nearly everything I do
+              outside of work. It continues to be a great resource.
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                E-Reader
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                Kindle Paperlight (Signature Edition)
+              </Text>
+            </Text>
+            <Text>
+              I recently picked this up to help fuel my growing interest in
+              reading that I got back into late last year. So far it's been an
+              amazing piece of hardware!
+            </Text>
+          </Box>
+          <Heading is="h4" variant="subhead">
+            Software
+          </Heading>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Notes / Todos
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                Obsidian
+              </Text>
+            </Text>
+            <Text>
+              I've continued to use Obsidian, however I haven't yet figured out
+              how to setup my own sync across a variety of devices!
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Code
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                VS Code (Insiders)
+              </Text>
+            </Text>
+            <Text>
+              I've been writing a bit more code outside of work, but it's still
+              fairly limited.
+            </Text>
+          </Box>
+        </Stack>
+      </Box>
+      <hr />
+      <Heading is="h2" variant="h1">
+        Old Updates:
+      </Heading>
       <Box my="$5">
         <Heading is="h3" variant="h2">
           August, 2021
@@ -122,7 +216,6 @@ export default function Tools() {
               months outside of work.
             </Text>
           </Box>
-          <hr />
         </Stack>
       </Box>
       <Box my="$5">
