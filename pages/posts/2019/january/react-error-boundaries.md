@@ -81,7 +81,7 @@ its `componentDidCatch` lifecycle method with the error that was thrown.
 This component can then setState to change the children returned from render in
 order to recover from that thrown error.
 
-## Caveats
+<h2 id="caveats">Caveats</h2>
 
 As with most things, there are some caveats with this workflow. The first and
 most notable, is that this component will only catch errors thrown during the

@@ -1,4 +1,4 @@
-// cachebuster - v31
+// cachebuster - v32
 import postData from /* preval */ './scripts/collect-post-data'
 
 let highlights = postData.filter((p) => p.frontMatter.highlight)
