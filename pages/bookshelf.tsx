@@ -81,13 +81,13 @@ let books: Array<Book> = [
     title: 'Green Mars',
     author: 'Kim Stanley Robinson',
     url: 'https://www.goodreads.com/book/show/77505.Green_Mars',
-    status: 'reading',
+    status: 'read',
   },
   {
     title: 'Blue Mars',
     author: 'Kim Stanley Robinson',
     url: 'https://www.goodreads.com/book/show/77504.Blue_Mars',
-    status: 'to-read',
+    status: 'reading',
   },
   {
     title: 'Foundation',
