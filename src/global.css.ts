@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css'
 
-globalStyle('.footnote', {
-  marginTop: '2rem',
+globalStyle('.footnotes', {
+  marginTop: '1rem',
 })

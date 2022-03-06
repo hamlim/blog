@@ -1,6 +1,9 @@
 import frontmatter from './utils/frontmatter.mjs'
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'
 import createWithMdx from '@next/mdx'
+import createTM from 'next-transpile-modules'
+
+let withTM = createTM(['@ui/components'])
 
 let withVanillaExtract = createVanillaExtractPlugin()
 
@@ -11,13 +14,15 @@ let withMDX = createWithMdx({
   },
 })
 
-export default withVanillaExtract(
-  withMDX({
-    pageExtensions: ['md', 'mdx', 'jsx', 'js', 'ts', 'tsx'],
-    experimental: {
-      reactRefresh: true,
-      modern: true,
-      reactRoot: 'concurrent',
-    },
-  }),
+export default withTM(
+  withVanillaExtract(
+    withMDX({
+      pageExtensions: ['md', 'mdx', 'jsx', 'js', 'ts', 'tsx'],
+      experimental: {
+        reactRefresh: true,
+        modern: true,
+        reactRoot: 'concurrent',
+      },
+    }),
+  ),
 )

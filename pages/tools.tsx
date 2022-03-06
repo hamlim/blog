@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  Heading,
-  Box,
-  Text,
-  Stack,
-  Link as ExternalLink,
-} from '@ds-pack/components'
+import { Heading, Box, Text, Stack, Link as ExternalLink } from '@ui/components'
 import Link from '../components/Link'
 
 export default function Tools() {
@@ -19,16 +13,16 @@ export default function Tools() {
         I'd try to catalog those tools here, and I'm also going to try and keep
         this up to date every so often and see how it changes over time.
       </Text>
-      <Box my="$5">
+      <Box my="5">
         <Heading is="h3" variant="h2">
           January, 2022
         </Heading>
-        <Stack gap="$2">
+        <Stack gap="2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Phone
               </Text>{' '}
@@ -47,7 +41,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Laptop
               </Text>{' '}
@@ -61,7 +55,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 E-Reader
               </Text>{' '}
@@ -79,7 +73,7 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Notes / Todos
               </Text>{' '}
@@ -93,7 +87,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Code
               </Text>{' '}
@@ -112,16 +106,16 @@ export default function Tools() {
       <Heading is="h2" variant="h1">
         Old Updates:
       </Heading>
-      <Box my="$5">
+      <Box my="5">
         <Heading is="h3" variant="h2">
           August, 2021
         </Heading>
-        <Stack gap="$2">
+        <Stack gap="2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Phone
               </Text>{' '}
@@ -137,7 +131,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Laptop
               </Text>{' '}
@@ -151,7 +145,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Tablet / Laptop
               </Text>{' '}
@@ -172,7 +166,7 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Notes / Todos
               </Text>{' '}
@@ -202,7 +196,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Code
               </Text>{' '}
@@ -218,16 +212,16 @@ export default function Tools() {
           </Box>
         </Stack>
       </Box>
-      <Box my="$5">
+      <Box my="5">
         <Heading is="h3" variant="h2" id="november-2020">
           November, 2020
         </Heading>
-        <Stack gap="$2">
+        <Stack gap="2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Phone
               </Text>{' '}
@@ -247,7 +241,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Laptop
               </Text>{' '}
@@ -268,7 +262,7 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Notes / Todos
               </Text>{' '}
@@ -293,7 +287,7 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
+            <Text mb="2">
               <Text is="strong" fontWeight="bold">
                 Code
               </Text>{' '}

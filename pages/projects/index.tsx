@@ -8,7 +8,7 @@ import {
   List,
   ListItem,
   InlineCode,
-} from '@ds-pack/components'
+} from '@ui/components'
 
 export default function Projects() {
   return (
@@ -34,7 +34,7 @@ export default function Projects() {
         </Link>
         .
       </Text>
-      <Box my="$5">
+      <Box my="5">
         <List variant="base" is="ul">
           <ListItem>
             <Link
@@ -48,7 +48,7 @@ export default function Projects() {
             </Link>{' '}
             A minimal, CSS variable backed style-prop library
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem mt="6">
             <Link
               is="a"
               href="https://github.com/hamlim/inline-mdx.macro"
@@ -64,7 +64,7 @@ export default function Projects() {
             </Link>{' '}
             in JavaScript files.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem mt="6">
             <Link
               is="a"
               href="https://github.com/ds-pack/components"
@@ -77,7 +77,7 @@ export default function Projects() {
             A component library built on Simple Props, Styled-Components, React,
             and Typescript.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem mt="6">
             <Link
               is="a"
               href="https://github.com/ds-pack/babel-plugin-docs"
@@ -90,7 +90,7 @@ export default function Projects() {
             A collection of babel utilities (plugins, visitors) for transforming
             code related to design systems.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem mt="6">
             <Link
               is="a"
               href="https://github.com/ds-pack/use-media"
@@ -103,7 +103,7 @@ export default function Projects() {
             A React hook for <InlineCode>window.matchMedia</InlineCode> that is
             SSR safe.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem mt="6">
             <Link
               is="a"
               href="https://github.com/ds-pack/use-refs"
@@ -115,7 +115,7 @@ export default function Projects() {
             </Link>{' '}
             Helpers and utilities for working with refs in React
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem mt="6">
             <Link
               is="a"
               href="https://github.com/hamlim/notedo"
@@ -127,7 +127,7 @@ export default function Projects() {
             </Link>{' '}
             A note and todo list web application using plain text.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem mt="6">
             <Link
               is="a"
               href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"

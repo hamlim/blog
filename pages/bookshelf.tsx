@@ -1,4 +1,3 @@
-import * as React from 'react'
 import {
   Heading,
   Link,
@@ -7,7 +6,7 @@ import {
   VisuallyHidden,
   List,
   ListItem,
-} from '@ds-pack/components'
+} from '@ui/components'
 
 interface Book {
   title: string
@@ -107,7 +106,7 @@ export default function Projects() {
       <Heading variant="lead" is="h1">
         Bookshelf
       </Heading>
-      <Text mb="$2">
+      <Text mb="2">
         In the rare time that I find not in front of some kind of display, I
         like to read books! Here is a short collection of books I've recently
         read as well as a few books from my to read list.
@@ -125,13 +124,13 @@ export default function Projects() {
         </Link>{' '}
         if you have book recommendations!
       </Text>
-      <Heading my="$5" variant="subhead" is="h3">
+      <Heading my="5" variant="subhead" is="h3">
         What I'm Currently Reading:
       </Heading>
-      <Box my="$5">
+      <Box my="5">
         <List variant="base" is="ul">
           {reading.map((book, idx) => (
-            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+            <ListItem mt={idx > 0 ? '6' : null} key={book.title}>
               <Link
                 is="a"
                 href={book.url}
@@ -146,13 +145,13 @@ export default function Projects() {
           ))}
         </List>
       </Box>
-      <Heading my="$5" variant="subhead" is="h3">
+      <Heading my="5" variant="subhead" is="h3">
         Books I've Recently Read:
       </Heading>
-      <Box my="$5">
+      <Box my="5">
         <List variant="base" is="ul">
           {read.map((book, idx) => (
-            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+            <ListItem mt={idx > 0 ? '6' : null} key={book.title}>
               <Link
                 is="a"
                 href={book.url}
@@ -167,13 +166,13 @@ export default function Projects() {
           ))}
         </List>
       </Box>
-      <Heading my="$5" variant="subhead" is="h3">
+      <Heading my="5" variant="subhead" is="h3">
         Books I Want to Read Soon:
       </Heading>
-      <Box my="$5">
+      <Box my="5">
         <List variant="base" is="ul">
           {toRead.map((book, idx) => (
-            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+            <ListItem mt={idx > 0 ? '6' : null} key={book.title}>
               <Link
                 is="a"
                 href={book.url}
@@ -188,7 +187,7 @@ export default function Projects() {
           ))}
         </List>
       </Box>
-      <Text is="small" color="$gray-8">
+      <Text is="small" color="gray800">
         Last Updated: January 2022
       </Text>
     </>

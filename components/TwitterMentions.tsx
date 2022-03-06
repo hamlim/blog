@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from '@ds-pack/components'
+import { Link } from '@ui/components'
 
 export default function Mentions() {
   let [url, setUrl] = useState('')
