@@ -187,19 +187,6 @@ function PostLayout({ children, post }) {
 function Layout({ children, title = "Matt Hamlin's Blog" }) {
   return (
     <>
-      {/* <ThemeProvider
-      theme={{
-        ...theme,
-        headings: {
-          ...theme.headings,
-          lead: {
-            ...theme.headings.lead,
-            fontSize: theme.fontSizes[3],
-          },
-        },
-      }}
-    > */}
-      {/* <Reset /> */}
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>{title}</title>
@@ -262,7 +249,6 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
           </Box>
         </Box>
       </Box>
-      {/* </ThemeProvider> */}
     </>
   )
 }
