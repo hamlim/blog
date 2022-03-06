@@ -13,11 +13,8 @@ import { Footnote, Ref } from '../components/Footnotes'
 import Image from 'next/image'
 import TwitterButton from '../components/TwitterButton'
 import Mentions from '../components/TwitterMentions'
-
+// Global Styles
 import '../src/global.css'
-// // @TODO - Bug in Next/react-refresh where this file is treated as
-// // a module that exports React components (but it doesn't)
-// import '../src/aside-colors.css'
 
 let { Box, Heading, Text, Image: Img, Stack } = comps
 

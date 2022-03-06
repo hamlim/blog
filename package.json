@@ -31,9 +31,7 @@
     "rainbow-sprinkles": "^0.6.0",
     "react": "^18.0.0-beta-149b420f6-20211119",
     "react-dom": "^18.0.0-beta-149b420f6-20211119",
-    "react-is": "^0.0.0-experimental-149b420f6-20211119",
-    "simple-props": "*",
-    "styled-components": "*"
+    "react-is": "^0.0.0-experimental-149b420f6-20211119"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -44,9 +42,7 @@
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "@types/node": "^16.11.9",
-    "@types/styled-components": "^5.1.15",
     "babel-plugin-preval": "latest",
-    "babel-plugin-styled-components": "^1.13.3",
     "gray-matter": "latest",
     "polished": "^4.1.4",
     "reading-time": "^1.5.0",
