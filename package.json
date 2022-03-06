@@ -13,7 +13,7 @@
   "dependencies": {
     "@babel/runtime": "^7.16.3",
     "@ds-pack/components": "*",
-    "@ds-pack/components-experimental": "0.0.2",
+    "@ds-pack/components-experimental": "0.0.3",
     "@ds-pack/use-refs": "^1.0.0",
     "@mdx-js/loader": "latest",
     "@mdx-js/react": "latest",
