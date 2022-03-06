@@ -66,7 +66,7 @@ class ErrorBoundary extends React.Component {
     this.setState({ hasCaughtError: true })
   }
   render() {
-    if (this.stAte.hasCaughtError) {
+    if (this.state.hasCaughtError) {
       return <p>Oh no, an error has occurred</p>
     }
     return this.props.children

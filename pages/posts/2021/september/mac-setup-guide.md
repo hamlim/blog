@@ -30,12 +30,13 @@ First let's cover some fundamentals:
 
 - Install <ExternalLink href="https://brew.sh/">Homebrew</ExternalLink>
   - We'll use this to install other tools below!
-- Install&nbsp;<ExternalLink href="https://nodejs.org/en/download/">Node</ExternalLink>
 - Install <ExternalLink href="https://ohmyz.sh/">Oh My ZSH</ExternalLink>
 
 ### Configuring My Environment:
 
 **Configure Git:**
+
+_TODO: Move these to a dotfiles repo!_
 
 ```bash
 git config --global user.name "<name>"
@@ -51,6 +52,16 @@ Create a `~/.aliases` file and add the following:
 ```bash
 
 ``` -->
+
+## CLI Tooling:
+
+```sh
+# The basics: node, yarn, pnpm, fzf, jq
+brew install node yarn pnpm fzf jq bat
+
+# fnm (node version manager)
+curl -fsSL https://fnm.vercel.app/install | bash
+```
 
 ## GUI Tooling:
 
