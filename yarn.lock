@@ -1066,10 +1066,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@ds-pack/components-experimental@0.0.3", "@ui/components@npm:@ds-pack/components-experimental":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@ds-pack/components-experimental/-/components-experimental-0.0.3.tgz#ded861303d3554fa5637c02ba9abc2a9db4a8f84"
-  integrity sha512-S5inrw+NX94sOCBBZgbvgnVWkOjwmUXTId4Aw9fIIMyY6A04P5kKroLe572wk8jNmX5NjKbLPO5OgVTDptN+SQ==
+"@ds-pack/components-experimental@0.0.4", "@ui/components@npm:@ds-pack/components-experimental@latest":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@ds-pack/components-experimental/-/components-experimental-0.0.4.tgz#86b092d6e3035fabc56fd3ae29987cac50b06d45"
+  integrity sha512-CPVGTvbK8O42c67VebkHKHy0WTkzTWoIVHgMplPMj922QzgYmbahefmlc6JuUL3rRTT2C/iHuZDHURS/BArptg==
 
 "@ds-pack/components@*":
   version "0.0.18"
