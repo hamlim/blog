@@ -1,6 +1,7 @@
-import * as React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight'
+import { code } from './Code.css'
+import { vars } from '@ui/components/src/vars.css'
 
 export default function Code({ children, className, ...props }) {
   let highlight = null
@@ -32,28 +33,20 @@ export default function Code({ children, className, ...props }) {
       language={lang}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre
-          className={className}
-          style={{
-            ...style,
-            marginTop: `var(--space-3)`,
-            overflow: 'auto',
-          }}
-        >
+        <pre className={className + ' ' + code} style={style}>
           {tokens.map((line, i) => (
             <div
               {...getLineProps({
                 line,
                 key: i,
                 style: {
-                  paddingLeft: `var(--space-3)`,
-                  paddingRight: `var(--space-3)`,
-                  paddingTop: i === 0 ? `var(--space-3)` : null,
-                  paddingBottom:
-                    i === tokens.length - 1 ? `var(--space-3)` : null,
+                  paddingLeft: vars.space[3],
+                  paddingRight: vars.space[3],
+                  paddingTop: i === 0 ? vars.space[3] : null,
+                  paddingBottom: i === tokens.length - 1 ? vars.space[3] : null,
                   ...(highlight
                     ? highlight.includes(i)
-                      ? { backgroundColor: `var(--colors-gray-1)` }
+                      ? { backgroundColor: vars.colors.gray100 }
                       : { opacity: 0.3 }
                     : {}),
                 },

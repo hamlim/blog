@@ -1,5 +1,5 @@
-import { useMemo, useEffect, useState } from 'react'
-import * as comps from '@ds-pack/components'
+import { useMemo, useEffect } from 'react'
+import * as comps from '@ui/components'
 import { MDXProvider } from '@mdx-js/react'
 import { allPosts as posts } from '../posts'
 // this data is collected at build time
@@ -13,17 +13,10 @@ import { Footnote, Ref } from '../components/Footnotes'
 import Image from 'next/image'
 import TwitterButton from '../components/TwitterButton'
 import Mentions from '../components/TwitterMentions'
+// Global Styles
+import '../src/global.css'
 
-let {
-  ThemeProvider,
-  Reset,
-  Box,
-  Heading,
-  Text,
-  Image: Img,
-  theme,
-  Stack,
-} = comps
+let { Box, Heading, Text, Image: Img, Stack } = comps
 
 function Time(props) {
   return <Text is="time" {...props} />
@@ -38,28 +31,28 @@ let components = {
   a: (props: any) => (
     <comps.Link {...props} is="a" target="_blank" rel="noopener" />
   ),
-  p: (props: any) => <comps.Text fontSize="$2" mt="$6" {...props} />,
-  h2: (props: any) => <Heading variant="h2" is="h2" mt="$6" {...props} />,
-  h3: (props: any) => <Heading variant="h3" is="h3" mt="$6" {...props} />,
-  h4: (props: any) => <Heading variant="subhead" is="h4" mt="$6" {...props} />,
+  p: (props: any) => <comps.Text fontSize="2" mt="6" {...props} />,
+  h2: (props: any) => <Heading variant="h2" is="h2" mt="6" {...props} />,
+  h3: (props: any) => <Heading variant="h3" is="h3" mt="6" {...props} />,
+  h4: (props: any) => <Heading variant="subhead" is="h4" mt="6" {...props} />,
   ul: (props: any) => (
-    <Box mt="$6">
+    <Box mt="6">
       <comps.List variant="unordered" is="ul" {...props} />
     </Box>
   ),
-  li: (props: any) => <comps.ListItem fontSize="$2" mt="$2" {...props} />,
+  li: (props: any) => <comps.ListItem fontSize="2" mt="2" {...props} />,
   ol: (props: any) => (
-    <Box mt="$6">
+    <Box mt="6">
       <comps.List variant="ordered" is="ol" {...props} />
     </Box>
   ),
   'li.ul': (props: any) => (
-    <Box mt="$2" ml="$4">
+    <Box mt="2" ml="4">
       <comps.List variant="unordered" is="ul" {...props} />
     </Box>
   ),
   'li.ol': (props: any) => (
-    <Box mt="$2" ml="$4">
+    <Box mt="2" ml="4">
       <comps.List variant="ordered" is="ol" {...props} />
     </Box>
   ),
@@ -69,7 +62,7 @@ let components = {
   inlineCode: comps.InlineCode,
   code: Code,
   img: Img,
-  Spacer: (props: any) => <Box mb="$6" {...props} />,
+  Spacer: (props: any) => <Box mb="6" {...props} />,
   blockquote: comps.Blockquote,
   Fig: comps.Figure,
   Image(props) {
@@ -88,7 +81,7 @@ let components = {
   },
   Figure({ src, alt, caption, width, height, layout, ...props }) {
     return (
-      <Box is="figure" mt={4}>
+      <Box is="figure" mt="4">
         <Image
           src={src}
           alt={alt}
@@ -104,12 +97,12 @@ let components = {
         />
         <Box
           is="figcaption"
-          color="$gray-7"
-          px="$4"
-          mt="$4"
+          color="gray700"
+          px="4"
+          mt="4"
           borderLeftStyle="solid"
-          borderLeftWidth={4}
-          borderLeftColor="$gray-4"
+          borderLeftWidth="4"
+          borderLeftColor="gray400"
         >
           {caption}
         </Box>
@@ -123,7 +116,7 @@ let components = {
   Ref,
   Tweet(props) {
     return (
-      <Box my={6}>
+      <Box my="6">
         <blockquote className="twitter-tweet tw-align-center" {...props} />
       </Box>
     )
@@ -132,11 +125,11 @@ let components = {
     return (
       <Box
         is="details"
-        p="$2"
+        p="2"
         borderStyle="solid"
         borderWidth="2px"
-        borderColor="$green-6"
-        mt="$4"
+        borderColor="green600"
+        mt="4"
         {...props}
       >
         <summary>
@@ -162,7 +155,7 @@ function PostLayout({ children, post }) {
         </Heading>
         {post.date ? (
           <>
-            <Text is="span" color="$gray-8" fontStyle="italic">
+            <Text is="span" color="gray800" fontStyle="italic">
               Published <Time>{post.date}</Time>
             </Text>{' '}
           </>
@@ -170,11 +163,11 @@ function PostLayout({ children, post }) {
         <Mentions />
         {children}
         {post.tags ? (
-          <Box mt="$3">
+          <Box mt="3">
             <Heading variant="subhead" is="h4">
               Tags:
             </Heading>
-            <Stack inline gap="$4">
+            <Stack inline gap="4">
               {post.tags.map((tag: string, index: number) => (
                 <Box key={tag}>
                   <Box color="primary" is="span">
@@ -193,39 +186,27 @@ function PostLayout({ children, post }) {
 
 function Layout({ children, title = "Matt Hamlin's Blog" }) {
   return (
-    <ThemeProvider
-      theme={{
-        ...theme,
-        headings: {
-          ...theme.headings,
-          lead: {
-            ...theme.headings.lead,
-            fontSize: theme.fontSizes[3],
-          },
-        },
-      }}
-    >
-      <Reset />
+    <>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>{title}</title>
       </Head>
       <Box is="main" display="flex" flexDirection="column" minHeight="100vh">
-        <Box flexShrink={1} is="nav" backgroundColor="$gray-0" color="$black">
+        <Box flexShrink="1" is="nav" backgroundColor="gray000" color="black">
           <Box
             is="nav"
-            maxWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
-            minWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
-            p="$4"
+            maxWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
+            minWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
+            p="4"
             m="0 auto"
             display="flex"
-            flexDirection={{ '20em': 'column', '60em': 'row' }}
+            flexDirection={{ small: 'column', large: 'row' }}
             justifyContent="space-between"
             alignItems="center"
           >
             <Box display="flex" alignItems="center">
               <Link to="/" display="flex" alignItems="center">
-                <Text mr="$2" is="span" aria-label="Wave" role="img">
+                <Text mr="2" is="span" aria-label="Wave" role="img">
                   🏡
                 </Text>{' '}
                 Home
@@ -241,22 +222,22 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
           </Box>
         </Box>
         <Box
-          maxWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
-          minWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
-          p={{ '20em': '$3', '60em': '$7', '80em': '$10' }}
+          maxWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
+          minWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
+          p={{ small: '3', '60em': '7', large: '10' }}
           m="0 auto"
-          flexGrow={1}
+          flexGrow="1"
         >
           {children}
         </Box>
-        <Box flexShrink={1} backgroundColor="$gray-0" is="footer">
+        <Box flexShrink="1" backgroundColor="gray000" is="footer">
           <Box
-            maxWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
-            minWidth={{ '20em': '94vw', '40em': '80vw', '80em': '70ch' }}
-            p="$4"
+            maxWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
+            minWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
+            p="4"
             m="0 auto"
             display="flex"
-            flexDirection={['column', , 'row']}
+            flexDirection={{ _: 'column', large: 'row' }}
             justifyContent="space-between"
             alignItems="center"
           >
@@ -268,7 +249,7 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
           </Box>
         </Box>
       </Box>
-    </ThemeProvider>
+    </>
   )
 }
 
@@ -311,8 +292,8 @@ export default function MyApp({ Component, pageProps, router }) {
       <Layout title={post?.title}>
         <PostLayout post={post}>
           <Component {...pageProps} />
-          <Box mb={6} />
-          <Box mb={6} />
+          <Box mb="6" />
+          <Box mb="6" />
           <div>
             <TwitterButton />
           </div>

@@ -1,4 +1,4 @@
-import { Text, Link, Box } from '@ds-pack/components'
+import { Text, Link, Box } from '@ui/components'
 
 export function Ref({ id }) {
   return (

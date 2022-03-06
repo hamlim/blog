@@ -1,6 +1,6 @@
 import * as React from 'react'
 import RouterLink from 'next/link'
-import { Link as StyledLink } from '@ds-pack/components'
+import { Link as StyledLink } from '@ui/components'
 
 export default function Link({
   to,

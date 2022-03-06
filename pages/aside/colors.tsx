@@ -1,5 +1,6 @@
-import React, { useRef } from 'react'
-import { Box, Tapable } from '@ds-pack/components'
+import { useRef } from 'react'
+import { Box, Tapable, Heading, Text } from '@ui/components'
+import { wrap, swatch } from '../../src/aside-colors.css'
 
 function addAlpha(rgb: string, alpha: string): string {
   let rgbRegExp = /RGB\((\d+), (\d+), (\d+)\)/
@@ -718,50 +719,46 @@ const colors = [
 export default function Colors() {
   let ref = useRef()
   return (
-    <Box
-      display="grid"
-      gridTemplateColumns={{
-        _: '1fr',
-        '40em': '1fr 1fr',
-        '60em': '1fr 1fr 1fr',
-      }}
-      gridGap="$4"
-    >
-      {colors.map((color) => (
-        <Box
-          key={color.name}
-          is={Tapable}
-          onClick={() => {
-            if (
-              typeof navigator.clipboard !== 'undefined' &&
-              typeof navigator.clipboard.writeText === 'function'
-            ) {
-              navigator.clipboard.writeText(color.hex)
-            } else {
-              let input = document.createElement('input')
-              input.value = color.hex
-              input.select()
-              document.execCommand('copy')
-            }
-          }}
-          backgroundColor={color.hex}
-          borderRadius="$0"
-          p="$4"
-          _active={{
-            boxShadow: `10px 10px 2px ${addAlpha(color.rgb, '.3')}`,
-          }}
-        >
-          <Box
-            p="$1"
-            borderRadius="$0"
-            backgroundColor="rgba(255, 255, 255, .6)"
-            textAlign="center"
+    <Box>
+      <Heading variant="h2" is="h1" mb="4">
+        HTML Colors
+      </Heading>
+      <Text mb="4">Click a color to copy it's hex code!</Text>
+      <div className={wrap}>
+        {colors.map((color) => (
+          <Tapable
+            key={color.name}
+            onClick={() => {
+              if (
+                typeof navigator.clipboard !== 'undefined' &&
+                typeof navigator.clipboard.writeText === 'function'
+              ) {
+                navigator.clipboard.writeText(color.hex)
+              } else {
+                let input = document.createElement('input')
+                input.value = color.hex
+                input.select()
+                document.execCommand('copy')
+              }
+            }}
+            className={swatch}
+            style={{
+              '--bg-color': color.hex,
+              '--shadow': addAlpha(color.rgb, '.3'),
+            }}
           >
-            {color.name}
-          </Box>
-        </Box>
-      ))}
-      <input type="hidden" ref={ref} />
+            <Box
+              p="1"
+              borderRadius="small"
+              backgroundColor="rgba(255, 255, 255, .6)"
+              textAlign="center"
+            >
+              {color.name}
+            </Box>
+          </Tapable>
+        ))}
+        <input type="hidden" ref={ref} />
+      </div>
     </Box>
   )
 }

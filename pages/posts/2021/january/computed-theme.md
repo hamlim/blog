@@ -6,7 +6,7 @@ tags:
   - 'Theme'
 ---
 
-<Text mt="$3" fontSize="$0" color="$gray-4">Alternative titles: Dependent design
+<Text mt="3" fontSize="0" color="gray400">Alternative titles: Dependent design
 tokens, computed theme values</Text>
 
 For the past few weeks I've been working on updating the theme within my
