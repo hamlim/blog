@@ -1066,22 +1066,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@ds-pack/components-experimental@0.0.4", "@ui/components@npm:@ds-pack/components-experimental@latest":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@ds-pack/components-experimental/-/components-experimental-0.0.4.tgz#86b092d6e3035fabc56fd3ae29987cac50b06d45"
-  integrity sha512-CPVGTvbK8O42c67VebkHKHy0WTkzTWoIVHgMplPMj922QzgYmbahefmlc6JuUL3rRTT2C/iHuZDHURS/BArptg==
-
-"@ds-pack/components@*":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-0.0.18.tgz#7f61c4d72bd1e47f08ba19a20ea4bd10cb774e91"
-  integrity sha512-aiedC5JHacovwXa2DeOvNMiGzC4nLoV5lx3YnL2cfs68smiJ7FB3+3zkfBAnmc2XMJxEtbqrMpcVi5GaKlOWRQ==
-  dependencies:
-    "@ds-pack/theme-to-css-vars" "^1.0.0"
-
-"@ds-pack/theme-to-css-vars@^1.0.0":
+"@ds-pack/components@*", "@ui/components@npm:@ds-pack/components@latest":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ds-pack/theme-to-css-vars/-/theme-to-css-vars-1.0.0.tgz#06dd88f0847db7819b05db3cc5f86f0aca103fbf"
-  integrity sha512-9aNfcInBftzFnQq8q4s1hpCHXLfq3gF9uB4wEsB3sz+dlkzQFhTs/4UYxK59CmrfxhQOkIDHe/zPzpJZpWVdfQ==
+  resolved "https://registry.yarnpkg.com/@ds-pack/components/-/components-1.0.0.tgz#1e364ba6b6083cf20be5f81484997732813f83ea"
+  integrity sha512-EZFMgyYoSXx2MKXgsseQECGSjNl77nmniFe5kLGsOvaUVWUhd3JxQ7lEcSaOnHpZ3BqxP2TbU4BivNL89eWHqw==
 
 "@ds-pack/use-refs@^1.0.0":
   version "1.0.0"
