@@ -74,8 +74,7 @@ export default function Projects() {
               @ds-pack/components
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
-            A component library built on Simple Props, Styled-Components, React,
-            and Typescript.
+            A component library built on Vanilla Extract, React, and Typescript.
           </ListItem>
           <ListItem mt="6">
             <Link
