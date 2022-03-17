@@ -17,6 +17,12 @@ Run `yarn new-post title="<title>" slug="<slug>"` to bootstrap a new blog post!
 
 ## Notes:
 
+### What is `@ui/components`?
+
+This is a small shim / interop package name that aliases to a version of
+`@ds-pack/components`. It allows me to swap out packages without needing to go
+through and update imports across my blog!
+
 ### Layout
 
 - Breakpoints:
