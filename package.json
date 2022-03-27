@@ -24,13 +24,12 @@
     "@vanilla-extract/next-plugin": "^2.0.1",
     "airtable": "latest",
     "nanopop": "latest",
-    "next": "^12.1.0",
+    "next": "canary",
     "next-transpile-modules": "^9.0.0",
     "prism-react-renderer": "latest",
     "rainbow-sprinkles": "^0.6.0",
-    "react": "^18.0.0-beta-149b420f6-20211119",
-    "react-dom": "^18.0.0-beta-149b420f6-20211119",
-    "react-is": "^0.0.0-experimental-149b420f6-20211119"
+    "react": "rc",
+    "react-dom": "rc"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
