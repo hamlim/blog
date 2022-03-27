@@ -24,7 +24,7 @@
     "@vanilla-extract/next-plugin": "^2.0.1",
     "airtable": "latest",
     "nanopop": "latest",
-    "next": "^12.0.4",
+    "next": "^12.1.0",
     "next-transpile-modules": "^9.0.0",
     "prism-react-renderer": "latest",
     "rainbow-sprinkles": "^0.6.0",
