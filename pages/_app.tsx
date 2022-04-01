@@ -224,7 +224,7 @@ function Layout({ children, title = "Matt Hamlin's Blog" }) {
         <Box
           maxWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
           minWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
-          p={{ small: '3', '60em': '7', large: '10' }}
+          p={{ small: '3', medium: '7', large: '10' }}
           m="0 auto"
           flexGrow="1"
         >
