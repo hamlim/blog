@@ -89,9 +89,27 @@ let books: Array<Book> = [
     status: 'reading',
   },
   {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+    url: 'https://www.goodreads.com/book/show/40604658-jurassic-park',
+    status: 'read',
+  },
+  {
+    title: 'The Hunt For Red October',
+    author: 'Tom Clancy',
+    url: 'https://www.goodreads.com/book/show/19691.The_Hunt_for_Red_October',
+    status: 'reading',
+  },
+  {
     title: 'Foundation',
     author: 'Isaac Asimov',
     url: 'https://www.goodreads.com/book/show/29579.Foundation',
+    status: 'to-read',
+  },
+  {
+    title: 'Do Androids Dream of Electric Sheep?',
+    author: 'Philip K. Dick',
+    url: 'https://www.goodreads.com/book/show/7082.Do_Androids_Dream_of_Electric_Sheep_',
     status: 'to-read',
   },
 ]
