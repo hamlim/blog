@@ -38,6 +38,19 @@ export default function Projects() {
           <ListItem>
             <Link
               is="a"
+              href="https://github.com/hamlim/simple-cache"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Simple Cache
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A minimal, React cache implementation for both client and server
+            components!
+          </ListItem>
+          <ListItem mt="6">
+            <Link
+              is="a"
               href="https://github.com/ds-pack/simple-props"
               target="_blank"
               rel="noopener noreferrer"
