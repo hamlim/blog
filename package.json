@@ -11,42 +11,44 @@
     "new-post": "node scripts/new.mjs"
   },
   "dependencies": {
-    "@babel/runtime": "^7.16.3",
+    "@babel/runtime": "^7.18.0",
     "@ds-pack/components": "*",
     "@ds-pack/use-refs": "^1.0.0",
     "@mdx-js/loader": "1.6.22",
     "@mdx-js/react": "1.6.22",
-    "@next/mdx": "^11",
-    "@types/react-dom": "^17.0.11",
+    "@next/mdx": "^11.1.4",
     "@ui/components": "npm:@ds-pack/components@latest",
-    "@vanilla-extract/css": "^1.6.8",
+    "@vanilla-extract/css": "^1.7.0",
     "@vanilla-extract/dynamic": "^2.0.2",
-    "@vanilla-extract/next-plugin": "^2.0.1",
+    "@vanilla-extract/next-plugin": "^2.0.2",
     "airtable": "0.11.1",
     "nanopop": "2.1.0",
     "next": "canary",
     "next-transpile-modules": "^9.0.0",
     "prism-react-renderer": "1.2.1",
     "rainbow-sprinkles": "^0.6.0",
-    "react": "rc",
-    "react-dom": "rc",
-    "webpack": "^5"
+    "react": "experimental",
+    "react-dom": "experimental",
+    "webpack": "^5.72.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/plugin-proposal-export-default-from": "^7.16.0",
-    "@babel/plugin-transform-runtime": "^7.16.4",
-    "@babel/plugin-transform-typescript": "^7.16.1",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-react": "^7.16.0",
-    "@types/node": "^16.11.9",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.0",
+    "@babel/plugin-proposal-export-default-from": "^7.17.12",
+    "@babel/plugin-transform-runtime": "^7.18.0",
+    "@types/node": "^16.11.36",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
     "babel-plugin-preval": "5.0.0",
     "gray-matter": "4.0.3",
-    "polished": "^4.1.4",
+    "polished": "^4.2.2",
     "reading-time": "^1.5.0",
     "schema-utils": "4.0.0",
     "stringify-object": "4.0.0",
-    "typescript": "^4.5.2"
+    "typescript": "^4.6.4"
+  },
+  "resolutions": {
+    "@babel/core": "7.18.0",
+    "next": "12.1.7-canary.10"
   }
 }
