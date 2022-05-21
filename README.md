@@ -2,18 +2,23 @@
 
 A personal site and blog
 
+## Setup
+
+- Node >= 16
+- pnpm >= 7
+
 ## Running Locally
 
-- `yarn`
-- `yarn dev`
+- `pnpm install`
+- `pnpm dev`
 
 ## Adding a Post
 
-Run `yarn new-post title="<title>" slug="<slug>"` to bootstrap a new blog post!
+Run `pnpm new-post title="<title>" slug="<slug>"` to bootstrap a new blog post!
 
 ## Deploying:
 
-- `yarn deploy`
+- `pnpm deploy`
 
 ## Notes:
 
