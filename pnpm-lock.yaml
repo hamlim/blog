@@ -30,7 +30,7 @@ specifiers:
   next-transpile-modules: ^9.0.0
   polished: ^4.2.2
   prism-react-renderer: 1.2.1
-  rainbow-sprinkles: ^0.6.0
+  rainbow-sprinkles: ^0.10
   react: experimental
   react-dom: experimental
   reading-time: ^1.5.0
@@ -41,12 +41,12 @@ specifiers:
 
 dependencies:
   '@babel/runtime': 7.18.0
-  '@ds-pack/components': 1.0.0_usfuowg4nfxp42iaucebbg2tmi
+  '@ds-pack/components': 1.0.3_7f5mg6gwmcmj4bv253opda5jey
   '@ds-pack/use-refs': 1.0.0_tgfq3yfkbytgmd7tr3daywm474
   '@mdx-js/loader': 1.6.22_tgfq3yfkbytgmd7tr3daywm474
   '@mdx-js/react': 1.6.22_tgfq3yfkbytgmd7tr3daywm474
   '@next/mdx': 11.1.4_6vwedlnwdegenaf6jioaeirvlu
-  '@ui/components': /@ds-pack/components/1.0.0_usfuowg4nfxp42iaucebbg2tmi
+  '@ui/components': /@ds-pack/components/1.0.3_7f5mg6gwmcmj4bv253opda5jey
   '@vanilla-extract/css': 1.7.0
   '@vanilla-extract/dynamic': 2.0.2
   '@vanilla-extract/next-plugin': 2.0.2_rnhgeob4har5rhfy6tmlrwmlcy
@@ -55,7 +55,7 @@ dependencies:
   next: 12.1.7-canary.10_zujf7pv5ptf4pngeoovrauj3fi
   next-transpile-modules: 9.0.0
   prism-react-renderer: 1.2.1_tgfq3yfkbytgmd7tr3daywm474
-  rainbow-sprinkles: 0.6.0_vslagwv6qk4kp5hzf7cafjrqt4
+  rainbow-sprinkles: 0.10.1_vslagwv6qk4kp5hzf7cafjrqt4
   react: 0.0.0-experimental-6e2f38f3a-20220519
   react-dom: 0.0.0-experimental-6e2f38f3a-20220519_tgfq3yfkbytgmd7tr3daywm474
   webpack: 5.72.1
@@ -383,14 +383,14 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
 
-  /@ds-pack/components/1.0.0_usfuowg4nfxp42iaucebbg2tmi:
-    resolution: {integrity: sha512-EZFMgyYoSXx2MKXgsseQECGSjNl77nmniFe5kLGsOvaUVWUhd3JxQ7lEcSaOnHpZ3BqxP2TbU4BivNL89eWHqw==}
+  /@ds-pack/components/1.0.3_7f5mg6gwmcmj4bv253opda5jey:
+    resolution: {integrity: sha512-bAN7R4D9oQPrDPt3FnG8C4bN+OkRys8KtVOQ8ACkj3La9pgY0KBjJY7FOW6muAGkPqiiMyDNhb1V+V5sLwcWOg==}
     peerDependencies:
       '@ds-pack/use-refs': '*'
       '@vanilla-extract/css': ^1.6.8
       '@vanilla-extract/dynamic': ^2.0.2
       nanopop: ^2
-      rainbow-sprinkles: ^0.6.0
+      rainbow-sprinkles: ^0.10
       react: '*'
       react-dom: '*'
     dependencies:
@@ -398,7 +398,7 @@ packages:
       '@vanilla-extract/css': 1.7.0
       '@vanilla-extract/dynamic': 2.0.2
       nanopop: 2.1.0
-      rainbow-sprinkles: 0.6.0_vslagwv6qk4kp5hzf7cafjrqt4
+      rainbow-sprinkles: 0.10.1_vslagwv6qk4kp5hzf7cafjrqt4
       react: 0.0.0-experimental-6e2f38f3a-20220519
       react-dom: 0.0.0-experimental-6e2f38f3a-20220519_tgfq3yfkbytgmd7tr3daywm474
     dev: false
@@ -2063,15 +2063,14 @@ packages:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
 
-  /rainbow-sprinkles/0.6.0_vslagwv6qk4kp5hzf7cafjrqt4:
-    resolution: {integrity: sha512-f58MeauOiSlLKUp6g/ZK1VGOKVzKA4S/0VTM2QVs6y9DDXmI+zjM2Nl2VucmlTWSlLCcd5qhx5o/qrqZvhjwug==}
+  /rainbow-sprinkles/0.10.1_vslagwv6qk4kp5hzf7cafjrqt4:
+    resolution: {integrity: sha512-S+nV0ilxi59tXffyDyoZHrkycVuxr9dDhplBRXu4ny3ks/IPZAQi02uT8EyNYCLkiu+dyyF/v44fmxbsq5naag==}
     peerDependencies:
-      '@vanilla-extract/css': ^1.6.8
-      '@vanilla-extract/dynamic': ^2.0.2
+      '@vanilla-extract/css': ^1
+      '@vanilla-extract/dynamic': ^2
     dependencies:
       '@vanilla-extract/css': 1.7.0
       '@vanilla-extract/dynamic': 2.0.2
-      csstype: 3.1.0
       lodash.merge: 4.6.2
     dev: false
 
