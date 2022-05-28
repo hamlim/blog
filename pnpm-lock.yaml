@@ -41,12 +41,12 @@ specifiers:
 
 dependencies:
   '@babel/runtime': 7.18.0
-  '@ds-pack/components': 1.0.4_7k2sz6kzcrhm2ajwkpg5yfa2v4
+  '@ds-pack/components': 1.0.5_7k2sz6kzcrhm2ajwkpg5yfa2v4
   '@ds-pack/use-refs': 1.0.0_cdhargsaghllmeaxkptbgkxqai
   '@mdx-js/loader': 1.6.22_cdhargsaghllmeaxkptbgkxqai
   '@mdx-js/react': 1.6.22_cdhargsaghllmeaxkptbgkxqai
   '@next/mdx': 11.1.4_6vwedlnwdegenaf6jioaeirvlu
-  '@ui/components': /@ds-pack/components/1.0.4_7k2sz6kzcrhm2ajwkpg5yfa2v4
+  '@ui/components': /@ds-pack/components/1.0.5_7k2sz6kzcrhm2ajwkpg5yfa2v4
   '@vanilla-extract/css': 1.7.0
   '@vanilla-extract/dynamic': 2.0.2
   '@vanilla-extract/next-plugin': 2.0.2_rnhgeob4har5rhfy6tmlrwmlcy
@@ -383,8 +383,8 @@ packages:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
 
-  /@ds-pack/components/1.0.4_7k2sz6kzcrhm2ajwkpg5yfa2v4:
-    resolution: {integrity: sha512-Hp5AlKdULVpa2R/EKvVFpFrAqiGg/Lnpq9c7k0I6rMHbof28/vFuLMCXEDOgA7041cqWrTVgUH0/S1iqb88UDQ==}
+  /@ds-pack/components/1.0.5_7k2sz6kzcrhm2ajwkpg5yfa2v4:
+    resolution: {integrity: sha512-dHZ4yOLG2EoWIErKxxDtiz3uUy4oghB/i7EXy3e9yClA5rCvRO2FqUpPjAQNQ1xmnP7yledPbp2nChlwS0Km4g==}
     peerDependencies:
       '@ds-pack/use-refs': '*'
       '@vanilla-extract/css': ^1.6.8
