@@ -4,7 +4,7 @@ import LocalLink from '../../components/Link'
 export default function Random() {
   return (
     <Box>
-      <Heading mb="4" is="h2" variant="lead">
+      <Heading mb="$4" is="h2" variant="lead">
         Random Things:
       </Heading>
       <List variant="unordered" is="ul">

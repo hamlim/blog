@@ -19,5 +19,5 @@ export function Crumb({ children, to }: { children: any; to: string }) {
 }
 
 export function Spacer() {
-  return <Text mx="4">{'/'}</Text>
+  return <Text mx="$4">{'/'}</Text>
 }

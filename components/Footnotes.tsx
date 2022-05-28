@@ -1,4 +1,5 @@
 import { Text, Link, Box } from '@ui/components'
+import { footnote } from './Footnotes.css'
 
 export function Ref({ id }) {
   return (
@@ -12,7 +13,7 @@ export function Ref({ id }) {
 
 export function Footnote({ id, children }) {
   return (
-    <Box id={`fn-${id}`} _target={{ boxShadow: '$focusShadow' }}>
+    <Box id={`fn-${id}`} className={footnote}>
       <Link is="a" href={`#ref-${id}`}>
         [{id}]
       </Link>{' '}
