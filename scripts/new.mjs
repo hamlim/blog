@@ -1,3 +1,4 @@
+import { execSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
 
@@ -110,3 +111,28 @@ START_HERE
 `
 
 fs.writeFileSync(path.join(folderPath, `${args.slug}.md`), template)
+
+let pathToPostsFile = path.join('posts.tsx')
+let postsTsxContent = fs.readFileSync(pathToPostsFile).toString()
+
+let cacheBust = (() => {
+  try {
+    let hash = execSync('git rev-parse --short HEAD').toString().trim()
+    return hash
+  } catch (e) {
+    return 'failed'
+  }
+})()
+
+fs.writeFileSync(
+  pathToPostsFile,
+  postsTsxContent
+    .split('\n')
+    .map((line, idx) => {
+      if (idx === 0) {
+        return `// cachebuster - v${cacheBust}`
+      }
+      return line
+    })
+    .join('\n'),
+)
