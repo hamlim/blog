@@ -720,10 +720,10 @@ export default function Colors() {
   let ref = useRef()
   return (
     <Box>
-      <Heading variant="h2" is="h1" mb="4">
+      <Heading variant="h2" is="h1" mb="$4">
         HTML Colors
       </Heading>
-      <Text mb="4">Click a color to copy it's hex code!</Text>
+      <Text mb="$4">Click a color to copy it's hex code!</Text>
       <div className={wrap}>
         {colors.map((color) => (
           <Tapable
@@ -748,8 +748,8 @@ export default function Colors() {
             }}
           >
             <Box
-              p="1"
-              borderRadius="small"
+              p="$1"
+              borderRadius="$small"
               backgroundColor="rgba(255, 255, 255, .6)"
               textAlign="center"
             >

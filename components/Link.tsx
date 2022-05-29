@@ -1,4 +1,3 @@
-import * as React from 'react'
 import RouterLink from 'next/link'
 import { Link as StyledLink } from '@ui/components'
 
