@@ -91,19 +91,6 @@ export default function Projects() {
           <ListItem mt="$6">
             <Link
               is="a"
-              href="https://github.com/ds-pack/babel-plugin-docs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @ds-pack/babel-plugin-docs
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A collection of babel utilities (plugins, visitors) for transforming
-            code related to design systems.
-          </ListItem>
-          <ListItem mt="$6">
-            <Link
-              is="a"
               href="https://github.com/ds-pack/use-media"
               target="_blank"
               rel="noopener noreferrer"
@@ -121,7 +108,7 @@ export default function Projects() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              use-refs
+              @ds-pack/use-refs
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             Helpers and utilities for working with refs in React
@@ -149,6 +136,19 @@ export default function Projects() {
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
             A React router package built for Suspense using hooks
+          </ListItem>
+          <ListItem mt="$6">
+            <Link
+              is="a"
+              href="https://github.com/ds-pack/babel-plugin-docs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @ds-pack/babel-plugin-docs
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A collection of babel utilities (plugins, visitors) for transforming
+            code related to design systems.
           </ListItem>
         </List>
       </Box>
