@@ -86,7 +86,7 @@ let books: Array<Book> = [
     title: 'Blue Mars',
     author: 'Kim Stanley Robinson',
     url: 'https://www.goodreads.com/book/show/77504.Blue_Mars',
-    status: 'reading',
+    status: 'read',
   },
   {
     title: 'Jurassic Park',
