@@ -1,8 +1,9 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { themeClass } from '@ds-pack/components'
 
 export default function Document() {
   return (
-    <Html>
+    <Html className={themeClass}>
       <Head />
       <body>
         <Main />
