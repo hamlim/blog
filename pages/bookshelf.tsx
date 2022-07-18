@@ -112,10 +112,28 @@ let books: Array<Book> = [
     url: 'https://www.goodreads.com/book/show/7082.Do_Androids_Dream_of_Electric_Sheep_',
     status: 'to-read',
   },
+  {
+    title: 'Annihilation',
+    author: 'Jeff VanderMeer',
+    url: 'https://www.goodreads.com/book/show/17934530-annihilation',
+    status: 'read',
+  },
+  {
+    title: '1Q84',
+    author: 'Haruki Murakami',
+    url: 'https://www.goodreads.com/book/show/10357575-1q84',
+    status: 'to-read',
+  },
+  {
+    title: 'Klara and the Sun',
+    author: 'Kazuo Ishiguro',
+    url: 'https://www.goodreads.com/book/show/54120408-klara-and-the-sun',
+    status: 'reading',
+  },
 ]
 
 let reading = books.filter((book) => book.status === 'reading')
-let read = books.filter((book) => book.status === 'read')
+let read = books.filter((book) => book.status === 'read').reverse()
 let toRead = books.filter((book) => book.status === 'to-read')
 
 export default function Projects() {
@@ -164,27 +182,6 @@ export default function Projects() {
         </List>
       </Box>
       <Heading my="$5" variant="subhead" is="h3">
-        Books I've Recently Read:
-      </Heading>
-      <Box my="$5">
-        <List variant="base" is="ul">
-          {read.map((book, idx) => (
-            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
-              <Link
-                is="a"
-                href={book.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {book.title}
-                <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-              </Link>{' '}
-              by {book.author}
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-      <Heading my="$5" variant="subhead" is="h3">
         Books I Want to Read Soon:
       </Heading>
       <Box my="$5">
@@ -205,8 +202,29 @@ export default function Projects() {
           ))}
         </List>
       </Box>
+      <Heading my="$5" variant="subhead" is="h3">
+        Books I've Recently Read:
+      </Heading>
+      <Box my="$5">
+        <List variant="base" is="ul">
+          {read.map((book, idx) => (
+            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+              <Link
+                is="a"
+                href={book.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {book.title}
+                <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+              </Link>{' '}
+              by {book.author}
+            </ListItem>
+          ))}
+        </List>
+      </Box>
       <Text is="small" color="$gray800">
-        Last Updated: January 2022
+        Last Updated: July 2022
       </Text>
     </>
   )

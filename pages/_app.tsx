@@ -320,6 +320,8 @@ export default function MyApp({ Component, pageProps, router }) {
     title = 'Social'
   } else if (pathname.includes('/colors')) {
     title = 'Colors'
+  } else if (pathname.includes('/bookshelf')) {
+    title = 'Bookshelf'
   }
 
   return (
