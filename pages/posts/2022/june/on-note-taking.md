@@ -16,6 +16,8 @@ will instead be a bit more broad and open ended, I hope that it is still
 valuable for at least a few of the people that may stumble upon it in the
 future.
 
+<Spacer />
+
 ---
 
 I’m pretty bullish on the possibilities of enhancing our methods of note taking
@@ -33,8 +35,9 @@ return to some of these ideas and publish more content on them!
     intentional and coincidental linkages between concepts
 - Iterative note taking
 - Computer aided notes
+  <!-- prettier-ignore -->
   - <TwitterMention>gordonbrander</TwitterMention> I think has been working on a
-    similar concept within [Subconscious](https://subconscious.substack.com/)
+    similar concept within <ExternalLink href="https://subconscious.substack.com/">Subconscious</ExternalLink>
 
 This list is not exhaustive, I expect that I’ll want to add more concepts here
 over time!
