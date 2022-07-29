@@ -104,7 +104,7 @@ let books: Array<Book> = [
     title: 'Foundation',
     author: 'Isaac Asimov',
     url: 'https://www.goodreads.com/book/show/29579.Foundation',
-    status: 'to-read',
+    status: 'reading',
   },
   {
     title: 'Do Androids Dream of Electric Sheep?',
@@ -128,7 +128,7 @@ let books: Array<Book> = [
     title: 'Klara and the Sun',
     author: 'Kazuo Ishiguro',
     url: 'https://www.goodreads.com/book/show/54120408-klara-and-the-sun',
-    status: 'reading',
+    status: 'read',
   },
 ]
 
