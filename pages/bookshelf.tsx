@@ -104,7 +104,7 @@ let books: Array<Book> = [
     title: 'Foundation',
     author: 'Isaac Asimov',
     url: 'https://www.goodreads.com/book/show/29579.Foundation',
-    status: 'reading',
+    status: 'read',
   },
   {
     title: 'Do Androids Dream of Electric Sheep?',
