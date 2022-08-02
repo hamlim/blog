@@ -130,6 +130,12 @@ let books: Array<Book> = [
     url: 'https://www.goodreads.com/book/show/54120408-klara-and-the-sun',
     status: 'read',
   },
+  {
+    title: 'Leviathan Wakes',
+    author: 'James S. A. Corey',
+    url: 'https://www.goodreads.com/book/show/8855321-leviathan-wakes',
+    status: 'reading',
+  },
 ]
 
 let reading = books.filter((book) => book.status === 'reading')
