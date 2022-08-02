@@ -15,6 +15,100 @@ export default function Tools() {
       </Text>
       <Box my="$5">
         <Heading is="h3" variant="h2">
+          August, 2022
+        </Heading>
+        <Stack gap="$2">
+          <Heading is="h4" variant="subhead">
+            Hardware
+          </Heading>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Phone
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                iPhone 13 Pro Max
+              </Text>
+            </Text>
+            <Text>
+              I've been using the iPhone 13 for a few months now since{' '}
+              <Link to="/posts/2022/january/switching-to-iphone">
+                I switched
+              </Link>
+              . I think I'm going to continue to dig into the Apple ecosystem
+              when the new devices come out this fall too.
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Laptop
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                MacBook Air M2 (early 2022)
+              </Text>
+            </Text>
+            <Text>
+              I recently ordered (but have yet to start using) the new MacBook
+              Air with the M2 chip, I'm really looking forward to changing over
+              to the Air from my old MBP.
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                E-Reader
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                Kindle Paperlight (Signature Edition)
+              </Text>
+            </Text>
+            <Text>
+              I've read more books in the past 6 months than I have in the past
+              few years combined, and I attribute most of that to picking up the
+              Kindle!
+            </Text>
+          </Box>
+          <Heading is="h4" variant="subhead">
+            Software
+          </Heading>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Notes / Todos
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                Notion
+              </Text>
+            </Text>
+            <Text>
+              I recently switched back to using Notion from Obsidian, and I've
+              been really enjoying it. I'm still trying to find the right setup
+              of databases and layouts of my homepage though.
+            </Text>
+          </Box>
+          <Box>
+            <Text mb="$2">
+              <Text is="strong" fontWeight="bold">
+                Code
+              </Text>{' '}
+              <Text is="em" fontStyle="italics">
+                VS Code (Insiders)
+              </Text>
+            </Text>
+            <Text>
+              No significant updates here since January, but I'm trying to get
+              back into some side projects here and there!
+            </Text>
+          </Box>
+        </Stack>
+      </Box>
+      <hr />
+      <Heading is="h2" variant="h1">
+        Old Updates:
+      </Heading>
+      <Box my="$5">
+        <Heading is="h3" variant="h2">
           January, 2022
         </Heading>
         <Stack gap="$2">
@@ -102,10 +196,6 @@ export default function Tools() {
           </Box>
         </Stack>
       </Box>
-      <hr />
-      <Heading is="h2" variant="h1">
-        Old Updates:
-      </Heading>
       <Box my="$5">
         <Heading is="h3" variant="h2">
           August, 2021
