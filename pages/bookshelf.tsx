@@ -230,7 +230,7 @@ export default function Projects() {
         </List>
       </Box>
       <Text is="small" color="$gray800">
-        Last Updated: July 2022
+        Last Updated: August 2022
       </Text>
     </>
   )
