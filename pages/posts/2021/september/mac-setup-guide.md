@@ -57,10 +57,7 @@ Create a `~/.aliases` file and add the following:
 
 ```sh
 # The basics: node, yarn, pnpm, fzf, jq
-brew install node yarn pnpm fzf jq bat
-
-# fnm (node version manager)
-curl -fsSL https://fnm.vercel.app/install | bash
+brew install node yarn pnpm fzf jq bat exa gh fig fnm
 ```
 
 ## GUI Tooling:
@@ -81,13 +78,13 @@ list may change over time but these are the essentials that I use today.
     keyboard shortcut.
 - Install&nbsp;<ExternalLink href="https://rectangleapp.com/">Rectangle</ExternalLink>
   - Choose the Spectacle keybinds if you don't want to be confused 😆
-- Install <ExternalLink href="https://www.warp.dev/">Warp</ExternalLink>
-- Install <ExternalLink href="https://obsidian.md/">Obsidian</ExternalLink>
-- Install <ExternalLink href="https://dropbox.com">Dropbox</ExternalLink>
-  - Don't set it up to backup your computer, instead only sync the Obsidian
-    vault folder
-  - See [Obsidian Sync](../august/obsidian-sync) for more details
-- Install&nbsp;<ExternalLink href="https://www.sourcenoteapp.com/">SourceNote</ExternalLink>
+- Install
+  <ExternalLink href="https://www.dropbox.com/capture">Dropbox</ExternalLink>
+- Install <ExternalLink href="https://thebrowser.company/">Dropbox
+  Capture</ExternalLink>
+- Install <ExternalLink href="">Arc</ExternalLink>
+- Install
+  <ExternalLink href="https://www.notion.so/desktop">Notion</ExternalLink>
 
 <Spacer />
 
