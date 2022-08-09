@@ -83,8 +83,8 @@ list may change over time but these are the essentials that I use today.
 - Install <ExternalLink href="https://thebrowser.company/">Dropbox
   Capture</ExternalLink>
 - Install <ExternalLink href="">Arc</ExternalLink>
-- Install
-  <ExternalLink href="https://www.notion.so/desktop">Notion</ExternalLink>
+- Install{'
+  '}<ExternalLink href="https://www.notion.so/desktop">Notion</ExternalLink>
 
 <Spacer />
 
