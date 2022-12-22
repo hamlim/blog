@@ -1,6 +1,7 @@
 import * as runtime from 'react/jsx-runtime'
 import { evaluate } from '@mdx-js/mdx'
 import * as defaultComponents from '@ui/MDXComponents'
+import type { Manifest } from '@lib/types'
 
 import remarkFrontmatter from 'remark-frontmatter'
 
@@ -27,9 +28,9 @@ let extendedRuntime = {
 }
 
 async function getPost({ title, year, month }: Params) {
-  let manifest = await fetch(`http://${process.env.VERCEL_URL}/feed.json`).then(
-    (r) => r.json(),
-  )
+  let manifest = (await fetch(
+    `http://${process.env.VERCEL_URL}/feed.json`,
+  ).then((r) => r.json())) as Manifest
 
   let postData = manifest.posts.find((post) => {
     return post.slug === title
