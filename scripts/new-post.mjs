@@ -1,3 +1,23 @@
+/**
+ * Workflow:
+ *
+ * - Create a new post
+ *
+ * Key data we need:
+ * - title
+ * - slug
+ * - status
+ * - tags
+ *
+ * Data we can import:
+ * - feed.json
+ *   - for id usecase
+ *
+ * What do we output:
+ * - Changes to `public/feed.json`
+ * - New markdown file in `public/posts/<year>/<month>/<slug>.md`
+ */
+
 import { execSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
