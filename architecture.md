@@ -72,3 +72,7 @@ I may have the need for more scripts in the future, but the way I think about it
 now is that those scripts should bootstrap some initial files used by the site,
 but also still be able to account for times where I may manually make changes to
 those files (e.g. `public/feed.json`)
+
+> Note: Considered using something in Go or Rust to write the scripts, but for
+> now will opt for JS. I can always come back and refactor it to a different
+> language
