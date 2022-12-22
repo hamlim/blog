@@ -1,0 +1,15 @@
+{
+  "gallery": [1],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Moving to PNPM",
+      "path": "/posts/2022/may/moving-to-pnpm.md",
+      "slug": "moving-to-pnpm",
+      "date": "May 21st, 2022",
+      "time": "1:01:16 PM",
+      "tags": ["development"],
+      "status": "public"
+    }
+  ]
+}

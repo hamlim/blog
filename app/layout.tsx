@@ -1,13 +1,12 @@
 import { themeClass } from '@ds-pack/components'
 import '@ds-pack/components/dist/index.css'
 
+import { body } from '@styles/app/RootLayout'
+
 export default function Layout({ children }) {
   return (
     <html lang="en-US" className={themeClass}>
-      <head>
-        <title>Matt Hamlin's Personal Site</title>
-      </head>
-      <body>{children}</body>
+      <body className={body}>{children}</body>
     </html>
   )
 }

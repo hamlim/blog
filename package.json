@@ -16,15 +16,18 @@
   "dependencies": {
     "@ds-pack/components": "*",
     "@ds-pack/use-refs": "*",
+    "@mdx-js/mdx": "latest",
     "@vanilla-extract/css": "*",
     "@vanilla-extract/dynamic": "*",
     "airtable": "0.11.1",
+    "eslint-config-next": "latest",
     "nanopop": "2.1.0",
-    "next": "canary",
+    "next": "latest",
     "prism-react-renderer": "1.2.1",
     "rainbow-sprinkles": "*",
-    "react": "experimental",
-    "react-dom": "experimental"
+    "react": "latest",
+    "react-dom": "latest",
+    "remark-frontmatter": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "^16.11.36",
