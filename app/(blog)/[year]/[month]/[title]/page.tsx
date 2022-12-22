@@ -27,8 +27,8 @@ let extendedRuntime = {
 }
 
 async function getPost({ title, year, month }: Params) {
-  let manifest = await fetch(`${process.env.VERCEL_URL}/feed.json`).then((r) =>
-    r.json(),
+  let manifest = await fetch(`http://${process.env.VERCEL_URL}/feed.json`).then(
+    (r) => r.json(),
   )
 
   let postData = manifest.posts.find((post) => {
@@ -36,7 +36,7 @@ async function getPost({ title, year, month }: Params) {
   })
 
   let postContent = await fetch(
-    `${process.env.VERCEL_URL}${postData.path}`,
+    `http://${process.env.VERCEL_URL}${postData.path}`,
   ).then((r) => r.text())
 
   let { default: MDXContent } = await evaluate(postContent, {
