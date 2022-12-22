@@ -1,8 +1,13 @@
-- [ ] Move to Yarn 3
+- [x] Move to Yarn 3
   - [x] Update gitignore
   - [x] Init
   - [x] Install
   - [x] Cleanup pnpm
-- [ ] App dir
+- [x] App dir
   - [x] Folder structure
   - [x] Pre-compile styles
+- [ ] Styles for site
+- [ ] Blog posts up and working
+  - [ ] Handle fallbacks somehow
+- [ ] Index page
+- [ ] Projects page
