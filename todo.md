@@ -1,2 +1,5 @@
 - [ ] Move to Yarn 3
+  - [x] Update gitignore
+  - [x] Init
+  - [ ] Install
 - [ ] App dir

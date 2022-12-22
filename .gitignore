@@ -30,3 +30,12 @@ yarn-error.log*
 .env.production.local
 
 .now
+
+# Modern yarn (non-zero installs)
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
