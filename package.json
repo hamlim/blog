@@ -11,7 +11,8 @@
     "start": "next start",
     "deploy": "now",
     "deploy-prod": "now --prod",
-    "new-post": "node scripts/new.mjs"
+    "format": "prettier . --write",
+    "new-post": "node scripts/new-post.mjs"
   },
   "dependencies": {
     "@ds-pack/components": "*",
@@ -35,6 +36,7 @@
     "@types/react-dom": "^18.0.4",
     "@vanilla-extract/rollup-plugin": "^1.2.0",
     "fast-glob": "^3.2.12",
+    "prettier": "^2.8.1",
     "rollup": "^3.7.5",
     "typescript": "4.9.4"
   }

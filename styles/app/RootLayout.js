@@ -1,5 +1,5 @@
-import './RootLayout.css';
+import './RootLayout.css'
 
-var body = 'RootLayout_body__1myxvav0';
+var body = 'RootLayout_body__1myxvav0'
 
-export { body };
+export { body }

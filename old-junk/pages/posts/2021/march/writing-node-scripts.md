@@ -34,7 +34,6 @@ First we need to add a line at the top of the file:
 
 ```js
 #!/usr/bin/env node
-
 ```
 
 In addition to adding that line to the top of the file, we also need to change

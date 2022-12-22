@@ -21,6 +21,7 @@
 import { execSync } from 'child_process'
 import fs from 'fs'
 import path from 'path'
+import originalManifest from '../public/feed.json' assert { type: 'json' }
 
 let currentDate = new Date()
 
@@ -55,40 +56,59 @@ let ordinal = (() => {
 let publishDate = `${month} ${date}${ordinal}, ${year}`
 
 let args = process.argv.slice(2).reduce((acc, curr) => {
-  let [name, val] = curr.split('=')
+  if (curr.includes('=')) {
+    let [name, val] = curr.split('=')
+    return {
+      ...acc,
+      [name]: val,
+    }
+  }
   return {
     ...acc,
-    [name]: val,
+    [curr]: true,
   }
 }, {})
 
-console.log(args)
+if (args.help) {
+  console.log('')
+  console.log('yarn new-post ...')
+  console.log('')
+  console.log(' help            Prints this dialog!')
+  console.log(' debug           Logs out debugging info')
+  console.log(' title="<title>" sets the title')
+  console.log(' slug="<slug>"   sets the slug')
+  console.log(' tags="<tags>"   sets the tags')
+  console.log('')
+  process.exit(1)
+}
 
-if (!args.title || !args.slug) {
-  if (!args.title && !args.slug) {
-    console.log('')
-    console.log(`Error: Missing both \`title\` and \`slug\` arguments.`)
-    console.log('')
-    console.log(
-      'Try re-running and adding:\n\n\t\ttitle="your title" slug="your-slug"',
-    )
-    console.log('')
-    process.exit(1)
-  } else if (!args.title) {
-    console.log('')
-    console.log(`Error: Missing \`title\` argument.`)
-    console.log('')
-    console.log('Try re-running and adding:\n\n\t\ttitle="your title"')
-    console.log('')
-    process.exit(1)
-  } else {
-    console.log('')
-    console.log(`Error: Missing \`slug\` argument.`)
-    console.log('')
-    console.log('Try re-running and adding:\n\n\t\tslug="your-slug"')
-    console.log('')
-    process.exit(1)
-  }
+if (args.debug) {
+  console.log(args)
+}
+
+function missingArg(args) {
+  console.log('')
+  console.log(
+    `Error: Missing ${args.map((name) => `\`${name}\``).join(', ')} argument${
+      args.length > 1 ? 's' : ''
+    }.`,
+  )
+  console.log('')
+  console.log(`Try re-running the command and provide: ${args.join(', ')}`)
+  console.log('')
+}
+
+if (!args.title || !args.slug || !args.tags) {
+  missingArg(
+    [
+      { val: args.title, name: 'title' },
+      { val: args.slug, name: 'slug' },
+      { val: args.tags, name: 'tags' },
+    ]
+      .filter(({ val }) => !val)
+      .map(({ name }) => name),
+  )
+  process.exit(1)
 }
 
 if (/[^a-zA-Z0-9|-]/.exec(args.slug)) {
@@ -104,24 +124,14 @@ if (/[^a-zA-Z0-9|-]/.exec(args.slug)) {
 
 // mkdirp
 let folderPath = path.join(
-  './pages/posts/',
+  './public/posts/',
   `${year}`,
   `${month.toLowerCase()}`,
 )
 
 fs.mkdirSync(folderPath, { recursive: true })
 
-let template = `---
-title: '${args.title}'
-date: ${publishDate}
-time: ${time}
-tags:
-  - TODO
-draft: false
-highlight: false
----
-
-START_HERE
+let template = `START_HERE
 
 <Spacer />
 
@@ -132,27 +142,23 @@ START_HERE
 
 fs.writeFileSync(path.join(folderPath, `${args.slug}.md`), template)
 
-let pathToPostsFile = path.join('posts.tsx')
-let postsTsxContent = fs.readFileSync(pathToPostsFile).toString()
+let newManifest = {
+  ...originalManifest,
+  posts: [
+    ...originalManifest.posts,
+    {
+      id: originalManifest.posts.length,
+      title: args.title,
+      path: `/posts/${year}/${month.toLowerCase()}/${args.slug}.md`,
+      slug: args.slug,
+      date: publishDate,
+      time,
+      tags: args.tags.split(','),
+      status: 'draft',
+    },
+  ],
+}
 
-let cacheBust = (() => {
-  try {
-    let hash = execSync('git rev-parse --short HEAD').toString().trim()
-    return hash
-  } catch (e) {
-    return 'failed'
-  }
-})()
+fs.writeFileSync('./public/feed.json', JSON.stringify(newManifest))
 
-fs.writeFileSync(
-  pathToPostsFile,
-  postsTsxContent
-    .split('\n')
-    .map((line, idx) => {
-      if (idx === 0) {
-        return `// cachebuster - v${cacheBust}`
-      }
-      return line
-    })
-    .join('\n'),
-)
+execSync(`yarn format`)
