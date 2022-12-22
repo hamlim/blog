@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { Box, Tapable, Heading, Text } from '@ui/components'
+import { Box, Tapable, Heading, Text } from '@ds-pack/components'
 import { wrap, swatch } from '../../src/aside-colors.css'
 
 function addAlpha(rgb: string, alpha: string): string {

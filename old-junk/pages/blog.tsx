@@ -9,7 +9,7 @@ import {
   RadioInput,
   Button,
   Link as StyledLink,
-} from '@ui/components'
+} from '@ds-pack/components'
 import { topPosts, allPosts, Post } from '../posts'
 import Link from '../components/Link'
 

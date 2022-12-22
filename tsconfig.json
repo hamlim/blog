@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -20,12 +16,9 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@ui/*": [
-        "./ui/*"
-      ],
-      "@lib/*": [
-        "./lib/*"
-      ]
+      "@ui/*": ["./ui/*"],
+      "@lib/*": ["./lib/*"],
+      "@styles/*": ["./styles/*"]
     },
     "plugins": [
       {
@@ -33,9 +26,7 @@
       }
     ]
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules", "./old-junk/**/*"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

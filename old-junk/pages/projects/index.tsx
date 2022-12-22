@@ -7,7 +7,7 @@ import {
   List,
   ListItem,
   InlineCode,
-} from '@ui/components'
+} from '@ds-pack/components'
 
 export default function Projects() {
   return (

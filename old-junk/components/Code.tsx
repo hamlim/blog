@@ -1,7 +1,7 @@
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight'
 import { code } from './Code.css'
-import { vars } from '@ui/components/src/vars.css'
+import { vars } from '@ds-pack/components'
 
 export default function Code({ children, className, ...props }) {
   let highlight = null

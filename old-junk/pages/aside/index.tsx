@@ -1,4 +1,4 @@
-import { Heading, Box, List, ListItem } from '@ui/components'
+import { Heading, Box, List, ListItem } from '@ds-pack/components'
 import LocalLink from '../../components/Link'
 
 export default function Random() {

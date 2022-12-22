@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { Box, Text } from '@ui/components'
+import { Box, Text } from '@ds-pack/components'
 import Link from './Link'
 
 export function Breadcrumbs({ children }: { children: any }) {

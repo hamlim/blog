@@ -1,5 +1,5 @@
 import { useMemo, useEffect } from 'react'
-import * as comps from '@ui/components'
+import * as comps from '@ds-pack/components'
 import { MDXProvider } from '@mdx-js/react'
 import { allPosts as posts } from '../posts'
 // this data is collected at build time

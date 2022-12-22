@@ -1,5 +1,5 @@
 import RouterLink from 'next/link'
-import { Link as StyledLink } from '@ui/components'
+import { Link as StyledLink } from '@ds-pack/components'
 
 export default function Link({
   to,

@@ -1,4 +1,4 @@
-import { Heading, Link, Box, Text, List, ListItem } from '@ui/components'
+import { Heading, Link, Box, Text, List, ListItem } from '@ds-pack/components'
 import LocalLink from '../components/Link'
 import { topPosts } from '../posts'
 

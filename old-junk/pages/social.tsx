@@ -8,7 +8,7 @@ import {
   GitHubMention,
   TwitterMention,
   Link as ExternalLink,
-} from '@ui/components'
+} from '@ds-pack/components'
 
 export default function Tools() {
   return (

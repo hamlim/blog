@@ -1,5 +1,11 @@
 import React from 'react'
-import { Heading, Box, Text, Stack, Link as ExternalLink } from '@ui/components'
+import {
+  Heading,
+  Box,
+  Text,
+  Stack,
+  Link as ExternalLink,
+} from '@ds-pack/components'
 import Link from '../components/Link'
 
 export default function Tools() {

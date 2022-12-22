@@ -6,7 +6,7 @@ import {
   VisuallyHidden,
   List,
   ListItem,
-} from '@ui/components'
+} from '@ds-pack/components'
 
 interface Book {
   title: string

@@ -1,4 +1,4 @@
-import { vars } from '@ui/components/src/vars.css'
+import { vars } from '@ds-pack/components'
 import { style } from '@vanilla-extract/css'
 
 export let code = style({

@@ -4,6 +4,7 @@ import fastGlob from 'fast-glob'
 let cssJSFiles = fastGlob
   .sync('**/*.css.ts')
   .filter((path) => !path.includes('node_modules'))
+  .filter((path) => !path.includes('old-junk'))
 
 /**
  * @type import('rollup').RollupOptions
