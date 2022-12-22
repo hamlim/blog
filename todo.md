@@ -1,0 +1,8 @@
+- [ ] Move to Yarn 3
+  - [x] Update gitignore
+  - [x] Init
+  - [x] Install
+  - [x] Cleanup pnpm
+- [ ] App dir
+  - [x] Folder structure
+  - [x] Pre-compile styles

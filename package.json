@@ -1,54 +1,38 @@
 {
   "name": "blog",
+  "packageManager": "yarn@3.3.1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn watch-styles & next dev",
+    "watch-styles": "rollup -c rollup.config.mjs --watch",
+    "build-styles": "rollup -c rollup.config.mjs",
+    "build": "yarn build-styles && next build",
     "start": "next start",
     "deploy": "now",
     "deploy-prod": "now --prod",
     "new-post": "node scripts/new.mjs"
   },
   "dependencies": {
-    "@babel/runtime": "^7.18.0",
-    "@ds-pack/components": "1.0.6",
-    "@ds-pack/use-refs": "^1.0.0",
-    "@mdx-js/loader": "1.6.22",
-    "@mdx-js/react": "1.6.22",
-    "@next/mdx": "^11.1.4",
-    "@ui/components": "npm:@ds-pack/components@latest",
-    "@vanilla-extract/css": "^1.7.0",
-    "@vanilla-extract/dynamic": "^2.0.2",
-    "@vanilla-extract/next-plugin": "^2.0.2",
+    "@ds-pack/components": "*",
+    "@ds-pack/use-refs": "*",
+    "@vanilla-extract/css": "*",
+    "@vanilla-extract/dynamic": "*",
     "airtable": "0.11.1",
     "nanopop": "2.1.0",
-    "next": "12.1.7-canary.10",
-    "next-transpile-modules": "^9.0.0",
+    "next": "canary",
     "prism-react-renderer": "1.2.1",
-    "rainbow-sprinkles": "^0.11",
+    "rainbow-sprinkles": "*",
     "react": "experimental",
-    "react-dom": "experimental",
-    "webpack": "^5.72.1"
+    "react-dom": "experimental"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "7.18.0",
-    "@babel/plugin-proposal-export-default-from": "^7.17.12",
-    "@babel/plugin-transform-runtime": "^7.18.0",
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
-    "babel-plugin-preval": "5.0.0",
-    "gray-matter": "4.0.3",
-    "polished": "^4.2.2",
-    "reading-time": "^1.5.0",
-    "schema-utils": "4.0.0",
-    "stringify-object": "4.0.0",
-    "typescript": "^4.6.4"
-  },
-  "resolutions": {
-    "@babel/core": "7.18.0",
-    "next": "12.1.7-canary.10"
+    "@vanilla-extract/rollup-plugin": "^1.2.0",
+    "fast-glob": "^3.2.12",
+    "rollup": "^3.7.5",
+    "typescript": "4.9.4"
   }
 }
