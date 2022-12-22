@@ -1,6 +1,6 @@
 'use client'
 import { Text, Link, Box } from '@ds-pack/components'
-import { footnote } from '@styles/Footnotes'
+import { footnote } from '@styles/ui/Footnotes'
 
 export function Ref({ id }) {
   return (
