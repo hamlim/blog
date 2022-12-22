@@ -1,6 +1,19 @@
 type Id = number
 type Tag = string
 type Status = 'draft' | 'public' | 'preview'
+type Month =
+  | 'january'
+  | 'february'
+  | 'march'
+  | 'april'
+  | 'may'
+  | 'june'
+  | 'july'
+  | 'august'
+  | 'september'
+  | 'october'
+  | 'november'
+  | 'december'
 interface Post {
   id: Id
   /**
@@ -41,6 +54,14 @@ interface Post {
    * The status of the post
    */
   status: Status
+  /**
+   * The month the blog post was published within
+   */
+  month: Month
+  /**
+   * The year the blog post was published within
+   */
+  year: number
 }
 
 export interface Manifest {
