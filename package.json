@@ -4,8 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "yarn watch-styles & next dev",
+    "watch-styles": "rollup -c rollup.config.mjs --watch",
+    "build-styles": "rollup -c rollup.config.mjs",
+    "build": "yarn build-styles && next build",
     "start": "next start",
     "deploy": "now",
     "deploy-prod": "now --prod",
@@ -14,6 +16,8 @@
   "dependencies": {
     "@ds-pack/components": "*",
     "@ds-pack/use-refs": "*",
+    "@vanilla-extract/css": "*",
+    "@vanilla-extract/dynamic": "*",
     "airtable": "0.11.1",
     "nanopop": "2.1.0",
     "next": "canary",
@@ -25,6 +29,10 @@
   "devDependencies": {
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4"
+    "@types/react-dom": "^18.0.4",
+    "@vanilla-extract/rollup-plugin": "^1.2.0",
+    "fast-glob": "^3.2.12",
+    "rollup": "^3.7.5",
+    "typescript": "4.9.4"
   }
 }
