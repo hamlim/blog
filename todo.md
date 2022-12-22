@@ -1,5 +1,6 @@
 - [ ] Move to Yarn 3
   - [x] Update gitignore
   - [x] Init
-  - [ ] Install
+  - [x] Install
+  - [x] Cleanup pnpm
 - [ ] App dir
