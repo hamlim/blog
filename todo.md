@@ -4,3 +4,5 @@
   - [x] Install
   - [x] Cleanup pnpm
 - [ ] App dir
+  - [ ] Folder structure
+  - [ ] Pre-compile styles
