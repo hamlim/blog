@@ -11,7 +11,7 @@ So I might be a bit late to the party to write about Twitter considering a new
 day which I expressed in this tweet:
 
 <Tweet>
-  <p lang="en" dir="ltr">
+  <div lang="en" dir="ltr">
     What if <a href="https://twitter.com/twitter">@twitter</a> is building
     "Instant Articles" that anyone can write?{' '}
     <a href="https://t.co/CLVcER5C6B">https://t.co/CLVcER5C6B</a>&mdash; Matt
@@ -19,7 +19,7 @@ day which I expressed in this tweet:
     <a href="https://twitter.com/immatthamlin/status/684528854694670337">
       January 6, 2016
     </a>
-  </p>
+  </div>
 </Tweet>
 
 Facebook developed a service known as Instant Articles (written about
@@ -43,7 +43,7 @@ simple button will be all that users will see so that these tweets don't
 overflow the feed like Owen Williams recently tweeted as a joke.
 
 <Tweet>
-  <p lang="en" dir="ltr">
+  <div lang="en" dir="ltr">
     H <br />E<br />Y<br />
     <br />J<br />U<br />S<br />T<br />
     <br />T<br />E<br />S<br />T<br />I<br />N<br />G<br />
@@ -62,7 +62,7 @@ overflow the feed like Owen Williams recently tweeted as a joke.
     <a href="https://twitter.com/ow/status/684528705561989121">
       January 6, 2016
     </a>
-  </p>
+  </div>
 </Tweet>
 
 A side note that probably needs to be made is that the current trend is to bash

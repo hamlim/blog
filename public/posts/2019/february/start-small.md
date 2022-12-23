@@ -10,7 +10,7 @@ As I have grown into a more experienced web developer, I have been thinking a
 lot more about this tweet by Joel Hooks:
 
 <Tweet>
-  <p lang="en" dir="ltr">
+  <div lang="en" dir="ltr">
     There’s a tendency to jump straight to step 32 of the “new thing” vs
     focusing on steps 1 and 2. <br />
     <br />
@@ -24,7 +24,7 @@ lot more about this tweet by Joel Hooks:
   </p>
   &mdash; Joel 🌧 (@jhooks) <a href="https://twitter.com/jhooks/status/1014615428897824768?ref_src=twsrc%5Etfw">
     July 4, 2018
-  </a>
+  </div>
 </Tweet>
 
 I could spend the better part of a weekend just enumerating all the times that I

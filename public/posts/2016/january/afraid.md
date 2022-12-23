@@ -38,13 +38,13 @@ These thoughts keep me up far later at night than my friends at college.
 I brought this up on twitter a week or two ago as well, where I tweeted:
 
 <Tweet>
-  <p lang="en" dir="ltr">
+  <div lang="en" dir="ltr">
     It&#39;s so odd to think about events happening post-graduation for me this
     year.&mdash; Matt Hamlin (@immatthamlin){' '}
     <a href="https://twitter.com/immatthamlin/status/688932733490343938">
       January 18, 2016
     </a>
-  </p>
+  </div>
 </Tweet>
 
 And its true, even just thinking about movie releases in December of this year

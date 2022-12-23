@@ -12,3 +12,4 @@
   - [ ] Handle fallbacks somehow
 - [ ] Index page
 - [ ] Projects page
+- [ ] Tweet embeds (images?)

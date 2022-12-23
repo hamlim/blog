@@ -18,6 +18,7 @@ export default async function Head({ params }) {
     <>
       <title>{title || params.title || "Matt's Blog"}</title>
       <HeadTags />
+      <script src="https://platform.twitter.com/widgets.js" async />
     </>
   )
 }

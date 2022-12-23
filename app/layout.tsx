@@ -1,5 +1,6 @@
 import { themeClass } from '@ds-pack/components'
-import '@ds-pack/components/dist/index.css'
+import '@ds-pack/components/dist/vars.css'
+import '@ds-pack/components/dist/reset.css'
 
 import { body } from '@styles/app/RootLayout'
 

@@ -10,7 +10,7 @@ The other day I noticed this really succinct and to the point tweet about
 snapshot tests from Mark Dalgleish:
 
 <Tweet>
-  <p lang="en" dir="ltr">
+  <div lang="en" dir="ltr">
     Just deleted all component snapshot tests from our React component
     library—in favour of{" "}
     <a href="https://twitter.com/chromaui?ref_src=twsrc%5Etfw">@chromaui</a>{" "}
@@ -22,7 +22,7 @@ snapshot tests from Mark Dalgleish:
   </p>
   &mdash; Mark Dalgleish (@markdalgleish) <a href="https://twitter.com/markdalgleish/status/1100164862796214272?ref_src=twsrc%5Etfw">
     February 25, 2019
-  </a>
+  </div>
 </Tweet>
 
 The valuable insight here being the following:
