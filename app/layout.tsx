@@ -14,9 +14,9 @@ import {
   body,
   main,
   header,
-  nav,
   footer,
   container,
+  section,
 } from '@styles/app/RootLayout'
 
 function LocalLink(props) {
@@ -29,13 +29,7 @@ export default function Layout({ children }) {
       <body className={body}>
         <main className={main}>
           <header className={header}>
-            <Box
-              is="nav"
-              className={nav}
-              maxWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
-              minWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
-              flexDirection={{ small: 'column', large: 'row' }}
-            >
+            <nav className={container}>
               <Box display="flex" alignItems="center">
                 <LocalLink href="/" display="flex" alignItems="center">
                   <Text mr="$2" is="span" aria-label="Home" role="img">
@@ -51,24 +45,11 @@ export default function Layout({ children }) {
                 <LocalLink href="/bookshelf">📚 Bookshelf</LocalLink>{' '}
                 <LocalLink href="/social">🗣 Social</LocalLink>
               </Box>
-            </Box>
+            </nav>
           </header>
-          <Box
-            maxWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
-            minWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
-            p={{ small: '$3', medium: '$7', large: '$10' }}
-            m="0 auto"
-            flexGrow="1"
-          >
-            {children}
-          </Box>
+          <section className={section}>{children}</section>
           <footer className={footer}>
-            <Box
-              className={container}
-              maxWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
-              minWidth={{ small: '94vw', medium: '80vw', large: '70ch' }}
-              flexDirection={{ _: 'column', large: 'row' }}
-            >
+            <Box className={container}>
               <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
               <Text>
                 🐦 <TwitterMention>immatthamlin</TwitterMention> 👨‍💻{' '}
