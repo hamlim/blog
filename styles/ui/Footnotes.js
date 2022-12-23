@@ -1,4 +1,4 @@
-import 'ui/Footnotes.css.ts.vanilla.css';
+import './Footnotes.css';
 
 var footnote = 'Footnotes_footnote__x4qpcp0';
 

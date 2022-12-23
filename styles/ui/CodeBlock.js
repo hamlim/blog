@@ -1,4 +1,4 @@
-import 'ui/CodeBlock.css.ts.vanilla.css';
+import './CodeBlock.css';
 
 var code = 'CodeBlock_code__tzgmlm0';
 

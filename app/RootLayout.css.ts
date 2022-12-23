@@ -52,7 +52,7 @@ export let container = style({
 })
 
 export let section = style({
-  m: '0 auto',
+  margin: '0 auto',
   flexGrow: '1',
   ...breakpoints({
     small: {
