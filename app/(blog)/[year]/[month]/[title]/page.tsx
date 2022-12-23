@@ -25,6 +25,9 @@ let extendedRuntime = {
   jsxDEV: any
 }
 
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+
 async function getPost({ title: titleSlug }: Params) {
   let manifest = (await fetch(
     `http://${process.env.VERCEL_URL}/feed.json`,

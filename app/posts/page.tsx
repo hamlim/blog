@@ -20,6 +20,9 @@ async function getFeed(): Promise<Manifest> {
   return feed
 }
 
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+
 export default async function Blog() {
   let feed = await getFeed()
   return (
