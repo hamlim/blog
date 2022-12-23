@@ -30,6 +30,7 @@
     "react": "latest",
     "react-dom": "latest",
     "remark-frontmatter": "^4.0.1",
+    "remark-gfm": "^3.0.1",
     "shiki-twoslash": "^3.1.0"
   },
   "devDependencies": {

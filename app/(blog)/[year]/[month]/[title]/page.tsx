@@ -2,7 +2,7 @@ import * as runtime from 'react/jsx-runtime'
 import { evaluate } from '@mdx-js/mdx'
 import * as defaultComponents from '@ui/MDXComponents'
 import type { Manifest } from '@lib/types'
-
+import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 
 interface Params {
@@ -43,7 +43,7 @@ async function getPost({ title: titleSlug }: Params) {
 
   let { default: MDXContent } = await evaluate(postContent, {
     ...extendedRuntime,
-    remarkPlugins: [remarkFrontmatter],
+    remarkPlugins: [remarkFrontmatter, remarkGfm],
   })
 
   return {
