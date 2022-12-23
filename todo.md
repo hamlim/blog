@@ -7,7 +7,9 @@
   - [x] Folder structure
   - [x] Pre-compile styles
 - [ ] Styles for site
+  - [ ] Figure out issue with the Box component
 - [ ] Blog posts up and working
   - [ ] Handle fallbacks somehow
 - [ ] Index page
 - [ ] Projects page
+- [ ] Tweet embeds (images?)

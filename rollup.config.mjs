@@ -1,5 +1,6 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin'
 import fastGlob from 'fast-glob'
+import ignoreImport from 'rollup-plugin-ignore-import'
 
 let cssJSFiles = fastGlob
   .sync('**/*.css.ts')
@@ -10,7 +11,20 @@ let cssJSFiles = fastGlob
  * @type import('rollup').RollupOptions
  */
 export default {
-  plugins: [vanillaExtractPlugin()],
+  plugins: [
+    vanillaExtractPlugin({
+      esbuildOptions: {
+        plugins: [
+          {
+            name: 'empty-css-imports',
+            setup(build) {
+              build.onLoad({ filter: /\.css$/ }, () => ({ contents: '' }))
+            },
+          },
+        ],
+      },
+    }),
+  ],
   input: cssJSFiles,
   output: {
     dir: './styles',
