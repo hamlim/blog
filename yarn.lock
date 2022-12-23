@@ -286,17 +286,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ds-pack/components@npm:1.0.13":
-  version: 1.0.13
-  resolution: "@ds-pack/components@npm:1.0.13"
+"@ds-pack/components@npm:1.0.14":
+  version: 1.0.14
+  resolution: "@ds-pack/components@npm:1.0.14"
   peerDependencies:
     "@ds-pack/use-refs": "*"
     "@vanilla-extract/dynamic": ^2.0.2
     nanopop: ^2
-    rainbow-sprinkles: ^0.12
+    rainbow-sprinkles: ^0.15
     react: "*"
     react-dom: "*"
-  checksum: ec1f2c04e96be39e3f1c48d0692260ba7d0e55e9300383af4c87d4dd17e6c9b1ba358583cf5d1d15b6ef3234f656fd490247254b5d3b059fe5d0587f2a80023e
+  checksum: 65ba523b57f35e105ee079943ae0d419de3bab93eee7ed2d589ce66ec3e33c7035dde4c47ef3377e1d1e9839fc29fe11ad61ec9308a9101a9284ff489aee76bc
   languageName: node
   linkType: hard
 
@@ -1182,7 +1182,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "blog@workspace:."
   dependencies:
-    "@ds-pack/components": 1.0.13
+    "@ds-pack/components": 1.0.14
     "@ds-pack/use-refs": "*"
     "@mdx-js/mdx": latest
     "@rollup/plugin-node-resolve": ^15.0.1

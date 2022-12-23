@@ -15,7 +15,7 @@
     "new-post": "node scripts/new-post.mjs"
   },
   "dependencies": {
-    "@ds-pack/components": "1.0.13",
+    "@ds-pack/components": "1.0.14",
     "@ds-pack/use-refs": "*",
     "@mdx-js/mdx": "latest",
     "@vanilla-extract/css": "*",

@@ -39,7 +39,7 @@ export default async function Page() {
       <Heading variant="h3" is="h3" my="$3">
         Popular blog posts:
       </Heading>
-      <Box my="$5">
+      <Box marginY="$5">
         <List variant="base" is="ol">
           {topPosts.map((post, i) => (
             <ListItem key={post.title} mt={i !== 0 ? '$4' : null}>
