@@ -1,9 +1,9 @@
 import * as runtime from 'react/jsx-runtime'
 import { evaluate } from '@mdx-js/mdx'
 import * as defaultComponents from '@ui/MDXComponents'
-import type { Manifest } from '@lib/types'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
+import { fetchManifest } from '@lib/fetch-manifest'
 
 interface Params {
   title: string
@@ -29,9 +29,7 @@ export const revalidate = 0
 export const dynamic = 'force-dynamic'
 
 async function getPost({ title: titleSlug }: Params) {
-  let manifest = (await fetch(
-    `http://${process.env.VERCEL_URL}/feed.json`,
-  ).then((r) => r.json())) as Manifest
+  let manifest = await fetchManifest()
 
   let postData = manifest.posts.find((post) => {
     return post.slug === titleSlug

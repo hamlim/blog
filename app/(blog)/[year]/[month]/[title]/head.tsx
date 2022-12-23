@@ -1,10 +1,8 @@
 import HeadTags from '@ui/HeadTags'
-import type { Manifest } from '@lib/types'
+import { fetchManifest } from '@lib/fetch-manifest'
 
 async function resolveTitle({ title: titleSlug }) {
-  let manifest = (await fetch(
-    `http://${process.env.VERCEL_URL}/feed.json`,
-  ).then((r) => r.json())) as Manifest
+  let manifest = await fetchManifest()
   let postData = manifest.posts.find((post) => {
     return post.slug === titleSlug
   })
