@@ -1,6 +1,7 @@
 import NextLink from 'next/link'
 import { Link } from '@ds-pack/components'
 import type { Manifest } from '@lib/types'
+import { List, ListItem } from '@ds-pack/components'
 
 async function getFeed() {
   let feed = (await fetch(`http://${process.env.VERCEL_URL}/feed.json`).then(
@@ -15,17 +16,20 @@ export default async function Blog() {
   return (
     <div>
       Blog!
-      {feed.posts.map((post) => {
-        return (
-          <Link
-            key={post.slug}
-            is={NextLink}
-            href={`/${post.year}/${post.month}/${post.slug}`}
-          >
-            {post.title}
-          </Link>
-        )
-      })}
+      <List variant="base" is="ul">
+        {feed.posts.map((post) => {
+          return (
+            <ListItem key={post.slug}>
+              <Link
+                is={NextLink}
+                href={`/${post.year}/${post.month}/${post.slug}`}
+              >
+                {post.title}
+              </Link>
+            </ListItem>
+          )
+        })}
+      </List>
     </div>
   )
 }

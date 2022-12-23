@@ -7,8 +7,6 @@ import remarkFrontmatter from 'remark-frontmatter'
 
 interface Params {
   title: string
-  year: string
-  month: string
 }
 
 let jsxRuntime = runtime as {
@@ -27,13 +25,13 @@ let extendedRuntime = {
   jsxDEV: any
 }
 
-async function getPost({ title, year, month }: Params) {
+async function getPost({ title: titleSlug }: Params) {
   let manifest = (await fetch(
     `http://${process.env.VERCEL_URL}/feed.json`,
   ).then((r) => r.json())) as Manifest
 
   let postData = manifest.posts.find((post) => {
-    return post.slug === title
+    return post.slug === titleSlug
   })
 
   let postContent = await fetch(
@@ -47,15 +45,15 @@ async function getPost({ title, year, month }: Params) {
 
   return {
     meta: { manifest },
-    content: MDXContent({ components: defaultComponents }),
+    content: MDXContent({
+      components: defaultComponents,
+    }),
   }
 }
 
-export default async function Blog({ params: { title, year, month } }) {
+export default async function Blog({ params: { title } }) {
   let { content } = await getPost({
     title,
-    year,
-    month,
   })
 
   return <div>{content}</div>

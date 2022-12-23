@@ -1,4 +1,10 @@
-import { Box, Link as StyledLink, TwitterMention } from '@ds-pack/components'
+import {
+  Box,
+  Link as StyledLink,
+  TwitterMention,
+  List,
+  ListItem,
+} from '@ds-pack/components'
 import NextLink from 'next/link'
 
 export function Spacer() {
@@ -11,6 +17,22 @@ export function Link(props) {
 
 export function ExternalLink(props) {
   return <StyledLink is="a" {...props} />
+}
+
+export function a(props) {
+  return <ExternalLink {...props} />
+}
+
+export function ul(props) {
+  return <List variant="ul" {...props} />
+}
+
+export function ol(props) {
+  return <List variant="ol" {...props} />
+}
+
+export function li(props) {
+  return <ListItem {...props} />
 }
 
 export { TwitterMention }
