@@ -2,13 +2,12 @@ import NextLink from 'next/link'
 import { Link } from '@ds-pack/components'
 import type { Manifest } from '@lib/types'
 import { List, ListItem } from '@ds-pack/components'
+import { fetchManifest } from '@lib/fetch-manifest'
 
 async function getFeed(): Promise<Manifest> {
   let feed: Manifest
   try {
-    feed = (await fetch(`http://${process.env.VERCEL_URL}/feed.json`).then(
-      (r) => r.json(),
-    )) as Manifest
+    feed = await fetchManifest()
   } catch (error) {
     console.log(error)
     return {
