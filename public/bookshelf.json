@@ -1,0 +1,143 @@
+[
+  {
+    "title": "Rama II",
+    "author": "Arthur C. Clarke",
+    "url": "https://www.goodreads.com/book/show/112520.Rama_II",
+    "status": "read"
+  },
+  {
+    "title": "Rendezvous with Rama",
+    "author": "Arthur C. Clarke",
+    "url": "https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama",
+    "status": "read"
+  },
+  {
+    "title": "Project Hail Mary",
+    "author": "Andy Weir",
+    "url": "https://www.goodreads.com/book/show/54493401-project-hail-mary",
+    "status": "read"
+  },
+  {
+    "title": "The Andromeda Strain",
+    "author": "Michael Crichton",
+    "url": "https://www.goodreads.com/book/show/7670.The_Andromeda_Strain",
+    "status": "read"
+  },
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "url": "https://www.goodreads.com/book/show/44767458-dune",
+    "status": "read"
+  },
+  {
+    "title": "2001: A Space Odyssey",
+    "author": "Arthur C. Clarke",
+    "url": "https://www.goodreads.com/book/show/70535.2001",
+    "status": "read"
+  },
+  {
+    "title": "On The Road",
+    "author": "Jack Kerouac",
+    "url": "https://www.goodreads.com/book/show/70401.On_the_Road",
+    "status": "read"
+  },
+  {
+    "title": "The Martian Chronicles",
+    "author": "Ray Bradbury",
+    "url": "https://www.goodreads.com/book/show/76778.The_Martian_Chronicles",
+    "status": "read"
+  },
+  {
+    "title": "Airframe",
+    "author": "Michael Crichton",
+    "url": "https://www.goodreads.com/book/show/7667.Airframe",
+    "status": "read"
+  },
+  {
+    "title": "Red Mars",
+    "author": "Kim Stanley Robinson",
+    "url": "https://www.goodreads.com/book/show/77507.Red_Mars",
+    "status": "read"
+  },
+  {
+    "title": "Green Mars",
+    "author": "Kim Stanley Robinson",
+    "url": "https://www.goodreads.com/book/show/77505.Green_Mars",
+    "status": "read"
+  },
+  {
+    "title": "Blue Mars",
+    "author": "Kim Stanley Robinson",
+    "url": "https://www.goodreads.com/book/show/77504.Blue_Mars",
+    "status": "read"
+  },
+  {
+    "title": "Jurassic Park",
+    "author": "Michael Crichton",
+    "url": "https://www.goodreads.com/book/show/40604658-jurassic-park",
+    "status": "read"
+  },
+  {
+    "title": "The Hunt For Red October",
+    "author": "Tom Clancy",
+    "url": "https://www.goodreads.com/book/show/19691.The_Hunt_for_Red_October",
+    "status": "reading"
+  },
+  {
+    "title": "Foundation",
+    "author": "Isaac Asimov",
+    "url": "https://www.goodreads.com/book/show/29579.Foundation",
+    "status": "read"
+  },
+  {
+    "title": "Do Androids Dream of Electric Sheep?",
+    "author": "Philip K. Dick",
+    "url": "https://www.goodreads.com/book/show/7082.Do_Androids_Dream_of_Electric_Sheep_",
+    "status": "to-read"
+  },
+  {
+    "title": "Annihilation",
+    "author": "Jeff VanderMeer",
+    "url": "https://www.goodreads.com/book/show/17934530-annihilation",
+    "status": "read"
+  },
+  {
+    "title": "1Q84",
+    "author": "Haruki Murakami",
+    "url": "https://www.goodreads.com/book/show/10357575-1q84",
+    "status": "to-read"
+  },
+  {
+    "title": "Klara and the Sun",
+    "author": "Kazuo Ishiguro",
+    "url": "https://www.goodreads.com/book/show/54120408-klara-and-the-sun",
+    "status": "read",
+    "dateStarted": "July 2022",
+    "dateFinished": "July 2022"
+  },
+  {
+    "title": "Leviathan Wakes",
+    "author": "James S. A. Corey",
+    "url": "https://www.goodreads.com/book/show/8855321-leviathan-wakes",
+    "status": "read"
+  },
+  {
+    "title": "Lord of the Rings: The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "url": "https://www.goodreads.com/book/show/61215351-the-fellowship-of-the-ring",
+    "status": "reading",
+    "dateStarted": "November 2022"
+  },
+  {
+    "title": "Lord of the Rings: The Two Towers",
+    "author": "J.R.R. Tolkien",
+    "url": "https://www.goodreads.com/book/show/61215372-the-two-towers",
+    "status": "to-read"
+  },
+  {
+    "title": "Lord of the Rings: The Return of the King",
+    "author": "J.R.R. Tolkien",
+    "url": "https://www.goodreads.com/book/show/61215384-the-return-of-the-king",
+    "status": "to-read"
+  }
+]
