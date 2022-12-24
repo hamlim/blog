@@ -13,7 +13,9 @@
 - [x] Projects page
 - [x] bookshelf page
 - [x] tools page
-- [ ] Blog posts up and working
-  - [ ] Handle fallbacks somehow
+- [x] Blog posts up and working
+- [ ] Handle fallbacks somehow
+- [ ] Blog post layout (`(blog)/...`)
+- [ ] Blog post listing page (`posts/page.tsx`)
 - [ ] notebook page
 - [ ] Tweet embeds (images?)
