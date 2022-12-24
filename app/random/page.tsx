@@ -1,5 +1,23 @@
+import { Heading, Box, List, ListItem, Link } from '@ds-pack/components'
+import NextLink from 'next/link'
+
+function LocalLink(props) {
+  return <Link is={NextLink} {...props} />
+}
+
 export default function Random() {
-  return <div>Random</div>
+  return (
+    <Box>
+      <Heading mb="$4" is="h2" variant="lead">
+        Random Things:
+      </Heading>
+      <List variant="base" is="ul">
+        <ListItem>
+          <LocalLink href="/aside/colors">Colors</LocalLink>
+        </ListItem>
+      </List>
+    </Box>
+  )
 }
 
 export const revalidate = 0

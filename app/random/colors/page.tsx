@@ -1,7 +1,7 @@
 'use client'
 import { useRef } from 'react'
 import { Box, Tapable, Heading, Text } from '@ds-pack/components'
-import { wrap, swatch } from '@styles/app/aside/colors/colors'
+import { wrap, swatch } from '@styles/app/random/colors/colors'
 
 function addAlpha(rgb: string, alpha: string): string {
   let rgbRegExp = /RGB\((\d+), (\d+), (\d+)\)/
