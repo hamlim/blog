@@ -10,10 +10,10 @@
 - [x] Social page
 - [x] Styles for site
   - [x] Figure out issue with the Box component
+- [x] Projects page
+- [x] bookshelf page
+- [x] tools page
 - [ ] Blog posts up and working
   - [ ] Handle fallbacks somehow
-- [ ] Projects page
-- [ ] bookshelf page
-- [ ] tools page
 - [ ] notebook page
 - [ ] Tweet embeds (images?)
