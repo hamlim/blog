@@ -68,3 +68,13 @@ export interface Manifest {
   gallery: Array<Id>
   posts: Array<Post>
 }
+
+// Bookshelf:
+export interface Book {
+  title: string
+  author: string
+  url: string
+  status: 'read' | 'reading' | 'to-read'
+  dateStarted?: string
+  dateFinished?: string
+}

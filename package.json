@@ -12,7 +12,8 @@
     "deploy": "now",
     "deploy-prod": "now --prod",
     "format": "prettier . --write",
-    "new-post": "node scripts/new-post.mjs"
+    "new-post": "node scripts/new-post.mjs",
+    "add-book": "node scripts/add-book.mjs"
   },
   "dependencies": {
     "@ds-pack/components": "1.0.14",
