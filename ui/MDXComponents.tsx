@@ -35,11 +35,11 @@ export function a(props) {
 }
 
 export function ul(props) {
-  return <List variant="ul" {...props} />
+  return <List variant="base" is="ul" ml="$5" {...props} />
 }
 
 export function ol(props) {
-  return <List variant="ol" {...props} />
+  return <List variant="ol" is="ol" ml="$5" {...props} />
 }
 
 export function li(props) {

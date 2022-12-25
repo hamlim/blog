@@ -14,7 +14,8 @@ type Month =
   | 'october'
   | 'november'
   | 'december'
-interface Post {
+
+export interface Post {
   id: Id
   /**
    * Title of the post

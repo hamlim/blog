@@ -1,46 +1,28 @@
-import NextLink from 'next/link'
-import { Link } from '@ds-pack/components'
-import type { Manifest } from '@lib/types'
-import { List, ListItem } from '@ds-pack/components'
+import type { Post } from '@lib/types'
 import { fetchManifest } from '@lib/fetch-manifest'
+import Listing from './Listing'
 
-async function getFeed(): Promise<Manifest> {
-  let feed: Manifest
-  try {
-    feed = await fetchManifest()
-  } catch (error) {
-    console.log(error)
-    return {
-      gallery: [],
-      posts: [],
-    }
+async function getPosts(): Promise<{
+  posts: Array<Post>
+  galleryPosts: Array<Post>
+}> {
+  let { posts, gallery } = await fetchManifest()
+
+  return {
+    posts,
+    galleryPosts: posts.reduce((acc, post) => {
+      if (gallery.includes(post.id)) {
+        return [...acc, post]
+      }
+      return acc
+    }, []),
   }
+}
 
-  return feed
+export default async function Blog() {
+  let { posts, galleryPosts } = await getPosts()
+  return <Listing posts={posts} gallaryPosts={galleryPosts} />
 }
 
 export const revalidate = 0
 export const dynamic = 'force-dynamic'
-
-export default async function Blog() {
-  let feed = await getFeed()
-  return (
-    <div>
-      Blog!
-      <List variant="base" is="ul">
-        {feed.posts.map((post) => {
-          return (
-            <ListItem key={post.slug}>
-              <Link
-                is={NextLink}
-                href={`/${post.year}/${post.month}/${post.slug}`}
-              >
-                {post.title}
-              </Link>
-            </ListItem>
-          )
-        })}
-      </List>
-    </div>
-  )
-}
