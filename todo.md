@@ -17,5 +17,5 @@
 - [x] Blog post layout (`(blog)/...`)
 - [x] Blog post listing page (`posts/page.tsx`)
 - [x] notebook page
+- [ ] Tweet embeds (images?)
 - [ ] Handle fallbacks somehow
-- [x] Tweet embeds (images?)
