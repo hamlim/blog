@@ -1,5 +1,67 @@
 {
   "gallery": [0],
+  "notebookEntries": [
+    {
+      "id": 0,
+      "title": "Building a Developer Toolbox",
+      "path": "/notebook/2020/june/building-a-developer-toolbox.md",
+      "slug": "building-a-developer-toolbox",
+      "date": "June 1st, 2020",
+      "time": "12:00:00 PM",
+      "tags": ["Development Patterns"],
+      "month": "june",
+      "year": "2020",
+      "status": "public"
+    },
+    {
+      "id": 1,
+      "title": "The Art of Note Taking",
+      "path": "/notebook/2020/june/the-art-of-note-taking.md",
+      "slug": "the-art-of-note-taking",
+      "date": "June 1st, 2020",
+      "time": "12:00:00 PM",
+      "tags": ["Blogging"],
+      "month": "june",
+      "year": "2020",
+      "status": "public"
+    },
+    {
+      "id": 2,
+      "title": "Design Tokens and Theme",
+      "path": "/notebook/2020/may/design-tokens-and-theme.md",
+      "slug": "design-tokens-and-theme",
+      "date": "May 1st, 2020",
+      "time": "12:00:00 PM",
+      "tags": ["Web Development", "Design Systems", "Design Tokens"],
+      "month": "may",
+      "year": "2020",
+      "status": "public"
+    },
+    {
+      "id": 3,
+      "title": "The State of Monorepos",
+      "path": "/notebook/2020/may/the-state-of-monorepos.md",
+      "slug": "the-state-of-monorepos",
+      "date": "May 1st, 2020",
+      "time": "12:00:00 PM",
+      "tags": ["Development", "Web Development"],
+      "month": "may",
+      "year": "2020",
+      "status": "public"
+    },
+    {
+      "id": 4,
+      "title": "2020",
+      "path": "/notebook/2020/november/2020.md",
+      "slug": "2020",
+      "date": "November 28th, 2020",
+      "time": "12:00:00 PM",
+      "tags": ["Blogging"],
+      "month": "november",
+      "year": "2020",
+      "status": "public"
+    }
+  ],
   "posts": [
     {
       "id": 0,

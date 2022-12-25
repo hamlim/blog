@@ -68,6 +68,7 @@ export interface Post {
 export interface Manifest {
   gallery: Array<Id>
   posts: Array<Post>
+  notebookEntries: Array<Post>
 }
 
 // Bookshelf:

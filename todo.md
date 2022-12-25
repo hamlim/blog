@@ -16,6 +16,6 @@
 - [x] Blog posts up and working
 - [x] Blog post layout (`(blog)/...`)
 - [x] Blog post listing page (`posts/page.tsx`)
+- [x] notebook page
 - [ ] Handle fallbacks somehow
-- [ ] notebook page
-- [ ] Tweet embeds (images?)
+- [x] Tweet embeds (images?)

@@ -35,7 +35,7 @@ export function a(props) {
 }
 
 export function ul(props) {
-  return <List variant="base" is="ul" ml="$5" {...props} />
+  return <List variant="ul" is="ul" ml="$5" {...props} />
 }
 
 export function ol(props) {
@@ -154,4 +154,4 @@ export function TLDR(props: { children: React.ReactNode }) {
   )
 }
 
-export { TwitterMention, Figure, GitHubMention, Mentions }
+export { TwitterMention, Figure, GitHubMention, Mentions, Text }
