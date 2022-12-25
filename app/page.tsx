@@ -114,7 +114,7 @@ export default async function Page() {
         or might not really be worth throwing in their own repo, you can find
         some of those in my Random part of the site.
       </Text>
-      <LocalLink href="/aside">Check them out</LocalLink>
+      <LocalLink href="/random">Check them out</LocalLink>
 
       <Heading variant="h3" is="h3" my="$3">
         Bookshelf

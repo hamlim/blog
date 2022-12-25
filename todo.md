@@ -14,8 +14,8 @@
 - [x] bookshelf page
 - [x] tools page
 - [x] Blog posts up and working
-- [ ] Handle fallbacks somehow
-- [ ] Blog post layout (`(blog)/...`)
-- [ ] Blog post listing page (`posts/page.tsx`)
-- [ ] notebook page
+- [x] Blog post layout (`(blog)/...`)
+- [x] Blog post listing page (`posts/page.tsx`)
+- [x] notebook page
 - [ ] Tweet embeds (images?)
+- [ ] Handle fallbacks somehow

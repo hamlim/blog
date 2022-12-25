@@ -11,7 +11,7 @@ import { publishedDate, content as contentWrap } from '@styles/app/Post'
 let { Time, Mentions, Spacer } = defaultComponents
 
 interface Params {
-  title: string
+  slug: string
 }
 
 let jsxRuntime = runtime as {
@@ -33,15 +33,15 @@ let extendedRuntime = {
 export const revalidate = 0
 export const dynamic = 'force-dynamic'
 
-async function getPost({ title: titleSlug }: Params) {
+async function getNotebookEntries({ slug }: Params) {
   let manifest = await fetchManifest()
 
-  let postData = manifest.posts.find((post) => {
-    return post.slug === titleSlug
+  let notebookEntry = manifest.notebookEntries.find((entry) => {
+    return entry.slug === slug
   })
 
   let postContent = await fetch(
-    `http://${process.env.VERCEL_URL}${postData.path}`,
+    `http://${process.env.VERCEL_URL}${notebookEntry.path}`,
   ).then((r) => r.text())
 
   let { default: MDXContent } = await evaluate(postContent, {
@@ -54,13 +54,13 @@ async function getPost({ title: titleSlug }: Params) {
     content: MDXContent({
       components: defaultComponents,
     }),
-    post: postData,
+    post: notebookEntry,
   }
 }
 
-export default async function Blog({ params: { title } }) {
-  let { content, post } = await getPost({
-    title,
+export default async function Notebook({ params: { slug } }) {
+  let { content, post } = await getNotebookEntries({
+    slug,
   })
 
   return (

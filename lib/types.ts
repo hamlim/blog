@@ -14,7 +14,8 @@ type Month =
   | 'october'
   | 'november'
   | 'december'
-interface Post {
+
+export interface Post {
   id: Id
   /**
    * Title of the post
@@ -67,6 +68,7 @@ interface Post {
 export interface Manifest {
   gallery: Array<Id>
   posts: Array<Post>
+  notebookEntries: Array<Post>
 }
 
 // Bookshelf:
