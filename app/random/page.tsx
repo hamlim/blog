@@ -13,7 +13,7 @@ export default function Random() {
       </Heading>
       <List variant="base" is="ul">
         <ListItem>
-          <LocalLink href="/aside/colors">Colors</LocalLink>
+          <LocalLink href="/random/colors">Colors</LocalLink>
         </ListItem>
       </List>
     </Box>

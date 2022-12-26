@@ -17,5 +17,8 @@
 - [x] Blog post layout (`(blog)/...`)
 - [x] Blog post listing page (`posts/page.tsx`)
 - [x] notebook page
-- [ ] Tweet embeds (images?)
+- [ ] Better Tweet embeds (images?)
 - [ ] Handle fallbacks somehow
+- [ ] Script to promote blog posts to the gallery
+- [ ] Preview blog post functionality
+- [ ] View related posts from a post
