@@ -159,7 +159,7 @@ export default function Projects() {
           is="a"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/hamlim"
+          href="https://twitter.com/immatthamlin"
         >
           on twitter
           <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
