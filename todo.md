@@ -1,0 +1,24 @@
+- [x] Move to Yarn 3
+  - [x] Update gitignore
+  - [x] Init
+  - [x] Install
+  - [x] Cleanup pnpm
+- [x] App dir
+  - [x] Folder structure
+  - [x] Pre-compile styles
+- [x] Index page
+- [x] Social page
+- [x] Styles for site
+  - [x] Figure out issue with the Box component
+- [x] Projects page
+- [x] bookshelf page
+- [x] tools page
+- [x] Blog posts up and working
+- [x] Blog post layout (`(blog)/...`)
+- [x] Blog post listing page (`posts/page.tsx`)
+- [x] notebook page
+- [ ] Better Tweet embeds (images?)
+- [ ] Handle fallbacks somehow
+- [ ] Script to promote blog posts to the gallery
+- [ ] Preview blog post functionality
+- [ ] View related posts from a post

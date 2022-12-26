@@ -1,28 +1,11 @@
-import frontmatter from './utils/frontmatter.mjs'
-import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin'
-import createWithMdx from '@next/mdx'
-import createTM from 'next-transpile-modules'
-
-let withTM = createTM(['@ui/components'])
-
-let withVanillaExtract = createVanillaExtractPlugin()
-
-let withMDX = createWithMdx({
-  extension: /\.(md|mdx)$/,
-  options: {
-    remarkPlugins: [frontmatter],
+export default {
+  experimental: {
+    appDir: true,
   },
-})
-
-export default withTM(
-  withVanillaExtract(
-    withMDX({
-      pageExtensions: ['md', 'mdx', 'jsx', 'js', 'ts', 'tsx'],
-      experimental: {
-        reactRefresh: true,
-        modern: true,
-        reactRoot: 'concurrent',
-      },
-    }),
-  ),
-)
+  modularizeImports: {
+    '@ds-pack/components': {
+      transform: '@ds-pack/components/dist/{{member}}',
+      skipDefaultConversion: true,
+    },
+  },
+}
