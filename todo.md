@@ -22,3 +22,4 @@
 - [ ] Script to promote blog posts to the gallery
 - [ ] Preview blog post functionality
 - [ ] View related posts from a post
+- [ ] Themes (light and dark)
