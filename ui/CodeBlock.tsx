@@ -6,6 +6,7 @@ import markdown from 'highlight.js/lib/languages/markdown'
 import diff from 'highlight.js/lib/languages/diff'
 import bash from 'highlight.js/lib/languages/bash'
 import css from 'highlight.js/lib/languages/css'
+import json from 'highlight.js/lib/languages/json'
 import { code } from '@styles/ui/CodeBlock'
 import 'highlight.js/styles/github-dark-dimmed.css'
 
@@ -15,6 +16,7 @@ hljs.registerLanguage('markdown', markdown)
 hljs.registerLanguage('css', css)
 hljs.registerLanguage('diff', diff)
 hljs.registerLanguage('bash', bash)
+hljs.registerLanguage('json', json)
 
 export default async function CodeBlock({ children, className, ...props }) {
   let lang = className ? className.split('-')[1] : 'javascript'

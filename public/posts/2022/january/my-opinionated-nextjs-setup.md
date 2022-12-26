@@ -9,6 +9,8 @@ draft: false
 highlight: false
 ---
 
+_I've since updated this blog post [here](/2022/december/updated-opinionated-nextjs-setup)_
+
 As I've been hacking on a recent
 [side project](https://github.com/hamlim/watch-list), I've started to form some
 loose opinions on my ideal Next.js application structure. Some of these opinions

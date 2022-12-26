@@ -1,5 +1,5 @@
 {
-  "gallery": [27, 35, 39, 50],
+  "gallery": [87, 27, 35, 39, 50],
   "notebookEntries": [
     {
       "id": 0,
@@ -1106,6 +1106,16 @@
       "month": "may",
       "year": 2022,
       "status": "public"
+    },
+    {
+      "id": 87,
+      "title": "My Updated Next.js Setup",
+      "path": "/posts/2022/december/updated-opinionated-nextjs-setup.md",
+      "slug": "updated-opinionated-nextjs-setup",
+      "date": "December 26th, 2022",
+      "time": "6:59:55 AM",
+      "tags": ["Web Development", "Next.js"],
+      "status": "draft"
     }
   ]
 }
