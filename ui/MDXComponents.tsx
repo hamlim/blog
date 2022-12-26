@@ -154,4 +154,4 @@ export function TLDR(props: { children: React.ReactNode }) {
   )
 }
 
-export { TwitterMention, Figure, GitHubMention, Mentions, Text }
+export { TwitterMention, Figure, GitHubMention, Mentions, Text, Heading }
