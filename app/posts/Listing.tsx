@@ -11,7 +11,6 @@ import {
   Button,
   Link as StyledLink,
 } from '@ds-pack/components'
-// import { topPosts, allPosts, Post } from '../posts'
 import NextLink from 'next/link'
 import type { Post } from '@lib/types'
 import { formatPostLink } from '@lib/format-post-link'
@@ -35,6 +34,11 @@ const monthToNumber = {
   December: 11,
 }
 
+function capitalCase(word: string): string {
+  let [first, ...rest] = word.split('')
+  return `${first.toUpperCase()}${rest.join('')}`
+}
+
 function groupByYearAndMonth(posts: Array<Post>) {
   return Object.entries(
     posts.reduce((grouped, post: Post) => {
@@ -42,8 +46,10 @@ function groupByYearAndMonth(posts: Array<Post>) {
         ...grouped,
         [post.year]: {
           ...(grouped[post.year] || {}),
-          [post.month]: [
-            ...(grouped[post.year] ? grouped[post.year][post.month] || [] : []),
+          [capitalCase(post.month)]: [
+            ...(grouped[post.year]
+              ? grouped[post.year][capitalCase(post.month)] || []
+              : []),
             post,
           ],
         },
