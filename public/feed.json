@@ -1115,7 +1115,9 @@
       "date": "December 26th, 2022",
       "time": "6:59:55 AM",
       "tags": ["Web Development", "Next.js"],
-      "status": "draft"
+      "status": "draft",
+      "month": "december",
+      "year": "2022"
     }
   ]
 }

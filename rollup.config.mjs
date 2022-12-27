@@ -1,6 +1,5 @@
 import { vanillaExtractPlugin } from '@vanilla-extract/rollup-plugin'
 import fastGlob from 'fast-glob'
-import ignoreImport from 'rollup-plugin-ignore-import'
 
 let cssJSFiles = fastGlob
   .sync('**/*.css.ts')
