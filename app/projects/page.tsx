@@ -38,6 +38,19 @@ export default function Projects() {
           <ListItem>
             <Link
               is="a"
+              href="https://github.com/hamlim/clue"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Clue Notes
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A quick and dirty web app to keep track of your notes and
+            assumptions while playing the board game Clue!
+          </ListItem>
+          <ListItem mt="$6">
+            <Link
+              is="a"
               href="https://github.com/hamlim/simple-cache"
               target="_blank"
               rel="noopener noreferrer"
