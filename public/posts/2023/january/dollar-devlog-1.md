@@ -1,5 +1,3 @@
-# Dollar: Devlog 1
-
 About 7 years ago at the time of writing (January 2023), I started a little side
 project while I was in college that I called Dollar. It was meant to be a
 financial tracking web application (very original, I know!) that I could
