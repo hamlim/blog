@@ -1118,6 +1118,18 @@
       "status": "draft",
       "month": "december",
       "year": "2022"
+    },
+    {
+      "id": 88,
+      "title": "Dollar: Devlog 1",
+      "path": "/posts/2023/january/dollar-devlog-1.md",
+      "slug": "dollar-devlog-1",
+      "date": "January 28th, 2023",
+      "time": "2:57:06 PM",
+      "month": "January",
+      "year": "2023",
+      "tags": ["Development", "Dollar", "Projects"],
+      "status": "draft"
     }
   ]
 }

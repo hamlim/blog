@@ -155,7 +155,7 @@ let newManifest = {
       time,
       month,
       year,
-      tags: args.tags.split(','),
+      tags: args.tags.split(',').map((tag) => tag.trim()),
       status: 'draft',
     },
   ],
