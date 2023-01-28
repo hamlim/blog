@@ -52,6 +52,13 @@ this with the previous iteration of the application by using selectable chips
 which I've since stopped supporting within my library. Hmm, will need to think
 about the right way to support this feature.
 
+Another interesting hiccup that I'll need to look into is how I want to
+integrate Vanilla Extract into the application. The VE Next.js plugin at the
+time of writing is still not supported with React Server Components in Next.js
+13 sadly. I worked around this with a really rough process of having two build
+flows setup for my personal site and another site as well, maybe I opt for that
+in this case again as well.
+
 <Spacer />
 
 ---

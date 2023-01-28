@@ -1,6 +1,5 @@
-import { Heading, Text, Box, List, ListItem } from '@ds-pack/components'
+import { Heading, Text, Box, List, ListItem, Link } from '@ds-pack/components'
 import NextLink from 'next/link'
-import { Link } from '@ds-pack/components'
 import { fetchManifest } from '@lib/fetch-manifest'
 
 function LocalLink({ href, ...props }) {
