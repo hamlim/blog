@@ -44,6 +44,14 @@ I'll also aim to use this blog post as sort of a running log of my notes and
 work at least for today, and who know's maybe tomorrow I'll have a second Devlog
 for this work!
 
+---
+
+An interesting edge case that I haven't accounted for yet within my component
+library is a selection UI (e.g. a Dropdown or `<select>` element). I got around
+this with the previous iteration of the application by using selectable chips
+which I've since stopped supporting within my library. Hmm, will need to think
+about the right way to support this feature.
+
 <Spacer />
 
 ---
