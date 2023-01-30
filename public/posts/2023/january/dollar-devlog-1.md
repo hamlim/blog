@@ -57,6 +57,12 @@ time of writing is still not supported with React Server Components in Next.js
 flows setup for my personal site and another site as well, maybe I opt for that
 in this case again as well.
 
+---
+
+I ended up taking a longer break than I expected and wasn't able to get back to
+the project on Sunday, however I had a few ideas over the rest of the weekend
+that I would like to explore eventually.
+
 <Spacer />
 
 ---
