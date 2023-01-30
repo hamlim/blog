@@ -9,7 +9,7 @@ async function getPosts(): Promise<{
   let { posts, gallery } = await fetchManifest()
 
   return {
-    posts,
+    posts: [...posts].reverse(),
     galleryPosts: posts.reduce((acc, post) => {
       if (gallery.includes(post.id)) {
         return [...acc, post]

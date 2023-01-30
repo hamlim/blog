@@ -1115,7 +1115,7 @@
       "date": "December 26th, 2022",
       "time": "6:59:55 AM",
       "tags": ["Web Development", "Next.js"],
-      "status": "draft",
+      "status": "public",
       "month": "december",
       "year": "2022"
     },
@@ -1126,10 +1126,22 @@
       "slug": "dollar-devlog-1",
       "date": "January 28th, 2023",
       "time": "2:57:06 PM",
-      "month": "January",
+      "month": "january",
       "year": "2023",
       "tags": ["Development", "Dollar", "Projects"],
-      "status": "draft"
+      "status": "public"
+    },
+    {
+      "id": 89,
+      "title": "Navigating Monorepos with Ease",
+      "path": "/posts/2023/january/navigating-monorepos-with-ease.md",
+      "slug": "navigating-monorepos-with-ease",
+      "date": "January 30th, 2023",
+      "time": "4:57:50 PM",
+      "month": "january",
+      "year": "2023",
+      "tags": ["Development", "Web Development", "Monorepos"],
+      "status": "public"
     }
   ]
 }

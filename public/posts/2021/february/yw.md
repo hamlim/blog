@@ -8,6 +8,16 @@ tags:
   - 'Development Tips'
 ---
 
+#### Update!
+
+Note: This script is only compatible with yarn classic (e.g. v1), I have since
+published an updated version that works with yarn berry (v2 and v3 releases) in
+my
+[Navigating Monorepos with Ease](/2022/january/navigating-monorepos-with-ease)
+blog post!
+
+---
+
 Almost a year or more ago I stumbled across this super useful bash function that
 makes it incredibly easy to run scripts across a
 [Yarn](https://yarnpkg.com/)-based monorepo. Since then I haven't looked back,
@@ -33,9 +43,6 @@ Both should be installable via `homebrew`: `brew install fzf jq`
 
 Copy the above script and dump it into your `.bashrc` or `.zshrc`, or whatever
 other config script your shell uses!
-
-> Note: This script is only compatible with `yarn` v1.22 or later, I haven't
-> tested it on `yarn` v2 yet
 
 <Spacer />
 
