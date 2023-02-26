@@ -18,6 +18,7 @@ import {
   container,
   section,
 } from '@styles/app/RootLayout'
+import { Metadata } from 'next'
 
 function LocalLink(props) {
   return <Link is={NextLink} {...props} />
@@ -61,4 +62,14 @@ export default function Layout({ children }) {
       </body>
     </html>
   )
+}
+
+export const metadata: Metadata = {
+  title: "Matt Hamlin's Personal Site",
+  icons: [
+    {
+      rel: 'shortcut icon',
+      url: '/favicon.ico',
+    },
+  ],
 }
