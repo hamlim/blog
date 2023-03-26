@@ -1,9 +1,9 @@
 // @TODO: Line highlighting!
 
 import { Box } from '@ds-pack/components'
+import { code } from '@styles/ui/CodeBlock'
 import shiki from 'shiki'
 
-import { code } from '@styles/ui/CodeBlock'
 import githubDarkDimmed from 'shiki/themes/github-dark-dimmed.json'
 import githubLight from 'shiki/themes/github-light.json'
 import tsxGrammar from 'shiki/languages/tsx.tmLanguage.json'

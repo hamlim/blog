@@ -1154,6 +1154,18 @@
       "year": "2023",
       "tags": ["Development", "Dollar", "Projects"],
       "status": "draft"
+    },
+    {
+      "id": 91,
+      "title": "Setting up Shiki on Next.js",
+      "path": "/posts/2023/march/shiki-on-next-js.md",
+      "slug": "shiki-on-next-js",
+      "date": "March 26th, 2023",
+      "time": "5:07:39 PM",
+      "month": "march",
+      "year": "2023",
+      "tags": ["Development", "Web Development", "Next.js"],
+      "status": "draft"
     }
   ]
 }
