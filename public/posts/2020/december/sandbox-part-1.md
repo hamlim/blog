@@ -73,7 +73,8 @@ Our first concept from above was a code editor, in our above snippet the
 following code is playing that role of the code editor (managing the state and
 rendering the text editor using a `textarea`):
 
-```tsx highlight=1-5,27-35
+```tsx
+// ==highlight:1-5,27-35
 export default function Sandbox() {
   let [code, setCode] = useState(`
 render(
@@ -178,4 +179,8 @@ however there are several opportunities for enhancement here:
   miss out on convinience features that any developers are use to with their
   current code editors
 
-In future versions of this blog post I'll dive into these points and more to see how we can enhance this development experience! If you have comments or questions, feel free to [tweet at me](https://twitter.com/immatthamlin) or <ExternalLink href="mailto:matthewjameshamlin@gmail.com?Subject=Sandbox Part 1">email me</ExternalLink>
+In future versions of this blog post I'll dive into these points and more to see
+how we can enhance this development experience! If you have comments or
+questions, feel free to [tweet at me](https://twitter.com/immatthamlin) or
+<ExternalLink href="mailto:matthewjameshamlin@gmail.com?Subject=Sandbox Part 1">email
+me</ExternalLink>

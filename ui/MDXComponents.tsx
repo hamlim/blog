@@ -17,6 +17,7 @@ import {
 import NextLink from 'next/link'
 import CodeBlock from './CodeBlock'
 import Mentions from './Mentions'
+import { Footnote, Ref } from './Footnotes'
 
 export function Spacer() {
   return <Box is="marquee" marginBottom="$4" />
@@ -154,4 +155,14 @@ export function TLDR(props: { children: React.ReactNode }) {
   )
 }
 
-export { TwitterMention, Figure, GitHubMention, Mentions, Text, Heading }
+export {
+  TwitterMention,
+  Figure,
+  GitHubMention,
+  Mentions,
+  Text,
+  Heading,
+  InlineCode,
+  Footnote,
+  Ref,
+}
