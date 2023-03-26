@@ -153,7 +153,7 @@ let newManifest = {
       slug: args.slug,
       date: publishDate,
       time,
-      month,
+      month: month.toLowerCase(),
       year,
       tags: args.tags.split(',').map((tag) => tag.trim()),
       status: 'draft',
