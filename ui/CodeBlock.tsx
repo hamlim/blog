@@ -14,9 +14,11 @@ import bashGrammar from 'shiki/languages/shellscript.tmLanguage.json'
 import jsonGrammar from 'shiki/languages/json.tmLanguage.json'
 
 export default async function CodeBlock({ children, className, ...props }) {
-  let lang = className ? className.split('-')[1] : 'javascript'
-  if (lang === 'tsx' || lang === 'jsx') {
+  let lang = className ? className.split('-')[1] : 'typescript'
+  if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
     lang = 'typescript'
+  } else if (lang === 'sh') {
+    lang = 'bash'
   }
 
   let codeToHighlight = children
@@ -38,23 +40,20 @@ export default async function CodeBlock({ children, className, ...props }) {
     // @ts-ignore
     themes: [githubDarkDimmed, githubLight],
     langs: [
-      'typescript',
-      'markdown',
-      'bash',
-      'css',
-      'diff',
-      // // @ts-ignore
-      // { id: 'tsx', scopeName: 'source.tsx', grammar: tsxGrammar },
-      // // @ts-ignore
-      // { id: 'md', scopeName: 'source.md', grammar: mdGrammar },
-      // // @ts-ignore
-      // { id: 'css', scopeName: 'source.css', grammar: cssGrammar },
-      // // @ts-ignore
-      // { id: 'diff', scopeName: 'source.diff', grammar: diffGrammar },
-      // // @ts-ignore
-      // { id: 'bash', scopeName: 'source.bash', grammar: bashGrammar },
-      // // @ts-ignore
-      // { id: 'json', scopeName: 'source.json', grammar: jsonGrammar },
+      // @ts-ignore
+      { id: 'tsx', scopeName: 'source.tsx', grammar: tsxGrammar },
+      // @ts-ignore
+      { id: 'typescript', scopeName: 'source.tsx', grammar: tsxGrammar },
+      // @ts-ignore
+      { id: 'md', scopeName: 'text.html.markdown', grammar: mdGrammar },
+      // @ts-ignore
+      { id: 'css', scopeName: 'source.css', grammar: cssGrammar },
+      // @ts-ignore
+      { id: 'diff', scopeName: 'source.diff', grammar: diffGrammar },
+      // @ts-ignore
+      { id: 'bash', scopeName: 'source.shell', grammar: bashGrammar },
+      // @ts-ignore
+      { id: 'json', scopeName: 'source.json', grammar: jsonGrammar },
     ],
   })
 
