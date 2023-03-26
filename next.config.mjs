@@ -1,6 +1,7 @@
 export default {
   experimental: {
     appDir: true,
+    serverComponentsExternalPackages: ['shiki', 'vscode-oniguruma'],
   },
   modularizeImports: {
     '@ds-pack/components': {
