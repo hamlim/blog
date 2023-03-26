@@ -26,11 +26,11 @@ because I wouldn't need to arbitrarily increase my specificity just to style
 things like id specific elements. This becomes immediately valuable when dealing
 with any links that link to a specific element on the current document.
 
-```CSS
+```css
 #id {
   color: red;
 }
-[id="id"] {
+[id='id'] {
   color: red;
 }
 ```

@@ -140,6 +140,5 @@ replacing a react-redux setup can be more maintainable.
 Docs</ExternalLink></Footnote>
 
 <Footnote id="2">I do think there will still be a shift from developers used to
-Redux getting into Hooks however, as middleware solutions like
-<InlineCode>redux-thunk</InlineCode> will need to be re-implemented using{' '}
-<InlineCode>useEffect</InlineCode>.</Footnote>
+Redux getting into Hooks however, as middleware solutions like `redux-thunk`
+will need to be re-implemented using{' '} `useEffect`.</Footnote>
