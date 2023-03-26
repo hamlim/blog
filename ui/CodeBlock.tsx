@@ -4,6 +4,14 @@ import { Box } from '@ds-pack/components'
 import shiki from 'shiki'
 
 import { code } from '@styles/ui/CodeBlock'
+import githubDarkDimmed from 'shiki/themes/github-dark-dimmed.json'
+import githubLight from 'shiki/themes/github-light.json'
+import tsxGrammar from 'shiki/languages/tsx.tmLanguage.json'
+import mdGrammar from 'shiki/languages/markdown.tmLanguage.json'
+import cssGrammar from 'shiki/languages/css.tmLanguage.json'
+import diffGrammar from 'shiki/languages/diff.tmLanguage.json'
+import bashGrammar from 'shiki/languages/shellscript.tmLanguage.json'
+import jsonGrammar from 'shiki/languages/json.tmLanguage.json'
 
 export default async function CodeBlock({ children, className, ...props }) {
   let lang = className ? className.split('-')[1] : 'javascript'
@@ -27,8 +35,27 @@ export default async function CodeBlock({ children, className, ...props }) {
   }
 
   let highlighter = await shiki.getHighlighter({
-    themes: ['github-dark-dimmed', 'github-light'],
-    langs: ['typescript', 'markdown', 'css', 'diff', 'bash', 'json'],
+    // @ts-ignore
+    themes: [githubDarkDimmed, githubLight],
+    langs: [
+      'typescript',
+      'markdown',
+      'bash',
+      'css',
+      'diff',
+      // // @ts-ignore
+      // { id: 'tsx', scopeName: 'source.tsx', grammar: tsxGrammar },
+      // // @ts-ignore
+      // { id: 'md', scopeName: 'source.md', grammar: mdGrammar },
+      // // @ts-ignore
+      // { id: 'css', scopeName: 'source.css', grammar: cssGrammar },
+      // // @ts-ignore
+      // { id: 'diff', scopeName: 'source.diff', grammar: diffGrammar },
+      // // @ts-ignore
+      // { id: 'bash', scopeName: 'source.bash', grammar: bashGrammar },
+      // // @ts-ignore
+      // { id: 'json', scopeName: 'source.json', grammar: jsonGrammar },
+    ],
   })
 
   let html
