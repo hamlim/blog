@@ -1,5 +1,6 @@
 import Script from 'next/script'
 import { fetchManifest } from '@lib/fetch-manifest'
+import '@styles/globals.css'
 
 export default function Layout({ children }) {
   return (

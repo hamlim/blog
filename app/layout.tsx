@@ -1,14 +1,17 @@
+import { themeClass } from '@ds-pack/components'
+import NextLink from 'next/link'
+
 import {
-  themeClass,
   Box,
   Link,
   Text,
   TwitterMention,
   GitHubMention,
-} from '@ds-pack/components'
-import NextLink from 'next/link'
+} from '@ds-pack/daisyui'
+
 import '@ds-pack/components/dist/vars.css'
 import '@ds-pack/components/dist/reset.css'
+import '@styles/globals.css'
 
 import {
   body,
@@ -26,17 +29,14 @@ function LocalLink(props) {
 
 export default function Layout({ children }) {
   return (
-    <html lang="en-US" className={themeClass}>
+    <html data-theme="corporate" lang="en-US" className={themeClass}>
       <body className={body}>
         <main className={main}>
           <header className={header}>
             <nav className={container}>
-              <Box display="flex" alignItems="center">
-                <LocalLink href="/" display="flex" alignItems="center">
-                  <Text mr="$2" is="span" aria-label="Home" role="img">
-                    🏡
-                  </Text>{' '}
-                  Home
+              <Box className="flex items-center">
+                <LocalLink href="/" className="flex items-center">
+                  🏡 Home
                 </LocalLink>
                 <Box id="breadcrumbs-portal" />
               </Box>

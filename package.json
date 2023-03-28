@@ -18,22 +18,27 @@
   },
   "dependencies": {
     "@ds-pack/components": "1.0.14",
+    "@ds-pack/daisyui": "^0.0.5",
     "@ds-pack/use-refs": "*",
     "@mdx-js/mdx": "latest",
     "@vanilla-extract/css": "*",
     "@vanilla-extract/dynamic": "*",
     "airtable": "0.11.1",
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^2.51.5",
     "eslint-config-next": "latest",
     "highlight.js": "^11.7.0",
     "nanopop": "2.1.0",
     "next": "canary",
+    "postcss": "^8.4.21",
     "rainbow-sprinkles": "*",
     "react": "experimental",
     "react-dom": "experimental",
     "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.14.1",
-    "shiki-twoslash": "^3.1.0"
+    "shiki-twoslash": "^3.1.0",
+    "tailwindcss": "^3.2.7"
   },
   "devDependencies": {
     "@types/node": "^16.11.36",
