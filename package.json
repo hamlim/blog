@@ -24,6 +24,7 @@
     "@vanilla-extract/dynamic": "*",
     "airtable": "0.11.1",
     "eslint-config-next": "latest",
+    "fuse.js": "^6.6.2",
     "highlight.js": "^11.7.0",
     "nanopop": "2.1.0",
     "next": "canary",

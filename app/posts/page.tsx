@@ -24,5 +24,9 @@ export default async function Blog() {
   return <Listing posts={posts} gallaryPosts={galleryPosts} />
 }
 
+export let metadata = {
+  title: "Matt's Blog",
+}
+
 export const revalidate = 0
 export const dynamic = 'force-dynamic'

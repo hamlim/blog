@@ -236,6 +236,9 @@ export default function Listing({ posts, gallaryPosts }) {
         Welcome to my Blog! Many of these posts are rough drafts that I work on
         here and there.
       </Text>
+      <Link mb="$4" href="/posts/search">
+        Search 🔍
+      </Link>
       <Heading variant="h3" is="h3" fontSize="$2" mb="$2">
         Popular posts:
       </Heading>

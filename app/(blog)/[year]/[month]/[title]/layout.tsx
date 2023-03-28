@@ -19,6 +19,7 @@ async function resolveTitle({ title: titleSlug }) {
   return postData.title
 }
 
+// @ts-ignore
 export async function generateMetadata({ params }) {
   const title = await resolveTitle({ title: params.title })
 
