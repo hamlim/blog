@@ -3,39 +3,10 @@ import {
   Box,
   Text,
   Link as ExternalLink,
-  BoxProps,
   // @ts-ignore
   classnames as cx,
 } from '@ds-pack/daisyui'
 import NextLink from 'next/link'
-
-// @TODO - we should move this over to @ds-pack/daisyui
-interface Props extends BoxProps {
-  inline?: boolean
-  gap: '1' | '2' | '3' | '4'
-}
-
-let gapClasses = {
-  1: 'gap-1',
-  2: 'gap-2',
-  3: 'gap-3',
-  4: 'gap-4',
-}
-
-function Stack({ inline, gap, className = '', ...props }: Props) {
-  return (
-    <Box
-      className={cx({
-        flex: true,
-        'flex-col': !inline,
-        'flex-row': inline,
-        [gapClasses[gap]]: !!gap,
-        [className]: !!className,
-      })}
-      {...props}
-    />
-  )
-}
 
 function Link(props) {
   return <ExternalLink is={NextLink} {...props} />

@@ -6,14 +6,14 @@ import {
   List,
   ListItem,
   Heading,
-  Stack,
   RadioInput,
   Button,
   Link as StyledLink,
-} from '@ds-pack/components'
+} from '@ds-pack/daisyui'
 import NextLink from 'next/link'
 import type { Post } from '@lib/types'
 import { formatPostLink } from '@lib/format-post-link'
+import { Stack } from '@lib/Stack'
 
 function Link(props) {
   return <StyledLink is={NextLink} {...props} />
@@ -99,7 +99,7 @@ function groupByTags(posts: Array<Post>) {
 
 function Control({ value, checked, onChange, children }) {
   return (
-    <Button variant={checked ? 'primary' : 'ghost'} is="label">
+    <Button variant={checked ? 'primary' : 'outline'} is="label">
       <RadioInput
         name="posts-by"
         value={value}
@@ -113,7 +113,7 @@ function Control({ value, checked, onChange, children }) {
 
 function SegmentedControl({ value, onChange }) {
   return (
-    <Stack inline gap="$2">
+    <Stack inline gap="2">
       <Control value="all" onChange={onChange} checked={value === 'all'}>
         All Posts
       </Control>
@@ -135,7 +135,7 @@ function AllPosts({ posts }) {
   return (
     <List variant="base" is="ol">
       {posts.map((post, i) => (
-        <ListItem key={post.title} mt={i !== 0 ? '$6' : null}>
+        <ListItem key={post.title} className={i !== 0 ? 'mt-6' : null}>
           <Link href={formatPostLink(post)}>{post.title}</Link>
         </ListItem>
       ))}
@@ -146,7 +146,7 @@ function AllPosts({ posts }) {
 function Timeline({ groupedByYear }) {
   return (
     <>
-      <Stack inline gap="$2" mb="$4">
+      <Stack inline gap="2" className="mb-4">
         {groupedByYear.map(([year]: [string]) => (
           <StyledLink is="a" key={year} href={`#${year}`}>
             {year}
@@ -155,7 +155,7 @@ function Timeline({ groupedByYear }) {
       </Stack>
       <List variant="base" is="ol">
         {groupedByYear.map(([year, months]: [string, any[]], i) => (
-          <ListItem key={year} mt={i !== 0 ? '$6' : null}>
+          <ListItem key={year} className={i !== 0 ? 'mt-6' : null}>
             <Heading
               is="h3"
               id={year}
@@ -165,17 +165,17 @@ function Timeline({ groupedByYear }) {
             >
               {year}
             </Heading>
-            <Box pl="$3">
+            <Box className="pl-3">
               <List variant="base" is="ol">
-                {months.map(([month, posts], i) => (
-                  <ListItem key={month} mt="$6">
+                {months.map(([month, posts]) => (
+                  <ListItem key={month} className="mt-6">
                     <Heading is="h4" variant="subhead">
                       {month}
                     </Heading>
-                    <Box pl="$3">
+                    <Box className="pl-3">
                       <List variant="base" is="ol">
-                        {posts.map((post: Post, i: number) => (
-                          <ListItem key={post.title} mt="$6">
+                        {posts.map((post: Post) => (
+                          <ListItem key={post.title} className="mt-6">
                             <Link href={formatPostLink(post)}>
                               {post.title}
                             </Link>
@@ -198,7 +198,7 @@ function Tagged({ groupedByTag }) {
   return (
     <List variant="base" is="ol">
       {groupedByTag.map(([tag, posts]: [string, Array<Post>], i) => (
-        <ListItem key={tag} mt={i !== 0 ? '$6' : null}>
+        <ListItem key={tag} className={i !== 0 ? 'mt-6' : null}>
           <Heading
             is="h3"
             id={tag}
@@ -208,10 +208,10 @@ function Tagged({ groupedByTag }) {
           >
             {tag}
           </Heading>
-          <Box pl="$3">
+          <Box className="pl-3">
             <List variant="base" is="ol">
               {posts.map((post: Post) => (
-                <ListItem key={post.title} mt="$6">
+                <ListItem key={post.title} className="mt-6">
                   <Link href={formatPostLink(post)}>{post.title}</Link>
                 </ListItem>
               ))}
@@ -229,32 +229,32 @@ export default function Listing({ posts, gallaryPosts }) {
   let [value, setValue] = useState('all')
   return (
     <>
-      <Heading variant="lead" is="h1" mb="$3">
+      <Heading variant="lead" is="h1" className="mb-3">
         Blog
       </Heading>
-      <Text fontSize="$2" mb="$2">
+      <Text className="text-lg mb-2">
         Welcome to my Blog! Many of these posts are rough drafts that I work on
         here and there.
       </Text>
-      <Heading variant="h3" is="h3" fontSize="$2" mb="$2">
+      <Heading variant="h3" is="h3" className="text-lg mb-2">
         Popular posts:
       </Heading>
-      <Box my="$5">
+      <Box className="my-5">
         <List variant="base" is="ol">
           {gallaryPosts.map((post, i) => (
-            <ListItem key={post.title} mt={i !== 0 ? '$6' : null}>
+            <ListItem key={post.title} className={i !== 0 ? 'mt-6' : null}>
               <Link href={formatPostLink(post)}>{post.title}</Link>
             </ListItem>
           ))}
         </List>
       </Box>
-      <Heading variant="h3" is="h3" fontSize="$2" py="$7">
+      <Heading variant="h3" is="h3" className="text-lg py-7">
         All Posts:
       </Heading>
 
       <SegmentedControl value={value} onChange={setValue} />
 
-      <Box my="$5">
+      <Box className="my-5">
         {value === 'all' ? (
           <AllPosts posts={posts} />
         ) : value === 'timeline' ? (
