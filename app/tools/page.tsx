@@ -2,10 +2,40 @@ import {
   Heading,
   Box,
   Text,
-  Stack,
   Link as ExternalLink,
-} from '@ds-pack/components'
+  BoxProps,
+  // @ts-ignore
+  classnames as cx,
+} from '@ds-pack/daisyui'
 import NextLink from 'next/link'
+import type { ReactNode } from 'react'
+
+interface Props extends BoxProps {
+  inline?: boolean
+  gap: '1' | '2' | '3' | '4'
+}
+
+let gapClasses = {
+  1: 'gap-1',
+  2: 'gap-2',
+  3: 'gap-3',
+  4: 'gap-4',
+}
+
+function Stack({ inline, gap, className = '', ...props }: Props) {
+  return (
+    <Box
+      className={cx({
+        flex: true,
+        'flex-col': !inline,
+        'flex-row': inline,
+        [gapClasses[gap]]: !!gap,
+        [className]: !!className,
+      })}
+      {...props}
+    />
+  )
+}
 
 function Link(props) {
   return <ExternalLink is={NextLink} {...props} />
@@ -13,7 +43,7 @@ function Link(props) {
 
 export default function Tools() {
   return (
-    <>
+    <Box>
       <Heading variant="lead" is="h1">
         Tools
       </Heading>
@@ -22,20 +52,20 @@ export default function Tools() {
         I'd try to catalog those tools here, and I'm also going to try and keep
         this up to date every so often and see how it changes over time.
       </Text>
-      <Box my="$5">
+      <Box className="my-5">
         <Heading is="h2" variant="h2">
           December, 2022
         </Heading>
-        <Stack gap="$2">
+        <Stack gap="2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Phone
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 iPhone 14 Pro Max
               </Text>
             </Text>
@@ -45,11 +75,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Laptop
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 MacBook Air M2 (early 2022)
               </Text>
             </Text>
@@ -60,11 +90,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 E-Reader
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Kindle Paperlight (Signature Edition)
               </Text>
             </Text>
@@ -78,11 +108,11 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Notes / Todos
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Notion
               </Text>
             </Text>
@@ -93,11 +123,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Code
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 VS Code (Insiders)
               </Text>
             </Text>
@@ -107,11 +137,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Browser
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Arc
               </Text>
             </Text>
@@ -126,20 +156,20 @@ export default function Tools() {
       <Heading is="h2" variant="h2">
         Old Updates:
       </Heading>
-      <Box my="$5">
+      <Box className="my-5">
         <Heading is="h2" variant="h2">
           August, 2022
         </Heading>
-        <Stack gap="$2">
+        <Stack gap="2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Phone
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 iPhone 13 Pro Max
               </Text>
             </Text>
@@ -151,11 +181,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Laptop
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 MacBook Air M2 (early 2022)
               </Text>
             </Text>
@@ -166,11 +196,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 E-Reader
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Kindle Paperlight (Signature Edition)
               </Text>
             </Text>
@@ -184,11 +214,11 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Notes / Todos
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Notion
               </Text>
             </Text>
@@ -199,11 +229,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Code
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 VS Code (Insiders)
               </Text>
             </Text>
@@ -213,11 +243,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Browser
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Arc
               </Text>
             </Text>
@@ -228,20 +258,20 @@ export default function Tools() {
           </Box>
         </Stack>
       </Box>
-      <Box my="$5">
+      <Box className="my-5">
         <Heading is="h3" variant="h3">
           January, 2022
         </Heading>
-        <Stack gap="$2">
+        <Stack gap="2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Phone
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 iPhone 13 Pro Max
               </Text>
             </Text>
@@ -256,11 +286,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Laptop
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 MacBook Pro (early 2020) 13"
               </Text>
             </Text>
@@ -270,11 +300,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 E-Reader
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Kindle Paperlight (Signature Edition)
               </Text>
             </Text>
@@ -288,11 +318,11 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Notes / Todos
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Obsidian
               </Text>
             </Text>
@@ -302,11 +332,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Code
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 VS Code (Insiders)
               </Text>
             </Text>
@@ -317,20 +347,20 @@ export default function Tools() {
           </Box>
         </Stack>
       </Box>
-      <Box my="$5">
+      <Box className="my-5">
         <Heading is="h3" variant="h2">
           August, 2021
         </Heading>
-        <Stack gap="$2">
+        <Stack gap="2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Phone
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Google Pixel 5
               </Text>
             </Text>
@@ -342,11 +372,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Laptop
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 MacBook Pro (early 2020) 13"
               </Text>
             </Text>
@@ -356,11 +386,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Tablet / Laptop
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Pixel Slate
               </Text>
             </Text>
@@ -377,11 +407,11 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Notes / Todos
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Obsidian
               </Text>
             </Text>
@@ -407,11 +437,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Code
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 VS Code (Insiders)
               </Text>
             </Text>
@@ -423,20 +453,20 @@ export default function Tools() {
           </Box>
         </Stack>
       </Box>
-      <Box my="$5">
+      <Box className="my-5">
         <Heading is="h3" variant="h2" id="november-2020">
           November, 2020
         </Heading>
-        <Stack gap="$2">
+        <Stack gap="2">
           <Heading is="h4" variant="subhead">
             Hardware
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Phone
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Google Pixel 5
               </Text>
             </Text>
@@ -452,11 +482,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Laptop
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 MacBook Pro (early 2020) 13"
               </Text>
             </Text>
@@ -473,11 +503,11 @@ export default function Tools() {
             Software
           </Heading>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Notes / Todos
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 Roam Research
               </Text>
             </Text>
@@ -498,11 +528,11 @@ export default function Tools() {
             </Text>
           </Box>
           <Box>
-            <Text mb="$2">
-              <Text is="strong" fontWeight="bold">
+            <Text className="mb-2">
+              <Text is="strong" className="font-bold">
                 Code
               </Text>{' '}
-              <Text is="em" fontStyle="italics">
+              <Text is="em" className="italic">
                 VS Code (Insiders)
               </Text>
             </Text>
@@ -529,7 +559,7 @@ export default function Tools() {
           </Text>
         </Stack>
       </Box>
-    </>
+    </Box>
   )
 }
 
