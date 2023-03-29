@@ -8,5 +8,8 @@ export default {
       transform: '@ds-pack/components/dist/{{member}}',
       skipDefaultConversion: true,
     },
+    '@ds-pack/daisyui': {
+      transform: '@ds-pack/daisyui/dist/{{member}}',
+    },
   },
 }

@@ -11,7 +11,7 @@ import {
 
 export default function Social() {
   return (
-    <>
+    <Box>
       <Heading variant="lead" is="h1">
         Social
       </Heading>
@@ -48,7 +48,7 @@ export default function Social() {
           </ListItem>
         </List>
       </Box>
-    </>
+    </Box>
   )
 }
 

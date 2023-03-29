@@ -7,34 +7,40 @@ import {
   Text,
   TwitterMention,
   GitHubMention,
+  // @ts-ignore
+  classnames as cx,
 } from '@ds-pack/daisyui'
 
 import '@ds-pack/components/dist/vars.css'
 import '@ds-pack/components/dist/reset.css'
 import '@styles/globals.css'
 
-import {
-  body,
-  main,
-  header,
-  footer,
-  container,
-  section,
-} from '@styles/app/RootLayout'
 import { Metadata } from 'next'
 
 function LocalLink(props) {
   return <Link is={NextLink} {...props} />
 }
 
+function Container(props) {
+  return (
+    <Box
+      {...props}
+      className={cx({
+        'p-4 my-0 mx-auto grow flex justify-between flex-col container': true,
+        [props.className]: !!props.className,
+      })}
+    />
+  )
+}
+
 export default function Layout({ children }) {
   return (
     <html data-theme="corporate" lang="en-US" className={themeClass}>
-      <body className={body}>
-        <main className={main}>
-          <header className={header}>
-            <nav className={container}>
-              <Box className="flex items-center">
+      <body className="h-screen flex flex-col">
+        <main className="flex grow flex-col min-h-screen">
+          <header className="flex-shrink bg-slate-200 text-black">
+            <Container is="nav">
+              <Box className="flex items-center mb-2">
                 <LocalLink href="/" className="flex items-center">
                   🏡 Home
                 </LocalLink>
@@ -46,17 +52,17 @@ export default function Layout({ children }) {
                 <LocalLink href="/bookshelf">📚 Bookshelf</LocalLink>{' '}
                 <LocalLink href="/social">🗣 Social</LocalLink>
               </Box>
-            </nav>
+            </Container>
           </header>
-          <section className={section}>{children}</section>
-          <footer className={footer}>
-            <Box className={container}>
+          <Container is="section">{children}</Container>
+          <footer className="flex-shrink bg-slate-200">
+            <Container>
               <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
               <Text>
                 🐦 <TwitterMention>immatthamlin</TwitterMention> 👨‍💻{' '}
                 <GitHubMention>hamlim</GitHubMention>
               </Text>
-            </Box>
+            </Container>
           </footer>
         </main>
       </body>
