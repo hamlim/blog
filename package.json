@@ -4,10 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "yarn watch-styles & next dev",
-    "watch-styles": "rollup -c rollup.config.mjs --watch",
-    "build-styles": "rollup -c rollup.config.mjs",
-    "build": "yarn build-styles && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "deploy": "now",
     "deploy-prod": "now --prod",

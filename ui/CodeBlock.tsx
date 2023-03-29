@@ -1,7 +1,5 @@
 // @TODO: Line highlighting!
-
 import { Box } from '@ds-pack/components'
-import { code } from '@styles/ui/CodeBlock'
 import shiki from 'shiki'
 
 import githubDarkDimmed from 'shiki/themes/github-dark-dimmed.json'
@@ -90,7 +88,9 @@ export default async function CodeBlock({ children, className, ...props }) {
       is="code"
       dangerouslySetInnerHTML={{ __html: html }}
       {...props}
-      className={className ? `${className} ${code}` : `${code}`}
+      className={
+        className ? `${className} mt-2 overflow-auto` : `mt-2 overflow-auto`
+      }
     />
   )
 }
