@@ -8,19 +8,19 @@ import {
   ListItem,
   Text,
   Blockquote,
-  InlineCode,
+  InlineCode as BaseInlineCode,
   Heading,
   Image,
   Figure,
   GitHubMention,
-} from '@ds-pack/components'
+} from '@ds-pack/daisyui'
 import NextLink from 'next/link'
 import CodeBlock from './CodeBlock'
 import Mentions from './Mentions'
 import { Footnote, Ref } from './Footnotes'
 
 export function Spacer() {
-  return <Box is="marquee" marginBottom="$4" />
+  return <Box is="marquee" className="mb-4" />
 }
 
 export function Link(props) {
@@ -36,11 +36,11 @@ export function a(props) {
 }
 
 export function ul(props) {
-  return <List variant="ul" is="ul" ml="$5" {...props} />
+  return <List variant="unordered" is="ul" className="ml-5" {...props} />
 }
 
 export function ol(props) {
-  return <List variant="ol" is="ol" ml="$5" {...props} />
+  return <List variant="ordered" is="ol" className="ml-5" {...props} />
 }
 
 export function li(props) {
@@ -128,7 +128,7 @@ export function Time(props) {
 
 export function Tweet(props) {
   return (
-    <Box my="$6">
+    <Box className="my-6">
       <blockquote className="twitter-tweet tw-align-center" {...props} />
     </Box>
   )
@@ -138,21 +138,21 @@ export function TLDR(props: { children: React.ReactNode }) {
   return (
     <Box
       is="details"
-      p="$2"
-      borderStyle="solid"
-      borderWidth="2px"
-      borderColor="$green600"
-      mt="$4"
+      className="p-2 border-solid border-2 border-green-500 mt-4"
       {...props}
     >
       <summary>
-        <Text is="strong" fontWeight="bold">
+        <Text is="strong" className="font-bold">
           TL;DR:
         </Text>
       </summary>
       {props.children}
     </Box>
   )
+}
+
+export function InlineCode(props) {
+  return <BaseInlineCode size="small" {...props} />
 }
 
 export {
@@ -162,7 +162,6 @@ export {
   Mentions,
   Text,
   Heading,
-  InlineCode,
   Footnote,
   Ref,
 }

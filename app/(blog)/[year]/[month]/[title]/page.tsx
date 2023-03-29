@@ -4,9 +4,9 @@ import * as defaultComponents from '@ui/MDXComponents'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 import { fetchManifest } from '@lib/fetch-manifest'
-import { Heading, Box, Stack } from '@ds-pack/components'
-
-import { publishedDate, content as contentWrap } from '@styles/app/Post'
+import { Heading, Box } from '@ds-pack/daisyui'
+import { Stack } from '@lib/Stack'
+import { PostWrapper } from '@lib/PostWrapper'
 
 let { Time, Mentions, Spacer } = defaultComponents
 
@@ -64,34 +64,34 @@ export default async function Blog({ params: { title } }) {
   })
 
   return (
-    <>
+    <Box>
       <Heading variant="lead" is="h1">
         {post.title}
       </Heading>
       {post.date ? (
         <>
-          <span className={publishedDate}>
+          <Box is="span" className="text-slate-500 italic">
             Published <Time>{post.date}</Time>
-          </span>{' '}
+          </Box>{' '}
         </>
       ) : null}
       <Mentions />
       <Spacer />
-      <div className={contentWrap}>{content}</div>
+      <PostWrapper>{content}</PostWrapper>
       {post.tags ? (
-        <Box mt="$3">
+        <Box className="mt-3">
           <Heading variant="subhead" is="h4">
             Tags:
           </Heading>
-          <Stack inline gap="$4">
+          <Stack inline gap="4">
             {post.tags.map((tag: string) => (
-              <Box key={tag} is="span" display="inline-flex" fontStyle="italic">
+              <Box key={tag} is="span" className="inline-flex italic">
                 {tag}
               </Box>
             ))}
           </Stack>
         </Box>
       ) : null}
-    </>
+    </Box>
   )
 }
