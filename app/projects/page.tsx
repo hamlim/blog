@@ -7,12 +7,12 @@ import {
   List,
   ListItem,
   InlineCode,
-} from '@ds-pack/components'
+} from '@ds-pack/daisyui'
 
 export default function Projects() {
   return (
-    <>
-      <Heading variant="lead" is="h1">
+    <Box>
+      <Heading variant="lead" is="h1" className="mb-4">
         Projects
       </Heading>
       <Text>
@@ -33,8 +33,8 @@ export default function Projects() {
         </Link>
         .
       </Text>
-      <Box my="$5">
-        <List variant="base" is="ul">
+      <Box className="my-5">
+        <List variant="unordered" is="ul">
           <ListItem>
             <Link
               is="a"
@@ -48,7 +48,7 @@ export default function Projects() {
             A quick and dirty web app to keep track of your notes and
             assumptions while playing the board game Clue!
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/hamlim/simple-cache"
@@ -61,7 +61,7 @@ export default function Projects() {
             A minimal, React cache implementation for both client and server
             components!
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/ds-pack/simple-props"
@@ -73,7 +73,7 @@ export default function Projects() {
             </Link>{' '}
             A minimal, CSS variable backed style-prop library
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/hamlim/inline-mdx.macro"
@@ -89,7 +89,7 @@ export default function Projects() {
             </Link>{' '}
             in JavaScript files.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/ds-pack/components"
@@ -101,7 +101,7 @@ export default function Projects() {
             </Link>{' '}
             A component library built on Vanilla Extract, React, and Typescript.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/ds-pack/use-media"
@@ -111,10 +111,11 @@ export default function Projects() {
               @ds-pack/use-media
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
-            A React hook for <InlineCode>window.matchMedia</InlineCode> that is
-            SSR safe.
+            A React hook for{' '}
+            <InlineCode size="small">window.matchMedia</InlineCode> that is SSR
+            safe.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/ds-pack/use-refs"
@@ -126,7 +127,7 @@ export default function Projects() {
             </Link>{' '}
             Helpers and utilities for working with refs in React
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/hamlim/notedo"
@@ -138,7 +139,7 @@ export default function Projects() {
             </Link>{' '}
             A note and todo list web application using plain text.
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
@@ -150,7 +151,7 @@ export default function Projects() {
             </Link>{' '}
             A React router package built for Suspense using hooks
           </ListItem>
-          <ListItem mt="$6">
+          <ListItem className="mt-3">
             <Link
               is="a"
               href="https://github.com/ds-pack/babel-plugin-docs"
@@ -165,7 +166,7 @@ export default function Projects() {
           </ListItem>
         </List>
       </Box>
-    </>
+    </Box>
   )
 }
 
