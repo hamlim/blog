@@ -6,7 +6,7 @@ import {
   VisuallyHidden,
   List,
   ListItem,
-} from '@ds-pack/components'
+} from '@ds-pack/daisyui'
 import { fetchBookshelf } from '@lib/fetch-bookshelf'
 
 export default async function Bookshelf() {
@@ -16,7 +16,7 @@ export default async function Bookshelf() {
       <Heading variant="lead" is="h1">
         Bookshelf
       </Heading>
-      <Text mb="$2">
+      <Text className="mb-2">
         In the rare time that I find not in front of some kind of display, I
         like to read books! Here is a short collection of books I've recently
         read as well as a few books from my to read list.
@@ -34,13 +34,13 @@ export default async function Bookshelf() {
         </Link>{' '}
         if you have book recommendations!
       </Text>
-      <Heading my="$5" variant="subhead" is="h3">
+      <Heading className="my-5" variant="subhead" is="h3">
         What I'm Currently Reading:
       </Heading>
-      <Box my="5">
+      <Box className="my-5">
         <List variant="base" is="ul">
           {reading.map((book, idx) => (
-            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+            <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
               <Link
                 is="a"
                 href={book.url}
@@ -54,7 +54,7 @@ export default async function Bookshelf() {
               {book.dateStarted ? (
                 <>
                   <br />
-                  <Text fontSize="$0" is="em" fontWeight="italics">
+                  <Text className="text-sm italic" is="em">
                     Started: {book.dateStarted}
                   </Text>
                 </>
@@ -63,13 +63,13 @@ export default async function Bookshelf() {
           ))}
         </List>
       </Box>
-      <Heading my="$5" variant="subhead" is="h3">
+      <Heading className="my-5" variant="subhead" is="h3">
         Books I Want to Read Soon:
       </Heading>
-      <Box my="$5">
+      <Box className="my-5">
         <List variant="base" is="ul">
           {toRead.map((book, idx) => (
-            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+            <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
               <Link
                 is="a"
                 href={book.url}
@@ -84,13 +84,13 @@ export default async function Bookshelf() {
           ))}
         </List>
       </Box>
-      <Heading my="$5" variant="subhead" is="h3">
+      <Heading className="my-5" variant="subhead" is="h3">
         Books I've Recently Read:
       </Heading>
-      <Box my="$5">
+      <Box className="my-5">
         <List variant="base" is="ul">
           {read.map((book, idx) => (
-            <ListItem mt={idx > 0 ? '$6' : null} key={book.title}>
+            <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
               <Link
                 is="a"
                 href={book.url}
@@ -104,7 +104,7 @@ export default async function Bookshelf() {
               {book.dateStarted && book.dateFinished ? (
                 <>
                   <br />
-                  <Text fontSize="$0" is="em" fontWeight="italics">
+                  <Text className="text-sm italic" is="em">
                     {book.dateStarted} - {book.dateFinished}
                   </Text>
                 </>
@@ -113,7 +113,7 @@ export default async function Bookshelf() {
           ))}
         </List>
       </Box>
-      <Text is="small" color="$gray800">
+      <Text is="small" className="text-slate-400">
         Last Updated: December 2022
       </Text>
     </>

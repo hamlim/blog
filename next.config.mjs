@@ -4,10 +4,6 @@ export default {
     serverComponentsExternalPackages: ['shiki', 'vscode-oniguruma'],
   },
   modularizeImports: {
-    '@ds-pack/components': {
-      transform: '@ds-pack/components/dist/{{member}}',
-      skipDefaultConversion: true,
-    },
     '@ds-pack/daisyui': {
       transform: '@ds-pack/daisyui/dist/{{member}}',
     },

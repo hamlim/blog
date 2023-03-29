@@ -15,21 +15,16 @@
     "new-note": "node scripts/new-note.mjs"
   },
   "dependencies": {
-    "@ds-pack/components": "1.0.14",
     "@ds-pack/daisyui": "^0.0.5",
     "@ds-pack/use-refs": "*",
     "@mdx-js/mdx": "latest",
-    "@vanilla-extract/css": "*",
-    "@vanilla-extract/dynamic": "*",
     "airtable": "0.11.1",
     "autoprefixer": "^10.4.14",
     "daisyui": "^2.51.5",
     "eslint-config-next": "latest",
-    "highlight.js": "^11.7.0",
     "nanopop": "2.1.0",
     "next": "canary",
     "postcss": "^8.4.21",
-    "rainbow-sprinkles": "*",
     "react": "experimental",
     "react-dom": "experimental",
     "remark-frontmatter": "^4.0.1",
@@ -42,11 +37,8 @@
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
-    "@vanilla-extract/rollup-plugin": "^1.2.0",
-    "fast-glob": "^3.2.12",
     "gray-matter": "^4.0.3",
     "prettier": "^2.8.1",
-    "rollup": "^3.7.5",
     "typescript": "4.9.4"
   }
 }

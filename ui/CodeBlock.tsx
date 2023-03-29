@@ -1,5 +1,5 @@
 // @TODO: Line highlighting!
-import { Box } from '@ds-pack/components'
+import { Box } from '@ds-pack/daisyui'
 import shiki from 'shiki'
 
 import githubDarkDimmed from 'shiki/themes/github-dark-dimmed.json'

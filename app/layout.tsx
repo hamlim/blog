@@ -1,6 +1,4 @@
-import { themeClass } from '@ds-pack/components'
 import NextLink from 'next/link'
-
 import {
   Box,
   Link,
@@ -10,9 +8,6 @@ import {
   // @ts-ignore
   classnames as cx,
 } from '@ds-pack/daisyui'
-
-import '@ds-pack/components/dist/vars.css'
-import '@ds-pack/components/dist/reset.css'
 import '@styles/globals.css'
 
 import { Metadata } from 'next'
@@ -35,7 +30,7 @@ function Container(props) {
 
 export default function Layout({ children }) {
   return (
-    <html data-theme="corporate" lang="en-US" className={themeClass}>
+    <html data-theme="corporate" lang="en-US">
       <body className="h-screen flex flex-col">
         <main className="flex grow flex-col min-h-screen">
           <header className="flex-shrink bg-slate-200 text-black">
