@@ -8,7 +8,6 @@ import {
   classnames as cx,
 } from '@ds-pack/daisyui'
 import NextLink from 'next/link'
-import type { ReactNode } from 'react'
 
 interface Props extends BoxProps {
   inline?: boolean
