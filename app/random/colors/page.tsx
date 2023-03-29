@@ -1,7 +1,5 @@
-'use client'
-import { useRef } from 'react'
-import { Box, Tapable, Heading, Text } from '@ds-pack/components'
-import { wrap, swatch } from '@styles/app/random/colors/colors'
+import { Box, Heading, Text } from '@ds-pack/daisyui'
+import ColorSwatch from './Color'
 
 function addAlpha(rgb: string, alpha: string): string {
   let rgbRegExp = /RGB\((\d+), (\d+), (\d+)\)/
@@ -718,48 +716,34 @@ const colors = [
 ]
 
 export default function Colors() {
-  let ref = useRef()
   return (
     <Box>
-      <Heading variant="h2" is="h1" mb="$4">
+      <Heading variant="h2" is="h1" className="mb-4">
         HTML Colors
       </Heading>
-      <Text mb="$4">Click a color to copy it's hex code!</Text>
-      <div className={wrap}>
+      <Text className="mb-4">Click a color to copy it's hex code!</Text>
+      <Box className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {colors.map((color) => (
-          <Tapable
+          <ColorSwatch
             key={color.name}
-            onClick={() => {
-              if (
-                typeof navigator.clipboard !== 'undefined' &&
-                typeof navigator.clipboard.writeText === 'function'
-              ) {
-                navigator.clipboard.writeText(color.hex)
-              } else {
-                let input = document.createElement('input')
-                input.value = color.hex
-                input.select()
-                document.execCommand('copy')
-              }
-            }}
-            className={swatch}
+            color={color}
+            className="rounded p-4 bg-[var(--bg-color)]"
             style={{
               '--bg-color': color.hex,
               '--shadow': addAlpha(color.rgb, '.3'),
             }}
           >
             <Box
-              p="$1"
-              borderRadius="$small"
-              backgroundColor="rgba(255, 255, 255, .6)"
-              textAlign="center"
+              className="p-1 rounded text-center bg-[var(--bg)]"
+              style={{
+                '--bg': 'rgba(255, 255, 255, .6)',
+              }}
             >
               {color.name}
             </Box>
-          </Tapable>
+          </ColorSwatch>
         ))}
-        <input type="hidden" ref={ref} />
-      </div>
+      </Box>
     </Box>
   )
 }

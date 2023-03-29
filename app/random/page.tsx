@@ -1,4 +1,4 @@
-import { Heading, Box, List, ListItem, Link } from '@ds-pack/components'
+import { Heading, Box, List, ListItem, Link } from '@ds-pack/daisyui'
 import NextLink from 'next/link'
 
 function LocalLink(props) {
@@ -8,7 +8,7 @@ function LocalLink(props) {
 export default function Random() {
   return (
     <Box>
-      <Heading mb="$4" is="h2" variant="lead">
+      <Heading className="mb-4" is="h2" variant="lead">
         Random Things:
       </Heading>
       <List variant="base" is="ul">
