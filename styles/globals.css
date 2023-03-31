@@ -7,9 +7,9 @@
 } */
 
 .PostWrapper * + * {
-  @apply mt-2
+  @apply mt-2;
 }
 
 .shiki {
-  @apply p-2 overflow-auto
+  @apply p-2 overflow-auto;
 }

@@ -1178,6 +1178,18 @@
       "year": "2023",
       "tags": ["Development", "Web Development", "Next.js"],
       "status": "draft"
+    },
+    {
+      "id": 92,
+      "title": "Write it down",
+      "path": "/posts/2023/march/write-it-down.md",
+      "slug": "write-it-down",
+      "date": "March 31st, 2023",
+      "time": "9:00:01 AM",
+      "month": "march",
+      "year": "2023",
+      "tags": ["Thinking", "Communication"],
+      "status": "draft"
     }
   ]
 }

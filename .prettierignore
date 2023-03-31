@@ -1,1 +1,22 @@
 # public/**/*.md
+
+# These are problematic for prettier's parser I guess
+public/posts/2016/august/my-new-website.md
+public/posts/2016/october/css-debate.md
+public/posts/2020/december/literate-programming.md
+public/posts/2020/december/nextjs-analytics-with-airtable.md
+public/posts/2020/december/pair-code-reviews.md
+public/posts/2021/january/2021.md
+public/posts/2021/january/computed-theme.md
+public/posts/2021/january/simple-props.md
+public/posts/2021/march/on-code-review.md
+public/posts/2021/november/fast-feedback-systems.md
+public/posts/2021/november/pair-programming.md
+public/posts/2021/september/mac-setup-guide.md
+public/posts/2022/december/updated-opinionated-nextjs-setup.md
+public/posts/2022/january/my-opinionated-nextjs-setup.md
+public/posts/2022/january/my-two-favorite-react-tricks.md
+public/posts/2022/january/switching-to-iphone.md
+public/posts/2022/july/yarn-berry-gitignore.md
+public/posts/2022/june/on-note-taking.md
+public/posts/2022/june/on-writing-tests.md

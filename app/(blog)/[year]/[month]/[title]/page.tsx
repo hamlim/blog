@@ -8,7 +8,7 @@ import { Heading, Box } from '@ds-pack/daisyui'
 import { Stack } from '@lib/Stack'
 import { PostWrapper } from '@lib/PostWrapper'
 
-let { Time, Mentions, Spacer } = defaultComponents
+let { Time, Mentions } = defaultComponents
 
 interface Params {
   title: string
@@ -76,10 +76,9 @@ export default async function Blog({ params: { title } }) {
         </>
       ) : null}
       <Mentions />
-      <Spacer />
       <PostWrapper>{content}</PostWrapper>
       {post.tags ? (
-        <Box className="mt-3">
+        <Box>
           <Heading variant="subhead" is="h4">
             Tags:
           </Heading>
