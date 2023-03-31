@@ -8,4 +8,10 @@ a line of thinking. It allows you to clarify all the nitty gritty details that
 are locked away in your head, and also begin to highlight the areas that you
 haven't started to think about yet as well!
 
+This is something that I've been generally doing for a while (I've written quite
+a bit about my own note taking systems), but it's something I overlook quite
+often also. Usually it feels like I don't have time to get my thinking down on
+(digital) paper. Maybe that's the key point here though, slow down the thinking
+enough to clearly write down my thoughts and validate them as I'm doing that.
+
 ---
