@@ -21,7 +21,8 @@ function Container(props) {
     <Box
       {...props}
       className={cx({
-        'p-4 my-0 mx-auto grow flex justify-between flex-col container': true,
+        'p-4 my-0 mx-auto grow flex justify-between flex-col container max-w-prose':
+          true,
         [props.className]: !!props.className,
       })}
     />

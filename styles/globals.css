@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* .prose {
+  @apply max-w-[94vw] md:max-w-prose mx-auto my-0;
+} */
+
 .PostWrapper * + * {
   @apply mt-2
 }

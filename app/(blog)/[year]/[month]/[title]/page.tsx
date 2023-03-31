@@ -1,6 +1,6 @@
 import * as runtime from 'react/jsx-runtime'
 import { evaluate } from '@mdx-js/mdx'
-import * as defaultComponents from '@ui/MDXComponents'
+import * as defaultComponents from '@lib/MDXComponents'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 import { fetchManifest } from '@lib/fetch-manifest'
@@ -64,7 +64,7 @@ export default async function Blog({ params: { title } }) {
   })
 
   return (
-    <Box>
+    <Box className="prose lg:prose-xl">
       <Heading variant="lead" is="h1">
         {post.title}
       </Heading>
