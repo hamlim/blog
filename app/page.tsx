@@ -68,6 +68,7 @@ export default async function Page() {
         Popular blog posts:
       </Heading>
       <Suspense fallback={<LoadingTopPosts />}>
+        {/* @ts-ignore */}
         <TopPosts />
       </Suspense>
 
