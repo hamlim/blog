@@ -1,6 +1,7 @@
 import { Heading, Text, Box, List, ListItem, Link } from '@ds-pack/daisyui'
 import NextLink from 'next/link'
 import { fetchManifest } from '@lib/fetch-manifest'
+import { Suspense } from 'react'
 
 function LocalLink({ href, ...props }) {
   return <Link is={NextLink} href={href} {...props} />
@@ -16,8 +17,36 @@ async function getTopPosts() {
   }, [])
 }
 
-export default async function Page() {
+function LoadingTopPosts() {
+  return (
+    <Box className="my-4 h-[152px]">
+      <Text>Loading top posts...</Text>
+      <Text>
+        <LocalLink href="/posts">See all posts</LocalLink>
+      </Text>
+    </Box>
+  )
+}
+
+async function TopPosts() {
   let topPosts = await getTopPosts()
+
+  return (
+    <Box className="my-4">
+      <List variant="base" is="ol">
+        {topPosts.map((post, i) => (
+          <ListItem key={post.title} className={i !== 0 ? 'mt-2' : ''}>
+            <LocalLink href={`/${post.year}/${post.month}/${post.slug}`}>
+              {post.title}
+            </LocalLink>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  )
+}
+
+export default async function Page() {
   return (
     <>
       <Heading variant="lead" is="h1" className="mb-4">
@@ -38,17 +67,9 @@ export default async function Page() {
       <Heading variant="h3" is="h3" className="my-3">
         Popular blog posts:
       </Heading>
-      <Box className="my-4">
-        <List variant="base" is="ol">
-          {topPosts.map((post, i) => (
-            <ListItem key={post.title} className={i !== 0 ? 'mt-2' : ''}>
-              <LocalLink href={`/${post.year}/${post.month}/${post.slug}`}>
-                {post.title}
-              </LocalLink>
-            </ListItem>
-          ))}
-        </List>
-      </Box>
+      <Suspense fallback={<LoadingTopPosts />}>
+        <TopPosts />
+      </Suspense>
 
       <Heading variant="h3" is="h3" className="my-3">
         Recent Side Projects
