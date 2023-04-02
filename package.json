@@ -15,7 +15,7 @@
     "new-note": "node scripts/new-note.mjs"
   },
   "dependencies": {
-    "@ds-pack/daisyui": "0.0.6",
+    "@ds-pack/daisyui": "0.0.7",
     "@ds-pack/use-refs": "*",
     "@mdx-js/mdx": "latest",
     "airtable": "0.11.1",
