@@ -1,6 +1,11 @@
-import { Heading, Box, Text, Link as ExternalLink } from '@ds-pack/daisyui'
+import {
+  Heading,
+  Box,
+  Text,
+  Link as ExternalLink,
+  Stack,
+} from '@ds-pack/daisyui'
 import NextLink from 'next/link'
-import { Stack } from '@lib/Stack'
 
 function Link(props) {
   return <ExternalLink is={NextLink} {...props} />

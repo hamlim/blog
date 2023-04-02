@@ -8,12 +8,12 @@ import {
   Heading,
   RadioInput,
   Button,
+  Stack,
   Link as StyledLink,
 } from '@ds-pack/daisyui'
 import NextLink from 'next/link'
 import type { Post } from '@lib/types'
 import { formatPostLink } from '@lib/format-post-link'
-import { Stack } from '@lib/Stack'
 
 function Link(props) {
   return <StyledLink is={NextLink} {...props} />

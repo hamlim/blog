@@ -24,16 +24,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ds-pack/daisyui@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@ds-pack/daisyui@npm:0.0.5"
+"@ds-pack/daisyui@npm:0.0.6":
+  version: 0.0.6
+  resolution: "@ds-pack/daisyui@npm:0.0.6"
   peerDependencies:
     "@ds-pack/use-refs": "*"
     daisyui: "*"
     nanopop: ^2
     react: "*"
     react-dom: "*"
-  checksum: cb6e305e9c492d2f5c7562a80abd4484dbaf6ef3e12a222b5af3a8a0e8c9af032239f47fe2b83f1d1575920921183106188f517bd9080afcce55c8efbd98b0d9
+  checksum: 350f98f1f9bfb03261f3a7349eac501671bb26ac66481920efd7199cf15bc5879fc88950241b5a02f2b6df2db00817f941c1b9a4d0983c1d0b9908e0c3000999
   languageName: node
   linkType: hard
 
@@ -810,7 +810,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "blog@workspace:."
   dependencies:
-    "@ds-pack/daisyui": ^0.0.5
+    "@ds-pack/daisyui": 0.0.6
     "@ds-pack/use-refs": "*"
     "@mdx-js/mdx": latest
     "@tailwindcss/typography": ^0.5.9

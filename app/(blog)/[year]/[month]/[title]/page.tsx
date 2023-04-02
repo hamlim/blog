@@ -4,8 +4,7 @@ import * as defaultComponents from '@lib/MDXComponents'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 import { fetchManifest } from '@lib/fetch-manifest'
-import { Heading, Box } from '@ds-pack/daisyui'
-import { Stack } from '@lib/Stack'
+import { Heading, Box, Stack } from '@ds-pack/daisyui'
 import { PostWrapper } from '@lib/PostWrapper'
 
 let { Time, Mentions } = defaultComponents
