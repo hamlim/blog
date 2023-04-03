@@ -15,6 +15,9 @@ export default function Random() {
         <ListItem>
           <LocalLink href="/random/colors">Colors</LocalLink>
         </ListItem>
+        <ListItem>
+          <LocalLink href="/random/sandbox">Sandbox</LocalLink>
+        </ListItem>
       </List>
     </Box>
   )
