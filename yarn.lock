@@ -24,6 +24,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@code-hike/lighter@npm:0.6.2":
+  version: 0.6.2
+  resolution: "@code-hike/lighter@npm:0.6.2"
+  checksum: 6923314a6f58d5ecee7a38b5ac97669421c2ef7a2e90e3d95599f778d83f7fd49b5f8761d2c4afe4cf2d93b05c93a33a166bd22b9a91fcb3ddcce6c74a4ffb57
+  languageName: node
+  linkType: hard
+
 "@ds-pack/daisyui@npm:0.0.7":
   version: 0.0.7
   resolution: "@ds-pack/daisyui@npm:0.0.7"
@@ -819,6 +826,7 @@ __metadata:
     "@types/react-dom": ^18.0.4
     airtable: 0.11.1
     autoprefixer: ^10.4.14
+    bright: ^0.7.1
     daisyui: ^2.51.5
     eslint-config-next: latest
     gray-matter: ^4.0.3
@@ -862,6 +870,18 @@ __metadata:
   dependencies:
     fill-range: ^7.0.1
   checksum: e2a8e769a863f3d4ee887b5fe21f63193a891c68b612ddb4b68d82d1b5f3ff9073af066c343e9867a393fe4c2555dcb33e89b937195feb9c1613d259edfcd459
+  languageName: node
+  linkType: hard
+
+"bright@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "bright@npm:0.7.1"
+  dependencies:
+    "@code-hike/lighter": 0.6.2
+    server-only: ^0.0.1
+  peerDependencies:
+    react: ^18
+  checksum: 4611b7ca28e6ce91608f9ef6d564d3ce4f5abc8cd9d513d11d3ac35ea4ca2f27846ae1cf662013fc26f5701026168a75fc285ee0909b227383569b71b38d0d49
   languageName: node
   linkType: hard
 
@@ -4204,6 +4224,13 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: ba9c7cbbf2b7884696523450a61fee1a09930d888b7a8d7579025ad93d459b2d1949ee5bbfeb188b2be5f4ac163544c5e98491ad6152df34154feebc2cc337c1
+  languageName: node
+  linkType: hard
+
+"server-only@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "server-only@npm:0.0.1"
+  checksum: c432348956641ea3f460af8dc3765f3a1bdbcf7a1e0205b0756d868e6e6fe8934cdee6bff68401a1dd49ba4a831c75916517a877446d54b334f7de36fa273e53
   languageName: node
   linkType: hard
 

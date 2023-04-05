@@ -23,17 +23,18 @@ able to use it!
 Example usage:
 
 ```sh
-# To run the `test` script on a workspace of your choice:
+# You can use it to run any package.json script within the workspace of
+# your choice via:
+yw <script-name>
+# For example, if you want to run the `test` script on a specific
+# workspace, you can run:
 yw test
 ```
 
-I may eventually package this up into a helpful package that you can install
-directly in your monorepo, akin to one of my older projects
+Notably, this doesn't let you select multiple workspaces to run a command
+within, I may eventually package this up into a helpful package that you can
+install directly in your monorepo, akin to one of my older projects
 [Zaps](https://github.com/hamlim/projects/blob/master/packages/zaps/README.md)
 🤔.
 
-<Spacer />
-
 ---
-
-<Spacer />

@@ -1,7 +1,7 @@
 import {
   // @ts-expect-error
   createServerContext,
-  useContext,
+  use,
 } from 'react'
 import {
   Box,
@@ -71,18 +71,22 @@ let preContext = createServerContext(false)
 export function pre(props) {
   return (
     <preContext.Provider value={true}>
-      <Box is="pre" {...props} />
+      <Box className="not-prose" {...props} />
     </preContext.Provider>
   )
 }
 
 export function code(props) {
-  let isPre = useContext(preContext)
+  let isPre = use(preContext)
   if (isPre) {
     // @ts-expect-error
     return <CodeBlock {...props} />
   }
-  return <InlineCode {...props} />
+  return (
+    <Box is="span" className="not-prose">
+      <InlineCode {...props} />
+    </Box>
+  )
 }
 
 export function em(props) {

@@ -20,6 +20,7 @@
     "@mdx-js/mdx": "latest",
     "airtable": "0.11.1",
     "autoprefixer": "^10.4.14",
+    "bright": "^0.7.1",
     "daisyui": "^2.51.5",
     "eslint-config-next": "latest",
     "nanopop": "2.1.0",
