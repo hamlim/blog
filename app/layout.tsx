@@ -5,8 +5,7 @@ import {
   Text,
   TwitterMention,
   GitHubMention,
-  // @ts-ignore
-  classnames as cx,
+  cx,
 } from '@ds-pack/daisyui'
 import '@styles/globals.css'
 
