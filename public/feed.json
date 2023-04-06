@@ -1190,6 +1190,18 @@
       "year": "2023",
       "tags": ["Thinking", "Communication"],
       "status": "draft"
+    },
+    {
+      "id": 93,
+      "title": "Setting up Next.js with Tailwind",
+      "path": "/posts/2023/april/nextjs-with-tailwind.md",
+      "slug": "nextjs-with-tailwind",
+      "date": "April 6th, 2023",
+      "time": "8:50:54 AM",
+      "month": "april",
+      "year": "2023",
+      "tags": ["Web Development", "Next.js", "Tailwind"],
+      "status": "draft"
     }
   ]
 }
