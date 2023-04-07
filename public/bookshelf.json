@@ -81,7 +81,7 @@
     "title": "The Hunt For Red October",
     "author": "Tom Clancy",
     "url": "https://www.goodreads.com/book/show/19691.The_Hunt_for_Red_October",
-    "status": "reading"
+    "status": "to-read"
   },
   {
     "title": "Foundation",
@@ -125,8 +125,9 @@
     "title": "Lord of the Rings: The Fellowship of the Ring",
     "author": "J.R.R. Tolkien",
     "url": "https://www.goodreads.com/book/show/61215351-the-fellowship-of-the-ring",
-    "status": "reading",
-    "dateStarted": "November 2022"
+    "status": "read",
+    "dateStarted": "November 2022",
+    "dateFinished": "March 2023"
   },
   {
     "title": "Lord of the Rings: The Two Towers",
@@ -139,5 +140,32 @@
     "author": "J.R.R. Tolkien",
     "url": "https://www.goodreads.com/book/show/61215384-the-return-of-the-king",
     "status": "to-read"
+  },
+  {
+    "title": "Disclosure",
+    "author": "Michael Crichton",
+    "url": "https://www.goodreads.com/book/show/7675.Disclosure",
+    "status": "read",
+    "dateStarted": "March 2023",
+    "dateFinished": "March 2023"
+  },
+  {
+    "title": "The Bourne Identity",
+    "author": "Robert Ludlum",
+    "url": "https://www.goodreads.com/book/show/7869.The_Bourne_Identity",
+    "status": "to-read"
+  },
+  {
+    "title": "Sphere",
+    "author": "Michael Crichton",
+    "url": "https://www.goodreads.com/book/show/455373.Sphere",
+    "status": "to-read"
+  },
+  {
+    "title": "A Gentleman in Moscow",
+    "author": "Amor Towles",
+    "url": "https://www.goodreads.com/book/show/34066798-a-gentleman-in-moscow",
+    "status": "reading",
+    "dateStarted": "March 2023"
   }
 ]

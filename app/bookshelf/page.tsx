@@ -113,8 +113,8 @@ export default async function Bookshelf() {
           ))}
         </List>
       </Box>
-      <Text is="small" className="text-slate-400">
-        Last Updated: December 2022
+      <Text is="small" className="italic">
+        Last Updated: April 2023
       </Text>
     </>
   )
