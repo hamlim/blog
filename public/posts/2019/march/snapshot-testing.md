@@ -19,9 +19,7 @@ snapshot tests from Mark Dalgleish:
     <br />
     We were snapshotting component markup in isolation, outside of a browser, without
     styles. We weren&#39;t testing the output. We were testing implementation details.
-  </p>
-  &mdash; Mark Dalgleish (@markdalgleish) <a href="https://twitter.com/markdalgleish/status/1100164862796214272?ref_src=twsrc%5Etfw">
-    February 25, 2019
+  &mdash; Mark Dalgleish (@markdalgleish) <a href="https://twitter.com/markdalgleish/status/1100164862796214272?ref_src=twsrc%5Etfw">February 25, 2019</a>
   </div>
 </Tweet>
 
