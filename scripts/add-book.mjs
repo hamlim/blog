@@ -23,8 +23,8 @@ if (args.help) {
   console.log(' help                              Prints this dialog!')
   console.log(' debug                             Logs out debugging info')
   console.log(' title="<title>"                   Title of the Book')
-  console.log(' author="<slug>"                   Author of the book')
-  console.log(' url="<tags>"                      URL to the book on GoodReads')
+  console.log(' author="<author>"                 Author of the book')
+  console.log(' url="<url>"                       URL to the book on GoodReads')
   console.log(
     ' status="<reading|read|to-read>"   Status of the book (optional, defaults to "to-read")',
   )
