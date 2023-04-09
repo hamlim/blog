@@ -79,7 +79,7 @@ export function pre(props) {
 export function code(props) {
   let isPre = use(preContext)
   if (isPre) {
-    // @ts-expect-error
+    // @ts-expect-error Server Component
     return <CodeBlock {...props} />
   }
   return (

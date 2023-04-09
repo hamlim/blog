@@ -15,6 +15,7 @@
     "new-note": "node scripts/new-note.mjs"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^2.4.7",
     "@ds-pack/daisyui": "^0.0.9",
     "@ds-pack/use-refs": "*",
     "@mdx-js/mdx": "latest",

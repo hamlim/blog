@@ -100,7 +100,15 @@ function highlighter(code) {
 So wrapping it all up, we end up with an API that looks like this:
 
 ```jsx
+// ==live== template="react" customSetup={"dependencies":{"@matthamlin/react-preview-editor":"latest","@babel/standalone":"latest"}}
 import { Provider, Editor, Preview } from '@matthamlin/react-preview-editor'
+import { transform } from '@babel/standalone'
+
+function transformCode(code) {
+  return transform(code, {
+    presets: [['stage-0', { decoratorsLegacy: true }], 'react'],
+  }).code
+}
 
 const code = `
 function App() {
@@ -111,12 +119,14 @@ function App() {
 render(<App />);
 `
 
-render(
-  <Provider code={code}>
-    <Preview />
-    <Editor />
-  </Provider>,
-)
+export default function App() {
+  return (
+    <Provider code={code} transformCode={transformCode}>
+      <Preview />
+      <Editor />
+    </Provider>
+  )
+}
 ```
 
 Be sure to checkout the project here:

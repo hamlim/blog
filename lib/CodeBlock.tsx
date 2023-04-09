@@ -1,9 +1,15 @@
 import { Box } from '@ds-pack/daisyui'
 import { Code } from 'bright'
+import LiveCode from './LiveCode'
 
 Code.theme = {
   dark: 'github-dark-dimmed',
   light: 'github-light',
+}
+
+let metaComments = {
+  live: `// ==live==`,
+  highlight: `// ==highlight==`,
 }
 
 export default async function CodeBlock({ children, className }) {
@@ -16,10 +22,25 @@ export default async function CodeBlock({ children, className }) {
 
   let codeToHighlight = children
 
+  if (codeToHighlight.startsWith(metaComments.live)) {
+    let [meta, ...rest] = codeToHighlight.split('\n')
+    let entries = meta
+      .replace(metaComments.live, '')
+      .trim()
+      .split(' ')
+      .filter(Boolean)
+      .map((opt) => {
+        let [key, val] = opt.split('=')
+        return [key, JSON.parse(val)]
+      })
+    let metaProps = Object.fromEntries(entries)
+    return <LiveCode code={rest.join('\n').slice(0, -1)} {...metaProps} />
+  }
+
   let highlight
-  if (children.startsWith('// ==highlight:')) {
-    let [highlightHint, ...lines] = codeToHighlight.split('\n')
-    highlight = highlightHint.replace('// ==highlight:', '')
+  if (codeToHighlight.startsWith(metaComments.highlight)) {
+    let [meta, ...lines] = codeToHighlight.split('\n')
+    highlight = meta.replace(metaComments.highlight, '')
     highlight = highlight.split(',').map((hl) => {
       if (hl.includes('-')) {
         return hl.split('-').map(Number)
