@@ -92,11 +92,14 @@ Another caveat, or feature I guess is that if you do want to catch a particular
 error from an event handler higher up in the component tree at your error
 boundary, you can `throw` from within a setState:
 
-```jsx live
+```jsx
+// ==live== template="react"
+import { Component } from 'react'
+
 // Note this is a live editor!
 // Feel free to toy around with the code and see the
 // actual output above!
-class Example extends Component {
+export default class Example extends Component {
   handleChange = (e) => {
     let {
       target: { value },
@@ -123,7 +126,6 @@ class Example extends Component {
     )
   }
 }
-render(<Example />)
 ```
 
 ## A note on getDerivedStateFromError

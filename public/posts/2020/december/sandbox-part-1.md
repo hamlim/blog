@@ -74,7 +74,7 @@ following code is playing that role of the code editor (managing the state and
 rendering the text editor using a `textarea`):
 
 ```tsx
-// ==highlight:1-5,27-35
+// ==highlight== 1-5,27-35
 export default function Sandbox() {
   let [code, setCode] = useState(`
 render(
