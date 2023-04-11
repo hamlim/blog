@@ -1202,6 +1202,18 @@
       "year": "2023",
       "tags": ["Web Development", "Next.js", "Tailwind"],
       "status": "draft"
+    },
+    {
+      "id": 94,
+      "title": "My Thoughts on Tailwind",
+      "path": "/posts/2023/april/thoughts-on-tailwind.md",
+      "slug": "thoughts-on-tailwind",
+      "date": "April 10th, 2023",
+      "time": "8:51:35 PM",
+      "month": "april",
+      "year": "2023",
+      "tags": ["Web Development", "TailwindCSS", "CSS"],
+      "status": "draft"
     }
   ]
 }

@@ -37,7 +37,9 @@ let formatter = new Intl.DateTimeFormat('en', {
 
 let res = formatter.format(currentDate)
 
-let [dayOfWeek, monthAndDate, year, time] = res.split(', ')
+let [dayOfWeek, monthAndDate, yearAndTime] = res.split(', ')
+
+let [year, time] = yearAndTime.split(' at ')
 
 let [month, date] = monthAndDate.split(' ')
 
@@ -133,11 +135,7 @@ fs.mkdirSync(folderPath, { recursive: true })
 
 let template = `START_HERE
 
-<Spacer />
-
 ---
-
-<Spacer />
 `
 
 fs.writeFileSync(path.join(folderPath, `${args.slug}.md`), template)
