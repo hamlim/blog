@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import { fetchManifest } from '@lib/fetch-manifest'
 import '@styles/globals.css'
+import { Metadata } from 'next'
 
 export default function Layout({ children }) {
   return (
@@ -20,7 +21,7 @@ async function resolveTitle({ title: titleSlug }) {
   return postData.title
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }): Promise<Metadata> {
   const title = await resolveTitle({ title: params.title })
 
   return {
