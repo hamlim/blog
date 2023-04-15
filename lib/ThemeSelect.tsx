@@ -18,8 +18,10 @@ export default function ThemeSelect({ initialTheme }) {
     let themeCookieTuple = document.cookie
       .split('; ')
       .filter((cookieTuple) => cookieTuple.includes(themeCookie))
+    // If the cookie doesn't exist, set it and exit
     if (themeCookieTuple.length === 0) {
       document.cookie = `${themeCookie}=${selectedOption.value}`
+      return
     }
     let cookieValue = themeCookieTuple[0].split('=')[1]
     if (cookieValue !== selectedOption.value) {
