@@ -1,15 +1,11 @@
-import NextLink from 'next/link'
-import {
-  Box,
-  Link,
-  Text,
-  TwitterMention,
-  GitHubMention,
-} from '@ds-pack/daisyui'
+import { Box, Text, TwitterMention, GitHubMention } from '@ds-pack/daisyui'
 import { Container } from '@lib/Container'
 import { LocalLink } from '@lib/LocalLink'
+import ThemeSelect from '@lib/ThemeSelect'
+import { getThemeCookie } from '@lib/theme-cookie'
 
 export default function DefaultLayout({ children }) {
+  let theme = getThemeCookie()
   return (
     <>
       <header className="flex-shrink bg-base-200">
@@ -31,11 +27,16 @@ export default function DefaultLayout({ children }) {
       <Container is="section">{children}</Container>
       <footer className="flex-shrink bg-base-200">
         <Container>
-          <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
-          <Text>
-            🐦 <TwitterMention>immatthamlin</TwitterMention> 👨‍💻{' '}
-            <GitHubMention>hamlim</GitHubMention>
-          </Text>
+          <Box className="flex justify-between">
+            <Box>
+              <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
+              <Text>
+                🐦 <TwitterMention>immatthamlin</TwitterMention> 👨‍💻{' '}
+                <GitHubMention>hamlim</GitHubMention>
+              </Text>
+            </Box>
+            <ThemeSelect initialTheme={theme} />
+          </Box>
         </Container>
       </footer>
     </>

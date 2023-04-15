@@ -1,9 +1,11 @@
 import '@styles/globals.css'
 import type { Metadata } from 'next'
+import { getThemeCookie } from '@lib/theme-cookie'
 
 export default function Layout({ children }) {
+  let theme = getThemeCookie()
   return (
-    <html data-theme="corporate" lang="en-US">
+    <html data-theme={theme} lang="en-US">
       <body className="h-screen flex flex-col">
         <main className="flex grow flex-col min-h-screen">{children}</main>
       </body>
