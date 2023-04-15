@@ -1214,6 +1214,18 @@
       "year": "2023",
       "tags": ["Web Development", "TailwindCSS", "CSS"],
       "status": "draft"
+    },
+    {
+      "id": 95,
+      "title": "Avoid Distractions",
+      "path": "/posts/2023/april/avoid-distractions.md",
+      "slug": "avoid-distractions",
+      "date": "April 15th, 2023",
+      "time": "12:20:51 PM",
+      "month": "april",
+      "year": "2023",
+      "tags": ["Advice", "Rant"],
+      "status": "draft"
     }
   ]
 }
