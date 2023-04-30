@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.4.7",
-    "@ds-pack/daisyui": "^0.0.9",
+    "@ds-pack/daisyui": "0.0.10",
     "@ds-pack/use-refs": "*",
     "@mdx-js/mdx": "latest",
     "@monaco-editor/react": "^4.5.0",

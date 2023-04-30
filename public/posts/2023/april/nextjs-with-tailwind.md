@@ -41,6 +41,23 @@ module.exports = {
 yarn dlx tailwindcss init -p
 ```
 
+### 4. Configre Base Styles
+
+Create a new `globals.css` file within the `styles/` directory with the below
+content:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+and then import that in your root `layout.tsx` file:
+
+```tsx
+import '@styles/globals.css'
+```
+
 ### All Done!
 
 With the above, the application should be setup with Tailwind,
