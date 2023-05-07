@@ -33,5 +33,3 @@ export default async function Notebook() {
     </Box>
   )
 }
-
-export const dynamic = 'force-dynamic'

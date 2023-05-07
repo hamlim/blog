@@ -29,8 +29,6 @@ let extendedRuntime = {
   jsxDEV: any
 }
 
-export const dynamic = 'force-dynamic'
-
 async function getPost({ title: titleSlug }: Params) {
   let manifest = await fetchManifest()
 

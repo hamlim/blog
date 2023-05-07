@@ -11,5 +11,3 @@ export default function SandboxPage() {
     </Box>
   )
 }
-
-export const dynamic = 'force-dynamic'

@@ -51,5 +51,3 @@ export default function Social() {
     </Box>
   )
 }
-
-export const dynamic = 'force-dynamic'

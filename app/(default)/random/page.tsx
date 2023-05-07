@@ -22,5 +22,3 @@ export default function Random() {
     </Box>
   )
 }
-
-export const dynamic = 'force-dynamic'

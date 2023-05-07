@@ -18,7 +18,7 @@ I’ve now centered around the following directories (roughly):
 
 <Heading is="h2" variant="h2" id="on-styles">On Styles:</Heading>
 
-I still use and really enjoy [vanilla-extract]([https://vanilla-extract.style/](https://vanilla-extract.style/)), and I used to use their default Next.js integration, however it (at the time of writing) still does not work with Layouts in Next.js. So instead what I’ve opted to do is adopt a parallel build step where I’ll compile out `.css.ts` files ************before************ Next.js builds the application.
+I still use and really enjoy [vanilla-extract]([https://vanilla-extract.style/](https://vanilla-extract.style/)), and I used to use their default Next.js integration, however it (at the time of writing) still does not work with Layouts in Next.js. So instead what I’ve opted to do is adopt a parallel build step where I’ll compile out `.css.ts` files **before** Next.js builds the application.
 
 My current preferred setup is to leverage their [rollup]([https://vanilla-extract.style/documentation/integrations/rollup/](https://vanilla-extract.style/documentation/integrations/rollup/)) integration, which will take any project `.css.ts` files and compile them to a similar directory structure within the `styles/` directory.
 

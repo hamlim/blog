@@ -28,5 +28,3 @@ export default async function Blog() {
 export let metadata: Metadata = {
   title: "Matt's Blog",
 }
-
-export const dynamic = 'force-dynamic'

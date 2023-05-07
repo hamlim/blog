@@ -169,5 +169,3 @@ export default function Projects() {
     </Box>
   )
 }
-
-export const dynamic = 'force-dynamic'

@@ -201,7 +201,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ds-pack/daisyui@npm:0.0.10":
+"@ds-pack/daisyui@npm:^0.0.10":
   version: 0.0.10
   resolution: "@ds-pack/daisyui@npm:0.0.10"
   peerDependencies:
@@ -1089,7 +1089,7 @@ __metadata:
   resolution: "blog@workspace:."
   dependencies:
     "@codesandbox/sandpack-react": ^2.4.7
-    "@ds-pack/daisyui": 0.0.10
+    "@ds-pack/daisyui": ^0.0.10
     "@ds-pack/use-refs": "*"
     "@mdx-js/mdx": latest
     "@monaco-editor/react": ^4.5.0

@@ -119,5 +119,3 @@ export default async function Bookshelf() {
     </>
   )
 }
-
-export const dynamic = 'force-dynamic'

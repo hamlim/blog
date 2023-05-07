@@ -116,5 +116,3 @@ export default function Alea() {
     </Box>
   )
 }
-
-export const dynamic = 'force-dynamic'

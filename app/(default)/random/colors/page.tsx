@@ -747,5 +747,3 @@ export default function Colors() {
     </Box>
   )
 }
-
-export const dynamic = 'force-dynamic'

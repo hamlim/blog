@@ -532,5 +532,3 @@ export default function Tools() {
     </Box>
   )
 }
-
-export const dynamic = 'force-dynamic'

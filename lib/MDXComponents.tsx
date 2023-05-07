@@ -1,8 +1,4 @@
-import {
-  // @ts-expect-error
-  createServerContext,
-  use,
-} from 'react'
+import { createServerContext, useContext } from 'react'
 import {
   Box,
   Link as StyledLink,
@@ -66,7 +62,7 @@ export function br(props) {
   return <Spacer {...props} />
 }
 
-let preContext = createServerContext(false)
+let preContext = createServerContext<boolean>('preContext', false)
 
 export function pre(props) {
   return (
@@ -77,7 +73,7 @@ export function pre(props) {
 }
 
 export function code(props) {
-  let isPre = use(preContext)
+  let isPre = useContext(preContext)
   if (isPre) {
     // @ts-expect-error Server Component
     return <CodeBlock {...props} />
