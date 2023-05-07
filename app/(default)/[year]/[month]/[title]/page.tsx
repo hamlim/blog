@@ -29,7 +29,6 @@ let extendedRuntime = {
   jsxDEV: any
 }
 
-export const revalidate = 0
 export const dynamic = 'force-dynamic'
 
 async function getPost({ title: titleSlug }: Params) {

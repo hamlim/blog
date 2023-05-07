@@ -29,5 +29,4 @@ export let metadata: Metadata = {
   title: "Matt's Blog",
 }
 
-export const revalidate = 0
 export const dynamic = 'force-dynamic'

@@ -117,5 +117,4 @@ export default function Alea() {
   )
 }
 
-export const revalidate = 0
 export const dynamic = 'force-dynamic'
