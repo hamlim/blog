@@ -92,6 +92,18 @@ export default function Projects() {
           <ListItem className="mt-3">
             <Link
               is="a"
+              href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Reroute
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A React router package built for Suspense using hooks
+          </ListItem>
+          <ListItem className="mt-3">
+            <Link
+              is="a"
               href="https://github.com/ds-pack/components"
               target="_blank"
               rel="noopener noreferrer"
@@ -130,26 +142,14 @@ export default function Projects() {
           <ListItem className="mt-3">
             <Link
               is="a"
-              href="https://github.com/hamlim/notedo"
+              href="https://github.com/ds-pack/tapable"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Notedo
+              @ds-pack/tapable
               <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
             </Link>{' '}
-            A note and todo list web application using plain text.
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Reroute
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A React router package built for Suspense using hooks
+            A React hook for creating accessible clickable primatives!
           </ListItem>
           <ListItem className="mt-3">
             <Link
@@ -163,6 +163,18 @@ export default function Projects() {
             </Link>{' '}
             A collection of babel utilities (plugins, visitors) for transforming
             code related to design systems.
+          </ListItem>
+          <ListItem className="mt-3">
+            <Link
+              is="a"
+              href="https://github.com/hamlim/notedo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Notedo
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A note and todo list web application using plain text.
           </ListItem>
         </List>
       </Box>
