@@ -48,7 +48,7 @@ async function TopPosts() {
 
 export default async function Page() {
   return (
-    <>
+    <Box>
       <Heading variant="lead" is="h1" className="mb-4">
         Hey 👋
       </Heading>
@@ -154,6 +154,6 @@ export default async function Page() {
         using daily.
       </Text>
       <LocalLink href="/tools">See them here</LocalLink>
-    </>
+    </Box>
   )
 }
