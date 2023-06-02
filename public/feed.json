@@ -1226,6 +1226,18 @@
       "year": "2023",
       "tags": ["Advice", "Rant"],
       "status": "draft"
+    },
+    {
+      "id": 96,
+      "title": "10x Engineers",
+      "path": "/posts/2023/june/10x.md",
+      "slug": "10x",
+      "date": "June 1st, 2023",
+      "time": "8:33:57 PM",
+      "month": "june",
+      "year": "2023",
+      "tags": ["Random"],
+      "status": "draft"
     }
   ]
 }
