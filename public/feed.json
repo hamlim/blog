@@ -1,5 +1,5 @@
 {
-  "gallery": [87, 27, 35, 39, 50],
+  "gallery": [96, 97, 87, 27, 35, 39, 50],
   "notebookEntries": [
     {
       "id": 0,
@@ -1237,6 +1237,18 @@
       "month": "june",
       "year": "2023",
       "tags": ["Random", "Development", "Rant"],
+      "status": "public"
+    },
+    {
+      "id": 97,
+      "title": "Fractal Refactoring",
+      "path": "/posts/2023/june/fractal-refactoring.md",
+      "slug": "fractal-refactoring",
+      "date": "June 9th, 2023",
+      "time": "7:24:40 PM",
+      "month": "june",
+      "year": "2023",
+      "tags": ["development", "rant", "random"],
       "status": "public"
     }
   ]
