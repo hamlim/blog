@@ -18,6 +18,7 @@ export default function DefaultLayout({ children }) {
           </Box>
           <Box>
             <LocalLink href="/posts">📝 Blog</LocalLink>{' '}
+            <LocalLink href="/resume">💼 Resume</LocalLink>{' '}
             <LocalLink href="/projects">🧪 Projects</LocalLink>{' '}
             <LocalLink href="/bookshelf">📚 Bookshelf</LocalLink>{' '}
             <LocalLink href="/social">🗣 Social</LocalLink>
