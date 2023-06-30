@@ -45,13 +45,6 @@ git config --global user.email "<email>"
 git config --global core.editor "code-insiders --wait"
 ```
 
-{/* <!-- **Configure Shell:**
-
-Create a `~/.aliases` file and add the following:
-
-```bash
-
-``` --> */}
 
 ## CLI Tooling:
 
@@ -83,8 +76,7 @@ list may change over time but these are the essentials that I use today.
 - Install <ExternalLink href="https://thebrowser.company/">Dropbox
   Capture</ExternalLink>
 - Install <ExternalLink href="">Arc</ExternalLink>
-- Install{'
-  '}<ExternalLink href="https://www.notion.so/desktop">Notion</ExternalLink>
+- Install{' '}<ExternalLink href="https://www.notion.so/desktop">Notion</ExternalLink>
 
 <Spacer />
 
