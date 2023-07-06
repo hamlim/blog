@@ -11,7 +11,7 @@ workspace.
 
 ```sh
 yw() {
-  yarn workspace $(yarn --json workspaces list | jq '.' -r | jq ".name" -r | fzf) $@
+  yarn workspace $(yarn --json workspaces list | jq '.' -r | jq ".name" -r | fzf) "$@"
 }
 ```
 
@@ -29,6 +29,8 @@ yw <script-name>
 # For example, if you want to run the `test` script on a specific
 # workspace, you can run:
 yw test
+# passing args should "just work":
+yw test some-file-name
 ```
 
 Notably, this doesn't let you select multiple workspaces to run a command
@@ -36,5 +38,8 @@ within, I may eventually package this up into a helpful package that you can
 install directly in your monorepo, akin to one of my older projects
 [Zaps](https://github.com/hamlim/projects/blob/master/packages/zaps/README.md)
 🤔.
+
+Also - if you still have some projects using yarn classic, I ended up renaming
+my old `yw` script to `ywold` 😂.
 
 ---
