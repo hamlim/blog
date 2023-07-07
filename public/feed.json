@@ -1262,6 +1262,18 @@
       "year": "2023",
       "tags": ["development", "web development", "quick read"],
       "status": "public"
+    },
+    {
+      "id": 99,
+      "title": "Principles for Automated Testing",
+      "path": "/posts/2023/july/principles-for-automated-testing.md",
+      "slug": "principles-for-automated-testing",
+      "date": "July 7th, 2023",
+      "time": "9:12:13 AM",
+      "month": "july",
+      "year": "2023",
+      "tags": ["development"],
+      "status": "public"
     }
   ]
 }
