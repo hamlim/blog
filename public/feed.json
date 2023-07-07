@@ -1250,6 +1250,18 @@
       "year": "2023",
       "tags": ["development", "rant", "random"],
       "status": "public"
+    },
+    {
+      "id": 98,
+      "title": "Deno",
+      "path": "/posts/2023/july/deno.md",
+      "slug": "deno",
+      "date": "July 6th, 2023",
+      "time": "7:54:21 PM",
+      "month": "july",
+      "year": "2023",
+      "tags": ["development", "web development", "quick read"],
+      "status": "public"
     }
   ]
 }
