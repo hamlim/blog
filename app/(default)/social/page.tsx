@@ -29,6 +29,37 @@ export default function Social() {
           </ListItem>
           <ListItem className="mb-2">
             <Text is="strong" fontWeight="bold">
+              T2:{' '}
+            </Text>
+            <ExternalLink
+              is="a"
+              target="_blank"
+              rel="noopener"
+              href="https://t2.social/matthamlin"
+            >
+              matthamlin
+            </ExternalLink>
+          </ListItem>
+          <ListItem className="mb-2">
+            <Text is="strong" fontWeight="bold">
+              Threads:{' '}
+            </Text>
+            <ExternalLink
+              is="a"
+              target="_blank"
+              rel="noopener"
+              href="https://www.threads.net/@immatthamlin"
+            >
+              immatthamlin
+            </ExternalLink>
+          </ListItem>
+          <ListItem className="mb-2">
+            <Text is="strong" fontWeight="bold">
+              Retro: matthamlin
+            </Text>
+          </ListItem>
+          <ListItem className="mb-2">
+            <Text is="strong" fontWeight="bold">
               GitHub:{' '}
             </Text>
             <GitHubMention>hamlim</GitHubMention>
