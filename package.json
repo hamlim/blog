@@ -23,7 +23,7 @@
     "airtable": "0.11.1",
     "autoprefixer": "^10.4.14",
     "bright": "^0.7.1",
-    "daisyui": "^2.51.5",
+    "daisyui": "^3.2.1",
     "eslint-config-next": "latest",
     "nanopop": "2.1.0",
     "next": "canary",
@@ -43,6 +43,7 @@
     "@types/react-dom": "^18.0.4",
     "gray-matter": "^4.0.3",
     "prettier": "^2.8.1",
+    "supports-color": "^9.4.0",
     "typescript": "4.9.4"
   }
 }

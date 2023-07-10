@@ -69,14 +69,14 @@ list may change over time but these are the essentials that I use today.
   - Additionally, go into System Preferences > Keyboard > Shortcuts and disable
     the `Cmd + Space` keyboard setting for spotlight and set that to the Raycast
     keyboard shortcut.
-- Install&nbsp;<ExternalLink href="https://rectangleapp.com/">Rectangle</ExternalLink>
+- Install <ExternalLink href="https://rectangleapp.com/">Rectangle</ExternalLink>
   - Choose the Spectacle keybinds if you don't want to be confused 😆
 - Install
   <ExternalLink href="https://www.dropbox.com/capture">Dropbox</ExternalLink>
 - Install <ExternalLink href="https://thebrowser.company/">Dropbox
   Capture</ExternalLink>
 - Install <ExternalLink href="">Arc</ExternalLink>
-- Install{' '}<ExternalLink href="https://www.notion.so/desktop">Notion</ExternalLink>
+- Install <ExternalLink href="https://www.notion.so/desktop">Notion</ExternalLink>
 
 <Spacer />
 
