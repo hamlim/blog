@@ -6,6 +6,7 @@ import remarkFrontmatter from 'remark-frontmatter'
 import { fetchManifest } from '@lib/fetch-manifest'
 import { Heading, Box, Stack } from '@ds-pack/daisyui'
 import { PostWrapper } from '@lib/PostWrapper'
+import { LocalLink } from '@lib/LocalLink'
 
 let { Time, Mentions } = defaultComponents
 
@@ -81,7 +82,7 @@ export default async function Blog({ params: { title } }) {
           <Stack inline gap="4">
             {post.tags.map((tag: string) => (
               <Box key={tag} is="span" className="inline-flex italic">
-                {tag}
+                <LocalLink href={`/posts/tags/${tag}`}>{tag}</LocalLink>
               </Box>
             ))}
           </Stack>

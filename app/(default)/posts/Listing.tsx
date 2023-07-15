@@ -11,13 +11,9 @@ import {
   Stack,
   Link as StyledLink,
 } from '@ds-pack/daisyui'
-import NextLink from 'next/link'
 import type { Post } from '@lib/types'
 import { formatPostLink } from '@lib/format-post-link'
-
-function Link(props) {
-  return <StyledLink is={NextLink} {...props} />
-}
+import { LocalLink as Link } from '@lib/LocalLink'
 
 const monthToNumber = {
   January: 0,

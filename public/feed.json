@@ -1054,7 +1054,7 @@
       "slug": "yarn-berry-gitignore",
       "date": "July 21st, 2022",
       "time": "7:47:36 AM",
-      "tags": ["development", "yarn"],
+      "tags": ["Development", "Yarn"],
       "month": "july",
       "year": 2022,
       "status": "public"
@@ -1212,7 +1212,7 @@
       "time": "8:51:35 PM",
       "month": "april",
       "year": "2023",
-      "tags": ["Web Development", "TailwindCSS", "CSS"],
+      "tags": ["Web Development", "Tailwind", "CSS"],
       "status": "draft"
     },
     {
@@ -1248,7 +1248,7 @@
       "time": "7:24:40 PM",
       "month": "june",
       "year": "2023",
-      "tags": ["development", "rant", "random"],
+      "tags": ["Development", "Rant", "Random"],
       "status": "public"
     },
     {
@@ -1260,7 +1260,7 @@
       "time": "7:54:21 PM",
       "month": "july",
       "year": "2023",
-      "tags": ["development", "web development", "quick read"],
+      "tags": ["Development", "Web Development", "Quick Read"],
       "status": "public"
     },
     {
@@ -1272,7 +1272,7 @@
       "time": "9:12:13 AM",
       "month": "july",
       "year": "2023",
-      "tags": ["development"],
+      "tags": ["Development"],
       "status": "public"
     }
   ]
