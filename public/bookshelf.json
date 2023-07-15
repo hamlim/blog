@@ -177,5 +177,12 @@
     "status": "read",
     "dateStarted": "July 2023",
     "dateFinished": "July 2023"
+  },
+  {
+    "title": "Foundation and Empire",
+    "author": "Isaac Asimov",
+    "url": "https://www.goodreads.com/book/show/29579.Foundation",
+    "status": "reading",
+    "dateStarted": "July 2023"
   }
 ]
