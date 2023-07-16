@@ -181,8 +181,15 @@
   {
     "title": "Foundation and Empire",
     "author": "Isaac Asimov",
-    "url": "https://www.goodreads.com/book/show/29579.Foundation",
-    "status": "reading",
-    "dateStarted": "July 2023"
+    "url": "https://www.goodreads.com/book/show/29581.Foundation_and_Empire",
+    "status": "read",
+    "dateStarted": "July 2023",
+    "dateFinished": "July 2023"
+  },
+  {
+    "title": "Second Foundation",
+    "author": "Isaac Asimov",
+    "url": "https://www.goodreads.com/book/show/29580.Second_Foundation",
+    "status": "to-read"
   }
 ]
