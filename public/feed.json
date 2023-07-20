@@ -1274,6 +1274,18 @@
       "year": "2023",
       "tags": ["Development"],
       "status": "public"
+    },
+    {
+      "id": 100,
+      "title": "29",
+      "path": "/posts/2023/july/29.md",
+      "slug": "29",
+      "date": "July 19th, 2023",
+      "time": "6:36:58 PM",
+      "month": "july",
+      "year": "2023",
+      "tags": ["Random", "Birthday", "Goals", "Resolutions"],
+      "status": "public"
     }
   ]
 }
