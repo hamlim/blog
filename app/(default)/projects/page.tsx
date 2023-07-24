@@ -38,6 +38,18 @@ export default function Projects() {
           <ListItem>
             <Link
               is="a"
+              href="https://github.com/hamlim/milliform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Milliform
+              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+            </Link>{' '}
+            A super basic React.js form library!
+          </ListItem>
+          <ListItem className="mt-3">
+            <Link
+              is="a"
               href="https://github.com/hamlim/clue"
               target="_blank"
               rel="noopener noreferrer"
