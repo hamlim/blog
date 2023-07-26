@@ -9,7 +9,7 @@ tags:
 The other day I noticed this really succinct and to the point tweet about
 snapshot tests from Mark Dalgleish:
 
-<Tweet>
+<Tweet id="1100164862796214272">
   <div lang="en" dir="ltr">
     Just deleted all component snapshot tests from our React component
     library—in favour of{" "}

@@ -18,7 +18,7 @@
 - [x] Blog post listing page (`posts/page.tsx`)
 - [x] notebook page
 - [x] Themes (light and dark)
-- [ ] Better Tweet embeds (images?)
+- [x] Better Tweet embeds (images?)
 - [ ] Handle fallbacks somehow
 - [ ] Script to promote blog posts to the gallery
 - [ ] Preview blog post functionality

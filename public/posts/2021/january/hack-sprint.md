@@ -11,9 +11,8 @@ the futuristic Night City of Cyberpunk. While I enjoy playing video games, a
 recently highlighted <TwitterMention>Naval</TwitterMention> tweet brought up
 this piece of sage advice:
 
-<Tweet data-conversation="none" data-theme="dark"><p lang="en" dir="ltr">Reading
-is faster than listening. Doing is faster than watching.</p>&mdash; Naval
-(@naval)
+<Tweet id="1002107992018333696">Reading is faster than listening. Doing is
+faster than watching. &mdash; Naval (@naval)
 <a href="https://twitter.com/naval/status/1002107992018333696?ref_src=twsrc%5Etfw">May
 31, 2018</a></Tweet>
 

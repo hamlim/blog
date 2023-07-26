@@ -10,7 +10,7 @@ So I might be a bit late to the party to write about Twitter considering a new
 10,000 character limit for tweets but I had a pretty interesting idea the other
 day which I expressed in this tweet:
 
-<Tweet>
+<Tweet id="684528854694670337">
   <div lang="en" dir="ltr">
     What if <a href="https://twitter.com/twitter">@twitter</a> is building
     "Instant Articles" that anyone can write?{' '}
@@ -42,7 +42,7 @@ everyone is used to, and if someone decides to post to these longer tweets, a
 simple button will be all that users will see so that these tweets don't
 overflow the feed like Owen Williams recently tweeted as a joke.
 
-<Tweet>
+<Tweet id="684528705561989121">
   <div lang="en" dir="ltr">
     H <br />E<br />Y<br />
     <br />J<br />U<br />S<br />T<br />

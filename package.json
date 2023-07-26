@@ -30,6 +30,7 @@
     "postcss": "^8.4.21",
     "react": "experimental",
     "react-dom": "experimental",
+    "react-tweet": "^3.0.3",
     "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.14.1",

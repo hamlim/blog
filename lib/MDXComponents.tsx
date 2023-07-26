@@ -17,6 +17,9 @@ import NextLink from 'next/link'
 import CodeBlock from './CodeBlock'
 import Mentions from './Mentions'
 import { Footnote, Ref } from './Footnotes'
+import { Tweet as ReactTweet, TweetContainer } from 'react-tweet'
+import NextImage from 'next/image'
+import type { TwitterComponents } from 'react-tweet'
 
 export function Spacer() {
   return <Box is="marquee" className="mb-4" />
@@ -131,8 +134,15 @@ export function Time(props) {
 
 export function Tweet(props) {
   return (
-    <Box className="my-6">
-      <blockquote className="twitter-tweet tw-align-center" {...props} />
+    <Box className="my-6 not-prose">
+      <ReactTweet
+        id={props.id}
+        components={{
+          TweetNotFound() {
+            return <TweetContainer>{props.children}</TweetContainer>
+          },
+        }}
+      />
     </Box>
   )
 }

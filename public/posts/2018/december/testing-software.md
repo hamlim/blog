@@ -39,7 +39,7 @@ deployed to production.
 A lot of our other learnings have been so simply summarized by this tweet by
 Guillermo Rauch:
 
-<Tweet>
+<Tweet id="807626710350839808">
   <div lang="en" dir="ltr">
     Write tests. Not too many. Mostly integration.
     &mdash; Guillermo Rauch (@rauchg) <a href="https://twitter.com/rauchg/status/807626710350839808?ref_src=twsrc%5Etfw">December 10, 2016</a>

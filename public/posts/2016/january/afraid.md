@@ -37,7 +37,7 @@ These thoughts keep me up far later at night than my friends at college.
 
 I brought this up on twitter a week or two ago as well, where I tweeted:
 
-<Tweet>
+<Tweet id="688932733490343938">
   <div lang="en" dir="ltr">
     It&#39;s so odd to think about events happening post-graduation for me this
     year.&mdash; Matt Hamlin (@immatthamlin){' '}

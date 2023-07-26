@@ -1,15 +1,9 @@
-import Script from 'next/script'
 import { fetchManifest } from '@lib/fetch-manifest'
 import '@styles/globals.css'
 import { Metadata } from 'next'
 
 export default function Layout({ children }) {
-  return (
-    <>
-      {children}
-      <Script src="https://platform.twitter.com/widgets.js" async />
-    </>
-  )
+  return <>{children}</>
 }
 
 async function resolveTitle({ title: titleSlug }) {

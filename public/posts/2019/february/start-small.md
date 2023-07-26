@@ -9,7 +9,7 @@ tags:
 As I have grown into a more experienced web developer, I have been thinking a
 lot more about this tweet by Joel Hooks:
 
-<Tweet>
+<Tweet id="1014615428897824768">
   <div lang="en" dir="ltr">
     There’s a tendency to jump straight to step 32 of the “new thing” vs
     focusing on steps 1 and 2. <br />
@@ -21,9 +21,8 @@ lot more about this tweet by Joel Hooks:
     <br />
     <br />
     Baby steps. 🐣
-  </p>
   &mdash; Joel 🌧 (@jhooks) <a href="https://twitter.com/jhooks/status/1014615428897824768?ref_src=twsrc%5Etfw">
-    July 4, 2018
+    July 4, 2018</a>
   </div>
 </Tweet>
 
