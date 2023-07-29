@@ -1286,6 +1286,18 @@
       "year": "2023",
       "tags": ["Random", "Birthday", "Goals", "Resolutions"],
       "status": "public"
+    },
+    {
+      "id": 101,
+      "title": "Idea: Distributable Web Apps",
+      "path": "/posts/2023/july/distributable-web-apps.md",
+      "slug": "distributable-web-apps",
+      "date": "July 29th, 2023",
+      "time": "5:24:59 AM",
+      "month": "july",
+      "year": "2023",
+      "tags": ["Random", "Idea"],
+      "status": "draft"
     }
   ]
 }
