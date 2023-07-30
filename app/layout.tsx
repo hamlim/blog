@@ -14,11 +14,61 @@ export default function Layout({ children }) {
 }
 
 export const metadata: Metadata = {
-  title: "Matt Hamlin's Personal Site",
+  title: 'Matt 👋',
   icons: [
     {
       rel: 'shortcut icon',
       url: '/favicon.ico',
     },
   ],
+  description: `Matt Hamlin's Personal Website`,
+  keywords: [
+    'Matt Hamlin',
+    'blog',
+    'portfolio',
+    'web developer',
+    'software engineer',
+  ],
+  authors: [
+    {
+      name: 'Matt Hamlin',
+      url: 'https://matthamlin.me',
+    },
+  ],
+  creator: 'Matt Hamlin',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://matthamlin.me',
+    title: 'Matt Hamlin',
+    description: `Matt Hamlin's Personal Website`,
+    siteName: `Matt's Website`,
+    // images: [
+    //   {
+    //     url: 'https://matthamlin.me/icon-512.png',
+    //     width: 512,
+    //     height: 512,
+    //     alt: `Matt Hamlin's Personal Website`,
+    //   },
+    // ],
+    // images: [
+    //   {
+    //     url: siteConfig.ogImage,
+    //     width: 1200,
+    //     height: 630,
+    //     alt: siteConfig.name,
+    //   },
+    // ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Matt's Website`,
+    description: `Matt Hamlin's personal website`,
+    // images: ['https://feijoa-ui.vercel.app/icon-512.png'],
+    creator: '@immatthamlin',
+  },
 }
