@@ -1298,6 +1298,18 @@
       "year": "2023",
       "tags": ["Random", "Idea"],
       "status": "draft"
+    },
+    {
+      "id": 102,
+      "title": "Speedbumps",
+      "path": "/posts/2023/august/speedbumps.md",
+      "slug": "speedbumps",
+      "date": "August 18th, 2023",
+      "time": "5:47:33 PM",
+      "month": "august",
+      "year": "2023",
+      "tags": ["Organizations", "Teams"],
+      "status": "draft"
     }
   ]
 }
