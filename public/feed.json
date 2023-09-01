@@ -1310,6 +1310,18 @@
       "year": "2023",
       "tags": ["Organizations", "Teams"],
       "status": "draft"
+    },
+    {
+      "id": 103,
+      "title": "Learning Go",
+      "path": "/posts/2023/september/learning-go.md",
+      "slug": "learning-go",
+      "date": "September 1st, 2023",
+      "time": "9:50:35 AM",
+      "month": "september",
+      "year": "2023",
+      "tags": ["Development", "Web Development", "Go", "Learning"],
+      "status": "draft"
     }
   ]
 }
