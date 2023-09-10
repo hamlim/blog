@@ -161,7 +161,9 @@
     "title": "Sphere",
     "author": "Michael Crichton",
     "url": "https://www.goodreads.com/book/show/455373.Sphere",
-    "status": "to-read"
+    "status": "read",
+    "dateStarted": "August 2023",
+    "dateFinished": "September 2023"
   },
   {
     "title": "A Gentleman in Moscow",
@@ -193,5 +195,12 @@
     "status": "read",
     "dateStarted": "July 2023",
     "dateFinished": "July 2023"
+  },
+  {
+    "title": "Wool",
+    "author": "Hugh Howey",
+    "url": "https://www.goodreads.com/book/show/12287209-wool",
+    "status": "reading",
+    "dateStarted": "September 2023"
   }
 ]
