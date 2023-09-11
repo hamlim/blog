@@ -44,8 +44,8 @@ export default function Resume() {
         </Box>
         <Box>
           <address>
-            9 Miner Street, Apt 404
-            <br /> Boston MA, 02215
+            24 Hancock Street, Apt 4
+            <br /> Boston MA, 02114
           </address>
           <Link is="a" href="tel:4252100980">
             (425) 210-0980
