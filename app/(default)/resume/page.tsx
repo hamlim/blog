@@ -80,12 +80,13 @@ export default function Resume() {
           </Text>
           <List variant="unordered" is="ul">
             <ListItem>
-              Acted as a lead architect for a frontend-replatforming effort to
+              Was the lead architect for a frontend-replatforming effort to
               adopt Next.js, React Server Components, and GraphQL Federation
             </ListItem>
             <ListItem>
               Designed and implemented various aspects of our overall frontend
-              web architecture
+              web architecture (tracking, data-fetching orchestration,
+              Authentication)
             </ListItem>
           </List>
         </Box>
