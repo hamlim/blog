@@ -18,7 +18,7 @@ let args = process.argv.slice(2).reduce((acc, curr) => {
 
 if (args.help) {
   console.log('')
-  console.log('yarn add-book ...')
+  console.log('bun add-book ...')
   console.log('')
   console.log(' help                              Prints this dialog!')
   console.log(' debug                             Logs out debugging info')
@@ -77,4 +77,4 @@ let newBookshelf = [
 
 fs.writeFileSync('./public/bookshelf.json', JSON.stringify(newBookshelf))
 
-execSync(`yarn format`)
+execSync(`bun format`)

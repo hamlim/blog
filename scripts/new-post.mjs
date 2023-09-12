@@ -73,7 +73,7 @@ let args = process.argv.slice(2).reduce((acc, curr) => {
 
 if (args.help) {
   console.log('')
-  console.log('yarn new-post ...')
+  console.log('bun new-post ...')
   console.log('')
   console.log(' help            Prints this dialog!')
   console.log(' debug           Logs out debugging info')
@@ -161,4 +161,4 @@ let newManifest = {
 
 fs.writeFileSync('./public/feed.json', JSON.stringify(newManifest))
 
-execSync(`yarn format`)
+execSync(`bun format`)

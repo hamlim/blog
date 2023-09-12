@@ -82,4 +82,4 @@ fs.writeFileSync(
   }),
 )
 
-execSync('yarn format')
+execSync('bun format')
