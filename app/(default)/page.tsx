@@ -154,6 +154,14 @@ export default async function Page() {
         using daily.
       </Text>
       <LocalLink href="/tools">See them here</LocalLink>
+
+      <Heading variant="h3" is="h3" className="my-3">
+        Snippets
+      </Heading>
+      <Text className="mb-2">
+        A small collection of useful code snippets that I often reference!
+      </Text>
+      <LocalLink href="/snippets">See them here</LocalLink>
     </Box>
   )
 }
