@@ -186,7 +186,7 @@ export default function Resume() {
         </Box>
         <Box>
           <Heading is="h3" variant="h3">
-            Rainbow Sprinkle— Dynamic, theme-driven, style props for Vanilla
+            Rainbow Sprinkles — Dynamic, theme-driven, style props for Vanilla
             Extract
           </Heading>
           <Text>
