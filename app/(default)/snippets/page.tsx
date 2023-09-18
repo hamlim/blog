@@ -131,6 +131,26 @@ function Mash() {
 export default Alea;`}
           />
         </ListItem>
+        <ListItem>
+          <Heading is="h3" variant="h3">
+            yw
+          </Heading>
+
+          {/* @ts-expect-error */}
+          <CodeBlock
+            className="lang-shell"
+            children={`# Bash script to execute a package.json script within a workspace
+yw() {
+  yarn workspace $(yarn workspaces list --json | jq -r .name | fzf) "$@"
+}
+
+# For yarn v1 monorepos, I use ywold:
+ywold() {
+  yarn workspace $(yarn --json workspaces info | jq '.data' -r | jq "[keys][0] []" -r | fzf) $@
+}
+`}
+          />
+        </ListItem>
       </List>
     </Box>
   )
