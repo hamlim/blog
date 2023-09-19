@@ -1322,6 +1322,18 @@
       "year": "2023",
       "tags": ["Development", "Web Development", "Go", "Learning"],
       "status": "draft"
+    },
+    {
+      "id": 104,
+      "title": "Finding React Artifacts",
+      "path": "/posts/2023/september/finding-react-artifacts.md",
+      "slug": "finding-react-artifacts",
+      "date": "September 18th, 2023",
+      "time": "9:48:47 PM",
+      "month": "september",
+      "year": "2023",
+      "tags": ["Web Development", "Development", "micropost"],
+      "status": "draft"
     }
   ]
 }
