@@ -1,4 +1,5 @@
-import { Heading, Box, List, ListItem } from '@ds-pack/daisyui'
+import { Heading, Box, List, ListItem, Text } from '@ds-pack/daisyui'
+import { InlineCode } from '@lib/MDXComponents'
 import CodeBlock from '@lib/CodeBlock'
 
 export default function Snippets() {
@@ -149,6 +150,27 @@ ywold() {
   yarn workspace $(yarn --json workspaces info | jq '.data' -r | jq "[keys][0] []" -r | fzf) $@
 }
 `}
+          />
+        </ListItem>
+        <ListItem>
+          <Heading is="h3" variant="h3">
+            Turbo workspace timings
+          </Heading>
+
+          <Text>
+            If you work within a monorepo and want to get a breakdown of the
+            time that each workspace takes to run a task (
+            <InlineCode>lib:build</InlineCode> in the below example), then these
+            three shell commands will do that!
+          </Text>
+
+          {/* @ts-expect-error */}
+          <CodeBlock
+            className="lang-shell"
+            children={`
+yarn turbo run lib:build --summarize
+SUMMARY_FILE=$(/bin/ls .turbo/runs/*.json | head -n1)
+cat $SUMMARY_FILE | jq '[.tasks[] | {"taskId": .taskId, "duration": (.execution.endTime - .execution.startTime)}] | sort_by(-.duration)'`}
           />
         </ListItem>
       </List>
