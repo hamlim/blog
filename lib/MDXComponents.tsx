@@ -65,18 +65,22 @@ export function br(props) {
   return <Spacer {...props} />
 }
 
-let preContext = createServerContext<boolean>('preContext', false)
+// Next.js broke something along the way
+// complains about calling `createServerContext` for 'preContext' more than once
+if (!globalThis.preContext) {
+  globalThis.preContext = createServerContext<boolean>('preContext', false)
+}
 
 export function pre(props) {
   return (
-    <preContext.Provider value={true}>
+    <globalThis.preContext.Provider value={true}>
       <Box className="not-prose" {...props} />
-    </preContext.Provider>
+    </globalThis.preContext.Provider>
   )
 }
 
 export function code(props) {
-  let isPre = useContext(preContext)
+  let isPre = useContext(globalThis.preContext)
   if (isPre) {
     // @ts-expect-error Server Component
     return <CodeBlock {...props} />

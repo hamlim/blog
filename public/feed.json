@@ -1297,7 +1297,7 @@
       "month": "july",
       "year": "2023",
       "tags": ["Random", "Idea"],
-      "status": "draft"
+      "status": "public"
     },
     {
       "id": 102,
@@ -1309,7 +1309,7 @@
       "month": "august",
       "year": "2023",
       "tags": ["Organizations", "Teams"],
-      "status": "draft"
+      "status": "public"
     },
     {
       "id": 103,
@@ -1321,7 +1321,7 @@
       "month": "september",
       "year": "2023",
       "tags": ["Development", "Web Development", "Go", "Learning"],
-      "status": "draft"
+      "status": "public"
     },
     {
       "id": 104,
@@ -1333,7 +1333,19 @@
       "month": "september",
       "year": "2023",
       "tags": ["Web Development", "Development", "micropost"],
-      "status": "draft"
+      "status": "public"
+    },
+    {
+      "id": 105,
+      "title": "Using Marquee with React and TypeScript",
+      "path": "/posts/2023/september/using-marquee-with-react-and-typescript.md",
+      "slug": "using-marquee-with-react-and-typescript",
+      "date": "September 23rd, 2023",
+      "time": "11:32:42 AM",
+      "month": "september",
+      "year": "2023",
+      "tags": ["Web Development", "Development Tips", "React", "TypeScript"],
+      "status": "public"
     }
   ]
 }
