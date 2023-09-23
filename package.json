@@ -9,9 +9,9 @@
     "deploy": "now",
     "deploy-prod": "now --prod",
     "format": "prettier . --write",
-    "new-post": "bun scripts/new-post.mjs",
-    "add-book": "bun scripts/add-book.mjs",
-    "new-note": "bun scripts/new-note.mjs"
+    "new-post": "echo \"Run `bun scripts/new-post.mjs ...` directly!\"",
+    "add-book": "echo \"Run `bun scripts/add-book.mjs ...` directly!\"",
+    "new-note": "echo \"Run `bun scripts/new-note.mjs ...` directly!\""
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.4.7",
