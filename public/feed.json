@@ -1346,6 +1346,18 @@
       "year": "2023",
       "tags": ["Web Development", "Development Tips", "React", "TypeScript"],
       "status": "public"
+    },
+    {
+      "id": 106,
+      "title": "On CTO Office Hours",
+      "path": "/posts/2023/september/on-cto-office-hours.md",
+      "slug": "on-cto-office-hours",
+      "date": "September 25th, 2023",
+      "time": "10:58:14 AM",
+      "month": "september",
+      "year": "2023",
+      "tags": ["Hot Take", "micropost"],
+      "status": "draft"
     }
   ]
 }
