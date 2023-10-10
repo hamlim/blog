@@ -1358,6 +1358,18 @@
       "year": "2023",
       "tags": ["Hot Take", "micropost"],
       "status": "draft"
+    },
+    {
+      "id": 107,
+      "title": "Go To Git Utils",
+      "path": "/posts/2023/october/go-to-git-utils.md",
+      "slug": "go-to-git-utils",
+      "date": "October 10th, 2023",
+      "time": "11:14:01 AM",
+      "month": "october",
+      "year": "2023",
+      "tags": ["Development", "Web Development", "git"],
+      "status": "draft"
     }
   ]
 }
