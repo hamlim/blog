@@ -63,6 +63,10 @@ export interface Post {
    * The year the blog post was published within
    */
   year: number
+  /**
+   * The location from where the post was published
+   */
+  location?: string
 }
 
 export interface Manifest {

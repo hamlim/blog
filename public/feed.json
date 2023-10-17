@@ -946,7 +946,7 @@
       "slug": "fast-feedback-systems",
       "date": "November 20th, 2021",
       "time": "10:31:37 AM",
-      "tags": ["micropost"],
+      "tags": ["Micropost"],
       "month": "november",
       "year": 2021,
       "status": "public"
@@ -970,7 +970,7 @@
       "slug": "video-games",
       "date": "November 20th, 2021",
       "time": "9:47:51 AM",
-      "tags": ["micropost"],
+      "tags": ["Micropost"],
       "month": "november",
       "year": 2021,
       "status": "draft"
@@ -982,7 +982,7 @@
       "slug": "delete-it",
       "date": "October 16th, 2021",
       "time": "10:18:31 AM",
-      "tags": ["micropost"],
+      "tags": ["Micropost"],
       "month": "october",
       "year": 2021,
       "status": "public"
@@ -1332,7 +1332,7 @@
       "time": "9:48:47 PM",
       "month": "september",
       "year": "2023",
-      "tags": ["Web Development", "Development", "micropost"],
+      "tags": ["Web Development", "Development", "Micropost"],
       "status": "public"
     },
     {
@@ -1356,7 +1356,7 @@
       "time": "10:58:14 AM",
       "month": "september",
       "year": "2023",
-      "tags": ["Hot Take", "micropost"],
+      "tags": ["Hot Take", "Micropost"],
       "status": "draft"
     },
     {
@@ -1368,8 +1368,21 @@
       "time": "11:14:01 AM",
       "month": "october",
       "year": "2023",
-      "tags": ["Development", "Web Development", "git"],
-      "status": "draft"
+      "tags": ["Development", "Web Development", "Git"],
+      "status": "public"
+    },
+    {
+      "id": 108,
+      "title": "London 2023",
+      "path": "/posts/2023/october/london-2023.md",
+      "slug": "london-2023",
+      "date": "October 17th, 2023",
+      "time": "3:53:38 PM",
+      "month": "october",
+      "year": "2023",
+      "location": "London Heathrow Airport",
+      "tags": ["Trips", "Travel", "London", "2023"],
+      "status": "public"
     }
   ]
 }
