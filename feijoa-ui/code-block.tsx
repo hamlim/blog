@@ -11,6 +11,7 @@ Code.theme = {
   light: 'github-light',
 }
 
+// I have committed serious crimes
 type Props = (
   | {
       children: {
@@ -24,16 +25,6 @@ type Props = (
   | { children: string; className?: string }
 ) &
   Partial<BrightProps>
-
-// interface Props extends Partial<BrightProps> {
-//   children: {
-//     props: {
-//       className?: string;
-//       children?: string;
-//       style?: Record<string, unknown>
-//     }
-//   }
-// }
 
 let defaultExtensions: Array<Extension> = [collapse]
 
