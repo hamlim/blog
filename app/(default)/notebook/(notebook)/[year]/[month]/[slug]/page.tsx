@@ -7,7 +7,7 @@ import { fetchManifest } from '@lib/fetch-manifest'
 import { Heading } from '@recipes/heading'
 import { Box } from '@recipes/box'
 import { PostWrapper } from '@lib/PostWrapper'
-import {Stack} from '@recipes/stack'
+import { Stack } from '@recipes/stack'
 
 let { Time, Mentions } = defaultComponents
 
@@ -65,15 +65,15 @@ export default async function Notebook({ params: { slug } }) {
   return (
     <Box className="prose lg:prose-xl">
       <Stack gap={4}>
-      <Heading is="h1">{post.title}</Heading>
-      {post.date ? (
-        <>
-          <Box is="span" className="text-slate-500 italic">
-            Published <Time>{post.date}</Time>
-          </Box>{' '}
-        </>
-      ) : null}
-      <Mentions />
+        <Heading is="h1">{post.title}</Heading>
+        {post.date ? (
+          <>
+            <Box is="span" className="text-slate-500 italic">
+              Published <Time>{post.date}</Time>
+            </Box>{' '}
+          </>
+        ) : null}
+        <Mentions />
       </Stack>
       <PostWrapper>{content}</PostWrapper>
       {post.tags ? (

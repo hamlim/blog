@@ -11,15 +11,29 @@ Code.theme = {
   light: 'github-light',
 }
 
-interface Props extends Partial<BrightProps> {
-  children: {
-    props: {
-      className?: string;
-      children?: string;
-      style?: Record<string, unknown>
+type Props = (
+  | {
+      children: {
+        props: {
+          className?: string
+          children?: string
+          style?: Record<string, unknown>
+        }
+      }
     }
-  }
-}
+  | { children: string; className?: string }
+) &
+  Partial<BrightProps>
+
+// interface Props extends Partial<BrightProps> {
+//   children: {
+//     props: {
+//       className?: string;
+//       children?: string;
+//       style?: Record<string, unknown>
+//     }
+//   }
+// }
 
 let defaultExtensions: Array<Extension> = [collapse]
 
@@ -28,22 +42,29 @@ let metaComments = {
   highlight: `// ==highlight==`,
 }
 
-export async function CodeBlock({children: {props}}: Props) {
+export async function CodeBlock(props: Props) {
+  let code, className;
+  if (typeof props.children === 'string') {
+    code = props.children;
+    className = props.className;
+  } else {
+    code = props.children.props.children;
+    className = props.children.props.className
+  }
   console.log(props)
-  
+
   let theme = getThemeCookie()
 
   let codeTheme = themeToCodeTheme.light.includes(theme) ? 'light' : 'dark'
 
-  let lang = props.className ? props.className.split('-')[1] : 'typescript'
+  let lang = className ? className.split('-')[1] : 'typescript'
   if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
     lang = 'typescript'
   } else if (lang === 'sh') {
     lang = 'bash'
   }
 
-  let codeToHighlight = props.children
-
+  let codeToHighlight = code;
   if (codeToHighlight.startsWith(metaComments.live)) {
     let [meta, ...rest] = codeToHighlight.split('\n')
     let entries = meta
@@ -93,7 +114,7 @@ export async function CodeBlock({children: {props}}: Props) {
       >
         {codeToHighlight}
       </Code>
-      <CopyCode code={props.children} />
+      <CopyCode code={code} />
     </div>
   )
 }
