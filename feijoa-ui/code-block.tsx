@@ -34,12 +34,12 @@ let metaComments = {
 }
 
 export async function CodeBlock(props: Props) {
-  let code, className;
+  let code, className
   if (typeof props.children === 'string') {
-    code = props.children;
-    className = props.className;
+    code = props.children
+    className = props.className
   } else {
-    code = props.children.props.children;
+    code = props.children.props.children
     className = props.children.props.className
   }
   console.log(props)
@@ -55,7 +55,7 @@ export async function CodeBlock(props: Props) {
     lang = 'bash'
   }
 
-  let codeToHighlight = code;
+  let codeToHighlight = code
   if (codeToHighlight.startsWith(metaComments.live)) {
     let [meta, ...rest] = codeToHighlight.split('\n')
     let entries = meta

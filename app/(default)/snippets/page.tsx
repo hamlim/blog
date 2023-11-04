@@ -55,8 +55,7 @@ ywold() {
           {/* @ts-expect-error */}
           <CodeBlock
             className="lang-shell"
-            children={`
-yarn turbo run lib:build --summarize
+            children={`yarn turbo run lib:build --summarize
 SUMMARY_FILE=$(/bin/ls .turbo/runs/*.json | head -n1)
 cat $SUMMARY_FILE | jq '[.tasks[] | {"taskId": .taskId, "duration": (.execution.endTime - .execution.startTime)}] | sort_by(-.duration)'`}
           />
