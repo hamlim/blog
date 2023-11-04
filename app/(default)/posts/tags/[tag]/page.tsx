@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
 import type { Post } from '@lib/types'
 import { getTags, upperCase, idToTag } from '../getTags'
-import { Box, Heading, Text, List, ListItem } from '@ds-pack/daisyui'
-import { LocalLink as Link } from '@lib/LocalLink'
+import { Box } from '@recipes/box'
+import { Heading } from '@recipes/heading'
+import { Text } from '@recipes/text'
+import { List, ListItem } from '@recipes/list'
+import { Link } from '@recipes/link'
 import { formatPostLink } from '@lib/format-post-link'
 
 export async function generateMetadata({ params: { tag } }): Promise<Metadata> {
@@ -13,7 +16,7 @@ export async function generateMetadata({ params: { tag } }): Promise<Metadata> {
 
 function AllPosts({ posts }) {
   return (
-    <List variant="base" is="ol">
+    <List is="ol">
       {posts.map((post: Post) => (
         <ListItem key={post.title} className="mt-6">
           <Link href={formatPostLink(post)}>{post.title}</Link>
@@ -30,9 +33,9 @@ export default async function Tag({ params }) {
 
   return (
     <Box>
-      <Heading is="h1" variant="h1">
+      <Heading is="h1">
         Blog posts related to{' '}
-        <Text is="em" fontStyle="italic">
+        <Text is="em" className="italic">
           {tag}
         </Text>
         :

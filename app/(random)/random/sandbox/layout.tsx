@@ -1,5 +1,4 @@
 import { Box } from '@recipes/box'
-// import { Container } from '@lib/Container'
 import { Container } from '@recipes/container'
 import { Link } from '@recipes/link'
 

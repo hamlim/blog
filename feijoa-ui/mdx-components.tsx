@@ -16,6 +16,13 @@ type Props<InferredType extends (...args: Array<any>) => any> = Prettify<
   Parameters<InferredType>[0]
 >
 
+// Custom:
+export function Spacer() {
+  return <Box is="marquee" className="mb-4" />
+}
+
+export {default as Mentions} from '../lib/Mentions'
+
 export function a(props: Props<typeof BaseLink>) {
   return <BaseLink {...props} />
 }
@@ -85,6 +92,7 @@ declare global {
 }
 
 export function pre(props: Props<typeof CodeBlock>) {
+  // @ts-expect-error - Server Components
   return <CodeBlock {...props} />
 }
 

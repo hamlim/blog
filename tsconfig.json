@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -16,17 +20,27 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@lib/*": ["./lib/*"],
-      "@styles/*": ["./styles/*"],
-      "@recipes/*": ["./feijoa-ui/*"]
+      "@lib/*": [
+        "./lib/*"
+      ],
+      "@styles/*": [
+        "./styles/*"
+      ],
+      "@recipes/*": [
+        "./feijoa-ui/*"
+      ]
     },
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": false
   },
-  "exclude": ["node_modules", "./old-junk/**/*"],
+  "exclude": [
+    "node_modules",
+    "./old-junk/**/*"
+  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

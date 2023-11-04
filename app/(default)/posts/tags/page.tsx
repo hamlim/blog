@@ -1,15 +1,11 @@
 import type { Metadata } from 'next'
 import { getTags, tagToID } from './getTags'
 import type { Post } from '@lib/types'
-import {
-  Box,
-  Heading,
-  Stack,
-  List,
-  ListItem,
-  Link as StyledLink,
-} from '@ds-pack/daisyui'
-import { LocalLink as Link } from '@lib/LocalLink'
+import { Box } from '@recipes/box'
+import { Heading } from '@recipes/heading'
+import { Stack } from '@recipes/stack'
+import { List, ListItem } from '@recipes/list'
+import { BaseLink, Link } from '@recipes/link'
 import { formatPostLink } from '@lib/format-post-link'
 import { Fragment } from 'react'
 
@@ -26,7 +22,7 @@ function upperCase(str: string): string {
 
 function AllPosts({ posts }) {
   return (
-    <List variant="base" is="ol">
+    <List is="ol">
       {posts.map((post: Post, i: number) => (
         <ListItem key={post.title} className={i !== 0 ? 'mt-4' : ''}>
           <Link href={formatPostLink(post)}>{post.title}</Link>
@@ -41,25 +37,24 @@ export default async function Tags() {
 
   return (
     <Box>
-      <Heading is="h1" variant="h1">
+      <Heading is="h1">
         Blog tags:
       </Heading>
       <Box>
         {tags.map((t) => (
-          <StyledLink
-            is="a"
+          <BaseLink
             className="inline-flex mr-2"
             href={`#${tagToID(t)}`}
           >
             {t}
-          </StyledLink>
+          </BaseLink>
         ))}
       </Box>
       <div className="divider" />
-      <Stack gap="5" className="mt-10">
+      <Stack gap={5} className="mt-10">
         {Object.entries(postsByTag).map(([tag, posts]) => (
           <Fragment key={tag}>
-            <Heading is="h3" variant="h3" id={tagToID(tag)}>
+            <Heading is="h3" id={tagToID(tag)}>
               {tag}:
             </Heading>
             <AllPosts posts={posts} />

@@ -32,7 +32,7 @@ using a reducer function gives you the developer more control over the state
 merging.
 
 As an example of this expresivity that a reducer gives us, we can `useReducer`
-to implement an undo/redo state management solution<Ref id="1" />:
+to implement an undo/redo state management solution<FootnoteRef id="1" />:
 
 ```jsx
 function init(initialState) {
@@ -40,29 +40,29 @@ function init(initialState) {
     past: [],
     present: initialState,
     future: [],
-  }
+  };
 }
 function reducer(state, action) {
-  const { past, future, present } = state
+  const { past, future, present } = state;
   switch (action.type) {
-    case 'UNDO':
-      const previous = past[past.length - 1]
-      const newPast = past.slice(0, past.length - 1)
+    case "UNDO":
+      const previous = past[past.length - 1];
+      const newPast = past.slice(0, past.length - 1);
       return {
         past: newPast,
         present: previous,
         future: [present, ...future],
-      }
-    case 'REDO':
-      const next = future[0]
-      const newFuture = future.slice(1)
+      };
+    case "REDO":
+      const next = future[0];
+      const newFuture = future.slice(1);
       return {
         past: [...past, present],
         present: next,
         future: newFuture,
-      }
+      };
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -84,8 +84,8 @@ your own.
 This is mostly a more generic topic that permeates through other topics than
 just React Hooks, but the general take-away with the benefit of `useReducer`
 over `useState` is it builds on the concepts that many developers learned
-working with Redux within React applications<Ref id="2" />. The concept of
-dispatching an action and having your reducer handle the state updating logic
+working with Redux within React applications<FootnoteRef id="2" />. The concept
+of dispatching an action and having your reducer handle the state updating logic
 will allow these developers to more easily grasp this method of state management
 over `useState`.
 
@@ -111,11 +111,11 @@ the test using some mocked state, and an action. We don't even need to `import`
 or use react at all within our test!
 
 ```jsx
-test('it supports undoing the state', () => {
-  const state = { past: [{ count: 0 }], present: { count: 1 }, future: [] }
-  const newState = reducer(state, { type: 'UNDO' })
-  expect(newState.present.count).toBe(0)
-})
+test("it supports undoing the state", () => {
+  const state = { past: [{ count: 0 }], present: { count: 1 }, future: [] };
+  const newState = reducer(state, { type: "UNDO" });
+  expect(newState.present.count).toBe(0);
+});
 ```
 
 ### In Summary

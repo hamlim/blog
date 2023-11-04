@@ -98,7 +98,7 @@
     },
     "mdx-components": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",
-      "edited": false
+      "edited": true
     },
     "toast": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",
@@ -222,7 +222,7 @@
     },
     "stack": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",
-      "edited": false
+      "edited": true
     },
     "tldr": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",

@@ -4,11 +4,7 @@ import { Text } from '@recipes/text'
 import { TwitterMention } from '@recipes/twitter-mention'
 import { GitHubMention } from '@recipes/github-mention'
 import { Link } from '@recipes/link'
-// import { Container } from '@lib/Container'
 import { Container } from '@recipes/container'
-// import { LocalLink } from '@lib/LocalLink'
-// import ThemeSelect from '@lib/ThemeSelect'
-// import { getThemeCookie } from '@lib/theme-cookie'
 
 export default function DefaultLayout({ children }) {
   // let theme = getThemeCookie()

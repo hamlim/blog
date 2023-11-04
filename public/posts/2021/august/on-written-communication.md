@@ -18,7 +18,7 @@ work is a platform for communication that encourages longer form written
 content. Slack, our defacto default communication tool, has simultaneously been
 one of the best things and the worst things for team communication and
 collaboration. It's difficult for me to accurately describe my mixed emotions
-about it in writing<Ref id="1" />.
+about it in writing<FootnoteRef id="1" />.
 
 I think I've partially started to really feel this since I've been diving deep
 into tools for thought like Obsidian and Roam, which have really encouraged me
@@ -28,10 +28,10 @@ lost to random thoughts before getting distracted by something else.
 
 However, I don't really have an equivalent for communication, or more
 specifically I feel like I'm missing the Obsidian vault that I could use to
-~~collaborate with~~ _think with_ teammates<Ref id="2" />. While internally at
-work we do have tools like Google Docs, Confluence, etc, none of these tools
-seemed to have really stuck, and they either lean too heavily into one side of
-the spectrum between collaboration or permanence.
+~~collaborate with~~ _think with_ teammates<FootnoteRef id="2" />. While
+internally at work we do have tools like Google Docs, Confluence, etc, none of
+these tools seemed to have really stuck, and they either lean too heavily into
+one side of the spectrum between collaboration or permanence.
 
 I don't know if I necessarily have a point or takeaway with this blog post,
 however I do think there is value in defaulting to longer form communication. It
