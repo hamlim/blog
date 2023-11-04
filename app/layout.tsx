@@ -1,5 +1,5 @@
 import '@styles/globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { getThemeCookie } from '@lib/theme-cookie'
 
 export default function Layout({ children }) {
@@ -36,10 +36,6 @@ export const metadata: Metadata = {
     },
   ],
   creator: 'Matt Hamlin',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -71,4 +67,13 @@ export const metadata: Metadata = {
     // images: ['https://feijoa-ui.vercel.app/icon-512.png'],
     creator: '@immatthamlin',
   },
+}
+
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+  colorScheme: 'light dark'
 }

@@ -1,4 +1,3 @@
-import { createServerContext, useContext } from 'react'
 import {
   Box,
   Link as StyledLink,
@@ -18,8 +17,6 @@ import CodeBlock from './CodeBlock'
 import Mentions from './Mentions'
 import { Footnote, Ref } from './Footnotes'
 import { Tweet as ReactTweet, TweetContainer } from 'react-tweet'
-import NextImage from 'next/image'
-import type { TwitterComponents } from 'react-tweet'
 
 export function Spacer() {
   return <Box is="marquee" className="mb-4" />
@@ -65,26 +62,14 @@ export function br(props) {
   return <Spacer {...props} />
 }
 
-// Next.js broke something along the way
-// complains about calling `createServerContext` for 'preContext' more than once
-if (!globalThis.preContext) {
-  globalThis.preContext = createServerContext<boolean>('preContext', false)
-}
-
 export function pre(props) {
   return (
-    <globalThis.preContext.Provider value={true}>
-      <Box className="not-prose" {...props} />
-    </globalThis.preContext.Provider>
+    // @ts-expect-error Server Component
+    <CodeBlock {...props} />
   )
 }
 
 export function code(props) {
-  let isPre = useContext(globalThis.preContext)
-  if (isPre) {
-    // @ts-expect-error Server Component
-    return <CodeBlock {...props} />
-  }
   return (
     <Box is="span" className="not-prose">
       <InlineCode {...props} />
