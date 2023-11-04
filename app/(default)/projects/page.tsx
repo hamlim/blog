@@ -1,18 +1,103 @@
-import {
-  Heading,
-  Link,
-  Box,
-  Text,
-  VisuallyHidden,
-  List,
-  ListItem,
-  InlineCode,
-} from '@ds-pack/daisyui'
+import { VisuallyHidden } from '@ds-pack/daisyui'
+import { Heading } from '@recipes/heading'
+import { BaseLink as Link } from '@recipes/link'
+import { Box } from '@recipes/box'
+import { Text } from '@recipes/text'
+import { List, ListItem } from '@recipes/list'
+import { Code as InlineCode } from '@recipes/code'
+
+let projects: Array<{
+  link: string
+  title: React.ReactNode
+  description: React.ReactNode
+}> = [
+  {
+    link: 'https://github.com/hamlim/milliform',
+    title: 'Milliform',
+    description: 'A super basic React.js form library!',
+  },
+  {
+    link: 'https://github.com/hamlim/clue',
+    title: 'Clue Notes',
+    description:
+      'A quick and dirty web app to keep track of youre notes and assumptions while playing the board game Clue!',
+  },
+  {
+    link: 'https://github.com/hamlim/simple-cache',
+    title: 'Simple Cache',
+    description:
+      'A minimal, React cache implementation for both client and server components!',
+  },
+  {
+    link: 'https://github.com/ds-pack/simple-props',
+    title: 'Simple Props',
+    description: 'A minimal, CSS variable backed, style-prop library',
+  },
+  {
+    link: 'https://github.com/hamlim/inline-mdx.macro',
+    title: 'inline-mdx.macro',
+    description: (
+      <>
+        A babel macro for converting inline{' '}
+        <Link
+          href="https://mdxjs.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          MDX
+        </Link>{' '}
+        in JavaScript files.
+      </>
+    ),
+  },
+  {
+    link: 'https://github.com/hamlim/projects/tree/master/packages/reroute-core',
+    title: 'Reroute',
+    description: 'A React router package built for Suspense using hooks',
+  },
+  {
+    link: 'https://github.com/ds-pack/components',
+    title: '@ds-pack/components',
+    description:
+      'A component library built on Vanilla Extract, React, and TypeScript',
+  },
+  {
+    link: 'https://github.com/ds-pack/use-media',
+    title: '@ds-pack/use-media',
+    description: (
+      <>
+        A React hook for <InlineCode>window.matchMedia</InlineCode> that is SSR
+        safe.
+      </>
+    ),
+  },
+  {
+    link: 'https://github.com/ds-pack/use-refs',
+    title: '@ds-pack/use-refs',
+    description: 'Helpers and utilities for working with refs in React',
+  },
+  {
+    link: 'https://github.com/ds-pack/tapable',
+    title: '@ds-pack/tapable',
+    description: 'A React hook for creating accessible clickable primitives',
+  },
+  {
+    link: 'https://github.com/ds-pack/babel-plugin-docs',
+    title: '@ds-pack/babel-plugin-docs',
+    description:
+      'A collection of babel utilities (plugins, visitors) for transforming code related to design systems.',
+  },
+  {
+    link: 'https://github.com/hamlim/notedo',
+    title: 'Notedo',
+    description: 'A note and todo list web application using plain text.',
+  },
+]
 
 export default function Projects() {
   return (
     <Box>
-      <Heading variant="lead" is="h1" className="mb-4">
+      <Heading is="h1" className="mb-4">
         Projects
       </Heading>
       <Text>
@@ -23,7 +108,6 @@ export default function Projects() {
       <Text>
         You can find all of my open source projects on{' '}
         <Link
-          is="a"
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/hamlim"
@@ -34,160 +118,23 @@ export default function Projects() {
         .
       </Text>
       <Box className="my-5">
-        <List variant="unordered" is="ul">
-          <ListItem>
-            <Link
-              is="a"
-              href="https://github.com/hamlim/milliform"
-              target="_blank"
-              rel="noopener noreferrer"
+        <List is="ul">
+          {projects.map((project) => (
+            <ListItem
+              key={project.link}
+              className="[&:not(:first-of-type)]:mt-3"
             >
-              Milliform
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A super basic React.js form library!
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/hamlim/clue"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Clue Notes
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A quick and dirty web app to keep track of your notes and
-            assumptions while playing the board game Clue!
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/hamlim/simple-cache"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Simple Cache
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A minimal, React cache implementation for both client and server
-            components!
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/ds-pack/simple-props"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Simple Props
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A minimal, CSS variable backed style-prop library
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/hamlim/inline-mdx.macro"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              inline-mdx.macro
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A babel macro for converting inline{' '}
-            <Link is="a" href="https://mdxjs.com">
-              MDX
-            </Link>{' '}
-            in JavaScript files.
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/hamlim/projects/tree/master/packages/reroute-core"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Reroute
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A React router package built for Suspense using hooks
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/ds-pack/components"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @ds-pack/components
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A component library built on Vanilla Extract, React, and Typescript.
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/ds-pack/use-media"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @ds-pack/use-media
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A React hook for{' '}
-            <InlineCode size="small">window.matchMedia</InlineCode> that is SSR
-            safe.
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/ds-pack/use-refs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @ds-pack/use-refs
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            Helpers and utilities for working with refs in React
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/ds-pack/tapable"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @ds-pack/tapable
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A React hook for creating accessible clickable primatives!
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/ds-pack/babel-plugin-docs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @ds-pack/babel-plugin-docs
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A collection of babel utilities (plugins, visitors) for transforming
-            code related to design systems.
-          </ListItem>
-          <ListItem className="mt-3">
-            <Link
-              is="a"
-              href="https://github.com/hamlim/notedo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Notedo
-              <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
-            </Link>{' '}
-            A note and todo list web application using plain text.
-          </ListItem>
+              <Link
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.title}
+                <VisuallyHidden is="span">(opens in new window)</VisuallyHidden>
+              </Link>{' '}
+              {project.description}
+            </ListItem>
+          ))}
         </List>
       </Box>
     </Box>

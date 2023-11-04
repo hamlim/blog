@@ -1,35 +1,22 @@
-import {
-  Heading,
-  Box,
-  Text,
-  Link as ExternalLink,
-  Stack,
-} from '@ds-pack/daisyui'
-import NextLink from 'next/link'
-
-function Link(props) {
-  return <ExternalLink is={NextLink} {...props} />
-}
+import { Heading } from '@recipes/heading'
+import { Box } from '@recipes/box'
+import { Text } from '@recipes/text'
+import { BaseLink, Link } from '@recipes/link'
+import { Stack } from '@recipes/stack'
 
 export default function Tools() {
   return (
     <Box>
-      <Heading variant="lead" is="h1">
-        Tools
-      </Heading>
+      <Heading is="h1">Tools</Heading>
       <Text>
         I use a variety of hardware and software each and everyday, so I figured
         I'd try to catalog those tools here, and I'm also going to try and keep
         this up to date every so often and see how it changes over time.
       </Text>
       <Box className="my-5">
-        <Heading is="h2" variant="h2">
-          December, 2022
-        </Heading>
-        <Stack gap="2">
-          <Heading is="h4" variant="subhead">
-            Hardware
-          </Heading>
+        <Heading is="h2">December, 2022</Heading>
+        <Stack gap={2}>
+          <Heading is="h4">Hardware</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -74,9 +61,7 @@ export default function Tools() {
               Kindle!
             </Text>
           </Box>
-          <Heading is="h4" variant="subhead">
-            Software
-          </Heading>
+          <Heading is="h4">Software</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -123,17 +108,11 @@ export default function Tools() {
         </Stack>
       </Box>
       <hr />
-      <Heading is="h2" variant="h2">
-        Old Updates:
-      </Heading>
+      <Heading is="h2">Old Updates:</Heading>
       <Box className="my-5">
-        <Heading is="h2" variant="h2">
-          August, 2022
-        </Heading>
-        <Stack gap="2">
-          <Heading is="h4" variant="subhead">
-            Hardware
-          </Heading>
+        <Heading is="h2">August, 2022</Heading>
+        <Stack gap={2}>
+          <Heading is="h4">Hardware</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -180,9 +159,7 @@ export default function Tools() {
               Kindle!
             </Text>
           </Box>
-          <Heading is="h4" variant="subhead">
-            Software
-          </Heading>
+          <Heading is="h4">Software</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -229,13 +206,9 @@ export default function Tools() {
         </Stack>
       </Box>
       <Box className="my-5">
-        <Heading is="h3" variant="h3">
-          January, 2022
-        </Heading>
-        <Stack gap="2">
-          <Heading is="h4" variant="subhead">
-            Hardware
-          </Heading>
+        <Heading is="h3">January, 2022</Heading>
+        <Stack gap={2}>
+          <Heading is="h4">Hardware</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -284,9 +257,7 @@ export default function Tools() {
               amazing piece of hardware!
             </Text>
           </Box>
-          <Heading is="h4" variant="subhead">
-            Software
-          </Heading>
+          <Heading is="h4">Software</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -318,13 +289,9 @@ export default function Tools() {
         </Stack>
       </Box>
       <Box className="my-5">
-        <Heading is="h3" variant="h2">
-          August, 2021
-        </Heading>
-        <Stack gap="2">
-          <Heading is="h4" variant="subhead">
-            Hardware
-          </Heading>
+        <Heading is="h3">August, 2021</Heading>
+        <Stack gap={2}>
+          <Heading is="h4">Hardware</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -373,9 +340,7 @@ export default function Tools() {
               temporary writing station with Obsidian and a syncing service.
             </Text>
           </Box>
-          <Heading is="h4" variant="subhead">
-            Software
-          </Heading>
+          <Heading is="h4">Software</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -388,18 +353,18 @@ export default function Tools() {
             <Text>
               This is one of the larger notable changes from my previous update
               here in{' '}
-              <ExternalLink is="a" href="#november-2020">
+              <BaseLink is="a" href="#november-2020">
                 November
-              </ExternalLink>{' '}
+              </BaseLink>{' '}
               - I have switched fully over to{' '}
-              <ExternalLink
+              <BaseLink
                 is="a"
                 rel="noopener"
                 target="_blank"
                 href="https://obsidian.md/"
               >
                 Obsidian
-              </ExternalLink>{' '}
+              </BaseLink>{' '}
               from Roam. In between I used Google Keep for a bit, but found that
               I really wanted more markdown support within my note taking
               application. I should write a bit about my Obsidian setup, but for
@@ -424,13 +389,11 @@ export default function Tools() {
         </Stack>
       </Box>
       <Box className="my-5">
-        <Heading is="h3" variant="h2" id="november-2020">
+        <Heading is="h3" id="november-2020">
           November, 2020
         </Heading>
-        <Stack gap="2">
-          <Heading is="h4" variant="subhead">
-            Hardware
-          </Heading>
+        <Stack gap={2}>
+          <Heading is="h4">Hardware</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -469,9 +432,7 @@ export default function Tools() {
               it dropped and I've loved it since.
             </Text>
           </Box>
-          <Heading is="h4" variant="subhead">
-            Software
-          </Heading>
+          <Heading is="h4">Software</Heading>
           <Box>
             <Text className="mb-2">
               <Text is="strong" className="font-bold">
@@ -483,14 +444,14 @@ export default function Tools() {
             </Text>
             <Text>
               For some reason I happened to sign up for{' '}
-              <ExternalLink
+              <BaseLink
                 is="a"
                 target="_blank"
                 rel="noopener"
                 href="https://roamresearch.com"
               >
                 Roam
-              </ExternalLink>{' '}
+              </BaseLink>{' '}
               around March or so of this year when it was briefly free and open
               for anyone to sign up, and used it off and on until about mid to
               late July. I've since adopted it as a go to daily use piece of
@@ -517,14 +478,14 @@ export default function Tools() {
           <hr />
           <Text>
             Interested in any particular part of setup? Feel free to ask me on{' '}
-            <ExternalLink
+            <BaseLink
               is="a"
               rel="noopener"
               target="_blank"
               href="https://twitter.com/immatthamlin"
             >
               Twitter
-            </ExternalLink>{' '}
+            </BaseLink>{' '}
             and I'll add it here!
           </Text>
         </Stack>

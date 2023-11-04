@@ -1,12 +1,14 @@
 import * as runtime from 'react/jsx-runtime'
 import { evaluate } from '@mdx-js/mdx'
-import * as defaultComponents from '@lib/MDXComponents'
+import * as defaultComponents from '@recipes/mdx-components'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 import { fetchManifest } from '@lib/fetch-manifest'
-import { Heading, Box, Stack } from '@ds-pack/daisyui'
+import { Heading } from '@recipes/heading'
+import { Box } from '@recipes/box'
+import { Link } from '@recipes/link'
 import { PostWrapper } from '@lib/PostWrapper'
-import { LocalLink } from '@lib/LocalLink'
+import { Stack } from '@recipes/stack'
 
 let { Time, Mentions } = defaultComponents
 
@@ -49,6 +51,7 @@ async function getPost({ title: titleSlug }: Params) {
   return {
     meta: { manifest },
     content: MDXContent({
+      // @ts-expect-error
       components: defaultComponents,
     }),
     post: postData,
@@ -62,30 +65,28 @@ export default async function Blog({ params: { title } }) {
 
   return (
     <Box className="prose lg:prose-xl">
-      <Heading variant="lead" is="h1">
-        {post.title}
-      </Heading>
-      {post.date ? (
-        <>
-          <Box is="span" className="text-slate-500 italic">
-            Published <Time>{post.date}</Time>
-          </Box>{' '}
-        </>
-      ) : null}
-      <Mentions />
+      <Stack gap={4} className="mb-4">
+        <Heading is="h1">{post.title}</Heading>
+        {post.date ? (
+          <>
+            <Box is="span" className="text-slate-500 italic">
+              Published <Time>{post.date}</Time>
+            </Box>{' '}
+          </>
+        ) : null}
+        <Mentions />
+      </Stack>
       <PostWrapper>{content}</PostWrapper>
       {post.tags ? (
-        <Box>
-          <Heading variant="subhead" is="h4">
-            Tags:
-          </Heading>
-          <Stack inline gap="4">
+        <Box className="mt-4">
+          <Heading is="h4">Tags:</Heading>
+          <Box className="flex justify-start gap-4 mt-4">
             {post.tags.map((tag: string) => (
               <Box key={tag} is="span" className="inline-flex italic">
-                <LocalLink href={`/posts/tags/${tag}`}>{tag}</LocalLink>
+                <Link href={`/posts/tags/${tag}`}>{tag}</Link>
               </Box>
             ))}
-          </Stack>
+          </Box>
         </Box>
       ) : null}
     </Box>

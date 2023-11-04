@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { Link } from '@ds-pack/daisyui'
+import { BaseLink } from '@recipes/link'
 
 export default function Mentions() {
   let [url, setUrl] = useState('')
@@ -8,13 +8,12 @@ export default function Mentions() {
     setUrl(window.location.href)
   }, [])
   return (
-    <Link
-      is="a"
+    <BaseLink
       target="_blank"
       rel="noopener"
       href={`https://twitter.com/search?q=${encodeURIComponent(url)}`}
     >
       See discussion on Twitter
-    </Link>
+    </BaseLink>
   )
 }

@@ -15,9 +15,9 @@ The shift from Vanilla Extract to Tailwind was similar, but more of a developer
 experience reason rather than for user experience. The short gist is that using
 Vanilla Extract with a Next.js application is incredibly difficult to setup
 "correctly". Yes there is a Next.js "plugin", but that doesn't work at all with
-React Server Components within Next.js<Ref id="1">1</Ref>. For Tailwind however,
-all I need to get it working is a `tailwind.config.js` file and Next does all
-the hard work for me!
+React Server Components within Next.js<FootnoteRef id="1" />. For Tailwind
+however, all I need to get it working is a `tailwind.config.js` file and Next
+does all the hard work for me!
 
 ## Refined Thoughts:
 
