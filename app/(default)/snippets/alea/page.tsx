@@ -98,7 +98,7 @@ function Mash() {
 export default Alea;`
 
 import { Heading, Box, Link } from '@ds-pack/daisyui'
-import CodeBlock from '@lib/CodeBlock'
+import { CodeBlock } from '@recipes/code-block'
 import NextLink from 'next/link'
 
 function LocalLink(props) {

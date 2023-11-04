@@ -1,32 +1,41 @@
-import { Box } from '@recipes/box'
-import { Code } from 'bright'
-import { getThemeCookie } from './theme-cookie'
-import { themeToCodeTheme } from './themes'
-import LiveCode from './LiveCode'
+import { Code } from "bright";
+import type { BrightProps, Extension } from "bright";
+import { collapse } from "./extensions/collapse-extension";
+import { CopyCode } from "./extensions/copy-code";
+import { getThemeCookie } from '../lib/theme-cookie'
+import { themeToCodeTheme } from '../lib/themes'
+import LiveCode from '../lib/LiveCode'
 
 Code.theme = {
-  dark: 'github-dark-dimmed',
-  light: 'github-light',
+  dark: "github-dark-dimmed",
+  light: "github-light",
+};
+
+interface Props extends Partial<BrightProps> {
+  children: string;
 }
+
+let defaultExtensions: Array<Extension> = [collapse];
 
 let metaComments = {
   live: `// ==live==`,
   highlight: `// ==highlight==`,
 }
 
-export default async function CodeBlock({ children, className }) {
+
+export async function CodeBlock(props: Props) {
   let theme = getThemeCookie()
 
   let codeTheme = themeToCodeTheme.light.includes(theme) ? 'light' : 'dark'
 
-  let lang = className ? className.split('-')[1] : 'typescript'
+  let lang = props.className ? props.className.split('-')[1] : 'typescript'
   if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
     lang = 'typescript'
   } else if (lang === 'sh') {
     lang = 'bash'
   }
 
-  let codeToHighlight = children
+  let codeToHighlight = props.children
 
   if (codeToHighlight.startsWith(metaComments.live)) {
     let [meta, ...rest] = codeToHighlight.split('\n')
@@ -66,9 +75,16 @@ export default async function CodeBlock({ children, className }) {
     .slice(0, -1)
 
   return (
-    <Box data-theme={codeTheme}>
+    <div className="relative overflow-scroll" data-theme={codeTheme}>
       {/* @ts-expect-error Server Component */}
-      <Code lang={lang}>{codeToHighlight}</Code>
-    </Box>
-  )
+      <Code
+        extensions={defaultExtensions}
+        lineNumbers
+        lang={lang}
+        {...props}
+        style={{ margin: 0, ...props.style }}
+      >{codeToHighlight}</Code>
+      <CopyCode code={props.children} />
+    </div>
+  );
 }

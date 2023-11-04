@@ -1,6 +1,6 @@
 import { Heading, Box, List, ListItem, Text } from '@ds-pack/daisyui'
 import { InlineCode } from '@lib/MDXComponents'
-import CodeBlock from '@lib/CodeBlock'
+import { CodeBlock } from '@recipes/code-block'
 
 export default function Snippets() {
   return (
