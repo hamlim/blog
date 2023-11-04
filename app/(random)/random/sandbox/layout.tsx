@@ -1,6 +1,7 @@
-import { Box } from '@ds-pack/daisyui'
-import { Container } from '@lib/Container'
-import { LocalLink } from '@lib/LocalLink'
+import { Box } from '@recipes/box'
+// import { Container } from '@lib/Container'
+import { Container } from '@recipes/container'
+import { Link } from '@recipes/link'
 
 export default function Layout({ children }) {
   return (
@@ -8,15 +9,15 @@ export default function Layout({ children }) {
       <header className="flex-shrink bg-base-200">
         <Container is="nav">
           <Box className="flex items-center mb-2">
-            <LocalLink href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               🏡 Home
-            </LocalLink>
+            </Link>
           </Box>
           <Box>
-            <LocalLink href="/posts">📝 Blog</LocalLink>{' '}
-            <LocalLink href="/projects">🧪 Projects</LocalLink>{' '}
-            <LocalLink href="/bookshelf">📚 Bookshelf</LocalLink>{' '}
-            <LocalLink href="/social">🗣 Social</LocalLink>
+            <Link href="/posts">📝 Blog</Link>{' '}
+            <Link href="/projects">🧪 Projects</Link>{' '}
+            <Link href="/bookshelf">📚 Bookshelf</Link>{' '}
+            <Link href="/social">🗣 Social</Link>
           </Box>
         </Container>
       </header>

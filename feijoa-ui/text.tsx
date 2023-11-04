@@ -1,9 +1,10 @@
+import { type BoxProps, Box } from '@recipes/box'
 import { cn } from '@recipes/cn'
 
-interface Props extends React.HTMLProps<HTMLParagraphElement> {
+interface Props extends BoxProps {
   className?: string
 }
 
 export function Text(props: Props) {
-  return <p {...props} className={cn('leading-7', props.className)} />
+  return <Box is="p" {...props} className={cn('leading-7', props.className)} />
 }

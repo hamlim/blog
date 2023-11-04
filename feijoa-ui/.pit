@@ -30,7 +30,7 @@
     },
     "box": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",
-      "edited": false
+      "edited": true
     },
     "calendar": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",
@@ -150,7 +150,7 @@
     },
     "container": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",
-      "edited": false
+      "edited": true
     },
     "textarea": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",
@@ -214,7 +214,7 @@
     },
     "text": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",
-      "edited": false
+      "edited": true
     },
     "select": {
       "version": "607f69533fd60f39e0a5b04c5bb786394dbc6299",

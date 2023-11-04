@@ -1,9 +1,10 @@
 import { ComponentType } from 'react'
 
-interface Props extends React.HTMLProps<HTMLElement> {
+// @ts-expect-error
+export interface BoxProps extends React.HTMLProps<HTMLElement> {
   is?: string | ComponentType<any> | undefined
 }
 
-export function Box({ is: El = 'div', ...props }: Props) {
+export function Box({ is: El = 'div', ...props }: BoxProps) {
   return <El {...props} />
 }
