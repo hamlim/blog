@@ -1,9 +1,9 @@
 import '@styles/globals.css'
 import type { Metadata, Viewport } from 'next'
-// import { getThemeCookie } from '@lib/theme-cookie'
+import { cookies } from 'next/headers'
 
 export default function Layout({ children }) {
-  // let theme = getThemeCookie()
+  let cookieJar = cookies()
   return (
     <html lang="en-US">
       <body className="h-screen flex flex-col">
