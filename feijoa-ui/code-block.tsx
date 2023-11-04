@@ -15,7 +15,8 @@ interface Props extends Partial<BrightProps> {
   children: {
     props: {
       className?: string;
-      children?: string
+      children?: string;
+      style?: Record<string, unknown>
     }
   }
 }
