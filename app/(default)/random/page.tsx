@@ -1,4 +1,3 @@
-// import { Heading, Box, List, ListItem } from '@ds-pack/daisyui'
 import { Heading } from '@recipes/heading'
 import { Box } from '@recipes/box'
 import { List, ListItem } from '@recipes/list'

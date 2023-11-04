@@ -1,13 +1,3 @@
-// import {
-//   Heading,
-//   Link,
-//   Box,
-//   Text,
-//   List,
-//   ListItem,
-//   Stack,
-//   Blockquote,
-// } from '@ds-pack/daisyui'
 import { Heading } from '@recipes/heading'
 import { BaseLink as Link } from '@recipes/link'
 import { Box } from '@recipes/box'

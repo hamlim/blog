@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 import { fetchManifest } from '@lib/fetch-manifest'
 import { Heading } from '@recipes/heading'
-import {Box} from '@recipes/box'
+import { Box } from '@recipes/box'
 import { Link } from '@recipes/link'
 import { PostWrapper } from '@lib/PostWrapper'
 
@@ -64,9 +64,7 @@ export default async function Blog({ params: { title } }) {
 
   return (
     <Box className="prose lg:prose-xl">
-      <Heading is="h1">
-        {post.title}
-      </Heading>
+      <Heading is="h1">{post.title}</Heading>
       {post.date ? (
         <>
           <Box is="span" className="text-slate-500 italic">
@@ -78,9 +76,7 @@ export default async function Blog({ params: { title } }) {
       <PostWrapper>{content}</PostWrapper>
       {post.tags ? (
         <Box>
-          <Heading is="h4">
-            Tags:
-          </Heading>
+          <Heading is="h4">Tags:</Heading>
           <Box className="flex justify-start">
             {post.tags.map((tag: string) => (
               <Box key={tag} is="span" className="inline-flex italic">

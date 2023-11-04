@@ -21,7 +21,7 @@ To fix the issue, create a new `types.d.ts` file in your project, and paste in
 the following content:
 
 ```ts
-import * as React from "react";
+import * as React from 'react'
 
 declare global {
   namespace JSX {
@@ -29,7 +29,7 @@ declare global {
       marquee: React.DetailedHTMLProps<
         React.HTMLAttributes<HTMLElement>,
         HTMLElement
-      >;
+      >
     }
   }
 }

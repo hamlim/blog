@@ -21,7 +21,7 @@ export function Spacer() {
   return <Box is="marquee" className="mb-4" />
 }
 
-export {default as Mentions} from '../lib/Mentions'
+export { default as Mentions } from '../lib/Mentions'
 
 export function a(props: Props<typeof BaseLink>) {
   return <BaseLink {...props} />

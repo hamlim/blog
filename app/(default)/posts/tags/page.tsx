@@ -37,15 +37,10 @@ export default async function Tags() {
 
   return (
     <Box>
-      <Heading is="h1">
-        Blog tags:
-      </Heading>
+      <Heading is="h1">Blog tags:</Heading>
       <Box>
         {tags.map((t) => (
-          <BaseLink
-            className="inline-flex mr-2"
-            href={`#${tagToID(t)}`}
-          >
+          <BaseLink className="inline-flex mr-2" href={`#${tagToID(t)}`}>
             {t}
           </BaseLink>
         ))}

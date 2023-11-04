@@ -1,5 +1,5 @@
 'use client'
-// import { Tapable } from '@ds-pack/daisyui'
+
 import { Tapable } from '@recipes/tapable'
 
 export default function ColorSwatch({ color, ...props }) {

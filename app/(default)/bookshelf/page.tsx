@@ -1,6 +1,4 @@
-import {
-  VisuallyHidden,
-} from '@ds-pack/daisyui'
+import { VisuallyHidden } from '@ds-pack/daisyui'
 import { Heading } from '@recipes/heading'
 import { BaseLink } from '@recipes/link'
 import { Box } from '@recipes/box'
@@ -12,9 +10,7 @@ export default async function Bookshelf() {
   let { reading, read, toRead } = await fetchBookshelf()
   return (
     <>
-      <Heading is="h1">
-        Bookshelf
-      </Heading>
+      <Heading is="h1">Bookshelf</Heading>
       <Text className="mb-2">
         In the rare time that I find not in front of some kind of display, I
         like to read books! Here is a short collection of books I've recently
@@ -32,7 +28,7 @@ export default async function Bookshelf() {
         </BaseLink>{' '}
         if you have book recommendations!
       </Text>
-      <Heading className="my-5"  is="h3">
+      <Heading className="my-5" is="h3">
         What I'm Currently Reading:
       </Heading>
       <Box className="my-5">
@@ -40,7 +36,6 @@ export default async function Bookshelf() {
           {reading.map((book, idx) => (
             <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
               <BaseLink
-                
                 href={book.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -69,7 +64,6 @@ export default async function Bookshelf() {
           {toRead.map((book, idx) => (
             <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
               <BaseLink
-                
                 href={book.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -86,11 +80,10 @@ export default async function Bookshelf() {
         Books I've Recently Read:
       </Heading>
       <Box className="my-5">
-        <List  is="ul">
+        <List is="ul">
           {read.map((book, idx) => (
             <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
               <BaseLink
-                
                 href={book.url}
                 target="_blank"
                 rel="noopener noreferrer"

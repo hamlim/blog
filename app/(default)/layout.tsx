@@ -1,4 +1,3 @@
-// import { Box, Text, TwitterMention, GitHubMention } from '@ds-pack/daisyui'
 import { Box } from '@recipes/box'
 import { Text } from '@recipes/text'
 import { TwitterMention } from '@recipes/twitter-mention'

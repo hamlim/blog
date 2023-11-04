@@ -63,9 +63,7 @@ export default async function Notebook({ params: { slug } }) {
 
   return (
     <Box className="prose lg:prose-xl">
-      <Heading is="h1">
-        {post.title}
-      </Heading>
+      <Heading is="h1">{post.title}</Heading>
       {post.date ? (
         <>
           <Box is="span" className="text-slate-500 italic">
@@ -78,9 +76,7 @@ export default async function Notebook({ params: { slug } }) {
       <PostWrapper>{content}</PostWrapper>
       {post.tags ? (
         <Box className="mt-3">
-          <Heading is="h4">
-            Tags:
-          </Heading>
+          <Heading is="h4">Tags:</Heading>
           <Box className="flex justify-start">
             {post.tags.map((tag: string) => (
               <Box key={tag} is="span" className="inline-flex italic">

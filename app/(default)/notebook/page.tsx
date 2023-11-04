@@ -1,4 +1,3 @@
-
 import { Heading } from '@recipes/heading'
 import { Box } from '@recipes/box'
 import { Text } from '@recipes/text'
@@ -6,7 +5,6 @@ import { Link } from '@recipes/link'
 import { List, ListItem } from '@recipes/list'
 import { fetchManifest } from '@lib/fetch-manifest'
 import { formatNotebookLink } from '@lib/format-post-link'
-
 
 export default async function Notebook() {
   let { notebookEntries } = await fetchManifest()
@@ -24,9 +22,7 @@ export default async function Notebook() {
         <List is="ul">
           {notebookEntries.map((entry, i) => (
             <ListItem key={entry.title} className={i !== 0 ? 'mt-3' : null}>
-              <Link href={formatNotebookLink(entry)}>
-                {entry.title}
-              </Link>
+              <Link href={formatNotebookLink(entry)}>{entry.title}</Link>
             </ListItem>
           ))}
         </List>
