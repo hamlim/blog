@@ -12,7 +12,12 @@ Code.theme = {
 }
 
 interface Props extends Partial<BrightProps> {
-  children: string
+  children: {
+    props: {
+      className?: string;
+      children?: string
+    }
+  }
 }
 
 let defaultExtensions: Array<Extension> = [collapse]
@@ -22,7 +27,9 @@ let metaComments = {
   highlight: `// ==highlight==`,
 }
 
-export async function CodeBlock(props: Props) {
+export async function CodeBlock({children: {props}}: Props) {
+  console.log(props)
+  
   let theme = getThemeCookie()
 
   let codeTheme = themeToCodeTheme.light.includes(theme) ? 'light' : 'dark'

@@ -8,6 +8,7 @@ import { Heading } from '@recipes/heading'
 import { Box } from '@recipes/box'
 import { Link } from '@recipes/link'
 import { PostWrapper } from '@lib/PostWrapper'
+import {Stack} from '@recipes/stack'
 
 let { Time, Mentions } = defaultComponents
 
@@ -64,6 +65,7 @@ export default async function Blog({ params: { title } }) {
 
   return (
     <Box className="prose lg:prose-xl">
+      <Stack gap={4} className="mb-4">
       <Heading is="h1">{post.title}</Heading>
       {post.date ? (
         <>
@@ -73,11 +75,12 @@ export default async function Blog({ params: { title } }) {
         </>
       ) : null}
       <Mentions />
+      </Stack>
       <PostWrapper>{content}</PostWrapper>
       {post.tags ? (
-        <Box>
+        <Box className="mt-4">
           <Heading is="h4">Tags:</Heading>
-          <Box className="flex justify-start">
+          <Box className="flex justify-start gap-4 mt-4">
             {post.tags.map((tag: string) => (
               <Box key={tag} is="span" className="inline-flex italic">
                 <Link href={`/posts/tags/${tag}`}>{tag}</Link>

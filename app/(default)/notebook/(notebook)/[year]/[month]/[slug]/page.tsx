@@ -7,8 +7,9 @@ import { fetchManifest } from '@lib/fetch-manifest'
 import { Heading } from '@recipes/heading'
 import { Box } from '@recipes/box'
 import { PostWrapper } from '@lib/PostWrapper'
+import {Stack} from '@recipes/stack'
 
-let { Time, Mentions, Spacer } = defaultComponents
+let { Time, Mentions } = defaultComponents
 
 interface Params {
   slug: string
@@ -63,6 +64,7 @@ export default async function Notebook({ params: { slug } }) {
 
   return (
     <Box className="prose lg:prose-xl">
+      <Stack gap={4}>
       <Heading is="h1">{post.title}</Heading>
       {post.date ? (
         <>
@@ -72,12 +74,12 @@ export default async function Notebook({ params: { slug } }) {
         </>
       ) : null}
       <Mentions />
-      <Spacer />
+      </Stack>
       <PostWrapper>{content}</PostWrapper>
       {post.tags ? (
-        <Box className="mt-3">
+        <Box className="mt-4">
           <Heading is="h4">Tags:</Heading>
-          <Box className="flex justify-start">
+          <Box className="flex justify-start gap-4 mt-4">
             {post.tags.map((tag: string) => (
               <Box key={tag} is="span" className="inline-flex italic">
                 {tag}
