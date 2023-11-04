@@ -1,7 +1,7 @@
-import { BaseLink } from "@recipes/link";
+import { BaseLink } from '@recipes/link'
 
 interface Props {
-  children: string;
+  children: string
 }
 
 export function TwitterMention(props: Props) {
@@ -12,5 +12,5 @@ export function TwitterMention(props: Props) {
       rel="nooperner noreferrer"
       {...props}
     />
-  );
+  )
 }

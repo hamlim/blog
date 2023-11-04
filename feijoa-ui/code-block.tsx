@@ -1,27 +1,26 @@
-import { Code } from "bright";
-import type { BrightProps, Extension } from "bright";
-import { collapse } from "./extensions/collapse-extension";
-import { CopyCode } from "./extensions/copy-code";
+import { Code } from 'bright'
+import type { BrightProps, Extension } from 'bright'
+import { collapse } from './extensions/collapse-extension'
+import { CopyCode } from './extensions/copy-code'
 import { getThemeCookie } from '../lib/theme-cookie'
 import { themeToCodeTheme } from '../lib/themes'
 import LiveCode from '../lib/LiveCode'
 
 Code.theme = {
-  dark: "github-dark-dimmed",
-  light: "github-light",
-};
-
-interface Props extends Partial<BrightProps> {
-  children: string;
+  dark: 'github-dark-dimmed',
+  light: 'github-light',
 }
 
-let defaultExtensions: Array<Extension> = [collapse];
+interface Props extends Partial<BrightProps> {
+  children: string
+}
+
+let defaultExtensions: Array<Extension> = [collapse]
 
 let metaComments = {
   live: `// ==live==`,
   highlight: `// ==highlight==`,
 }
-
 
 export async function CodeBlock(props: Props) {
   let theme = getThemeCookie()
@@ -83,8 +82,10 @@ export async function CodeBlock(props: Props) {
         lang={lang}
         {...props}
         style={{ margin: 0, ...props.style }}
-      >{codeToHighlight}</Code>
+      >
+        {codeToHighlight}
+      </Code>
       <CopyCode code={props.children} />
     </div>
-  );
+  )
 }

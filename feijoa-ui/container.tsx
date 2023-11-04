@@ -1,9 +1,9 @@
-import { cn } from "@recipes/cn";
+import { cn } from '@recipes/cn'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
 export function Container(props: Props) {
-  return <div {...props} className={cn("container", props.className)} />;
+  return <div {...props} className={cn('container', props.className)} />
 }

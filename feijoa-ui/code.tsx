@@ -1,8 +1,8 @@
-import { Box } from "@recipes/box";
-import { cn } from "@recipes/cn";
+import { Box } from '@recipes/box'
+import { cn } from '@recipes/cn'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
 export function Code(props: Props) {
@@ -11,9 +11,9 @@ export function Code(props: Props) {
       is="code"
       {...props}
       className={cn(
-        "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
+        'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',
         props.className,
       )}
     />
-  );
+  )
 }

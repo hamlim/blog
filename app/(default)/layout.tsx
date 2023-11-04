@@ -1,27 +1,32 @@
-import { Box, Text, TwitterMention, GitHubMention } from '@ds-pack/daisyui'
+// import { Box, Text, TwitterMention, GitHubMention } from '@ds-pack/daisyui'
+import { Box } from '@recipes/box'
+import { Text } from '@recipes/text'
+import { TwitterMention } from '@recipes/twitter-mention'
+import { GitHubMention } from '@recipes/github-mention'
+import { Link } from '@recipes/link'
 import { Container } from '@lib/Container'
-import { LocalLink } from '@lib/LocalLink'
-import ThemeSelect from '@lib/ThemeSelect'
-import { getThemeCookie } from '@lib/theme-cookie'
+// import { LocalLink } from '@lib/LocalLink'
+// import ThemeSelect from '@lib/ThemeSelect'
+// import { getThemeCookie } from '@lib/theme-cookie'
 
 export default function DefaultLayout({ children }) {
-  let theme = getThemeCookie()
+  // let theme = getThemeCookie()
   return (
     <>
       <header className="flex-shrink bg-base-200">
         <Container is="nav">
           <Box className="flex items-center mb-2">
-            <LocalLink href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               🏡 Home
-            </LocalLink>
+            </Link>
             <Box id="breadcrumbs-portal" />
           </Box>
           <Box>
-            <LocalLink href="/posts">📝 Blog</LocalLink>{' '}
-            <LocalLink href="/resume">💼 Resume</LocalLink>{' '}
-            <LocalLink href="/projects">🧪 Projects</LocalLink>{' '}
-            <LocalLink href="/bookshelf">📚 Bookshelf</LocalLink>{' '}
-            <LocalLink href="/social">🗣 Social</LocalLink>
+            <Link href="/posts">📝 Blog</Link>{' '}
+            <Link href="/resume">💼 Resume</Link>{' '}
+            <Link href="/projects">🧪 Projects</Link>{' '}
+            <Link href="/bookshelf">📚 Bookshelf</Link>{' '}
+            <Link href="/social">🗣 Social</Link>
           </Box>
         </Container>
       </header>
@@ -36,7 +41,7 @@ export default function DefaultLayout({ children }) {
                 <GitHubMention>hamlim</GitHubMention>
               </Text>
             </Box>
-            <ThemeSelect initialTheme={theme} />
+            {/* <ThemeSelect initialTheme={theme} /> */}
           </Box>
         </Container>
       </footer>

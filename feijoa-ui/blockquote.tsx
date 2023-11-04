@@ -1,8 +1,8 @@
-import { Box } from "@recipes/box";
-import { cn } from "@recipes/cn";
+import { Box } from '@recipes/box'
+import { cn } from '@recipes/cn'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
 export function Blockquote(props: Props) {
@@ -10,7 +10,7 @@ export function Blockquote(props: Props) {
     <Box
       is="blockquote"
       {...props}
-      className={cn("mt-6 border-l-2 pl-6 italic", props.className)}
+      className={cn('mt-6 border-l-2 pl-6 italic', props.className)}
     />
-  );
+  )
 }

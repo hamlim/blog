@@ -1,12 +1,20 @@
-"use client";
+'use client'
 
-import { ChevronDown, ChevronRight } from "lucide-react";
-import { Children, ReactNode, useState } from "react";
+import { ChevronDown, ChevronRight } from 'lucide-react'
+import { Children, ReactNode, useState } from 'react'
 
-export function CollapseAnnotation({ children, query, color }: { children: ReactNode; query?: string; color: string }) {
-  let firstLine = Children.toArray(children)[0];
-  let [isOpen, setIsOpen] = useState(query !== "close");
-  let Icon = isOpen ? ChevronDown : ChevronRight;
+export function CollapseAnnotation({
+  children,
+  query,
+  color,
+}: {
+  children: ReactNode
+  query?: string
+  color: string
+}) {
+  let firstLine = Children.toArray(children)[0]
+  let [isOpen, setIsOpen] = useState(query !== 'close')
+  let Icon = isOpen ? ChevronDown : ChevronRight
   return (
     <div className="relative">
       <button
@@ -22,5 +30,5 @@ export function CollapseAnnotation({ children, query, color }: { children: React
       </button>
       {isOpen ? children : <div>{firstLine}</div>}
     </div>
-  );
+  )
 }

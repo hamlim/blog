@@ -1,11 +1,11 @@
 import '@styles/globals.css'
 import type { Metadata, Viewport } from 'next'
-import { getThemeCookie } from '@lib/theme-cookie'
+// import { getThemeCookie } from '@lib/theme-cookie'
 
 export default function Layout({ children }) {
-  let theme = getThemeCookie()
+  // let theme = getThemeCookie()
   return (
-    <html data-theme={theme} lang="en-US">
+    <html lang="en-US">
       <body className="h-screen flex flex-col">
         <main className="flex grow flex-col min-h-screen">{children}</main>
       </body>
@@ -69,11 +69,11 @@ export const metadata: Metadata = {
   },
 }
 
-
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
-  colorScheme: 'light dark'
+  // @TODO - add support for dark mode eventually
+  colorScheme: 'light',
 }
