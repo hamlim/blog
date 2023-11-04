@@ -1,81 +1,61 @@
-import {
-  Heading,
-  Box,
-  Text,
-  List,
-  ListItem,
-  GitHubMention,
-  TwitterMention,
-  Link as ExternalLink,
-} from '@ds-pack/daisyui'
+import { Heading } from '@recipes/heading'
+import { Box } from '@recipes/box'
+import { Text } from '@recipes/text'
+import { List, ListItem } from '@recipes/list'
+import { GitHubMention } from '@recipes/github-mention'
+import { TwitterMention } from '@recipes/twitter-mention'
+import { BaseLink } from '@recipes/link'
 
 export default function Social() {
   return (
     <Box>
-      <Heading variant="lead" is="h1">
-        Social
-      </Heading>
+      <Heading is="h1">Social</Heading>
       <Text>
         I don't use social media much, but you can connect with me on a few
         different platforms:
       </Text>
       <Box className="my-5">
-        <List variant="base" is="ul">
+        <List is="ul">
           <ListItem className="mb-2">
-            <Text is="strong" fontWeight="bold">
+            <Text is="strong" className="font-bold">
               Twitter:{' '}
             </Text>
             <TwitterMention>immatthamlin</TwitterMention>
           </ListItem>
           <ListItem className="mb-2">
-            <Text is="strong" fontWeight="bold">
-              T2:{' '}
-            </Text>
-            <ExternalLink
-              is="a"
-              target="_blank"
-              rel="noopener"
-              href="https://t2.social/matthamlin"
-            >
-              matthamlin
-            </ExternalLink>
-          </ListItem>
-          <ListItem className="mb-2">
-            <Text is="strong" fontWeight="bold">
+            <Text is="strong" className="font-bold">
               Threads:{' '}
             </Text>
-            <ExternalLink
-              is="a"
+            <BaseLink
               target="_blank"
               rel="noopener"
               href="https://www.threads.net/@immatthamlin"
             >
               immatthamlin
-            </ExternalLink>
+            </BaseLink>
           </ListItem>
           <ListItem className="mb-2">
-            <Text is="strong" fontWeight="bold">
+            <Text is="strong" className="font-bold">
               Retro: matthamlin
             </Text>
           </ListItem>
           <ListItem className="mb-2">
-            <Text is="strong" fontWeight="bold">
+            <Text is="strong" className="font-bold">
               GitHub:{' '}
             </Text>
             <GitHubMention>hamlim</GitHubMention>
           </ListItem>
           <ListItem>
-            <Text is="strong" fontWeight="bold">
+            <Text is="strong" className="font-bold">
               LinkedIn:{' '}
             </Text>
-            <ExternalLink
-              is="a"
+            <BaseLink
               target="_blank"
               rel="noopener"
               href="https://www.linkedin.com/in/hamlim/"
             >
               hamlim
-            </ExternalLink>
+            </BaseLink>
           </ListItem>
         </List>
       </Box>

@@ -1,7 +1,7 @@
 import { Box } from '@recipes/box'
 import { cn } from '@recipes/cn'
 
-interface Props {
+interface Props extends React.HTMLProps<HTMLElement> {
   className?: string
 }
 
