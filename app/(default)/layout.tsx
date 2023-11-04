@@ -4,6 +4,7 @@ import { TwitterMention } from '@recipes/twitter-mention'
 import { GitHubMention } from '@recipes/github-mention'
 import { Link } from '@recipes/link'
 import { Container } from '@recipes/container'
+import { ThemeToggle } from '@recipes/theme-toggle'
 
 export default function DefaultLayout({ children }) {
   // let theme = getThemeCookie()
@@ -15,7 +16,6 @@ export default function DefaultLayout({ children }) {
             <Link href="/" className="flex items-center">
               🏡 Home
             </Link>
-            <Box id="breadcrumbs-portal" />
           </Box>
           <Box>
             <Link href="/posts">📝 Blog</Link>{' '}
@@ -37,7 +37,7 @@ export default function DefaultLayout({ children }) {
                 <GitHubMention>hamlim</GitHubMention>
               </Text>
             </Box>
-            {/* <ThemeSelect initialTheme={theme} /> */}
+            <ThemeToggle />
           </Box>
         </Container>
       </footer>

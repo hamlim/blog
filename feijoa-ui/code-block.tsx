@@ -2,9 +2,8 @@ import { Code } from 'bright'
 import type { BrightProps, Extension } from 'bright'
 import { collapse } from './extensions/collapse-extension'
 import { CopyCode } from './extensions/copy-code'
-import { getThemeCookie } from '../lib/theme-cookie'
-import { themeToCodeTheme } from '../lib/themes'
 import LiveCode from '../lib/LiveCode'
+import { ThemeWrapper } from './extensions/theme-wrapper'
 
 Code.theme = {
   dark: 'github-dark-dimmed',
@@ -34,7 +33,7 @@ let metaComments = {
 }
 
 export async function CodeBlock(props: Props) {
-  let code, className
+  let code: string, className: string
   if (typeof props.children === 'string') {
     code = props.children
     className = props.className
@@ -42,11 +41,6 @@ export async function CodeBlock(props: Props) {
     code = props.children.props.children
     className = props.children.props.className
   }
-  console.log(props)
-
-  let theme = getThemeCookie()
-
-  let codeTheme = themeToCodeTheme.light.includes(theme) ? 'light' : 'dark'
 
   let lang = className ? className.split('-')[1] : 'typescript'
   if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
@@ -72,7 +66,7 @@ export async function CodeBlock(props: Props) {
       <LiveCode
         code={rest.join('\n').slice(0, -1)}
         {...metaProps}
-        theme={codeTheme}
+        theme="dark"
       />
     )
   }
@@ -94,7 +88,7 @@ export async function CodeBlock(props: Props) {
     .slice(0, -1)
 
   return (
-    <div className="relative overflow-scroll" data-theme={codeTheme}>
+    <ThemeWrapper className="relative overflow-scroll">
       {/* @ts-expect-error Server Component */}
       <Code
         extensions={defaultExtensions}
@@ -106,6 +100,6 @@ export async function CodeBlock(props: Props) {
         {codeToHighlight}
       </Code>
       <CopyCode code={code} />
-    </div>
+    </ThemeWrapper>
   )
 }
