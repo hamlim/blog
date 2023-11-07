@@ -161,4 +161,4 @@ let newManifest = {
 
 fs.writeFileSync('./public/feed.json', JSON.stringify(newManifest))
 
-execSync(`bun format`)
+execSync(`bun run format`)

@@ -1370,6 +1370,18 @@
       "year": "2023",
       "tags": ["Development", "Web Development", "git"],
       "status": "draft"
+    },
+    {
+      "id": 108,
+      "title": "Teams and Caterpillar Tracks",
+      "path": "/posts/2023/november/teams-and-caterpillar-tracks.md",
+      "slug": "teams-and-caterpillar-tracks",
+      "date": "November 7th, 2023",
+      "time": "4:38:42 PM",
+      "month": "november",
+      "year": "2023",
+      "tags": ["Teams"],
+      "status": "public"
     }
   ]
 }
