@@ -8,7 +8,7 @@ automatically because of the marquee element.
 
 Unfortunately, TypeScript and React's types have really leaned into the whole
 "deprecated" thing, so you get these red underlines and also sometimes build
-fails<Ref id="1" />.
+fails<FootnoteRef id="1" />.
 
 Fortunately, there's a fix to resolve this pain, unfortunately it's a bit
 archaic so I figured I'd put up this blog post to make it easier to find in the

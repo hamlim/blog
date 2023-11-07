@@ -1,4 +1,4 @@
-import { Box } from '@ds-pack/daisyui'
+import { Box } from '@recipes/box'
 
 export function PostWrapper(props) {
   return <Box {...props} className="PostWrapper" />

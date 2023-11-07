@@ -1,11 +1,10 @@
-import { Heading, Text, Box, List, ListItem, Link } from '@ds-pack/daisyui'
-import NextLink from 'next/link'
+import { Heading } from '@recipes/heading'
+import { Text } from '@recipes/text'
+import { List, ListItem } from '@recipes/list'
+import { Box } from '@recipes/box'
+import { Link } from '@recipes/link'
 import { fetchManifest } from '@lib/fetch-manifest'
 import { Suspense } from 'react'
-
-function LocalLink({ href, ...props }) {
-  return <Link is={NextLink} href={href} {...props} />
-}
 
 async function getTopPosts() {
   let manifest = await fetchManifest()
@@ -22,7 +21,7 @@ function LoadingTopPosts() {
     <Box className="my-4 h-[152px]">
       <Text>Loading top posts...</Text>
       <Text>
-        <LocalLink href="/posts">See all posts</LocalLink>
+        <Link href="/posts">See all posts</Link>
       </Text>
     </Box>
   )
@@ -33,12 +32,12 @@ async function TopPosts() {
 
   return (
     <Box className="my-4">
-      <List variant="base" is="ol">
+      <List is="ol">
         {topPosts.map((post, i) => (
           <ListItem key={post.title} className={i !== 0 ? 'mt-2' : ''}>
-            <LocalLink href={`/${post.year}/${post.month}/${post.slug}`}>
+            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
               {post.title}
-            </LocalLink>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -49,22 +48,21 @@ async function TopPosts() {
 export default async function Page() {
   return (
     <Box>
-      <Heading variant="lead" is="h1" className="mb-4">
+      <Heading is="h1" className="mb-4">
         Hey 👋
       </Heading>
       <Text className="text-xl">
         Hey there, I'm Matt. I currently live and work in Boston as a software
         engineer working on Wayfair's Frontend Platform team. In my free time I
-        like to work on several different{' '}
-        <LocalLink href="/projects">projects</LocalLink>, and somehow find time
-        to write some{' '}
-        <LocalLink className="text-xl" href="/posts">
+        like to work on several different <Link href="/projects">projects</Link>
+        , and somehow find time to write some{' '}
+        <Link className="text-xl" href="/posts">
           blog posts
-        </LocalLink>{' '}
+        </Link>{' '}
         as well.
       </Text>
 
-      <Heading variant="h3" is="h3" className="my-3">
+      <Heading is="h3" className="my-3">
         Popular blog posts:
       </Heading>
       <Suspense fallback={<LoadingTopPosts />}>
@@ -72,14 +70,14 @@ export default async function Page() {
         <TopPosts />
       </Suspense>
 
-      <Heading variant="h3" is="h3" className="my-3">
+      <Heading is="h3" className="my-3">
         Recent Side Projects
       </Heading>
       <Text className="mb-4">
         I work on a variety of side projects in my free time, below are a few of
         them.
       </Text>
-      <List variant="base" is="ul" className="mt-2">
+      <List is="ul" className="mt-2">
         <ListItem className="mb-4">
           <Link is="a" href="https://github.com/ds-pack/simple-props">
             Simple Props
@@ -113,10 +111,10 @@ export default async function Page() {
         </ListItem>
       </List>
       <Text className="mb-4">
-        Check out the rest <LocalLink href="/projects">here</LocalLink>.
+        Check out the rest <Link href="/projects">here</Link>.
       </Text>
 
-      <Heading variant="h3" is="h3" className="my-3">
+      <Heading is="h3" className="my-3">
         Notebook
       </Heading>
       <Text className="mb-2">
@@ -125,9 +123,9 @@ export default async function Page() {
         that I haven't had the time to fully piece together, or might not even
         represent complete concepts yet!
       </Text>
-      <LocalLink href="/notebook">Give them a read</LocalLink>
+      <Link href="/notebook">Give them a read</Link>
 
-      <Heading variant="h3" is="h3" className="my-3">
+      <Heading is="h3" className="my-3">
         Random
       </Heading>
       <Text className="mb-2">
@@ -135,33 +133,33 @@ export default async function Page() {
         or might not really be worth throwing in their own repo, you can find
         some of those in my Random part of the site.
       </Text>
-      <LocalLink href="/random">Check them out</LocalLink>
+      <Link href="/random">Check them out</Link>
 
-      <Heading variant="h3" is="h3" className="my-3">
+      <Heading is="h3" className="my-3">
         Bookshelf
       </Heading>
       <Text className="mb-2">
         I don't read too many books these days, however I'm loosely tracking the
         ones I've read and the ones I want to read next here!
       </Text>
-      <LocalLink href="/bookshelf">See them here</LocalLink>
+      <Link href="/bookshelf">See them here</Link>
 
-      <Heading variant="h3" is="h3" className="my-3">
+      <Heading is="h3" className="my-3">
         Tools
       </Heading>
       <Text className="mb-2">
         I sometimes like to share a bit about the software and hardware that I'm
         using daily.
       </Text>
-      <LocalLink href="/tools">See them here</LocalLink>
+      <Link href="/tools">See them here</Link>
 
-      <Heading variant="h3" is="h3" className="my-3">
+      <Heading is="h3" className="my-3">
         Snippets
       </Heading>
       <Text className="mb-2">
         A small collection of useful code snippets that I often reference!
       </Text>
-      <LocalLink href="/snippets">See them here</LocalLink>
+      <Link href="/snippets">See them here</Link>
     </Box>
   )
 }

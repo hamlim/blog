@@ -1,4 +1,4 @@
-import { Box } from '@ds-pack/daisyui'
+import { Box } from '@recipes/box'
 import { fetchManifest } from '@lib/fetch-manifest'
 
 export default function Layout({ children }) {

@@ -97,18 +97,14 @@ function Mash() {
 
 export default Alea;`
 
-import { Heading, Box, Link } from '@ds-pack/daisyui'
-import CodeBlock from '@lib/CodeBlock'
-import NextLink from 'next/link'
-
-function LocalLink(props) {
-  return <Link is={NextLink} {...props} />
-}
+import { Heading } from '@recipes/heading'
+import { Box } from '@recipes/box'
+import { CodeBlock } from '@recipes/code-block'
 
 export default function Alea() {
   return (
     <Box>
-      <Heading className="mb-4" is="h2" variant="lead">
+      <Heading className="mb-4" is="h2">
         Snippets {`>`} Alea
       </Heading>
       {/* @ts-ignore */}

@@ -1,5 +1,5 @@
 'use client'
-import { Box } from '@ds-pack/daisyui'
+import { Box } from '@recipes/box'
 import {
   SandpackProvider,
   SandpackLayout,

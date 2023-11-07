@@ -32,7 +32,7 @@ using a reducer function gives you the developer more control over the state
 merging.
 
 As an example of this expresivity that a reducer gives us, we can `useReducer`
-to implement an undo/redo state management solution<Ref id="1" />:
+to implement an undo/redo state management solution<FootnoteRef id="1" />:
 
 ```jsx
 function init(initialState) {
@@ -84,8 +84,8 @@ your own.
 This is mostly a more generic topic that permeates through other topics than
 just React Hooks, but the general take-away with the benefit of `useReducer`
 over `useState` is it builds on the concepts that many developers learned
-working with Redux within React applications<Ref id="2" />. The concept of
-dispatching an action and having your reducer handle the state updating logic
+working with Redux within React applications<FootnoteRef id="2" />. The concept
+of dispatching an action and having your reducer handle the state updating logic
 will allow these developers to more easily grasp this method of state management
 over `useState`.
 

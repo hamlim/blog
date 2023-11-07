@@ -1,13 +1,21 @@
 import '@styles/globals.css'
 import type { Metadata, Viewport } from 'next'
-import { getThemeCookie } from '@lib/theme-cookie'
+import { cookies } from 'next/headers'
+import { ThemeProvider } from '@recipes/theme-provider'
 
 export default function Layout({ children }) {
-  let theme = getThemeCookie()
+  let cookieJar = cookies()
   return (
-    <html data-theme={theme} lang="en-US">
+    <html lang="en-US">
       <body className="h-screen flex flex-col">
-        <main className="flex grow flex-col min-h-screen">{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="flex grow flex-col min-h-screen">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   )

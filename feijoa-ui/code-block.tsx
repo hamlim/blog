@@ -1,23 +1,46 @@
-import { Box } from '@ds-pack/daisyui'
 import { Code } from 'bright'
-import { getThemeCookie } from './theme-cookie'
-import { themeToCodeTheme } from './themes'
-import LiveCode from './LiveCode'
+import type { BrightProps, Extension } from 'bright'
+import { collapse } from './extensions/collapse-extension'
+import { CopyCode } from './extensions/copy-code'
+import LiveCode from '../lib/LiveCode'
+import { ThemeWrapper } from './extensions/theme-wrapper'
 
 Code.theme = {
   dark: 'github-dark-dimmed',
   light: 'github-light',
 }
 
+// I have committed serious crimes
+type Props = (
+  | {
+      children: {
+        props: {
+          className?: string
+          children?: string
+          style?: Record<string, unknown>
+        }
+      }
+    }
+  | { children: string; className?: string }
+) &
+  Partial<BrightProps>
+
+let defaultExtensions: Array<Extension> = [collapse]
+
 let metaComments = {
   live: `// ==live==`,
   highlight: `// ==highlight==`,
 }
 
-export default async function CodeBlock({ children, className }) {
-  let theme = getThemeCookie()
-
-  let codeTheme = themeToCodeTheme.light.includes(theme) ? 'light' : 'dark'
+export async function CodeBlock(props: Props) {
+  let code: string, className: string
+  if (typeof props.children === 'string') {
+    code = props.children
+    className = props.className
+  } else {
+    code = props.children.props.children
+    className = props.children.props.className
+  }
 
   let lang = className ? className.split('-')[1] : 'typescript'
   if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
@@ -26,8 +49,7 @@ export default async function CodeBlock({ children, className }) {
     lang = 'bash'
   }
 
-  let codeToHighlight = children
-
+  let codeToHighlight = code
   if (codeToHighlight.startsWith(metaComments.live)) {
     let [meta, ...rest] = codeToHighlight.split('\n')
     let entries = meta
@@ -44,7 +66,7 @@ export default async function CodeBlock({ children, className }) {
       <LiveCode
         code={rest.join('\n').slice(0, -1)}
         {...metaProps}
-        theme={codeTheme}
+        theme="dark"
       />
     )
   }
@@ -66,9 +88,18 @@ export default async function CodeBlock({ children, className }) {
     .slice(0, -1)
 
   return (
-    <Box data-theme={codeTheme}>
+    <ThemeWrapper className="relative overflow-scroll">
       {/* @ts-expect-error Server Component */}
-      <Code lang={lang}>{codeToHighlight}</Code>
-    </Box>
+      <Code
+        extensions={defaultExtensions}
+        lineNumbers
+        lang={lang}
+        {...props}
+        style={{ margin: 0, ...props.style }}
+      >
+        {codeToHighlight}
+      </Code>
+      <CopyCode code={code} />
+    </ThemeWrapper>
   )
 }

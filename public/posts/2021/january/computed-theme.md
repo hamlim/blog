@@ -28,8 +28,8 @@ spread to override some values:
 ```tsx
 let newTheme = {
   ...baseTheme,
-  override: 'value',
-}
+  override: "value",
+};
 ```
 
 This works really well for flat theme shapes (which might be worthy of another
@@ -42,10 +42,10 @@ let newTheme = {
     ...baseTheme.colors,
     buttons: {
       ...baseTheme.colors.buttons,
-      primary: 'new value',
+      primary: "new value",
     },
   },
-}
+};
 ```
 
 Another complication that arises when customizing a theme is dependent theme
@@ -56,14 +56,14 @@ variants of a component (e.g. [styled-system](https://styled-system.com/)'s
 ```tsx
 let baseTheme = {
   colors: {
-    primary: 'mediumspringgreen',
+    primary: "mediumspringgreen",
   },
   buttons: {
     primary: {
-      color: 'mediumspringgreen',
+      color: "mediumspringgreen",
     },
   },
-}
+};
 ```
 
 If the system defines the theme like above, and a consumer wants to change the
@@ -92,8 +92,8 @@ and referencing those later:
 
 ```tsx
 let colors = {
-  primary: 'mediumspringgreen',
-}
+  primary: "mediumspringgreen",
+};
 
 export default {
   colors,
@@ -102,7 +102,7 @@ export default {
       color: colors.primary,
     },
   },
-}
+};
 ```
 
 However this only solves the referencing issue for the file in which the theme
@@ -113,16 +113,16 @@ load time:
 ```tsx
 export default {
   colors: {
-    primary: 'mediumspringgreen',
+    primary: "mediumspringgreen",
   },
   get buttons() {
     return {
       primary: {
         color: this.colors.primary,
       },
-    }
+    };
   },
-}
+};
 ```
 
 Now, the button primary color inherits the primary color specified on the theme,
@@ -135,9 +135,9 @@ let newTheme = {
   ...baseTheme,
   colors: {
     ...baseTheme.colors,
-    primary: 'cornflowerblue',
+    primary: "cornflowerblue",
   },
-}
+};
 
 // newTheme.buttons.primary.color === 'cornflowerblue'
 ```
@@ -145,14 +145,15 @@ let newTheme = {
 ### "Token References"
 
 The second idea I've been working on is around using token
-references<Ref id="1" />, popularized by [Stitches](https://stitches.dev/) and
-used by [System Props](http://system-props.com/).
+references<FootnoteRef id="1" />, popularized by
+[Stitches](https://stitches.dev/) and used by
+[System Props](http://system-props.com/).
 
 Essentially using the same syntax that you might use on a traditional `Box`
 component:
 
 ```tsx
-<Box color="$colors.primary" />
+<Box color="$colors.primary" />;
 ```
 
 within the theme shape itself:
@@ -160,14 +161,14 @@ within the theme shape itself:
 ```tsx
 let theme = themer({
   colors: {
-    primary: 'mediumspringgreen',
+    primary: "mediumspringgreen",
   },
   buttons: {
     primary: {
-      color: '$colors.primary',
+      color: "$colors.primary",
     },
   },
-})
+});
 
 // theme ===
 //   {
@@ -190,7 +191,8 @@ To experiment with this more deeply, I built a small package that you can try
 out: [`@ds-pack/themer`](https://github.com/ds-pack/themer).
 
 I'd love to hear if you've found interesting solutions to these problems, feel
-free to reach out on [twitter](https://twitter.com/immatthamlin) or via <ExternalLink href="mailto:matthewjameshamlin@gmail.com?subject=Computed Theme">email</ExternalLink>.
+free to reach out on [twitter](https://twitter.com/immatthamlin) or via
+<ExternalLink href="mailto:matthewjameshamlin@gmail.com?subject=Computed Theme">email</ExternalLink>.
 
 <Spacer />
 

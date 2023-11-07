@@ -1,4 +1,6 @@
-import { Box, Heading, Text } from '@ds-pack/daisyui'
+import { Box } from '@recipes/box'
+import { Heading } from '@recipes/heading'
+import { Text } from '@recipes/text'
 import ColorSwatch from './Color'
 
 function addAlpha(rgb: string, alpha: string): string {
@@ -718,7 +720,7 @@ const colors = [
 export default function Colors() {
   return (
     <Box>
-      <Heading variant="h2" is="h1" className="mb-4">
+      <Heading is="h1" className="mb-4">
         HTML Colors
       </Heading>
       <Text className="mb-4">Click a color to copy it's hex code!</Text>
@@ -736,6 +738,7 @@ export default function Colors() {
             <Box
               className="p-1 rounded text-center bg-[var(--bg)]"
               style={{
+                //@ts-expect-error
                 '--bg': 'rgba(255, 255, 255, .6)',
               }}
             >

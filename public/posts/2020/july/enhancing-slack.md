@@ -13,7 +13,7 @@ started it's work from home period. I've probably put in ~8 hours in the app
 
 While using the app as much as I have been in the past few months, I've stumbled
 upon a few enhancements that I think would really improve my workflow and allow
-me to be more productive<Ref id="1" />. I've broken these down into four
+me to be more productive<FootnoteRef id="1" />. I've broken these down into four
 specific features I would like to see:
 
 - Automatic Timezone Conversion

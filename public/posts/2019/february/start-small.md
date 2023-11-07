@@ -27,9 +27,9 @@ lot more about this tweet by Joel Hooks:
 </Tweet>
 
 I could spend the better part of a weekend just enumerating all the times that I
-jumped to a solution for a problem I was working on at the time.<Ref id="1" />
-Skipping past the the important groundwork of framing the problem space, and
-evaluating, as well as reevaluating, the problem.
+jumped to a solution for a problem I was working on at the
+time.<FootnoteRef id="1" /> Skipping past the the important groundwork of
+framing the problem space, and evaluating, as well as reevaluating, the problem.
 
 Its difficult as an engineer, to have the patience to step back and reevaluate a
 problem before jumping to a solution. It takes a lot of critical thinking to
@@ -49,7 +49,7 @@ web development):
 
 1. **Everything changes**
 2. **Most difficult technology problems are actually people problems at the
-   root**<Ref id="2" />
+   root**<FootnoteRef id="2" />
 
 As with most advice however, the key takeaway here is that things change,
 specifically **code will change**. Don't feel like you need to write the correct

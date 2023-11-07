@@ -8,8 +8,8 @@ tags:
 
 I've written a decent amount about code review practices, particularly about
 [Draft Pull Requests](/2020/march/draft-pull-requests) and
-[Pair Code Reviews](/2020/december/pair-code-reviews), however I haven't
-really talked about how _I_ approach reviewing pull requests.
+[Pair Code Reviews](/2020/december/pair-code-reviews), however I haven't really
+talked about how _I_ approach reviewing pull requests.
 
 While I don't think I have a particularly interesting process for reviewing pull
 requests, I do think that documenting it can provide additional insight for
@@ -33,7 +33,7 @@ member shared the PR with me they may have provided some additional context.
 
 I'll read through the PR description that the author added, noting any
 interesting assumptions, questions, or callouts that the author added
-<Ref id="1" />.
+<FootnoteRef id="1" />.
 
 From there, I ask myself:
 
@@ -54,7 +54,8 @@ either by the author or another code reviewer.
 
 Catching up on any other active or resolved discussions can be helpful to avoid
 providing duplicate feedback for the author, and helps to understand other
-decisions that the author and other code reviewers have made about the changeset <Ref id="2" />.
+decisions that the author and other code reviewers have made about the changeset
+<FootnoteRef id="2" />.
 
 Finally, after reviewing through the Discussions tab, I'm ready to dive into the
 code changes. Here I'm usually looking for a few things:
@@ -71,9 +72,9 @@ I don't use an explicit checklist for the above bullet points, and frequently
 I'll have other things in mind when reviewing a change that are specific to the
 code being changed.
 
-I usually categorize most of my "nitpick"<Ref id="3" /> feedback under the third
-bullet point above, usually trying to frame the feedback as optional and also up
-for discussion.
+I usually categorize most of my "nitpick"<FootnoteRef id="3" /> feedback under
+the third bullet point above, usually trying to frame the feedback as optional
+and also up for discussion.
 
 ## Delivery:
 
@@ -125,8 +126,8 @@ between review iterations and merging as well.
 
 I didn't cover other topics in this post such as running the changed code
 locally / in a preview environment, or
-[Pair Reviewing](/2020/december/pair-code-reviews) so I'll leave those
-topics to further blog posts.
+[Pair Reviewing](/2020/december/pair-code-reviews) so I'll leave those topics to
+further blog posts.
 
 I'd love to hear how you approach code reviews, both from a process standpoint
 and from the delivery perspective! Feel free to reach out on Twitter to share

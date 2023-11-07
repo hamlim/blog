@@ -17,13 +17,15 @@
     "baseUrl": ".",
     "paths": {
       "@lib/*": ["./lib/*"],
-      "@styles/*": ["./styles/*"]
+      "@styles/*": ["./styles/*"],
+      "@recipes/*": ["./feijoa-ui/*"]
     },
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": false
   },
   "exclude": ["node_modules", "./old-junk/**/*"],
   "include": [

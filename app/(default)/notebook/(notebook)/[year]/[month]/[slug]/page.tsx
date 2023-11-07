@@ -1,13 +1,15 @@
 import * as runtime from 'react/jsx-runtime'
 import { evaluate } from '@mdx-js/mdx'
-import * as defaultComponents from '@lib/MDXComponents'
+import * as defaultComponents from '@recipes/mdx-components'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
 import { fetchManifest } from '@lib/fetch-manifest'
-import { Heading, Box, Stack } from '@ds-pack/daisyui'
+import { Heading } from '@recipes/heading'
+import { Box } from '@recipes/box'
 import { PostWrapper } from '@lib/PostWrapper'
+import { Stack } from '@recipes/stack'
 
-let { Time, Mentions, Spacer } = defaultComponents
+let { Time, Mentions } = defaultComponents
 
 interface Params {
   slug: string
@@ -48,6 +50,7 @@ async function getNotebookEntries({ slug }: Params) {
   return {
     meta: { manifest },
     content: MDXContent({
+      // @ts-expect-error
       components: defaultComponents,
     }),
     post: notebookEntry,
@@ -61,31 +64,28 @@ export default async function Notebook({ params: { slug } }) {
 
   return (
     <Box className="prose lg:prose-xl">
-      <Heading variant="lead" is="h1">
-        {post.title}
-      </Heading>
-      {post.date ? (
-        <>
-          <Box is="span" className="text-slate-500 italic">
-            Published <Time>{post.date}</Time>
-          </Box>{' '}
-        </>
-      ) : null}
-      <Mentions />
-      <Spacer />
+      <Stack gap={4}>
+        <Heading is="h1">{post.title}</Heading>
+        {post.date ? (
+          <>
+            <Box is="span" className="text-slate-500 italic">
+              Published <Time>{post.date}</Time>
+            </Box>{' '}
+          </>
+        ) : null}
+        <Mentions />
+      </Stack>
       <PostWrapper>{content}</PostWrapper>
       {post.tags ? (
-        <Box className="mt-3">
-          <Heading variant="subhead" is="h4">
-            Tags:
-          </Heading>
-          <Stack inline gap="4">
+        <Box className="mt-4">
+          <Heading is="h4">Tags:</Heading>
+          <Box className="flex justify-start gap-4 mt-4">
             {post.tags.map((tag: string) => (
               <Box key={tag} is="span" className="inline-flex italic">
                 {tag}
               </Box>
             ))}
-          </Stack>
+          </Box>
         </Box>
       ) : null}
     </Box>
