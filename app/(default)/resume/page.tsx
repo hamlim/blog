@@ -73,7 +73,7 @@ export default function Resume() {
             <ListItem>
               Designed and implemented various aspects of our overall frontend
               web architecture (tracking, data-fetching orchestration,
-              Authentication)
+              Authentication, web monorepo tooling)
             </ListItem>
           </List>
         </Box>
@@ -180,6 +180,25 @@ export default function Resume() {
           <Link href="https://github.com/wayfair/rainbow-sprinkles" is="a">
             https://github.com/wayfair/rainbow-sprinkles
           </Link>
+        </Box>
+        <Heading is="h2">
+          Programming Languages, Libraries, and Runtimes
+        </Heading>
+        <Box>
+          <Heading is="h4">Programming Languages</Heading>
+          <Text>
+            TypeScript (and JavaScript), GraphQL, CSS (including SCSS), HTML,
+            PHP, and Go.
+          </Text>
+        </Box>
+        <Box>
+          <Heading is="h4">Libraries and Runtimes:</Heading>
+          <Text>
+            Node.js, Deno, Bun, React and ReactDOM, Next.js, webpack, Babel,
+            Jest, Cypress, Docker, Kubernetes (with Istio and Flagger), Vanilla
+            Extract, Tailwind, Styled Components, GraphQL (with Apollo Client),
+            Yarn, PNPM, and Turborepo.
+          </Text>
         </Box>
       </Stack>
     </Stack>
