@@ -1382,6 +1382,18 @@
       "year": "2023",
       "tags": ["Teams"],
       "status": "public"
+    },
+    {
+      "id": 109,
+      "title": "Blog Refresh - November 2023",
+      "path": "/posts/2023/november/blog-refresh-november-2023.md",
+      "slug": "blog-refresh-november-2023",
+      "date": "November 8th, 2023",
+      "time": "9:49:30 AM",
+      "month": "november",
+      "year": "2023",
+      "tags": ["Web Development", "Feijoa UI"],
+      "status": "draft"
     }
   ]
 }
