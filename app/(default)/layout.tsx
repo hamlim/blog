@@ -7,7 +7,6 @@ import { Container } from '@recipes/container'
 import { ThemeToggle } from '@recipes/theme-toggle'
 
 export default function DefaultLayout({ children }) {
-  // let theme = getThemeCookie()
   return (
     <>
       <header className="flex-shrink bg-base-200">
@@ -19,10 +18,9 @@ export default function DefaultLayout({ children }) {
           </Box>
           <Box>
             <Link href="/posts">📝 Blog</Link>{' '}
-            <Link href="/resume">💼 Resume</Link>{' '}
             <Link href="/projects">🧪 Projects</Link>{' '}
             <Link href="/bookshelf">📚 Bookshelf</Link>{' '}
-            <Link href="/social">🗣 Social</Link>
+            <Link href="/feed">🧵 Feed</Link>
           </Box>
         </Container>
       </header>
@@ -33,8 +31,10 @@ export default function DefaultLayout({ children }) {
             <Box>
               <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
               <Text>
-                🐦 <TwitterMention>immatthamlin</TwitterMention> 👨‍💻{' '}
-                <GitHubMention>hamlim</GitHubMention>
+                💼 <Link href="/resume">Resume</Link> 🐦{' '}
+                <TwitterMention>immatthamlin</TwitterMention> 👨‍💻{' '}
+                <GitHubMention>hamlim</GitHubMention> 🗣{' '}
+                <Link href="/social">All socials</Link>
               </Text>
             </Box>
             <ThemeToggle />
