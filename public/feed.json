@@ -1382,6 +1382,18 @@
       "year": "2023",
       "tags": ["Teams"],
       "status": "public"
+    },
+    {
+      "id": 109,
+      "title": "AI Driven Development",
+      "path": "/posts/2023/november/ai-driven-development.md",
+      "slug": "ai-driven-development",
+      "date": "November 19th, 2023",
+      "time": "2:55:09 PM",
+      "month": "november",
+      "year": "2023",
+      "tags": ["Development", "Web Development", "ChatGPT", "AI"],
+      "status": "draft"
     }
   ]
 }

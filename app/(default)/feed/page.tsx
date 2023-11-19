@@ -66,12 +66,19 @@ async function Feed({ searchParams }) {
               <Text>📢 {post.body}</Text>
               {post.location ? <Text>📍 {post.location}</Text> : null}
               <Text>
-                ⌚ {format(new Date(post.created_time), post.created_timezone || 'America/New_York')}
+                ⌚{' '}
+                {format(
+                  new Date(post.created_time),
+                  post.created_timezone || 'America/New_York',
+                )}
               </Text>
               {post.updated_time ? (
                 <Text className="italic">
                   Updated:{' '}
-                  {format(new Date(post.updated_time), post.updated_timezone || 'America/New_York')}
+                  {format(
+                    new Date(post.updated_time),
+                    post.updated_timezone || 'America/New_York',
+                  )}
                 </Text>
               ) : null}
             </Box>
