@@ -13,6 +13,15 @@ export default function Snippets() {
       </Heading>
       <List is="ul">
         <ListItem>
+          <Heading is="h3">Timezone</Heading>
+          <Text>A quick and easy one liner to access the current timezone!</Text>
+          {/* @ts-expect-error */}
+          <CodeBlock
+            className="lang-typescript"
+            children={`new Intl.DateTimeFormat().resolvedOptions().timeZone`}
+          />
+        </ListItem>
+        <ListItem>
           <Heading is="h3">Prettify</Heading>
 
           {/* @ts-expect-error */}

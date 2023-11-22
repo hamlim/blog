@@ -83,9 +83,10 @@ export async function CodeBlock(props: Props) {
     })
     codeToHighlight = lines.join('\n')
   }
-  codeToHighlight = codeToHighlight
-    // Remove the last new line character
-    .slice(0, -1)
+  codeToHighlight = codeToHighlight.endsWith('\n')
+    ? // Remove the last new line character
+      codeToHighlight.slice(0, -1)
+    : codeToHighlight
 
   return (
     <ThemeWrapper className="relative overflow-scroll">
