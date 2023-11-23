@@ -43,6 +43,7 @@ export const metadata: Metadata = {
       url: 'https://matthamlin.me',
     },
   ],
+  metadataBase: new URL('https://matthamlin.me'),
   creator: 'Matt Hamlin',
   openGraph: {
     type: 'website',

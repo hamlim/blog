@@ -33,21 +33,20 @@ type Fibre = {
 }
 
 async function Feed({ searchParams }) {
-  let page = Number(searchParams.page ?? '1')
+  let page = Number(searchParams.page ?? '0')
 
   let endpoint
   if (process.env.NODE_ENV === 'development') {
-    endpoint = 'http://127.0.0.1:8080/v1/posts'
+    endpoint = 'http://127.0.0.1:8787/v1/posts'
   } else {
-    endpoint = 'http://microfibre-v1.fly.dev/v1/posts'
+    endpoint = 'https://microfibre-api.mhamlin.workers.dev/v1/posts'
   }
 
   endpoint += `?pageSize=${pageSize}&page=${page}`
 
   let resp = await fetch(endpoint, {
     headers: new Headers({
-      'api-version': 'v1',
-      'secret-token': 'yolo-swag',
+      'x-auth-token': 'yolo-swag',
     }),
   })
 
@@ -55,12 +54,12 @@ async function Feed({ searchParams }) {
 
   let isAtEnd = pageSize * page >= totalPosts
 
-  let posts = (await resp.json()) as Array<Fibre>
+  let posts = (await resp.json()).posts as Array<Fibre>
 
   return (
     <>
       <Stack gap={6}>
-        {posts ? (
+        {posts && posts.length ? (
           posts.map((post) => (
             <Box key={post.id}>
               <Text>📢 {post.body}</Text>
