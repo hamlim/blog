@@ -1398,6 +1398,7 @@
     {
       "id": 110,
       "title": "Pair Programming",
+      "description": "Pair programming can be good sometimes - but not all the time",
       "path": "/posts/2023/november/pair-programming.md",
       "slug": "pair-programming",
       "date": "November 26th, 2023",

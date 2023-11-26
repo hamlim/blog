@@ -1,3 +1,4 @@
+import {cache} from 'react';
 import * as runtime from 'react/jsx-runtime'
 import { evaluate } from '@mdx-js/mdx'
 import * as defaultComponents from '@recipes/mdx-components'
@@ -9,6 +10,7 @@ import { Box } from '@recipes/box'
 import { Link } from '@recipes/link'
 import { PostWrapper } from '@lib/PostWrapper'
 import { Stack } from '@recipes/stack'
+import { Metadata } from 'next';
 
 let { Time, Mentions } = defaultComponents
 
@@ -32,7 +34,7 @@ let extendedRuntime = {
   jsxDEV: any
 }
 
-async function getPost({ title: titleSlug }: Params) {
+let getPost = cache(async function getPost({ title: titleSlug }: Params) {
   let manifest = await fetchManifest()
 
   let postData = manifest.posts.find((post) => {
@@ -56,7 +58,7 @@ async function getPost({ title: titleSlug }: Params) {
     }),
     post: postData,
   }
-}
+})
 
 export default async function Blog({ params: { title } }) {
   let { content, post } = await getPost({
@@ -91,4 +93,19 @@ export default async function Blog({ params: { title } }) {
       ) : null}
     </Box>
   )
+}
+
+export async function generateMetadata({ params: { title } }): Promise<Metadata> {
+  let { post } = await getPost({
+    title,
+  })
+
+  return {
+    title: post.title,
+    description: post.description,
+    keywords: post.tags,
+    other: {
+      publishedDate: post.date,
+    },
+  }
 }

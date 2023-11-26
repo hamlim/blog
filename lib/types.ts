@@ -62,7 +62,11 @@ export interface Post {
   /**
    * The year the blog post was published within
    */
-  year: number
+  year: number,
+  /**
+   * A short description of the post
+   */
+  description?: string
 }
 
 export interface Manifest {
