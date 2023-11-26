@@ -14,9 +14,8 @@ export default function Snippets() {
       <List is="ul">
         <ListItem>
           <Heading is="h3">Timezone</Heading>
-          <Text>
-            A quick and easy one liner to access the current timezone!
-          </Text>
+          <Text>A quick and easy one liner to access the current timezone!</Text>
+          {/* @ts-expect-error */}
           <CodeBlock
             className="lang-typescript"
             children={`new Intl.DateTimeFormat().resolvedOptions().timeZone`}
@@ -25,6 +24,7 @@ export default function Snippets() {
         <ListItem>
           <Heading is="h3">Prettify</Heading>
 
+          {/* @ts-expect-error */}
           <CodeBlock
             className="lang-typescript"
             children={`// Reference: https://www.totaltypescript.com/concepts/the-prettify-helper
@@ -37,6 +37,7 @@ type Prettify<T> = {
         <ListItem>
           <Heading is="h3">yw</Heading>
 
+          {/* @ts-expect-error */}
           <CodeBlock
             className="lang-shell"
             children={`# Bash script to execute a package.json script within a workspace
@@ -60,6 +61,7 @@ ywold() {
             in the below example), then these three shell commands will do that!
           </Text>
 
+          {/* @ts-expect-error */}
           <CodeBlock
             className="lang-shell"
             children={`yarn turbo run lib:build --summarize
@@ -70,6 +72,7 @@ cat $SUMMARY_FILE | jq '[.tasks[] | {"taskId": .taskId, "duration": (.execution.
         <ListItem>
           <Heading is="h3">Alea</Heading>
 
+          {/* @ts-expect-error */}
           <CodeBlock
             className="lang-typescript"
             children={`// Reference: https://www.npmjs.com/package/alea
