@@ -953,9 +953,9 @@
     },
     {
       "id": 73,
-      "title": "Pair Programming",
-      "path": "/posts/2021/november/pair-programming.md",
-      "slug": "pair-programming",
+      "title": "Pair Programming (stub)",
+      "path": "/posts/2021/november/pair-programming-stub.md",
+      "slug": "pair-programming-stub",
       "date": "November 20th, 2021",
       "time": "10:40:50 AM",
       "tags": ["stub"],
@@ -1393,6 +1393,18 @@
       "month": "november",
       "year": "2023",
       "tags": ["Development", "Web Development", "ChatGPT", "AI"],
+      "status": "draft"
+    },
+    {
+      "id": 110,
+      "title": "Pair Programming",
+      "path": "/posts/2023/november/pair-programming.md",
+      "slug": "pair-programming",
+      "date": "November 26th, 2023",
+      "time": "3:45:01 PM",
+      "month": "november",
+      "year": "2023",
+      "tags": ["Web Development", "Development"],
       "status": "draft"
     }
   ]
