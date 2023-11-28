@@ -1,95 +1,96 @@
-import { Code } from 'bright'
-import type { BrightProps, Extension } from 'bright'
-import { collapse } from './extensions/collapse-extension'
-import { CopyCode } from './extensions/copy-code'
-import LiveCode from '../lib/LiveCode'
-import { ThemeWrapper } from './extensions/theme-wrapper'
+import { Code } from 'bright';
+import type { BrightProps, Extension } from 'bright';
+import LiveCode from '../lib/LiveCode';
+import { collapse } from './extensions/collapse-extension';
+import { CopyCode } from './extensions/copy-code';
+import { ThemeWrapper } from './extensions/theme-wrapper';
 
 Code.theme = {
   dark: 'github-dark-dimmed',
   light: 'github-light',
-}
+};
 
 // I have committed serious crimes
-type Props = (
-  | {
+type Props =
+  & (
+    | {
       children: {
         props: {
-          className?: string
-          children?: string
-          style?: Record<string, unknown>
-        }
-      }
+          className?: string;
+          children?: string;
+          style?: Record<string, unknown>;
+        };
+      };
     }
-  | { children: string; className?: string }
-) &
-  Partial<BrightProps>
+    | { children: string; className?: string }
+  )
+  & Partial<BrightProps>;
 
-let defaultExtensions: Array<Extension> = [collapse]
+let defaultExtensions: Array<Extension> = [collapse];
 
 let metaComments = {
   live: `// ==live==`,
   highlight: `// ==highlight==`,
-}
+};
 
 export async function CodeBlock(props: Props) {
-  let code: string, className: string
+  let code: string, className: string;
   if (typeof props.children === 'string') {
-    code = props.children
-    className = props.className
+    code = props.children;
+    className = props.className;
   } else {
-    code = props.children.props.children
-    className = props.children.props.className
+    code = props.children.props.children;
+    className = props.children.props.className;
   }
 
-  let lang = className ? className.split('-')[1] : 'typescript'
+  let lang = className ? className.split('-')[1] : 'typescript';
   if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
-    lang = 'typescript'
+    lang = 'typescript';
   } else if (lang === 'sh') {
-    lang = 'bash'
+    lang = 'bash';
   }
 
-  let codeToHighlight = code
+  let codeToHighlight = code;
   if (codeToHighlight.startsWith(metaComments.live)) {
-    let [meta, ...rest] = codeToHighlight.split('\n')
+    let [meta, ...rest] = codeToHighlight.split('\n');
     let entries = meta
       .replace(metaComments.live, '')
       .trim()
       .split(' ')
       .filter(Boolean)
       .map((opt) => {
-        let [key, val] = opt.split('=')
-        return [key, JSON.parse(val)]
-      })
-    let metaProps = Object.fromEntries(entries)
+        let [key, val] = opt.split('=');
+        return [key, JSON.parse(val)];
+      });
+    let metaProps = Object.fromEntries(entries);
     return (
       <LiveCode
         code={rest.join('\n').slice(0, -1)}
         {...metaProps}
-        theme="dark"
+        theme='dark'
       />
-    )
+    );
   }
 
-  let highlight
+  let highlight;
   if (codeToHighlight.startsWith(metaComments.highlight)) {
-    let [meta, ...lines] = codeToHighlight.split('\n')
-    highlight = meta.replace(metaComments.highlight, '')
+    let [meta, ...lines] = codeToHighlight.split('\n');
+    highlight = meta.replace(metaComments.highlight, '');
     highlight = highlight.split(',').map((hl) => {
       if (hl.includes('-')) {
-        return hl.split('-').map(Number)
+        return hl.split('-').map(Number);
       }
-      return Number(hl)
-    })
-    codeToHighlight = lines.join('\n')
+      return Number(hl);
+    });
+    codeToHighlight = lines.join('\n');
   }
   codeToHighlight = codeToHighlight.endsWith('\n')
-    ? // Remove the last new line character
-      codeToHighlight.slice(0, -1)
-    : codeToHighlight
+    // Remove the last new line character
+    ? codeToHighlight.slice(0, -1)
+    : codeToHighlight;
 
   return (
-    <ThemeWrapper className="relative overflow-scroll">
+    <ThemeWrapper className='relative overflow-scroll'>
       {/* @ts-expect-error Server Component */}
       <Code
         extensions={defaultExtensions}
@@ -102,5 +103,5 @@ export async function CodeBlock(props: Props) {
       </Code>
       <CopyCode code={code} />
     </ThemeWrapper>
-  )
+  );
 }

@@ -24,9 +24,9 @@ component tree. This is an example of a try catch block:
 
 ```js
 try {
-  doSomethingThatMayThrow()
+  doSomethingThatMayThrow();
 } catch (error) {
-  handleError(error)
+  handleError(error);
 }
 ```
 
@@ -39,7 +39,7 @@ In React this would look like something like the following:
 ```jsx
 <ErrorBoundary>
   <ComponentThatMayThrow />
-</ErrorBoundary>
+</ErrorBoundary>;
 ```
 
 Great, so we have a rough understanding of what they look like in practice, but
@@ -61,15 +61,15 @@ So lets setup a simple generic Error Boundary component.
 class ErrorBoundary extends React.Component {
   state = {
     hasCaughtError: false,
-  }
+  };
   componentDidCatch(error) {
-    this.setState({ hasCaughtError: true })
+    this.setState({ hasCaughtError: true });
   }
   render() {
     if (this.state.hasCaughtError) {
-      return <p>Oh no, an error has occurred</p>
+      return <p>Oh no, an error has occurred</p>;
     }
-    return this.props.children
+    return this.props.children;
   }
 }
 ```
@@ -94,7 +94,7 @@ boundary, you can `throw` from within a setState:
 
 ```jsx
 // ==live== template="react"
-import { Component } from 'react'
+import { Component } from 'react';
 
 // Note this is a live editor!
 // Feel free to toy around with the code and see the
@@ -103,19 +103,19 @@ export default class Example extends Component {
   handleChange = (e) => {
     let {
       target: { value },
-    } = e
+    } = e;
     this.setState(() => {
       if (value.includes('foo')) {
-        throw new Error('Error!')
+        throw new Error('Error!');
       }
-      return null
-    })
-  }
+      return null;
+    });
+  };
   render() {
     return (
       <input
         onChange={this.handleChange}
-        placeholder="Try typing here!"
+        placeholder='Try typing here!'
         style={{
           height: 35,
           fontSize: 18,
@@ -123,7 +123,7 @@ export default class Example extends Component {
           padding: '1rem',
         }}
       />
-    )
+    );
   }
 }
 ```

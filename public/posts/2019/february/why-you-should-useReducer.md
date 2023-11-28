@@ -40,29 +40,29 @@ function init(initialState) {
     past: [],
     present: initialState,
     future: [],
-  }
+  };
 }
 function reducer(state, action) {
-  const { past, future, present } = state
+  const { past, future, present } = state;
   switch (action.type) {
     case 'UNDO':
-      const previous = past[past.length - 1]
-      const newPast = past.slice(0, past.length - 1)
+      const previous = past[past.length - 1];
+      const newPast = past.slice(0, past.length - 1);
       return {
         past: newPast,
         present: previous,
         future: [present, ...future],
-      }
+      };
     case 'REDO':
-      const next = future[0]
-      const newFuture = future.slice(1)
+      const next = future[0];
+      const newFuture = future.slice(1);
       return {
         past: [...past, present],
         present: next,
         future: newFuture,
-      }
+      };
     default:
-      return state
+      return state;
   }
 }
 ```
@@ -112,10 +112,10 @@ or use react at all within our test!
 
 ```jsx
 test('it supports undoing the state', () => {
-  const state = { past: [{ count: 0 }], present: { count: 1 }, future: [] }
-  const newState = reducer(state, { type: 'UNDO' })
-  expect(newState.present.count).toBe(0)
-})
+  const state = { past: [{ count: 0 }], present: { count: 1 }, future: [] };
+  const newState = reducer(state, { type: 'UNDO' });
+  expect(newState.present.count).toBe(0);
+});
 ```
 
 ### In Summary

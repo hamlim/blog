@@ -1,11 +1,11 @@
-import { Box } from '@recipes/box'
-import { Text } from '@recipes/text'
-import { List, ListItem } from '@recipes/list'
-import { Heading } from '@recipes/heading'
-import { BaseLink, Link } from '@recipes/link'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@recipes/tabs'
-import type { Post } from '@lib/types'
-import { formatPostLink } from '@lib/format-post-link'
+import { formatPostLink } from '@lib/format-post-link';
+import type { Post } from '@lib/types';
+import { Box } from '@recipes/box';
+import { Heading } from '@recipes/heading';
+import { BaseLink, Link } from '@recipes/link';
+import { List, ListItem } from '@recipes/list';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@recipes/tabs';
+import { Text } from '@recipes/text';
 
 const monthToNumber = {
   January: 0,
@@ -20,11 +20,11 @@ const monthToNumber = {
   October: 9,
   November: 10,
   December: 11,
-}
+};
 
 function capitalCase(word: string): string {
-  let [first, ...rest] = word.split('')
-  return `${first.toUpperCase()}${rest.join('')}`
+  let [first, ...rest] = word.split('');
+  return `${first.toUpperCase()}${rest.join('')}`;
 }
 
 function groupByYearAndMonth(posts: Array<Post>) {
@@ -41,92 +41,92 @@ function groupByYearAndMonth(posts: Array<Post>) {
             post,
           ],
         },
-      }
+      };
     }, {}),
   )
     .sort(([aKey], [bKey]) => {
       if (aKey > bKey) {
-        return -1
+        return -1;
       } else if (bKey > aKey) {
-        return 1
+        return 1;
       }
-      return 0
+      return 0;
     })
     .map((entry) => {
       return [
         entry[0],
         Object.entries(entry[1]).sort(([monthA], [monthB]) => {
-          let aNum = monthToNumber[monthA]
-          let bNum = monthToNumber[monthB]
+          let aNum = monthToNumber[monthA];
+          let bNum = monthToNumber[monthB];
           if (aNum > bNum) {
-            return -1
+            return -1;
           } else if (bNum > aNum) {
-            return 1
+            return 1;
           }
-          return 0
+          return 0;
         }),
-      ]
-    })
+      ];
+    });
 }
 
 function groupByTags(posts: Array<Post>) {
   return Object.entries(
     posts.reduce((grouped, post) => {
-      let { tags } = post
+      let { tags } = post;
       return tags.reduce((fin, tag) => {
         return {
           ...fin,
           [tag]: fin[tag] ? [...fin[tag], post] : [post],
-        }
-      }, grouped)
+        };
+      }, grouped);
     }, {}),
   ).sort(([tagA], [tagB]) => {
-    return tagA < tagB ? -1 : tagB < tagA ? 1 : 0
-  })
+    return tagA < tagB ? -1 : tagB < tagA ? 1 : 0;
+  });
 }
 
 function AllPosts({ posts }) {
   return (
-    <List is="ul">
+    <List is='ul'>
       {posts.map((post, i) => (
         <ListItem key={post.title} className={i !== 0 ? 'mt-6' : null}>
           <Link href={formatPostLink(post)}>{post.title}</Link>
         </ListItem>
       ))}
     </List>
-  )
+  );
 }
 
 function Timeline({ groupedByYear }) {
   return (
     <>
-      <Box className="mb-4 flex justify-evenly">
+      <Box className='mb-4 flex justify-evenly'>
         {groupedByYear.map(([year]: [string]) => (
           <BaseLink key={year} href={`#${year}`}>
             {year}
           </BaseLink>
         ))}
       </Box>
-      <List is="ul">
+      <List is='ul'>
         {groupedByYear.map(([year, months]: [string, any[]], i) => (
           <ListItem key={year} className={i !== 0 ? 'mt-6' : null}>
             <Heading
-              is="h3"
+              is='h3'
               id={year}
               // TODO:
               // _target={{ boxShadow: '$focusShadow' }}
             >
               {year}
             </Heading>
-            <Box className="pl-3">
-              <List is="ul">
+            <Box className='pl-3'>
+              <List is='ul'>
                 {months.map(([month, posts]) => (
-                  <ListItem key={month} className="mt-6">
-                    <Heading is="h4">{month}</Heading>
-                    <Box className="pl-3">
-                      <List is="ul">
+                  <ListItem key={month} className='mt-6'>
+                    <Heading is='h4'>{month}</Heading>
+                    <Box className='pl-3'>
+                      <List is='ul'>
                         {posts.map((post: Post) => (
-                          <ListItem key={post.title} className="mt-6">
+                          <ListItem key={post.title} className='mt-6'>
                             <Link href={formatPostLink(post)}>
                               {post.title}
                             </Link>
@@ -142,26 +142,26 @@ function Timeline({ groupedByYear }) {
         ))}
       </List>
     </>
-  )
+  );
 }
 
 function Tagged({ groupedByTag }) {
   return (
-    <List is="ul">
+    <List is='ul'>
       {groupedByTag.map(([tag, posts]: [string, Array<Post>], i) => (
         <ListItem key={tag} className={i !== 0 ? 'mt-6' : null}>
           <Heading
-            is="h3"
+            is='h3'
             id={tag}
             // TODO:
             // _target={{ boxShadow: '$focusShadow' }}
           >
             {tag}
           </Heading>
-          <Box className="pl-3">
-            <List is="ul">
+          <Box className='pl-3'>
+            <List is='ul'>
               {posts.map((post: Post) => (
-                <ListItem key={post.title} className="mt-6">
+                <ListItem key={post.title} className='mt-6'>
                   <Link href={formatPostLink(post)}>{post.title}</Link>
                 </ListItem>
               ))}
@@ -170,26 +170,25 @@ function Tagged({ groupedByTag }) {
         </ListItem>
       ))}
     </List>
-  )
+  );
 }
 
 export default function Listing({ posts, gallaryPosts }) {
-  let groupedByYear = groupByYearAndMonth(posts)
-  let groupedByTag = groupByTags(posts)
+  let groupedByYear = groupByYearAndMonth(posts);
+  let groupedByTag = groupByTags(posts);
   return (
     <>
-      <Heading is="h1" className="mb-3">
+      <Heading is='h1' className='mb-3'>
         Blog
       </Heading>
-      <Text className="text-lg mb-2">
-        Welcome to my Blog! Many of these posts are rough drafts that I work on
-        here and there.
+      <Text className='text-lg mb-2'>
+        Welcome to my Blog! Many of these posts are rough drafts that I work on here and there.
       </Text>
-      <Heading is="h3" className="my-4">
+      <Heading is='h3' className='my-4'>
         Popular posts:
       </Heading>
-      <Box className="my-5">
-        <List is="ol">
+      <Box className='my-5'>
+        <List is='ol'>
           {gallaryPosts.map((post, i) => (
             <ListItem key={post.title} className={i !== 0 ? 'mt-6' : null}>
               <Link href={formatPostLink(post)}>{post.title}</Link>
@@ -197,25 +196,25 @@ export default function Listing({ posts, gallaryPosts }) {
           ))}
         </List>
       </Box>
-      <Heading is="h3" className="py-7">
+      <Heading is='h3' className='py-7'>
         All Posts:
       </Heading>
-      <Tabs defaultValue="all" className="w-[400px]">
+      <Tabs defaultValue='all' className='w-[400px]'>
         <TabsList>
-          <TabsTrigger value="all">All Posts</TabsTrigger>
-          <TabsTrigger value="timeline">Timeline</TabsTrigger>
-          <TabsTrigger value="tags">By Tag</TabsTrigger>
+          <TabsTrigger value='all'>All Posts</TabsTrigger>
+          <TabsTrigger value='timeline'>Timeline</TabsTrigger>
+          <TabsTrigger value='tags'>By Tag</TabsTrigger>
         </TabsList>
-        <TabsContent value="all">
+        <TabsContent value='all'>
           <AllPosts posts={posts} />
         </TabsContent>
-        <TabsContent value="timeline">
+        <TabsContent value='timeline'>
           <Timeline groupedByYear={groupedByYear} />
         </TabsContent>
-        <TabsContent value="tags">
+        <TabsContent value='tags'>
           <Tagged groupedByTag={groupedByTag} />
         </TabsContent>
       </Tabs>
     </>
-  )
+  );
 }

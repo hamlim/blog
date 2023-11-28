@@ -19,7 +19,7 @@ yarn add tailwindcss postcss autoprefixer daisyui @ds-pack/daisyui
 Create the following `tailwind.config.js` file:
 
 ```tsx
-let path = require('path')
+let path = require('path');
 
 module.exports = {
   content: [
@@ -32,7 +32,7 @@ module.exports = {
   daisyui: {
     logs: false,
   },
-}
+};
 ```
 
 ### 3. Run the Tailwind Setup Script:
@@ -55,7 +55,7 @@ content:
 and then import that in your root `layout.tsx` file:
 
 ```tsx
-import '@styles/globals.css'
+import '@styles/globals.css';
 ```
 
 ### All Done!

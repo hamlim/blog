@@ -91,7 +91,6 @@ because it will make my code a lot easier to manage in the long run.
 
 #### Footnotes:
 
-[^1]:
-    Note: Operator here can be any of the predefined operations in the above
-    examples, such as `=`, `~=`, `|=`, `^=`, `$=`, and `*=`. Also the `i` can be
-    lowercase or uppercase.
+[^1]: Note: Operator here can be any of the predefined operations in the above
+examples, such as `=`, `~=`, `|=`, `^=`, `$=`, and `*=`. Also the `i` can be
+lowercase or uppercase.

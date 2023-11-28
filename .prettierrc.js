@@ -5,4 +5,4 @@ module.exports = {
   bracketSpacing: true,
   tabWidth: 2,
   proseWrap: 'always',
-}
+};

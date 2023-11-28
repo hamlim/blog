@@ -11,7 +11,7 @@ tags:
 A TL;DR for the article below, feel free to jump to the section you want to read
 more about.
 
-What ~will~ <em>might</em> be announced at the event:
+What ~~will~~ <em>might</em> be announced at the event:
 
 - Google Pixel (5" phone) - [More Here](#pixel)
 - Google Pixel XL (5.5" phone) - [More Here](#pixel)

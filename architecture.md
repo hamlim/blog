@@ -42,8 +42,8 @@ styles/
 
 ```tsx
 // within /ui/Footnotes.tsx
-import { classname } from '@styles/ui/Footnotes'
-;<div className={className} />
+import { classname } from '@styles/ui/Footnotes';
+<div className={className} />;
 ```
 
 ## Workflows:

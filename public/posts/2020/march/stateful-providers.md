@@ -50,18 +50,18 @@ These context modules expose an interface that looks roughly like this,
 exporting the Provider and a hook to read the value:
 
 ```jsx
-let toggleContext = createContext()
+let toggleContext = createContext();
 
 export function Provider({ children, defaultValue = false }) {
   // value might look like [isToggled, toggle]
-  let value = useToggle(defaultValue)
+  let value = useToggle(defaultValue);
   return (
     <toggleContext.Provider value={value}>{children}</toggleContext.Provider>
-  )
+  );
 }
 
 export function useToggleContext() {
-  return useContext(toggleContext)
+  return useContext(toggleContext);
 }
 ```
 

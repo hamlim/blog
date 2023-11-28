@@ -21,17 +21,17 @@ element that can be rendered on top of the UI.
 
 ```tsx
 export function useConsole() {
-  let [content, setContent] = useState('')
+  let [content, setContent] = useState('');
   useLayoutEffect(() => {
-    let originalConsole = console.log
+    let originalConsole = console.log;
     console.log = (...message) => {
       setContent((content) => {
-        return `> ${message.join(' ')}${content ? `\n${content}` : ''}`
-      })
-      originalConsole(...message)
-    }
-  }, [])
-  return content
+        return `> ${message.join(' ')}${content ? `\n${content}` : ''}`;
+      });
+      originalConsole(...message);
+    };
+  }, []);
+  return content;
 }
 ```
 
@@ -39,16 +39,16 @@ export function useConsole() {
 
 ```tsx
 function Root() {
-  let content = useConsole()
+  let content = useConsole();
 
   return (
     <>
-      <Box is="pre" position="absolute" top={4} right={4} width={300}>
+      <Box is='pre' position='absolute' top={4} right={4} width={300}>
         {content}
       </Box>
       <App />
     </>
-  )
+  );
 }
 ```
 

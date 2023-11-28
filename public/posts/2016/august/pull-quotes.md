@@ -41,8 +41,7 @@ the block quotes offer extra value when reading.
 
 ### Footnotes:
 
-[^1]:
-    In newspaper’s people would flip through the pages and pull quotes were
-    intended to grab the reader’s attention and pull them into reading the
-    article. I seriously doubt that they were named pull quotes because they
-    wanted to pull the reader in.
+[^1]: In newspaper’s people would flip through the pages and pull quotes were
+intended to grab the reader’s attention and pull them into reading the article.
+I seriously doubt that they were named pull quotes because they wanted to pull
+the reader in.

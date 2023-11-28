@@ -95,20 +95,20 @@ function Mash() {
   return mash;
 }
 
-export default Alea;`
+export default Alea;`;
 
-import { Heading } from '@recipes/heading'
-import { Box } from '@recipes/box'
-import { CodeBlock } from '@recipes/code-block'
+import { Box } from '@recipes/box';
+import { CodeBlock } from '@recipes/code-block';
+import { Heading } from '@recipes/heading';
 
 export default function Alea() {
   return (
     <Box>
-      <Heading className="mb-4" is="h2">
+      <Heading className='mb-4' is='h2'>
         Snippets {`>`} Alea
       </Heading>
       {/* @ts-ignore */}
-      <CodeBlock className="lang-typescript">{script}</CodeBlock>
+      <CodeBlock className='lang-typescript'>{script}</CodeBlock>
     </Box>
-  )
+  );
 }

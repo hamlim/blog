@@ -28,9 +28,9 @@ the function.
 function evaluateCode(code, scope) {
   // scope looks like this: { variableName: 'value' }
   // construct a new function with the code
-  const func = new Function(...Object.keys(scope), code)
+  const func = new Function(...Object.keys(scope), code);
   // Call the function
-  func(...Object.values(scope))
+  func(...Object.values(scope));
 }
 ```
 
@@ -60,7 +60,7 @@ is really easy to just start using:
   // Provider it a function that returns a string or a React Node
   // to highlight the code
   highlight={highlighter}
-/>
+/>;
 ```
 
 Great, so we have a way to execute the code, and a way to edit the code, what
@@ -78,7 +78,7 @@ This ends up looking like:
 // This is the same function we pass to the Editor component above
 function highlighter(code) {
   return (
-    <Highlight {...defaultProps} code={code} language="jsx">
+    <Highlight {...defaultProps} code={code} language='jsx'>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style}>
           {tokens.map((line, i) => (
@@ -91,7 +91,7 @@ function highlighter(code) {
         </pre>
       )}
     </Highlight>
-  )
+  );
 }
 ```
 
@@ -101,13 +101,13 @@ So wrapping it all up, we end up with an API that looks like this:
 
 ```jsx
 // ==live== template="react" customSetup={"dependencies":{"@matthamlin/react-preview-editor":"latest","@babel/standalone":"latest"}}
-import { Provider, Editor, Preview } from '@matthamlin/react-preview-editor'
-import { transform } from '@babel/standalone'
+import { transform } from '@babel/standalone';
+import { Editor, Preview, Provider } from '@matthamlin/react-preview-editor';
 
 function transformCode(code) {
   return transform(code, {
     presets: [['stage-0', { decoratorsLegacy: true }], 'react'],
-  }).code
+  }).code;
 }
 
 const code = `
@@ -117,7 +117,7 @@ function App() {
   )
 };
 render(<App />);
-`
+`;
 
 export default function App() {
   return (
@@ -125,7 +125,7 @@ export default function App() {
       <Preview />
       <Editor />
     </Provider>
-  )
+  );
 }
 ```
 

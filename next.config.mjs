@@ -7,4 +7,4 @@ export default {
       transform: '@ds-pack/daisyui/dist/{{member}}',
     },
   },
-}
+};

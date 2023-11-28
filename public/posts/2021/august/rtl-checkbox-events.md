@@ -35,27 +35,27 @@ As I went through I converted one of the tests that was asserting on an
 selected, the previous test code looked something like:
 
 ```jsx
-const handleChange = jest.fn()
-const wrapper = mount(<CheckboxTable onChange={handleChange} />)
+const handleChange = jest.fn();
+const wrapper = mount(<CheckboxTable onChange={handleChange} />);
 
 wrapper
   .find(`[data-enzyme-id="header-checkbox"]`)
-  .simulate('change', { target: { checked: true } })
+  .simulate('change', { target: { checked: true } });
 
-expect(handleChange).toHaveBeenCalledTimes(1)
+expect(handleChange).toHaveBeenCalledTimes(1);
 ```
 
 So I started converting as I had other tests within the codebase:
 
 ```jsx
-const handleChange = jest.fn()
-render(<CheckboxTable onChange={handleChange} />)
+const handleChange = jest.fn();
+render(<CheckboxTable onChange={handleChange} />);
 
 fireEvent.change(screen.getByTestId('header-checkbox'), {
   target: { checked: true },
-})
+});
 
-expect(handleChange).toHaveBeenCalledTimes(1)
+expect(handleChange).toHaveBeenCalledTimes(1);
 ```
 
 However, the test started failing!
@@ -71,12 +71,12 @@ actually want to fire a `click` event instead of a `change` event!
 So I went back to my test and updated it one last time to the following:
 
 ```jsx
-const handleChange = jest.fn()
-render(<CheckboxTable onChange={handleChange} />)
+const handleChange = jest.fn();
+render(<CheckboxTable onChange={handleChange} />);
 
-fireEvent.click(screen.getByTestId('header-checkbox'))
+fireEvent.click(screen.getByTestId('header-checkbox'));
 
-expect(handleChange).toHaveBeenCalledTimes(1)
+expect(handleChange).toHaveBeenCalledTimes(1);
 ```
 
 and the test started passing!

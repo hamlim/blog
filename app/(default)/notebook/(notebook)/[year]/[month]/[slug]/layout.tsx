@@ -1,22 +1,22 @@
-import { Box } from '@recipes/box'
-import { fetchManifest } from '@lib/fetch-manifest'
+import { fetchManifest } from '@lib/fetch-manifest';
+import { Box } from '@recipes/box';
 
 export default function Layout({ children }) {
-  return <Box>{children}</Box>
+  return <Box>{children}</Box>;
 }
 
 async function resolveTitle({ title: titleSlug }) {
-  let manifest = await fetchManifest()
+  let manifest = await fetchManifest();
   let note = manifest.notebookEntries.find((note) => {
-    return note.slug === titleSlug
-  })
+    return note.slug === titleSlug;
+  });
 
-  return note.title
+  return note.title;
 }
 
 // @ts-ignore
 export async function generateMetadata({ params }) {
-  const title = await resolveTitle({ title: params.slug })
+  const title = await resolveTitle({ title: params.slug });
 
   return {
     title: title || params.title || "Matt's Notebook",
@@ -26,5 +26,5 @@ export async function generateMetadata({ params }) {
         url: '/favicon.ico',
       },
     ],
-  }
+  };
 }

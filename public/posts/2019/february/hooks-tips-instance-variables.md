@@ -21,15 +21,15 @@ JavaScript syntax to assign the instance variables.):
 
 ```jsx
 class InstanceComponent extends React.Component {
-  someTimer = null
-  inputRef = null
+  someTimer = null;
+  inputRef = null;
   data = {
     someData: {
       foo: 'bar',
     },
-  }
+  };
 
-  //...
+  // ...
 }
 ```
 
@@ -40,18 +40,18 @@ Lets take a look at what this looks like with hooks:
 
 ```jsx
 function HookComponent() {
-  const someTimer = React.useRef(null)
+  const someTimer = React.useRef(null);
   const data = React.useRef({
     someData: {
       foo: 'bar',
     },
-  })
+  });
 
   // Note, the inputRef is just a regular old element ref
   // in this case, so we can use `createRef` which will assign
   // the instance for us. We could also still use `useRef` here and it
   // will continue to work as expected!
-  const inputRef = React.createRef()
+  const inputRef = React.createRef();
 }
 ```
 
@@ -64,18 +64,18 @@ function HookComponent() {
     someData: {
       foo: 'bar',
     },
-  })
+  });
 
   // ⚠️ This will throw an error:
   // Unable to access foo of undefined
-  console.log(data.someData.foo)
+  console.log(data.someData.foo);
 }
 ```
 
 Well, `useRef` returns you a wrapper around your current value:
 
 ```jsx
-console.log(data)
+console.log(data);
 // { current: { someData: { foo: 'bar' } } }
 ```
 
@@ -98,7 +98,7 @@ function UglyHooksComponent() {
         foo: 'bar',
       },
     },
-  })
+  });
 }
 ```
 
@@ -117,7 +117,7 @@ For additional insight into how to `useRef`, refer to the
 
 _Thanks to Dillon Curry for reviewing an earlier version of this post_
 
-[^1]:
+[^1]: 
 
 I should write yet another blog post about why I have this preference, but for
 now feel free to accept it as a pattern.

@@ -1,12 +1,12 @@
-import { Box } from '@recipes/box'
-import { Heading } from '@recipes/heading'
-import { Text } from '@recipes/text'
-import ColorSwatch from './Color'
+import { Box } from '@recipes/box';
+import { Heading } from '@recipes/heading';
+import { Text } from '@recipes/text';
+import ColorSwatch from './Color';
 
 function addAlpha(rgb: string, alpha: string): string {
-  let rgbRegExp = /RGB\((\d+), (\d+), (\d+)\)/
-  let match = rgbRegExp.exec(rgb)
-  return `rgba(${match[1]}, ${match[2]}, ${match[3]}, ${alpha})`
+  let rgbRegExp = /RGB\((\d+), (\d+), (\d+)\)/;
+  let match = rgbRegExp.exec(rgb);
+  return `rgba(${match[1]}, ${match[2]}, ${match[3]}, ${alpha})`;
 }
 
 const colors = [
@@ -715,30 +715,30 @@ const colors = [
     hex: '#000000',
     rgb: 'RGB(0, 0, 0)',
   },
-]
+];
 
 export default function Colors() {
   return (
     <Box>
-      <Heading is="h1" className="mb-4">
+      <Heading is='h1' className='mb-4'>
         HTML Colors
       </Heading>
-      <Text className="mb-4">Click a color to copy it's hex code!</Text>
-      <Box className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <Text className='mb-4'>Click a color to copy it's hex code!</Text>
+      <Box className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {colors.map((color) => (
           <ColorSwatch
             key={color.name}
             color={color}
-            className="rounded p-4 bg-[var(--bg-color)]"
+            className='rounded p-4 bg-[var(--bg-color)]'
             style={{
               '--bg-color': color.hex,
               '--shadow': addAlpha(color.rgb, '.3'),
             }}
           >
             <Box
-              className="p-1 rounded text-center bg-[var(--bg)]"
+              className='p-1 rounded text-center bg-[var(--bg)]'
               style={{
-                //@ts-expect-error
+                // @ts-expect-error
                 '--bg': 'rgba(255, 255, 255, .6)',
               }}
             >
@@ -748,5 +748,5 @@ export default function Colors() {
         ))}
       </Box>
     </Box>
-  )
+  );
 }

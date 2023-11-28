@@ -51,27 +51,27 @@ For those that don't know, that roughly looks like the following:
 
 ```tsx
 // some client code, like a form!
-'use client'
+'use client';
 
-import { login } from './actions'
+import { login } from './actions';
 
 export default function Form() {
   return (
     <form>
-      <input name="email" type="text" />
+      <input name='email' type='text' />
       <button
-        type="button"
+        type='button'
         onClick={async () => {
           let userToken = await login({
             email: document.getElementsByName('email')[0].value,
-          })
+          });
           // do what you want with userToken here!
         }}
       >
         Login!
       </button>
     </form>
-  )
+  );
 }
 ```
 
@@ -83,11 +83,11 @@ wiring up that `fetch` call, here's the full code of `./actions`:
 
 ```tsx
 // new directive!
-'use server'
+'use server';
 
 export async function login({ email }) {
   // do something to login the user
-  return userToken
+  return userToken;
 }
 ```
 

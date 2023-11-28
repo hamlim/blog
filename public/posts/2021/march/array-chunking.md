@@ -42,7 +42,7 @@ in our function:
 function chunk(array, length) {
   return array.reduce((chunked, item) => {
     // @TODO
-  }, [])
+  }, []);
 }
 ```
 
@@ -70,20 +70,20 @@ function chunk(array, length) {
   return array.reduce((chunked, item) => {
     // grab the last element, note that we're using `.reverse` and rest/spread
     // here to easily grab it and the rest of the chunked array
-    let [lastElement, ...rest] = chunked.reverse()
+    let [lastElement, ...rest] = chunked.reverse();
     // If the last element is undefined, then return a new array with the current item
     if (typeof lastElement === 'undefined') {
-      return [...rest, [item]]
+      return [...rest, [item]];
     }
     // If the last element's length is less than our desired length
     // then append the item to the last element
     if (lastElement.length < length) {
-      return [...rest, [...lastElement, item]]
+      return [...rest, [...lastElement, item]];
     }
     // finally, return a new array with the current item, since the lastElement's length
     // is our desired `length`
-    return [...rest, lastElement, [item]]
-  }, [])
+    return [...rest, lastElement, [item]];
+  }, []);
 }
 ```
 
@@ -93,20 +93,20 @@ code samples and paste them into devtools or a node repl to test for yourself!
 ```tsx
 function chunk(array, length) {
   return array.reduce((chunked, item) => {
-    let [lastElement, ...rest] = chunked.reverse()
+    let [lastElement, ...rest] = chunked.reverse();
     if (typeof lastElement === 'undefined') {
-      return [...rest, [item]]
+      return [...rest, [item]];
     }
     if (lastElement.length < length) {
-      return [...rest, [...lastElement, item]]
+      return [...rest, [...lastElement, item]];
     }
-    return [...rest, lastElement, [item]]
-  }, [])
+    return [...rest, lastElement, [item]];
+  }, []);
 }
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 22, 33, 44, 55, 66, 77, 88, 99]
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 22, 33, 44, 55, 66, 77, 88, 99];
 
-chunk(arr, 3)
+chunk(arr, 3);
 ```
 
 <Spacer />

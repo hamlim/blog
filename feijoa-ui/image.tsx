@@ -1,8 +1,8 @@
-import { AspectRatio } from '@recipes/aspect-ratio'
-import { cn } from '@recipes/cn'
-import NextImage from 'next/image'
+import { AspectRatio } from '@recipes/aspect-ratio';
+import { cn } from '@recipes/cn';
+import NextImage from 'next/image';
 
-type ImageProps = React.ComponentPropsWithoutRef<typeof NextImage>
+type ImageProps = React.ComponentPropsWithoutRef<typeof NextImage>;
 
 export function Image(props: ImageProps) {
   return (
@@ -12,5 +12,5 @@ export function Image(props: ImageProps) {
         className={cn('rounded-md object-cover', props.className)}
       />
     </AspectRatio>
-  )
+  );
 }

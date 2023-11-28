@@ -29,13 +29,13 @@ export default function Sandbox() {
 render(
   createElement('h1', {}, 'Hello World!'),
   rootElement
-)`)
+)`);
 
-  let [rootElement, setRootElement] = useState()
+  let [rootElement, setRootElement] = useState();
 
   useEffect(() => {
     if (!rootElement) {
-      return
+      return;
     }
 
     let func = new Function(
@@ -44,10 +44,10 @@ render(
       'render',
       'rootElement',
       code,
-    )
+    );
 
-    func(React, React.createElement, ReactDOM.render, rootElement)
-  }, [code, rootElement])
+    func(React, React.createElement, ReactDOM.render, rootElement);
+  }, [code, rootElement]);
 
   return (
     <>
@@ -56,13 +56,13 @@ render(
         <textarea
           value={code}
           onChange={(e) => {
-            setCode(e.target.value)
+            setCode(e.target.value);
           }}
         />
       </label>
       <div ref={setRootElement} />
     </>
-  )
+  );
 }
 ```
 
@@ -80,13 +80,13 @@ export default function Sandbox() {
 render(
   createElement('h1', {}, 'Hello World!'),
   rootElement
-)`)
+)`);
 
-  let [rootElement, setRootElement] = useState()
+  let [rootElement, setRootElement] = useState();
 
   useEffect(() => {
     if (!rootElement) {
-      return
+      return;
     }
 
     let func = new Function(
@@ -95,10 +95,10 @@ render(
       'render',
       'rootElement',
       code,
-    )
+    );
 
-    func(React, React.createElement, ReactDOM.render, rootElement)
-  }, [code, rootElement])
+    func(React, React.createElement, ReactDOM.render, rootElement);
+  }, [code, rootElement]);
 
   return (
     <>
@@ -107,13 +107,13 @@ render(
         <textarea
           value={code}
           onChange={(e) => {
-            setCode(e.target.value)
+            setCode(e.target.value);
           }}
         />
       </label>
       <div ref={setRootElement} />
     </>
-  )
+  );
 }
 ```
 
@@ -127,13 +127,13 @@ export default function Sandbox() {
 render(
   createElement('h1', {}, 'Hello World!'),
   rootElement
-)`)
+)`);
 
-  let [rootElement, setRootElement] = useState()
+  let [rootElement, setRootElement] = useState();
 
   useEffect(() => {
     if (!rootElement) {
-      return
+      return;
     }
 
     let func = new Function(
@@ -142,10 +142,10 @@ render(
       'render',
       'rootElement',
       code,
-    )
+    );
 
-    func(React, React.createElement, ReactDOM.render, rootElement)
-  }, [code, rootElement])
+    func(React, React.createElement, ReactDOM.render, rootElement);
+  }, [code, rootElement]);
 
   return (
     <>
@@ -154,13 +154,13 @@ render(
         <textarea
           value={code}
           onChange={(e) => {
-            setCode(e.target.value)
+            setCode(e.target.value);
           }}
         />
       </label>
       <div ref={setRootElement} />
     </>
-  )
+  );
 }
 ```
 

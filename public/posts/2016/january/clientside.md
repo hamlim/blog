@@ -84,7 +84,6 @@ as client-side applications.
 
 ### Footnotes:
 
-[^1]:
-    Mr. Doob was one of my most well remembered sites, with cool little
-    experiments written for Chrome. More information about these can be found
-    <a href="http://mrdoob.com/">here</a>.
+[^1]: Mr. Doob was one of my most well remembered sites, with cool little
+experiments written for Chrome. More information about these can be found
+<a href="http://mrdoob.com/">here</a>.

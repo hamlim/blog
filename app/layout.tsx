@@ -1,24 +1,24 @@
-import '@styles/globals.css'
-import type { Metadata, Viewport } from 'next'
-import { cookies } from 'next/headers'
-import { ThemeProvider } from '@recipes/theme-provider'
+import '@styles/globals.css';
+import { ThemeProvider } from '@recipes/theme-provider';
+import type { Metadata, Viewport } from 'next';
+import { cookies } from 'next/headers';
 
 export default function Layout({ children }) {
-  let cookieJar = cookies()
+  let cookieJar = cookies();
   return (
-    <html lang="en-US">
-      <body className="h-screen flex flex-col">
+    <html lang='en-US'>
+      <body className='h-screen flex flex-col'>
         <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
+          attribute='class'
+          defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
-          <main className="flex grow flex-col min-h-screen">{children}</main>
+          <main className='flex grow flex-col min-h-screen'>{children}</main>
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
 
 export const metadata: Metadata = {
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     // images: ['https://feijoa-ui.vercel.app/icon-512.png'],
     creator: '@immatthamlin',
   },
-}
+};
 
 export const viewport: Viewport = {
   themeColor: [
@@ -84,4 +84,4 @@ export const viewport: Viewport = {
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
   colorScheme: 'light dark',
-}
+};

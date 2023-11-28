@@ -1,10 +1,9 @@
-import { Box } from '@recipes/box'
-import { cn } from '@recipes/cn'
+import { Box } from '@recipes/box';
+import { cn } from '@recipes/cn';
 
-interface ListProps
-  extends React.HTMLProps<HTMLUListElement & HTMLOListElement> {
-  is?: 'ul' | 'ol'
-  className?: string
+interface ListProps extends React.HTMLProps<HTMLUListElement & HTMLOListElement> {
+  is?: 'ul' | 'ol';
+  className?: string;
 }
 
 export function List({ is = 'ul', ...props }: ListProps) {
@@ -19,11 +18,11 @@ export function List({ is = 'ul', ...props }: ListProps) {
         props.className,
       )}
     />
-  )
+  );
 }
 
 interface ListItemProps extends React.HTMLProps<HTMLLIElement> {}
 
 export function ListItem(props: ListItemProps) {
-  return <Box is="li" {...props} />
+  return <Box is='li' {...props} />;
 }

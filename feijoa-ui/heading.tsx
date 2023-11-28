@@ -1,8 +1,8 @@
-import { cn } from '@recipes/cn'
+import { cn } from '@recipes/cn';
 
 interface Props extends React.HTMLProps<HTMLHeadingElement> {
-  is: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-  className?: string
+  is: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  className?: string;
 }
 
 let headingClassMap = {
@@ -12,10 +12,10 @@ let headingClassMap = {
   h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
   h5: 'scroll-m-20 text-lg font-semibold tracking-tight',
   h6: 'scroll-m-20 text-lg font-semibold tracking-tight',
-}
+};
 
 export function Heading({ is: El, ...props }: Props) {
-  let classes = headingClassMap[El]
+  let classes = headingClassMap[El];
 
-  return <El {...props} className={cn(classes, props.className)} />
+  return <El {...props} className={cn(classes, props.className)} />;
 }

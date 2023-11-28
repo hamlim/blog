@@ -54,7 +54,7 @@ Some text here. Some more text right after it too!
 ### Code Block
 
 ```tsx
-const foo: string = 'bar'
+const foo: string = 'bar';
 ```
 
 ```diff

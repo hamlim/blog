@@ -33,27 +33,27 @@ resolve the problem I was running into, I found the following solution:
 Here's a complete example of my current CodeBlock component:
 
 ```tsx
-import shiki from 'shiki'
+import shiki from 'shiki';
 
 // Manually import themes and grammars
-import githubDarkDimmed from 'shiki/themes/github-dark-dimmed.json'
-import githubLight from 'shiki/themes/github-light.json'
-import tsxGrammar from 'shiki/languages/tsx.tmLanguage.json'
-import mdGrammar from 'shiki/languages/markdown.tmLanguage.json'
-import cssGrammar from 'shiki/languages/css.tmLanguage.json'
-import diffGrammar from 'shiki/languages/diff.tmLanguage.json'
-import bashGrammar from 'shiki/languages/shellscript.tmLanguage.json'
-import jsonGrammar from 'shiki/languages/json.tmLanguage.json'
+import cssGrammar from 'shiki/languages/css.tmLanguage.json';
+import diffGrammar from 'shiki/languages/diff.tmLanguage.json';
+import jsonGrammar from 'shiki/languages/json.tmLanguage.json';
+import mdGrammar from 'shiki/languages/markdown.tmLanguage.json';
+import bashGrammar from 'shiki/languages/shellscript.tmLanguage.json';
+import tsxGrammar from 'shiki/languages/tsx.tmLanguage.json';
+import githubDarkDimmed from 'shiki/themes/github-dark-dimmed.json';
+import githubLight from 'shiki/themes/github-light.json';
 
 export default async function CodeBlock({ children, className, ...props }) {
-  let lang = className ? className.split('-')[1] : 'typescript'
+  let lang = className ? className.split('-')[1] : 'typescript';
   if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
-    lang = 'typescript'
+    lang = 'typescript';
   } else if (lang === 'sh') {
-    lang = 'bash'
+    lang = 'bash';
   }
 
-  let codeToHighlight = children
+  let codeToHighlight = children;
 
   let highlighter = await shiki.getHighlighter({
     // Pass in manually imported themes and grammars
@@ -75,18 +75,18 @@ export default async function CodeBlock({ children, className, ...props }) {
       // @ts-ignore
       { id: 'json', scopeName: 'source.json', grammar: jsonGrammar },
     ],
-  })
+  });
 
-  let html = highlighter.codeToHtml(codeToHighlight, { lang })
+  let html = highlighter.codeToHtml(codeToHighlight, { lang });
 
   return (
     <Box
-      is="code"
+      is='code'
       dangerouslySetInnerHTML={{ __html: html }}
       {...props}
       className={className ? `${className} ${code}` : `${code}`}
     />
-  )
+  );
 }
 ```
 

@@ -31,11 +31,11 @@ being the least frequently used.
 
 ```jsx
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   useEffect(() => {
     // Gets called on initial render, and every time `count` changes
-  }, [count])
-  return null
+  }, [count]);
+  return null;
 }
 ```
 
@@ -50,8 +50,8 @@ on the `count` variable from the components own scope. React will then track the
 function App() {
   useEffect(() => {
     // Only gets called when the component "mounts"
-  }, [])
-  return null
+  }, []);
+  return null;
 }
 ```
 
@@ -66,8 +66,8 @@ other values.
 function App() {
   useEffect(() => {
     // Gets called on every re-render of the App component
-  })
-  return null
+  });
+  return null;
 }
 ```
 
