@@ -114,6 +114,7 @@ export function Time(props: Props<typeof Box>) {
   return <Box {...props} is='time' />;
 }
 
+export * from '@recipes/abbr';
 export * from '@recipes/accordion';
 export * from '@recipes/alert';
 export * from '@recipes/alert-dialog';
