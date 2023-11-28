@@ -26,7 +26,10 @@ module.exports = {
     './app/**/*.tsx',
     './lib/**/*.tsx',
     './ui/**/*.tsx',
-    path.join(path.dirname(require.resolve('@ds-pack/daisyui')), '/**/*.js'),
+    path.join(
+      path.dirname(require.resolve('@ds-pack/daisyui')),
+      '/**/*.js',
+    ),
   ],
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {

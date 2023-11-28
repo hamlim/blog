@@ -112,7 +112,11 @@ or use react at all within our test!
 
 ```jsx
 test('it supports undoing the state', () => {
-  const state = { past: [{ count: 0 }], present: { count: 1 }, future: [] };
+  const state = {
+    past: [{ count: 0 }],
+    present: { count: 1 },
+    future: [],
+  };
   const newState = reducer(state, { type: 'UNDO' });
   expect(newState.present.count).toBe(0);
 });
