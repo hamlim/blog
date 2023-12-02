@@ -1407,6 +1407,25 @@
       "year": "2023",
       "tags": ["Web Development", "Development"],
       "status": "draft"
+    },
+    {
+      "id": 111,
+      "title": "Project Deep Dive: Microfibre",
+      "path": "/posts/2023/november/project-deep-dive-microfibre.md",
+      "slug": "project-deep-dive-microfibre",
+      "date": "November 27th, 2023",
+      "time": "7:15:00 PM",
+      "month": "november",
+      "description": "A deep dive into one of my recent side projects; microfibre - a minimal text posting application",
+      "year": "2023",
+      "tags": [
+        "Project Deep Dive",
+        "Projects",
+        "Web Development",
+        "Go",
+        "Cloudflare"
+      ],
+      "status": "draft"
     }
   ]
 }
