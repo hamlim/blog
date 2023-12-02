@@ -3,11 +3,18 @@ I recently started building out a new side project that I am calling _microfibre
 something a bit more personal. Additionally, I wanted to build a quick and easy
 way to share short updates with my grandparents.
 
-> Of note - microfibre is more of a personal product rather than a public social
-> network, I've built it intentionally to only be used by myself, but that
-> doesn't prevent others from creating similar versions of the same product!
+<Spacer />
+
+Of note - microfibre is more of a personal product rather than a public social
+network. It's a neighborhood cafe rather than an industrial chain restaurant!
+I've built it intentionally to only be used by myself, but that doesn't prevent
+others from creating similar versions of the same product!
+
+<Spacer />
 
 ## What is microfibre?
+
+<Spacer />
 
 microfibre is essentially a bulletin board, it allows me to post short-form (but
 not limited in length) text updates<FootnoteRef id="1" />, which then get
@@ -20,8 +27,56 @@ about the project - it's a fairly basic
 <Abbr title="Acronym standing for Create Read Update Delete, often used to describe basic REST APIs">CRUD</Abbr>
 API.
 
+## Where'd it start?
+
+<Spacer />
+
+I started the project the first week of November (2023), and primarily wanted to
+use it to learn Go lang. I've been
+[messing around with Go](/2023/september/learning-go) for a few months now so I
+wanted to use it in a real side project. Additionally I wanted to give deploying
+to [Fly](https://fly.io) a try, I've used it here and there before but never
+really tried it for a full project.
+
+I built the first version of the application in about 2 total hours, I was
+mainly building the application using
+[AI via ChatGPT](/2023/november/ai-driven-development).
+
+After messing around with it for a day or two, I started to realize that the
+cold starts on Fly were pretty rough. It got to the point that I would need to
+re-submit my client form to actually get the post saved in a SQLite DB within
+the Fly instance. I'm sure there's something I'm overlooking here - but it just
+felt pretty rough so I started to consider some other options.
+
+## Take 2: On the Edge
+
+<Spacer />
+
+I didn't have much time to work on the project until Thanksgiving, but during
+the Thanksgiving weekend I found enough time to rewrite the project. I opted to
+give Cloudflare Worker a go, and decided to use their D1 SQLite DB offering as
+well.
+
+This combination of Worker and D1 is unstoppable - it's a really nice developer
+experience, using a local database during development and then using the D1
+binding when deployed.
+
+## The Future
+
+<Spacer />
+
+There are a few things I definitely want to look at adding eventually:
+
+- Features:
+  - Support for media when posting content
+- Technical Changes:
+  - Adopting a router for the Worker (I've heard really good things about Hono!)
+  - Implementing proper auth (e.g. only letting the client app post content to
+    the API)
+
 ---
 
 ## Footnotes:
 
-<Footnote id="1">Although I plan to support images and videos soon!</Footnote>
+<Footnote id="1">Although I plan to support images and videos ~~soon~~
+_eventually_!</Footnote>
