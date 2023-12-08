@@ -114,5 +114,36 @@ export async function generateMetadata({
     other: {
       publishedDate: post.date,
     },
+    openGraph: {
+      type: 'website',
+      locale: 'en_US',
+      url: `https://matthamlin.me/${post.year}/${post.month}/${post.slug}`,
+      title: post.title,
+      description: post.description,
+      siteName: `Matt's Website`,
+      // images: [
+      //   {
+      //     url: 'https://matthamlin.me/icon-512.png',
+      //     width: 512,
+      //     height: 512,
+      //     alt: `Matt Hamlin's Personal Website`,
+      //   },
+      // ],
+      // images: [
+      //   {
+      //     url: siteConfig.ogImage,
+      //     width: 1200,
+      //     height: 630,
+      //     alt: siteConfig.name,
+      //   },
+      // ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      // images: ['https://feijoa-ui.vercel.app/icon-512.png'],
+      creator: '@immatthamlin',
+    },
   };
 }

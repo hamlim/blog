@@ -1418,14 +1418,21 @@
       "month": "november",
       "description": "A deep dive into one of my recent side projects; microfibre - a minimal text posting application",
       "year": "2023",
-      "tags": [
-        "Project Deep Dive",
-        "Projects",
-        "Web Development",
-        "Go",
-        "Cloudflare"
-      ],
+      "tags": ["Project Deep Dive", "Projects", "Web Development", "Go", "Cloudflare"],
       "status": "draft"
+    },
+    {
+      "id": 112,
+      "title": "Fixing Zed's language server",
+      "path": "/posts/2023/december/fixing-zeds-language-server.md",
+      "slug": "fixing-zeds-language-server",
+      "date": "December 8th, 2023",
+      "time": "8:32:09 AM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["Quick Tip", "Zed"],
+      "status": "draft",
+      "description": "Zed language server quick tip; fixing Zed's language server"
     }
   ]
 }
