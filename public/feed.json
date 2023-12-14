@@ -1433,6 +1433,19 @@
       "tags": ["Quick Tip", "Zed"],
       "status": "draft",
       "description": "Zed language server quick tip; fixing Zed's language server"
+    },
+    {
+      "id": 113,
+      "title": "No Process is Invisible Process",
+      "path": "/posts/2023/december/no-process-is-invisible-process.md",
+      "slug": "no-process-is-invisible-process",
+      "date": "December 13th, 2023",
+      "time": "7:17:32 PM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["micropost"],
+      "status": "public",
+      "description": "Low/no process workflow wasn't actually no process, it was only an \"invisible\" process. An implicit contract with everyone on the team to do that async workflow on their own time."
     }
   ]
 }
