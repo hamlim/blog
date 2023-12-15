@@ -1446,6 +1446,19 @@
       "tags": ["micropost"],
       "status": "public",
       "description": "Low/no process workflow wasn't actually no process, it was only an \"invisible\" process. An implicit contract with everyone on the team to do that async workflow on their own time."
+    },
+    {
+      "id": 114,
+      "title": "Stop Snacking",
+      "path": "/posts/2023/december/stop-snacking.md",
+      "slug": "stop-snacking",
+      "date": "December 15th, 2023",
+      "time": "8:25:45 AM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["micropost"],
+      "status": "public",
+      "description": "No I don't mean those Milano cookies you keep taking from the office snack wall either (although you should probably stop snacking on those as often as well)."
     }
   ]
 }

@@ -23,6 +23,10 @@ export function Spacer() {
   return <Box is='marquee' className='mb-4' />;
 }
 
+export function Callout({ children }) {
+  return <Box className='bg-slate-400 dark:bg-slate-600 p-2 rounded'>{children}</Box>;
+}
+
 export { default as Mentions } from '../lib/Mentions';
 
 export function a(props: Props<typeof BaseLink>) {
