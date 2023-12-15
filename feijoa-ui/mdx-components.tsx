@@ -24,7 +24,7 @@ export function Spacer() {
 }
 
 export function Callout({ children }) {
-  return <Box className='bg-slate-400 dark:bg-slate-600 p-2 rounded'>{children}</Box>;
+  return <Box className='bg-slate-200 dark:bg-slate-600 p-2 rounded'>{children}</Box>;
 }
 
 export { default as Mentions } from '../lib/Mentions';
