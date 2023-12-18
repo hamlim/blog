@@ -1459,6 +1459,19 @@
       "tags": ["micropost"],
       "status": "public",
       "description": "No I don't mean those Milano cookies you keep taking from the office snack wall either (although you should probably stop snacking on those as often as well)."
+    },
+    {
+      "id": 115,
+      "title": "Being Unopinionated",
+      "path": "/posts/2023/december/being-unopinionated.md",
+      "slug": "being-unopinionated",
+      "date": "December 18th, 2023",
+      "time": "7:43:38 AM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["micropost"],
+      "status": "public",
+      "description": "It's fine for a library to express some opinions about how it should be adopted and how the overall workflow/application in which it is adopted should function. However, it's false advertising to say that it is unopinionated."
     }
   ]
 }
