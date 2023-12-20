@@ -1443,7 +1443,7 @@
       "time": "7:17:32 PM",
       "month": "december",
       "year": "2023",
-      "tags": ["micropost"],
+      "tags": ["micropost", "Teams"],
       "status": "public",
       "description": "Low/no process workflow wasn't actually no process, it was only an \"invisible\" process. An implicit contract with everyone on the team to do that async workflow on their own time."
     },
@@ -1456,7 +1456,7 @@
       "time": "8:25:45 AM",
       "month": "december",
       "year": "2023",
-      "tags": ["micropost"],
+      "tags": ["micropost", "Development"],
       "status": "public",
       "description": "No I don't mean those Milano cookies you keep taking from the office snack wall either (although you should probably stop snacking on those as often as well)."
     },
