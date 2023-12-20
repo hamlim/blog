@@ -1483,7 +1483,8 @@
       "month": "december",
       "year": "2023",
       "tags": ["Web Development", "CSS-in-JS"],
-      "status": "public"
+      "status": "public",
+      "description": "A brief recap of how Wayfair changed it's CSS approach not once but twice in the span of 5 years!"
     }
   ]
 }
