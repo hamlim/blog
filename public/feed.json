@@ -1472,6 +1472,18 @@
       "tags": ["micropost"],
       "status": "public",
       "description": "It's fine for a library to express some opinions about how it should be adopted and how the overall workflow/application in which it is adopted should function. However, it's false advertising to say that it is unopinionated."
+    },
+    {
+      "id": 116,
+      "title": "On Adopting CSS-in-JS",
+      "path": "/posts/2023/december/on-adopting-css-in-js.md",
+      "slug": "on-adopting-css-in-js",
+      "date": "December 20th, 2023",
+      "time": "5:29:30 AM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["Web Development", "CSS-in-JS"],
+      "status": "public"
     }
   ]
 }
