@@ -1497,6 +1497,18 @@
       "year": "2023",
       "tags": ["Web Development", "micropost", "Cloudflare Workers", "Cloudflare"],
       "status": "draft"
+    },
+    {
+      "id": 118,
+      "title": "Type Safe process.env",
+      "path": "/posts/2023/december/type-safe-process-env.md",
+      "slug": "type-safe-process-env",
+      "date": "December 26th, 2023",
+      "time": "2:34:43 PM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["Web Development", "TypeScript", "micropost"],
+      "status": "draft"
     }
   ]
 }
