@@ -86,7 +86,7 @@ export default async function Blog({ params: { title } }) {
         ? (
           <Box className='mt-4'>
             <Heading is='h4'>Tags:</Heading>
-            <Box className='flex justify-start gap-4 mt-4'>
+            <Box className='flex flex-wrap justify-start gap-4 mt-4'>
               {post.tags.map((tag: string) => (
                 <Box key={tag} is='span' className='inline-flex italic'>
                   <Link href={`/posts/tags/${tag}`}>{tag}</Link>
