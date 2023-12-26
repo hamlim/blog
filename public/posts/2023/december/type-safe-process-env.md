@@ -5,12 +5,10 @@ should just write a brief blog post to help myself with this in the future.
 Use this snippet to override `process.env` types:
 
 ```ts
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv {
-      // Replace `KEY` with your env variables!
-      KEY: string;
-    }
+declare namespace NodeJS {
+  interface ProcessEnv {
+    // Replace `KEY` with your env variables!
+    KEY: string;
   }
 }
 ```
