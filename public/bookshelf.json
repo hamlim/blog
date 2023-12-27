@@ -201,8 +201,9 @@
     "title": "Wool",
     "author": "Hugh Howey",
     "url": "https://www.goodreads.com/book/show/12287209-wool",
-    "status": "reading",
-    "dateStarted": "September 2023"
+    "status": "read",
+    "dateStarted": "September 2023",
+    "dateFinished": "December 2023"
   },
   {
     "title": "Tinker, Tailor, Soldier, Spy",
