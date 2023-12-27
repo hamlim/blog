@@ -1520,7 +1520,8 @@
       "month": "december",
       "year": "2023",
       "tags": ["Web Development", "micropost", "Observability"],
-      "status": "draft"
+      "status": "public",
+      "description": "Leveraging service monitors properly to improve service observability."
     }
   ]
 }
