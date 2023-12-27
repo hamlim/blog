@@ -1509,6 +1509,18 @@
       "year": "2023",
       "tags": ["Web Development", "TypeScript", "micropost"],
       "status": "draft"
+    },
+    {
+      "id": 119,
+      "title": "Service Monitors and Observability",
+      "path": "/posts/2023/december/service-monitors-and-observability.md",
+      "slug": "service-monitors-and-observability",
+      "date": "December 27th, 2023",
+      "time": "3:18:53 PM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["Web Development", "micropost", "Observability"],
+      "status": "draft"
     }
   ]
 }
