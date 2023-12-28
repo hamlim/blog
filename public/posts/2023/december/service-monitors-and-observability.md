@@ -1,3 +1,6 @@
+> Thanks to [Scott Kaye](https://www.scottykaye.com/) for reviewing an early
+> draft of this post
+
 Awhile back I ~~tweeted~~ _made this post on X_ about being intentional when
 creating service monitors:
 
@@ -16,7 +19,7 @@ monitors.
 Traditionally, monitors are configured to automatically raise an incident, which
 usually pages someone that is currently on-call for the service.
 
-However, as Peter's uncle says -
+However, as uncle Ben says -
 [with great power comes great responsibility](https://i.imgur.com/lIAMtJt.mp4).
 
 It can be nerveracking to be on-call for large and complex services, especially
