@@ -89,7 +89,7 @@ nesting classes with preprocessors is really easy to type and is still really
 powerful. I will be replacing all id selectors with attribute selectors however
 because it will make my code a lot easier to manage in the long run.
 
-#### Footnotes:
+### Footnotes:
 
 [^1]: Note: Operator here can be any of the predefined operations in the above
 examples, such as `=`, `~=`, `|=`, `^=`, `$=`, and `*=`. Also the `i` can be

@@ -76,7 +76,7 @@ There are a few things I definitely want to look at adding eventually:
 
 ---
 
-## Footnotes:
+### Footnotes:
 
 <Footnote id="1">Although I plan to support images and videos ~~soon~~
 _eventually_!</Footnote>

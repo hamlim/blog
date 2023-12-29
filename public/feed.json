@@ -1522,6 +1522,19 @@
       "tags": ["Web Development", "micropost", "Observability"],
       "status": "public",
       "description": "Leveraging service monitors properly to improve service observability."
+    },
+    {
+      "id": 120,
+      "title": "Churn Anxiety",
+      "path": "/posts/2023/december/churn-anxiety.md",
+      "slug": "churn-anxiety",
+      "date": "December 28th, 2023",
+      "time": "7:37:13 PM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["Development", "Web Development"],
+      "status": "public",
+      "description": "When did semver major changes become so scary?"
     }
   ]
 }

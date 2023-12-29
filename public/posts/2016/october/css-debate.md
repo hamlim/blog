@@ -183,7 +183,7 @@ me</a> or <a data-footnote="+1 425 210 0980" href="sms:+14252100980" className="
 me</a> with your thoughts on whether CSS is good. I would also love to learn how
 you use CSS either at work or on your own projects!
 
-#### Footnotes:
+### Footnotes:
 
 [^1]:
     Heck, even I did this when I was first getting interviewed for my current

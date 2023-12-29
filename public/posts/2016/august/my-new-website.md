@@ -92,7 +92,7 @@ this because I really enjoy touching code. So whenever I make a new post I copy
 my template html, edit in the title's and other data and then add a link back to
 it from the archive page when I am ready to publish it.
 
-#### Footnotes:
+### Footnotes:
 
 [^1]:
     To combat this in the future I plan on making a snapshot branch on Github
