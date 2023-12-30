@@ -1,5 +1,5 @@
 {
-  "gallery": [96, 97, 87, 27, 35, 39, 50],
+  "gallery": [96, 97, 87, 27, 35, 39, 50, 111, 121],
   "notebookEntries": [
     {
       "id": 0,
@@ -1418,7 +1418,7 @@
       "month": "november",
       "description": "A deep dive into one of my recent side projects; microfibre - a minimal text posting application",
       "year": "2023",
-      "tags": ["Project Deep Dive", "Projects", "Web Development", "Go", "Cloudflare", "Cloudflare Workers"],
+      "tags": ["Project Deep Dive", "Projects", "Web Development", "Go", "Cloudflare", "Cloudflare Workers", "Next.js"],
       "status": "draft"
     },
     {
