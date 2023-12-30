@@ -212,5 +212,17 @@
     "status": "read",
     "dateStarted": "October 2023",
     "dateFinished": "December 2023"
+  },
+  {
+    "title": "Shift",
+    "author": "Hugh Howey",
+    "url": "https://www.goodreads.com/book/show/17306293-shift",
+    "status": "to-read"
+  },
+  {
+    "title": "Dust",
+    "author": "Hugh Howey",
+    "url": "https://www.goodreads.com/book/show/17855756-dust",
+    "status": "to-read"
   }
 ]
