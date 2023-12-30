@@ -1535,6 +1535,19 @@
       "tags": ["Development", "Web Development"],
       "status": "public",
       "description": "When did semver major changes become so scary?"
+    },
+    {
+      "id": 121,
+      "title": "Project Deep Dive: Tails",
+      "path": "/posts/2023/december/project-deep-dive-tails.md",
+      "slug": "project-deep-dive-tails",
+      "date": "December 30th, 2023",
+      "time": "11:05:29 AM",
+      "month": "december",
+      "year": "2023",
+      "tags": ["Project Deep Dive", "Projects", "Web Development", "Cloudflare", "Next.js", "Cloudflare Workers"],
+      "status": "public",
+      "description": "A(nother) deep dive into one of my recent side projects; tails - a plain and simple cocktail recipe app."
     }
   ]
 }
