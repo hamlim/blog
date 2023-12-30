@@ -173,6 +173,136 @@ function Tagged({ groupedByTag }) {
   );
 }
 
+// Thanks chatGPT!
+function dateDifference(date1: Date, date2: Date) {
+  // Calculate the time difference in milliseconds
+  // @ts-ignore
+  let difference = Math.abs(date1 - date2);
+
+  // Define constants for time units
+  let millisecondsPerSecond = 1000;
+  let millisecondsPerMinute = 60 * millisecondsPerSecond;
+  let millisecondsPerHour = 60 * millisecondsPerMinute;
+  let millisecondsPerDay = 24 * millisecondsPerHour;
+  let millisecondsPerWeek = 7 * millisecondsPerDay;
+  let millisecondsPerMonth = 30.44 * millisecondsPerDay; // Average days per month
+  let millisecondsPerYear = 365.25 * millisecondsPerDay; // Average days per year
+
+  // Calculate the differences in each time unit
+  let years = Math.floor(difference / millisecondsPerYear);
+  difference %= millisecondsPerYear;
+  let months = Math.floor(difference / millisecondsPerMonth);
+  difference %= millisecondsPerMonth;
+  let weeks = Math.floor(difference / millisecondsPerWeek);
+  difference %= millisecondsPerWeek;
+  let days = Math.floor(difference / millisecondsPerDay);
+  difference %= millisecondsPerDay;
+  let hours = Math.floor(difference / millisecondsPerHour);
+  difference %= millisecondsPerHour;
+  let minutes = Math.floor(difference / millisecondsPerMinute);
+  difference %= millisecondsPerMinute;
+  let seconds = Math.floor(difference / millisecondsPerSecond);
+
+  // Create an object to store the result
+  let result = {
+    years,
+    months,
+    weeks,
+    days,
+    hours,
+    minutes,
+    seconds,
+  };
+
+  return result;
+}
+
+let startDate = new Date('Thu, 31 Dec 2015 08:00:00 GMT');
+
+function plural(amount) {
+  return amount > 1 ? 's' : '';
+}
+
+function getTagCount(posts) {
+  let tags = new Set();
+  posts.forEach(post => post.tags.forEach(tag => tags.add(tag)));
+  return tags.size;
+}
+
+function totalPostsEachYear(months: Array<[string, Array<Post>]>) {
+  return months.reduce((acc, month) => {
+    return acc + month[1].length;
+  }, 0);
+}
+
+function postsByMonth(groupedByYear: Array<[string, Array<[string, Array<Post>]>]>) {
+  let count = {
+    January: 0,
+    February: 0,
+    March: 0,
+    April: 0,
+    May: 0,
+    June: 0,
+    July: 0,
+    August: 0,
+    September: 0,
+    October: 0,
+    November: 0,
+    December: 0,
+  };
+  groupedByYear.forEach(year => {
+    year[1].forEach(months => {
+      count[months[0]] += months[1].length;
+    });
+  });
+  return count;
+}
+
+function BlogStats({ posts, groupedByYear }) {
+  let nowIsh = new Date();
+
+  let diff = dateDifference(startDate, nowIsh);
+  return (
+    <>
+      <Heading className='mb-3' id='stats' is='h3'>Blog Stats:</Heading>
+      <Text>
+        I've been semi-consistently writing blog posts since 2015, approximately:<br />
+        <time suppressHydrationWarning>
+          {`${diff.years} years, ${diff.months} month${plural(diff.months)}, ${diff.weeks} week${
+            plural(diff.weeks)
+          }, ${diff.days} day${plural(diff.days)}, ${diff.hours} hour${plural(diff.hours)}, ${diff.minutes} minute${
+            plural(diff.minutes)
+          } and ${diff.seconds} second${plural(diff.seconds)}`}
+        </time>,
+        <br /> over that time I've published <Text is='strong'>{posts.length}</Text> posts!
+      </Text>
+      <Text>With the following distribution:</Text>
+      <List is='ul'>
+        {groupedByYear.map(([year, months]) => {
+          return (
+            <ListItem key={year}>
+              <Text>{year} - {totalPostsEachYear(months)} posts</Text>
+              <List is='ul'>
+                {months.map((month) => (
+                  <ListItem key={month[0]}>
+                    {month[0]} - {month[1].length} posts
+                  </ListItem>
+                ))}
+              </List>
+            </ListItem>
+          );
+        })}
+      </List>
+      <Text>Here's my lifetime count of posts per month:</Text>
+      <List is='ul'>
+        {Object.entries(postsByMonth(groupedByYear)).map(([month, count]) => (
+          <ListItem key={month}>{month} - {count} posts</ListItem>
+        ))}
+      </List>
+    </>
+  );
+}
+
 export default function Listing({ posts, gallaryPosts }) {
   let groupedByYear = groupByYearAndMonth(posts);
   let groupedByTag = groupByTags(posts);
@@ -215,6 +345,7 @@ export default function Listing({ posts, gallaryPosts }) {
           <Tagged groupedByTag={groupedByTag} />
         </TabsContent>
       </Tabs>
+      <BlogStats posts={posts} groupedByYear={groupedByYear} />
     </>
   );
 }
