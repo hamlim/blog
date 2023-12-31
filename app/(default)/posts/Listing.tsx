@@ -220,13 +220,7 @@ function dateDifference(date1: Date, date2: Date) {
 let startDate = new Date('Thu, 31 Dec 2015 08:00:00 GMT');
 
 function plural(amount) {
-  return amount > 1 ? 's' : '';
-}
-
-function getTagCount(posts) {
-  let tags = new Set();
-  posts.forEach(post => post.tags.forEach(tag => tags.add(tag)));
-  return tags.size;
+  return (amount > 1 || amount === 0) ? 's' : '';
 }
 
 function totalPostsEachYear(months: Array<[string, Array<Post>]>) {
