@@ -14,11 +14,10 @@ export default function Resume() {
         Also available via{' '}
         <Link href='https://matt-hamlin.notion.site/Matt-Hamlin-s-Resume-190eb1b56b2d48c3b58a5f3a2d121c81?pvs=4'>
           Notion
-        </Link>{' '}
-        and{' '}
+        </Link>,{' '}
         <Link href='https://docs.google.com/document/d/1r_dinjsgFfB0ppLlosmaI31z0lUAbwuL7kWrlYRZ3aI/edit?usp=sharing'>
           Google Docs
-        </Link>
+        </Link>, and <Link href='/resume-nov-23.pdf'>PDF</Link>.
       </Blockquote>
       <Box className='flex flex-col md:flex-row'>
         <Box className='md:mr-4'>
