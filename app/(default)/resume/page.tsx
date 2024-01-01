@@ -82,7 +82,7 @@ export default function Resume() {
             </Text>
           </Heading>
           <Text is='b' className='font-bold'>
-            2017 - June 2021
+            July 2017 - June 2021
           </Text>
           <Text>
             Worked with a small team of frontend engineers and designers to build, and maintain our Design Systems, as
