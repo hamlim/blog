@@ -1,5 +1,5 @@
 {
-  "gallery": [96, 97, 87, 27, 35, 39, 50, 111, 121],
+  "gallery": [98, 99, 89, 29, 37, 41, 52, 113, 123],
   "notebookEntries": [
     {
       "id": 0,
@@ -389,6 +389,30 @@
     },
     {
       "id": 26,
+      "title": "Push vs Pull AI",
+      "path": "/posts/2017/january/push-vs-pull-ai.md",
+      "slug": "push-vs-pull-ai",
+      "date": "January 1st, 2017",
+      "time": "12:00:00 PM",
+      "tags": ["Technology", "AI"],
+      "month": "january",
+      "year": 2017,
+      "status": "public"
+    },
+    {
+      "id": 27,
+      "title": "Rebuilding Mustache",
+      "path": "/posts/2017/march/rebuilding-mustache.md",
+      "slug": "rebuilding-mustache",
+      "date": "March 1st, 2017",
+      "time": "12:00:00 PM",
+      "tags": ["Development", "Web Development"],
+      "month": "march",
+      "year": 2017,
+      "status": "public"
+    },
+    {
+      "id": 28,
       "title": "Starting Fresh",
       "path": "/posts/2018/december/starting-fresh.md",
       "slug": "starting-fresh",
@@ -400,7 +424,7 @@
       "status": "public"
     },
     {
-      "id": 27,
+      "id": 29,
       "title": "Testing Software",
       "path": "/posts/2018/december/testing-software.md",
       "slug": "testing-software",
@@ -412,7 +436,7 @@
       "status": "public"
     },
     {
-      "id": 28,
+      "id": 30,
       "title": "Building a Live Editor",
       "path": "/posts/2019/february/building-a-live-editor.md",
       "slug": "building-a-live-editor",
@@ -424,7 +448,7 @@
       "status": "public"
     },
     {
-      "id": 29,
+      "id": 31,
       "title": "Hooks Tips Ep. 1 - The Dependency Array",
       "path": "/posts/2019/february/hooks-tips-dependency-array.md",
       "slug": "hooks-tips-dependency-array",
@@ -436,7 +460,7 @@
       "status": "public"
     },
     {
-      "id": 30,
+      "id": 32,
       "title": "Hooks Tips Ep. 2 - Migrating Instance Variables",
       "path": "/posts/2019/february/hooks-tips-instance-variables.md",
       "slug": "hooks-tips-instance-variables",
@@ -448,7 +472,7 @@
       "status": "public"
     },
     {
-      "id": 31,
+      "id": 33,
       "title": "Start Small, Accept Change",
       "path": "/posts/2019/february/start-small.md",
       "slug": "start-small",
@@ -460,7 +484,7 @@
       "status": "public"
     },
     {
-      "id": 32,
+      "id": 34,
       "title": "useReducer, don't useState",
       "path": "/posts/2019/february/why-you-should-useReducer.md",
       "slug": "why-you-should-useReducer",
@@ -472,7 +496,7 @@
       "status": "public"
     },
     {
-      "id": 33,
+      "id": 35,
       "title": "React Error Boundaries",
       "path": "/posts/2019/january/react-error-boundaries.md",
       "slug": "react-error-boundaries",
@@ -484,7 +508,7 @@
       "status": "public"
     },
     {
-      "id": 34,
+      "id": 36,
       "title": "Summer 2019 - Bend Oregon",
       "path": "/posts/2019/july/bend.md",
       "slug": "bend",
@@ -496,7 +520,7 @@
       "status": "public"
     },
     {
-      "id": 35,
+      "id": 37,
       "title": "Theme First UI Development",
       "path": "/posts/2019/july/theme-first-ui-development.md",
       "slug": "theme-first-ui-development",
@@ -508,7 +532,7 @@
       "status": "public"
     },
     {
-      "id": 36,
+      "id": 38,
       "title": "Deploying Automatically using GitHub Actions",
       "path": "/posts/2019/june/deploying-with-github-actions.md",
       "slug": "deploying-with-github-actions",
@@ -520,7 +544,7 @@
       "status": "public"
     },
     {
-      "id": 37,
+      "id": 39,
       "title": "Simpler and Smaller",
       "path": "/posts/2019/june/simpler-and-smaller.md",
       "slug": "simpler-and-smaller",
@@ -532,7 +556,7 @@
       "status": "public"
     },
     {
-      "id": 38,
+      "id": 40,
       "title": "Snapshot Testing",
       "path": "/posts/2019/march/snapshot-testing.md",
       "slug": "snapshot-testing",
@@ -544,7 +568,7 @@
       "status": "public"
     },
     {
-      "id": 39,
+      "id": 41,
       "title": "Maintenance Costs",
       "path": "/posts/2019/may/maintenance-costs.md",
       "slug": "maintenance-costs",
@@ -556,7 +580,7 @@
       "status": "public"
     },
     {
-      "id": 40,
+      "id": 42,
       "title": "A Note On Anti-Patterns",
       "path": "/posts/2020/april/a-note-on-anti-patterns.md",
       "slug": "a-note-on-anti-patterns",
@@ -568,7 +592,7 @@
       "status": "public"
     },
     {
-      "id": 41,
+      "id": 43,
       "title": "A Note On Meetings",
       "path": "/posts/2020/april/a-note-on-meetings.md",
       "slug": "a-note-on-meetings",
@@ -580,7 +604,7 @@
       "status": "public"
     },
     {
-      "id": 42,
+      "id": 44,
       "title": "The Rabbit Hole",
       "path": "/posts/2020/april/the-rabbit-hole.md",
       "slug": "the-rabbit-hole",
@@ -592,7 +616,7 @@
       "status": "public"
     },
     {
-      "id": 43,
+      "id": 45,
       "title": "2020: Year in Review",
       "path": "/posts/2020/december/2020.md",
       "slug": "2020",
@@ -604,7 +628,7 @@
       "status": "public"
     },
     {
-      "id": 44,
+      "id": 46,
       "title": "Literate (web) Programming",
       "path": "/posts/2020/december/literate-programming.md",
       "slug": "literate-programming",
@@ -616,7 +640,7 @@
       "status": "public"
     },
     {
-      "id": 45,
+      "id": 47,
       "title": "NextJS Analytics with Airtable",
       "path": "/posts/2020/december/nextjs-analytics-with-airtable.md",
       "slug": "nextjs-analytics-with-airtable",
@@ -628,7 +652,7 @@
       "status": "public"
     },
     {
-      "id": 46,
+      "id": 48,
       "title": "Pair Code Reviews",
       "path": "/posts/2020/december/pair-code-reviews.md",
       "slug": "pair-code-reviews",
@@ -640,7 +664,7 @@
       "status": "public"
     },
     {
-      "id": 47,
+      "id": 49,
       "title": "Building a Web Sandbox: Part 1",
       "path": "/posts/2020/december/sandbox-part-1.md",
       "slug": "sandbox-part-1",
@@ -652,7 +676,7 @@
       "status": "public"
     },
     {
-      "id": 48,
+      "id": 50,
       "title": "February 20, 2020",
       "path": "/posts/2020/february/back-bay-fens.md",
       "slug": "back-bay-fens",
@@ -664,7 +688,7 @@
       "status": "public"
     },
     {
-      "id": 49,
+      "id": 51,
       "title": "Enhancing Slack",
       "path": "/posts/2020/july/enhancing-slack.md",
       "slug": "enhancing-slack",
@@ -676,7 +700,7 @@
       "status": "public"
     },
     {
-      "id": 50,
+      "id": 52,
       "title": "Draft Pull Requests",
       "path": "/posts/2020/march/draft-pull-requests.md",
       "slug": "draft-pull-requests",
@@ -688,7 +712,7 @@
       "status": "public"
     },
     {
-      "id": 51,
+      "id": 53,
       "title": "Stateful Providers",
       "path": "/posts/2020/march/stateful-providers.md",
       "slug": "stateful-providers",
@@ -700,7 +724,7 @@
       "status": "public"
     },
     {
-      "id": 52,
+      "id": 54,
       "title": "A Note on Consistency",
       "path": "/posts/2020/may/a-note-on-consistency.md",
       "slug": "a-note-on-consistency",
@@ -712,7 +736,7 @@
       "status": "public"
     },
     {
-      "id": 53,
+      "id": 55,
       "title": "Build Your Developer Toolbox",
       "path": "/posts/2021/august/build-your-developer-toolbox.md",
       "slug": "build-your-developer-toolbox",
@@ -724,7 +748,7 @@
       "status": "public"
     },
     {
-      "id": 54,
+      "id": 56,
       "title": "Roll your own Obsidian sync",
       "path": "/posts/2021/august/obsidian-sync.md",
       "slug": "obsidian-sync",
@@ -736,7 +760,7 @@
       "status": "public"
     },
     {
-      "id": 55,
+      "id": 57,
       "title": "On Written Communication",
       "path": "/posts/2021/august/on-written-communication.md",
       "slug": "on-written-communication",
@@ -748,7 +772,7 @@
       "status": "public"
     },
     {
-      "id": 56,
+      "id": 58,
       "title": "React Testing Library: Checkboxes and events",
       "path": "/posts/2021/august/rtl-checkbox-events.md",
       "slug": "rtl-checkbox-events",
@@ -760,7 +784,7 @@
       "status": "public"
     },
     {
-      "id": 57,
+      "id": 59,
       "title": "Start Fresh",
       "path": "/posts/2021/august/start-fresh.md",
       "slug": "start-fresh",
@@ -772,7 +796,7 @@
       "status": "public"
     },
     {
-      "id": 58,
+      "id": 60,
       "title": "Updating Forked Repos",
       "path": "/posts/2021/august/updating-forked-repos.md",
       "slug": "updating-forked-repos",
@@ -784,7 +808,7 @@
       "status": "public"
     },
     {
-      "id": 59,
+      "id": 61,
       "title": "Year in Music",
       "path": "/posts/2021/december/2021-in-music.md",
       "slug": "2021-in-music",
@@ -796,7 +820,7 @@
       "status": "draft"
     },
     {
-      "id": 60,
+      "id": 62,
       "title": "useConsole",
       "path": "/posts/2021/february/useConsole.md",
       "slug": "useConsole",
@@ -808,7 +832,7 @@
       "status": "public"
     },
     {
-      "id": 61,
+      "id": 63,
       "title": "yw",
       "path": "/posts/2021/february/yw.md",
       "slug": "yw",
@@ -820,7 +844,7 @@
       "status": "public"
     },
     {
-      "id": 62,
+      "id": 64,
       "title": "2021: Resolutions",
       "path": "/posts/2021/january/2021.md",
       "slug": "2021",
@@ -832,7 +856,7 @@
       "status": "public"
     },
     {
-      "id": 63,
+      "id": 65,
       "title": "Computed Design Tokens",
       "path": "/posts/2021/january/computed-theme.md",
       "slug": "computed-theme",
@@ -844,7 +868,7 @@
       "status": "public"
     },
     {
-      "id": 64,
+      "id": 66,
       "title": "Hack Sprint",
       "path": "/posts/2021/january/hack-sprint.md",
       "slug": "hack-sprint",
@@ -856,7 +880,7 @@
       "status": "public"
     },
     {
-      "id": 65,
+      "id": 67,
       "title": "Simple Props",
       "path": "/posts/2021/january/simple-props.md",
       "slug": "simple-props",
@@ -868,7 +892,7 @@
       "status": "public"
     },
     {
-      "id": 66,
+      "id": 68,
       "title": "Learning",
       "path": "/posts/2021/june/learning.md",
       "slug": "learning",
@@ -880,7 +904,7 @@
       "status": "draft"
     },
     {
-      "id": 67,
+      "id": 69,
       "title": "The Squeeze",
       "path": "/posts/2021/june/the-squeeze.md",
       "slug": "the-squeeze",
@@ -892,7 +916,7 @@
       "status": "draft"
     },
     {
-      "id": 68,
+      "id": 70,
       "title": "Array Chunking",
       "path": "/posts/2021/march/array-chunking.md",
       "slug": "array-chunking",
@@ -904,7 +928,7 @@
       "status": "public"
     },
     {
-      "id": 69,
+      "id": 71,
       "title": "Fast",
       "path": "/posts/2021/march/fast.md",
       "slug": "fast",
@@ -916,7 +940,7 @@
       "status": "draft"
     },
     {
-      "id": 70,
+      "id": 72,
       "title": "On Code Review",
       "path": "/posts/2021/march/on-code-review.md",
       "slug": "on-code-review",
@@ -928,7 +952,7 @@
       "status": "public"
     },
     {
-      "id": 71,
+      "id": 73,
       "title": "Writing Node Scripts",
       "path": "/posts/2021/march/writing-node-scripts.md",
       "slug": "writing-node-scripts",
@@ -940,7 +964,7 @@
       "status": "public"
     },
     {
-      "id": 72,
+      "id": 74,
       "title": "Fast Feedback Systems",
       "path": "/posts/2021/november/fast-feedback-systems.md",
       "slug": "fast-feedback-systems",
@@ -952,7 +976,7 @@
       "status": "public"
     },
     {
-      "id": 73,
+      "id": 75,
       "title": "Pair Programming (stub)",
       "path": "/posts/2021/november/pair-programming-stub.md",
       "slug": "pair-programming-stub",
@@ -964,7 +988,7 @@
       "status": "public"
     },
     {
-      "id": 74,
+      "id": 76,
       "title": "Video Games",
       "path": "/posts/2021/november/video-games.md",
       "slug": "video-games",
@@ -976,7 +1000,7 @@
       "status": "draft"
     },
     {
-      "id": 75,
+      "id": 77,
       "title": "Delete it",
       "path": "/posts/2021/october/delete-it.md",
       "slug": "delete-it",
@@ -988,7 +1012,7 @@
       "status": "public"
     },
     {
-      "id": 76,
+      "id": 78,
       "title": "Linear Tools Enforce Linear Thinking",
       "path": "/posts/2021/september/linear-tools.md",
       "slug": "linear-tools",
@@ -1000,7 +1024,7 @@
       "status": "public"
     },
     {
-      "id": 77,
+      "id": 79,
       "title": "Mac Setup Guide",
       "path": "/posts/2021/september/mac-setup-guide.md",
       "slug": "mac-setup-guide",
@@ -1012,7 +1036,7 @@
       "status": "public"
     },
     {
-      "id": 78,
+      "id": 80,
       "title": "My Opinionated Next.js Setup",
       "path": "/posts/2022/january/my-opinionated-nextjs-setup.md",
       "slug": "my-opinionated-nextjs-setup",
@@ -1024,7 +1048,7 @@
       "status": "public"
     },
     {
-      "id": 79,
+      "id": 81,
       "title": "My Two Favorite React Tricks",
       "path": "/posts/2022/january/my-two-favorite-react-tricks.md",
       "slug": "my-two-favorite-react-tricks",
@@ -1036,7 +1060,7 @@
       "status": "public"
     },
     {
-      "id": 80,
+      "id": 82,
       "title": "Switching to iPhone",
       "path": "/posts/2022/january/switching-to-iphone.md",
       "slug": "switching-to-iphone",
@@ -1048,7 +1072,7 @@
       "status": "public"
     },
     {
-      "id": 81,
+      "id": 83,
       "title": "Yarn Berry Gitignore Settings",
       "path": "/posts/2022/july/yarn-berry-gitignore.md",
       "slug": "yarn-berry-gitignore",
@@ -1060,7 +1084,7 @@
       "status": "public"
     },
     {
-      "id": 82,
+      "id": 84,
       "title": "On Note Taking",
       "path": "/posts/2022/june/on-note-taking.md",
       "slug": "on-note-taking",
@@ -1072,7 +1096,7 @@
       "status": "public"
     },
     {
-      "id": 83,
+      "id": 85,
       "title": "On Writing Tests",
       "path": "/posts/2022/june/on-writing-tests.md",
       "slug": "on-writing-tests",
@@ -1084,7 +1108,7 @@
       "status": "public"
     },
     {
-      "id": 84,
+      "id": 86,
       "title": "Moving to PNPM",
       "path": "/posts/2022/may/moving-to-pnpm.md",
       "slug": "moving-to-pnpm",
@@ -1096,7 +1120,7 @@
       "status": "public"
     },
     {
-      "id": 85,
+      "id": 87,
       "title": "Switching back to Notion",
       "path": "/posts/2022/may/switching-back-to-notion.md",
       "slug": "switching-back-to-notion",
@@ -1108,7 +1132,7 @@
       "status": "public"
     },
     {
-      "id": 86,
+      "id": 88,
       "title": "Upgrade Guides",
       "path": "/posts/2022/may/upgrade-guides.md",
       "slug": "upgrade-guides",
@@ -1120,7 +1144,7 @@
       "status": "public"
     },
     {
-      "id": 87,
+      "id": 89,
       "title": "My Updated Next.js Setup",
       "path": "/posts/2022/december/updated-opinionated-nextjs-setup.md",
       "slug": "updated-opinionated-nextjs-setup",
@@ -1132,7 +1156,7 @@
       "year": "2022"
     },
     {
-      "id": 88,
+      "id": 90,
       "title": "Dollar: Devlog 1",
       "path": "/posts/2023/january/dollar-devlog-1.md",
       "slug": "dollar-devlog-1",
@@ -1144,7 +1168,7 @@
       "status": "public"
     },
     {
-      "id": 89,
+      "id": 91,
       "title": "Navigating Monorepos with Ease",
       "path": "/posts/2023/january/navigating-monorepos-with-ease.md",
       "slug": "navigating-monorepos-with-ease",
@@ -1156,7 +1180,7 @@
       "status": "public"
     },
     {
-      "id": 90,
+      "id": 92,
       "title": "Dollar: Devlog 2",
       "path": "/posts/2023/march/dollar-devlog-2.md",
       "slug": "dollar-devlog-2",
@@ -1168,7 +1192,7 @@
       "status": "draft"
     },
     {
-      "id": 91,
+      "id": 93,
       "title": "Setting up Shiki on Next.js",
       "path": "/posts/2023/march/shiki-on-next-js.md",
       "slug": "shiki-on-next-js",
@@ -1180,7 +1204,7 @@
       "status": "draft"
     },
     {
-      "id": 92,
+      "id": 94,
       "title": "Write it down",
       "path": "/posts/2023/march/write-it-down.md",
       "slug": "write-it-down",
@@ -1192,7 +1216,7 @@
       "status": "draft"
     },
     {
-      "id": 93,
+      "id": 95,
       "title": "Setting up Next.js with Tailwind",
       "path": "/posts/2023/april/nextjs-with-tailwind.md",
       "slug": "nextjs-with-tailwind",
@@ -1204,7 +1228,7 @@
       "status": "draft"
     },
     {
-      "id": 94,
+      "id": 96,
       "title": "My Thoughts on Tailwind",
       "path": "/posts/2023/april/thoughts-on-tailwind.md",
       "slug": "thoughts-on-tailwind",
@@ -1216,7 +1240,7 @@
       "status": "draft"
     },
     {
-      "id": 95,
+      "id": 97,
       "title": "Avoid Distractions",
       "path": "/posts/2023/april/avoid-distractions.md",
       "slug": "avoid-distractions",
@@ -1228,7 +1252,7 @@
       "status": "draft"
     },
     {
-      "id": 96,
+      "id": 98,
       "title": "10x Engineers",
       "path": "/posts/2023/june/10x.md",
       "slug": "10x",
@@ -1240,7 +1264,7 @@
       "status": "public"
     },
     {
-      "id": 97,
+      "id": 99,
       "title": "Fractal Refactoring",
       "path": "/posts/2023/june/fractal-refactoring.md",
       "slug": "fractal-refactoring",
@@ -1252,7 +1276,7 @@
       "status": "public"
     },
     {
-      "id": 98,
+      "id": 100,
       "title": "Deno",
       "path": "/posts/2023/july/deno.md",
       "slug": "deno",
@@ -1264,7 +1288,7 @@
       "status": "public"
     },
     {
-      "id": 99,
+      "id": 101,
       "title": "Principles for Automated Testing",
       "path": "/posts/2023/july/principles-for-automated-testing.md",
       "slug": "principles-for-automated-testing",
@@ -1276,7 +1300,7 @@
       "status": "public"
     },
     {
-      "id": 100,
+      "id": 102,
       "title": "29",
       "path": "/posts/2023/july/29.md",
       "slug": "29",
@@ -1288,7 +1312,7 @@
       "status": "public"
     },
     {
-      "id": 101,
+      "id": 103,
       "title": "Idea: Distributable Web Apps",
       "path": "/posts/2023/july/distributable-web-apps.md",
       "slug": "distributable-web-apps",
@@ -1300,7 +1324,7 @@
       "status": "public"
     },
     {
-      "id": 102,
+      "id": 104,
       "title": "Speedbumps",
       "path": "/posts/2023/august/speedbumps.md",
       "slug": "speedbumps",
@@ -1312,7 +1336,7 @@
       "status": "public"
     },
     {
-      "id": 103,
+      "id": 105,
       "title": "Learning Go",
       "path": "/posts/2023/september/learning-go.md",
       "slug": "learning-go",
@@ -1324,7 +1348,7 @@
       "status": "public"
     },
     {
-      "id": 104,
+      "id": 106,
       "title": "Finding React Artifacts",
       "path": "/posts/2023/september/finding-react-artifacts.md",
       "slug": "finding-react-artifacts",
@@ -1336,7 +1360,7 @@
       "status": "public"
     },
     {
-      "id": 105,
+      "id": 107,
       "title": "Using Marquee with React and TypeScript",
       "path": "/posts/2023/september/using-marquee-with-react-and-typescript.md",
       "slug": "using-marquee-with-react-and-typescript",
@@ -1348,7 +1372,7 @@
       "status": "public"
     },
     {
-      "id": 106,
+      "id": 108,
       "title": "Jabs and Fluff: On CTO Office Hours",
       "path": "/posts/2023/september/on-cto-office-hours.md",
       "slug": "on-cto-office-hours",
@@ -1360,7 +1384,7 @@
       "status": "draft"
     },
     {
-      "id": 107,
+      "id": 109,
       "title": "Go To Git Utils",
       "path": "/posts/2023/october/go-to-git-utils.md",
       "slug": "go-to-git-utils",
@@ -1372,7 +1396,7 @@
       "status": "draft"
     },
     {
-      "id": 108,
+      "id": 110,
       "title": "Teams and Caterpillar Tracks",
       "path": "/posts/2023/november/teams-and-caterpillar-tracks.md",
       "slug": "teams-and-caterpillar-tracks",
@@ -1384,7 +1408,7 @@
       "status": "public"
     },
     {
-      "id": 109,
+      "id": 111,
       "title": "AI Driven Development",
       "path": "/posts/2023/november/ai-driven-development.md",
       "slug": "ai-driven-development",
@@ -1396,7 +1420,7 @@
       "status": "draft"
     },
     {
-      "id": 110,
+      "id": 112,
       "title": "Pair Programming",
       "description": "Pair programming can be good sometimes - but not all the time",
       "path": "/posts/2023/november/pair-programming.md",
@@ -1409,7 +1433,7 @@
       "status": "draft"
     },
     {
-      "id": 111,
+      "id": 113,
       "title": "Project Deep Dive: Microfibre",
       "path": "/posts/2023/november/project-deep-dive-microfibre.md",
       "slug": "project-deep-dive-microfibre",
@@ -1422,7 +1446,7 @@
       "status": "draft"
     },
     {
-      "id": 112,
+      "id": 114,
       "title": "Fixing Zed's language server",
       "path": "/posts/2023/december/fixing-zeds-language-server.md",
       "slug": "fixing-zeds-language-server",
@@ -1435,7 +1459,7 @@
       "description": "Zed language server quick tip; fixing Zed's language server"
     },
     {
-      "id": 113,
+      "id": 115,
       "title": "No Process is Invisible Process",
       "path": "/posts/2023/december/no-process-is-invisible-process.md",
       "slug": "no-process-is-invisible-process",
@@ -1448,7 +1472,7 @@
       "description": "Low/no process workflow wasn't actually no process, it was only an \"invisible\" process. An implicit contract with everyone on the team to do that async workflow on their own time."
     },
     {
-      "id": 114,
+      "id": 116,
       "title": "Stop Snacking",
       "path": "/posts/2023/december/stop-snacking.md",
       "slug": "stop-snacking",
@@ -1461,7 +1485,7 @@
       "description": "No I don't mean those Milano cookies you keep taking from the office snack wall either (although you should probably stop snacking on those as often as well)."
     },
     {
-      "id": 115,
+      "id": 117,
       "title": "Being Unopinionated",
       "path": "/posts/2023/december/being-unopinionated.md",
       "slug": "being-unopinionated",
@@ -1474,7 +1498,7 @@
       "description": "It's fine for a library to express some opinions about how it should be adopted and how the overall workflow/application in which it is adopted should function. However, it's false advertising to say that it is unopinionated."
     },
     {
-      "id": 116,
+      "id": 118,
       "title": "On Adopting CSS-in-JS",
       "path": "/posts/2023/december/on-adopting-css-in-js.md",
       "slug": "on-adopting-css-in-js",
@@ -1487,7 +1511,7 @@
       "description": "A brief recap of how Wayfair changed it's CSS approach not once but twice in the span of 5 years!"
     },
     {
-      "id": 117,
+      "id": 119,
       "title": "Consistent Local Ports with Wrangler",
       "path": "/posts/2023/december/consistent-local-ports-with-wrangler.md",
       "slug": "consistent-local-ports-with-wrangler",
@@ -1499,7 +1523,7 @@
       "status": "draft"
     },
     {
-      "id": 118,
+      "id": 120,
       "title": "Type Safe process.env",
       "path": "/posts/2023/december/type-safe-process-env.md",
       "slug": "type-safe-process-env",
@@ -1511,7 +1535,7 @@
       "status": "draft"
     },
     {
-      "id": 119,
+      "id": 121,
       "title": "Service Monitors and Observability",
       "path": "/posts/2023/december/service-monitors-and-observability.md",
       "slug": "service-monitors-and-observability",
@@ -1524,7 +1548,7 @@
       "description": "Leveraging service monitors properly to improve service observability."
     },
     {
-      "id": 120,
+      "id": 122,
       "title": "Churn Anxiety",
       "path": "/posts/2023/december/churn-anxiety.md",
       "slug": "churn-anxiety",
@@ -1537,7 +1561,7 @@
       "description": "When did semver major changes become so scary?"
     },
     {
-      "id": 121,
+      "id": 123,
       "title": "Project Deep Dive: Tails",
       "path": "/posts/2023/december/project-deep-dive-tails.md",
       "slug": "project-deep-dive-tails",
