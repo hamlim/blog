@@ -20,7 +20,17 @@ let projects: Array<{
     link: 'https://github.com/hamlim/clue',
     title: 'Clue Notes',
     description:
-      'A quick and dirty web app to keep track of youre notes and assumptions while playing the board game Clue!',
+      'A quick and dirty web app to keep track of your notes and assumptions while playing the board game Clue!',
+  },
+  {
+    link: 'https://tails-theta.vercel.app',
+    title: 'Tails',
+    description: 'A simple web app for saving and sharing cocktail recipes!',
+  },
+  {
+    link: 'https://github.com/hamlim/rsc-form',
+    title: 'RSC Form',
+    description: 'A React Form component for use within React Server Components',
   },
   {
     link: 'https://github.com/hamlim/simple-cache',
