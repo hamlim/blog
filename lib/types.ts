@@ -38,7 +38,7 @@ export interface Post {
   /**
    * A date formatted as a string
    *
-   * Usually formatted as "<Month> <date>(st|rd|th), <year>"
+   * Usually formatted as "<Month> <date>(st|nd|rd|th), <year>"
    */
   date: string;
   /**
@@ -62,7 +62,7 @@ export interface Post {
   /**
    * The year the blog post was published within
    */
-  year: number;
+  year: string;
   /**
    * A short description of the post
    */
