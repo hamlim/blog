@@ -15,9 +15,9 @@ export default function Resume() {
         <Link href='https://matt-hamlin.notion.site/Matt-Hamlin-s-Resume-190eb1b56b2d48c3b58a5f3a2d121c81?pvs=4'>
           Notion
         </Link>,{' '}
-        <Link href='https://docs.google.com/document/d/1r_dinjsgFfB0ppLlosmaI31z0lUAbwuL7kWrlYRZ3aI/edit?usp=sharing'>
+        <Link href='https://docs.google.com/document/d/1Om1ilLporVXdLxC_CS20rRjDMmjeVKfNHUDoK8odtdA/edit?usp=sharing'>
           Google Docs
-        </Link>, and <Link href='/resume-nov-23.pdf'>PDF</Link>.
+        </Link>, and <Link href='/resume-jan-24.pdf'>PDF</Link>.
       </Blockquote>
       <Box className='flex flex-col'>
         <Text className='mb-4'>
