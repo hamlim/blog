@@ -190,3 +190,8 @@ export default function Resume() {
     </Stack>
   );
 }
+
+export let metadata = {
+  title: "Matt Hamlin's Resume",
+  description: 'Matt Hamlin is a Staff Software Engineer with 10 years of experience across the frontend ecosystem.',
+};
