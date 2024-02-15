@@ -1754,6 +1754,19 @@
       "tags": ["Development", "Web Development", "Projects"],
       "status": "public",
       "description": "How we solved an almost show-stopping production bug, and how you can avoid it in your own projects."
+    },
+    {
+      "id": 138,
+      "title": "The Library-Docs Monorepo Template",
+      "path": "/posts/2024/february/library-docs-monorepo-template.md",
+      "slug": "library-docs-monorepo-template",
+      "date": "February 15th, 2024",
+      "time": "5:30:53 PM",
+      "month": "february",
+      "year": "2024",
+      "tags": ["Development", "Web Development", "Projects"],
+      "status": "public",
+      "description": "A monorepo template for managing a library and documentation together."
     }
   ]
 }
