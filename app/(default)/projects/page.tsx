@@ -17,6 +17,11 @@ let projects: Array<{
     description: 'A super basic React.js form library!',
   },
   {
+    link: 'https://github.com/hamlim/template-monorepo',
+    title: 'Template Monorepo',
+    description: 'A template for creating a monorepo with Bun, Next.js, and Turborepo',
+  },
+  {
     link: 'https://github.com/hamlim/clue',
     title: 'Clue Notes',
     description:
