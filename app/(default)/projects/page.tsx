@@ -22,6 +22,16 @@ let projects: Array<{
     description: 'A template for creating a monorepo with Bun, Next.js, and Turborepo',
   },
   {
+    'link': 'https://github.com/hamlim/better-beacon',
+    title: 'Better Beacon',
+    'description': (
+      <>
+        A better version of{' '}
+        <InlineCode>navigator.sendBeacon</InlineCode>, that doesn't break when you try to queue too many events!
+      </>
+    ),
+  },
+  {
     link: 'https://github.com/hamlim/clue',
     title: 'Clue Notes',
     description:
