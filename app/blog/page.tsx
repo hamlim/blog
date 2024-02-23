@@ -1,7 +1,7 @@
 import { fetchManifest } from '@lib/fetch-manifest';
 import type { Post } from '@lib/types';
 import type { Metadata } from 'next';
-import Listing from '../../../app/blog/Listing';
+import Listing from './Listing';
 
 async function getPosts(): Promise<{
   posts: Array<Post>;
