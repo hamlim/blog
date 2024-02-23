@@ -68,7 +68,11 @@
   },
   "devDependencies": {
     "@feijoa-ui/cli": "^0.0.4",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.0",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/mdx": "^2.0.11",
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",

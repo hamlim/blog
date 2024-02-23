@@ -1,0 +1,31 @@
+> Note: This post is a draft
+
+Since I’ve learned about the concept of design tokens a few years ago, I’ve
+always found myself using both tokens and theme to represent the same concept,
+more specifically referring to a collection of tokens as a theme.
+
+However, more recently I have been thinking a bit more about the relationship
+between tokens and themes, and I think there may be layers of abstractions
+between these two concepts and more directly that tokens might represent only a
+small fraction of what makes up a theme.
+
+<Figure
+  src="/design-tokens-and-theme/venn-diagram.png"
+  alt="A rough venn diagram depicting design tokens as a small circle fully contained within a larger theme circle"
+  caption="This is how I now currently conceptualize the relationship between design tokens and theme"
+/>
+
+Fundamentally, the definition of design tokens that I use is that they represent
+the collection of atomic values, used to define the visual language of a system.
+This is a fairly broad definition, as it doesn’t necessarily indicate the
+boundaries of this collection, for example most might agree that a primary brand
+color should be defined as a token within a system, but should specifics like
+button border radius be defined as its own atomic design token?
+
+This question, that of where are the boundaries of what is a design token has
+been what I have been thinking about the most recently.
+
+One of the early explorations in stressing the edges of the design tokens and
+theme boundaries has been <TwitterMention>jxnblk</TwitterMention>'s library
+styled-system (and its more recent iteration, theme-ui). Specifically, both
+library's concept of `variant`'s.

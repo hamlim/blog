@@ -1,4 +1,4 @@
-// import fg from 'fast-glob';
+import fg from 'fast-glob';
 
 // let mdFiles = fg.sync('./public/**/*.md');
 
@@ -39,3 +39,10 @@
 // Bun.write('./paths.json', JSON.stringify([...paths, ...staticPaths], null, 2));
 
 export {};
+
+let notebookEntries = fg.sync('./public/notebook/**/*.md');
+
+for (let note of notebookEntries) {
+  let path = note.replace('./public/notebook/', '').replace('.md', '');
+  await Bun.write(`./app/notebook/${path}/page.mdx`, Bun.file(note));
+}

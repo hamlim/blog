@@ -1,3 +1,7 @@
+import createMDX from '@next/mdx';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkGfm from 'remark-gfm';
+
 let oldPosts = [
   '/2022/december/updated-opinionated-nextjs-setup',
   '/2022/june/on-writing-tests',
@@ -142,8 +146,10 @@ let oldPosts = [
 
 /** @type {import('next').NextConfig} */
 let config = {
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   experimental: {
     serverComponentsExternalPackages: ['shiki', 'vscode-oniguruma'],
+    mdxRs: true,
   },
   async redirects() {
     return [
@@ -171,4 +177,9 @@ let config = {
   },
 };
 
-export default config;
+export default createMDX({
+  options: {
+    remarkPlugins: [remarkFrontmatter, remarkGfm],
+    rehypePlugins: [],
+  },
+})(config);
