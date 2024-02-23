@@ -42,7 +42,7 @@ export default function Layout({ children }) {
                   <Box>
                     <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
                     <Text>
-                      <Link href='/feed'>🧵 Feed</Link> <TwitterMention>immatthamlin</TwitterMention>
+                      <Link href='/feed'>🧵 Feed</Link> <TwitterMention>immatthamlin</TwitterMention>{' '}
                       <GitHubMention>hamlim</GitHubMention> <Link href='/social'>🗣 All socials</Link>
                     </Text>
                   </Box>
