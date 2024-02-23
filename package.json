@@ -74,6 +74,7 @@
     "@types/react-dom": "^18.0.4",
     "bun-types": "^1.0.1",
     "dprint": "^0.43.1",
+    "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
     "supports-color": "^9.4.0",
     "typescript": "4.9.4"
