@@ -6,8 +6,6 @@ import fg from 'fast-glob';
 //   return file.replace('./public', '').replace('/posts', '').replace('.md', '');
 // });
 
-// let feed = await Bun.file('./public/feed.json').json();
-
 // let tags = new Set();
 // feed.posts.forEach(p => {
 //   p.tags.forEach(t => tags.add(t));
@@ -40,9 +38,29 @@ import fg from 'fast-glob';
 
 export {};
 
-// let notebookEntries = fg.sync('./public/notebook/**/*.md');
+let feed = await Bun.file('./public/feed.json').json();
 
-// for (let note of notebookEntries) {
-//   let path = note.replace('./public/notebook/', '').replace('.md', '');
-//   await Bun.write(`./app/notebook/${path}/page.mdx`, Bun.file(note));
-// }
+let blogPosts = fg.sync('./public/posts/**/*.md');
+
+for (let post of blogPosts) {
+  let path = post.replace('./public/notebook/', '').replace('.md', '');
+  let postData = feed.posts.find(p => p.slug === path.split('/').at(-1));
+  await Bun.write(`./app/blog/(blog-posts)/${path}/content.mdx`, Bun.file(post));
+  await Bun.write(
+    `./app/blog/(blog-posts)/${path}/page.tsx`,
+    `import BlogPage from 'app/blog/BlogPage';
+  import Content from './content.mdx';
+  
+  export default function Page() {
+    return (
+      // @ts-expect-error - RSC
+      <BlogPage
+        meta={${JSON.stringify(postData, null, 2)}}
+      >
+        <Content />
+      </BlogPage>
+    );
+  }
+  `,
+  );
+}
