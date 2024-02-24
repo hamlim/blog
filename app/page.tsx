@@ -1,4 +1,5 @@
 import { fetchManifest } from '@lib/fetch-manifest';
+import { formatPostLink } from '@lib/format-post-link';
 import { Box } from '@recipes/box';
 import { Heading } from '@recipes/heading';
 import { Link } from '@recipes/link';
@@ -21,7 +22,7 @@ function LoadingTopPosts() {
     <Box className='my-4 h-[152px]'>
       <Text>Loading top posts...</Text>
       <Text>
-        <Link href='/posts'>See all posts</Link>
+        <Link href='/blog'>See all posts</Link>
       </Text>
     </Box>
   );
@@ -35,7 +36,7 @@ async function TopPosts() {
       <List is='ol'>
         {topPosts.map((post, i) => (
           <ListItem key={post.title} className={i !== 0 ? 'mt-2' : ''}>
-            <Link href={`/${post.year}/${post.month}/${post.slug}`}>
+            <Link href={formatPostLink(post)}>
               {post.title}
             </Link>
           </ListItem>
