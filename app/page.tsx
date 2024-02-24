@@ -123,15 +123,6 @@ export default async function Page() {
       <Link href='/notebook'>Give them a read</Link>
 
       <Heading is='h3' className='my-3'>
-        Random
-      </Heading>
-      <Text className='mb-2'>
-        I sometimes hack on random ideas that don't really need their own domain or might not really be worth throwing
-        in their own repo, you can find some of those in my Random part of the site.
-      </Text>
-      <Link href='/random'>Check them out</Link>
-
-      <Heading is='h3' className='my-3'>
         Bookshelf
       </Heading>
       <Text className='mb-2'>
