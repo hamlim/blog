@@ -1,5 +1,15 @@
 {
-  "gallery": [41, 50, 53, 56, 102, 111, 112, 126, 136],
+  "gallery": [
+    41,
+    50,
+    53,
+    56,
+    102,
+    111,
+    112,
+    126,
+    136
+  ],
   "notebookEntries": [
     {
       "id": 0,
@@ -8,10 +18,13 @@
       "slug": "building-a-developer-toolbox",
       "date": "June 1st, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Development Patterns"],
+      "tags": [
+        "Development Patterns"
+      ],
       "month": "june",
       "year": "2020",
-      "status": "public"
+      "status": "public",
+      "uuid": "12993722103752915500"
     },
     {
       "id": 1,
@@ -20,10 +33,13 @@
       "slug": "the-art-of-note-taking",
       "date": "June 1st, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Blogging"],
+      "tags": [
+        "Blogging"
+      ],
       "month": "june",
       "year": "2020",
-      "status": "public"
+      "status": "public",
+      "uuid": "15649136958598135277"
     },
     {
       "id": 2,
@@ -32,10 +48,15 @@
       "slug": "design-tokens-and-theme",
       "date": "May 1st, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Web Development", "Design Systems", "Design Tokens"],
+      "tags": [
+        "Web Development",
+        "Design Systems",
+        "Design Tokens"
+      ],
       "month": "may",
       "year": "2020",
-      "status": "public"
+      "status": "public",
+      "uuid": "1032674717375947527"
     },
     {
       "id": 3,
@@ -44,10 +65,14 @@
       "slug": "the-state-of-monorepos",
       "date": "May 1st, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Development", "Web Development"],
+      "tags": [
+        "Development",
+        "Web Development"
+      ],
       "month": "may",
       "year": "2020",
-      "status": "public"
+      "status": "public",
+      "uuid": "8164785556185054537"
     },
     {
       "id": 4,
@@ -56,10 +81,13 @@
       "slug": "2020",
       "date": "November 28th, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Blogging"],
+      "tags": [
+        "Blogging"
+      ],
       "month": "november",
       "year": "2020",
-      "status": "public"
+      "status": "public",
+      "uuid": "13084266205034823652"
     },
     {
       "id": 5,
@@ -70,8 +98,11 @@
       "time": "9:16:24 PM",
       "year": "2023",
       "month": "march",
-      "tags": ["Don't Read Me"],
-      "status": "draft"
+      "tags": [
+        "Don't Read Me"
+      ],
+      "status": "draft",
+      "uuid": "889684673349270974"
     }
   ],
   "posts": [
@@ -82,10 +113,14 @@
       "slug": "a-new-look",
       "date": "November 1st, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Blogging", "Redesign"],
+      "tags": [
+        "Blogging",
+        "Redesign"
+      ],
       "month": "november",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "2204008813043196201"
     },
     {
       "id": 1,
@@ -94,10 +129,14 @@
       "slug": "a-new-resume",
       "date": "November 1st, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Career", "Side Projects"],
+      "tags": [
+        "Career",
+        "Side Projects"
+      ],
       "month": "november",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "18436446943095380089"
     },
     {
       "id": 2,
@@ -106,10 +145,14 @@
       "slug": "message",
       "date": "November 3rd, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Meta", "Communication"],
+      "tags": [
+        "Meta",
+        "Communication"
+      ],
       "month": "november",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "14638003919160079436"
     },
     {
       "id": 3,
@@ -118,10 +161,13 @@
       "slug": "weekend-projects",
       "date": "November 4th, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Side Projects"],
+      "tags": [
+        "Side Projects"
+      ],
       "month": "november",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "9794430004952805402"
     },
     {
       "id": 4,
@@ -130,10 +176,13 @@
       "slug": "family-time",
       "date": "November 20th, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Family"],
+      "tags": [
+        "Family"
+      ],
       "month": "november",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "7517966223049903356"
     },
     {
       "id": 5,
@@ -142,10 +191,13 @@
       "slug": "thanksgiving",
       "date": "November 24th, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Thanks"],
+      "tags": [
+        "Thanks"
+      ],
       "month": "november",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "12944393965144416513"
     },
     {
       "id": 6,
@@ -154,10 +206,13 @@
       "slug": "the-social-max",
       "date": "December 1st, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Social Media"],
+      "tags": [
+        "Social Media"
+      ],
       "month": "december",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "7456198852749485638"
     },
     {
       "id": 7,
@@ -166,10 +221,14 @@
       "slug": "powerpoint",
       "date": "December 2nd, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Startups", "Ideas"],
+      "tags": [
+        "Startups",
+        "Ideas"
+      ],
       "month": "december",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "13284811181923712821"
     },
     {
       "id": 8,
@@ -178,10 +237,13 @@
       "slug": "blogging-vs-working",
       "date": "December 15th, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Blogging"],
+      "tags": [
+        "Blogging"
+      ],
       "month": "december",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "3297680161752973740"
     },
     {
       "id": 9,
@@ -190,10 +252,13 @@
       "slug": "2015",
       "date": "December 31st, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Recap"],
+      "tags": [
+        "Recap"
+      ],
       "month": "december",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "13441231439940301055"
     },
     {
       "id": 10,
@@ -202,10 +267,13 @@
       "slug": "2016",
       "date": "December 31st, 2015",
       "time": "12:00:00 PM",
-      "tags": ["Looking Ahead"],
+      "tags": [
+        "Looking Ahead"
+      ],
       "month": "december",
       "year": 2015,
-      "status": "public"
+      "status": "public",
+      "uuid": "8035195771071640339"
     },
     {
       "id": 11,
@@ -214,10 +282,14 @@
       "slug": "dji-vs-gopro",
       "date": "January 1st, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Technology", "Competition"],
+      "tags": [
+        "Technology",
+        "Competition"
+      ],
       "month": "january",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "12648054525477996539"
     },
     {
       "id": 12,
@@ -226,10 +298,13 @@
       "slug": "my-first-project-of-2016",
       "date": "January 1st, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Projects"],
+      "tags": [
+        "Projects"
+      ],
       "month": "january",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "17063803446188025742"
     },
     {
       "id": 13,
@@ -238,10 +313,13 @@
       "slug": "building-in-2016",
       "date": "January 3rd, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Projects"],
+      "tags": [
+        "Projects"
+      ],
       "month": "january",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "13496799403652176604"
     },
     {
       "id": 14,
@@ -250,10 +328,14 @@
       "slug": "10000-characters",
       "date": "January 6th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Twitter", "Blogging"],
+      "tags": [
+        "Twitter",
+        "Blogging"
+      ],
       "month": "january",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "7680958978228875664"
     },
     {
       "id": 15,
@@ -262,10 +344,13 @@
       "slug": "clientside",
       "date": "January 19th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Development"],
+      "tags": [
+        "Development"
+      ],
       "month": "january",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "18079211612717231678"
     },
     {
       "id": 16,
@@ -274,10 +359,13 @@
       "slug": "afraid",
       "date": "January 22nd, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Meta"],
+      "tags": [
+        "Meta"
+      ],
       "month": "january",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "13208492173038628290"
     },
     {
       "id": 17,
@@ -286,10 +374,14 @@
       "slug": "redesign",
       "date": "April 4th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Blog", "Redesign"],
+      "tags": [
+        "Blog",
+        "Redesign"
+      ],
       "month": "april",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "71271325600777217"
     },
     {
       "id": 18,
@@ -298,10 +390,13 @@
       "slug": "august",
       "date": "August 20th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Recap"],
+      "tags": [
+        "Recap"
+      ],
       "month": "august",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "13423487856848465459"
     },
     {
       "id": 19,
@@ -310,10 +405,14 @@
       "slug": "attribute-selectors",
       "date": "August 21st, 2016",
       "time": "12:00:00 PM",
-      "tags": ["CSS", "Development"],
+      "tags": [
+        "CSS",
+        "Development"
+      ],
       "month": "august",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "12975179450076537672"
     },
     {
       "id": 20,
@@ -322,10 +421,14 @@
       "slug": "pull-quotes",
       "date": "August 24th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Web", "Blogging"],
+      "tags": [
+        "Web",
+        "Blogging"
+      ],
       "month": "august",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "16773594292374212455"
     },
     {
       "id": 21,
@@ -334,10 +437,14 @@
       "slug": "redesign-v5",
       "date": "August 24th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Blog", "Redesign"],
+      "tags": [
+        "Blog",
+        "Redesign"
+      ],
       "month": "august",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "2671930711713901662"
     },
     {
       "id": 22,
@@ -346,10 +453,14 @@
       "slug": "my-new-website",
       "date": "August 28th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Redesign", "Blog"],
+      "tags": [
+        "Redesign",
+        "Blog"
+      ],
       "month": "august",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "3512770128854004399"
     },
     {
       "id": 23,
@@ -358,10 +469,14 @@
       "slug": "october-4th",
       "date": "October 4th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Technology", "Google"],
+      "tags": [
+        "Technology",
+        "Google"
+      ],
       "month": "october",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "8473385954815502093"
     },
     {
       "id": 24,
@@ -370,10 +485,14 @@
       "slug": "css-debate",
       "date": "October 8th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Development", "CSS"],
+      "tags": [
+        "Development",
+        "CSS"
+      ],
       "month": "october",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "11175371236226164238"
     },
     {
       "id": 25,
@@ -382,10 +501,14 @@
       "slug": "links",
       "date": "November 19th, 2016",
       "time": "12:00:00 PM",
-      "tags": ["Roundup", "Collection"],
+      "tags": [
+        "Roundup",
+        "Collection"
+      ],
       "month": "november",
       "year": 2016,
-      "status": "public"
+      "status": "public",
+      "uuid": "16541754319648428956"
     },
     {
       "id": 26,
@@ -394,10 +517,14 @@
       "slug": "push-vs-pull-ai",
       "date": "January 1st, 2017",
       "time": "12:00:00 PM",
-      "tags": ["Technology", "AI"],
+      "tags": [
+        "Technology",
+        "AI"
+      ],
       "month": "january",
       "year": 2017,
-      "status": "public"
+      "status": "public",
+      "uuid": "13365744947252955173"
     },
     {
       "id": 27,
@@ -406,10 +533,14 @@
       "slug": "rebuilding-mustache",
       "date": "March 1st, 2017",
       "time": "12:00:00 PM",
-      "tags": ["Development", "Web Development"],
+      "tags": [
+        "Development",
+        "Web Development"
+      ],
       "month": "march",
       "year": 2017,
-      "status": "public"
+      "status": "public",
+      "uuid": "5017531080708262006"
     },
     {
       "id": 28,
@@ -420,9 +551,13 @@
       "time": "12:00:00 PM",
       "month": "march",
       "year": "2017",
-      "tags": ["Calendar", "Web Development"],
+      "tags": [
+        "Calendar",
+        "Web Development"
+      ],
       "status": "public",
-      "description": "Building a calendar web application"
+      "description": "Building a calendar web application",
+      "uuid": "6701564009534687727"
     },
     {
       "id": 29,
@@ -433,9 +568,13 @@
       "time": "12:00:00 PM",
       "month": "march",
       "year": "2017",
-      "tags": ["JavaScript", "Web Development"],
+      "tags": [
+        "JavaScript",
+        "Web Development"
+      ],
       "status": "public",
-      "description": "A few weird things about JavaScript"
+      "description": "A few weird things about JavaScript",
+      "uuid": "14797800449113229199"
     },
     {
       "id": 30,
@@ -446,9 +585,15 @@
       "time": "12:00:00 PM",
       "month": "march",
       "year": "2017",
-      "tags": ["Redesign", "Personal Site", "Next.js", "Web Development"],
+      "tags": [
+        "Redesign",
+        "Personal Site",
+        "Next.js",
+        "Web Development"
+      ],
       "status": "public",
-      "description": "A few thoughts on the redesign of my personal site, adopting Next.js and deploying via Now"
+      "description": "A few thoughts on the redesign of my personal site, adopting Next.js and deploying via Now",
+      "uuid": "6166740021509337508"
     },
     {
       "id": 31,
@@ -459,9 +604,14 @@
       "time": "12:00:00 PM",
       "month": "april",
       "year": "2017",
-      "tags": ["CSS", "JavaScript", "Web Development"],
+      "tags": [
+        "CSS",
+        "JavaScript",
+        "Web Development"
+      ],
       "status": "public",
-      "description": "A few thoughts and patterns for using styled-jsx or other CSS-in-JS solutions"
+      "description": "A few thoughts and patterns for using styled-jsx or other CSS-in-JS solutions",
+      "uuid": "11536800725844031036"
     },
     {
       "id": 32,
@@ -472,9 +622,13 @@
       "time": "12:00:00 PM",
       "month": "january",
       "year": "2018",
-      "tags": ["Recap", "Looking Ahead"],
+      "tags": [
+        "Recap",
+        "Looking Ahead"
+      ],
       "status": "public",
-      "description": "A recap and update on some of the projects I am working on at the start of 2018"
+      "description": "A recap and update on some of the projects I am working on at the start of 2018",
+      "uuid": "6154551432562630256"
     },
     {
       "title": "Understanding React 16.3 Updates",
@@ -484,10 +638,15 @@
       "time": "5:54:00 PM",
       "month": "april",
       "year": "2018",
-      "tags": ["React", "JavaScript", "Web Development"],
+      "tags": [
+        "React",
+        "JavaScript",
+        "Web Development"
+      ],
       "status": "public",
       "id": 33,
-      "description": "A quick overview of the new lifecycle methods introduced in React 16.3"
+      "description": "A quick overview of the new lifecycle methods introduced in React 16.3",
+      "uuid": "8699707737426023176"
     },
     {
       "id": 34,
@@ -498,9 +657,14 @@
       "time": "12:00:00 PM",
       "month": "may",
       "year": "2018",
-      "tags": ["React", "Web Development", "Components"],
+      "tags": [
+        "React",
+        "Web Development",
+        "Components"
+      ],
       "status": "public",
-      "description": "A few thoughts on managing complex UI component state within React"
+      "description": "A few thoughts on managing complex UI component state within React",
+      "uuid": "4878731311344697840"
     },
     {
       "id": 35,
@@ -511,9 +675,14 @@
       "time": "9:07:00 AM",
       "month": "july",
       "year": "2018",
-      "tags": ["Burnout", "Web Development", "Development"],
+      "tags": [
+        "Burnout",
+        "Web Development",
+        "Development"
+      ],
       "status": "public",
-      "description": "A few quick thoughts on burn out and taking a break"
+      "description": "A few quick thoughts on burn out and taking a break",
+      "uuid": "7353661419987804796"
     },
     {
       "id": 36,
@@ -524,9 +693,14 @@
       "time": "1:23:00 PM",
       "month": "july",
       "year": "2018",
-      "tags": ["Vacation", "Trip", "Photos"],
+      "tags": [
+        "Vacation",
+        "Trip",
+        "Photos"
+      ],
       "status": "public",
-      "description": "A few photos from my summer trip!"
+      "description": "A few photos from my summer trip!",
+      "uuid": "5697386142665025029"
     },
     {
       "id": 37,
@@ -537,9 +711,13 @@
       "time": "3:06:00 PM",
       "month": "september",
       "year": "2018",
-      "tags": ["Web Development", "Launch"],
+      "tags": [
+        "Web Development",
+        "Launch"
+      ],
       "status": "public",
-      "description": "A few thoughts on what to do after you launch a new project"
+      "description": "A few thoughts on what to do after you launch a new project",
+      "uuid": "6769529058192561941"
     },
     {
       "id": 38,
@@ -550,9 +728,13 @@
       "time": "9:11:00 PM",
       "month": "october",
       "year": "2018",
-      "tags": ["Log", "Personal"],
+      "tags": [
+        "Log",
+        "Personal"
+      ],
       "status": "public",
-      "description": "A quick log of what I have been up to in October"
+      "description": "A quick log of what I have been up to in October",
+      "uuid": "16928131552210393482"
     },
     {
       "id": 39,
@@ -563,9 +745,13 @@
       "time": "6:30:00 PM",
       "month": "november",
       "year": "2018",
-      "tags": ["Reading", "Article"],
+      "tags": [
+        "Reading",
+        "Article"
+      ],
       "status": "public",
-      "description": "A few thoughts on the article \"Reality has a surprising amount of detail\""
+      "description": "A few thoughts on the article \"Reality has a surprising amount of detail\"",
+      "uuid": "9050912150007049803"
     },
     {
       "id": 40,
@@ -576,9 +762,15 @@
       "time": "3:04:00 PM",
       "month": "november",
       "year": "2018",
-      "tags": ["React", "GraphQL", "Suspense", "Web Development"],
+      "tags": [
+        "React",
+        "GraphQL",
+        "Suspense",
+        "Web Development"
+      ],
       "status": "public",
-      "description": "A few thoughts on using Suspense with GraphQL to optimize application data loading"
+      "description": "A few thoughts on using Suspense with GraphQL to optimize application data loading",
+      "uuid": "4557103916727483703"
     },
     {
       "id": 41,
@@ -587,10 +779,14 @@
       "slug": "testing-software",
       "date": "December 1st, 2018",
       "time": "12:00:00 PM",
-      "tags": ["Web Development", "Testing"],
+      "tags": [
+        "Web Development",
+        "Testing"
+      ],
       "month": "december",
       "year": 2018,
-      "status": "public"
+      "status": "public",
+      "uuid": "1518585079942051689"
     },
     {
       "id": 42,
@@ -599,10 +795,14 @@
       "slug": "starting-fresh",
       "date": "December 5th, 2018",
       "time": "12:00:00 PM",
-      "tags": ["Blog", "Redesign"],
+      "tags": [
+        "Blog",
+        "Redesign"
+      ],
       "month": "december",
       "year": 2018,
-      "status": "public"
+      "status": "public",
+      "uuid": "13799180192082385655"
     },
     {
       "id": 43,
@@ -611,10 +811,14 @@
       "slug": "react-error-boundaries",
       "date": "January 31st, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Web Development", "React"],
+      "tags": [
+        "Web Development",
+        "React"
+      ],
       "month": "january",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "14790410424029178466"
     },
     {
       "id": 44,
@@ -623,10 +827,14 @@
       "slug": "building-a-live-editor",
       "date": "February 1st, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Development Tips", "Side Projects"],
+      "tags": [
+        "Development Tips",
+        "Side Projects"
+      ],
       "month": "february",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "406748613478828237"
     },
     {
       "id": 45,
@@ -635,10 +843,14 @@
       "slug": "start-small",
       "date": "February 1st, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Web Development", "Side Projects"],
+      "tags": [
+        "Web Development",
+        "Side Projects"
+      ],
       "month": "february",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "4323678216570148786"
     },
     {
       "id": 46,
@@ -647,10 +859,14 @@
       "slug": "hooks-tips-dependency-array",
       "date": "February 2nd, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Development Tips", "React"],
+      "tags": [
+        "Development Tips",
+        "React"
+      ],
       "month": "february",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "12733434607462442054"
     },
     {
       "id": 47,
@@ -659,10 +875,14 @@
       "slug": "hooks-tips-instance-variables",
       "date": "February 5th, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Development Tips", "React"],
+      "tags": [
+        "Development Tips",
+        "React"
+      ],
       "month": "february",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "12426545596158767667"
     },
     {
       "id": 48,
@@ -671,10 +891,14 @@
       "slug": "why-you-should-useReducer",
       "date": "February 10th, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Web Development", "React"],
+      "tags": [
+        "Web Development",
+        "React"
+      ],
       "month": "february",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "8137088706003271143"
     },
     {
       "id": 49,
@@ -683,10 +907,14 @@
       "slug": "snapshot-testing",
       "date": "March 1st, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Web Development", "Testing"],
+      "tags": [
+        "Web Development",
+        "Testing"
+      ],
       "month": "march",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "17012295633034811617"
     },
     {
       "id": 50,
@@ -695,10 +923,13 @@
       "slug": "maintenance-costs",
       "date": "May 19th, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Web Development"],
+      "tags": [
+        "Web Development"
+      ],
       "month": "may",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "3306472131968858063"
     },
     {
       "id": 51,
@@ -707,10 +938,13 @@
       "slug": "simpler-and-smaller",
       "date": "June 1st, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Web Development"],
+      "tags": [
+        "Web Development"
+      ],
       "month": "june",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "4595677908808657442"
     },
     {
       "id": 52,
@@ -719,10 +953,13 @@
       "slug": "deploying-with-github-actions",
       "date": "June 2nd, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Web Development"],
+      "tags": [
+        "Web Development"
+      ],
       "month": "june",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "10170222152633919827"
     },
     {
       "id": 53,
@@ -731,10 +968,16 @@
       "slug": "theme-first-ui-development",
       "date": "July 18th, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Web Development", "React", "Design Tokens", "Design Systems"],
+      "tags": [
+        "Web Development",
+        "React",
+        "Design Tokens",
+        "Design Systems"
+      ],
       "month": "july",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "17812834190150357671"
     },
     {
       "id": 54,
@@ -743,10 +986,14 @@
       "slug": "bend",
       "date": "July 27th, 2019",
       "time": "12:00:00 PM",
-      "tags": ["Travel", "Bend"],
+      "tags": [
+        "Travel",
+        "Bend"
+      ],
       "month": "july",
       "year": 2019,
-      "status": "public"
+      "status": "public",
+      "uuid": "2681721304645691847"
     },
     {
       "id": 55,
@@ -755,10 +1002,14 @@
       "slug": "back-bay-fens",
       "date": "February 20th, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Pictures", "Back Bay"],
+      "tags": [
+        "Pictures",
+        "Back Bay"
+      ],
       "month": "february",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "3656298625699291783"
     },
     {
       "id": 56,
@@ -767,10 +1018,14 @@
       "slug": "draft-pull-requests",
       "date": "March 23rd, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Collaboration", "Code Review"],
+      "tags": [
+        "Collaboration",
+        "Code Review"
+      ],
       "month": "march",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "14368719737331808477"
     },
     {
       "id": 57,
@@ -779,10 +1034,14 @@
       "slug": "stateful-providers",
       "date": "March 28th, 2020",
       "time": "12:00:00 PM",
-      "tags": ["React", "Development Patterns"],
+      "tags": [
+        "React",
+        "Development Patterns"
+      ],
       "month": "march",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "12365609811423243610"
     },
     {
       "id": 58,
@@ -791,10 +1050,14 @@
       "slug": "a-note-on-anti-patterns",
       "date": "April 2nd, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Web Development", "Note"],
+      "tags": [
+        "Web Development",
+        "Note"
+      ],
       "month": "april",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "16881319033918176433"
     },
     {
       "id": 59,
@@ -803,10 +1066,14 @@
       "slug": "a-note-on-meetings",
       "date": "April 3rd, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Meetings", "Note"],
+      "tags": [
+        "Meetings",
+        "Note"
+      ],
       "month": "april",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "7726933844290296748"
     },
     {
       "id": 60,
@@ -815,10 +1082,13 @@
       "slug": "the-rabbit-hole",
       "date": "April 4th, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Side Projects"],
+      "tags": [
+        "Side Projects"
+      ],
       "month": "april",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "11427789654351703002"
     },
     {
       "id": 61,
@@ -827,10 +1097,14 @@
       "slug": "a-note-on-consistency",
       "date": "May 31st, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Collaboration", "Team Work"],
+      "tags": [
+        "Collaboration",
+        "Team Work"
+      ],
       "month": "may",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "14934056073884259042"
     },
     {
       "id": 62,
@@ -839,10 +1113,14 @@
       "slug": "enhancing-slack",
       "date": "July 8th, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Slack", "Product Development"],
+      "tags": [
+        "Slack",
+        "Product Development"
+      ],
       "month": "july",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "7418792876214149674"
     },
     {
       "id": 63,
@@ -851,10 +1129,14 @@
       "slug": "pair-code-reviews",
       "date": "December 2nd, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Collaboration", "Code Review"],
+      "tags": [
+        "Collaboration",
+        "Code Review"
+      ],
       "month": "december",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "4009036721494215542"
     },
     {
       "id": 64,
@@ -863,10 +1145,13 @@
       "slug": "nextjs-analytics-with-airtable",
       "date": "December 13th, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Side Projects"],
+      "tags": [
+        "Side Projects"
+      ],
       "month": "december",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "4850564966695870306"
     },
     {
       "id": 65,
@@ -875,10 +1160,13 @@
       "slug": "literate-programming",
       "date": "December 19th, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Ideas"],
+      "tags": [
+        "Ideas"
+      ],
       "month": "december",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "877086006566344485"
     },
     {
       "id": 66,
@@ -887,10 +1175,13 @@
       "slug": "sandbox-part-1",
       "date": "December 21st, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Side Projects"],
+      "tags": [
+        "Side Projects"
+      ],
       "month": "december",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "15920389703547489061"
     },
     {
       "id": 67,
@@ -899,10 +1190,13 @@
       "slug": "2020",
       "date": "December 31st, 2020",
       "time": "12:00:00 PM",
-      "tags": ["Recap"],
+      "tags": [
+        "Recap"
+      ],
       "month": "december",
       "year": 2020,
-      "status": "public"
+      "status": "public",
+      "uuid": "17608227947422569623"
     },
     {
       "id": 68,
@@ -911,10 +1205,13 @@
       "slug": "2021",
       "date": "January 1st, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Resolutions"],
+      "tags": [
+        "Resolutions"
+      ],
       "month": "january",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "8061483582227677788"
     },
     {
       "id": 69,
@@ -923,10 +1220,14 @@
       "slug": "computed-theme",
       "date": "January 9th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Design Systems", "Theme"],
+      "tags": [
+        "Design Systems",
+        "Theme"
+      ],
       "month": "january",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "9927087848025541190"
     },
     {
       "id": 70,
@@ -935,10 +1236,13 @@
       "slug": "simple-props",
       "date": "January 18th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Side Projects"],
+      "tags": [
+        "Side Projects"
+      ],
       "month": "january",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "4428401073673516124"
     },
     {
       "id": 71,
@@ -947,10 +1251,13 @@
       "slug": "hack-sprint",
       "date": "January 19th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Hacking"],
+      "tags": [
+        "Hacking"
+      ],
       "month": "january",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "14019814308962464975"
     },
     {
       "id": 72,
@@ -959,10 +1266,16 @@
       "slug": "yw",
       "date": "February 8th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Snippets", "Yarn", "Monorepos", "Development Tips"],
+      "tags": [
+        "Snippets",
+        "Yarn",
+        "Monorepos",
+        "Development Tips"
+      ],
       "month": "february",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "7805166295920821173"
     },
     {
       "id": 73,
@@ -971,10 +1284,16 @@
       "slug": "useConsole",
       "date": "February 14th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Snippets", "JavaScript", "React", "Development Tips"],
+      "tags": [
+        "Snippets",
+        "JavaScript",
+        "React",
+        "Development Tips"
+      ],
       "month": "february",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "1149035118631255250"
     },
     {
       "id": 74,
@@ -983,10 +1302,13 @@
       "slug": "fast",
       "date": "March 1st, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Development Workflow"],
+      "tags": [
+        "Development Workflow"
+      ],
       "month": "march",
       "year": 2021,
-      "status": "draft"
+      "status": "draft",
+      "uuid": "4325127865981011756"
     },
     {
       "id": 75,
@@ -995,10 +1317,14 @@
       "slug": "writing-node-scripts",
       "date": "March 1st, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Development", "Node"],
+      "tags": [
+        "Development",
+        "Node"
+      ],
       "month": "march",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "4155956864108704466"
     },
     {
       "id": 76,
@@ -1007,10 +1333,14 @@
       "slug": "array-chunking",
       "date": "March 7th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["JavaScript", "Development Tips"],
+      "tags": [
+        "JavaScript",
+        "Development Tips"
+      ],
       "month": "march",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "205775073613881643"
     },
     {
       "id": 77,
@@ -1019,10 +1349,14 @@
       "slug": "on-code-review",
       "date": "March 15th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Development Practices", "Code Review"],
+      "tags": [
+        "Development Practices",
+        "Code Review"
+      ],
       "month": "march",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "3182887711164425949"
     },
     {
       "id": 78,
@@ -1031,10 +1365,13 @@
       "slug": "learning",
       "date": "June 13th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Thoughts"],
+      "tags": [
+        "Thoughts"
+      ],
       "month": "june",
       "year": 2021,
-      "status": "draft"
+      "status": "draft",
+      "uuid": "4372710691372666522"
     },
     {
       "id": 79,
@@ -1043,10 +1380,14 @@
       "slug": "the-squeeze",
       "date": "June 28th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Thoughts", "Work"],
+      "tags": [
+        "Thoughts",
+        "Work"
+      ],
       "month": "june",
       "year": 2021,
-      "status": "draft"
+      "status": "draft",
+      "uuid": "2529730437603049580"
     },
     {
       "id": 80,
@@ -1055,10 +1396,14 @@
       "slug": "obsidian-sync",
       "date": "August 10th, 2021",
       "time": "12:00:00 PM",
-      "tags": ["Obsidian", "Dropbox"],
+      "tags": [
+        "Obsidian",
+        "Dropbox"
+      ],
       "month": "august",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "18328378022672249366"
     },
     {
       "id": 81,
@@ -1067,10 +1412,15 @@
       "slug": "rtl-checkbox-events",
       "date": "August 10th, 2021",
       "time": "5:14:20 PM",
-      "tags": ["Development", "React Testing Library", "React"],
+      "tags": [
+        "Development",
+        "React Testing Library",
+        "React"
+      ],
       "month": "august",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "2395562511248075978"
     },
     {
       "id": 82,
@@ -1079,10 +1429,15 @@
       "slug": "updating-forked-repos",
       "date": "August 22nd, 2021",
       "time": "3:01:13 PM",
-      "tags": ["Development", "Git", "Tip"],
+      "tags": [
+        "Development",
+        "Git",
+        "Tip"
+      ],
       "month": "august",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "14179440877181086745"
     },
     {
       "id": 83,
@@ -1091,10 +1446,15 @@
       "slug": "on-written-communication",
       "date": "August 24th, 2021",
       "time": "7:10:11 PM",
-      "tags": ["Collaboration", "Communication", "Writing"],
+      "tags": [
+        "Collaboration",
+        "Communication",
+        "Writing"
+      ],
       "month": "august",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "12257325375454977857"
     },
     {
       "id": 84,
@@ -1103,10 +1463,13 @@
       "slug": "start-fresh",
       "date": "August 27th, 2021",
       "time": "5:43:25 PM",
-      "tags": ["Productivity"],
+      "tags": [
+        "Productivity"
+      ],
       "month": "august",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "15175420354200728737"
     },
     {
       "id": 85,
@@ -1115,10 +1478,13 @@
       "slug": "build-your-developer-toolbox",
       "date": "August 27th, 2021",
       "time": "6:27:23 PM",
-      "tags": ["Development"],
+      "tags": [
+        "Development"
+      ],
       "month": "august",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "8673310909288798932"
     },
     {
       "id": 86,
@@ -1127,10 +1493,13 @@
       "slug": "mac-setup-guide",
       "date": "September 4th, 2021",
       "time": "1:20:15 PM",
-      "tags": ["Guides"],
+      "tags": [
+        "Guides"
+      ],
       "month": "september",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "10428048745266110529"
     },
     {
       "id": 87,
@@ -1139,10 +1508,14 @@
       "slug": "linear-tools",
       "date": "September 4th, 2021",
       "time": "4:21:42 PM",
-      "tags": ["Rant", "Tools for Thought"],
+      "tags": [
+        "Rant",
+        "Tools for Thought"
+      ],
       "month": "september",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "17599085426774730774"
     },
     {
       "id": 88,
@@ -1151,10 +1524,13 @@
       "slug": "delete-it",
       "date": "October 16th, 2021",
       "time": "10:18:31 AM",
-      "tags": ["micropost"],
+      "tags": [
+        "micropost"
+      ],
       "month": "october",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "3188143064698379219"
     },
     {
       "id": 89,
@@ -1163,10 +1539,13 @@
       "slug": "video-games",
       "date": "November 20th, 2021",
       "time": "9:47:51 AM",
-      "tags": ["micropost"],
+      "tags": [
+        "micropost"
+      ],
       "month": "november",
       "year": 2021,
-      "status": "draft"
+      "status": "draft",
+      "uuid": "13297295850138705032"
     },
     {
       "id": 90,
@@ -1175,10 +1554,13 @@
       "slug": "fast-feedback-systems",
       "date": "November 20th, 2021",
       "time": "10:31:37 AM",
-      "tags": ["micropost"],
+      "tags": [
+        "micropost"
+      ],
       "month": "november",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "2194422896806474726"
     },
     {
       "id": 91,
@@ -1187,10 +1569,13 @@
       "slug": "pair-programming-stub",
       "date": "November 20th, 2021",
       "time": "10:40:50 AM",
-      "tags": ["stub"],
+      "tags": [
+        "stub"
+      ],
       "month": "november",
       "year": 2021,
-      "status": "public"
+      "status": "public",
+      "uuid": "9481027440986196306"
     },
     {
       "id": 92,
@@ -1199,10 +1584,13 @@
       "slug": "2021-in-music",
       "date": "November 27th, 2021",
       "time": "7:30:49 AM",
-      "tags": ["Year Recap"],
+      "tags": [
+        "Year Recap"
+      ],
       "month": "december",
       "year": 2021,
-      "status": "draft"
+      "status": "draft",
+      "uuid": "781199442810123663"
     },
     {
       "id": 93,
@@ -1211,10 +1599,16 @@
       "slug": "switching-to-iphone",
       "date": "January 15th, 2022",
       "time": "2:43:41 PM",
-      "tags": ["Review", "Android", "iOS", "iPhone"],
+      "tags": [
+        "Review",
+        "Android",
+        "iOS",
+        "iPhone"
+      ],
       "month": "january",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "10531631070247105160"
     },
     {
       "id": 94,
@@ -1223,10 +1617,14 @@
       "slug": "my-two-favorite-react-tricks",
       "date": "January 26th, 2022",
       "time": "8:25:13 PM",
-      "tags": ["React", "Development"],
+      "tags": [
+        "React",
+        "Development"
+      ],
       "month": "january",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "1314970968599978981"
     },
     {
       "id": 95,
@@ -1235,10 +1633,14 @@
       "slug": "my-opinionated-nextjs-setup",
       "date": "January 30th, 2022",
       "time": "11:10:28 AM",
-      "tags": ["Development", "Next.js"],
+      "tags": [
+        "Development",
+        "Next.js"
+      ],
       "month": "january",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "16383772804746183266"
     },
     {
       "id": 96,
@@ -1247,10 +1649,13 @@
       "slug": "upgrade-guides",
       "date": "May 17th, 2022",
       "time": "10:25:29 AM",
-      "tags": ["Development"],
+      "tags": [
+        "Development"
+      ],
       "month": "may",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "12109164808343839282"
     },
     {
       "id": 97,
@@ -1259,10 +1664,13 @@
       "slug": "moving-to-pnpm",
       "date": "May 21st, 2022",
       "time": "1:01:16 PM",
-      "tags": ["Development"],
+      "tags": [
+        "Development"
+      ],
       "month": "may",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "99521502371185467"
     },
     {
       "id": 98,
@@ -1271,10 +1679,15 @@
       "slug": "switching-back-to-notion",
       "date": "May 29th, 2022",
       "time": "5:51:16 PM",
-      "tags": ["Note Taking", "Obsidian", "Notion"],
+      "tags": [
+        "Note Taking",
+        "Obsidian",
+        "Notion"
+      ],
       "month": "may",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "18418786689713694464"
     },
     {
       "id": 99,
@@ -1283,10 +1696,14 @@
       "slug": "on-writing-tests",
       "date": "June 26th, 2022",
       "time": "8:39:21 PM",
-      "tags": ["Development", "Tests"],
+      "tags": [
+        "Development",
+        "Tests"
+      ],
       "month": "june",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "859029230196723370"
     },
     {
       "id": 100,
@@ -1295,10 +1712,14 @@
       "slug": "on-note-taking",
       "date": "June 28th, 2022",
       "time": "9:06:24 AM",
-      "tags": ["Tools for Thought", "Note taking"],
+      "tags": [
+        "Tools for Thought",
+        "Note taking"
+      ],
       "month": "june",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "14911555651164252551"
     },
     {
       "id": 101,
@@ -1307,10 +1728,14 @@
       "slug": "yarn-berry-gitignore",
       "date": "July 21st, 2022",
       "time": "7:47:36 AM",
-      "tags": ["Development", "Yarn"],
+      "tags": [
+        "Development",
+        "Yarn"
+      ],
       "month": "july",
       "year": 2022,
-      "status": "public"
+      "status": "public",
+      "uuid": "14504062128144131046"
     },
     {
       "id": 102,
@@ -1319,10 +1744,14 @@
       "slug": "updated-opinionated-nextjs-setup",
       "date": "December 26th, 2022",
       "time": "6:59:55 AM",
-      "tags": ["Web Development", "Next.js"],
+      "tags": [
+        "Web Development",
+        "Next.js"
+      ],
       "status": "public",
       "month": "december",
-      "year": "2022"
+      "year": "2022",
+      "uuid": "14161062725111834613"
     },
     {
       "id": 103,
@@ -1333,8 +1762,13 @@
       "time": "2:57:06 PM",
       "month": "january",
       "year": "2023",
-      "tags": ["Development", "Dollar", "Projects"],
-      "status": "public"
+      "tags": [
+        "Development",
+        "Dollar",
+        "Projects"
+      ],
+      "status": "public",
+      "uuid": "1681586631220150219"
     },
     {
       "id": 104,
@@ -1345,8 +1779,13 @@
       "time": "4:57:50 PM",
       "month": "january",
       "year": "2023",
-      "tags": ["Development", "Web Development", "Monorepos"],
-      "status": "public"
+      "tags": [
+        "Development",
+        "Web Development",
+        "Monorepos"
+      ],
+      "status": "public",
+      "uuid": "3157151029019805217"
     },
     {
       "id": 105,
@@ -1357,8 +1796,13 @@
       "time": "10:47:00 AM",
       "month": "march",
       "year": "2023",
-      "tags": ["Development", "Dollar", "Projects"],
-      "status": "draft"
+      "tags": [
+        "Development",
+        "Dollar",
+        "Projects"
+      ],
+      "status": "draft",
+      "uuid": "16732285186655895495"
     },
     {
       "id": 106,
@@ -1369,8 +1813,13 @@
       "time": "5:07:39 PM",
       "month": "march",
       "year": "2023",
-      "tags": ["Development", "Web Development", "Next.js"],
-      "status": "draft"
+      "tags": [
+        "Development",
+        "Web Development",
+        "Next.js"
+      ],
+      "status": "draft",
+      "uuid": "1428142801374241337"
     },
     {
       "id": 107,
@@ -1381,8 +1830,12 @@
       "time": "9:00:01 AM",
       "month": "march",
       "year": "2023",
-      "tags": ["Thinking", "Communication"],
-      "status": "draft"
+      "tags": [
+        "Thinking",
+        "Communication"
+      ],
+      "status": "draft",
+      "uuid": "15562447418904816127"
     },
     {
       "id": 108,
@@ -1393,8 +1846,13 @@
       "time": "8:50:54 AM",
       "month": "april",
       "year": "2023",
-      "tags": ["Web Development", "Next.js", "Tailwind"],
-      "status": "draft"
+      "tags": [
+        "Web Development",
+        "Next.js",
+        "Tailwind"
+      ],
+      "status": "draft",
+      "uuid": "10916260170823937555"
     },
     {
       "id": 109,
@@ -1405,8 +1863,13 @@
       "time": "8:51:35 PM",
       "month": "april",
       "year": "2023",
-      "tags": ["Web Development", "Tailwind", "CSS"],
-      "status": "draft"
+      "tags": [
+        "Web Development",
+        "Tailwind",
+        "CSS"
+      ],
+      "status": "draft",
+      "uuid": "6550377721136352466"
     },
     {
       "id": 110,
@@ -1417,8 +1880,12 @@
       "time": "12:20:51 PM",
       "month": "april",
       "year": "2023",
-      "tags": ["Advice", "Rant"],
-      "status": "draft"
+      "tags": [
+        "Advice",
+        "Rant"
+      ],
+      "status": "draft",
+      "uuid": "14397486637642804267"
     },
     {
       "id": 111,
@@ -1429,8 +1896,13 @@
       "time": "8:33:57 PM",
       "month": "june",
       "year": "2023",
-      "tags": ["Random", "Development", "Rant"],
-      "status": "public"
+      "tags": [
+        "Random",
+        "Development",
+        "Rant"
+      ],
+      "status": "public",
+      "uuid": "12521540765281810352"
     },
     {
       "id": 112,
@@ -1441,8 +1913,13 @@
       "time": "7:24:40 PM",
       "month": "june",
       "year": "2023",
-      "tags": ["Development", "Rant", "Random"],
-      "status": "public"
+      "tags": [
+        "Development",
+        "Rant",
+        "Random"
+      ],
+      "status": "public",
+      "uuid": "3210710958619169939"
     },
     {
       "id": 113,
@@ -1453,8 +1930,13 @@
       "time": "7:54:21 PM",
       "month": "july",
       "year": "2023",
-      "tags": ["Development", "Web Development", "Quick Read"],
-      "status": "public"
+      "tags": [
+        "Development",
+        "Web Development",
+        "Quick Read"
+      ],
+      "status": "public",
+      "uuid": "7881312029109073894"
     },
     {
       "id": 114,
@@ -1465,8 +1947,11 @@
       "time": "9:12:13 AM",
       "month": "july",
       "year": "2023",
-      "tags": ["Development"],
-      "status": "public"
+      "tags": [
+        "Development"
+      ],
+      "status": "public",
+      "uuid": "7265163548747554748"
     },
     {
       "id": 115,
@@ -1477,8 +1962,14 @@
       "time": "6:36:58 PM",
       "month": "july",
       "year": "2023",
-      "tags": ["Random", "Birthday", "Goals", "Resolutions"],
-      "status": "public"
+      "tags": [
+        "Random",
+        "Birthday",
+        "Goals",
+        "Resolutions"
+      ],
+      "status": "public",
+      "uuid": "17707747212271415435"
     },
     {
       "id": 116,
@@ -1489,8 +1980,12 @@
       "time": "5:24:59 AM",
       "month": "july",
       "year": "2023",
-      "tags": ["Random", "Idea"],
-      "status": "public"
+      "tags": [
+        "Random",
+        "Idea"
+      ],
+      "status": "public",
+      "uuid": "16679929702909590697"
     },
     {
       "id": 117,
@@ -1501,8 +1996,12 @@
       "time": "5:47:33 PM",
       "month": "august",
       "year": "2023",
-      "tags": ["Organizations", "Teams"],
-      "status": "public"
+      "tags": [
+        "Organizations",
+        "Teams"
+      ],
+      "status": "public",
+      "uuid": "4812833968363206739"
     },
     {
       "id": 118,
@@ -1513,8 +2012,14 @@
       "time": "9:50:35 AM",
       "month": "september",
       "year": "2023",
-      "tags": ["Development", "Web Development", "Go", "Learning"],
-      "status": "public"
+      "tags": [
+        "Development",
+        "Web Development",
+        "Go",
+        "Learning"
+      ],
+      "status": "public",
+      "uuid": "17992244586549660296"
     },
     {
       "id": 119,
@@ -1525,8 +2030,13 @@
       "time": "9:48:47 PM",
       "month": "september",
       "year": "2023",
-      "tags": ["Web Development", "Development", "micropost"],
-      "status": "public"
+      "tags": [
+        "Web Development",
+        "Development",
+        "micropost"
+      ],
+      "status": "public",
+      "uuid": "12046433503476780982"
     },
     {
       "id": 120,
@@ -1537,8 +2047,14 @@
       "time": "11:32:42 AM",
       "month": "september",
       "year": "2023",
-      "tags": ["Web Development", "Development Tips", "React", "TypeScript"],
-      "status": "public"
+      "tags": [
+        "Web Development",
+        "Development Tips",
+        "React",
+        "TypeScript"
+      ],
+      "status": "public",
+      "uuid": "8411097625346351447"
     },
     {
       "id": 121,
@@ -1549,8 +2065,12 @@
       "time": "10:58:14 AM",
       "month": "september",
       "year": "2023",
-      "tags": ["Hot Take", "micropost"],
-      "status": "draft"
+      "tags": [
+        "Hot Take",
+        "micropost"
+      ],
+      "status": "draft",
+      "uuid": "13203795218937998899"
     },
     {
       "id": 122,
@@ -1561,8 +2081,13 @@
       "time": "11:14:01 AM",
       "month": "october",
       "year": "2023",
-      "tags": ["Development", "Web Development", "git"],
-      "status": "draft"
+      "tags": [
+        "Development",
+        "Web Development",
+        "git"
+      ],
+      "status": "draft",
+      "uuid": "9701590062991732377"
     },
     {
       "id": 123,
@@ -1573,8 +2098,11 @@
       "time": "4:38:42 PM",
       "month": "november",
       "year": "2023",
-      "tags": ["Teams"],
-      "status": "public"
+      "tags": [
+        "Teams"
+      ],
+      "status": "public",
+      "uuid": "15697929072174837715"
     },
     {
       "id": 124,
@@ -1585,8 +2113,14 @@
       "time": "2:55:09 PM",
       "month": "november",
       "year": "2023",
-      "tags": ["Development", "Web Development", "ChatGPT", "AI"],
-      "status": "draft"
+      "tags": [
+        "Development",
+        "Web Development",
+        "ChatGPT",
+        "AI"
+      ],
+      "status": "draft",
+      "uuid": "3194614213252451787"
     },
     {
       "id": 125,
@@ -1598,8 +2132,12 @@
       "time": "3:45:01 PM",
       "month": "november",
       "year": "2023",
-      "tags": ["Web Development", "Development"],
-      "status": "draft"
+      "tags": [
+        "Web Development",
+        "Development"
+      ],
+      "status": "draft",
+      "uuid": "12083072787502218219"
     },
     {
       "id": 126,
@@ -1611,8 +2149,17 @@
       "month": "november",
       "description": "A deep dive into one of my recent side projects; microfibre - a minimal text posting application",
       "year": "2023",
-      "tags": ["Project Deep Dive", "Projects", "Web Development", "Go", "Cloudflare", "Cloudflare Workers", "Next.js"],
-      "status": "draft"
+      "tags": [
+        "Project Deep Dive",
+        "Projects",
+        "Web Development",
+        "Go",
+        "Cloudflare",
+        "Cloudflare Workers",
+        "Next.js"
+      ],
+      "status": "draft",
+      "uuid": "1186901307524990645"
     },
     {
       "id": 127,
@@ -1623,9 +2170,13 @@
       "time": "8:32:09 AM",
       "month": "december",
       "year": "2023",
-      "tags": ["Quick Tip", "Zed"],
+      "tags": [
+        "Quick Tip",
+        "Zed"
+      ],
       "status": "draft",
-      "description": "Zed language server quick tip; fixing Zed's language server"
+      "description": "Zed language server quick tip; fixing Zed's language server",
+      "uuid": "7111672626344497236"
     },
     {
       "id": 128,
@@ -1636,9 +2187,13 @@
       "time": "7:17:32 PM",
       "month": "december",
       "year": "2023",
-      "tags": ["micropost", "Teams"],
+      "tags": [
+        "micropost",
+        "Teams"
+      ],
       "status": "public",
-      "description": "Low/no process workflow wasn't actually no process, it was only an \"invisible\" process. An implicit contract with everyone on the team to do that async workflow on their own time."
+      "description": "Low/no process workflow wasn't actually no process, it was only an \"invisible\" process. An implicit contract with everyone on the team to do that async workflow on their own time.",
+      "uuid": "175144582155393691"
     },
     {
       "id": 129,
@@ -1649,9 +2204,13 @@
       "time": "8:25:45 AM",
       "month": "december",
       "year": "2023",
-      "tags": ["micropost", "Development"],
+      "tags": [
+        "micropost",
+        "Development"
+      ],
       "status": "public",
-      "description": "No I don't mean those Milano cookies you keep taking from the office snack wall either (although you should probably stop snacking on those as often as well)."
+      "description": "No I don't mean those Milano cookies you keep taking from the office snack wall either (although you should probably stop snacking on those as often as well).",
+      "uuid": "18104712822273561457"
     },
     {
       "id": 130,
@@ -1662,9 +2221,12 @@
       "time": "7:43:38 AM",
       "month": "december",
       "year": "2023",
-      "tags": ["micropost"],
+      "tags": [
+        "micropost"
+      ],
       "status": "public",
-      "description": "It's fine for a library to express some opinions about how it should be adopted and how the overall workflow/application in which it is adopted should function. However, it's false advertising to say that it is unopinionated."
+      "description": "It's fine for a library to express some opinions about how it should be adopted and how the overall workflow/application in which it is adopted should function. However, it's false advertising to say that it is unopinionated.",
+      "uuid": "3323643871095141962"
     },
     {
       "id": 131,
@@ -1675,9 +2237,13 @@
       "time": "5:29:30 AM",
       "month": "december",
       "year": "2023",
-      "tags": ["Web Development", "CSS-in-JS"],
+      "tags": [
+        "Web Development",
+        "CSS-in-JS"
+      ],
       "status": "public",
-      "description": "A brief recap of how Wayfair changed it's CSS approach not once but twice in the span of 5 years!"
+      "description": "A brief recap of how Wayfair changed it's CSS approach not once but twice in the span of 5 years!",
+      "uuid": "6672276161809295552"
     },
     {
       "id": 132,
@@ -1688,8 +2254,14 @@
       "time": "2:01:31 PM",
       "month": "december",
       "year": "2023",
-      "tags": ["Web Development", "micropost", "Cloudflare Workers", "Cloudflare"],
-      "status": "draft"
+      "tags": [
+        "Web Development",
+        "micropost",
+        "Cloudflare Workers",
+        "Cloudflare"
+      ],
+      "status": "draft",
+      "uuid": "8999279201995041228"
     },
     {
       "id": 133,
@@ -1700,8 +2272,13 @@
       "time": "2:34:43 PM",
       "month": "december",
       "year": "2023",
-      "tags": ["Web Development", "TypeScript", "micropost"],
-      "status": "draft"
+      "tags": [
+        "Web Development",
+        "TypeScript",
+        "micropost"
+      ],
+      "status": "draft",
+      "uuid": "13523026295867671272"
     },
     {
       "id": 134,
@@ -1712,9 +2289,14 @@
       "time": "3:18:53 PM",
       "month": "december",
       "year": "2023",
-      "tags": ["Web Development", "micropost", "Observability"],
+      "tags": [
+        "Web Development",
+        "micropost",
+        "Observability"
+      ],
       "status": "public",
-      "description": "Leveraging service monitors properly to improve service observability."
+      "description": "Leveraging service monitors properly to improve service observability.",
+      "uuid": "4751175372239306246"
     },
     {
       "id": 135,
@@ -1725,9 +2307,13 @@
       "time": "7:37:13 PM",
       "month": "december",
       "year": "2023",
-      "tags": ["Development", "Web Development"],
+      "tags": [
+        "Development",
+        "Web Development"
+      ],
       "status": "public",
-      "description": "When did semver major changes become so scary?"
+      "description": "When did semver major changes become so scary?",
+      "uuid": "17552666850011111660"
     },
     {
       "id": 136,
@@ -1738,9 +2324,17 @@
       "time": "11:05:29 AM",
       "month": "december",
       "year": "2023",
-      "tags": ["Project Deep Dive", "Projects", "Web Development", "Cloudflare", "Next.js", "Cloudflare Workers"],
+      "tags": [
+        "Project Deep Dive",
+        "Projects",
+        "Web Development",
+        "Cloudflare",
+        "Next.js",
+        "Cloudflare Workers"
+      ],
       "status": "public",
-      "description": "A(nother) deep dive into one of my recent side projects; tails - a plain and simple cocktail recipe app."
+      "description": "A(nother) deep dive into one of my recent side projects; tails - a plain and simple cocktail recipe app.",
+      "uuid": "993591556672601284"
     },
     {
       "id": 137,
@@ -1751,9 +2345,14 @@
       "time": "7:04:58 AM",
       "month": "january",
       "year": "2024",
-      "tags": ["Development", "Web Development", "Projects"],
+      "tags": [
+        "Development",
+        "Web Development",
+        "Projects"
+      ],
       "status": "public",
-      "description": "How we solved an almost show-stopping production bug, and how you can avoid it in your own projects."
+      "description": "How we solved an almost show-stopping production bug, and how you can avoid it in your own projects.",
+      "uuid": "9108016716139627328"
     },
     {
       "id": 138,
@@ -1764,9 +2363,14 @@
       "time": "5:30:53 PM",
       "month": "february",
       "year": "2024",
-      "tags": ["Development", "Web Development", "Projects"],
+      "tags": [
+        "Development",
+        "Web Development",
+        "Projects"
+      ],
       "status": "public",
-      "description": "A monorepo template for managing a library and documentation together."
+      "description": "A monorepo template for managing a library and documentation together.",
+      "uuid": "9754164191371769548"
     }
   ]
 }

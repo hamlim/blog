@@ -6,12 +6,10 @@ import { Heading } from '@recipes/heading';
 import { Time } from '@recipes/mdx-components';
 import { Stack } from '@recipes/stack';
 
-export default async function NotebookPage({ meta, children }) {
+export default async function NotebookPage({ id, children }) {
   let manifest = await fetchManifest();
 
-  let notebookEntry = manifest.notebookEntries.find((entry) => {
-    return entry.slug === meta.slug && entry.month === meta.month && entry.year === meta.year;
-  });
+  let notebookEntry = manifest.notebookEntries.find((post) => post.uuid === id);
 
   return (
     <Box className='prose lg:prose-xl'>

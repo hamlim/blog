@@ -38,29 +38,83 @@ import fg from 'fast-glob';
 
 export {};
 
-let feed = await Bun.file('./public/feed.json').json();
+// let feed = await Bun.file('./public/feed.json').json();
 
-let blogPosts = fg.sync('./public/posts/**/*.md');
+// let blogPosts = fg.sync('./public/posts/**/*.md');
 
-for (let post of blogPosts) {
-  let path = post.replace('./public/notebook/', '').replace('.md', '');
-  let postData = feed.posts.find(p => p.slug === path.split('/').at(-1));
-  await Bun.write(`./app/blog/(blog-posts)/${path}/content.mdx`, Bun.file(post));
-  await Bun.write(
-    `./app/blog/(blog-posts)/${path}/page.tsx`,
-    `import BlogPage from 'app/blog/BlogPage';
-  import Content from './content.mdx';
-  
-  export default function Page() {
-    return (
-      // @ts-expect-error - RSC
-      <BlogPage
-        meta={${JSON.stringify(postData, null, 2)}}
-      >
-        <Content />
-      </BlogPage>
-    );
-  }
-  `,
-  );
-}
+// for (let post of blogPosts) {
+//   let path = post.replace('./public/posts/', '').replace('.md', '');
+//   let postData = feed.posts.find(p => p.slug === path.split('/').at(-1));
+//   if (!postData) {
+//     console.log(path, postData);
+//     break;
+//   }
+//   await Bun.write(`./app/blog/(blog-posts)/${path}/content.mdx`, Bun.file(post));
+//   await Bun.write(
+//     `./app/blog/(blog-posts)/${path}/page.tsx`,
+//     `import BlogPage from 'app/blog/BlogPage';
+//   import Content from './content.mdx';
+//   import { fetchManifest } from '@lib/fetch-manifest';
+//   import {formatBlogPostMetadata} from 'lib/formatMetadata';
+
+//   let id = "${postData.uuid}";
+
+//   export default function Page() {
+//     return (
+//       // @ts-expect-error - RSC
+//       <BlogPage
+//         id={id}
+//       >
+//         <Content />
+//       </BlogPage>
+//     );
+//   }
+
+//   export async function generateMetadata() {
+//     let mainfest = await fetchManifest();
+//     let post = mainfest.posts.find(p => p.uuid === id);
+
+//     return formatBlogPostMetadata({meta: post});
+//   };
+//   `,
+//   );
+// }
+
+// let notebookEntries = fg.sync('./public/notebook/**/*.md');
+
+// for (let post of notebookEntries) {
+//   let path = post.replace('./public/notebook/', '').replace('.md', '');
+//   let postData = feed.notebookEntries.find(p => p.slug === path.split('/').at(-1));
+//   if (!postData) {
+//     console.log(path, postData);
+//     break;
+//   }
+//   await Bun.write(`./app/notebook/(notebook-entries)/${path}/content.mdx`, Bun.file(post));
+//   await Bun.write(
+//     `./app/notebook/(notebook-entries)/${path}/page.tsx`,
+//     `import NotebookPage from 'app/notebook/NotebookPage';
+//     import Content from './content.mdx';
+//     import { fetchManifest } from '@lib/fetch-manifest';
+// import { formatBlogPostMetadata } from '@lib/formatMetadata';
+
+//     let id = "${postData.uuid}";
+
+//     export default function Page() {
+//       return (
+//         // @ts-expect-error - RSC
+//         <NotebookPage
+//           id={id}
+//         >
+//           <Content />
+//         </NotebookPage>
+//       );
+//     }
+
+//   export async function generateMetadata() {
+//      let mainfest = await fetchManifest();
+//      let entry = mainfest.notebookEntries.find(p => p.uuid === id);
+
+//      return formatBlogPostMetadata({meta: entry});
+//    };`,
+//   );
+// }

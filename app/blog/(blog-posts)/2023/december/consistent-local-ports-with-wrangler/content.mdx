@@ -1,0 +1,24 @@
+For the life of me I couldn't find any documentation on Cloudflare's
+[Worker Docs](https://developers.cloudflare.com/workers/) nor the Wrangler CLI
+[GitHub Repo](https://github.com/cloudflare/workers-sdk) about this, so I
+figured I should write a quick blog post to help out others (or mainly myself if
+I ever forget this)!
+
+<TLDR>
+
+Pass the `--port <num>` argument when running `wrangler dev`!
+
+</TLDR>
+
+You can provide a `--port` CLI argument to the `wrangler dev` command to
+configure the port that the service starts on locally.
+
+This can be useful for testing the service locally (either manually or via some
+sort of automation) to ensure that it's always started on the same port instead
+of a new one each time the service is started.
+
+---
+
+_Edit!_ I finally found it documented, but took a while to track it down in
+their
+[docs here](https://developers.cloudflare.com/workers/wrangler/commands/#dev).
