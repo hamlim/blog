@@ -111,7 +111,7 @@ export function code(props: Props<typeof Code>) {
 }
 
 export function img(props: Props<typeof Image>) {
-  return <Image {...props} />;
+  return <Image sizes='100vw' style={{ width: '100%', height: 'auto' }} {...props} />;
 }
 
 export function Time(props: Props<typeof Box>) {

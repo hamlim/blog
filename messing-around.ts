@@ -40,9 +40,9 @@ import fg from 'fast-glob';
 
 export {};
 
-let notebookEntries = fg.sync('./public/notebook/**/*.md');
+// let notebookEntries = fg.sync('./public/notebook/**/*.md');
 
-for (let note of notebookEntries) {
-  let path = note.replace('./public/notebook/', '').replace('.md', '');
-  await Bun.write(`./app/notebook/${path}/page.mdx`, Bun.file(note));
-}
+// for (let note of notebookEntries) {
+//   let path = note.replace('./public/notebook/', '').replace('.md', '');
+//   await Bun.write(`./app/notebook/${path}/page.mdx`, Bun.file(note));
+// }
