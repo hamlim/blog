@@ -1,55 +1,56 @@
 'use client';
 import { Box } from '@recipes/box';
-import { Container } from '@recipes/container';
+import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTrigger } from '@recipes/drawer';
 import { Link } from '@recipes/link';
 import { Text } from '@recipes/text';
-import { BookTextIcon, Contact2, FileIcon, FlaskConical, HomeIcon, Signpost, XIcon } from 'lucide-react';
-
-import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTrigger } from '@recipes/drawer';
+import {
+  BookTextIcon,
+  Contact2,
+  FileIcon,
+  FlaskConical,
+  HomeIcon,
+  MessageSquareTextIcon,
+  Signpost,
+  XIcon,
+} from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-function DesktopNav() {
-  return (
-    <nav className='hidden md:flex'>
-      <Container>
-        <Box className='flex items-center mb-2 gap-3'>
-          <Link href='/'>
-            <span>
-              <HomeIcon size={24} /> Home
-            </span>
-          </Link>
-          <Link href='/blog'>
-            <span>
-              <BookTextIcon size={24} />Blog
-            </span>
-          </Link>
-          <Link href='/resume'>
-            <span>
-              <BookTextIcon size={24} />Resume
-            </span>
-          </Link>
-          <Link href='/projects'>
-            <span>
-              <BookTextIcon size={24} />Projects
-            </span>
-          </Link>
-          <Link href='/blog'>
-            <span>
-              <BookTextIcon size={24} />Blog
-            </span>
-          </Link>
-          <Link href='/posts'>📝 Blog</Link> <Link href='/projects'>🧪 Projects</Link>{' '}
-          <Link href='/bookshelf'>📚 Bookshelf</Link> <Link href='/resume'>💼 Resume</Link>
-        </Box>
-      </Container>
-    </nav>
-  );
+function getRandomGreeting() {
+  let greetings = [
+    'Hello!',
+    'Hi!',
+    'Hey!',
+    'Howdy!',
+    "What's up!",
+    'Yo!',
+    'Greetings!',
+    'Salutations!',
+    'Good day!',
+    'Good evening!',
+    'Good morning!',
+    'Good afternoon!',
+  ];
+  return `${greetings[Math.floor(Math.random() * greetings.length)]} 👋`;
+}
+
+function useGreeting() {
+  let [greeting, setGreeting] = useState(getRandomGreeting());
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setGreeting(getRandomGreeting());
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return greeting;
 }
 
 function MobileNav() {
   let pathname = usePathname();
+  let greeting = useGreeting();
   return (
-    <Box className='m-4'>
+    <Box className='m-4 flex gap-4'>
       <Drawer key={pathname} direction='left'>
         <DrawerTrigger>
           <Signpost size={24} /> <span className='sr-only'>Open Navigation</span>
@@ -86,12 +87,21 @@ function MobileNav() {
             </Link>
           </Box>
           <DrawerFooter>
+            <Link href='/feed' className='flex items-center p-4 px-6'>
+              <MessageSquareTextIcon size={24} /> <span className='pl-4'>Feed</span>
+            </Link>
             <Text>
               Matt Hamlin - {new Date().getFullYear()}
             </Text>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
+      <Text className='italic' suppressHydrationWarning>
+        {(() => {
+          if (pathname.startsWith('/blog')) return "Matt's Musings";
+          return greeting;
+        })()}
+      </Text>
     </Box>
   );
 }
@@ -100,7 +110,6 @@ export function Navigation() {
   return (
     <>
       <MobileNav />
-      <DesktopNav />
     </>
   );
 }

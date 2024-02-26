@@ -118,3 +118,24 @@ export {};
 //    };`,
 //   );
 // }
+
+// let mdxFiles = fg.sync('./app/**/*.mdx');
+
+// let logged = false;
+
+// for (let file of mdxFiles) {
+//   console.log(file);
+//   let content = await Bun.file(file).text();
+//   if (!logged) {
+//     console.log(content);
+//     logged = true;
+//   }
+//   if (content.startsWith('---\ntitle')) {
+//     let lines = content.split('\n');
+//     lines.shift();
+//     let endingIdx = lines.findIndex((line) => line === '---');
+//     lines.splice(0, endingIdx + 1);
+//     content = lines.join('\n');
+//     await Bun.write(file, content);
+//   }
+// }
