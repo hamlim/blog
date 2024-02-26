@@ -8,11 +8,12 @@ import { ThemeProvider } from '@recipes/theme-provider';
 import { ThemeToggle } from '@recipes/theme-toggle';
 import { TwitterMention } from '@recipes/twitter-mention';
 import type { Metadata, Viewport } from 'next';
+import { unstable_noStore } from 'next/cache';
 import { cookies } from 'next/headers';
 import { Navigation } from './Navigation';
 
 export default function Layout({ children }) {
-  let cookieJar = cookies();
+  unstable_noStore();
   return (
     <html lang='en-US'>
       <body className='h-screen flex flex-col'>
