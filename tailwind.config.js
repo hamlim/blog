@@ -1,26 +1,9 @@
-// let path = require('path')
-
-// module.exports = {
-//   content: [
-//     './app/**/*.tsx',
-//     './lib/**/*.tsx',
-//     './ui/**/*.tsx',
-//     path.join(path.dirname(require.resolve('@ds-pack/daisyui')), '/**/*.js'),
-//   ],
-//   plugins: [require('@tailwindcss/typography'), require('daisyui')],
-//   daisyui: {
-//     logs: false,
-//     themes: true,
-//   },
-// }
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
   content: [
-    './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx,mdx}',
     './src/**/*.{ts,tsx}',
     './lib/**/*.{ts,tsx}',
     './feijoa-ui/**/*.{ts,tsx}',
