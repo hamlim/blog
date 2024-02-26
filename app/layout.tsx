@@ -9,6 +9,7 @@ import { ThemeToggle } from '@recipes/theme-toggle';
 import { TwitterMention } from '@recipes/twitter-mention';
 import type { Metadata, Viewport } from 'next';
 import { cookies } from 'next/headers';
+import { Navigation } from './Navigation';
 
 export default function Layout({ children }) {
   let cookieJar = cookies();
@@ -23,17 +24,7 @@ export default function Layout({ children }) {
         >
           <main className='flex grow flex-col min-h-screen'>
             <header className='flex-shrink bg-base-200'>
-              <Container is='nav'>
-                <Box className='flex items-center mb-2'>
-                  <Link href='/' className='flex items-center'>
-                    🏡 Home
-                  </Link>
-                </Box>
-                <Box>
-                  <Link href='/posts'>📝 Blog</Link> <Link href='/projects'>🧪 Projects</Link>{' '}
-                  <Link href='/bookshelf'>📚 Bookshelf</Link> <Link href='/resume'>💼 Resume</Link>
-                </Box>
-              </Container>
+              <Navigation />
             </header>
             <Container is='section'>{children}</Container>
             <footer className='flex-shrink bg-base-200'>
