@@ -1,6 +1,7 @@
 import { fetchManifest } from '@lib/fetch-manifest';
 import { formatPostLink } from '@lib/format-post-link';
 import { Box } from '@recipes/box';
+import { Code as InlineCode } from '@recipes/code';
 import { Heading } from '@recipes/heading';
 import { Link } from '@recipes/link';
 import { List, ListItem } from '@recipes/list';
@@ -46,6 +47,38 @@ async function TopPosts() {
   );
 }
 
+let topProjects: Array<{
+  link: string;
+  title: React.ReactNode;
+  description: React.ReactNode;
+}> = [
+  {
+    link: 'https://github.com/hamlim/milliform',
+    title: 'Milliform',
+    description: 'A super basic React.js form library!',
+  },
+  {
+    link: 'https://github.com/hamlim/template-monorepo',
+    title: 'Template Monorepo',
+    description: 'A template for creating a monorepo with Bun, Next.js, and Turborepo',
+  },
+  {
+    'link': 'https://github.com/hamlim/better-beacon',
+    title: 'Better Beacon',
+    'description': (
+      <>
+        A better version of{' '}
+        <InlineCode>navigator.sendBeacon</InlineCode>, that doesn't break when you try to queue too many events!
+      </>
+    ),
+  },
+  {
+    link: 'https://github.com/hamlim/rsc-form',
+    title: 'RSC Form',
+    description: 'A React Form component for use within React Server Components',
+  },
+];
+
 export default async function Page() {
   return (
     <Box>
@@ -77,37 +110,22 @@ export default async function Page() {
         I work on a variety of side projects in my free time, below are a few of them.
       </Text>
       <List is='ul' className='mt-2'>
-        <ListItem className='mb-4'>
-          <Link is='a' href='https://github.com/ds-pack/simple-props'>
-            Simple Props
-          </Link>{' '}
-          A minimal, CSS variable backed style-prop library
-        </ListItem>
-        <ListItem className='mb-4'>
-          <Link
-            is='a'
-            href='https://github.com/hamlim/projects/tree/master/packages/reroute-core'
+        {topProjects.map((project) => (
+          <ListItem
+            key={project.link}
+            className='[&:not(:first-of-type)]:mt-3'
           >
-            Reroute
-          </Link>{' '}
-          A React router package built for Suspense using hooks
-        </ListItem>
-        <ListItem className='mb-4'>
-          <Link is='a' href='https://github.com/hamlim/inline-mdx.macro'>
-            inline-mdx.macro
-          </Link>{' '}
-          A babel macro for converting inline{' '}
-          <Link is='a' href='https://mdxjs.com'>
-            MDX
-          </Link>{' '}
-          in JavaScript files.
-        </ListItem>
-        <ListItem className='mb-2'>
-          <Link is='a' href='https://github.com/hamlim/notedo'>
-            Notedo
-          </Link>{' '}
-          A note and todo list web application using plain text
-        </ListItem>
+            <Link
+              href={project.link}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              {project.title}
+              <span className='sr-only'>(opens in new window)</span>
+            </Link>{' '}
+            {project.description}
+          </ListItem>
+        ))}
       </List>
       <Text className='mb-4'>
         Check out the rest <Link href='/projects'>here</Link>.

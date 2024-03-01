@@ -2,11 +2,11 @@ import '@styles/globals.css';
 import { Box } from '@recipes/box';
 import { Container } from '@recipes/container';
 import { GitHubMention } from '@recipes/github-mention';
-import { Link } from '@recipes/link';
 import { Text } from '@recipes/text';
 import { ThemeProvider } from '@recipes/theme-provider';
 import { ThemeToggle } from '@recipes/theme-toggle';
 import { TwitterMention } from '@recipes/twitter-mention';
+import { Github, Twitter } from 'lucide-react';
 import type { Metadata, Viewport } from 'next';
 import { unstable_noStore } from 'next/cache';
 import { Navigation } from './Navigation';
@@ -33,8 +33,14 @@ export default function Layout({ children }) {
                   <Box>
                     <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
                     <Text>
-                      <Link href='/feed'>🧵 Feed</Link> <TwitterMention>immatthamlin</TwitterMention>{' '}
-                      <GitHubMention>hamlim</GitHubMention> <Link href='/social'>🗣 All socials</Link>
+                      <span className='inline-flex items-center gap-2'>
+                        <Twitter size={16} />
+                        <TwitterMention>immatthamlin</TwitterMention>
+                      </span>{' '}
+                      <span className='inline-flex items-center gap-2'>
+                        <Github size={16} />
+                        <GitHubMention>hamlim</GitHubMention>
+                      </span>
                     </Text>
                   </Box>
                   <ThemeToggle />

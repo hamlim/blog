@@ -1,4 +1,3 @@
-import { VisuallyHidden } from '@ds-pack/daisyui';
 import { Box } from '@recipes/box';
 import { Code as InlineCode } from '@recipes/code';
 import { Heading } from '@recipes/heading';
@@ -32,6 +31,11 @@ let projects: Array<{
     ),
   },
   {
+    link: 'https://github.com/hamlim/rsc-form',
+    title: 'RSC Form',
+    description: 'A React Form component for use within React Server Components',
+  },
+  {
     link: 'https://github.com/hamlim/clue',
     title: 'Clue Notes',
     description:
@@ -41,11 +45,6 @@ let projects: Array<{
     link: 'https://tails-theta.vercel.app',
     title: 'Tails',
     description: 'A simple web app for saving and sharing cocktail recipes!',
-  },
-  {
-    link: 'https://github.com/hamlim/rsc-form',
-    title: 'RSC Form',
-    description: 'A React Form component for use within React Server Components',
   },
   {
     link: 'https://github.com/hamlim/simple-cache',
@@ -133,7 +132,7 @@ export default function Projects() {
           href='https://github.com/hamlim'
         >
           GitHub
-          <VisuallyHidden is='span'>(opens in new window)</VisuallyHidden>
+          <span className='sr-only'>(opens in new window)</span>
         </Link>
         .
       </Text>
@@ -150,7 +149,7 @@ export default function Projects() {
                 rel='noopener noreferrer'
               >
                 {project.title}
-                <VisuallyHidden is='span'>(opens in new window)</VisuallyHidden>
+                <span className='sr-only'>(opens in new window)</span>
               </Link>{' '}
               {project.description}
             </ListItem>

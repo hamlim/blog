@@ -1,4 +1,3 @@
-import { VisuallyHidden } from '@ds-pack/daisyui';
 import { fetchBookshelf } from '@lib/fetch-bookshelf';
 import { Box } from '@recipes/box';
 import { Heading } from '@recipes/heading';
@@ -23,7 +22,7 @@ export default async function Bookshelf() {
           href='https://twitter.com/immatthamlin'
         >
           on twitter
-          <VisuallyHidden is='span'>(opens in new window)</VisuallyHidden>
+          <span className='sr-only'>(opens in new window)</span>
         </BaseLink>{' '}
         if you have book recommendations!
       </Text>
@@ -40,7 +39,7 @@ export default async function Bookshelf() {
                 rel='noopener noreferrer'
               >
                 {book.title}
-                <VisuallyHidden is='span'>(opens in new window)</VisuallyHidden>
+                <span className='sr-only'>(opens in new window)</span>
               </BaseLink>{' '}
               by {book.author}
               {book.dateStarted
@@ -70,7 +69,7 @@ export default async function Bookshelf() {
                 rel='noopener noreferrer'
               >
                 {book.title}
-                <VisuallyHidden is='span'>(opens in new window)</VisuallyHidden>
+                <span className='sr-only'>(opens in new window)</span>
               </BaseLink>{' '}
               by {book.author}
             </ListItem>
@@ -90,7 +89,7 @@ export default async function Bookshelf() {
                 rel='noopener noreferrer'
               >
                 {book.title}
-                <VisuallyHidden is='span'>(opens in new window)</VisuallyHidden>
+                <span className='sr-only'>(opens in new window)</span>
               </BaseLink>{' '}
               by {book.author}
               {book.dateStarted && book.dateFinished
