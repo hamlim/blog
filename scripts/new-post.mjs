@@ -18,8 +18,12 @@
  * - New markdown file in `public/posts/<year>/<month>/<slug>.md`
  */
 
+if (typeof Bun === 'undefined') {
+  throw new Error(`This script is meant to be run with Bun.`);
+}
+
 import { execSync } from 'child_process';
-import fs from 'fs';
+import { mkdir } from 'node:fs/promises';
 import path from 'path';
 import originalManifest from '../public/feed.json' assert { type: 'json' };
 
@@ -75,11 +79,12 @@ if (args.help) {
   console.log('');
   console.log('bun new-post ...');
   console.log('');
-  console.log(' help            Prints this dialog!');
-  console.log(' debug           Logs out debugging info');
-  console.log(' title="<title>" sets the title');
-  console.log(' slug="<slug>"   sets the slug');
-  console.log(' tags="<tags>"   sets the tags');
+  console.log(' help                          Prints this dialog!');
+  console.log(' debug                         Logs out debugging info');
+  console.log(' title="<title>"               sets the title');
+  console.log(' slug="<slug>"                 sets the slug');
+  console.log(' tags="<tags>"                 sets the tags');
+  console.log(' description="<description>"   sets the description');
   console.log('');
   process.exit(1);
 }
@@ -98,12 +103,13 @@ function missingArg(args) {
   console.log('');
 }
 
-if (!args.title || !args.slug || !args.tags) {
+if (!args.title || !args.slug || !args.tags || !args.description) {
   missingArg(
     [
       { val: args.title, name: 'title' },
       { val: args.slug, name: 'slug' },
       { val: args.tags, name: 'tags' },
+      { val: args.description, name: 'description' },
     ]
       .filter(({ val }) => !val)
       .map(({ name }) => name),
@@ -124,39 +130,66 @@ if (/[^a-zA-Z0-9|-]/.exec(args.slug)) {
 
 // mkdirp
 let folderPath = path.join(
-  './public/posts/',
+  process.cwd(),
+  './app/blog/(blog-posts)',
   `${year}`,
   `${month.toLowerCase()}`,
 );
 
-fs.mkdirSync(folderPath, { recursive: true });
+await mkdir(folderPath, { recursive: true });
 
-let template = `START_HERE
+let postMeta = {
+  id: originalManifest.posts.length,
+  title: args.title,
+  path: `/posts/${year}/${month.toLowerCase()}/${args.slug}.md`,
+  slug: args.slug,
+  date: publishDate,
+  time,
+  month: month.toLowerCase(),
+  year,
+  tags: args.tags.split(',').map((tag) => tag.trim()),
+  status: 'draft',
+};
 
----
+let uuid = Bun.hash(JSON.stringify(postMeta));
+postMeta.uuid = `${uuid}`;
+
+let template = `Start writing`;
+let pageTemplate = `import BlogPage from 'app/blog/BlogPage';
+import Content from './content.mdx';
+import { fetchManifest } from '@lib/fetch-manifest';
+import {formatBlogPostMetadata} from 'lib/formatMetadata';
+
+let id = "${postMeta.uuid}";
+
+export default function Page() {
+  return (
+    // @ts-expect-error - RSC
+    <BlogPage id={id}>
+      <Content />
+    </BlogPage>
+  );
+}
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({meta: post});
+};
 `;
 
-fs.writeFileSync(path.join(folderPath, `${args.slug}.md`), template);
+await Bun.write(path.join(folderPath, `${args.slug}/content.mdx`), template);
+await Bun.write(path.join(folderPath, `${args.slug}/page.tsx`), pageTemplate);
 
 let newManifest = {
   ...originalManifest,
   posts: [
     ...originalManifest.posts,
-    {
-      id: originalManifest.posts.length,
-      title: args.title,
-      path: `/posts/${year}/${month.toLowerCase()}/${args.slug}.md`,
-      slug: args.slug,
-      date: publishDate,
-      time,
-      month: month.toLowerCase(),
-      year,
-      tags: args.tags.split(',').map((tag) => tag.trim()),
-      status: 'draft',
-    },
+    postMeta,
   ],
 };
 
-fs.writeFileSync('./public/feed.json', JSON.stringify(newManifest));
+await Bun.write('./public/feed.json', JSON.stringify(newManifest));
 
 execSync(`bun run format`);

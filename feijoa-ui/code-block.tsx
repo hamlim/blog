@@ -43,10 +43,14 @@ export async function CodeBlock(props: Props) {
     className = props.children.props.className;
   }
 
+  if (className.split(' ').length > 1) {
+    className = className.split(' ').find(c => c.startsWith('lang-'));
+  }
+
   let lang = className ? className.split('-')[1] : 'typescript';
   if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
     lang = 'typescript';
-  } else if (lang === 'sh') {
+  } else if (lang === 'sh' || lang === 'shell') {
     lang = 'bash';
   }
 

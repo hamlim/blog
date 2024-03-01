@@ -17,6 +17,7 @@ type Month =
 
 export interface Post {
   id: Id;
+  uuid: string;
   /**
    * Title of the post
    */

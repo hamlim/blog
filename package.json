@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --turbo",
+    "build": "NODE_ENV=production next build",
     "start": "next start",
     "deploy": "now",
     "deploy-prod": "now --prod",
@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.4.7",
-    "@ds-pack/daisyui": "^0.0.10",
     "@ds-pack/use-refs": "^1.0.0",
     "@mdx-js/mdx": "latest",
     "@monaco-editor/react": "^4.5.0",
@@ -46,15 +45,14 @@
     "bright": "^0.8.4",
     "class-variance-authority": "^0.7.0",
     "cmdk": "^0.2.0",
-    "daisyui": "^3.2.1",
     "eslint-config-next": "latest",
-    "lucide-react": "^0.292.0",
+    "lucide-react": "^0.340.0",
     "nanopop": "2.1.0",
     "next": "canary",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.21",
-    "react": "experimental",
     "react-day-picker": "^8.9.1",
+    "react": "experimental",
     "react-dom": "experimental",
     "react-hook-form": "^7.47.0",
     "react-tweet": "^3.1.1",
@@ -64,18 +62,28 @@
     "shiki-twoslash": "^3.1.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss": "^3.2.7",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^0.9.0"
   },
   "devDependencies": {
     "@feijoa-ui/cli": "^0.0.4",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.0",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/mdx": "^2.0.11",
     "@types/node": "^16.11.36",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "bun-types": "^1.0.1",
     "dprint": "^0.43.1",
+    "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
     "supports-color": "^9.4.0",
     "typescript": "4.9.4"
+  },
+  "resolutions": {
+    "react": "experimental",
+    "react-dom": "experimental"
   }
 }

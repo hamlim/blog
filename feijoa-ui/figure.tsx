@@ -14,10 +14,12 @@ export function Figure({ caption, className, ...props }: Props) {
   return (
     <>
       <AspectRatio ratio={16 / 9}>
-        <NextImage
-          {...props}
-          className={cn('rounded-md object-cover', className)}
-        />
+        <div className='flex justify-center'>
+          <NextImage
+            {...props}
+            className={cn('rounded-md object-cover', className)}
+          />
+        </div>
       </AspectRatio>
       <Text className='text-gray-500 text-center'>{caption}</Text>
     </>

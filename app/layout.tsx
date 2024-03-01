@@ -1,10 +1,18 @@
 import '@styles/globals.css';
+import { Box } from '@recipes/box';
+import { Container } from '@recipes/container';
+import { GitHubMention } from '@recipes/github-mention';
+import { Text } from '@recipes/text';
 import { ThemeProvider } from '@recipes/theme-provider';
+import { ThemeToggle } from '@recipes/theme-toggle';
+import { TwitterMention } from '@recipes/twitter-mention';
+import { Github, Twitter } from 'lucide-react';
 import type { Metadata, Viewport } from 'next';
-import { cookies } from 'next/headers';
+import { unstable_noStore } from 'next/cache';
+import { Navigation } from './Navigation';
 
 export default function Layout({ children }) {
-  let cookieJar = cookies();
+  unstable_noStore();
   return (
     <html lang='en-US'>
       <body className='h-screen flex flex-col'>
@@ -14,7 +22,32 @@ export default function Layout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          <main className='flex grow flex-col min-h-screen'>{children}</main>
+          <main className='flex grow flex-col min-h-screen'>
+            <header className='flex-shrink bg-base-200'>
+              <Navigation />
+            </header>
+            <Container is='section'>{children}</Container>
+            <footer className='flex-shrink bg-base-200'>
+              <Container>
+                <Box className='flex justify-between'>
+                  <Box>
+                    <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
+                    <Text>
+                      <span className='inline-flex items-center gap-2'>
+                        <Twitter size={16} />
+                        <TwitterMention>immatthamlin</TwitterMention>
+                      </span>{' '}
+                      <span className='inline-flex items-center gap-2'>
+                        <Github size={16} />
+                        <GitHubMention>hamlim</GitHubMention>
+                      </span>
+                    </Text>
+                  </Box>
+                  <ThemeToggle />
+                </Box>
+              </Container>
+            </footer>
+          </main>
         </ThemeProvider>
       </body>
     </html>
