@@ -1,0 +1,42 @@
+import { fetchManifest } from '@lib/fetch-manifest';
+import { formatBlogPostMetadata } from 'lib/formatMetadata';
+import BlogPage from 'app/blog/BlogPage';
+
+export let id = '15175420354200728737';
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({ meta: post });
+}
+
+<BlogPage id={id}>
+
+
+I recently started on a new team at work, transitioning from my previous role on
+our design systems team at Wayfair over to the Storefront Frontend Platform
+team. I'm super amped to be joining the team to work on some ambitious projects
+for the coming years. I mostly attribute that energy coming from two sources:
+
+1. Working on something new
+2. Working with new people
+
+It dawned on me, that through this team change I've been able to redefine who I
+am at work, it's almost like I got the ability to hit the refresh button and
+start fresh again.
+
+I think it's incredibly valuable to start fresh every once and a while, it can
+become stale doing the same thing over and over again, but starting fresh let's
+you reevaluate the person you want to be.
+
+So go ahead and start fresh again, mix it up a bit and see what comes of it!
+
+<Spacer />
+
+---
+
+<Spacer />
+
+
+</BlogPage>

@@ -1,0 +1,25 @@
+import { fetchManifest } from '@lib/fetch-manifest';
+import { formatBlogPostMetadata } from 'lib/formatMetadata';
+import BlogPage from 'app/blog/BlogPage';
+
+export let id = '5697386142665025029';
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({ meta: post });
+}
+
+<BlogPage id={id}>
+
+Instead of dealing with hosting all the full res photos from my 2018 summer
+trip, I decided to try and use a Google Photos album to showcase all the photos
+and videos I took.
+
+You can see the pictures here: https://photos.app.goo.gl/2DsTSNbiPsBUfWkx7.
+
+Let me know what you think about this format!
+
+
+</BlogPage>

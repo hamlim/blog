@@ -1,0 +1,24 @@
+import { fetchManifest } from '@lib/fetch-manifest';
+import { formatBlogPostMetadata } from 'lib/formatMetadata';
+import BlogPage from 'app/blog/BlogPage';
+
+export let id = '4325127865981011756';
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({ meta: post });
+}
+
+<BlogPage id={id}>
+
+
+## Outline
+
+- My role: Build efficiency for the teams I work with
+- As developers, we should optimize for the most efficient and fastest feedback
+  cycles
+
+
+</BlogPage>

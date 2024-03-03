@@ -1,0 +1,22 @@
+import { fetchManifest } from '@lib/fetch-manifest';
+import { formatBlogPostMetadata } from 'lib/formatMetadata';
+import BlogPage from 'app/blog/BlogPage';
+
+export let id = '2529730437603049580';
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({ meta: post });
+}
+
+<BlogPage id={id}>
+
+
+I don't know if I'll ever publish this blog post, but I figure I should write it
+to at least put it down somewhere thats not in my brain. Note this is now a stub
+as I have moved the contents to my internal Obsidian vault.
+
+
+</BlogPage>
