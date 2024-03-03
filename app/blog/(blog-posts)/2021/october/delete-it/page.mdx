@@ -1,0 +1,34 @@
+import { fetchManifest } from '@lib/fetch-manifest';
+import { formatBlogPostMetadata } from 'lib/formatMetadata';
+import BlogPage from 'app/blog/BlogPage';
+
+export let id = '3188143064698379219';
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({ meta: post });
+}
+
+<BlogPage id={id}>
+
+
+I've been collecting some blog posts over the past few weeks in an obsidian note
+called Articles to Read, I looked at it today and realized its now over a 150
+entries long, and I still haven't read a single one of the posts.
+
+Humans, or at least speaking for myself, like to hold on to things, save them
+for later - but if you don't have the energy to do something about it now, you
+probably won't in a week.
+
+> tl;dr: Delete it
+
+<Spacer />
+
+---
+
+<Spacer />
+
+
+</BlogPage>

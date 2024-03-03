@@ -1,0 +1,39 @@
+import { fetchManifest } from '@lib/fetch-manifest';
+import { formatBlogPostMetadata } from 'lib/formatMetadata';
+import BlogPage from 'app/blog/BlogPage';
+
+export let id = '3323643871095141962';
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({ meta: post });
+}
+
+<BlogPage id={id}>
+
+A quick
+[GitHub search](https://github.com/search?q=unopinionated&type=repositories)
+will reveal that there's a lot of libraries and packages out there that brag
+about being unopinionated. I think that is a misnomer and instead all these
+libraries and packages are just _differently_-opinionated from the
+libraries/packages that they are alternatives for.
+
+While it doesn't say so on their site, I feel like the original premise of
+[`turborepo`](https://turbo.build/repo) was that it was an unopinionated
+monorepo manager. In reality, it just held different opinions about how tasks
+should be managed than tools like `nx` or `lerna`.
+
+<Callout>
+  If you're looking at adopting some library or package (or even an SaaS application) and one of the main selling points is about it being unopinionated, don't fall for it!
+</Callout>
+
+It's fine for a library to express some opinions about how it should be adopted
+and how the overall workflow/application in which it is adopted should function.
+However, it's false advertising to say that it is unopinionated.
+
+---
+
+
+</BlogPage>

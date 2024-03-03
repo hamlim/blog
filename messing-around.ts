@@ -1,4 +1,5 @@
 import fg from 'fast-glob';
+import { rmSync } from 'fs';
 
 // let mdFiles = fg.sync('./public/**/*.md');
 
@@ -119,23 +120,41 @@ export {};
 //   );
 // }
 
-// let mdxFiles = fg.sync('./app/**/*.mdx');
-
-// let logged = false;
+// let mdxFiles = fg.sync('./app/blog/**/content.mdx');
+// let feed = await Bun.file('./public/feed.json').json();
 
 // for (let file of mdxFiles) {
-//   console.log(file);
 //   let content = await Bun.file(file).text();
-//   if (!logged) {
-//     console.log(content);
-//     logged = true;
+//   let slug = file.replace('/content.mdx', '').split('/').at(-1);
+
+//   let postInfo = feed.posts.find(p => p.slug === slug);
+//   if (!postInfo) {
+//     console.log(slug);
+//     break;
 //   }
-//   if (content.startsWith('---\ntitle')) {
-//     let lines = content.split('\n');
-//     lines.shift();
-//     let endingIdx = lines.findIndex((line) => line === '---');
-//     lines.splice(0, endingIdx + 1);
-//     content = lines.join('\n');
-//     await Bun.write(file, content);
-//   }
+
+//   await Bun.write(
+//     file.replace('/content.mdx', '/page.mdx'),
+//     `import { fetchManifest } from '@lib/fetch-manifest';
+// import { formatBlogPostMetadata } from 'lib/formatMetadata';
+// import BlogPage from 'app/blog/BlogPage';
+
+// export let id = '${postInfo.uuid}';
+
+// export async function generateMetadata() {
+//   let mainfest = await fetchManifest();
+//   let post = mainfest.posts.find(p => p.uuid === id);
+
+//   return formatBlogPostMetadata({ meta: post });
+// }
+
+// <BlogPage id={id}>
+
+// ${content}
+
+// </BlogPage>`,
+//   );
+
+//   rmSync(file.replace('/content.mdx', '/page.tsx'));
+//   rmSync(file);
 // }
