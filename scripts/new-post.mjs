@@ -154,22 +154,11 @@ let postMeta = {
 let uuid = Bun.hash(JSON.stringify(postMeta));
 postMeta.uuid = `${uuid}`;
 
-let template = `Start writing`;
-let pageTemplate = `import BlogPage from 'app/blog/BlogPage';
-import Content from './content.mdx';
+let template = `import BlogPage from 'app/blog/BlogPage';
 import { fetchManifest } from '@lib/fetch-manifest';
 import {formatBlogPostMetadata} from 'lib/formatMetadata';
 
 let id = "${postMeta.uuid}";
-
-export default function Page() {
-  return (
-    // @ts-expect-error - RSC
-    <BlogPage id={id}>
-      <Content />
-    </BlogPage>
-  );
-}
 
 export async function generateMetadata() {
   let mainfest = await fetchManifest();
@@ -177,10 +166,15 @@ export async function generateMetadata() {
 
   return formatBlogPostMetadata({meta: post});
 };
+
+<BlogPage id={id}>
+
+Start writing here!
+
+</BlogPage>
 `;
 
-await Bun.write(path.join(folderPath, `${args.slug}/content.mdx`), template);
-await Bun.write(path.join(folderPath, `${args.slug}/page.tsx`), pageTemplate);
+await Bun.write(path.join(folderPath, `${args.slug}/page.mdx`), template);
 
 let newManifest = {
   ...originalManifest,
