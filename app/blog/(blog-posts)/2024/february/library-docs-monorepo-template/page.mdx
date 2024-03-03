@@ -1,3 +1,18 @@
+import { fetchManifest } from '@lib/fetch-manifest';
+import { formatBlogPostMetadata } from 'lib/formatMetadata';
+import BlogPage from 'app/blog/BlogPage';
+
+export let id = '9754164191371769548';
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({ meta: post });
+}
+
+<BlogPage id={id}>
+
 I was talking with <TwitterMention>scottykaye</TwitterMention> the other day
 since he was starting to scaffold out a small frontend app to demo and document
 one of his open source libraries, and brought up using a monorepo to support
@@ -104,3 +119,5 @@ overlooked for single-package repositories when it still has some nice benefits.
 It's made me wonder if we even need single-workspace repos at all!
 
 ---
+
+</BlogPage>
