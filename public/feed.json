@@ -1912,6 +1912,19 @@
       "status": "public",
       "description": "A monorepo template for managing a library and documentation together.",
       "uuid": "9754164191371769548"
+    },
+    {
+      "id": 139,
+      "title": "Corporate Sponsored OSS",
+      "path": "/posts/2024/march/corporate-sponsored-oss.md",
+      "slug": "corporate-sponsored-oss",
+      "date": "March 10th, 2024",
+      "time": "3:03:29 PM",
+      "month": "march",
+      "year": "2024",
+      "tags": ["Development", "Web Development", "OSS"],
+      "status": "draft",
+      "uuid": "3489317394655629451"
     }
   ]
 }
