@@ -17,7 +17,7 @@ export default function Resume() {
         </Link>,{' '}
         <Link href='https://docs.google.com/document/d/1Om1ilLporVXdLxC_CS20rRjDMmjeVKfNHUDoK8odtdA/edit?usp=sharing'>
           Google Docs
-        </Link>, and <Link href='/resume-jan-24.pdf'>PDF</Link>.
+        </Link>, and <Link href='/resume-mar-24.pdf'>PDF</Link>.
       </Blockquote>
       <Box className='flex flex-col'>
         <Text className='mb-4'>
