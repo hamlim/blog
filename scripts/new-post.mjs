@@ -149,6 +149,7 @@ let postMeta = {
   year,
   tags: args.tags.split(',').map((tag) => tag.trim()),
   status: 'draft',
+  description: args.description,
 };
 
 let uuid = Bun.hash(JSON.stringify(postMeta));
@@ -158,7 +159,7 @@ let template = `import BlogPage from 'app/blog/BlogPage';
 import { fetchManifest } from '@lib/fetch-manifest';
 import {formatBlogPostMetadata} from 'lib/formatMetadata';
 
-let id = "${postMeta.uuid}";
+export let id = "${postMeta.uuid}";
 
 export async function generateMetadata() {
   let mainfest = await fetchManifest();

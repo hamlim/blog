@@ -1924,7 +1924,22 @@
       "year": "2024",
       "tags": ["Development", "Web Development", "OSS"],
       "status": "draft",
-      "uuid": "3489317394655629451"
+      "uuid": "3489317394655629451",
+      "description": "The various risks and pitfalls of open source software run by corporations."
+    },
+    {
+      "id": 140,
+      "title": "Custom Favicon Recipes",
+      "path": "/posts/2024/march/custom-favicon-recipes.md",
+      "slug": "custom-favicon-recipes",
+      "date": "March 22nd, 2024",
+      "time": "10:48:30 PM",
+      "month": "march",
+      "year": "2024",
+      "tags": ["Development", "Web Development"],
+      "status": "draft",
+      "description": "Two neat tricks for enhancing your site's favicon!",
+      "uuid": "162125984151314483"
     }
   ]
 }
