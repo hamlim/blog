@@ -1,6 +1,6 @@
 'use client';
 import { Box } from '@recipes/box';
-import { Drawer, DrawerClose, DrawerContent, DrawerFooter, DrawerHeader, DrawerTrigger } from '@recipes/drawer';
+import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTrigger } from '@recipes/drawer';
 import { Link } from '@recipes/link';
 import { Text } from '@recipes/text';
 import {
@@ -47,61 +47,29 @@ function useGreeting() {
   return greeting;
 }
 
-export function Navigation() {
+export function NavigationHeader() {
   let pathname = usePathname();
   let greeting = useGreeting();
   return (
-    <Box is='nav' className='m-4 flex justify-between'>
+    <Box className='m-4 flex justify-between'>
       <Box className='flex gap-4'>
-        <Drawer key={pathname} direction='left'>
-          <DrawerTrigger>
-            <Globe2 size={24} /> <span className='sr-only'>Open Navigation</span>
-          </DrawerTrigger>
-          <DrawerContent direction='left' className='h-full min-w-[15rem] w-[30%] max-w-[95%]'>
-            <DrawerHeader>
-              <DrawerClose>
-                <XIcon size={24} /> <span className='sr-only'>Close Navigation</span>
-              </DrawerClose>
-            </DrawerHeader>
-            <Box>
-              <Link href='/' className='flex items-center p-4 px-6 gap-4'>
-                <HomeIcon size={24} /> Home
-              </Link>
-              <hr />
-              <Link href='/blog' className='flex items-center p-4 px-6 gap-4'>
-                <BookTextIcon size={24} /> Blog
-              </Link>
-              <hr />
-              <Link href='/resume' className='flex items-center p-4 px-6 gap-4'>
-                <FileIcon size={24} /> Resume
-              </Link>
-              <hr />
-              <Link href='/projects' className='flex items-center p-4 px-6 gap-4'>
-                <FlaskConical size={24} /> Projects
-              </Link>
-              <hr />
-              <Link href='/tools' className='flex items-center p-4 px-6 gap-4'>
-                <LampDesk size={24} /> Tools
-              </Link>
-              <hr />
-              <Link href='/social' className='flex items-center p-4 px-6 gap-4'>
-                <Contact2 size={24} /> Social
-              </Link>
-              <hr />
-              <Link href='/feed' className='flex items-center p-4 px-6 gap-4'>
-                <MessageSquareTextIcon size={24} /> Feed
-              </Link>
-            </Box>
-            <DrawerFooter>
-              <Text>
-                Matt Hamlin - {new Date().getFullYear()}
-              </Text>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-        <Link href='/' className='hidden md:flex items-center gap-2'>
-          <HomeIcon size={24} /> Home
-        </Link>
+        <Box className='sm:hidden'>
+          <Drawer key={pathname} direction='left'>
+            <DrawerTrigger>
+              <Globe2 size={24} className='text-blue-400' /> <span className='sr-only'>Open Navigation</span>
+            </DrawerTrigger>
+            <DrawerContent direction='left' className='h-full min-w-[15rem] w-[30%] max-w-[95%]'>
+              <DrawerHeader>
+                <DrawerClose>
+                  <XIcon size={24} /> <span className='sr-only'>Close Navigation</span>
+                </DrawerClose>
+              </DrawerHeader>
+              <nav>
+                <NavList />
+              </nav>
+            </DrawerContent>
+          </Drawer>
+        </Box>
         <Text className='italic' suppressHydrationWarning>
           {(() => {
             if (pathname.startsWith('/blog')) return "Matt's Musings";
@@ -110,13 +78,59 @@ export function Navigation() {
         </Text>
       </Box>
       <Box className='flex gap-4'>
-        <Link href='/blog' className='flex gap-2'>
+        <ActiveLink href='/blog' className='flex gap-2'>
           <BookTextIcon size={24} /> Blog
-        </Link>
-        <Link href='/resume' className='flex gap-2'>
+        </ActiveLink>
+        <ActiveLink href='/resume' className='flex gap-2'>
           <FileIcon size={24} />Resume
-        </Link>
+        </ActiveLink>
       </Box>
     </Box>
+  );
+}
+
+function ActiveLink({ href, ...props }) {
+  let pathname = usePathname();
+  if (pathname === href) {
+    return <Text {...props} />;
+  }
+  return <Link href={href} {...props} />;
+}
+
+function NavList() {
+  return (
+    <>
+      <ActiveLink href='/' className='flex items-center p-4 gap-4'>
+        <HomeIcon size={24} /> Home
+      </ActiveLink>
+      <ActiveLink href='/blog' className='flex items-center p-4 gap-4'>
+        <BookTextIcon size={24} /> Blog
+      </ActiveLink>
+      <ActiveLink href='/resume' className='flex items-center p-4 gap-4'>
+        <FileIcon size={24} /> Resume
+      </ActiveLink>
+      <ActiveLink href='/projects' className='flex items-center p-4 gap-4'>
+        <FlaskConical size={24} /> Projects
+      </ActiveLink>
+      <ActiveLink href='/tools' className='flex items-center p-4 gap-4'>
+        <LampDesk size={24} /> Tools
+      </ActiveLink>
+      <ActiveLink href='/social' className='flex items-center p-4 gap-4'>
+        <Contact2 size={24} /> Social
+      </ActiveLink>
+      <ActiveLink href='/feed' className='flex items-center p-4 gap-4'>
+        <MessageSquareTextIcon size={24} /> Feed
+      </ActiveLink>
+    </>
+  );
+}
+
+export function NavigationList() {
+  return (
+    <nav>
+      <Box className='hidden sm:flex flex-col shrink min-h-screen w-[--sidebar-width]'>
+        <NavList />
+      </Box>
+    </nav>
   );
 }

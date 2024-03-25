@@ -1,6 +1,5 @@
 import '@styles/globals.css';
 import { Box } from '@recipes/box';
-import { Container } from '@recipes/container';
 import { GitHubMention } from '@recipes/github-mention';
 import { Text } from '@recipes/text';
 import { ThemeProvider } from '@recipes/theme-provider';
@@ -9,12 +8,12 @@ import { TwitterMention } from '@recipes/twitter-mention';
 import { Github, Twitter } from 'lucide-react';
 import type { Metadata, Viewport } from 'next';
 import { unstable_noStore } from 'next/cache';
-import { Navigation } from './Navigation';
+import { NavigationHeader, NavigationList } from './Navigation';
 
 export default function Layout({ children }) {
   unstable_noStore();
   return (
-    <html lang='en-US'>
+    <html lang='en'>
       <body className='h-screen flex flex-col'>
         <ThemeProvider
           attribute='class'
@@ -24,29 +23,32 @@ export default function Layout({ children }) {
         >
           <main className='flex grow flex-col min-h-screen'>
             <header className='flex-shrink bg-base-200'>
-              <Navigation />
+              <NavigationHeader />
             </header>
-            <Container is='section'>{children}</Container>
-            <footer className='flex-shrink bg-base-200'>
-              <Container>
-                <Box className='flex justify-between'>
-                  <Box>
-                    <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
-                    <Text>
-                      <span className='inline-flex items-center gap-2'>
-                        <Twitter size={16} />
-                        <TwitterMention>immatthamlin</TwitterMention>
-                      </span>{' '}
-                      <span className='inline-flex items-center gap-2'>
-                        <Github size={16} />
-                        <GitHubMention>hamlim</GitHubMention>
-                      </span>
-                    </Text>
+            <Box className='flex'>
+              <NavigationList />
+              <section className='p-4 my-0 mx-auto grow flex justify-between flex-col container max-w-prose main-content'>
+                {children}
+                <footer className='flex-shrink pt-6'>
+                  <Box className='flex justify-between'>
+                    <Box>
+                      <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
+                      <Text>
+                        <span className='inline-flex items-center gap-2'>
+                          <Twitter size={16} />
+                          <TwitterMention>immatthamlin</TwitterMention>
+                        </span>{' '}
+                        <span className='inline-flex items-center gap-2'>
+                          <Github size={16} />
+                          <GitHubMention>hamlim</GitHubMention>
+                        </span>
+                      </Text>
+                    </Box>
+                    <ThemeToggle />
                   </Box>
-                  <ThemeToggle />
-                </Box>
-              </Container>
-            </footer>
+                </footer>
+              </section>
+            </Box>
           </main>
         </ThemeProvider>
       </body>
