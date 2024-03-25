@@ -156,7 +156,7 @@ let uuid = Bun.hash(JSON.stringify(postMeta));
 postMeta.uuid = `${uuid}`;
 
 let template = `import BlogPage from 'app/blog/BlogPage';
-import { fetchManifest } from '@lib/fetch-manifest';
+import {fetchManifest} from '@lib/fetch-manifest';
 import {formatBlogPostMetadata} from 'lib/formatMetadata';
 
 export let id = "${postMeta.uuid}";
@@ -166,7 +166,7 @@ export async function generateMetadata() {
   let post = mainfest.posts.find(p => p.uuid === id);
 
   return formatBlogPostMetadata({meta: post});
-};
+}
 
 <BlogPage id={id}>
 

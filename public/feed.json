@@ -1940,6 +1940,20 @@
       "status": "draft",
       "description": "Two neat tricks for enhancing your site's favicon!",
       "uuid": "162125984151314483"
+    },
+    {
+      "id": 141,
+      "title": "Exporting Custom Slack Emoji",
+      "path": "/posts/2024/march/exporting-custom-slack-emoji.md",
+      "slug": "exporting-custom-slack-emoji",
+      "date": "March 25th, 2024",
+      "time": "11:45:33 AM",
+      "month": "march",
+      "year": "2024",
+      "tags": ["Slack", "Tip", "Guides"],
+      "status": "draft",
+      "description": "How to easily mass-export your custom slack emoji without API access!",
+      "uuid": "16969102659537928288"
     }
   ]
 }
