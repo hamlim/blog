@@ -99,7 +99,7 @@ async function loadAllEmoji() {
 async function downloadEmoji(emojiList) {
   for (let emoji of emojiList) {
     let res = await fetch(emoji.url);
-    console.log('Downloading: ', emoji.name);
+    console.log('Downloading: ' + emoji.name + ' (' + idx + 'of ' + emojiList.length + ')');
     await Bun.write(
       "./emojis/" + emoji.name + "." + emoji.url.split(".").at(-1),
       res
