@@ -2,7 +2,6 @@ import { Box } from '@recipes/box';
 import { Code } from '@recipes/code';
 import { CodeBlock } from '@recipes/code-block';
 import { Heading } from '@recipes/heading';
-import { Stack } from '@recipes/stack';
 import { Text } from '@recipes/text';
 
 export default function Snippets() {

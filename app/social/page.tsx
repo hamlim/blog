@@ -9,7 +9,7 @@ import { TwitterMention } from '@recipes/twitter-mention';
 export default function Social() {
   return (
     <Box>
-      <Heading is='h1'>Social</Heading>
+      <Heading is='h1' className='mb-4'>Social</Heading>
       <Text>
         I don't use social media much, but you can connect with me on a few different platforms:
       </Text>

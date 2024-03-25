@@ -10,7 +10,7 @@ export default async function Notebook() {
   let { notebookEntries } = await fetchManifest();
   return (
     <Box>
-      <Heading is='h1' className='mb-5'>
+      <Heading is='h1' className='mb-4'>
         Notebook
       </Heading>
       <Text className='text-lg mb-2'>

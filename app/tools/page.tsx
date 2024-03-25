@@ -7,7 +7,7 @@ import { Text } from '@recipes/text';
 export default function Tools() {
   return (
     <Box>
-      <Heading is='h1'>Tools</Heading>
+      <Heading is='h1' className='mb-4'>Tools</Heading>
       <Text>
         I use a variety of hardware and software each and everyday, so I figured I'd try to catalog those tools here,
         and I'm also going to try and keep this up to date every so often and see how it changes over time.

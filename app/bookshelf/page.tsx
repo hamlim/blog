@@ -9,7 +9,7 @@ export default async function Bookshelf() {
   let { reading, read, toRead } = await fetchBookshelf();
   return (
     <>
-      <Heading is='h1'>Bookshelf</Heading>
+      <Heading is='h1' className='mb-4'>Bookshelf</Heading>
       <Text className='mb-2'>
         In the rare time that I find not in front of some kind of display, I like to read books! Here is a short
         collection of books I've recently read as well as a few books from my to read list.

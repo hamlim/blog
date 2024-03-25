@@ -117,7 +117,7 @@ let projects: Array<{
 export default function Projects() {
   return (
     <Box>
-      <Heading is='h1' className='mb-4'>
+      <Heading is='h1' className='mb-3'>
         Projects
       </Heading>
       <Text>
