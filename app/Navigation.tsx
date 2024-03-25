@@ -56,7 +56,7 @@ export function NavigationHeader() {
         <Box className='sm:hidden'>
           <Drawer key={pathname} direction='left'>
             <DrawerTrigger>
-              <Globe2 size={24} className='text-blue-400' /> <span className='sr-only'>Open Navigation</span>
+              <Globe2 size={24} className='text-primary' /> <span className='sr-only'>Open Navigation</span>
             </DrawerTrigger>
             <DrawerContent direction='left' className='h-full min-w-[15rem] w-[30%] max-w-[95%]'>
               <DrawerHeader>

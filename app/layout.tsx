@@ -27,7 +27,7 @@ export default function Layout({ children }) {
             </header>
             <Box className='flex'>
               <NavigationList />
-              <section className='p-4 my-0 mx-auto grow flex justify-between flex-col container max-w-prose main-content'>
+              <section className='px-4 my-0 grow flex justify-between flex-col container max-w-prose mx-[initial] main-content'>
                 {children}
                 <footer className='flex-shrink pt-6'>
                   <Box className='flex justify-between'>
