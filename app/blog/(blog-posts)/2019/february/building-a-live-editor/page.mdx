@@ -107,8 +107,11 @@ function highlighter(code) {
 
 So wrapping it all up, we end up with an API that looks like this:
 
-```jsx
+{/*
+<!-- prettier-ignore -->
 // ==live== template="react" customSetup={"dependencies":{"@matthamlin/react-preview-editor":"latest","@babel/standalone":"latest"}}
+*/}
+```jsx
 import { transform } from '@babel/standalone';
 import { Editor, Preview, Provider } from '@matthamlin/react-preview-editor';
 
