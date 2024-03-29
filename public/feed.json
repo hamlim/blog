@@ -1954,6 +1954,20 @@
       "status": "draft",
       "description": "How to easily mass-export your custom slack emoji without API access!",
       "uuid": "16969102659537928288"
+    },
+    {
+      "id": 142,
+      "title": "React Error Boundaries: Revisited",
+      "path": "/posts/2024/march/react-error-boundaries-revisited.md",
+      "slug": "react-error-boundaries-revisited",
+      "date": "March 29th, 2024",
+      "time": "5:00:24 PM",
+      "month": "march",
+      "year": "2024",
+      "tags": ["Guides", "Development", "React"],
+      "status": "draft",
+      "description": "Revising my previous blog post on React Error Boundaries and my preferred go-to implementation!",
+      "uuid": "6616427054099079511"
     }
   ]
 }
