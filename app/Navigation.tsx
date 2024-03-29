@@ -77,14 +77,6 @@ export function NavigationHeader() {
           })()}
         </Text>
       </Box>
-      <Box className='flex gap-4'>
-        <ActiveLink href='/blog' className='flex gap-2'>
-          <BookTextIcon size={24} /> Blog
-        </ActiveLink>
-        <ActiveLink href='/resume' className='flex gap-2'>
-          <FileIcon size={24} />Resume
-        </ActiveLink>
-      </Box>
     </Box>
   );
 }
