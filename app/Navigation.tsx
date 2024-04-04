@@ -13,6 +13,7 @@ import {
   LampDesk,
   MessageSquareTextIcon,
   XIcon,
+  LibraryBig,
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -112,6 +113,9 @@ function NavList() {
       </ActiveLink>
       <ActiveLink href='/feed' className='flex items-center p-4 gap-4'>
         <MessageSquareTextIcon size={24} /> Feed
+      </ActiveLink>
+      <ActiveLink href='/bookshelf' className='flex items-center p-4 gap-4'>
+        <LibraryBig size={24} /> Bookshelf
       </ActiveLink>
     </>
   );
