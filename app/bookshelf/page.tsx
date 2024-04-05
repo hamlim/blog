@@ -112,3 +112,8 @@ export default async function Bookshelf() {
     </>
   );
 }
+
+export let metadata = {
+  title: "Matt's Bookshelf",
+  description: "A (minimal) view of the books I've read, am reading, and want to read!",
+};

@@ -159,3 +159,8 @@ export default function Projects() {
     </Box>
   );
 }
+
+export let metadata = {
+  title: "Matt's Projects",
+  description: "Some of the side projects that I've worked on in my free time over the past few years!",
+};
