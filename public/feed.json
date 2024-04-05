@@ -1968,6 +1968,20 @@
       "status": "draft",
       "description": "Revising my previous blog post on React Error Boundaries and my preferred go-to implementation!",
       "uuid": "6616427054099079511"
+    },
+    {
+      "id": 143,
+      "title": "Configuring Cloudflare Domains with Vercel",
+      "path": "/posts/2024/april/configuring-cloudflare-domains-with-vercel.md",
+      "slug": "configuring-cloudflare-domains-with-vercel",
+      "date": "April 5th, 2024",
+      "time": "8:39:10 AM",
+      "month": "april",
+      "year": "2024",
+      "tags": ["Guides", "Development", "Cloudflare", "Vercel"],
+      "status": "draft",
+      "description": "I've started to use Cloudflare to manage my domains for several side projects, have had to jump through the same hooks multiple times that I figured I should document them here!",
+      "uuid": "3688025495126266187"
     }
   ]
 }
