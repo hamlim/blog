@@ -1982,6 +1982,20 @@
       "status": "draft",
       "description": "I've started to use Cloudflare to manage my domains for several side projects, have had to jump through the same hooks multiple times that I figured I should document them here!",
       "uuid": "3688025495126266187"
+    },
+    {
+      "id": 144,
+      "title": "My Current AI Stack",
+      "path": "/posts/2024/april/my-current-ai-stack.md",
+      "slug": "my-current-ai-stack",
+      "date": "April 5th, 2024",
+      "time": "4:46:50 PM",
+      "month": "april",
+      "year": "2024",
+      "tags": ["AI", "Development"],
+      "status": "draft",
+      "description": "I've been using a variety of AI tools as of late, I figured I'd document the ones I'm primarily using!",
+      "uuid": "14148485796531744547"
     }
   ]
 }
