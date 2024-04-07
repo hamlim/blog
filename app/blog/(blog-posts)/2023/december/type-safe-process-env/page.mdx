@@ -23,8 +23,8 @@ Use this snippet to override `process.env` types:
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      DB_URL: string;
-      DB_TOKEN: string;
+      // Replace `KEY` with your env variables!
+      KEY: string;
     }
   }
 }
