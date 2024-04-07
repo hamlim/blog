@@ -28,9 +28,9 @@ it comes to working within codebases.
 
 First let's cover some fundamentals:
 
-- Install <ExternalLink href="https://brew.sh/">Homebrew</ExternalLink>
+- Install <a href="https://brew.sh/">Homebrew</a>
   - We'll use this to install other tools below!
-- Install <ExternalLink href="https://ohmyz.sh/">Oh My ZSH</ExternalLink>
+- Install <a href="https://ohmyz.sh/">Oh My ZSH</a>
 
 ### Configuring My Environment:
 
@@ -58,25 +58,25 @@ brew install node yarn pnpm fzf jq bat exa gh fig fnm
 These are all the "visual" tools that I tend to use on my mac, this software
 list may change over time but these are the essentials that I use today.
 
-- Install <ExternalLink href="https://www.google.com/chrome/canary/">Chrome
-  Canary</ExternalLink>
-- Install <ExternalLink href="https://mimestream.com/">Mimestream</ExternalLink>
-- Install <ExternalLink href="https://code.visualstudio.com/insiders/">VSCode
-  Insiders</ExternalLink>
+- Install <a href="https://www.google.com/chrome/canary/">Chrome
+  Canary</a>
+- Install <a href="https://mimestream.com/">Mimestream</a>
+- Install <a href="https://code.visualstudio.com/insiders/">VSCode
+  Insiders</a>
   - Make sure to setup sync and enable the CLI tools so we can use
     `code-insiders` to open vscode from the terminal
-- Install <ExternalLink href="https://www.raycast.com/">Raycast</ExternalLink>
+- Install <a href="https://www.raycast.com/">Raycast</a>
   - Additionally, go into System Preferences > Keyboard > Shortcuts and disable
     the `Cmd + Space` keyboard setting for spotlight and set that to the Raycast
     keyboard shortcut.
-- Install <ExternalLink href="https://rectangleapp.com/">Rectangle</ExternalLink>
+- Install <a href="https://rectangleapp.com/">Rectangle</a>
   - Choose the Spectacle keybinds if you don't want to be confused 😆
 - Install
-  <ExternalLink href="https://www.dropbox.com/capture">Dropbox</ExternalLink>
-- Install <ExternalLink href="https://thebrowser.company/">Dropbox
-  Capture</ExternalLink>
-- Install <ExternalLink href="">Arc</ExternalLink>
-- Install <ExternalLink href="https://www.notion.so/desktop">Notion</ExternalLink>
+  <a href="https://www.dropbox.com/capture">Dropbox</a>
+- Install <a href="https://thebrowser.company/">Dropbox
+  Capture</a>
+- Install <a href="">Arc</a>
+- Install <a href="https://www.notion.so/desktop">Notion</a>
 
 <Spacer />
 

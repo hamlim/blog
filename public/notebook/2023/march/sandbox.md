@@ -13,9 +13,9 @@ blog post or a notebook entry!
 
 <Link href="#">Link</Link>
 
-### ExternalLink
+### a
 
-<ExternalLink href="#">ExternalLink</ExternalLink>
+<a href="#">a</a>
 
 ### Native anchors
 
@@ -106,4 +106,4 @@ some content here!
 
 `foo`
 
-<InlineCode>Bar</InlineCode>
+<Code>Bar</Code>

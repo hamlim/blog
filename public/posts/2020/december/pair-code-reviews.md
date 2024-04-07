@@ -77,4 +77,4 @@ will save those for a follow up post.
 ---
 
 I'd love to hear more about how your team handles and manages code reviews,
-reach out on [Twitter](https://twitter.com/immatthamlin) or via <ExternalLink href="mailto:matthewjameshamlin@gmail.com?subject=Code Reviews">email</ExternalLink>!
+reach out on [Twitter](https://twitter.com/immatthamlin) or via <a href="mailto:matthewjameshamlin@gmail.com?subject=Code Reviews">email</a>!

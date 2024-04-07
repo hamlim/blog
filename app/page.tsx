@@ -1,7 +1,7 @@
 import { fetchManifest } from '@lib/fetch-manifest';
 import { formatPostLink } from '@lib/format-post-link';
 import { Box } from '@recipes/box';
-import { Code as InlineCode } from '@recipes/code';
+import { Code } from '@recipes/code';
 import { Heading } from '@recipes/heading';
 import { Link } from '@recipes/link';
 import { List, ListItem } from '@recipes/list';
@@ -67,8 +67,7 @@ let topProjects: Array<{
     title: 'Better Beacon',
     'description': (
       <>
-        A better version of{' '}
-        <InlineCode>navigator.sendBeacon</InlineCode>, that doesn't break when you try to queue too many events!
+        A better version of <Code>navigator.sendBeacon</Code>, that doesn't break when you try to queue too many events!
       </>
     ),
   },

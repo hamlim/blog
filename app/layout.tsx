@@ -9,11 +9,11 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Github, Twitter } from 'lucide-react';
 import type { Metadata, Viewport } from 'next';
-import { unstable_noStore } from 'next/cache';
 import { NavigationHeader, NavigationList } from './Navigation';
 
+export let dynamic = 'force-dynamic';
+
 export default function Layout({ children }) {
-  unstable_noStore();
   return (
     <html lang='en'>
       <body className='h-screen flex flex-col'>

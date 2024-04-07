@@ -57,7 +57,7 @@
     "react-day-picker": "^8.9.1",
     "react-dom": "experimental",
     "react-hook-form": "^7.47.0",
-    "react-tweet": "^3.1.1",
+    "react-tweet": "3.2.0",
     "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.14.1",

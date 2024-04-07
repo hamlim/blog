@@ -182,5 +182,5 @@ however there are several opportunities for enhancement here:
 In future versions of this blog post I'll dive into these points and more to see
 how we can enhance this development experience! If you have comments or
 questions, feel free to [tweet at me](https://twitter.com/immatthamlin) or
-<ExternalLink href="mailto:matthewjameshamlin@gmail.com?Subject=Sandbox Part 1">email
-me</ExternalLink>
+<a href="mailto:matthewjameshamlin@gmail.com?Subject=Sandbox Part 1">email
+me</a>

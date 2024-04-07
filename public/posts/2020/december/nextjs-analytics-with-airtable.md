@@ -166,5 +166,5 @@ export default function App() {
 That should be it! With the above configured, you should now be able to see
 Airtable records created when a visitor lands on one of the routes for your
 NextJS site! Let me know what you thought about this blog post by
-[tweeting at me](https://twitter.com/immatthamlin) or <ExternalLink href="mailto:matthewjameshamlin@gmail.com?subject=NextJS Analytics with Airtable">emailing
-me</ExternalLink>!
+[tweeting at me](https://twitter.com/immatthamlin) or <a href="mailto:matthewjameshamlin@gmail.com?subject=NextJS Analytics with Airtable">emailing
+me</a>!

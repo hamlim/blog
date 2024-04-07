@@ -1,5 +1,5 @@
 import { Box } from '@recipes/box';
-import { Code as InlineCode } from '@recipes/code';
+import { Code } from '@recipes/code';
 import { Heading } from '@recipes/heading';
 import { BaseLink as Link } from '@recipes/link';
 import { List, ListItem } from '@recipes/list';
@@ -25,8 +25,7 @@ let projects: Array<{
     title: 'Better Beacon',
     'description': (
       <>
-        A better version of{' '}
-        <InlineCode>navigator.sendBeacon</InlineCode>, that doesn't break when you try to queue too many events!
+        A better version of <Code>navigator.sendBeacon</Code>, that doesn't break when you try to queue too many events!
       </>
     ),
   },
@@ -88,7 +87,7 @@ let projects: Array<{
     title: '@ds-pack/use-media',
     description: (
       <>
-        A React hook for <InlineCode>window.matchMedia</InlineCode> that is SSR safe.
+        A React hook for <Code>window.matchMedia</Code> that is SSR safe.
       </>
     ),
   },
