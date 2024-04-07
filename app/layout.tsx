@@ -4,6 +4,7 @@ import { GitHubMention } from '@recipes/github-mention';
 import { Text } from '@recipes/text';
 import { ThemeProvider } from '@recipes/theme-provider';
 import { ThemeToggle } from '@recipes/theme-toggle';
+import { Toaster } from '@recipes/toaster';
 import { TwitterMention } from '@recipes/twitter-mention';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -55,6 +56,7 @@ export default function Layout({ children }) {
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
+        <Toaster />
       </body>
     </html>
   );
