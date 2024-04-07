@@ -5,6 +5,7 @@ import { Text } from '@recipes/text';
 import { ThemeProvider } from '@recipes/theme-provider';
 import { ThemeToggle } from '@recipes/theme-toggle';
 import { TwitterMention } from '@recipes/twitter-mention';
+import { Analytics } from '@vercel/analytics/react';
 import { Github, Twitter } from 'lucide-react';
 import type { Metadata, Viewport } from 'next';
 import { unstable_noStore } from 'next/cache';
@@ -51,6 +52,7 @@ export default function Layout({ children }) {
             </Box>
           </main>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
