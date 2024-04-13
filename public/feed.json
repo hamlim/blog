@@ -1996,6 +1996,20 @@
       "status": "draft",
       "description": "I've been using a variety of AI tools as of late, I figured I'd document the ones I'm primarily using!",
       "uuid": "14148485796531744547"
+    },
+    {
+      "id": 145,
+      "title": "Funport: True Dynamic Imports in webpack",
+      "path": "/posts/2024/april/funport.md",
+      "slug": "funport",
+      "date": "April 12th, 2024",
+      "time": "8:00:33 PM",
+      "month": "april",
+      "year": "2024",
+      "tags": ["Development", "webpack", "Next.js"],
+      "status": "public",
+      "description": "webpack, and tools built on it like Next.js, don't support true dynamic imports, but I found a way to trick the system!",
+      "uuid": "11594157188732359206"
     }
   ]
 }

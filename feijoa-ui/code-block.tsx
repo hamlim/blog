@@ -71,7 +71,6 @@ export async function CodeBlock(props: Props) {
       <LiveCode
         code={rest.join('\n').slice(0, -1)}
         {...metaProps}
-        theme='dark'
       />
     );
   }
