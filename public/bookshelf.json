@@ -237,7 +237,13 @@
     "title": "2034",
     "author": "Elliot Ackerman, Admiral James Stavridis",
     "url": "https://www.goodreads.com/book/show/54211065",
-    "status": "reading",
-    "dateStarted": "April 2024"
-  }
+    "status": "read",
+    "dateStarted": "April 2024",
+    "dateFinished": "April 2024"
+  },
+  {
+    "title": "2054",
+    "author": "Elliot Ackerman, Admiral James Stavridis",
+    "url": "https://www.goodreads.com/book/show/177192243",
+    "status": "to-read"
 ]
