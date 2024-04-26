@@ -17,7 +17,7 @@ export default function Resume() {
         </Link>,{' '}
         <Link href='https://docs.google.com/document/d/1Om1ilLporVXdLxC_CS20rRjDMmjeVKfNHUDoK8odtdA/edit?usp=sharing'>
           Google Docs
-        </Link>, and <Link href='/resume-mar-24.pdf'>PDF</Link>.
+        </Link>, and <Link href='/resume-april-24.pdf'>PDF</Link>.
       </Blockquote>
       <Box className='flex flex-col'>
         <Text className='mb-4'>
@@ -28,6 +28,16 @@ export default function Resume() {
           or email:{' '}
           <Link is='a' href='mailto:matthewjameshamlin@gmail.com'>
             matthewjameshamlin@gmail.com
+          </Link>
+        </Text>
+        <Text className='mb-4'>
+          LinkedIn:{' '}
+          <Link is='a' href='https://www.linkedin.com/in/hamlim/'>
+            https://www.linkedin.com/in/hamlim/
+          </Link>{' '}
+          GitHub:{' '}
+          <Link is='a' href='https://github.com/hamlim'>
+            https://github.com/hamlim
           </Link>
         </Text>
         <Box>
@@ -44,10 +54,7 @@ export default function Resume() {
         <Heading is='h2'>Experience</Heading>
         <Box>
           <Heading is='h3'>
-            Wayfair, Boston MA —{' '}
-            <Text is='em' className='italic'>
-              Frontend Platform Tech Lead
-            </Text>
+            Staff SWE, Frontend Platform Tech Lead - Wayfair
           </Heading>
           <Text is='b' className='font-bold'>
             June 2021 - Present
@@ -70,17 +77,15 @@ export default function Resume() {
         </Box>
         <Box>
           <Heading is='h3'>
-            Wayfair, Boston MA —{' '}
-            <Text is='em' className='italic'>
-              Design Systems Tech Lead
-            </Text>
+            Senior SWE, Design Systems Tech Lead - Wayfair
           </Heading>
           <Text is='b' className='font-bold'>
             July 2017 - June 2021
           </Text>
           <Text>
-            Worked with a small team of frontend engineers and designers to build, and maintain our Design Systems, and
-            three internal component libraries for our storefront, internal, and supplier-facing websites.
+            Lead the Design Systems engineering team, collaborating with designers to build, and maintain the Wayfair
+            Design System, composed of three internal component libraries for our customer, internal, and
+            supplier-facing websites.
           </Text>
           <List is='ul'>
             <ListItem>
@@ -91,10 +96,7 @@ export default function Resume() {
         </Box>
         <Box>
           <Heading is='h3'>
-            Wayfair, Boston MA —{' '}
-            <Text is='em' className='italic'>
-              Frontend Software Engineer
-            </Text>
+            Frontend Software Engineer - Wayfair
           </Heading>
           <Text is='b' className='font-bold'>
             July 2016 - July 2017
@@ -105,24 +107,14 @@ export default function Resume() {
           </Text>
           <List is='ul'>
             <ListItem>
-              One of the first developers to start adopting React at Wayfair, and rebuilt several key features on site
+              Early internal adopter of React at Wayfair, migrated several key features on site
             </ListItem>
           </List>
         </Box>
         <Heading is='h2'>Education</Heading>
         <Box>
-          <Heading is='h3'>
-            Rensselaer Polytechnic Institute, Troy NY —{' '}
-            <Text is='em' className='italic'>
-              B.S. Information Technology and Web Science
-            </Text>
-          </Heading>
-          <Text is='b' className='font-bold'>
-            August 2012 - May 2016
-          </Text>
           <Text>
-            Graduated in the top 15 students of my major, taking classes that provided insight to building user-friendly
-            experiences on the web and also focused on the newest web development standards.
+            B.S. Information Technology and Web Science - Rensselaer Polytechnic Institute - 2012-2016
           </Text>
         </Box>
         <Heading is='h2'>Projects</Heading>
@@ -133,10 +125,6 @@ export default function Resume() {
                 Inline-MDX.macro
               </Text>{' '}
               <Text>A Babel macro for authoring and transforming mdx</Text>
-              <Text>
-                One of my first babel macros, I built this to quickly compose MDX inline within another file for use
-                within our design system documentation site.
-              </Text>
               <Link href='https://github.com/hamlim/inline-mdx.macro' is='a'>
                 https://github.com/hamlim/inline-mdx.macro
               </Link>
@@ -146,10 +134,6 @@ export default function Resume() {
                 Simple Props
               </Text>{' '}
               <Text>A minimal, css variable backed style-prop library for [p]react</Text>
-              <Text>
-                A CSS-in-JS library that allows you to build a system-prop-like API using plain old CSS Custom
-                Properties (variables).
-              </Text>
               <Link href='https://github.com/ds-pack/simple-props' is='a'>
                 https://github.com/ds-pack/simple-props
               </Link>
@@ -159,10 +143,6 @@ export default function Resume() {
                 Rainbow Sprinkles
               </Text>{' '}
               <Text>Dynamic, theme-driven, style props for Vanilla Extract</Text>
-              <Text>
-                I contributed to this open source library authored by one of my friends and coworkers for building style
-                primitives within Vanilla Extract.
-              </Text>
               <Link href='https://github.com/wayfair/rainbow-sprinkles' is='a'>
                 https://github.com/wayfair/rainbow-sprinkles
               </Link>
