@@ -50,12 +50,12 @@
     "eslint-config-next": "latest",
     "lucide-react": "^0.340.0",
     "nanopop": "2.1.0",
-    "next": "canary",
+    "next": "14.3.0-canary.37",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.21",
-    "react": "experimental",
+    "react": "0.0.0-experimental-73bcdfbae5-20240502",
     "react-day-picker": "^8.9.1",
-    "react-dom": "experimental",
+    "react-dom": "0.0.0-experimental-73bcdfbae5-20240502",
     "react-hook-form": "^7.47.0",
     "react-tweet": "3.2.0",
     "remark-frontmatter": "^4.0.1",
@@ -85,7 +85,7 @@
     "typescript": "4.9.4"
   },
   "resolutions": {
-    "react": "experimental",
-    "react-dom": "experimental"
+    "react": "0.0.0-experimental-73bcdfbae5-20240502",
+    "react-dom": "0.0.0-experimental-73bcdfbae5-20240502"
   }
 }
