@@ -52,7 +52,7 @@
     "nanopop": "2.1.0",
     "next": "14.3.0-canary.37",
     "next-themes": "0.2.1",
-    "postcss": "8.4.29",
+    "postcss": "8.4.31",
     "react": "0.0.0-experimental-73bcdfbae5-20240502",
     "react-day-picker": "8.9.1",
     "react-dom": "0.0.0-experimental-73bcdfbae5-20240502",
