@@ -11,14 +11,19 @@ let projects: Array<{
   description: React.ReactNode;
 }> = [
   {
-    link: 'https://github.com/hamlim/milliform',
-    title: 'Milliform',
-    description: 'A super basic React.js form library!',
+    link: 'https://hohoro.vercel.app/',
+    title: 'hohoro',
+    description: 'An incremental JS/TS/TSX library build tool that helps you build your library with ease!',
   },
   {
     link: 'https://github.com/hamlim/template-monorepo',
     title: 'Template Monorepo',
     description: 'A template for creating a monorepo with Bun, Next.js, and Turborepo',
+  },
+  {
+    link: 'https://github.com/hamlim/milliform',
+    title: 'Milliform',
+    description: 'A super basic React.js form library!',
   },
   {
     'link': 'https://github.com/hamlim/better-beacon',
