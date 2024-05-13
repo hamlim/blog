@@ -1,0 +1,46 @@
+import BlogPage from 'app/blog/BlogPage';
+import {fetchManifest} from '@lib/fetch-manifest';
+import {formatBlogPostMetadata} from 'lib/formatMetadata';
+
+export let id = "4384163346978910667";
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({meta: post});
+}
+
+<BlogPage id={id}>
+
+<Callout>
+
+I originally posted this article as a series of tweets [here](https://twitter.com/immatthamlin/status/1790111809791308173).
+
+</Callout>
+
+## Introducing hohoro
+
+`hohoro` is an incremental build tool for JS/TS libraries, leveraging SWC and TSC under the hood!
+
+Check out the project here: [https://hohoro.vercel.app/](https://hohoro.vercel.app/).
+
+---
+
+Most build tools for libraries impose additional restrictions on the configuration that is exposed to you - often wrapping some core tools that you end up needing to use for other things (like configuring tests for example).
+
+hohoro approaches things a bit differently...
+
+---
+
+It doesn't directly wrap those core tools, and instead lets you configure them as needed.
+
+On top of that, it adds a light weight incremental build cache - like 
+<TwitterMention>turborepo</TwitterMention> - but on a per-file basis instead of all or nothing for each workspace.
+
+---
+
+We started to adopt this pattern at Wayfair to help with incremental compile times for larger libraries and saw big wins for local development!
+
+
+</BlogPage>

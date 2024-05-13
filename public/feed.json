@@ -2010,6 +2010,20 @@
       "status": "public",
       "description": "webpack, and tools built on it like Next.js, don't support true dynamic imports, but I found a way to trick the system!",
       "uuid": "11594157188732359206"
+    },
+    {
+      "id": 146,
+      "title": "Hohoro",
+      "path": "/posts/2024/may/hohoro.md",
+      "slug": "hohoro",
+      "date": "May 13th, 2024",
+      "time": "4:13:30 PM",
+      "month": "may",
+      "year": "2024",
+      "tags": ["Web Development", "Development", "swc", "TypeScript", "Projects"],
+      "status": "draft",
+      "description": "A quick introduction to my new side project, hohoro. An incremental JS/TS library build tool!",
+      "uuid": "4384163346978910667"
     }
   ]
 }
