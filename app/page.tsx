@@ -1,12 +1,12 @@
 import { fetchManifest } from '@lib/fetch-manifest';
 import { formatPostLink } from '@lib/format-post-link';
 import { Box } from '@recipes/box';
-import { Code } from '@recipes/code';
 import { Heading } from '@recipes/heading';
 import { Link } from '@recipes/link';
 import { List, ListItem } from '@recipes/list';
 import { Text } from '@recipes/text';
 import { Suspense } from 'react';
+import { projects } from './project-list';
 
 async function getTopPosts() {
   let manifest = await fetchManifest();
@@ -51,32 +51,7 @@ let topProjects: Array<{
   link: string;
   title: React.ReactNode;
   description: React.ReactNode;
-}> = [
-  {
-    link: 'https://github.com/hamlim/milliform',
-    title: 'Milliform',
-    description: 'A super basic React.js form library!',
-  },
-  {
-    link: 'https://github.com/hamlim/template-monorepo',
-    title: 'Template Monorepo',
-    description: 'A template for creating a monorepo with Bun, Next.js, and Turborepo',
-  },
-  {
-    'link': 'https://github.com/hamlim/better-beacon',
-    title: 'Better Beacon',
-    'description': (
-      <>
-        A better version of <Code>navigator.sendBeacon</Code>, that doesn't break when you try to queue too many events!
-      </>
-    ),
-  },
-  {
-    link: 'https://github.com/hamlim/rsc-form',
-    title: 'RSC Form',
-    description: 'A React Form component for use within React Server Components',
-  },
-];
+}> = projects.slice(0, 5);
 
 export default async function Page() {
   return (
@@ -85,8 +60,8 @@ export default async function Page() {
         Hey 👋
       </Heading>
       <Text className='text-xl'>
-        Hey there, I'm Matt. I currently live and work in Boston as a software engineer working on Wayfair's Frontend
-        Platform team. In my free time I like to work on several different <Link href='/projects'>projects</Link>
+        Hey there, I'm Matt. I currently live and work in Boston as a software engineer. In my free time I like to work
+        on several different <Link href='/projects'>projects</Link>
         , and somehow find time to write some{' '}
         <Link className='text-xl' href='/posts'>
           blog posts

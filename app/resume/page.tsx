@@ -17,7 +17,7 @@ export default function Resume() {
         </Link>,{' '}
         <Link href='https://docs.google.com/document/d/1Om1ilLporVXdLxC_CS20rRjDMmjeVKfNHUDoK8odtdA/edit?usp=sharing'>
           Google Docs
-        </Link>, and <Link href='/resume-april-24.pdf'>PDF</Link>.
+        </Link>, and <Link href='/resume-may-24.pdf'>PDF</Link>.
       </Blockquote>
       <Box className='flex flex-col'>
         <Text className='mb-4'>
@@ -57,7 +57,7 @@ export default function Resume() {
             Staff SWE, Frontend Platform Tech Lead - Wayfair
           </Heading>
           <Text is='b' className='font-bold'>
-            June 2021 - Present
+            June 2021 - May 2024
           </Text>
           <Text>
             Lead the Frontend Platform team at Wayfair, supporting our customer, supplier, and internal facing
