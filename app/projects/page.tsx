@@ -11,6 +11,11 @@ let projects: Array<{
   description: React.ReactNode;
 }> = [
   {
+    link: 'https://one-version.vercel.app/',
+    title: 'one-version',
+    description: 'A strict dependency conformance tool for monorepos!',
+  },
+  {
     link: 'https://hohoro.vercel.app/',
     title: 'hohoro',
     description: 'An incremental JS/TS/TSX library build tool that helps you build your library with ease!',
