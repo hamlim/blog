@@ -22,6 +22,11 @@ export let projects: Array<{
     description: 'A template for creating a monorepo with Bun, Next.js, and Turborepo',
   },
   {
+    link: 'https://switch-kit.vercel.app/',
+    title: 'Switch Kit',
+    description: 'A “build-your-own” Feature Flagging/Toggling/Experimentation/etc system!',
+  },
+  {
     'link': 'https://github.com/hamlim/better-beacon',
     title: 'Better Beacon',
     'description': (
