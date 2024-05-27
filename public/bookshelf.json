@@ -245,7 +245,14 @@
     "title": "2054",
     "author": "Elliot Ackerman, Admiral James Stavridis",
     "url": "https://www.goodreads.com/book/show/177192243",
-    "status": "reading",
-    "dateStarted": "April 2024"
+    "status": "read",
+    "dateStarted": "April 2024",
+    "dateFinished": "May 2024"
+  },
+  {
+    "title": "The Wager",
+    "author": "David Grann",
+    "url": "https://www.goodreads.com/book/show/61714633",
+    "status": "to-read"
   }
 ]
