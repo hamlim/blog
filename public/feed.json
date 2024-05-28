@@ -2038,6 +2038,20 @@
       "status": "public",
       "description": "The other week was my last week at Wayfair, rounding out almost 8 years at the company. I wanted to reflect a bit on my time there!",
       "uuid": "17604591003218435028"
+    },
+    {
+      "id": 148,
+      "title": "Using Feature Toggles to De-risk Refactors",
+      "path": "/posts/2024/may/using-feature-toggles-to-de-risk-refactors.md",
+      "slug": "using-feature-toggles-to-de-risk-refactors",
+      "date": "May 28th, 2024",
+      "time": "9:04:24 AM",
+      "month": "may",
+      "year": "2024",
+      "tags": ["Web Development", "Refactors", "Development", "Next.js"],
+      "status": "public",
+      "description": "Feature toggles are often underused by most software development teams, and yet offer so much value during not only feature development but also refactors",
+      "uuid": "9694948714166630565"
     }
   ]
 }
