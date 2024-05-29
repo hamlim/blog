@@ -254,5 +254,19 @@
     "author": "David Grann",
     "url": "https://www.goodreads.com/book/show/61714633",
     "status": "to-read"
+  },
+  {
+    "title": "The Making of Prince of Persia",
+    "author": "Jordan Mechner",
+    "url": "https://www.goodreads.com/book/show/12917506",
+    "status": "read",
+    "dateStarted": "May 2024",
+    "dateFinished": "May 2024"
+  },
+  {
+    "title": "Caliban's War",
+    "author": "James S.A. Corey",
+    "url": "https://www.goodreads.com/book/show/12591698",
+    "status": "reading"
   }
 ]
