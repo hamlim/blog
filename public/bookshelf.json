@@ -269,5 +269,18 @@
     "url": "https://www.goodreads.com/book/show/12591698",
     "status": "reading",
     "dateStarted": "May 28th 2024"
+  },
+  {
+    "title": "Sandstorm",
+    "author": "James Rollins",
+    "url": "https://www.goodreads.com/book/show/183822.Sandstorm",
+    "status": "reading",
+    "dateStarted": "June 2024"
+  },
+  {
+    "title": "The Count of Monte Cristo",
+    "author": "Alexandre Dumas",
+    "url": "https://www.goodreads.com/book/show/7126.The_Count_of_Monte_Cristo",
+    "status": "to-read"
   }
 ]
