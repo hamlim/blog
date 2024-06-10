@@ -2052,6 +2052,20 @@
       "status": "public",
       "description": "Feature toggles are often underused by most software development teams, and yet offer so much value during not only feature development but also refactors",
       "uuid": "9694948714166630565"
+    },
+    {
+      "id": 149,
+      "title": "Tip: Request and Response Headers",
+      "path": "/posts/2024/june/tip-request-and-response-headers.md",
+      "slug": "tip-request-and-response-headers",
+      "date": "June 10th, 2024",
+      "time": "10:37:04 AM",
+      "month": "june",
+      "year": "2024",
+      "tags": ["Tip", "Development", "Web Development"],
+      "status": "public",
+      "description": "There's a common gotcha when creating Web Request and Response instances with Headers!",
+      "uuid": "1525604244925610505"
     }
   ]
 }
