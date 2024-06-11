@@ -1,11 +1,19 @@
+import { Suspense } from 'react';
+
 import { fetchManifest } from '@lib/fetch-manifest';
 import { formatPostLink } from '@lib/format-post-link';
 import { Box } from '@recipes/box';
 import { Heading } from '@recipes/heading';
-import { Link } from '@recipes/link';
-import { List, ListItem } from '@recipes/list';
+import {
+  BaseLink,
+  Link,
+} from '@recipes/link';
+import {
+  List,
+  ListItem,
+} from '@recipes/list';
 import { Text } from '@recipes/text';
-import { Suspense } from 'react';
+
 import { projects } from './project-list';
 
 async function getTopPosts() {
@@ -60,8 +68,10 @@ export default async function Page() {
         Hey 👋
       </Heading>
       <Text className='text-xl'>
-        Hey there, I'm Matt. I currently live and work in Boston as a software engineer. In my free time I like to work
-        on several different <Link href='/projects'>projects</Link>
+        Hey there, I'm Matt. I currently live in Boston and work at{' '}
+        <BaseLink href='https://fireworks.ai/'>Fireworks</BaseLink>{'  '}
+        as a software engineer. In my free time I like to work on several different{' '}
+        <Link href='/projects'>projects</Link>
         , and somehow find time to write some{' '}
         <Link className='text-xl' href='/posts'>
           blog posts

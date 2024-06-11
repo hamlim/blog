@@ -2,7 +2,10 @@ import { Blockquote } from '@recipes/blockquote';
 import { Box } from '@recipes/box';
 import { Heading } from '@recipes/heading';
 import { BaseLink as Link } from '@recipes/link';
-import { List, ListItem } from '@recipes/list';
+import {
+  List,
+  ListItem,
+} from '@recipes/list';
 import { Stack } from '@recipes/stack';
 import { Text } from '@recipes/text';
 
@@ -52,6 +55,17 @@ export default function Resume() {
       </Box>
       <Stack gap={4}>
         <Heading is='h2'>Experience</Heading>
+        <Box>
+          <Heading is='h3'>
+            Staff Software Engineer - Fireworks
+          </Heading>
+          <Text is='b' className='font-bold'>
+            June 2024 - Present
+          </Text>
+          <Text>
+            Staff Software Engineer building out the future of business AI solutions at Fireworks.
+          </Text>
+        </Box>
         <Box>
           <Heading is='h3'>
             Staff SWE, Frontend Platform Tech Lead - Wayfair
