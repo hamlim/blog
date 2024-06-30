@@ -4,14 +4,8 @@ import { fetchManifest } from '@lib/fetch-manifest';
 import { formatPostLink } from '@lib/format-post-link';
 import { Box } from '@recipes/box';
 import { Heading } from '@recipes/heading';
-import {
-  BaseLink,
-  Link,
-} from '@recipes/link';
-import {
-  List,
-  ListItem,
-} from '@recipes/list';
+import { BaseLink, Link } from '@recipes/link';
+import { List, ListItem } from '@recipes/list';
 import { Text } from '@recipes/text';
 
 import { projects } from './project-list';

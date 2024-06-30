@@ -2,10 +2,7 @@ import { Blockquote } from '@recipes/blockquote';
 import { Box } from '@recipes/box';
 import { Heading } from '@recipes/heading';
 import { BaseLink as Link } from '@recipes/link';
-import {
-  List,
-  ListItem,
-} from '@recipes/list';
+import { List, ListItem } from '@recipes/list';
 import { Stack } from '@recipes/stack';
 import { Text } from '@recipes/text';
 

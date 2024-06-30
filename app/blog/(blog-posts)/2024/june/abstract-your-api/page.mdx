@@ -1,0 +1,38 @@
+import BlogPage from 'app/blog/BlogPage';
+import {fetchManifest} from '@lib/fetch-manifest';
+import {formatBlogPostMetadata} from 'lib/formatMetadata';
+
+export let id = "15853136361580820068";
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({meta: post});
+}
+
+<BlogPage id={id}>
+
+This blog post is meant as a response to this article by [Tom MacWright](https://macwright.com/): [https://macwright.com/2024/06/21/apis-and-applications](https://macwright.com/2024/06/21/apis-and-applications).
+
+<TLDR>
+Release a library that handles the business logic, pull into both your api service and application service.
+</TLDR>
+
+I haven’t necessarily needed to solve for this problem directly yet, but the first thought that came to mind is abstraction. Specifically abstracting away the core business logic of your API into a layer that both your API and your Application can share.
+
+While on the surface that may sound or look a bit like using your API within your application, I'd actually argue for sharing something a bit more primitive.
+
+You build out a set of composable async primitives (hint: functions) that can be composed together to support your API and also support your application. Let’s dive into a small example to help visualize the concept a bit.
+
+Imagine you’re supporting a product and API for listing pokémon, you could have your `/list` route in your web app call your `/api/v1/listPokemon` endpoint, however we can take it to the next layer deeper. Imagine you API endpoint does the following things:
+
+- validate input (for pagination and/or filtering)
+- execute some kind of query on your database
+- format results
+
+For both your web app and your API you need to handle all of the same conditions, and as rightly pointed out in the original article you need to do some massaging that’s different between the two services, on the web side you format the output as HTML (or an intermediary format like an RSC payload) whereas in your API you might opt for responding with JSON.
+
+Imagine if instead you shipped a shared library of async functions, `list.validateInput()`, `list.collect()`, and `list.format()` (or maybe you don't even expose `list.format()`!). Now you have the flexibility to call those wherever you need to within either service, and manage input and output however you’d like depending on the consuming service (e.g. Server Components for the web app maybe and JSON for the API).
+
+</BlogPage>
