@@ -1,0 +1,22 @@
+import BlogPage from 'app/blog/BlogPage';
+import {fetchManifest} from '@lib/fetch-manifest';
+import {formatBlogPostMetadata} from 'lib/formatMetadata';
+
+export let id = "14998881719146574662";
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({meta: post});
+}
+
+<BlogPage id={id}>
+
+Often tools that value [files over apps](https://stephango.com/file-over-app) brag about supporting markdown - it's a very common file format for most text+ applications. However, not all markdowns are created equally.
+
+Technically, the original spec for Markdown was defined here: [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax) - however you'd be surprised to see that there's actually a number of features that most markdown supporting apps add-on on top of the basic spec.
+
+These enhancements are great! However it also means that not all features that work in one application will work in another, and sometimes they may have conflicting parsing rules / definitions for what symbols should do what when rendered.
+
+</BlogPage>

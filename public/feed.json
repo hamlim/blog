@@ -2080,6 +2080,20 @@
       "status": "draft",
       "description": "Proposing a solution for sharing core \"business\" logic across services!",
       "uuid": "15853136361580820068"
+    },
+    {
+      "id": 151,
+      "title": "There Is No Standard Markdown",
+      "path": "/posts/2024/july/there-is-no-standard-markdown.md",
+      "slug": "there-is-no-standard-markdown",
+      "date": "July 1st, 2024",
+      "time": "2:24:41 PM",
+      "month": "july",
+      "year": "2024",
+      "tags": ["Development", "Web Development"],
+      "status": "draft",
+      "description": "There are a variety of different markdown \"standards\" out there, and sometimes they're not all that consistent",
+      "uuid": "14998881719146574662"
     }
   ]
 }
