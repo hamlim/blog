@@ -2094,6 +2094,20 @@
       "status": "draft",
       "description": "There are a variety of different markdown \"standards\" out there, and sometimes they're not all that consistent",
       "uuid": "14998881719146574662"
+    },
+    {
+      "id": 152,
+      "title": "Switching back to Obsidian",
+      "path": "/posts/2024/july/switching-back-to-obsidian.md",
+      "slug": "switching-back-to-obsidian",
+      "date": "July 1st, 2024",
+      "time": "2:50:37 PM",
+      "month": "july",
+      "year": "2024",
+      "tags": ["Note Taking", "Obsidian", "Notion"],
+      "status": "draft",
+      "description": "Previously I wrote about switching from Obsidian to Notion, now almost exactly 2 years later, I've opted to give Obsidian another try as my go-to note taking software, here's why!",
+      "uuid": "1658035342850122495"
     }
   ]
 }
