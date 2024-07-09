@@ -2108,6 +2108,20 @@
       "status": "draft",
       "description": "Previously I wrote about switching from Obsidian to Notion, now almost exactly 2 years later, I've opted to give Obsidian another try as my go-to note taking software, here's why!",
       "uuid": "1658035342850122495"
+    },
+    {
+      "id": 153,
+      "title": "My Current Dev Setup",
+      "path": "/posts/2024/july/my-current-dev-setup.md",
+      "slug": "my-current-dev-setup",
+      "date": "July 8th, 2024",
+      "time": "7:40:27 PM",
+      "month": "july",
+      "year": "2024",
+      "tags": ["Web Development", "Development", "Tools"],
+      "status": "draft",
+      "description": "A quick look at the applications and tools that I (generally) use day to day for web development!",
+      "uuid": "5505941808858085758"
     }
   ]
 }
