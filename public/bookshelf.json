@@ -285,5 +285,12 @@
     "author": "Alexandre Dumas",
     "url": "https://www.goodreads.com/book/show/7126.The_Count_of_Monte_Cristo",
     "status": "to-read"
+  },
+  {
+    "title": "Patriot Games",
+    "author": "Tom Clancy",
+    "url": "https://www.goodreads.com/book/show/32682.Patriot_Games",
+    "status": "reading",
+    "dateStarted": "July 6th 2024"
   }
 ]
