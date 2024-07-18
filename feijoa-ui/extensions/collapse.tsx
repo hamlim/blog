@@ -1,7 +1,7 @@
 'use client'
 
 import { ChevronDown, ChevronRight } from 'lucide-react'
-import { Children, ReactNode, useState } from 'react'
+import { Children, type ReactNode, useState } from 'react'
 
 export function CollapseAnnotation({
   children,
@@ -18,6 +18,7 @@ export function CollapseAnnotation({
   return (
     <div className="relative">
       <button
+        type="button"
         className="absolute bg-transparent border-0 m-0 p-0 left-[-0.1ch]"
         onClick={() => setIsOpen(!isOpen)}
       >

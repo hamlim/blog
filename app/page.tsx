@@ -14,7 +14,7 @@ async function getTopPosts() {
   let manifest = await fetchManifest()
   return manifest.posts.reduce((acc, post) => {
     if (manifest.gallery.includes(post.id)) {
-      return [...acc, post]
+      acc.push(post)
     }
     return acc
   }, [])

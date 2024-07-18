@@ -1,4 +1,4 @@
-import { Post } from './types'
+import type { Post } from './types'
 
 export function formatPostLink(post: Post) {
   return `/blog/${post.year}/${post.month}/${post.slug}`

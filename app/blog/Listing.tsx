@@ -30,24 +30,18 @@ function capitalCase(word: string): string {
 function groupByYearAndMonth(posts: Array<Post>) {
   return Object.entries(
     posts.reduce((grouped, post: Post) => {
-      return {
-        ...grouped,
-        [post.year]: {
-          ...(grouped[post.year] || {}),
-          [capitalCase(post.month)]: [
-            ...(grouped[post.year]
-              ? grouped[post.year][capitalCase(post.month)] || []
-              : []),
-            post,
-          ],
-        },
-      }
+      grouped[post.year] = grouped[post.year] || {}
+      grouped[post.year][capitalCase(post.month)] =
+        grouped[post.year][capitalCase(post.month)] || []
+      grouped[post.year][capitalCase(post.month)].push(post)
+      return grouped
     }, {}),
   )
     .sort(([aKey], [bKey]) => {
       if (aKey > bKey) {
         return -1
-      } else if (bKey > aKey) {
+      }
+      if (bKey > aKey) {
         return 1
       }
       return 0
@@ -60,7 +54,8 @@ function groupByYearAndMonth(posts: Array<Post>) {
           let bNum = monthToNumber[monthB]
           if (aNum > bNum) {
             return -1
-          } else if (bNum > aNum) {
+          }
+          if (bNum > aNum) {
             return 1
           }
           return 0
@@ -74,10 +69,9 @@ function groupByTags(posts: Array<Post>) {
     posts.reduce((grouped, post) => {
       let { tags } = post
       return tags.reduce((fin, tag) => {
-        return {
-          ...fin,
-          [tag]: fin[tag] ? [...fin[tag], post] : [post],
-        }
+        fin[tag] = fin[tag] || []
+        fin[tag].push(post)
+        return fin
       }, grouped)
     }, {}),
   ).sort(([tagA], [tagB]) => {
@@ -246,11 +240,11 @@ function postsByMonth(
     November: 0,
     December: 0,
   }
-  groupedByYear.forEach((year) => {
-    year[1].forEach((months) => {
-      count[months[0]] += months[1].length
-    })
-  })
+  for (let year of groupedByYear) {
+    for (let month of year[1]) {
+      count[month[0]] += month[1].length
+    }
+  }
   return count
 }
 

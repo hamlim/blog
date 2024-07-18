@@ -5,7 +5,7 @@ import { Container } from '@recipes/container'
 import { Heading } from '@recipes/heading'
 import { Text } from '@recipes/text'
 
-export default function Error({ error, reset }) {
+export default function ErrorPage({ error, reset }) {
   return (
     <Container>
       <Heading is="h1">Oh fuck - it's broken!</Heading>

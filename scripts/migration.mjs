@@ -2,9 +2,9 @@
 // Crawl though /public/posts
 // Derive dates/slugs/titles/etc and fill in the posts array in feed.json
 
-import { execSync } from 'child_process'
-import fs from 'fs'
-import path from 'path'
+import { execSync } from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
 import originalManifest from '../public/feed.json' assert { type: 'json' }
 
 import matter from 'gray-matter'
@@ -14,23 +14,23 @@ function searchRecursive(dir, pattern) {
   let results = []
 
   // Read contents of directory
-  fs.readdirSync(dir).forEach(function (dirInner) {
+  for (let dirInner of fs.readdirSync(dir)) {
     // Obtain absolute path
-    dirInner = path.resolve(dir, dirInner)
+    let resolvedDirInner = path.resolve(dir, dirInner)
 
     // Get stats to determine if path is a directory or a file
-    let stat = fs.statSync(dirInner)
+    let stat = fs.statSync(resolvedDirInner)
 
     // If path is a directory, scan it and combine results
     if (stat.isDirectory()) {
-      results = results.concat(searchRecursive(dirInner, pattern))
+      results = results.concat(searchRecursive(resolvedDirInner, pattern))
     }
 
     // If path is a file and ends with pattern then push it onto results
-    if (stat.isFile() && dirInner.endsWith(pattern)) {
-      results.push(dirInner)
+    if (stat.isFile() && resolvedDirInner.endsWith(pattern)) {
+      results.push(resolvedDirInner)
     }
-  })
+  }
 
   return results
 }

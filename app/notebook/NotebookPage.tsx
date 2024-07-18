@@ -1,6 +1,6 @@
-import { fetchManifest } from '@lib/fetch-manifest'
 import Mentions from '@lib/Mentions'
 import { PostWrapper } from '@lib/PostWrapper'
+import { fetchManifest } from '@lib/fetch-manifest'
 import { Box } from '@recipes/box'
 import { Heading } from '@recipes/heading'
 import { Time } from '@recipes/mdx-components'

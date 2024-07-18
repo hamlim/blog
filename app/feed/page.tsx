@@ -35,7 +35,7 @@ type Fibre = {
 async function Feed({ searchParams }) {
   let page = Number(searchParams.page ?? '0')
 
-  let endpoint
+  let endpoint: string
   if (process.env.NODE_ENV === 'development') {
     endpoint = 'http://127.0.0.1:8787/v1/posts'
   } else {
@@ -59,7 +59,7 @@ async function Feed({ searchParams }) {
   return (
     <>
       <Stack gap={6}>
-        {posts && posts.length ? (
+        {posts?.length ? (
           posts.map((post) => (
             <Box key={post.id}>
               <Text>📢 {post.body}</Text>

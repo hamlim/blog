@@ -1,5 +1,5 @@
 import { cn } from '@recipes/cn'
-import NextLink, { LinkProps } from 'next/link'
+import NextLink, { type LinkProps } from 'next/link'
 
 interface BaseLinkProps extends React.HTMLProps<HTMLAnchorElement> {}
 

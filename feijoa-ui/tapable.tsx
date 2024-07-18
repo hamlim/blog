@@ -30,6 +30,7 @@ export function useTapable(
   let sharedRef = useSharedRef(ref)
   let [focused, setFocused] = useState(autoFocus)
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: biome considers sharedRef as a dependency
   useEffect(() => {
     if (focused) {
       requestAnimationFrame(() => {

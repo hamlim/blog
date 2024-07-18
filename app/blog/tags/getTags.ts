@@ -11,14 +11,15 @@ export let getTags = cache(async function getTags(): Promise<{
   let tags: Set<string> = new Set()
   let postsByTag: Record<string, Array<Post>> = {}
   for (let post of posts) {
-    post.tags.forEach((tag) => {
+    let postTags = post.tags
+    for (let tag of postTags) {
       tags.add(tag)
       if (postsByTag[tag]) {
         postsByTag[tag].push(post)
       } else {
         postsByTag[tag] = [post]
       }
-    })
+    }
   }
 
   return {

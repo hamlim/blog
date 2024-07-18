@@ -1,5 +1,5 @@
 'use client'
-import { Component, ReactNode } from 'react'
+import { Component, type ReactNode } from 'react'
 
 export class ErrorBoundary extends Component<
   | {

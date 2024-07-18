@@ -2,7 +2,7 @@
 /// <reference lib="dom.iterable" />
 
 'use client'
-import { ReactNode, useEffect, useLayoutEffect, useState } from 'react'
+import { type ReactNode, useEffect, useLayoutEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 export interface PortalProps {

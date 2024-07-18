@@ -1,4 +1,4 @@
-import { ComponentType } from 'react'
+import type { ComponentType } from 'react'
 
 // @ts-expect-error
 export interface BoxProps extends React.HTMLProps<HTMLElement> {

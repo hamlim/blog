@@ -13,7 +13,7 @@ async function getPosts(): Promise<{
     posts: [...posts].reverse(),
     galleryPosts: posts.reduce((acc, post) => {
       if (gallery.includes(post.id)) {
-        return [...acc, post]
+        acc.push(post)
       }
       return acc
     }, []),

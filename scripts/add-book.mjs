@@ -1,19 +1,15 @@
-import { execSync } from 'child_process'
-import fs from 'fs'
+import { execSync } from 'node:child_process'
+import fs from 'node:fs'
 import originalBookshelf from '../public/bookshelf.json' assert { type: 'json' }
 
 let args = process.argv.slice(2).reduce((acc, curr) => {
   if (curr.includes('=')) {
     let [name, val] = curr.split('=')
-    return {
-      ...acc,
-      [name]: val,
-    }
+    acc[name] = val
+    return acc
   }
-  return {
-    ...acc,
-    [curr]: true,
-  }
+  acc[curr] = true
+  return acc
 }, {})
 
 if (args.help) {

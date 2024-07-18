@@ -33,7 +33,8 @@ let metaComments = {
 }
 
 export async function CodeBlock(props: Props) {
-  let code: string, className: string
+  let code: string
+  let className: string
   if (typeof props.children === 'string') {
     code = props.children
     className = props.className
@@ -69,10 +70,10 @@ export async function CodeBlock(props: Props) {
     return <LiveCode code={rest.join('\n').slice(0, -1)} {...metaProps} />
   }
 
-  let highlight
+  let highlight: string | Array<unknown>
   if (codeToHighlight.startsWith(metaComments.highlight)) {
     let [meta, ...lines] = codeToHighlight.split('\n')
-    highlight = meta.replace(metaComments.highlight, '')
+    highlight = meta.replace(metaComments.highlight, '') as string
     highlight = highlight.split(',').map((hl) => {
       if (hl.includes('-')) {
         return hl.split('-').map(Number)

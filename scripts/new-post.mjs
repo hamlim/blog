@@ -22,9 +22,9 @@ if (typeof Bun === 'undefined') {
   throw new Error(`This script is meant to be run with Bun.`)
 }
 
-import { execSync } from 'child_process'
+import { execSync } from 'node:child_process'
 import { mkdir } from 'node:fs/promises'
-import path from 'path'
+import path from 'node:path'
 import originalManifest from '../public/feed.json' assert { type: 'json' }
 
 let currentDate = new Date()
@@ -50,13 +50,14 @@ let [month, date] = monthAndDate.split(' ')
 let ordinal = (() => {
   if ([1, 21, 31].includes(Number(date))) {
     return 'st'
-  } else if ([2, 22].includes(Number(date))) {
-    return 'nd'
-  } else if ([3, 23].includes(Number(date))) {
-    return 'rd'
-  } else {
-    return 'th'
   }
+  if ([2, 22].includes(Number(date))) {
+    return 'nd'
+  }
+  if ([3, 23].includes(Number(date))) {
+    return 'rd'
+  }
+  return 'th'
 })()
 
 let publishDate = `${month} ${date}${ordinal}, ${year}`
@@ -64,15 +65,11 @@ let publishDate = `${month} ${date}${ordinal}, ${year}`
 let args = process.argv.slice(2).reduce((acc, curr) => {
   if (curr.includes('=')) {
     let [name, val] = curr.split('=')
-    return {
-      ...acc,
-      [name]: val,
-    }
+    acc[name] = val
+    return acc
   }
-  return {
-    ...acc,
-    [curr]: true,
-  }
+  acc[curr] = true
+  return acc
 }, {})
 
 if (args.help) {
