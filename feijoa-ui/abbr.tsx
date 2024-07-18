@@ -1,4 +1,9 @@
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@recipes/tooltip';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@recipes/tooltip'
 
 export function Abbr({ title, children }) {
   return (
@@ -12,5 +17,5 @@ export function Abbr({ title, children }) {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  );
+  )
 }

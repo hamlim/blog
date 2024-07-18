@@ -18,12 +18,12 @@
  * - New markdown file in `public/notebook/<year>/<month>/<slug>.md`
  */
 
-import { execSync } from 'child_process';
-import fs from 'fs';
-import path from 'path';
-import originalManifest from '../public/feed.json' assert { type: 'json' };
+import { execSync } from 'child_process'
+import fs from 'fs'
+import path from 'path'
+import originalManifest from '../public/feed.json' assert { type: 'json' }
 
-let currentDate = new Date();
+let currentDate = new Date()
 
 let formatter = new Intl.DateTimeFormat('en', {
   month: 'long',
@@ -33,67 +33,67 @@ let formatter = new Intl.DateTimeFormat('en', {
   hour: 'numeric',
   minute: 'numeric',
   second: 'numeric',
-});
+})
 
-let res = formatter.format(currentDate);
+let res = formatter.format(currentDate)
 
-let [dayOfWeek, monthAndDate, year, time] = res.split(', ');
+let [dayOfWeek, monthAndDate, year, time] = res.split(', ')
 
-let [month, date] = monthAndDate.split(' ');
+let [month, date] = monthAndDate.split(' ')
 
 let ordinal = (() => {
   if ([1, 21, 31].includes(Number(date))) {
-    return 'st';
+    return 'st'
   } else if ([2, 22].includes(Number(date))) {
-    return 'nd';
+    return 'nd'
   } else if ([3, 23].includes(Number(date))) {
-    return 'rd';
+    return 'rd'
   } else {
-    return 'th';
+    return 'th'
   }
-})();
+})()
 
-let publishDate = `${month} ${date}${ordinal}, ${year}`;
+let publishDate = `${month} ${date}${ordinal}, ${year}`
 
 let args = process.argv.slice(2).reduce((acc, curr) => {
   if (curr.includes('=')) {
-    let [name, val] = curr.split('=');
+    let [name, val] = curr.split('=')
     return {
       ...acc,
       [name]: val,
-    };
+    }
   }
   return {
     ...acc,
     [curr]: true,
-  };
-}, {});
+  }
+}, {})
 
 if (args.help) {
-  console.log('');
-  console.log('bun new-note ...');
-  console.log('');
-  console.log(' help            Prints this dialog!');
-  console.log(' debug           Logs out debugging info');
-  console.log(' title="<title>" sets the title');
-  console.log(' slug="<slug>"   sets the slug');
-  console.log(' tags="<tags>"   sets the tags');
-  console.log('');
-  process.exit(1);
+  console.log('')
+  console.log('bun new-note ...')
+  console.log('')
+  console.log(' help            Prints this dialog!')
+  console.log(' debug           Logs out debugging info')
+  console.log(' title="<title>" sets the title')
+  console.log(' slug="<slug>"   sets the slug')
+  console.log(' tags="<tags>"   sets the tags')
+  console.log('')
+  process.exit(1)
 }
 
 if (args.debug) {
-  console.log(args);
+  console.log(args)
 }
 
 function missingArg(args) {
-  console.log('');
+  console.log('')
   console.log(
     `Error: Missing ${args.map((name) => `\`${name}\``).join(', ')} argument${args.length > 1 ? 's' : ''}.`,
-  );
-  console.log('');
-  console.log(`Try re-running the command and provide: ${args.join(', ')}`);
-  console.log('');
+  )
+  console.log('')
+  console.log(`Try re-running the command and provide: ${args.join(', ')}`)
+  console.log('')
 }
 
 if (!args.title || !args.slug || !args.tags) {
@@ -105,19 +105,19 @@ if (!args.title || !args.slug || !args.tags) {
     ]
       .filter(({ val }) => !val)
       .map(({ name }) => name),
-  );
-  process.exit(1);
+  )
+  process.exit(1)
 }
 
 if (/[^a-zA-Z0-9|-]/.exec(args.slug)) {
-  console.log('');
+  console.log('')
   console.log(
     `Error: \`slug\` argument is malformed. Only use alphanumeric characters and dashes.`,
-  );
-  console.log('');
-  console.log(`You provided:\n\t\t\`slug="${args.slug}"\``);
-  console.log('');
-  process.exit(1);
+  )
+  console.log('')
+  console.log(`You provided:\n\t\t\`slug="${args.slug}"\``)
+  console.log('')
+  process.exit(1)
 }
 
 // mkdirp
@@ -125,18 +125,18 @@ let folderPath = path.join(
   './public/notebook/',
   `${year}`,
   `${month.toLowerCase()}`,
-);
+)
 
-fs.mkdirSync(folderPath, { recursive: true });
+fs.mkdirSync(folderPath, { recursive: true })
 
 let template = `> Note: This post is a draft.
 
 <Spacer />
 
 START_HERE
-`;
+`
 
-fs.writeFileSync(path.join(folderPath, `${args.slug}.md`), template);
+fs.writeFileSync(path.join(folderPath, `${args.slug}.md`), template)
 
 let newManifest = {
   ...originalManifest,
@@ -155,8 +155,8 @@ let newManifest = {
       status: 'draft',
     },
   ],
-};
+}
 
-fs.writeFileSync('./public/feed.json', JSON.stringify(newManifest));
+fs.writeFileSync('./public/feed.json', JSON.stringify(newManifest))
 
-execSync(`bun run format`);
+execSync(`bun run format`)

@@ -10,7 +10,7 @@ A personal site and blog
 ## Running Locally
 
 - `bun install`
-- `bun dev`
+- `bun run dev`
 
 ## Adding a Post
 

@@ -1,28 +1,28 @@
-'use client';
-import { Component, ReactNode } from 'react';
+'use client'
+import { Component, ReactNode } from 'react'
 
 export class ErrorBoundary extends Component<
   | {
-    fallback: ReactNode;
-    children: ReactNode;
-    onError?: (error: Error) => void;
-  }
+      fallback: ReactNode
+      children: ReactNode
+      onError?: (error: Error) => void
+    }
   | {
-    children: ReactNode;
-    FallbackComponent: React.ComponentType<{
-      error: Error;
-      reset: () => void;
-    }>;
-    onError?: (error: Error) => void;
-  },
+      children: ReactNode
+      FallbackComponent: React.ComponentType<{
+        error: Error
+        reset: () => void
+      }>
+      onError?: (error: Error) => void
+    },
   { error: Error | null }
 > {
   static getDerivedStateFromError(error: Error) {
-    return { error };
+    return { error }
   }
-  state = { error: null };
+  state = { error: null }
   componentDidCatch(error: Error): void {
-    this.props.onError?.(error);
+    this.props.onError?.(error)
   }
   render() {
     if (this.state.error) {
@@ -31,13 +31,13 @@ export class ErrorBoundary extends Component<
           <this.props.FallbackComponent
             error={this.state.error}
             reset={() => {
-              this.setState({ error: null });
+              this.setState({ error: null })
             }}
           />
-        );
+        )
       }
-      return this.props.fallback;
+      return this.props.fallback
     }
-    return this.props.children;
+    return this.props.children
   }
 }

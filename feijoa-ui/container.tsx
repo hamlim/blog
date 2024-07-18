@@ -1,8 +1,8 @@
-import { Box, type BoxProps } from '@recipes/box';
-import { cn } from '@recipes/cn';
+import { Box, type BoxProps } from '@recipes/box'
+import { cn } from '@recipes/cn'
 
 interface Props extends BoxProps {
-  className?: string;
+  className?: string
 }
 
 export function Container(props: Props) {
@@ -14,5 +14,5 @@ export function Container(props: Props) {
         props.className,
       )}
     />
-  );
+  )
 }

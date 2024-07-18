@@ -8,7 +8,7 @@
     "start": "next start",
     "deploy": "now",
     "deploy-prod": "now --prod",
-    "format": "dprint fmt"
+    "format": "biome format --write ./"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "2.7.0",
@@ -68,6 +68,7 @@
     "vaul": "0.9.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
     "@feijoa-ui/cli": "0.0.4",
     "@mdx-js/loader": "3.0.1",
     "@mdx-js/react": "3.0.1",
@@ -78,7 +79,6 @@
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "bun-types": "1.0.1",
-    "dprint": "0.43.1",
     "fast-glob": "3.3.2",
     "gray-matter": "4.0.3",
     "supports-color": "9.4.0",

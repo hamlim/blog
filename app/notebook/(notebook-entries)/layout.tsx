@@ -1,5 +1,5 @@
-import { Box } from '@recipes/box';
+import { Box } from '@recipes/box'
 
 export default function Layout({ children }) {
-  return <Box>{children}</Box>;
+  return <Box>{children}</Box>
 }

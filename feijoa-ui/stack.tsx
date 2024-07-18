@@ -1,9 +1,9 @@
-import { cn } from '@recipes/cn';
+import { cn } from '@recipes/cn'
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
-  gap: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-  inline?: boolean;
-  className?: string;
+  gap: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+  inline?: boolean
+  className?: string
 }
 
 let gridClasses = {
@@ -18,7 +18,7 @@ let gridClasses = {
   8: 'gap-8',
   9: 'gap-9',
   10: 'gap-10',
-};
+}
 
 export function Stack({ gap, inline, ...props }: Props) {
   return (
@@ -30,5 +30,5 @@ export function Stack({ gap, inline, ...props }: Props) {
         props.className,
       )}
     />
-  );
+  )
 }

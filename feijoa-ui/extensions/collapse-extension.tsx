@@ -1,5 +1,5 @@
-import { Extension } from 'bright';
-import { CollapseAnnotation } from './collapse';
+import { Extension } from 'bright'
+import { CollapseAnnotation } from './collapse'
 
 export let collapse: Extension = {
   name: 'collapse',
@@ -10,4 +10,4 @@ export let collapse: Extension = {
       color={brightProps.colors.editorLineNumber.foreground}
     />
   ),
-};
+}

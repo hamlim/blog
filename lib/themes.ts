@@ -1,6 +1,6 @@
-export let defaultTheme = 'corporate';
+export let defaultTheme = 'corporate'
 
-export let themeCookie = '__theme__';
+export let themeCookie = '__theme__'
 
 export let themes = [
   'light',
@@ -32,7 +32,7 @@ export let themes = [
   'night',
   'coffee',
   'winter',
-];
+]
 
 export let themeToCodeTheme = {
   light: [
@@ -67,4 +67,4 @@ export let themeToCodeTheme = {
     'night',
     'coffee',
   ],
-};
+}

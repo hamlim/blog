@@ -1442,7 +1442,15 @@
       "month": "november",
       "description": "A deep dive into one of my recent side projects; microfibre - a minimal text posting application",
       "year": "2023",
-      "tags": ["Project Deep Dive", "Projects", "Web Development", "Go", "Cloudflare", "Cloudflare Workers", "Next.js"],
+      "tags": [
+        "Project Deep Dive",
+        "Projects",
+        "Web Development",
+        "Go",
+        "Cloudflare",
+        "Cloudflare Workers",
+        "Next.js"
+      ],
       "status": "draft"
     },
     {
@@ -1519,7 +1527,12 @@
       "time": "2:01:31 PM",
       "month": "december",
       "year": "2023",
-      "tags": ["Web Development", "micropost", "Cloudflare Workers", "Cloudflare"],
+      "tags": [
+        "Web Development",
+        "micropost",
+        "Cloudflare Workers",
+        "Cloudflare"
+      ],
       "status": "draft"
     },
     {
@@ -1569,7 +1582,14 @@
       "time": "11:05:29 AM",
       "month": "december",
       "year": "2023",
-      "tags": ["Project Deep Dive", "Projects", "Web Development", "Cloudflare", "Next.js", "Cloudflare Workers"],
+      "tags": [
+        "Project Deep Dive",
+        "Projects",
+        "Web Development",
+        "Cloudflare",
+        "Next.js",
+        "Cloudflare Workers"
+      ],
       "status": "public",
       "description": "A(nother) deep dive into one of my recent side projects; tails - a plain and simple cocktail recipe app."
     }
