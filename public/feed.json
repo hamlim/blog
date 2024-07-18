@@ -2119,9 +2119,23 @@
       "month": "july",
       "year": "2024",
       "tags": ["Web Development", "Development", "Tools"],
-      "status": "draft",
+      "status": "public",
       "description": "A quick look at the applications and tools that I (generally) use day to day for web development!",
       "uuid": "5505941808858085758"
+    },
+    {
+      "id": 154,
+      "title": "30",
+      "path": "/posts/2024/july/30.md",
+      "slug": "30",
+      "date": "July 20th, 2024",
+      "time": "6:00:00 AM",
+      "month": "july",
+      "year": "2024",
+      "tags": ["Random", "Birthday", "Goal", "Resolutions"],
+      "status": "public",
+      "description": "A quick recap of my goals from the past year and a few goals looking forward as well.",
+      "uuid": "18158903986363108730"
     }
   ]
 }
