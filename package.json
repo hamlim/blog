@@ -8,7 +8,9 @@
     "start": "next start",
     "deploy": "now",
     "deploy-prod": "now --prod",
-    "format": "biome format --write ./"
+    "format": "biome format --write ./",
+    "check": "biome check --files-ignore-unknown=true",
+    "check:fix": "biome check --fix --unsafe --files-ignore-unknown=true"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "2.7.0",
