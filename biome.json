@@ -1,0 +1,66 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true,
+    "root": ".",
+    "defaultBranch": "origin/main"
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto",
+    "ignore": [
+      "public/posts/2016/august/my-new-website.md",
+      "public/posts/2016/october/css-debate.md",
+      "public/posts/2020/december/literate-programming.md",
+      "public/posts/2020/december/nextjs-analytics-with-airtable.md",
+      "public/posts/2020/december/pair-code-reviews.md",
+      "public/posts/2021/january/2021.md",
+      "public/posts/2021/january/computed-theme.md",
+      "public/posts/2021/january/simple-props.md",
+      "public/posts/2021/march/on-code-review.md",
+      "public/posts/2021/november/fast-feedback-systems.md",
+      "public/posts/2021/november/pair-programming.md",
+      "public/posts/2021/september/mac-setup-guide.md",
+      "public/posts/2022/december/updated-opinionated-nextjs-setup.md",
+      "public/posts/2022/january/my-opinionated-nextjs-setup.md",
+      "public/posts/2022/january/my-two-favorite-react-tricks.md",
+      "public/posts/2022/january/switching-to-iphone.md",
+      "public/posts/2022/july/yarn-berry-gitignore.md",
+      "public/posts/2022/june/on-note-taking.md",
+      "public/posts/2022/june/on-writing-tests.md",
+      "**/.next/"
+    ]
+  },
+  "organizeImports": { "enabled": true },
+  "linter": { "enabled": true, "rules": { "recommended": true } },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "multiline"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowTrailingCommas": true,
+      "allowComments": true
+    },
+    "formatter": {
+      "indentWidth": 2,
+      "indentStyle": "space"
+    }
+  }
+}
