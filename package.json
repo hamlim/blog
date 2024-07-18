@@ -10,7 +10,8 @@
     "deploy-prod": "now --prod",
     "format": "biome format --write ./",
     "check": "biome check --files-ignore-unknown=true",
-    "check:fix": "biome check --fix --unsafe --files-ignore-unknown=true"
+    "check:fix": "biome check --fix --unsafe --files-ignore-unknown=true",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "2.7.0",
@@ -75,6 +76,7 @@
     "@mdx-js/loader": "3.0.1",
     "@mdx-js/react": "3.0.1",
     "@next/mdx": "14.1.0",
+    "@playwright/test": "1.45.2",
     "@tailwindcss/typography": "0.5.10",
     "@types/mdx": "2.0.11",
     "@types/node": "16.18.50",
@@ -83,6 +85,7 @@
     "bun-types": "1.0.1",
     "fast-glob": "3.3.2",
     "gray-matter": "4.0.3",
+    "pierre": "^2.1.9",
     "supports-color": "9.4.0",
     "typescript": "4.9.4"
   },
