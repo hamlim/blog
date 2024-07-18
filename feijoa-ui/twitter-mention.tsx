@@ -1,16 +1,16 @@
-import { BaseLink } from '@recipes/link';
+import { BaseLink } from '@recipes/link'
 
 interface Props {
-  children: string;
+  children: string
 }
 
 export function TwitterMention(props: Props) {
   return (
     <BaseLink
       href={`https://twitter.com/${props.children}`}
-      target='_blank'
-      rel='nooperner noreferrer'
+      target="_blank"
+      rel="nooperner noreferrer"
       {...props}
     />
-  );
+  )
 }

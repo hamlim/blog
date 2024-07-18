@@ -1743,7 +1743,14 @@
       "month": "november",
       "description": "A deep dive into one of my recent side projects; microfibre - a minimal text posting application",
       "year": "2023",
-      "tags": ["Project Deep Dive", "Projects", "Web Development", "Go", "Cloudflare", "Next.js"],
+      "tags": [
+        "Project Deep Dive",
+        "Projects",
+        "Web Development",
+        "Go",
+        "Cloudflare",
+        "Next.js"
+      ],
       "status": "public",
       "uuid": "1186901307524990645"
     },
@@ -1880,7 +1887,13 @@
       "time": "11:05:29 AM",
       "month": "december",
       "year": "2023",
-      "tags": ["Project Deep Dive", "Projects", "Web Development", "Cloudflare", "Next.js"],
+      "tags": [
+        "Project Deep Dive",
+        "Projects",
+        "Web Development",
+        "Cloudflare",
+        "Next.js"
+      ],
       "status": "public",
       "description": "A(nother) deep dive into one of my recent side projects; tails - a plain and simple cocktail recipe app.",
       "uuid": "993591556672601284"
@@ -2020,7 +2033,13 @@
       "time": "4:13:30 PM",
       "month": "may",
       "year": "2024",
-      "tags": ["Web Development", "Development", "swc", "TypeScript", "Projects"],
+      "tags": [
+        "Web Development",
+        "Development",
+        "swc",
+        "TypeScript",
+        "Projects"
+      ],
       "status": "public",
       "description": "A quick introduction to my new side project, hohoro. An incremental JS/TS library build tool!",
       "uuid": "4384163346978910667"

@@ -1,53 +1,53 @@
-import { execSync } from 'child_process';
-import fs from 'fs';
-import originalBookshelf from '../public/bookshelf.json' assert { type: 'json' };
+import { execSync } from 'child_process'
+import fs from 'fs'
+import originalBookshelf from '../public/bookshelf.json' assert { type: 'json' }
 
 let args = process.argv.slice(2).reduce((acc, curr) => {
   if (curr.includes('=')) {
-    let [name, val] = curr.split('=');
+    let [name, val] = curr.split('=')
     return {
       ...acc,
       [name]: val,
-    };
+    }
   }
   return {
     ...acc,
     [curr]: true,
-  };
-}, {});
+  }
+}, {})
 
 if (args.help) {
-  console.log('');
-  console.log('bun add-book ...');
-  console.log('');
-  console.log(' help                              Prints this dialog!');
-  console.log(' debug                             Logs out debugging info');
-  console.log(' title="<title>"                   Title of the Book');
-  console.log(' author="<author>"                 Author of the book');
-  console.log(' url="<url>"                       URL to the book on GoodReads');
+  console.log('')
+  console.log('bun add-book ...')
+  console.log('')
+  console.log(' help                              Prints this dialog!')
+  console.log(' debug                             Logs out debugging info')
+  console.log(' title="<title>"                   Title of the Book')
+  console.log(' author="<author>"                 Author of the book')
+  console.log(' url="<url>"                       URL to the book on GoodReads')
   console.log(
     ' status="<reading|read|to-read>"   Status of the book (optional, defaults to "to-read")',
-  );
-  console.log('');
-  process.exit(1);
+  )
+  console.log('')
+  process.exit(1)
 }
 
 if (args.debug) {
-  console.log(args);
+  console.log(args)
 }
 
 function missingArg(args) {
-  console.log('');
+  console.log('')
   console.log(
     `Error: Missing ${args.map((name) => `\`${name}\``).join(', ')} argument${args.length > 1 ? 's' : ''}.`,
-  );
-  console.log('');
-  console.log(`Try re-running the command and provide: ${args.join(', ')}`);
-  console.log('');
+  )
+  console.log('')
+  console.log(`Try re-running the command and provide: ${args.join(', ')}`)
+  console.log('')
 }
 
 if (!args.status) {
-  args.status = 'to-read';
+  args.status = 'to-read'
 }
 
 if (!args.title || !args.author || !args.url) {
@@ -59,8 +59,8 @@ if (!args.title || !args.author || !args.url) {
     ]
       .filter(({ val }) => !val)
       .map(({ name }) => name),
-  );
-  process.exit(1);
+  )
+  process.exit(1)
 }
 
 let newBookshelf = [
@@ -71,8 +71,8 @@ let newBookshelf = [
     url: args.url,
     status: args.status,
   },
-];
+]
 
-fs.writeFileSync('./public/bookshelf.json', JSON.stringify(newBookshelf));
+fs.writeFileSync('./public/bookshelf.json', JSON.stringify(newBookshelf))
 
-execSync(`bun run format`);
+execSync(`bun run format`)

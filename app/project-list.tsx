@@ -1,10 +1,10 @@
-import { Code } from '@recipes/code';
-import { BaseLink as Link } from '@recipes/link';
+import { Code } from '@recipes/code'
+import { BaseLink as Link } from '@recipes/link'
 
 export let projects: Array<{
-  link: string;
-  title: React.ReactNode;
-  description: React.ReactNode;
+  link: string
+  title: React.ReactNode
+  description: React.ReactNode
 }> = [
   {
     link: 'https://one-version.vercel.app/',
@@ -14,24 +14,28 @@ export let projects: Array<{
   {
     link: 'https://hohoro.vercel.app/',
     title: 'hohoro',
-    description: 'An incremental JS/TS/TSX library build tool that helps you build your library with ease!',
+    description:
+      'An incremental JS/TS/TSX library build tool that helps you build your library with ease!',
   },
   {
     link: 'https://github.com/hamlim/template-monorepo',
     title: 'Template Monorepo',
-    description: 'A template for creating a monorepo with Bun, Next.js, and Turborepo',
+    description:
+      'A template for creating a monorepo with Bun, Next.js, and Turborepo',
   },
   {
     link: 'https://switch-kit.vercel.app/',
     title: 'Switch Kit',
-    description: 'A “build-your-own” Feature Flagging/Toggling/Experimentation/etc system!',
+    description:
+      'A “build-your-own” Feature Flagging/Toggling/Experimentation/etc system!',
   },
   {
-    'link': 'https://github.com/hamlim/better-beacon',
+    link: 'https://github.com/hamlim/better-beacon',
     title: 'Better Beacon',
-    'description': (
+    description: (
       <>
-        A better version of <Code>navigator.sendBeacon</Code>, that doesn't break when you try to queue too many events!
+        A better version of <Code>navigator.sendBeacon</Code>, that doesn't
+        break when you try to queue too many events!
       </>
     ),
   },
@@ -43,7 +47,8 @@ export let projects: Array<{
   {
     link: 'https://github.com/hamlim/rsc-form',
     title: 'RSC Form',
-    description: 'A React Form component for use within React Server Components',
+    description:
+      'A React Form component for use within React Server Components',
   },
   {
     link: 'https://github.com/hamlim/clue',
@@ -59,7 +64,8 @@ export let projects: Array<{
   {
     link: 'https://github.com/hamlim/simple-cache',
     title: 'Simple Cache',
-    description: 'A minimal, React cache implementation for both client and server components!',
+    description:
+      'A minimal, React cache implementation for both client and server components!',
   },
   {
     link: 'https://github.com/ds-pack/simple-props',
@@ -73,9 +79,9 @@ export let projects: Array<{
       <>
         A babel macro for converting inline{' '}
         <Link
-          href='https://mdxjs.com'
-          target='_blank'
-          rel='noopener noreferrer'
+          href="https://mdxjs.com"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           MDX
         </Link>{' '}
@@ -91,7 +97,8 @@ export let projects: Array<{
   {
     link: 'https://github.com/ds-pack/components',
     title: '@ds-pack/components',
-    description: 'A component library built on Vanilla Extract, React, and TypeScript',
+    description:
+      'A component library built on Vanilla Extract, React, and TypeScript',
   },
   {
     link: 'https://github.com/ds-pack/use-media',
@@ -115,11 +122,12 @@ export let projects: Array<{
   {
     link: 'https://github.com/ds-pack/babel-plugin-docs',
     title: '@ds-pack/babel-plugin-docs',
-    description: 'A collection of babel utilities (plugins, visitors) for transforming code related to design systems.',
+    description:
+      'A collection of babel utilities (plugins, visitors) for transforming code related to design systems.',
   },
   {
     link: 'https://github.com/hamlim/notedo',
     title: 'Notedo',
     description: 'A note and todo list web application using plain text.',
   },
-];
+]

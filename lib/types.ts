@@ -1,6 +1,6 @@
-type Id = number;
-type Tag = string;
-type Status = 'draft' | 'public' | 'preview';
+type Id = number
+type Tag = string
+type Status = 'draft' | 'public' | 'preview'
 type Month =
   | 'january'
   | 'february'
@@ -13,75 +13,75 @@ type Month =
   | 'september'
   | 'october'
   | 'november'
-  | 'december';
+  | 'december'
 
 export interface Post {
-  id: Id;
-  uuid: string;
+  id: Id
+  uuid: string
   /**
    * Title of the post
    */
-  title: string;
+  title: string
   /**
    * Path to the post in the public filesystem
    *
    * Relative to `./public`
    * Usually should start with `/` and end with `.md`
    */
-  path: string;
+  path: string
   /**
    * The url slug for the post
    *
    * Should roughly map to:
    * https://matthamlin.me/<year>/<month>/<slug>
    */
-  slug: string;
+  slug: string
   /**
    * A date formatted as a string
    *
    * Usually formatted as "<Month> <date>(st|nd|rd|th), <year>"
    */
-  date: string;
+  date: string
   /**
    * A time formatted as a string
    *
    * Usually formatted as "<hh>:<mm>:<ss> (AM|PM)"
    */
-  time: string;
+  time: string
   /**
    * An array of tags associated to the content
    */
-  tags: Array<Tag>;
+  tags: Array<Tag>
   /**
    * The status of the post
    */
-  status: Status;
+  status: Status
   /**
    * The month the blog post was published within
    */
-  month: Month;
+  month: Month
   /**
    * The year the blog post was published within
    */
-  year: string;
+  year: string
   /**
    * A short description of the post
    */
-  description?: string;
+  description?: string
 }
 
 export interface Manifest {
-  gallery: Array<Id>;
-  posts: Array<Post>;
-  notebookEntries: Array<Post>;
+  gallery: Array<Id>
+  posts: Array<Post>
+  notebookEntries: Array<Post>
 }
 
 // Bookshelf:
 export interface Book {
-  title: string;
-  author: string;
-  url: string;
-  status: 'read' | 'reading' | 'to-read';
-  dateStarted?: string;
-  dateFinished?: string;
+  title: string
+  author: string
+  url: string
+  status: 'read' | 'reading' | 'to-read'
+  dateStarted?: string
+  dateFinished?: string
 }

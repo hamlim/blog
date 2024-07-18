@@ -1,6 +1,6 @@
-import createMDX from '@next/mdx';
-import remarkFrontmatter from 'remark-frontmatter';
-import remarkGfm from 'remark-gfm';
+import createMDX from '@next/mdx'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkGfm from 'remark-gfm'
 
 let oldPosts = [
   '/2022/december/updated-opinionated-nextjs-setup',
@@ -142,7 +142,7 @@ let oldPosts = [
   '/2016/january/clientside',
   '/2016/january/afraid',
   '/2016/january/dji-vs-gopro',
-];
+]
 
 /** @type {import('next').NextConfig} */
 let config = {
@@ -153,7 +153,7 @@ let config = {
   },
   async redirects() {
     return [
-      ...oldPosts.map(post => ({
+      ...oldPosts.map((post) => ({
         source: post,
         destination: `/blog/${post}`,
         permanent: true,
@@ -173,13 +173,13 @@ let config = {
         destination: '/blog',
         permanent: true,
       },
-    ];
+    ]
   },
-};
+}
 
 export default createMDX({
   options: {
     remarkPlugins: [remarkFrontmatter, remarkGfm],
     rehypePlugins: [],
   },
-})(config);
+})(config)

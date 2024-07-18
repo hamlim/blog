@@ -1,43 +1,43 @@
-import { fetchManifest } from '@lib/fetch-manifest';
-import type { Post } from '@lib/types';
-import { cache } from 'react';
+import { fetchManifest } from '@lib/fetch-manifest'
+import type { Post } from '@lib/types'
+import { cache } from 'react'
 
 export let getTags = cache(async function getTags(): Promise<{
-  tags: Array<string>;
-  postsByTag: Record<string, Array<Post>>;
+  tags: Array<string>
+  postsByTag: Record<string, Array<Post>>
 }> {
-  let { posts } = await fetchManifest();
+  let { posts } = await fetchManifest()
 
-  let tags: Set<string> = new Set();
-  let postsByTag: Record<string, Array<Post>> = {};
+  let tags: Set<string> = new Set()
+  let postsByTag: Record<string, Array<Post>> = {}
   for (let post of posts) {
     post.tags.forEach((tag) => {
-      tags.add(tag);
+      tags.add(tag)
       if (postsByTag[tag]) {
-        postsByTag[tag].push(post);
+        postsByTag[tag].push(post)
       } else {
-        postsByTag[tag] = [post];
+        postsByTag[tag] = [post]
       }
-    });
+    })
   }
 
   return {
     tags: [...tags.values()],
     postsByTag,
-  };
-});
+  }
+})
 
 export function tagToID(tag: string): string {
-  return encodeURIComponent(tag);
+  return encodeURIComponent(tag)
 }
 
 export function idToTag(id: string): string {
-  return decodeURIComponent(id);
+  return decodeURIComponent(id)
 }
 
 export function upperCase(str: string): string {
   return str
     .split(' ')
     .map((chunk) => chunk[0].toUpperCase() + chunk.slice(1))
-    .join(' ');
+    .join(' ')
 }

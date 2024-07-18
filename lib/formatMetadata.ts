@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export function formatBlogPostMetadata({ meta }): Metadata {
   return {
@@ -22,5 +22,5 @@ export function formatBlogPostMetadata({ meta }): Metadata {
       description: meta.description,
       creator: '@immatthamlin',
     },
-  };
+  }
 }

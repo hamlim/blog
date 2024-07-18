@@ -1,47 +1,47 @@
-import '@styles/globals.css';
-import { Box } from '@recipes/box';
-import { GitHubMention } from '@recipes/github-mention';
-import { Text } from '@recipes/text';
-import { ThemeProvider } from '@recipes/theme-provider';
-import { ThemeToggle } from '@recipes/theme-toggle';
-import { Toaster } from '@recipes/toaster';
-import { TwitterMention } from '@recipes/twitter-mention';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Github, Twitter } from 'lucide-react';
-import type { Metadata, Viewport } from 'next';
-import { NavigationHeader, NavigationList } from './Navigation';
+import '@styles/globals.css'
+import { Box } from '@recipes/box'
+import { GitHubMention } from '@recipes/github-mention'
+import { Text } from '@recipes/text'
+import { ThemeProvider } from '@recipes/theme-provider'
+import { ThemeToggle } from '@recipes/theme-toggle'
+import { Toaster } from '@recipes/toaster'
+import { TwitterMention } from '@recipes/twitter-mention'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Github, Twitter } from 'lucide-react'
+import type { Metadata, Viewport } from 'next'
+import { NavigationHeader, NavigationList } from './Navigation'
 
-export let dynamic = 'force-dynamic';
+export let dynamic = 'force-dynamic'
 
 export default function Layout({ children }) {
   return (
-    <html lang='en'>
-      <body className='h-screen flex flex-col'>
+    <html lang="en">
+      <body className="h-screen flex flex-col">
         <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
+          attribute="class"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <main className='flex grow flex-col min-h-screen'>
-            <header className='flex-shrink bg-base-200'>
+          <main className="flex grow flex-col min-h-screen">
+            <header className="flex-shrink bg-base-200">
               <NavigationHeader />
             </header>
-            <Box className='flex'>
+            <Box className="flex">
               <NavigationList />
-              <section className='px-4 my-0 grow flex justify-between flex-col container max-w-prose mx-[initial] main-content'>
+              <section className="px-4 my-0 grow flex justify-between flex-col container max-w-prose mx-[initial] main-content">
                 {children}
-                <footer className='flex-shrink pt-6'>
-                  <Box className='flex justify-between'>
+                <footer className="flex-shrink pt-6">
+                  <Box className="flex justify-between">
                     <Box>
                       <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
                       <Text>
-                        <span className='inline-flex items-center gap-2'>
+                        <span className="inline-flex items-center gap-2">
                           <Twitter size={16} />
                           <TwitterMention>immatthamlin</TwitterMention>
                         </span>{' '}
-                        <span className='inline-flex items-center gap-2'>
+                        <span className="inline-flex items-center gap-2">
                           <Github size={16} />
                           <GitHubMention>hamlim</GitHubMention>
                         </span>
@@ -59,7 +59,7 @@ export default function Layout({ children }) {
         <Toaster />
       </body>
     </html>
-  );
+  )
 }
 
 export const metadata: Metadata = {
@@ -117,7 +117,7 @@ export const metadata: Metadata = {
     // images: ['https://feijoa-ui.vercel.app/icon-512.png'],
     creator: '@immatthamlin',
   },
-};
+}
 
 export const viewport: Viewport = {
   themeColor: [
@@ -125,4 +125,4 @@ export const viewport: Viewport = {
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
   colorScheme: 'light dark',
-};
+}
