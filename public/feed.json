@@ -2124,7 +2124,7 @@
       "month": "july",
       "year": "2024",
       "tags": ["Note Taking", "Obsidian", "Notion"],
-      "status": "draft",
+      "status": "public",
       "description": "Previously I wrote about switching from Obsidian to Notion, now almost exactly 2 years later, I've opted to give Obsidian another try as my go-to note taking software, here's why!",
       "uuid": "1658035342850122495"
     },
@@ -2155,6 +2155,20 @@
       "status": "public",
       "description": "A quick recap of my goals from the past year and a few goals looking forward as well.",
       "uuid": "18158903986363108730"
+    },
+    {
+      "id": 155,
+      "title": "Simple Obsidian Task Management",
+      "path": "/posts/2024/july/simple-obsidian-task-management.md",
+      "slug": "simple-obsidian-task-management",
+      "date": "July 19th, 2024",
+      "time": "4:48:39 PM",
+      "month": "july",
+      "year": "2024",
+      "tags": ["Notes", "Note Taking", "Obsidian", "Task Management"],
+      "status": "public",
+      "description": "A brief overview of how I manage my tasks in Obsidian",
+      "uuid": "7989616113327587524"
     }
   ]
 }
