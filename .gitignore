@@ -42,3 +42,7 @@ yarn-error.log*
 
 # Feijoa UI recipe version metadata:
 # .pit
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
