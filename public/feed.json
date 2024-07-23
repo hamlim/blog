@@ -2169,6 +2169,20 @@
       "status": "public",
       "description": "A brief overview of how I manage my tasks in Obsidian",
       "uuid": "7989616113327587524"
+    },
+    {
+      "id": 156,
+      "title": "A Better useSSR Implementation",
+      "path": "/posts/2024/july/a-better-useSSR-implementation.md",
+      "slug": "a-better-useSSR-implementation",
+      "date": "July 23rd, 2024",
+      "time": "12:27:41 PM",
+      "month": "july",
+      "year": "2024",
+      "tags": ["Web Development", "Tip", "React", "Snippets"],
+      "status": "public",
+      "description": "Replace that old useState and useEffect combo for a new and better option!",
+      "uuid": "7799560033156347008"
     }
   ]
 }
