@@ -7,6 +7,12 @@ export let projects: Array<{
   description: React.ReactNode
 }> = [
   {
+    link: 'https://github.com/hamlim/rereplay',
+    title: 'Rereplay',
+    description:
+      'A native fetch-caching solution for idempotent network requests!',
+  },
+  {
     link: 'https://one-version.vercel.app/',
     title: 'one-version',
     description: 'A strict dependency conformance tool for monorepos!',
