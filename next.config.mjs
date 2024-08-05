@@ -149,7 +149,9 @@ let config = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   experimental: {
     serverComponentsExternalPackages: ['shiki', 'vscode-oniguruma'],
-    mdxRs: true,
+    mdxRs: {
+      mdxType: 'gfm',
+    },
   },
   async redirects() {
     return [
