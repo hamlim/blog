@@ -2183,6 +2183,20 @@
       "status": "public",
       "description": "Replace that old useState and useEffect combo for a new and better option!",
       "uuid": "7799560033156347008"
+    },
+    {
+      "id": 157,
+      "title": "Don't Break the Implicit Prop Contract",
+      "path": "/posts/2024/august/dont-break-the-implicit-prop-contract.md",
+      "slug": "dont-break-the-implicit-prop-contract",
+      "date": "August 5th, 2024",
+      "time": "5:31:32 PM",
+      "month": "august",
+      "year": "2024",
+      "tags": ["Web Development", "Tip", "React"],
+      "status": "public",
+      "description": "React components have a fundamental contract that is often unstated in their implementation, and you should know about it!",
+      "uuid": "4622440778034028771"
     }
   ]
 }
