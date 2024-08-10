@@ -2197,6 +2197,20 @@
       "status": "public",
       "description": "React components have a fundamental contract that is often unstated in their implementation, and you should know about it!",
       "uuid": "4622440778034028771"
+    },
+    {
+      "id": 158,
+      "title": "Git Notes as a Tool for Thought",
+      "path": "/posts/2024/august/git-notes-as-a-tool-for-thought.md",
+      "slug": "git-notes-as-a-tool-for-thought",
+      "date": "August 10th, 2024",
+      "time": "9:42:51 AM",
+      "month": "august",
+      "year": "2024",
+      "tags": ["Development", "Git", "Tools for Thought"],
+      "status": "public",
+      "description": "(Ab)using Git as yet another tool for thought!",
+      "uuid": "2144934871139089640"
     }
   ]
 }
