@@ -2211,6 +2211,20 @@
       "status": "public",
       "description": "(Ab)using Git as yet another tool for thought!",
       "uuid": "2144934871139089640"
+    },
+    {
+      "id": 159,
+      "title": "Dogfooding",
+      "path": "/posts/2024/august/dogfooding.md",
+      "slug": "dogfooding",
+      "date": "August 21st, 2024",
+      "time": "3:34:15 PM",
+      "month": "august",
+      "year": "2024",
+      "tags": ["Development", "Product"],
+      "status": "public",
+      "description": "The secret to excellent product teams is using your own product, and often!",
+      "uuid": "11822797868634013257"
     }
   ]
 }
