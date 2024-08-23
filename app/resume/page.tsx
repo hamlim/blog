@@ -19,7 +19,7 @@ export default function Resume() {
         <Link href="https://docs.google.com/document/d/1Om1ilLporVXdLxC_CS20rRjDMmjeVKfNHUDoK8odtdA/edit?usp=sharing">
           Google Docs
         </Link>
-        , and <Link href="/resume-may-24.pdf">PDF</Link>.
+        , and <Link href="/resume-august-24.pdf">PDF</Link>.
       </Blockquote>
       <Box className="flex flex-col">
         <Text className="mb-4">
@@ -56,14 +56,30 @@ export default function Resume() {
       <Stack gap={4}>
         <Heading is="h2">Experience</Heading>
         <Box>
-          <Heading is="h3">Staff Software Engineer - Fireworks</Heading>
+          <Heading is="h3">
+            Senior Staff Frontend Software Engineer - Fireworks AI
+          </Heading>
           <Text is="b" className="font-bold">
-            June 2024 - Present
+            2024 - Present
           </Text>
           <Text>
-            Staff Software Engineer building out the future of business AI
-            solutions at Fireworks.
+            Joined Fireworks as employee #27, worked with a small team to
+            rapidly build out a refined web application for managing the various
+            AI services that Fireworks offers to customers.
           </Text>
+          <List is="ul">
+            <ListItem>
+              Built out core features of the web application including the AI
+              model deployment flow, API Key management, and refreshing our web
+              auth flows for better user experience
+            </ListItem>
+            <ListItem>
+              Heavily optimized the internal codebase to improve our team's
+              velocity. Migrating from Yarn to Bun, replacing eslint with Biome,
+              all in cutting our CI times in half from 12 minutes down to 5 and
+              a half minutes.
+            </ListItem>
+          </List>
         </Box>
         <Box>
           <Heading is="h3">
