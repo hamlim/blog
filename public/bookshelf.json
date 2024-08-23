@@ -300,5 +300,12 @@
     "status": "read",
     "dateStarted": "July 21st 2024",
     "dateFinished": "August 16th 2024"
+  },
+  {
+    "title": "Mars",
+    "author": "Ben Bova",
+    "url": "https://www.goodreads.com/book/show/896684.Mars",
+    "status": "reading",
+    "dateStarted": "August 21st 2024"
   }
 ]
