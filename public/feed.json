@@ -2225,6 +2225,20 @@
       "status": "public",
       "description": "The secret to excellent product teams is using your own product, and often!",
       "uuid": "11822797868634013257"
+    },
+    {
+      "id": 160,
+      "title": "More Thoughts on Dogfooding",
+      "path": "/posts/2024/september/more-thoughts-on-dogfooding.md",
+      "slug": "more-thoughts-on-dogfooding",
+      "date": "September 9th, 2024",
+      "time": "10:31:49 AM",
+      "month": "september",
+      "year": "2024",
+      "tags": ["Development", "Product"],
+      "status": "public",
+      "description": "Even more thoughts on dogfooding!",
+      "uuid": "9613520519981215697"
     }
   ]
 }
