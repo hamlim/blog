@@ -2253,6 +2253,20 @@
       "status": "public",
       "description": "This is a quick post noting that Next.js should now work with Deno v2!",
       "uuid": "7730584175517258512"
+    },
+    {
+      "id": 162,
+      "title": "Offload Complexity, Don't Offload Learning",
+      "path": "/posts/2024/october/offload-complexity.md",
+      "slug": "offload-complexity",
+      "date": "October 1st, 2024",
+      "time": "11:21:17 AM",
+      "month": "october",
+      "year": "2024",
+      "tags": ["Development", "AI", "Career", "Learning"],
+      "status": "public",
+      "description": "A rough mental model for how you should be leveraging AI as a tool for your own growth",
+      "uuid": "9623119389276140431"
     }
   ]
 }
