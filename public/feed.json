@@ -2267,6 +2267,20 @@
       "status": "public",
       "description": "A rough mental model for how you should be leveraging AI as a tool for your own growth",
       "uuid": "9623119389276140431"
+    },
+    {
+      "id": 163,
+      "title": "Monorepo Tips and Tricks",
+      "path": "/posts/2024/october/monorepo-tips-and-tricks.md",
+      "slug": "monorepo-tips-and-tricks",
+      "date": "October 7th, 2024",
+      "time": "2:38:08 PM",
+      "month": "october",
+      "year": "2024",
+      "tags": ["Web Development", "Monorepos"],
+      "status": "public",
+      "description": "Sharing a few core recommendations when working within monorepos to make your life easier!",
+      "uuid": "9163355261638286476"
     }
   ]
 }
