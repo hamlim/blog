@@ -308,5 +308,12 @@
     "status": "read",
     "dateStarted": "August 21st 2024",
     "dateFinished": "October 10th 2024"
+  },
+  {
+    "title": "Rendezvous with Rama",
+    "author": "Arthur C. Clarke",
+    "url": "https://www.goodreads.com/book/show/112537.Rendezvous_with_Rama",
+    "status": "reading",
+    "dateStarted": "October 13 2024"
   }
 ]
