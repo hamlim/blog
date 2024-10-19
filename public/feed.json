@@ -2281,6 +2281,20 @@
       "status": "public",
       "description": "Sharing a few core recommendations when working within monorepos to make your life easier!",
       "uuid": "9163355261638286476"
+    },
+    {
+      "id": 164,
+      "title": "TSLite",
+      "path": "/posts/2024/october/tslite.md",
+      "slug": "tslite",
+      "date": "October 19th, 2024",
+      "time": "1:53:49 PM",
+      "month": "october",
+      "year": "2024",
+      "tags": ["Web Development", "TypeScript", "JavaScript"],
+      "status": "public",
+      "description": "A proposal for a minimal variant of TypeScript!",
+      "uuid": "8285993556728616757"
     }
   ]
 }

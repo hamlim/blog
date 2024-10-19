@@ -13,7 +13,10 @@ export function List({ is = 'ul', ...props }: ListProps) {
       is={is}
       {...props}
       className={cn(
-        'my-6 ml-6 [&>li]:mt-2',
+        'ml-6',
+        // margin when not nested
+        '[:not(li)>&]:my-6',
+        '[&>li]:mt-2',
         is === 'ul' && 'list-disc',
         is === 'ol' && 'list-decimal',
         props.className,
