@@ -8,7 +8,13 @@ import { Text } from '@recipes/text'
 import type { Metadata } from 'next'
 import { getTags, idToTag, upperCase } from '../getTags'
 
-export async function generateMetadata({ params: { tag } }): Promise<Metadata> {
+export async function generateMetadata(props): Promise<Metadata> {
+  const params = await props.params;
+
+  const {
+    tag
+  } = params;
+
   return {
     title: `${idToTag(tag)} blog posts`,
   }
@@ -26,7 +32,8 @@ function AllPosts({ posts }) {
   )
 }
 
-export default async function Tag({ params }) {
+export default async function Tag(props) {
+  const params = await props.params;
   let { postsByTag } = await getTags()
 
   let tag = idToTag(params.tag)

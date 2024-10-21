@@ -147,8 +147,8 @@ let oldPosts = [
 /** @type {import('next').NextConfig} */
 let config = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  serverExternalPackages: ['shiki', 'vscode-oniguruma'],
   experimental: {
-    serverComponentsExternalPackages: ['shiki', 'vscode-oniguruma'],
     mdxRs: {
       mdxType: 'gfm',
     },
@@ -185,3 +185,12 @@ export default createMDX({
     rehypePlugins: [],
   },
 })(config)
+
+// export default createMDX({
+//   options: {
+//     remarkPlugins: [remarkFrontmatter, remarkGfm],
+//     rehypePlugins: [],
+//   },
+// })(config)
+
+// export default config

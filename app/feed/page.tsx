@@ -102,7 +102,8 @@ async function Feed({ searchParams }) {
   )
 }
 
-export default async function FeedPage({ searchParams }) {
+export default async function FeedPage(props) {
+  const searchParams = await props.searchParams;
   return (
     <Box>
       <ErrorBoundary
