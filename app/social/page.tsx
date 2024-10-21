@@ -26,6 +26,18 @@ export default function Social() {
           </ListItem>
           <ListItem className="mb-2">
             <Text is="strong" className="font-bold">
+              Bluesky:{' '}
+            </Text>
+            <BaseLink
+              target="_blank"
+              rel="noopener"
+              href="https://bsky.app/profile/matthamlin.bsky.social"
+            >
+              matthamlin.bsky.social
+            </BaseLink>
+          </ListItem>
+          <ListItem className="mb-2">
+            <Text is="strong" className="font-bold">
               Threads:{' '}
             </Text>
             <BaseLink
@@ -38,8 +50,15 @@ export default function Social() {
           </ListItem>
           <ListItem className="mb-2">
             <Text is="strong" className="font-bold">
-              Retro: matthamlin
+              Retro:{' '}
             </Text>
+            <BaseLink
+              target="_blank"
+              rel="noopener"
+              href="https://retro.app/@matthamlin"
+            >
+              matthamlin
+            </BaseLink>
           </ListItem>
           <ListItem className="mb-2">
             <Text is="strong" className="font-bold">
