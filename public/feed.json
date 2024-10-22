@@ -2295,6 +2295,20 @@
       "status": "public",
       "description": "A proposal for a minimal variant of TypeScript!",
       "uuid": "8285993556728616757"
+    },
+    {
+      "id": 165,
+      "title": "Building a Custom Ghostty Theme",
+      "path": "/posts/2024/october/building-a-custom-ghostty-theme.md",
+      "slug": "building-a-custom-ghostty-theme",
+      "date": "October 22nd, 2024",
+      "time": "9:22:32 AM",
+      "month": "october",
+      "year": "2024",
+      "tags": ["Development", "Ghostty"],
+      "status": "public",
+      "description": "How to generate a custom Ghostty theme based on any iterm2 theme!",
+      "uuid": "250517820677921335"
     }
   ]
 }

@@ -9,7 +9,10 @@ import { TwitterMention } from '@recipes/twitter-mention'
 export default function Social() {
   return (
     <Box>
-      <Heading is="h1" className="mb-4">
+      <Heading
+        is="h1"
+        className="mb-4"
+      >
         Social
       </Heading>
       <Text>
@@ -19,13 +22,19 @@ export default function Social() {
       <Box className="my-5">
         <List is="ul">
           <ListItem className="mb-2">
-            <Text is="strong" className="font-bold">
+            <Text
+              is="strong"
+              className="font-bold"
+            >
               Twitter:{' '}
             </Text>
             <TwitterMention>immatthamlin</TwitterMention>
           </ListItem>
           <ListItem className="mb-2">
-            <Text is="strong" className="font-bold">
+            <Text
+              is="strong"
+              className="font-bold"
+            >
               Bluesky:{' '}
             </Text>
             <BaseLink
@@ -37,7 +46,10 @@ export default function Social() {
             </BaseLink>
           </ListItem>
           <ListItem className="mb-2">
-            <Text is="strong" className="font-bold">
+            <Text
+              is="strong"
+              className="font-bold"
+            >
               Threads:{' '}
             </Text>
             <BaseLink
@@ -49,7 +61,10 @@ export default function Social() {
             </BaseLink>
           </ListItem>
           <ListItem className="mb-2">
-            <Text is="strong" className="font-bold">
+            <Text
+              is="strong"
+              className="font-bold"
+            >
               Retro:{' '}
             </Text>
             <BaseLink
@@ -61,13 +76,19 @@ export default function Social() {
             </BaseLink>
           </ListItem>
           <ListItem className="mb-2">
-            <Text is="strong" className="font-bold">
+            <Text
+              is="strong"
+              className="font-bold"
+            >
               GitHub:{' '}
             </Text>
             <GitHubMention>hamlim</GitHubMention>
           </ListItem>
           <ListItem>
-            <Text is="strong" className="font-bold">
+            <Text
+              is="strong"
+              className="font-bold"
+            >
               LinkedIn:{' '}
             </Text>
             <BaseLink

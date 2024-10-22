@@ -7,7 +7,10 @@ import { Text } from '@recipes/text'
 export default function Tools() {
   return (
     <Box>
-      <Heading is="h1" className="mb-4">
+      <Heading
+        is="h1"
+        className="mb-4"
+      >
         Tools
       </Heading>
       <Text>
@@ -21,10 +24,16 @@ export default function Tools() {
           <Heading is="h4">Hardware</Heading>
           <Box>
             <Text className="mb-2">
-              <Text is="strong" className="font-bold">
+              <Text
+                is="strong"
+                className="font-bold"
+              >
                 Phone
               </Text>{' '}
-              <Text is="em" className="italic">
+              <Text
+                is="em"
+                className="italic"
+              >
                 iPhone 16 Pro Max
               </Text>
             </Text>
@@ -35,10 +44,16 @@ export default function Tools() {
           </Box>
           <Box>
             <Text className="mb-2">
-              <Text is="strong" className="font-bold">
+              <Text
+                is="strong"
+                className="font-bold"
+              >
                 Laptop
               </Text>{' '}
-              <Text is="em" className="italic">
+              <Text
+                is="em"
+                className="italic"
+              >
                 MacBook Air M2 (early 2022)
               </Text>
             </Text>
@@ -49,10 +64,16 @@ export default function Tools() {
           </Box>
           <Box>
             <Text className="mb-2">
-              <Text is="strong" className="font-bold">
+              <Text
+                is="strong"
+                className="font-bold"
+              >
                 E-Reader
               </Text>{' '}
-              <Text is="em" className="italic">
+              <Text
+                is="em"
+                className="italic"
+              >
                 Kindle Paperlight (Signature Edition)
               </Text>
             </Text>
@@ -65,10 +86,16 @@ export default function Tools() {
           <Heading is="h4">Software</Heading>
           <Box>
             <Text className="mb-2">
-              <Text is="strong" className="font-bold">
+              <Text
+                is="strong"
+                className="font-bold"
+              >
                 Notes / Todos
               </Text>{' '}
-              <Text is="em" className="italic">
+              <Text
+                is="em"
+                className="italic"
+              >
                 Obsidian
               </Text>
             </Text>
@@ -84,10 +111,16 @@ export default function Tools() {
           </Box>
           <Box>
             <Text className="mb-2">
-              <Text is="strong" className="font-bold">
+              <Text
+                is="strong"
+                className="font-bold"
+              >
                 Code
               </Text>{' '}
-              <Text is="em" className="italic">
+              <Text
+                is="em"
+                className="italic"
+              >
                 Cursor
               </Text>
             </Text>
@@ -99,10 +132,16 @@ export default function Tools() {
           </Box>
           <Box>
             <Text className="mb-2">
-              <Text is="strong" className="font-bold">
+              <Text
+                is="strong"
+                className="font-bold"
+              >
                 Terminal
               </Text>{' '}
-              <Text is="em" className="italic">
+              <Text
+                is="em"
+                className="italic"
+              >
                 Warp
               </Text>
             </Text>
@@ -113,10 +152,16 @@ export default function Tools() {
           </Box>
           <Box>
             <Text className="mb-2">
-              <Text is="strong" className="font-bold">
+              <Text
+                is="strong"
+                className="font-bold"
+              >
                 Browser
               </Text>{' '}
-              <Text is="em" className="italic">
+              <Text
+                is="em"
+                className="italic"
+              >
                 Arc
               </Text>
             </Text>
@@ -135,10 +180,16 @@ export default function Tools() {
             <Heading is="h4">Hardware</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Phone
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   iPhone 15 Pro Max
                 </Text>
               </Text>
@@ -149,10 +200,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Laptop
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   MacBook Air M2 (early 2022)
                 </Text>
               </Text>
@@ -164,10 +221,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   E-Reader
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Kindle Paperlight (Signature Edition)
                 </Text>
               </Text>
@@ -179,10 +242,16 @@ export default function Tools() {
             <Heading is="h4">Software</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Notes / Todos
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Notion
                 </Text>
               </Text>
@@ -196,10 +265,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Code
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   VS Code (Insiders)
                 </Text>
               </Text>
@@ -211,10 +286,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Terminal
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Warp
                 </Text>
               </Text>
@@ -225,10 +306,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Browser
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Arc
                 </Text>
               </Text>
@@ -245,10 +332,16 @@ export default function Tools() {
             <Heading is="h4">Hardware</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Phone
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   iPhone 14 Pro Max
                 </Text>
               </Text>
@@ -259,10 +352,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Laptop
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   MacBook Air M2 (early 2022)
                 </Text>
               </Text>
@@ -274,10 +373,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   E-Reader
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Kindle Paperlight (Signature Edition)
                 </Text>
               </Text>
@@ -290,10 +395,16 @@ export default function Tools() {
             <Heading is="h4">Software</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Notes / Todos
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Notion
                 </Text>
               </Text>
@@ -305,10 +416,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Code
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   VS Code (Insiders)
                 </Text>
               </Text>
@@ -319,10 +436,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Browser
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Arc
                 </Text>
               </Text>
@@ -339,10 +462,16 @@ export default function Tools() {
             <Heading is="h4">Hardware</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Phone
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   iPhone 13 Pro Max
                 </Text>
               </Text>
@@ -355,10 +484,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Laptop
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   MacBook Air M2 (early 2022)
                 </Text>
               </Text>
@@ -370,10 +505,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   E-Reader
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Kindle Paperlight (Signature Edition)
                 </Text>
               </Text>
@@ -386,10 +527,16 @@ export default function Tools() {
             <Heading is="h4">Software</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Notes / Todos
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Notion
                 </Text>
               </Text>
@@ -401,10 +548,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Code
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   VS Code (Insiders)
                 </Text>
               </Text>
@@ -415,10 +568,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Browser
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Arc
                 </Text>
               </Text>
@@ -435,10 +594,16 @@ export default function Tools() {
             <Heading is="h4">Hardware</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Phone
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   iPhone 13 Pro Max
                 </Text>
               </Text>
@@ -454,10 +619,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Laptop
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   MacBook Pro (early 2020) 13"
                 </Text>
               </Text>
@@ -468,10 +639,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   E-Reader
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Kindle Paperlight (Signature Edition)
                 </Text>
               </Text>
@@ -484,10 +661,16 @@ export default function Tools() {
             <Heading is="h4">Software</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Notes / Todos
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Obsidian
                 </Text>
               </Text>
@@ -498,10 +681,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Code
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   VS Code (Insiders)
                 </Text>
               </Text>
@@ -518,10 +707,16 @@ export default function Tools() {
             <Heading is="h4">Hardware</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Phone
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Google Pixel 5
                 </Text>
               </Text>
@@ -534,10 +729,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Laptop
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   MacBook Pro (early 2020) 13"
                 </Text>
               </Text>
@@ -548,10 +749,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Tablet / Laptop
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Pixel Slate
                 </Text>
               </Text>
@@ -568,17 +775,26 @@ export default function Tools() {
             <Heading is="h4">Software</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Notes / Todos
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Obsidian
                 </Text>
               </Text>
               <Text>
                 This is one of the larger notable changes from my previous
                 update here in{' '}
-                <BaseLink is="a" href="#november-2020">
+                <BaseLink
+                  is="a"
+                  href="#november-2020"
+                >
                   November
                 </BaseLink>{' '}
                 - I have switched fully over to{' '}
@@ -598,10 +814,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Code
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   VS Code (Insiders)
                 </Text>
               </Text>
@@ -619,10 +841,16 @@ export default function Tools() {
             <Heading is="h4">Hardware</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Phone
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Google Pixel 5
                 </Text>
               </Text>
@@ -640,10 +868,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Laptop
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   MacBook Pro (early 2020) 13"
                 </Text>
               </Text>
@@ -659,10 +893,16 @@ export default function Tools() {
             <Heading is="h4">Software</Heading>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Notes / Todos
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   Roam Research
                 </Text>
               </Text>
@@ -685,10 +925,16 @@ export default function Tools() {
             </Box>
             <Box>
               <Text className="mb-2">
-                <Text is="strong" className="font-bold">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
                   Code
                 </Text>{' '}
-                <Text is="em" className="italic">
+                <Text
+                  is="em"
+                  className="italic"
+                >
                   VS Code (Insiders)
                 </Text>
               </Text>

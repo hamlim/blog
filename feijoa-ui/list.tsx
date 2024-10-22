@@ -28,5 +28,10 @@ export function List({ is = 'ul', ...props }: ListProps) {
 interface ListItemProps extends React.HTMLProps<HTMLLIElement> {}
 
 export function ListItem(props: ListItemProps) {
-  return <Box is="li" {...props} />
+  return (
+    <Box
+      is="li"
+      {...props}
+    />
+  )
 }

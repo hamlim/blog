@@ -6,5 +6,11 @@ interface Props extends BoxProps {
 }
 
 export function Text(props: Props) {
-  return <Box is="p" {...props} className={cn('leading-7', props.className)} />
+  return (
+    <Box
+      is="p"
+      {...props}
+      className={cn('leading-7', props.className)}
+    />
+  )
 }

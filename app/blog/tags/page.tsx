@@ -24,7 +24,10 @@ function AllPosts({ posts }) {
   return (
     <List is="ol">
       {posts.map((post: Post, i: number) => (
-        <ListItem key={post.title} className={i !== 0 ? 'mt-4' : ''}>
+        <ListItem
+          key={post.title}
+          className={i !== 0 ? 'mt-4' : ''}
+        >
           <Link href={formatPostLink(post)}>{post.title}</Link>
         </ListItem>
       ))}
@@ -50,10 +53,16 @@ export default async function Tags() {
         ))}
       </Box>
       <div className="divider" />
-      <Stack gap={5} className="mt-10">
+      <Stack
+        gap={5}
+        className="mt-10"
+      >
         {Object.entries(postsByTag).map(([tag, posts]) => (
           <Fragment key={tag}>
-            <Heading is="h3" id={tagToID(tag)}>
+            <Heading
+              is="h3"
+              id={tagToID(tag)}
+            >
               {tag}:
             </Heading>
             <AllPosts posts={posts} />

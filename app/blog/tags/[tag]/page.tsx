@@ -9,11 +9,9 @@ import type { Metadata } from 'next'
 import { getTags, idToTag, upperCase } from '../getTags'
 
 export async function generateMetadata(props): Promise<Metadata> {
-  const params = await props.params;
+  const params = await props.params
 
-  const {
-    tag
-  } = params;
+  const { tag } = params
 
   return {
     title: `${idToTag(tag)} blog posts`,
@@ -24,7 +22,10 @@ function AllPosts({ posts }) {
   return (
     <List is="ol">
       {posts.map((post: Post) => (
-        <ListItem key={post.title} className="mt-6">
+        <ListItem
+          key={post.title}
+          className="mt-6"
+        >
           <Link href={formatPostLink(post)}>{post.title}</Link>
         </ListItem>
       ))}
@@ -33,7 +34,7 @@ function AllPosts({ posts }) {
 }
 
 export default async function Tag(props) {
-  const params = await props.params;
+  const params = await props.params
   let { postsByTag } = await getTags()
 
   let tag = idToTag(params.tag)
@@ -42,7 +43,10 @@ export default async function Tag(props) {
     <Box>
       <Heading is="h1">
         Blog posts related to{' '}
-        <Text is="em" className="italic">
+        <Text
+          is="em"
+          className="italic"
+        >
           {tag}
         </Text>
         :

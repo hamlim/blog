@@ -8,7 +8,10 @@ import { projects } from '../project-list'
 export default function Projects() {
   return (
     <Box>
-      <Heading is="h1" className="mb-3">
+      <Heading
+        is="h1"
+        className="mb-3"
+      >
         Projects
       </Heading>
       <Text>

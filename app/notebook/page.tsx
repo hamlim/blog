@@ -10,7 +10,10 @@ export default async function Notebook() {
   let { notebookEntries } = await fetchManifest()
   return (
     <Box>
-      <Heading is="h1" className="mb-4">
+      <Heading
+        is="h1"
+        className="mb-4"
+      >
         Notebook
       </Heading>
       <Text className="text-lg mb-2">
@@ -21,7 +24,10 @@ export default async function Notebook() {
       <Box className="my-5">
         <List is="ul">
           {notebookEntries.map((entry, i) => (
-            <ListItem key={entry.title} className={i !== 0 ? 'mt-3' : null}>
+            <ListItem
+              key={entry.title}
+              className={i !== 0 ? 'mt-3' : null}
+            >
               <Link href={formatNotebookLink(entry)}>{entry.title}</Link>
             </ListItem>
           ))}

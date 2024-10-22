@@ -8,10 +8,10 @@ let id = '8164785556185054537'
 export default function Page() {
   return (
     // @ts-expect-error - RSC
-    (<NotebookPage id={id}>
+    <NotebookPage id={id}>
       <Content />
-    </NotebookPage>)
-  );
+    </NotebookPage>
+  )
 }
 
 export async function generateMetadata() {

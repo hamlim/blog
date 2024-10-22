@@ -24,27 +24,42 @@ export default function Resume() {
       <Box className="flex flex-col">
         <Text className="mb-4">
           Contact me via phone:{' '}
-          <Link is="a" href="tel:4252100980">
+          <Link
+            is="a"
+            href="tel:4252100980"
+          >
             (425) 210-0980
           </Link>{' '}
           or email:{' '}
-          <Link is="a" href="mailto:matthewjameshamlin@gmail.com">
+          <Link
+            is="a"
+            href="mailto:matthewjameshamlin@gmail.com"
+          >
             matthewjameshamlin@gmail.com
           </Link>
         </Text>
         <Text className="mb-4">
           LinkedIn:{' '}
-          <Link is="a" href="https://www.linkedin.com/in/hamlim/">
+          <Link
+            is="a"
+            href="https://www.linkedin.com/in/hamlim/"
+          >
             https://www.linkedin.com/in/hamlim/
           </Link>{' '}
           GitHub:{' '}
-          <Link is="a" href="https://github.com/hamlim">
+          <Link
+            is="a"
+            href="https://github.com/hamlim"
+          >
             https://github.com/hamlim
           </Link>
         </Text>
         <Box>
           <Text>
-            <Text is="strong" className="font-bold">
+            <Text
+              is="strong"
+              className="font-bold"
+            >
               Staff Software Engineer
             </Text>{' '}
             - Strong technical leader in the frontend web development space with
@@ -59,7 +74,10 @@ export default function Resume() {
           <Heading is="h3">
             Senior Staff Frontend Software Engineer - Fireworks AI
           </Heading>
-          <Text is="b" className="font-bold">
+          <Text
+            is="b"
+            className="font-bold"
+          >
             2024 - Present
           </Text>
           <Text>
@@ -85,7 +103,10 @@ export default function Resume() {
           <Heading is="h3">
             Staff SWE, Frontend Platform Tech Lead - Wayfair
           </Heading>
-          <Text is="b" className="font-bold">
+          <Text
+            is="b"
+            className="font-bold"
+          >
             June 2021 - May 2024
           </Text>
           <Text>
@@ -109,7 +130,10 @@ export default function Resume() {
           <Heading is="h3">
             Senior SWE, Design Systems Tech Lead - Wayfair
           </Heading>
-          <Text is="b" className="font-bold">
+          <Text
+            is="b"
+            className="font-bold"
+          >
             July 2017 - June 2021
           </Text>
           <Text>
@@ -128,7 +152,10 @@ export default function Resume() {
         </Box>
         <Box>
           <Heading is="h3">Frontend Software Engineer - Wayfair</Heading>
-          <Text is="b" className="font-bold">
+          <Text
+            is="b"
+            className="font-bold"
+          >
             July 2016 - July 2017
           </Text>
           <Text>
@@ -156,7 +183,10 @@ export default function Resume() {
             <ListItem>
               <Text className="font-bold">Inline-MDX.macro</Text>{' '}
               <Text>A Babel macro for authoring and transforming mdx</Text>
-              <Link href="https://github.com/hamlim/inline-mdx.macro" is="a">
+              <Link
+                href="https://github.com/hamlim/inline-mdx.macro"
+                is="a"
+              >
                 https://github.com/hamlim/inline-mdx.macro
               </Link>
             </ListItem>
@@ -165,7 +195,10 @@ export default function Resume() {
               <Text>
                 A minimal, css variable backed style-prop library for [p]react
               </Text>
-              <Link href="https://github.com/ds-pack/simple-props" is="a">
+              <Link
+                href="https://github.com/ds-pack/simple-props"
+                is="a"
+              >
                 https://github.com/ds-pack/simple-props
               </Link>
             </ListItem>
@@ -174,7 +207,10 @@ export default function Resume() {
               <Text>
                 Dynamic, theme-driven, style props for Vanilla Extract
               </Text>
-              <Link href="https://github.com/wayfair/rainbow-sprinkles" is="a">
+              <Link
+                href="https://github.com/wayfair/rainbow-sprinkles"
+                is="a"
+              >
                 https://github.com/wayfair/rainbow-sprinkles
               </Link>
             </ListItem>

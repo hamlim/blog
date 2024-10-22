@@ -17,5 +17,10 @@ let headingClassMap = {
 export function Heading({ is: El, ...props }: Props) {
   let classes = headingClassMap[El]
 
-  return <El {...props} className={cn(classes, props.className)} />
+  return (
+    <El
+      {...props}
+      className={cn(classes, props.className)}
+    />
+  )
 }

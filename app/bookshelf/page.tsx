@@ -9,7 +9,10 @@ export default async function Bookshelf() {
   let { reading, read, toRead } = await fetchBookshelf()
   return (
     <>
-      <Heading is="h1" className="mb-4">
+      <Heading
+        is="h1"
+        className="mb-4"
+      >
         Bookshelf
       </Heading>
       <Text className="mb-2">
@@ -29,13 +32,19 @@ export default async function Bookshelf() {
         </BaseLink>{' '}
         if you have book recommendations!
       </Text>
-      <Heading className="my-5" is="h3">
+      <Heading
+        className="my-5"
+        is="h3"
+      >
         What I'm Currently Reading:
       </Heading>
       <Box className="my-5">
         <List is="ul">
           {reading.map((book, idx) => (
-            <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
+            <ListItem
+              className={idx !== 0 ? 'mt-6' : null}
+              key={book.title}
+            >
               <BaseLink
                 href={book.url}
                 target="_blank"
@@ -48,7 +57,10 @@ export default async function Bookshelf() {
               {book.dateStarted ? (
                 <>
                   <br />
-                  <Text className="text-sm italic" is="em">
+                  <Text
+                    className="text-sm italic"
+                    is="em"
+                  >
                     Started: {book.dateStarted}
                   </Text>
                 </>
@@ -57,13 +69,19 @@ export default async function Bookshelf() {
           ))}
         </List>
       </Box>
-      <Heading className="my-5" is="h3">
+      <Heading
+        className="my-5"
+        is="h3"
+      >
         Books I Want to Read Soon:
       </Heading>
       <Box className="my-5">
         <List is="ul">
           {toRead.map((book, idx) => (
-            <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
+            <ListItem
+              className={idx !== 0 ? 'mt-6' : null}
+              key={book.title}
+            >
               <BaseLink
                 href={book.url}
                 target="_blank"
@@ -77,13 +95,19 @@ export default async function Bookshelf() {
           ))}
         </List>
       </Box>
-      <Heading className="my-5" is="h3">
+      <Heading
+        className="my-5"
+        is="h3"
+      >
         Books I've Recently Read:
       </Heading>
       <Box className="my-5">
         <List is="ul">
           {read.map((book, idx) => (
-            <ListItem className={idx !== 0 ? 'mt-6' : null} key={book.title}>
+            <ListItem
+              className={idx !== 0 ? 'mt-6' : null}
+              key={book.title}
+            >
               <BaseLink
                 href={book.url}
                 target="_blank"
@@ -96,7 +120,10 @@ export default async function Bookshelf() {
               {book.dateStarted && book.dateFinished ? (
                 <>
                   <br />
-                  <Text className="text-sm italic" is="em">
+                  <Text
+                    className="text-sm italic"
+                    is="em"
+                  >
                     {book.dateStarted} - {book.dateFinished}
                   </Text>
                 </>
@@ -105,7 +132,10 @@ export default async function Bookshelf() {
           ))}
         </List>
       </Box>
-      <Text is="small" className="italic">
+      <Text
+        is="small"
+        className="italic"
+      >
         Last Updated: April 2023
       </Text>
     </>

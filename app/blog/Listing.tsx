@@ -83,7 +83,10 @@ function AllPosts({ posts }) {
   return (
     <List is="ul">
       {posts.map((post, i) => (
-        <ListItem key={post.title} className={i !== 0 ? 'mt-6' : null}>
+        <ListItem
+          key={post.title}
+          className={i !== 0 ? 'mt-6' : null}
+        >
           <Link href={formatPostLink(post)}>{post.title}</Link>
         </ListItem>
       ))}
@@ -96,14 +99,20 @@ function Timeline({ groupedByYear }) {
     <>
       <Box className="mb-4 flex justify-evenly">
         {groupedByYear.map(([year]: [string]) => (
-          <BaseLink key={year} href={`#${year}`}>
+          <BaseLink
+            key={year}
+            href={`#${year}`}
+          >
             {year}
           </BaseLink>
         ))}
       </Box>
       <List is="ul">
         {groupedByYear.map(([year, months]: [string, any[]], i) => (
-          <ListItem key={year} className={i !== 0 ? 'mt-6' : null}>
+          <ListItem
+            key={year}
+            className={i !== 0 ? 'mt-6' : null}
+          >
             <Heading
               is="h3"
               id={year}
@@ -115,12 +124,18 @@ function Timeline({ groupedByYear }) {
             <Box className="pl-3">
               <List is="ul">
                 {months.map(([month, posts]) => (
-                  <ListItem key={month} className="mt-6">
+                  <ListItem
+                    key={month}
+                    className="mt-6"
+                  >
                     <Heading is="h4">{month}</Heading>
                     <Box className="pl-3">
                       <List is="ul">
                         {posts.map((post: Post) => (
-                          <ListItem key={post.title} className="mt-6">
+                          <ListItem
+                            key={post.title}
+                            className="mt-6"
+                          >
                             <Link href={formatPostLink(post)}>
                               {post.title}
                             </Link>
@@ -143,7 +158,10 @@ function Tagged({ groupedByTag }) {
   return (
     <List is="ul">
       {groupedByTag.map(([tag, posts]: [string, Array<Post>], i) => (
-        <ListItem key={tag} className={i !== 0 ? 'mt-6' : null}>
+        <ListItem
+          key={tag}
+          className={i !== 0 ? 'mt-6' : null}
+        >
           <Heading
             is="h3"
             id={tag}
@@ -155,7 +173,10 @@ function Tagged({ groupedByTag }) {
           <Box className="pl-3">
             <List is="ul">
               {posts.map((post: Post) => (
-                <ListItem key={post.title} className="mt-6">
+                <ListItem
+                  key={post.title}
+                  className="mt-6"
+                >
                   <Link href={formatPostLink(post)}>{post.title}</Link>
                 </ListItem>
               ))}
@@ -254,7 +275,11 @@ function BlogStats({ posts, groupedByYear }) {
   let diff = dateDifference(startDate, nowIsh)
   return (
     <>
-      <Heading className="mb-3" id="stats" is="h3">
+      <Heading
+        className="mb-3"
+        id="stats"
+        is="h3"
+      >
         Blog Stats:
       </Heading>
       <Text>
@@ -308,29 +333,44 @@ export default function Listing({ posts, gallaryPosts }) {
   let groupedByTag = groupByTags(posts)
   return (
     <>
-      <Heading is="h1" className="mb-3">
+      <Heading
+        is="h1"
+        className="mb-3"
+      >
         Blog
       </Heading>
       <Text className="text-lg mb-2">
         Welcome to my Blog! Many of these posts are rough drafts that I work on
         here and there.
       </Text>
-      <Heading is="h3" className="my-4">
+      <Heading
+        is="h3"
+        className="my-4"
+      >
         Popular posts:
       </Heading>
       <Box className="my-5">
         <List is="ol">
           {gallaryPosts.map((post, i) => (
-            <ListItem key={post.title} className={i !== 0 ? 'mt-6' : null}>
+            <ListItem
+              key={post.title}
+              className={i !== 0 ? 'mt-6' : null}
+            >
               <Link href={formatPostLink(post)}>{post.title}</Link>
             </ListItem>
           ))}
         </List>
       </Box>
-      <Heading is="h3" className="py-7">
+      <Heading
+        is="h3"
+        className="py-7"
+      >
         All Posts:
       </Heading>
-      <Tabs defaultValue="all" className="w-[400px]">
+      <Tabs
+        defaultValue="all"
+        className="w-[400px]"
+      >
         <TabsList>
           <TabsTrigger value="all">All Posts</TabsTrigger>
           <TabsTrigger value="timeline">Timeline</TabsTrigger>
@@ -346,7 +386,10 @@ export default function Listing({ posts, gallaryPosts }) {
           <Tagged groupedByTag={groupedByTag} />
         </TabsContent>
       </Tabs>
-      <BlogStats posts={posts} groupedByYear={groupedByYear} />
+      <BlogStats
+        posts={posts}
+        groupedByYear={groupedByYear}
+      />
     </>
   )
 }

@@ -16,6 +16,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./*"],
       "@lib/*": ["./lib/*"],
       "@styles/*": ["./styles/*"],
       "@recipes/*": ["./feijoa-ui/*"]

@@ -7,7 +7,10 @@ import { Text } from '@recipes/text'
 export default function Snippets() {
   return (
     <Box>
-      <Heading className="mb-4" is="h2">
+      <Heading
+        className="mb-4"
+        is="h2"
+      >
         Snippets:
       </Heading>
       <Box>

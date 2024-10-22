@@ -38,7 +38,10 @@ async function TopPosts() {
     <Box className="my-4">
       <List is="ol">
         {topPosts.map((post, i) => (
-          <ListItem key={post.title} className={i !== 0 ? 'mt-2' : ''}>
+          <ListItem
+            key={post.title}
+            className={i !== 0 ? 'mt-2' : ''}
+          >
             <Link href={formatPostLink(post)}>{post.title}</Link>
           </ListItem>
         ))}
@@ -56,7 +59,10 @@ let topProjects: Array<{
 export default async function Page() {
   return (
     <Box>
-      <Heading is="h1" className="mb-4">
+      <Heading
+        is="h1"
+        className="mb-4"
+      >
         Hey 👋
       </Heading>
       <Text className="text-xl">
@@ -66,13 +72,19 @@ export default async function Page() {
         as a software engineer. In my free time I like to work on several
         different <Link href="/projects">projects</Link>, and somehow find time
         to write some{' '}
-        <Link className="text-xl" href="/posts">
+        <Link
+          className="text-xl"
+          href="/posts"
+        >
           blog posts
         </Link>{' '}
         as well.
       </Text>
 
-      <Heading is="h3" className="my-3">
+      <Heading
+        is="h3"
+        className="my-3"
+      >
         Popular blog posts:
       </Heading>
       <Suspense fallback={<LoadingTopPosts />}>
@@ -80,17 +92,30 @@ export default async function Page() {
         <TopPosts />
       </Suspense>
 
-      <Heading is="h3" className="my-3">
+      <Heading
+        is="h3"
+        className="my-3"
+      >
         Recent Side Projects
       </Heading>
       <Text className="mb-4">
         I work on a variety of side projects in my free time, below are a few of
         them.
       </Text>
-      <List is="ul" className="mt-2">
+      <List
+        is="ul"
+        className="mt-2"
+      >
         {topProjects.map((project) => (
-          <ListItem key={project.link} className="[&:not(:first-of-type)]:mt-3">
-            <Link href={project.link} target="_blank" rel="noopener noreferrer">
+          <ListItem
+            key={project.link}
+            className="[&:not(:first-of-type)]:mt-3"
+          >
+            <Link
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {project.title}
               <span className="sr-only">(opens in new window)</span>
             </Link>{' '}
@@ -102,7 +127,10 @@ export default async function Page() {
         Check out the rest <Link href="/projects">here</Link>.
       </Text>
 
-      <Heading is="h3" className="my-3">
+      <Heading
+        is="h3"
+        className="my-3"
+      >
         Notebook
       </Heading>
       <Text className="mb-2">
@@ -113,7 +141,10 @@ export default async function Page() {
       </Text>
       <Link href="/notebook">Give them a read</Link>
 
-      <Heading is="h3" className="my-3">
+      <Heading
+        is="h3"
+        className="my-3"
+      >
         Bookshelf
       </Heading>
       <Text className="mb-2">
@@ -122,7 +153,10 @@ export default async function Page() {
       </Text>
       <Link href="/bookshelf">See them here</Link>
 
-      <Heading is="h3" className="my-3">
+      <Heading
+        is="h3"
+        className="my-3"
+      >
         Tools
       </Heading>
       <Text className="mb-2">
@@ -131,7 +165,10 @@ export default async function Page() {
       </Text>
       <Link href="/tools">See them here</Link>
 
-      <Heading is="h3" className="my-3">
+      <Heading
+        is="h3"
+        className="my-3"
+      >
         Snippets
       </Heading>
       <Text className="mb-2">

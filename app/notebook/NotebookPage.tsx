@@ -17,7 +17,10 @@ export default async function NotebookPage({ id, children }) {
         <Heading is="h1">{notebookEntry.title}</Heading>
         {notebookEntry.date ? (
           <>
-            <Box is="span" className="text-slate-500 italic">
+            <Box
+              is="span"
+              className="text-slate-500 italic"
+            >
               Published <Time>{notebookEntry.date}</Time>
             </Box>{' '}
           </>
@@ -30,7 +33,11 @@ export default async function NotebookPage({ id, children }) {
           <Heading is="h4">Tags:</Heading>
           <Box className="flex justify-start gap-4 mt-4">
             {notebookEntry.tags.map((tag: string) => (
-              <Box key={tag} is="span" className="inline-flex italic">
+              <Box
+                key={tag}
+                is="span"
+                className="inline-flex italic"
+              >
                 {tag}
               </Box>
             ))}

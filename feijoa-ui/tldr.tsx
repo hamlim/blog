@@ -8,7 +8,10 @@ export function TLDR(props: { children: React.ReactNode }) {
       {...props}
     >
       <summary>
-        <Box is="strong" className="font-bold">
+        <Box
+          is="strong"
+          className="font-bold"
+        >
           TL;DR:
         </Box>
       </summary>

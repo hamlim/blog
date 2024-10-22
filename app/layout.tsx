@@ -16,7 +16,10 @@ export let dynamic = 'force-dynamic'
 
 export default function Layout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+    >
       <body className="h-screen flex flex-col">
         <ThemeProvider
           attribute="class"

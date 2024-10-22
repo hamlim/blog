@@ -67,7 +67,12 @@ export async function CodeBlock(props: Props) {
         return [key, JSON.parse(val)]
       })
     let metaProps = Object.fromEntries(entries)
-    return <LiveCode code={rest.join('\n').slice(0, -1)} {...metaProps} />
+    return (
+      <LiveCode
+        code={rest.join('\n').slice(0, -1)}
+        {...metaProps}
+      />
+    )
   }
 
   let highlight: string | Array<unknown>

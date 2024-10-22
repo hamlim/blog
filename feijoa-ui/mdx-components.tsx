@@ -18,7 +18,12 @@ type Props<InferredType extends (...args: Array<any>) => any> = Prettify<
 
 // Custom:
 export function Spacer() {
-  return <Box is="marquee" className="mb-4" />
+  return (
+    <Box
+      is="marquee"
+      className="mb-4"
+    />
+  )
 }
 
 export function Callout({ children }) {
@@ -38,11 +43,21 @@ export function Link(props: Props<typeof LocalLink>) {
 }
 
 export function ul(props: Props<typeof List>) {
-  return <List {...props} is="ul" />
+  return (
+    <List
+      {...props}
+      is="ul"
+    />
+  )
 }
 
 export function ol(props: Props<typeof List>) {
-  return <List {...props} is="ol" />
+  return (
+    <List
+      {...props}
+      is="ol"
+    />
+  )
 }
 
 export function li(props: Props<typeof ListItem>) {
@@ -50,15 +65,30 @@ export function li(props: Props<typeof ListItem>) {
 }
 
 export function del(props: Props<typeof Box>) {
-  return <Box {...props} is="del" />
+  return (
+    <Box
+      {...props}
+      is="del"
+    />
+  )
 }
 
 export function em(props: Props<typeof Box>) {
-  return <Box {...props} is="em" />
+  return (
+    <Box
+      {...props}
+      is="em"
+    />
+  )
 }
 
 export function strong(props: Props<typeof Box>) {
-  return <Box {...props} is="strong" />
+  return (
+    <Box
+      {...props}
+      is="strong"
+    />
+  )
 }
 
 export function p(props: Props<typeof Text>) {
@@ -66,27 +96,57 @@ export function p(props: Props<typeof Text>) {
 }
 
 export function h1(props: Props<typeof Heading>) {
-  return <Heading {...props} is="h1" />
+  return (
+    <Heading
+      {...props}
+      is="h1"
+    />
+  )
 }
 
 export function h2(props: Props<typeof Heading>) {
-  return <Heading {...props} is="h2" />
+  return (
+    <Heading
+      {...props}
+      is="h2"
+    />
+  )
 }
 
 export function h3(props: Props<typeof Heading>) {
-  return <Heading {...props} is="h3" />
+  return (
+    <Heading
+      {...props}
+      is="h3"
+    />
+  )
 }
 
 export function h4(props: Props<typeof Heading>) {
-  return <Heading {...props} is="h4" />
+  return (
+    <Heading
+      {...props}
+      is="h4"
+    />
+  )
 }
 
 export function h5(props: Props<typeof Heading>) {
-  return <Heading {...props} is="h5" />
+  return (
+    <Heading
+      {...props}
+      is="h5"
+    />
+  )
 }
 
 export function h6(props: Props<typeof Heading>) {
-  return <Heading {...props} is="h6" />
+  return (
+    <Heading
+      {...props}
+      is="h6"
+    />
+  )
 }
 
 export function blockquote(props: Props<typeof Blockquote>) {
@@ -112,12 +172,21 @@ export function code(props: Props<typeof Code>) {
 
 export function img(props: Props<typeof Image>) {
   return (
-    <Image sizes="100vw" style={{ width: '100%', height: 'auto' }} {...props} />
+    <Image
+      sizes="100vw"
+      style={{ width: '100%', height: 'auto' }}
+      {...props}
+    />
   )
 }
 
 export function Time(props: Props<typeof Box>) {
-  return <Box {...props} is="time" />
+  return (
+    <Box
+      {...props}
+      is="time"
+    />
+  )
 }
 
 export * from '@recipes/abbr'

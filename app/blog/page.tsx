@@ -22,7 +22,12 @@ async function getPosts(): Promise<{
 
 export default async function Blog() {
   let { posts, galleryPosts } = await getPosts()
-  return <Listing posts={posts} gallaryPosts={galleryPosts} />
+  return (
+    <Listing
+      posts={posts}
+      gallaryPosts={galleryPosts}
+    />
+  )
 }
 
 export let metadata: Metadata = {
