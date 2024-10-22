@@ -1,10 +1,16 @@
-"use client"
+'use client'
 
+import { Button } from '@recipes/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@recipes/card'
+import { Textarea } from '@recipes/textarea'
+import { Copy } from 'lucide-react'
 import React, { useState, useCallback } from 'react'
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Copy } from "lucide-react"
 
 // Custom hook for copying to clipboard
 const useCopyToClipboard = () => {
@@ -17,23 +23,32 @@ const useCopyToClipboard = () => {
 
 // Helper function to convert RGB to Hex
 const rgbToHex = (r: number, g: number, b: number) => {
-  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+  // biome-ignore lint/style/useTemplate: <explanation>
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
 }
 
 // Helper function to parse color from XML
 const parseColor = (colorElement: Element) => {
-  let children = [...colorElement.children];
-  let redEl = children.find(child => child.tagName === 'key' && child.textContent === 'Red Component')
-  let greenEl = children.find(child => child.tagName === 'key' && child.textContent === 'Green Component')
-  let blueEl = children.find(child => child.tagName === 'key' && child.textContent === 'Blue Component')
-  
+  let children = [...colorElement.children]
+  let redEl = children.find(
+    (child) => child.tagName === 'key' && child.textContent === 'Red Component',
+  )
+  let greenEl = children.find(
+    (child) =>
+      child.tagName === 'key' && child.textContent === 'Green Component',
+  )
+  let blueEl = children.find(
+    (child) =>
+      child.tagName === 'key' && child.textContent === 'Blue Component',
+  )
+
   if (!redEl || !greenEl || !blueEl) {
-    return {hex: '', rgba: ''};
+    return { hex: '', rgba: '' }
   }
-  
-  let red = parseFloat(redEl.nextElementSibling?.textContent || "0")
-  let green = parseFloat(greenEl.nextElementSibling?.textContent || "0")
-  let blue = parseFloat(blueEl.nextElementSibling?.textContent || "0")
+
+  let red = Number.parseFloat(redEl.nextElementSibling?.textContent || '0')
+  let green = Number.parseFloat(greenEl.nextElementSibling?.textContent || '0')
+  let blue = Number.parseFloat(blueEl.nextElementSibling?.textContent || '0')
 
   const r = Math.round(red * 255)
   const g = Math.round(green * 255)
@@ -46,7 +61,9 @@ const parseColor = (colorElement: Element) => {
 }
 
 // Helper function to generate the template
-const generateTemplate = (colors: Record<string, { hex: string; rgba: string }>) => {
+const generateTemplate = (
+  colors: Record<string, { hex: string; rgba: string }>,
+) => {
   const template = `palette = 0=${colors['Ansi 0 Color']?.hex || ''}
 palette = 1=${colors['Ansi 1 Color']?.hex || ''}
 palette = 2=${colors['Ansi 2 Color']?.hex || ''}
@@ -73,28 +90,30 @@ selection-foreground = ${colors['Selected Text Color']?.hex || ''}`
 }
 
 export function ItermColorParser() {
-  const [xmlData, setXmlData] = useState("")
-  const [colors, setColors] = useState<Record<string, { hex: string; rgba: string }>>({})
-  const [template, setTemplate] = useState("")
+  const [xmlData, setXmlData] = useState('')
+  const [colors, setColors] = useState<
+    Record<string, { hex: string; rgba: string }>
+  >({})
+  const [template, setTemplate] = useState('')
   const copyToClipboard = useCopyToClipboard()
 
   const parseXml = () => {
     const parser = new DOMParser()
-    const xmlDoc = parser.parseFromString(xmlData, "text/xml")
-    const dictElement = xmlDoc.querySelector("dict")
+    const xmlDoc = parser.parseFromString(xmlData, 'text/xml')
+    const dictElement = xmlDoc.querySelector('dict')
 
     if (dictElement) {
       const newColors: Record<string, { hex: string; rgba: string }> = {}
-      const keyElements = dictElement.querySelectorAll("key")
+      const keyElements = dictElement.querySelectorAll('key')
 
-      keyElements.forEach((keyElement) => {
+      for (const keyElement of keyElements) {
         const colorName = keyElement.textContent
         const colorElement = keyElement.nextElementSibling
 
-        if (colorName && colorElement && colorElement.tagName === "dict") {
+        if (colorName && colorElement && colorElement.tagName === 'dict') {
           newColors[colorName] = parseColor(colorElement)
         }
-      })
+      }
 
       setColors(newColors)
       setTemplate(generateTemplate(newColors))
@@ -105,7 +124,9 @@ export function ItermColorParser() {
     <Card className="w-full max-w-3xl">
       <CardHeader>
         <CardTitle>iTerm Color Scheme Parser</CardTitle>
-        <CardDescription>Paste your iTerm color scheme XML below to extract colors</CardDescription>
+        <CardDescription>
+          Paste your iTerm color scheme XML below to extract colors
+        </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <Textarea
@@ -117,7 +138,10 @@ export function ItermColorParser() {
         <Button onClick={parseXml}>Parse Colors</Button>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {Object.entries(colors).map(([name, { hex, rgba }]) => (
-            <Card key={name} className="p-4">
+            <Card
+              key={name}
+              className="p-4"
+            >
               <div className="flex items-center space-x-2 mb-2">
                 <div
                   className="w-6 h-6 rounded-full"
@@ -154,7 +178,9 @@ export function ItermColorParser() {
           <Card className="mt-8">
             <CardHeader>
               <CardTitle>Generated Template</CardTitle>
-              <CardDescription>Copy the generated template for use in other applications</CardDescription>
+              <CardDescription>
+                Copy the generated template for use in other applications
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="relative">

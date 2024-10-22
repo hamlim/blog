@@ -80,8 +80,8 @@ export let Tapable = forwardRef<any, TapableProps>(function Tapable(
   ref,
 ) {
   let ariaProps = useTapable(props, ref)
-  // @ts-ignore
   return (
+    // @ts-ignore
     <Box
       {...props}
       {...ariaProps}
