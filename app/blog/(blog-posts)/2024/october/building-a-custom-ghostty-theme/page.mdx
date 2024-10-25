@@ -17,7 +17,7 @@ export async function generateMetadata() {
 <Callout>
 **Update Oct. 25th, 2024:**
 
-There's a bug (see [issue here (if you have access)](https://github.com/ghostty-org/ghostty/issues/2495)), where custom themes are blown away when upgrading the application, hopefully this is resolved in the future!
+~There's a bug (see [issue here (if you have access)](https://github.com/ghostty-org/ghostty/issues/2495)), where custom themes are blown away when upgrading the application, hopefully this is resolved in the future!~ _Edit:_ You can store custom themes within `~/.config/ghostty/themes`!
 
 **Update Oct. 24th, 2024:**
 
@@ -34,7 +34,7 @@ Instead, what I opted to do was reach for [v0](https://v0.dev/chat) to build a m
 
 I downloaded the Vitesse Light iterm2 theme file from this [iTerm2-theme-vitesse repo](https://github.com/HiDeoo/iTerm2-theme-vitesse), and then pasted it into the UI that v0 generated for me and got the theme in the right format.
 
-From there, I created a new file within the themes directory for the Ghostty app (on mac for me this was in `/Applications/Ghostty.app/Contents/Resources/ghostty/themes`), and pasted in the theme.
+From there, I created a new file within the custom themes directory for the Ghostty app (on mac for me this was in `~/.config/ghostty/themes`), and pasted in the theme.
 
 It immediately started showing up when I viewed the built in themes, and works correctly when I set my theme within my config to the new file I created!
 
