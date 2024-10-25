@@ -2309,6 +2309,29 @@
       "status": "public",
       "description": "How to generate a custom Ghostty theme based on any iterm2 theme!",
       "uuid": "250517820677921335"
+    },
+    {
+      "id": 166,
+      "title": "The Bookkeeping Pattern",
+      "path": "/posts/2024/october/the-bookkeeping-pattern.md",
+      "slug": "the-bookkeeping-pattern",
+      "date": "October 25th, 2024",
+      "time": "3:40:52 PM",
+      "month": "october",
+      "year": "2024",
+      "tags": [
+        "Web Development",
+        "Next.js",
+        "JavaScript",
+        "Tip",
+        "TypeScript",
+        "React Server Components",
+        "Server Actions",
+        "Forms"
+      ],
+      "status": "public",
+      "description": "A quick look at a small but powerful pattern I've been leveraging as of late!",
+      "uuid": "11744858677865123307"
     }
   ]
 }
