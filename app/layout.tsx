@@ -94,31 +94,33 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://matthamlin.me',
     title: 'Matt Hamlin',
+    siteName: "Matt's Website",
     description: `Matt Hamlin's Personal Website`,
-    siteName: `Matt's Website`,
-    // images: [
-    //   {
-    //     url: 'https://matthamlin.me/icon-512.png',
-    //     width: 512,
-    //     height: 512,
-    //     alt: `Matt Hamlin's Personal Website`,
-    //   },
-    // ],
-    // images: [
-    //   {
-    //     url: siteConfig.ogImage,
-    //     width: 1200,
-    //     height: 630,
-    //     alt: siteConfig.name,
-    //   },
-    // ],
+    images: [
+      {
+        url: 'https://matthamlin.me/me.png',
+        width: 384,
+        height: 512,
+        alt: `Matt Hamlin's Personal Website`,
+        type: 'image/png',
+      },
+    ],
   },
   twitter: {
+    site: '@immatthamlin',
     card: 'summary_large_image',
     title: `Matt's Website`,
     description: `Matt Hamlin's personal website`,
-    // images: ['https://feijoa-ui.vercel.app/icon-512.png'],
     creator: '@immatthamlin',
+    images: [
+      {
+        url: 'https://matthamlin.me/me.png',
+        width: 384,
+        height: 512,
+        alt: `Matt Hamlin's Personal Website`,
+        type: 'image/png',
+      },
+    ],
   },
 }
 
