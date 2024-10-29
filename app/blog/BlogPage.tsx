@@ -6,12 +6,19 @@ import { Heading } from '@recipes/heading'
 import { Link } from '@recipes/link'
 import { Time } from '@recipes/mdx-components'
 import { Stack } from '@recipes/stack'
-
+import Image from 'next/image'
 export default async function Blog({ id, children }) {
   let manifest = await fetchManifest()
   let post = manifest.posts.find((post) => post.uuid === id)
   return (
     <Box className="prose lg:prose-xl">
+      <Image
+        src={`/api/og/${id}`}
+        width={1200}
+        height={630}
+        // purely decorative image!
+        alt=""
+      />
       <Stack
         gap={4}
         className="mb-4"
