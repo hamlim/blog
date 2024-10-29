@@ -145,8 +145,9 @@ let postMeta = {
   month: month.toLowerCase(),
   year,
   tags: args.tags.split(',').map((tag) => tag.trim()),
-  status: 'draft',
+  status: 'public',
   description: args.description,
+  publishedDate: currentDate.toISOString(),
 }
 
 let uuid = Bun.hash(JSON.stringify(postMeta))

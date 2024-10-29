@@ -68,6 +68,10 @@ export interface Post {
    * A short description of the post
    */
   description?: string
+  /**
+   * The date the post was published, in ISO format
+   */
+  publishedDate: string
 }
 
 export interface Manifest {
