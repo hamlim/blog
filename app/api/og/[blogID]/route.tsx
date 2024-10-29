@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 
 export async function GET(
   _request: Request,
-  { params }: { params: { blogID: string } },
+  { params }: { params: Promise<{ blogID: string }> },
 ) {
   let [manifest, resolvedParams, fontData] = await Promise.all([
     fetchManifest(),
