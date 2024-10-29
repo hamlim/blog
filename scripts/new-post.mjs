@@ -172,8 +172,92 @@ Start writing here!
 </BlogPage>
 `
 
-await Bun.write(path.join(folderPath, `${args.slug}/page.mdx`), template)
+let ogTemplate = `import { ImageResponse } from 'next/og'
+import {fetchManifest} from '@lib/fetch-manifest';
 
+let id = "${postMeta.uuid}";
+
+export const runtime = 'edge'
+
+export async function GET() {
+
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return new ImageResponse(
+    <div
+      style={{
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        padding: '40px 60px',
+        position: 'relative',
+      }}
+    >
+      <div
+        style={{
+          position: 'absolute',
+          top: '20px',
+          right: '40px',
+          color: 'hsl(221, 83.2%, 53.3%)',
+          fontSize: 24,
+          fontWeight: 'bold',
+        }}
+      >
+        matthamlin.me
+      </div>
+      <div
+        style={{
+          color: '#4B5563',
+          fontSize: 40,
+          fontWeight: 'bold',
+          marginBottom: '10px',
+        }}
+      >
+        Matt's Musings
+      </div>
+      <div
+        style={{
+          color: '#111827',
+          fontSize: 60,
+          fontWeight: 'bold',
+          marginBottom: '20px',
+          maxWidth: '800px',
+          fontFamily: 'monospace',
+        }}
+      >
+        {post.title}
+      </div>
+      <div
+        style={{
+          color: '#374151',
+          fontSize: 30,
+          maxWidth: '800px',
+        }}
+      >
+        {post.description}
+      </div>
+    </div>,
+    {
+      width: 1200,
+      height: 630,
+    },
+  )
+}
+`
+
+await Bun.write(path.join(folderPath, `${args.slug}/page.mdx`), template)
+// Bug when using opengraph-image.tsx
+// Duplicate export 'GET'
+// unsure on the fix
+// await Bun.write(
+//   path.join(folderPath, `${args.slug}/opengraph-image.tsx`),
+//   ogTemplate,
+// )
 let newManifest = {
   ...originalManifest,
   posts: [...originalManifest.posts, postMeta],

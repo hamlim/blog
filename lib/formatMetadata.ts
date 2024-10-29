@@ -13,6 +13,14 @@ export function formatBlogPostMetadata({ meta }): Metadata {
       locale: 'en_US',
       url: `https://matthamlin.me/blog/${meta.year}/${meta.month}/${meta.slug}`,
       title: meta.title,
+      images: [
+        {
+          url: `https://matthamlin.me/api/og/${meta.uuid}`,
+          width: 1200,
+          height: 630,
+          alt: meta.title,
+        },
+      ],
       description: meta.description,
       siteName: `Matt's Website`,
     },
@@ -21,6 +29,7 @@ export function formatBlogPostMetadata({ meta }): Metadata {
       title: meta.title,
       description: meta.description,
       creator: '@immatthamlin',
+      images: [`https://matthamlin.me/api/og/${meta.uuid}`],
     },
   }
 }
