@@ -46,6 +46,16 @@ export let projects: Array<{
     ),
   },
   {
+    link: 'https://kanapa-docs.vercel.app/',
+    title: 'Kanapa',
+    description: (
+      <>
+        A syntax highlighting code block component based on shiki for use with
+        React Server Components!
+      </>
+    ),
+  },
+  {
     link: 'https://github.com/hamlim/milliform',
     title: 'Milliform',
     description: 'A super basic React.js form library!',
