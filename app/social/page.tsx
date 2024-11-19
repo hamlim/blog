@@ -72,7 +72,7 @@ export default function Social() {
               <span className="sr-only">Opens in new tab</span>
             </BaseLink>
           </ListItem>
-          <ListItem className="mb-2">
+          {/* <ListItem className="mb-2">
             <BaseLink
               target="_blank"
               rel="noopener"
@@ -103,7 +103,7 @@ export default function Social() {
               immatthamlin
               <span className="sr-only">Opens in new tab</span>
             </BaseLink>
-          </ListItem>
+          </ListItem> */}
           {/* No real icon for this one - plus I really only want to connect with friends here */}
           {/* <ListItem className="mb-2">
             <BaseLink
