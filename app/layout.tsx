@@ -1,11 +1,13 @@
 import '@styles/globals.css'
+import { Bluesky } from '@/components/bluesky'
+import { GitHub } from '@/components/github'
 import { Box } from '@recipes/box'
 import { GitHubMention } from '@recipes/github-mention'
+import { Link } from '@recipes/link'
 import { Text } from '@recipes/text'
 import { ThemeProvider } from '@recipes/theme-provider'
 import { ThemeToggle } from '@recipes/theme-toggle'
 import { Toaster } from '@recipes/toaster'
-import { TwitterMention } from '@recipes/twitter-mention'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Github, Twitter } from 'lucide-react'
@@ -39,15 +41,33 @@ export default function Layout({ children }) {
                   <Box className="flex justify-between">
                     <Box>
                       <Text>Matt Hamlin - {new Date().getFullYear()}</Text>
-                      <Text>
-                        <span className="inline-flex items-center gap-2">
-                          <Twitter size={16} />
-                          <TwitterMention>immatthamlin</TwitterMention>
-                        </span>{' '}
-                        <span className="inline-flex items-center gap-2">
-                          <Github size={16} />
-                          <GitHubMention>hamlim</GitHubMention>
-                        </span>
+                      <Text className="flex flex-row gap-2">
+                        <Link
+                          href="https://bsky.app/profile/matthamlin.me"
+                          target="_blank"
+                          className="inline-flex items-center gap-2"
+                        >
+                          <Bluesky
+                            height={16}
+                            width={16}
+                            fill="currentColor"
+                          />
+                          @matthamlin.me
+                          <span className="sr-only">Opens in new tab</span>
+                        </Link>{' '}
+                        <Link
+                          href="https://github.com/hamlim"
+                          target="_blank"
+                          className="inline-flex items-center gap-2"
+                        >
+                          <GitHub
+                            height={16}
+                            width={16}
+                            fill="currentColor"
+                          />
+                          hamlim
+                          <span className="sr-only">Opens in new tab</span>
+                        </Link>
                       </Text>
                     </Box>
                     <ThemeToggle />

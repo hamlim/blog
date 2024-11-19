@@ -11,9 +11,9 @@ export default function Mentions() {
     <BaseLink
       target="_blank"
       rel="noopener"
-      href={`https://twitter.com/search?q=${encodeURIComponent(url)}`}
+      href={`https://bsky.app/search?q=${encodeURIComponent(url)}`}
     >
-      See discussion on Twitter
+      See discussion on Bluesky
     </BaseLink>
   )
 }
