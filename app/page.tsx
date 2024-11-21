@@ -66,14 +66,10 @@ export default async function Page() {
         Hey 👋
       </Heading>
       <Text className="text-xl">
-        Hey there, I'm Matt. I currently live in Boston and work at{' '}
-        <BaseLink href="https://fireworks.ai/">Fireworks</BaseLink>
-        {'  '}
-        as a software engineer. In my free time I like to work on several
+        Hey there, I'm Matt. I currently live in Boston and work as a software engineer. In my free time I like to work on several
         different <Link href="/projects">projects</Link>, and somehow find time
         to write some{' '}
         <Link
-          className="text-xl"
           href="/posts"
         >
           blog posts
