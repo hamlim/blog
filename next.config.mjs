@@ -181,7 +181,7 @@ let config = {
 
 export default createMDX({
   options: {
-    remarkPlugins: [remarkFrontmatter, remarkGfm],
+    remarkPlugins: ['remark-frontmatter', 'remark-gfm'],
     rehypePlugins: [],
   },
 })(config)
