@@ -1,4 +1,5 @@
 import { Tweet } from '@lib/Tweet'
+import { BlueskyPost } from '@lib/bluesky-post'
 import {
   Abbr,
   Accordion,
@@ -447,5 +448,6 @@ export function useMDXComponents(): MDXComponents {
     Portal,
     usePortal,
     Text,
+    BlueskyPost,
   }
 }

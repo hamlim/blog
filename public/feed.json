@@ -2419,6 +2419,21 @@
       "description": "A quick look at a small but powerful pattern I've been leveraging as of late!",
       "uuid": "11744858677865123307",
       "publishedDate": "2024-10-25T15:40:52.000Z"
+    },
+    {
+      "id": 167,
+      "title": "Bluesky Tips and Tools",
+      "path": "/posts/2024/november/bluesky-tips-and-tools.md",
+      "slug": "bluesky-tips-and-tools",
+      "date": "November 25th, 2024",
+      "time": "1:48:50 PM",
+      "month": "november",
+      "year": "2024",
+      "tags": ["Web Development", "Development", "Bluesky", "Tip"],
+      "status": "public",
+      "description": "A (running) collection of Bluesky tips, tools, packages, and other misc things!",
+      "publishedDate": "2024-11-25T18:48:50.372Z",
+      "uuid": "6174347721313676024"
     }
   ],
   "notebookEntries": [
