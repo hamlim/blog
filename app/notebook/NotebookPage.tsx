@@ -25,7 +25,7 @@ export default async function NotebookPage({ id, children }) {
             </Box>{' '}
           </>
         ) : null}
-        <Mentions />
+        <Mentions title={notebookEntry.title} />
       </Stack>
       <PostWrapper>{children}</PostWrapper>
       {notebookEntry.tags ? (
