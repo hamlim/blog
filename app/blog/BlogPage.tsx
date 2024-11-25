@@ -34,7 +34,7 @@ export default async function Blog({ id, children }) {
             </Box>{' '}
           </>
         ) : null}
-        <Mentions />
+        <Mentions title={post.title} />
       </Stack>
       <PostWrapper>{children}</PostWrapper>
       {post.tags ? (
