@@ -7,6 +7,7 @@ module.exports = {
     './src/**/*.{ts,tsx}',
     './lib/**/*.{ts,tsx}',
     './feijoa-ui/**/*.{ts,tsx}',
+    './node_modules/@hamstack/bluesky-embed-rsc/**/*.{ts,tsx,js}',
   ],
   theme: {
     container: {

@@ -1,5 +1,11 @@
+// import { BlueskyPost } from '@lib/bluesky-post'
+import {
+  BlueskyPost,
+  type ImageProps,
+  config,
+  updateConfig,
+} from '@hamstack/bluesky-embed-rsc'
 import { Tweet } from '@lib/Tweet'
-import { BlueskyPost } from '@lib/bluesky-post'
 import {
   Abbr,
   Accordion,
@@ -223,6 +229,27 @@ import {
   useTapable,
 } from '@recipes/mdx-components'
 import type { MDXComponents } from 'mdx/types'
+
+let fillClasses =
+  'absolute h-full w-full left-0 top-0 right-0 bottom-0 color-transparent'
+
+function LocalImage({ fill, ...props }: ImageProps) {
+  // biome-ignore lint/a11y/useAltText: <explanation>
+  return (
+    <img
+      {...props}
+      className={cn(fill && fillClasses, props.className)}
+    />
+  )
+}
+
+updateConfig({
+  ...config,
+  components: {
+    Image: LocalImage,
+  },
+  rootClassName: 'my-2 mx-auto border-0',
+})
 
 export function useMDXComponents(): MDXComponents {
   return {

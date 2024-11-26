@@ -7,12 +7,6 @@ export let projects: Array<{
   description: React.ReactNode
 }> = [
   {
-    link: 'https://github.com/hamlim/rereplay',
-    title: 'Rereplay',
-    description:
-      'A native fetch-caching solution for idempotent network requests!',
-  },
-  {
     link: 'https://one-version.vercel.app/',
     title: 'one-version',
     description: 'A strict dependency conformance tool for monorepos!',
@@ -28,6 +22,22 @@ export let projects: Array<{
     title: 'Template Monorepo',
     description:
       'A template for creating a monorepo with Bun, Next.js, and Turborepo',
+  },
+  {
+    link: 'https://bluesky-embed-rsc.vercel.app/',
+    title: (
+      <>
+        <Code>@hamstack/bluesky-embed-rsc</Code>
+      </>
+    ),
+    description:
+      'A React Server Component for embedding Bluesky posts within your app!',
+  },
+  {
+    link: 'https://github.com/hamlim/rereplay',
+    title: 'Rereplay',
+    description:
+      'A native fetch-caching solution for idempotent network requests!',
   },
   {
     link: 'https://switch-kit.vercel.app/',
