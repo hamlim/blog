@@ -2434,6 +2434,21 @@
       "description": "A (running) collection of Bluesky tips, tools, packages, and other misc things!",
       "publishedDate": "2024-11-25T18:48:50.372Z",
       "uuid": "6174347721313676024"
+    },
+    {
+      "id": 168,
+      "title": "My Updated Obsidian Task Management",
+      "path": "/posts/2024/november/my-updated-obsidian-task-management.md",
+      "slug": "my-updated-obsidian-task-management",
+      "date": "November 25th, 2024",
+      "time": "8:23:43 PM",
+      "month": "november",
+      "year": "2024",
+      "tags": ["Note Taking", "Task Management", "Obsidian"],
+      "status": "public",
+      "description": "A quick update on how I manage my tasks within Obsidian!",
+      "publishedDate": "2024-11-26T01:23:43.913Z",
+      "uuid": "2211893299500335985"
     }
   ],
   "notebookEntries": [
