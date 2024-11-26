@@ -16,7 +16,7 @@
   "dependencies": {
     "@codesandbox/sandpack-react": "2.7.0",
     "@ds-pack/use-refs": "1.0.0",
-    "@hamstack/bluesky-embed-rsc": "^0.0.1",
+    "@hamstack/bluesky-embed-rsc": "0.1.0",
     "@mdx-js/mdx": "2.3.0",
     "@monaco-editor/react": "4.5.2",
     "@radix-ui/react-accordion": "1.2.1",
