@@ -2449,6 +2449,28 @@
       "description": "A quick update on how I manage my tasks within Obsidian!",
       "publishedDate": "2024-11-26T01:23:43.913Z",
       "uuid": "2211893299500335985"
+    },
+    {
+      "id": 169,
+      "title": "Request for (minimal) RSC Framework",
+      "path": "/posts/2024/december/request-for-minimal-rsc-framework.md",
+      "slug": "request-for-minimal-rsc-framework",
+      "date": "December 1st, 2024",
+      "time": "4:03:08 PM",
+      "month": "december",
+      "year": "2024",
+      "tags": [
+        "Web Development",
+        "Development",
+        "React",
+        "React Server Components",
+        "Server Actions",
+        "Forms"
+      ],
+      "status": "public",
+      "description": "Some features and functionality that I'd like within a React Server Component compatible framework.",
+      "publishedDate": "2024-12-01T21:03:08.056Z",
+      "uuid": "19061073147810066"
     }
   ],
   "notebookEntries": [
