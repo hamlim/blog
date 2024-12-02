@@ -67,7 +67,7 @@ export default async function Page() {
       </Heading>
       <Text className="text-xl">
         Hey there, I'm Matt. I currently live in Boston and work as a software
-        engineer. In my free time I like to work on several different{' '}
+        engineer at HubSpot. In my free time I like to work on several different{' '}
         <Link href="/projects">projects</Link>, and somehow find time to write
         some <Link href="/posts">blog posts</Link> as well.
       </Text>
