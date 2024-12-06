@@ -2492,6 +2492,21 @@
       "description": "A collection of tech talks that I regularly re-watch and also recommend to everyone!",
       "publishedDate": "2024-12-06T22:27:13.445Z",
       "uuid": "11635328817935414680"
+    },
+    {
+      "id": 171,
+      "title": "A Quick Look at Import Maps",
+      "path": "/posts/2024/december/a-quick-look-at-import-maps.md",
+      "slug": "a-quick-look-at-import-maps",
+      "date": "December 6th, 2024",
+      "time": "6:22:09 PM",
+      "month": "december",
+      "year": "2024",
+      "tags": ["Web Development", "Development", "Node.js"],
+      "status": "public",
+      "description": "A brief look at Import Maps and package.json#imports to support isomorphic JavaScript applications!",
+      "publishedDate": "2024-12-06T23:22:09.325Z",
+      "uuid": "2819036716913698273"
     }
   ],
   "notebookEntries": [
