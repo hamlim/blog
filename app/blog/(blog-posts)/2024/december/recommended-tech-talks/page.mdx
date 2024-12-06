@@ -1,0 +1,38 @@
+import BlogPage from 'app/blog/BlogPage';
+import {fetchManifest} from '@lib/fetch-manifest';
+import {formatBlogPostMetadata} from 'lib/formatMetadata';
+
+export let id = "11635328817935414680";
+
+export async function generateMetadata() {
+  let mainfest = await fetchManifest();
+  let post = mainfest.posts.find(p => p.uuid === id);
+
+  return formatBlogPostMetadata({meta: post});
+}
+
+<BlogPage id={id}>
+
+There's a number of tech talks that I routinely revisit every once and while and also share frequently with others because I think they're so foundational to my career as a web developer. 
+
+I figured I'd write a blog post sharing those talks!
+
+### React Conf 2015 - Hype
+
+Arguably probably my favorite tech talk that I've every watched. It's probably sad to say that I return to watch this every once in a while to have my mind blown!
+
+The magic move demo is still wild to think about!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z5e7kWSHWTg?si=ZCBLY3nogYHx-OJZ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+
+### Scaling R&D to thousands of people without dedicated QA
+
+This talk really influenced how I thought about building platforms while I worked at Wayfair, and then in every role since then!
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/O3JpS_kvP0g?si=wCdxjr5UpaQTTGoh" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+
+---
+
+More coming soon!
+
+</BlogPage>

@@ -2471,6 +2471,27 @@
       "description": "Some features and functionality that I'd like within a React Server Component compatible framework.",
       "publishedDate": "2024-12-01T21:03:08.056Z",
       "uuid": "19061073147810066"
+    },
+    {
+      "id": 170,
+      "title": "Recommended Tech Talks",
+      "path": "/posts/2024/december/recommended-tech-talks.md",
+      "slug": "recommended-tech-talks",
+      "date": "December 6th, 2024",
+      "time": "5:27:13 PM",
+      "month": "december",
+      "year": "2024",
+      "tags": [
+        "Development",
+        "Web Development",
+        "Recommendations",
+        "Roundup",
+        "Talks"
+      ],
+      "status": "public",
+      "description": "A collection of tech talks that I regularly re-watch and also recommend to everyone!",
+      "publishedDate": "2024-12-06T22:27:13.445Z",
+      "uuid": "11635328817935414680"
     }
   ],
   "notebookEntries": [
