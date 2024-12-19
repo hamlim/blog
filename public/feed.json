@@ -2507,6 +2507,21 @@
       "description": "A brief look at Import Maps and package.json#imports to support isomorphic JavaScript applications!",
       "publishedDate": "2024-12-06T23:22:09.325Z",
       "uuid": "2819036716913698273"
+    },
+    {
+      "id": 172,
+      "title": "Team Memes",
+      "path": "/posts/2024/december/team-memes.md",
+      "slug": "team-memes",
+      "date": "December 19th, 2024",
+      "time": "5:52:34 PM",
+      "month": "december",
+      "year": "2024",
+      "tags": ["Culture", "Team", "Random", "Organizations"],
+      "status": "public",
+      "description": "A snippet of some shared terminology/concepts (memes) from my time on the Frontend Platform team at Wayfair!",
+      "publishedDate": "2024-12-19T22:52:34.152Z",
+      "uuid": "7289588799485102870"
     }
   ],
   "notebookEntries": [
