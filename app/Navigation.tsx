@@ -1,4 +1,5 @@
 'use client'
+import { cn } from '@/lib/utils'
 import { Box } from '@recipes/box'
 import {
   Drawer,
@@ -106,7 +107,15 @@ export function NavigationHeader() {
 function ActiveLink({ href, ...props }) {
   let pathname = usePathname()
   if (pathname === href) {
-    return <Text {...props} />
+    return (
+      <p
+        {...props}
+        className={cn(
+          props.className,
+          'font-medium underline underline-offset-4 decoration-transparent',
+        )}
+      />
+    )
   }
   return (
     <Link
