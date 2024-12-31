@@ -2522,6 +2522,21 @@
       "description": "A snippet of some shared terminology/concepts (memes) from my time on the Frontend Platform team at Wayfair!",
       "publishedDate": "2024-12-19T22:52:34.152Z",
       "uuid": "7289588799485102870"
+    },
+    {
+      "id": 173,
+      "title": "Thoughts on New Years Resolutions",
+      "path": "/posts/2024/december/thoughts-on-new-years-resolutions.md",
+      "slug": "thoughts-on-new-years-resolutions",
+      "date": "December 31st, 2024",
+      "time": "9:52:57 AM",
+      "month": "december",
+      "year": "2024",
+      "tags": ["Resolutions", "Goal", "Goals"],
+      "status": "public",
+      "description": "You don't need to wait until January 1st to set yearly goals and resolutions for yourself!",
+      "publishedDate": "2024-12-31T14:52:57.226Z",
+      "uuid": "4207262199959157369"
     }
   ],
   "notebookEntries": [
