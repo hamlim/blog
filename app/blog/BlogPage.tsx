@@ -7,6 +7,7 @@ import { Heading } from '@recipes/heading'
 import { Link } from '@recipes/link'
 import { Time } from '@recipes/mdx-components'
 import { Stack } from '@recipes/stack'
+import { Text } from '@recipes/text'
 import Image from 'next/image'
 
 type FileMeta = null | {
@@ -35,7 +36,7 @@ async function getFileMeta(post: Post): Promise<FileMeta> {
 
 let formatDate = new Intl.DateTimeFormat('en-US', {
   dateStyle: 'full',
-  timeStyle: 'short',
+  timeStyle: 'long',
 }).format
 
 export default async function Blog({ id, children }) {
@@ -50,6 +51,12 @@ export default async function Blog({ id, children }) {
 
   if (fileMeta) {
     updatedDate = new Date(fileMeta.date)
+  }
+
+  let isStale = false
+  if (updatedDate) {
+    // if the updated date is more than 6 months ago, mark it as stale
+    isStale = Date.now() - updatedDate.getTime() > 1000 * 60 * 60 * 24 * 180
   }
 
   return (
@@ -90,7 +97,20 @@ export default async function Blog({ id, children }) {
         ) : null}
         <Mentions title={post.title} />
       </Stack>
-      <PostWrapper>{children}</PostWrapper>
+      <PostWrapper>
+        {isStale ? (
+          <>
+            <Box className="my-6 bg-orange-100 p-4 rounded-lg border-orange-400 border-2">
+              <Heading is="h6">🧙 This post may be stale!</Heading>
+              <Text>
+                This post hasn&apos;t been updated in the past 6 months, some of
+                the content could be a bit out of date!
+              </Text>
+            </Box>
+          </>
+        ) : null}
+        {children}
+      </PostWrapper>
       {post.tags ? (
         <Box className="mt-4">
           <Heading is="h4">Tags:</Heading>
