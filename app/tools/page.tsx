@@ -19,7 +19,7 @@ export default function Tools() {
         this up to date every so often and see how it changes over time.
       </Text>
       <Box className="my-5">
-        <Text>Last updated: October, 2024</Text>
+        <Text>Last updated: January, 2025</Text>
         <Stack gap={2}>
           <Heading is="h4">Hardware</Heading>
           <Box>
@@ -100,13 +100,8 @@ export default function Tools() {
               </Text>
             </Text>
             <Text>
-              My last update I noted that I was using Notion daily - ironically
-              I have now solidly{' '}
-              <Link href="/blog/2024/july/switching-back-to-obsidian">
-                moved over to Obsidian
-              </Link>
-              . I've been really enjoying the change to having a local first
-              approach to my notes!
+              I've been enjoying Obsidian more and more, but I might consider
+              building my own alternative this year, we'll see!
             </Text>
           </Box>
           <Box>
@@ -125,9 +120,8 @@ export default function Tools() {
               </Text>
             </Text>
             <Text>
-              I've completely switched over to using Cursor (from VSCode
-              Insiders), including cancelling my GitHub Copilot subscription as
-              well. Cursor really just is so amazing for writing code!
+              I've been using Cursor a ton, it's really nice working at a place
+              that encourages AI usage instead of being hesitant to leverage it.
             </Text>
           </Box>
           <Box>
@@ -142,12 +136,13 @@ export default function Tools() {
                 is="em"
                 className="italic"
               >
-                Warp
+                Ghostty
               </Text>
             </Text>
             <Text>
-              I've bounced back and forth across terminals in the past year or
-              so, but so far Warp has everything I need and more.
+              I may bounce back to Warp, but so far Ghostty has addressed some
+              of my main issues with it initially and now it's a pretty decent
+              terminal!
             </Text>
           </Box>
           <Box>
@@ -174,6 +169,161 @@ export default function Tools() {
       </Box>
       <details className="pt-4">
         <summary>Old Updates:</summary>
+        <Box className="my-5">
+          <Text>Last updated: October, 2024</Text>
+          <Stack gap={2}>
+            <Heading is="h4">Hardware</Heading>
+            <Box>
+              <Text className="mb-2">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
+                  Phone
+                </Text>{' '}
+                <Text
+                  is="em"
+                  className="italic"
+                >
+                  iPhone 16 Pro Max
+                </Text>
+              </Text>
+              <Text>
+                I'm not sure that this was a worthwhile upgrade from my 15 Pro
+                Max, however I am enjoying some of the new features of the
+                phone!
+              </Text>
+            </Box>
+            <Box>
+              <Text className="mb-2">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
+                  Laptop
+                </Text>{' '}
+                <Text
+                  is="em"
+                  className="italic"
+                >
+                  MacBook Air M2 (early 2022)
+                </Text>
+              </Text>
+              <Text>
+                I've been using this computer for the past two years or so, and
+                it has shown no signs of giving up!
+              </Text>
+            </Box>
+            <Box>
+              <Text className="mb-2">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
+                  E-Reader
+                </Text>{' '}
+                <Text
+                  is="em"
+                  className="italic"
+                >
+                  Kindle Paperlight (Signature Edition)
+                </Text>
+              </Text>
+              <Text>
+                I've been using the Kindle off and on as of late - mostly I've
+                been trying to get through a long reading list of physical books
+                that I have.
+              </Text>
+            </Box>
+            <Heading is="h4">Software</Heading>
+            <Box>
+              <Text className="mb-2">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
+                  Notes / Todos
+                </Text>{' '}
+                <Text
+                  is="em"
+                  className="italic"
+                >
+                  Obsidian
+                </Text>
+              </Text>
+              <Text>
+                My last update I noted that I was using Notion daily -
+                ironically I have now solidly{' '}
+                <Link href="/blog/2024/july/switching-back-to-obsidian">
+                  moved over to Obsidian
+                </Link>
+                . I've been really enjoying the change to having a local first
+                approach to my notes!
+              </Text>
+            </Box>
+            <Box>
+              <Text className="mb-2">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
+                  Code
+                </Text>{' '}
+                <Text
+                  is="em"
+                  className="italic"
+                >
+                  Cursor
+                </Text>
+              </Text>
+              <Text>
+                I've completely switched over to using Cursor (from VSCode
+                Insiders), including cancelling my GitHub Copilot subscription
+                as well. Cursor really just is so amazing for writing code!
+              </Text>
+            </Box>
+            <Box>
+              <Text className="mb-2">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
+                  Terminal
+                </Text>{' '}
+                <Text
+                  is="em"
+                  className="italic"
+                >
+                  Warp
+                </Text>
+              </Text>
+              <Text>
+                I've bounced back and forth across terminals in the past year or
+                so, but so far Warp has everything I need and more.
+              </Text>
+            </Box>
+            <Box>
+              <Text className="mb-2">
+                <Text
+                  is="strong"
+                  className="font-bold"
+                >
+                  Browser
+                </Text>{' '}
+                <Text
+                  is="em"
+                  className="italic"
+                >
+                  Arc
+                </Text>
+              </Text>
+              <Text>
+                I've been using Arc for a while now and it's become my de-factor
+                standard browser for all use cases.
+              </Text>
+            </Box>
+          </Stack>
+        </Box>
         <Box className="my-5">
           <Text>April, 2024</Text>
           <Stack gap={2}>
