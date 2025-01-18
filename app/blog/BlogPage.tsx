@@ -26,6 +26,9 @@ async function getFileMeta(post: Post): Promise<FileMeta> {
 
   if (results.status === 'fulfilled') {
     let commit = results.value[0]
+    if (!commit) {
+      return null
+    }
     return {
       date: commit.commit.committer.date as string,
     }

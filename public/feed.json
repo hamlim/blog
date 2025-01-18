@@ -2537,6 +2537,21 @@
       "description": "You don't need to wait until January 1st to set yearly goals and resolutions for yourself!",
       "publishedDate": "2024-12-31T14:52:57.226Z",
       "uuid": "4207262199959157369"
+    },
+    {
+      "id": 174,
+      "title": "Resetting Controlled Components in Forms",
+      "path": "/posts/2025/january/resetting-controlled-components-in-forms.md",
+      "slug": "resetting-controlled-components-in-forms",
+      "date": "January 18th, 2025",
+      "time": "9:42:15 AM",
+      "month": "january",
+      "year": "2025",
+      "tags": ["React", "Web Development", "React Server Components"],
+      "status": "public",
+      "description": "A quick way to handle resetting internal state in components when a parent form is submitted!",
+      "publishedDate": "2025-01-18T14:42:15.595Z",
+      "uuid": "16861065205099070577"
     }
   ],
   "notebookEntries": [
