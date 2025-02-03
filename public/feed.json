@@ -2567,6 +2567,21 @@
       "description": "Is it a good or a bad thing to offload writing code to AI agents and Large Language Models?",
       "publishedDate": "2025-01-28T01:28:43.626Z",
       "uuid": "15587990897466402315"
+    },
+    {
+      "id": 176,
+      "title": "Single File Web Apps",
+      "path": "/posts/2025/february/single-file-web-apps.md",
+      "slug": "single-file-web-apps",
+      "date": "February 3rd, 2025",
+      "time": "12:27:21 PM",
+      "month": "february",
+      "year": "2025",
+      "tags": ["Web Development", "Development"],
+      "status": "public",
+      "description": "What if you could author an entire web application in a single file?",
+      "publishedDate": "2025-02-03T17:27:21.815Z",
+      "uuid": "10250671704430960334"
     }
   ],
   "notebookEntries": [
