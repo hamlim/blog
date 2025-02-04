@@ -25,9 +25,9 @@ export default async function Bookshelf() {
         <BaseLink
           target="_blank"
           rel="noopener noreferrer"
-          href="https://twitter.com/immatthamlin"
+          href="https://bsky.app/profile/matthamlin.me"
         >
-          on twitter
+          on Bluesky
           <span className="sr-only">(opens in new window)</span>
         </BaseLink>{' '}
         if you have book recommendations!
