@@ -2582,6 +2582,21 @@
       "description": "What if you could author an entire web application in a single file?",
       "publishedDate": "2025-02-03T17:27:21.815Z",
       "uuid": "10250671704430960334"
+    },
+    {
+      "id": 177,
+      "title": "Cursor and Obsidian",
+      "path": "/posts/2025/february/cursor-and-obsidian.md",
+      "slug": "cursor-and-obsidian",
+      "date": "February 13th, 2025",
+      "time": "10:11:05 AM",
+      "month": "february",
+      "year": "2025",
+      "tags": ["AI", "Obsidian", "Personal Knowledge Management"],
+      "status": "public",
+      "description": "A quick look at combining Cursor with Obsidian to ask questions of your notes!",
+      "publishedDate": "2025-02-13T15:11:05.636Z",
+      "uuid": "1965637415601778435"
     }
   ],
   "notebookEntries": [
