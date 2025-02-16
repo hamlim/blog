@@ -2597,6 +2597,21 @@
       "description": "A quick look at combining Cursor with Obsidian to ask questions of your notes!",
       "publishedDate": "2025-02-13T15:11:05.636Z",
       "uuid": "1965637415601778435"
+    },
+    {
+      "id": 178,
+      "title": "You're Building Software Wrong",
+      "path": "/posts/2025/february/youre-building-software-wrong.md",
+      "slug": "youre-building-software-wrong",
+      "date": "February 15th, 2025",
+      "time": "7:42:00 PM",
+      "month": "february",
+      "year": "2025",
+      "tags": ["Web Development", "Development", "Software Development"],
+      "status": "public",
+      "description": "Slicing software: why vertical is better than horizontal.",
+      "publishedDate": "2025-02-16T00:42:00.691Z",
+      "uuid": "18385291202541278128"
     }
   ],
   "notebookEntries": [
