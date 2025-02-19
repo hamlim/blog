@@ -2612,6 +2612,21 @@
       "description": "Slicing software: why vertical is better than horizontal.",
       "publishedDate": "2025-02-16T00:42:00.691Z",
       "uuid": "18385291202541278128"
+    },
+    {
+      "id": 179,
+      "title": "On File-System Routing Conventions",
+      "path": "/posts/2025/february/on-file-system-routing-conventions.md",
+      "slug": "on-file-system-routing-conventions",
+      "date": "February 19th, 2025",
+      "time": "4:58:25 PM",
+      "month": "february",
+      "year": "2025",
+      "tags": ["Web Development", "Next.js", "Garbanzo", "Opinion"],
+      "status": "public",
+      "description": "Some rough thoughts on building a file-system routing based web application",
+      "publishedDate": "2025-02-19T21:58:25.473Z",
+      "uuid": "10576277603451551507"
     }
   ],
   "notebookEntries": [
