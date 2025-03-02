@@ -28,7 +28,7 @@ export default function Layout({ children }) {
           disableTransitionOnChange
         >
           <main className="flex grow flex-col min-h-screen">
-            <header className="flex-shrink bg-base-200">
+            <header className="flex-shrink">
               <NavigationHeader />
             </header>
             <Box className="flex">
