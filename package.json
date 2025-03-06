@@ -14,6 +14,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@atproto/api": "^0.14.7",
     "@codesandbox/sandpack-react": "2.7.0",
     "@ds-pack/use-refs": "1.0.0",
     "@hamstack/bluesky-embed-rsc": "0.1.1",

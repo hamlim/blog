@@ -1,6 +1,7 @@
 import type { Post } from '@/lib/types'
 import Mentions from '@lib/Mentions'
 import { PostWrapper } from '@lib/PostWrapper'
+import { BlueskyComments } from '@lib/bluesky-comments'
 import { fetchManifest } from '@lib/fetch-manifest'
 import { Box } from '@recipes/box'
 import { Heading } from '@recipes/heading'
@@ -130,6 +131,9 @@ export default async function Blog({ id, children }) {
           </Box>
         </Box>
       ) : null}
+      <Box className="mt-8">
+        <BlueskyComments />
+      </Box>
     </Box>
   )
 }
