@@ -180,5 +180,8 @@ const sortByLikes = (a: unknown, b: unknown) => {
   ) {
     return 0
   }
-  return (b.post.likeCount ?? 0) - (a.post.likeCount ?? 0)
+  return (
+    ((b as AppBskyFeedDefs.ThreadViewPost).post.likeCount ?? 0) -
+    ((a as AppBskyFeedDefs.ThreadViewPost).post.likeCount ?? 0)
+  )
 }

@@ -1,5 +1,5 @@
 import { AppBskyFeedDefs, AppBskyFeedPost } from '@atproto/api'
-import React from 'react'
+import type { ReactNode } from 'react'
 
 type CommentProps = {
   comment: AppBskyFeedDefs.ThreadViewPost
@@ -44,7 +44,7 @@ export const Comment = ({ comment, filters }: CommentProps) => {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <p>{comment.post.record.text}</p>
+          <p>{comment.post.record.text as unknown as ReactNode}</p>
           <Actions post={comment.post} />
         </a>
       </div>
@@ -132,5 +132,8 @@ const sortByLikes = (a: unknown, b: unknown) => {
   ) {
     return 0
   }
-  return (b.post.likeCount ?? 0) - (a.post.likeCount ?? 0)
+  return (
+    ((b as AppBskyFeedDefs.ThreadViewPost).post.likeCount ?? 0) -
+    ((a as AppBskyFeedDefs.ThreadViewPost).post.likeCount ?? 0)
+  )
 }
