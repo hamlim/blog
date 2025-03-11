@@ -2648,6 +2648,21 @@
       "description": "A quick tip outlining how to provide specific TypeScript type definitions for a local module!",
       "publishedDate": "2025-02-24T21:54:47.554Z",
       "uuid": "6900371333046232959"
+    },
+    {
+      "id": 181,
+      "title": "Replacing Dropbox Capture with Raycast",
+      "path": "/posts/2025/march/replacing-dropbox-capture-with-raycast.md",
+      "slug": "replacing-dropbox-capture-with-raycast",
+      "date": "March 11th, 2025",
+      "time": "4:56:08 PM",
+      "month": "march",
+      "year": "2025",
+      "tags": ["Dropbox", "Raycast", "Tools", "Tip"],
+      "status": "public",
+      "description": "Recently Dropbox announced that it was shutting down the Capture app/service, so I sought out an alternative that provided a similar user experience!",
+      "publishedDate": "2025-03-11T20:56:08.526Z",
+      "uuid": "15668436743080245343"
     }
   ],
   "notebookEntries": [
