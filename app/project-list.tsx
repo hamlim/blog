@@ -34,6 +34,15 @@ export let projects: Array<{
       'A React Server Component for embedding Bluesky posts within your app!',
   },
   {
+    link: 'https://bluesky-comments-docs.mhamlin.workers.dev/',
+    title: (
+      <>
+        <Code>@hamstack/bluesky-comments</Code>
+      </>
+    ),
+    description: 'Add comments to any URL, powered by Bluesky!',
+  },
+  {
     link: 'https://github.com/hamlim/rereplay',
     title: 'Rereplay',
     description:
@@ -69,6 +78,18 @@ export let projects: Array<{
     link: 'https://github.com/hamlim/milliform',
     title: 'Milliform',
     description: 'A super basic React.js form library!',
+  },
+  {
+    link: 'https://mdxlite-docs.mhamlin.workers.dev/',
+    title: 'mdxlite',
+    description:
+      'A minimal MDX runtime for constrained environments, e.g. Cloudflare Workers.',
+  },
+  {
+    link: 'https://github.com/hamlim/vndr/tree/main/packages/vndr',
+    title: 'vndr',
+    description:
+      'A lightweight CLI tool for downloading packages, repositories, and files from various sources.',
   },
   {
     link: 'https://github.com/hamlim/rsc-form',
