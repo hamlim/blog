@@ -2663,6 +2663,21 @@
       "description": "Recently Dropbox announced that it was shutting down the Capture app/service, so I sought out an alternative that provided a similar user experience!",
       "publishedDate": "2025-03-11T20:56:08.526Z",
       "uuid": "15668436743080245343"
+    },
+    {
+      "id": 182,
+      "title": "Podcasting By Hand",
+      "path": "/posts/2025/april/podcasting-by-hand.md",
+      "slug": "podcasting-by-hand",
+      "date": "April 14th, 2025",
+      "time": "7:15:40 AM",
+      "month": "april",
+      "year": "2025",
+      "tags": ["Web Development", "Podcasting", "The Bikeshed Pod"],
+      "status": "public",
+      "description": "A brief overview on how we launched The Bikeshed Podcast, including a deep dive in our recording and distribution workflows!",
+      "publishedDate": "2025-04-14T11:15:40.844Z",
+      "uuid": "2549386862676512219"
     }
   ],
   "notebookEntries": [
