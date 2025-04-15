@@ -2678,6 +2678,29 @@
       "description": "A brief overview on how we launched The Bikeshed Podcast, including a deep dive in our recording and distribution workflows!",
       "publishedDate": "2025-04-14T11:15:40.844Z",
       "uuid": "2549386862676512219"
+    },
+    {
+      "id": 183,
+      "title": "Server Side Rendering Compatible CSS Theming",
+      "path": "/posts/2025/april/server-side-rendering-compatible-css-theming.md",
+      "slug": "server-side-rendering-compatible-css-theming",
+      "date": "April 15th, 2025",
+      "time": "4:40:38 PM",
+      "month": "april",
+      "year": "2025",
+      "tags": [
+        "Web Development",
+        "Theming",
+        "CSS",
+        "Next.js",
+        "Waku",
+        "React",
+        "Tip"
+      ],
+      "status": "public",
+      "description": "A quick tip to implementing CSS theming that's compatible with Server Side Rendered applications!",
+      "publishedDate": "2025-04-15T20:40:38.305Z",
+      "uuid": "15254662650304117584"
     }
   ],
   "notebookEntries": [
