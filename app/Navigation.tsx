@@ -170,12 +170,14 @@ function NavList() {
       >
         <Contact2 size={24} /> Social
       </ActiveLink>
+      {/*
       <ActiveLink
         href="/feed"
         className="flex items-center p-4 gap-4"
       >
         <MessageSquareTextIcon size={24} /> Feed
       </ActiveLink>
+      */}
     </>
   )
 }
