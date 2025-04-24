@@ -49,6 +49,11 @@ export let projects: Array<{
       'A native fetch-caching solution for idempotent network requests!',
   },
   {
+    link: 'https://pikitia-docs.mhamlin.workers.dev/',
+    title: 'Pikitia',
+    description: 'A minimal React based image generator!',
+  },
+  {
     link: 'https://switch-kit.vercel.app/',
     title: 'Switch Kit',
     description:
