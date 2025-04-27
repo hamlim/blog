@@ -382,5 +382,12 @@
     "status": "read",
     "dateStarted": "April 2 2025",
     "dateFinished": "April 9 2025"
+  },
+  {
+    "title": "The Sun Also Rises",
+    "author": "Ernest Hemingway",
+    "url": "https://www.goodreads.com/book/show/3876",
+    "status": "reading",
+    "dateStarted": "April 25 2025"
   }
 ]
