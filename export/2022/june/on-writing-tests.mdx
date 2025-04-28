@@ -1,0 +1,46 @@
+---
+title: "On Writing Tests"
+slug: "on-writing-tests"
+path: "/2022/june/on-writing-tests"
+date: 1656275961000
+status: "public"
+type: "blog-post"
+tags: ["Development","Testing"]
+description: ""
+month: "june"
+year: 2022
+---
+
+
+
+Frequently I see developers writing unit tests using a lot of [metaprogramming](https://en.wikipedia.org/wiki/Metaprogramming#:~:text=Metaprogramming%20is%20a%20programming%20technique,even%20modify%20itself%20while%20running.)
+patterns, for example packaging up shared functionality across multiple tests
+into it’s own helper utility function. However I personally believe this pattern
+actively contributes to more difficult to maintain test suites.
+
+I think this trend partially gains momentum because developers tend to follow
+the [DRY programming principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself),
+so whenever they see the same code used in two places they immediately reach for
+an abstraction that can be used in both places.
+
+Eventually these abstractions grow to become unmaintainable, it usually starts
+with adding one more unit test that needs to change the argument of a function
+or a prop on a component, which seems easy enough to add it as an argument to
+the abstraction. This soon snowballs as more and more edge cases need to be
+added to the abstraction. Finally, a different engineer is looking at a failing
+test 2 years from now and scratching their head on what is happening within the
+unit test, they need to jump through complex abstractions layered on the unit
+under test until they’re forced to give up and disable the test.
+
+Instead, I recommend that developers usually keep tests as isolated as possible,
+what you do in one test shouldn’t impact your other tests! This mindset can be
+really difficult to feel comfortable with, but I’ve found it starts to come
+naturally over time. Plus it builds on two crucial tools to most engineers
+toolbox: `copy` and `paste` 😂 !
+
+<Spacer />
+
+---
+
+<Spacer />
+

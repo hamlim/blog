@@ -1,0 +1,168 @@
+---
+title: "On Code Review"
+slug: "on-code-review"
+path: "/2021/march/on-code-review"
+date: 1615809600000
+status: "public"
+type: "blog-post"
+tags: ["Development Practices","Code Review"]
+description: ""
+month: "march"
+year: 2021
+---
+
+
+
+I've written a decent amount about code review practices, particularly about
+[Draft Pull Requests](/blog/2020/march/draft-pull-requests) and
+[Pair Code Reviews](/blog/2020/december/pair-code-reviews), however I haven't really
+talked about how _I_ approach reviewing pull requests.
+
+While I don't think I have a particularly interesting process for reviewing pull
+requests, I do think that documenting it can provide additional insight for
+myself when I open another pull request. I also would like to see how others
+approach reviewing code and to see where we might differ in process!
+
+Before diving in, I'll note that essentially all of the code reviews I do these
+days happen on GitHub, either on GitHub.com or our internal enterprise GitHub
+instance, so some of the things I refer to may only apply for GitHub and may not
+map cleanly over to other git hosting services or code review platforms.
+
+## Process:
+
+To start, I usually give a read through of the Discussions tab of the PR, this
+is the default tab that includes the PR description, and a feed of activity on
+the PR (including other comments, commits, and CI status messages).
+
+At this stage, I may have some understanding of the change before even reading
+through the PR description, either based on the title of the PR, or if a team
+member shared the PR with me they may have provided some additional context.
+
+I'll read through the PR description that the author added, noting any
+interesting assumptions, questions, or callouts that the author added
+<FootnoteRef id="1" />.
+
+From there, I ask myself:
+
+> Do I have enough information to dive into the rest of the PR?
+
+If the answer to this question is no, I pause reviewing the PR and instead reach
+out to the author (either on the PR itself or over slack) to have them share a
+bit more context about the changeset.
+
+While I often review PRs that I don't have complete context over, I generally
+prefer to have at least a cursory understanding of the context around the
+changeset as it can help me connect some dots between this PR and the various
+other work that the team is working on at the moment.
+
+Assuming I have enough context to continue on with the PR, I'll continue down
+the Discussions tab and review any other PR feedback that has already been added
+either by the author or another code reviewer.
+
+Catching up on any other active or resolved discussions can be helpful to avoid
+providing duplicate feedback for the author, and helps to understand other
+decisions that the author and other code reviewers have made about the changeset
+<FootnoteRef id="2" />.
+
+Finally, after reviewing through the Discussions tab, I'm ready to dive into the
+code changes. Here I'm usually looking for a few things:
+
+- Are there any assumptions being made within the code changes that haven't been
+  called out in the PR description or the original ticket?
+- Similar to assumptions above, are there possible edge cases that the author
+  might have accounted for?
+- Will I feel confident contributing to this code in ~6 months as-is,
+  essentially, how easily will it be for other contributors to dive in and make
+  a change?
+
+I don't use an explicit checklist for the above bullet points, and frequently
+I'll have other things in mind when reviewing a change that are specific to the
+code being changed.
+
+I usually categorize most of my "nitpick"<FootnoteRef id="3" /> feedback under
+the third bullet point above, usually trying to frame the feedback as optional
+and also up for discussion.
+
+## Delivery:
+
+Far more important than the process that I follow for code reviews is the
+delivery of the feedback on the PR.
+
+While providing direct feedback might work sometimes, it usually leads to making
+the code review process feel hostile and a battle between the author and the
+code reviewer.
+
+For the first few years at my current job I remember some of the most critical
+feedback I received during my performance reviews from my peers and managers was
+around my code review etiquette.
+
+I was super critical, straight to the point, and also frequently delivering my
+feedback in a way that made it seem like it should be done my way or not be done
+at all. It took me a while to get around some of this, and I honestly still have
+a huge opportunity to improve how I deliver feedback on PRs.
+
+Since then, I think I've gotten a bit better at delivering my feedback in a more
+friendly way, one of the crucial aspects that helped me improve here was
+reconsidering what code review is for. In the past, I had usually approached
+code reviews with a very high bar for what we should consider merging into the
+codebase, frequently applying my own personal preferences and flavors on top of
+our existing styleguides.
+
+More recently, I've tried to take a more broad view of the changes, devaluaing
+my own internal preferences in favor of thinking about the code as belonging to
+everyone (both current contributors and future contributors).
+
+These days, I try my best to both call out opinions as clearly as possible, and
+also phrase most feedback in the form of a question. I've seen both of these
+help to clear up the review for the author, and also approaches from a
+standpoint of the changeset being an opportunity for learning and discussion
+rather than an opportunity to meet some absurdly high bar for standards.
+
+These frequently look like:
+
+> ### Discussion - non-blocking:
+>
+> What are your thoughts on changing the approach here to use `reduce` instead
+> of `map` and `filter`?
+
+These signals help the author to more clearly understand if the feedback should
+be fixed before merging or can be dropped, which usually speeds up the time
+between review iterations and merging as well.
+
+## Wrapping Up
+
+I didn't cover other topics in this post such as running the changed code
+locally / in a preview environment, or
+[Pair Reviewing](/blog/2020/december/pair-code-reviews) so I'll leave those topics to
+further blog posts.
+
+I'd love to hear how you approach code reviews, both from a process standpoint
+and from the delivery perspective! Feel free to reach out on Twitter to share
+your perspective, or write a blog post about it!
+
+<Spacer />
+
+---
+
+<Spacer />
+
+### Footnotes:
+
+<Footnote id="1">
+I don't usually literally note these in my go-to note taking tool, but usually only take a mental note of these.
+</Footnote>
+
+<Spacer />
+
+<Footnote id="2">
+I don't usually review PRs that another team member is actively reviewing unless I'm interested in seeing the changes or either the author or other reviewers asked for more feedback/insight into the changesets. Part of the reason for avoiding doubling up on a PR is that I have full confidence in all the members of my team (and the other teams I frequently work with) to review any change being made to the codebase.
+</Footnote>
+
+<Spacer />
+
+<Footnote id="3">
+A small, usually insignificant suggested change to make the code more readable
+</Footnote>
+
+<Spacer />
+

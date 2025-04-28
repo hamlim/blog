@@ -1,0 +1,57 @@
+---
+title: "Upgrade Guides"
+slug: "upgrade-guides"
+path: "/2022/may/upgrade-guides"
+date: 1652783129000
+status: "public"
+type: "blog-post"
+tags: ["Development"]
+description: ""
+month: "may"
+year: 2022
+---
+
+
+
+Most healthy open source projects maintain a changelog, that annotates the
+changes made to the project over time, and usually relates those changes to the
+semver version that they are released with.
+
+However, these changelogs tend to not go into details about how that change will
+impact projects relying on the library. Usually the changelog is just a
+convenience feature that allows people to track changes over time.
+
+Something I've been thinking about for a while is if projects should offer
+either a more robust changelog, or a new file entirely that can better speak to
+the impact of changes made to the library over time.
+
+The design systems team at Wayfair has been tinkering in this space for a few
+years now, usually when we deprecated a component or another piece of code we
+authored an upgrade guide or manual to help the features relying on the now
+deprecated component to move to the proper supported patterns.
+
+Usually those guides are finely scoped to specific components, but what if every
+library kept an upgrade guide that covered all aspects of the library?
+
+This would be incredibly useful for consumers of the library if they fall behind
+by several releases, allowing them to follow the guide from version to version,
+making the required changes within their codebase.
+
+I could imagine these guides being setup as a similar format as most
+`changelog.md` files, broken down by release with detailed notes on how the
+consumer can navigate any changes that the library is making.
+
+This could also be a really useful resource for libraries that plan out their
+breaking changes, they can use this guide as a place to note upcoming breaking
+changes and how projects can plan for those changes before they are released.
+
+What are your thoughts about this concept? Would you find it valuable for the
+libraries you depend upon to ship a `upgrade-guide.md` document alongside their
+existing changelog?
+
+<Spacer />
+
+---
+
+<Spacer />
+

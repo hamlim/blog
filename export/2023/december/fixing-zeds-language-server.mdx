@@ -1,0 +1,54 @@
+---
+title: "Fixing Zed's language server"
+slug: "fixing-zeds-language-server"
+path: "/2023/december/fixing-zeds-language-server"
+date: 1702024329000
+status: "public"
+type: "blog-post"
+tags: ["Tip","Zed"]
+description: "Zed language server quick tip; fixing Zed's language server"
+month: "december"
+year: 2023
+---
+
+
+I was recently trying out the [Zed](https://zed.dev/) editor instead of VSCode,
+however for a while I was struggling with getting the language server to work
+for a project. I wasn't seeing any inlay hints, nor any hover tooltips for any
+JavaScript or TypeScript code, it was getting pretty frustrating.
+
+I was about to give up on it and go back to VSCode, but I figured I'd give it
+one last go.
+
+After some debugging, I found out a few things that felt decently buried in
+their support forums so I figured I'd blog them here in case others run into the
+same issue and are looking for the solution.
+
+<TLDR>
+
+If you aren't getting any type hints / hover tooltips etc for JavaScript or
+TypeScript and you're not sure why, check for `package.json` or `node_modules`
+in your root directory (`~/`). If those files/folders exist, delete them and
+close and re-open Zed!
+
+</TLDR>
+
+Apparently Zed installs language servers (or at least the
+`typescript-language-server`) from npm, however it usually does this within some
+subdirectory where it caches a few other things, something like
+`~/Library/Application Support/Zed/`.
+
+However, that logic that Zed uses to install the language server maybe shortcuts
+/ runs into an issue if you have a top level `package.json` within your root
+directory, e.g. `~/`. In that case, it installs the language server at the root
+instead of within the application's folder.
+
+This will wreck some havoc when Zed tries to launch the language server when it
+starts up. Another pro tip is that you can check the logs from Zed in the
+following log file: `~/Library/Logs/Zed/Zed.log`.
+
+I found this solution from
+[this GitHub comment](https://github.com/zed-industries/community/issues/1756#issuecomment-1786866119)!
+
+---
+

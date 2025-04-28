@@ -1,0 +1,38 @@
+---
+title: "Funport: True Dynamic Imports in webpack"
+slug: "funport"
+path: "/2024/april/funport"
+date: 1712952033000
+status: "public"
+type: "blog-post"
+tags: ["Development","webpack","Next.js"]
+description: "webpack, and tools built on it like Next.js, don't support true dynamic imports, but I found a way to trick the system!"
+month: "april"
+year: 2024
+---
+
+
+If you've ever wanted to leverage `import()` from the browser (or node process) within an application that uses webpack - you have probably realized that webpack "hijacks" the `import()` function and replaces it with its own implementation. This is great for static imports, but what if you want to dynamically import a module that webpack doesn't know about at build time?
+
+I was running into this limitation the other day, and couldn't really find any good resources out there that helped me to workaround the limitation.
+
+To note - the limitation is there because webpack defaults to attempting to statically analyze your code and build a dependency graph. This is great for performance and tree shaking, but not so great when you want to dynamically import a module in your application at runtime!
+
+The solution that I found was to use `new Function` (an often overlooked but incredible utility) to build our own `import()` method that webpack doesn't know about.
+
+```tsx
+// Where the fun begins
+let funport = new Function('url', 'return import(url)');
+```
+
+Now you can use `funport` to dynamically import modules in your application!
+
+Here's a quick example:
+
+```tsx
+let {createElement} = await funport('https://esm.sh/react');
+
+function App() {
+  return createElement('h1', null, 'Hello, World!');
+};
+```

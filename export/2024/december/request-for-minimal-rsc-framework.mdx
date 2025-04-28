@@ -1,0 +1,45 @@
+---
+title: "Request for a (minimal) RSC Framework"
+slug: "request-for-minimal-rsc-framework"
+path: "/2024/december/request-for-minimal-rsc-framework"
+date: 1733086988056
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Development","React","React Server Components","Server Actions","Forms"]
+description: "Some features and functionality that I'd like within a React Server Component compatible framework."
+month: "december"
+year: 2024
+---
+
+
+Over the past two or so weeks I've been trying a number of different experiments to setup my ideal React Server Component framework. I've heavily used [Next.js](https://nextjs.org/) (both in the past and still actively for this blog at the time of writing), however I've wanted to branch out and try a few other solutions in the ecosystem.
+
+However, I still haven't found something that offers the features that I'd really like from a framework. I figured I'd write up some of these thoughts and maybe nerd snipe someone into creating something that provides these features!
+
+### Requirements:
+
+- Supports React Server Components (with Server Side Rendering)
+	- There's been a number of discussions around the trade offs with RSC's vs traditional SSR or CSR apps, I feel like there's still enough benefits of RSC's
+- Deployable on different runtimes
+	- Not limited to Bun (for example), can deploy to Vercel, Cloudflare Workers, traditional serverless platforms, etc
+- Flexibility with the underlying server framework (ideally `hono` as a default, but ability to swap it out with something else)
+
+
+### Features:
+
+- Support for "page" and "route" handlers
+- Filesystem based routing:
+	- `<path>.(page|route).(ts|tsx|js|jsx)`
+		- e.g. `about.page.tsx` renders the `/about` page
+	- `@not-found.(page|route).(ts|tsx|js|jsx)` for 404-style routes
+	- `@error.(page|route).(ts|tsx|js|jsx)` for 500-style routes
+- Access to entire `Request`, `Response`, and `context` (HonoContext) values
+	- Either from something like an `AsyncLocalStore` or as arguments/props to the handlers
+- Support for Tailwind / bring your own favorite CSS framework
+
+
+### Example:
+
+I've created (an obviously non-working) codebase showcasing these features, which I suppose could be used as an example by someone if they were to create a framework to support these features!
+
+[minimal-rsc-framework-demo](https://github.com/hamlim/minimal-rsc-framework-demo).

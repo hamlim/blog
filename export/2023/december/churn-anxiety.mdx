@@ -1,0 +1,69 @@
+---
+title: "Churn Anxiety"
+slug: "churn-anxiety"
+path: "/2023/december/churn-anxiety"
+date: 1703792233000
+status: "public"
+type: "blog-post"
+tags: ["Development","Web Development"]
+description: "When did semver major changes become so scary?"
+month: "december"
+year: 2023
+---
+
+
+I recently ready this really good post titled
+[Cold-blooded Software](https://dubroy.com/blog/cold-blooded-software/), and it
+got me thinking about the two primary reasons that I tend to avoid adopting new
+software:
+
+- There's a semver major change coming soon
+- The software has become abandoned
+
+The second feels reasonable, why invest in something that is no longer
+maintained, no longer gets bug fixes or new features, or nowadays more
+importantly keeps up to date with the other libraries and frameworks that it
+gets adopted alongside. A recent example of this was that I wanted to look at
+adopting [Contentlayer](https://contentlayer.dev/) for my personal blog, however
+I checked a few open issues and noticed that the core maintainer of the library
+hasn’t been active for a number of months at the time.
+
+My immediate reaction was that I didn’t want to adopt it because it might not
+keep up to date with other features or libraries that I used in my personal
+blog.
+
+However, this isn't the point of the post, instead the first reason above I
+haven’t really seen much content be produced about, but it honestly keeps me
+away from libraries and frameworks far more often than the abandonware case, and
+it seems like it impacts others just the same:
+
+<Tweet id="1740431831210848733">
+  <p lang="en" dir="ltr">Coming from frontend land, seeing htmx 2.0 is on the horizon (not released yet), I assumed htmx 2.0 shipped with tons of breaking or at least some ground breaking change that will force me to rewrite my app and.. nope.<br />Feels like a parallel universe or something 😂</p>&mdash; flavio (@flaviocopes) <a href="https://twitter.com/flaviocopes/status/1740431831210848733?ref_src=twsrc%5Etfw">December 28, 2023</a>
+</Tweet>
+
+Spending time and effort to invest into a library or a framework (or a language
+for that matter), only to have that be turned on it's head following a semver
+major release is disheartening.
+
+You feel like you're making progress, beginning to understand the system, it's
+API, the extents of the system, even it's trade offs, and then you need to throw
+that all out the window and start over.
+
+Even for libraries that pride themselves on making minimal breaking changes get
+burnt by those that don't. Someone gets burnt by the Common JS to ES Module
+migration on NPM, and now they feel like the semver major release of Next.js
+from 13.x to 14 is going to impossible to work through<FootnoteRef id="1" />.
+
+I'm not sure what the solution is here, maybe myself (and others) can get more
+comfortable software changing. Or, just maybe, we can start to harden our
+software, make it more slow moving and slow updating, and also maybe vendoring
+in more things instead of depending upon as many libraries as we do.
+
+---
+
+### Footnotes:
+
+<Footnote id="1">Although I didn't find that upgrade all that painful, even
+though some of their semver minor releases have been painful in the
+past.</Footnote>
+

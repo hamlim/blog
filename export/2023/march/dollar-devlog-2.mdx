@@ -1,0 +1,125 @@
+---
+title: "Dollar: Devlog 2"
+slug: "dollar-devlog-2"
+path: "/2023/march/dollar-devlog-2"
+date: 1679827620000
+status: "public"
+type: "blog-post"
+tags: ["Development","Dollar","Projects"]
+description: ""
+month: "march"
+year: 2023
+---
+
+
+This post is a continuation of my first Dollar Devlog
+[here](/blog/2023/january/dollar-devlog-1).
+
+It's been a bit since the last devlog, life has generally got in the way (work
+more-so than anything else), however this weekend I was able to spend quite a
+bit of time working on Dollar again.
+
+I've made some changes since the last devlog, but still nothing publically
+available to showcase just yet!
+
+Primarily, this Saturday I started off by forking my component library
+(`@ds-pack/components`) into a new package that completely swaps out Vanilla
+Extract for TailwindCSS (using [`daisyui`](https://daisyui.com/)). For those of
+you that know me, you might be a bit surprised that I decided to try out
+tailwind, I've frequently referred to it as "bootstrapcss for the modern age",
+yet ironically - that's exactly what I've been looking for as of late.
+
+I don't intend to fully dig into that transition in this post (I might blog
+about it in another post however), but the main reason that I opted to switch
+was that I wanted to tear down how my css build pipeline works in most of my
+modern Next.js applications. I've written about that in my
+[opinionated Next.js app setup](/blog/2022/december/updated-opinionated-nextjs-setup)
+blog post, but the gist is that having two process running at once to compile
+styles and run the app was a pain and let to a ton of issues when iteratively
+updating styles.
+
+Daisyui seemed like a good option, and really all I wanted was a React version
+of it - which I felt like `@ds-pack/components` was a good bare bones React
+component library to fit that need. I've published a very early version of the
+library as `@ds-pack/daisyui`, feel free to check it out if you want to
+experiment with the library in your own side project! (I do plan to refactor my
+personal site with this version of my components, but that might take a while to
+fully implement)
+
+Alright, back to my work on Dollar, I haven't made much progress because of the
+effort required to build the new UI library (although completeing it in the span
+of an afternoon was pretty sweet).
+
+Outside of the new coat of paint, I've been able to:
+
+- Fully integrate React Server Components
+- Experiment with Server Actions (more on this below)
+- Begin to wire up supabase as the DB for the project
+
+### Server Actions
+
+Alright, I know server actions are still super early, but they're kind of
+promising. Being able to do remote procedure calls within React is pretty dope!
+
+For those that don't know, that roughly looks like the following:
+
+```tsx
+// some client code, like a form!
+'use client';
+
+import { login } from './actions';
+
+export default function Form() {
+  return (
+    <form>
+      <input name='email' type='text' />
+      <button
+        type='button'
+        onClick={async () => {
+          let userToken = await login({
+            email: document.getElementsByName('email')[0].value,
+          });
+          // do what you want with userToken here!
+        }}
+      >
+        Login!
+      </button>
+    </form>
+  );
+}
+```
+
+You might be thinking, that doesn't seem too cool, we've been doing that for
+years, `login` from `./actions` could just be a wrapper around a `fetch()` call!
+
+Here's the cool thing, it is, but I don't have to do all the complext work of
+wiring up that `fetch` call, here's the full code of `./actions`:
+
+```tsx
+// new directive!
+'use server';
+
+export async function login({ email }) {
+  // do something to login the user
+  return userToken;
+}
+```
+
+The really neat thing here is that React / Next are doing the heavy lifting for
+me to do the `fetch` call in the background!
+
+There are some limitations however, e.g. for logging in a user I'd probably want
+to store a JWT as a cookie, unfortunately I don't have access to the raw
+`Request` and also I'm not able to send a raw `Response` back to the client - so
+I'd probably still want to reach for Next.js `routes` to support some of those
+use cases.
+
+None the less, this is still a pretty neat pattern that I plan on exploring more
+as I get deeper into the project!
+
+<Spacer />
+
+---
+
+<Spacer />
+

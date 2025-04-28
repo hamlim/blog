@@ -1,0 +1,124 @@
+---
+title: "Array Chunking"
+slug: "array-chunking"
+path: "/2021/march/array-chunking"
+date: 1615118400000
+status: "public"
+type: "blog-post"
+tags: ["JavaScript","Development"]
+description: ""
+month: "march"
+year: 2021
+---
+
+
+
+On several of my side projects, this blog included, I've had to reach for some
+kind of array chunking code, something that would take a flat array of items and
+bunch together the items based on some logic frequently based on the number of
+items I want in each chunk.
+
+While I could probably reach for some `_.chunk` method, I've always opted to
+instead write the function locally since it's all of about 10 or 15 lines.
+
+Since I keep on needing this utility, I figured it would be a good exercise to
+write one and also write about writing one on my blog!
+
+So, without further ado, let's dig in!
+
+Let's start with the problem we're trying to solve, we want to take an array of
+elements, and would like to return an array of arrays of those items.
+
+Now, we could try and make this super generic to start, but for simplicity sake
+let's start by trying to create an array chunking function that chunks the array
+into groups of the same length.
+
+So we have two arguments for our function: `array` and `length`, the first is
+the input array of elements, and the second is the desired chunk length.
+
+```tsx
+function chunk(array, length) {}
+```
+
+Great, let's dive into the implementation, I think I'll want to reach for
+[reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+for the implementation to manage the chunking for us, so let's get that started
+in our function:
+
+```tsx
+function chunk(array, length) {
+  return array.reduce((chunked, item) => {
+    // @TODO
+  }, []);
+}
+```
+
+With the above code, we're returning the result of the reduce call, and we're
+defaulting the value to an empty array.
+
+Great, now lets get into the really difficult stuff!
+
+To start, the algorithm that we're going to follow will probably look something
+like:
+
+- Grab the last element of the `chunked` array
+  - This should be an array, or undefined for the first iteration
+  - If the last item is undefined, create a new array with the current `item`
+    and append it onto `chunked`
+- Check the length of this array
+  - If the length is equal to the provided `length` param
+    - Create a new array with the current `item` and append it onto `chunked`
+  - Else, insert the current item into the last element of the `chunked` array
+
+Alright, let's start with the above steps and see what happens...
+
+```tsx
+function chunk(array, length) {
+  return array.reduce((chunked, item) => {
+    // grab the last element, note that we're using `.reverse` and rest/spread
+    // here to easily grab it and the rest of the chunked array
+    let [lastElement, ...rest] = chunked.reverse();
+    // If the last element is undefined, then return a new array with the current item
+    if (typeof lastElement === 'undefined') {
+      return [...rest, [item]];
+    }
+    // If the last element's length is less than our desired length
+    // then append the item to the last element
+    if (lastElement.length < length) {
+      return [...rest, [...lastElement, item]];
+    }
+    // finally, return a new array with the current item, since the lastElement's length
+    // is our desired `length`
+    return [...rest, lastElement, [item]];
+  }, []);
+}
+```
+
+So there is our solution, let's see how it works! Feel free to copy the below
+code samples and paste them into devtools or a node repl to test for yourself!
+
+```tsx
+function chunk(array, length) {
+  return array.reduce((chunked, item) => {
+    let [lastElement, ...rest] = chunked.reverse();
+    if (typeof lastElement === 'undefined') {
+      return [...rest, [item]];
+    }
+    if (lastElement.length < length) {
+      return [...rest, [...lastElement, item]];
+    }
+    return [...rest, lastElement, [item]];
+  }, []);
+}
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 22, 33, 44, 55, 66, 77, 88, 99];
+
+chunk(arr, 3);
+```
+
+<Spacer />
+
+---
+
+<Spacer />
+

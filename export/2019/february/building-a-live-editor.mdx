@@ -1,0 +1,147 @@
+---
+title: "Building a Live Editor"
+slug: "building-a-live-editor"
+path: "/2019/february/building-a-live-editor"
+date: 1549022400000
+status: "public"
+type: "blog-post"
+tags: ["Development","Side Projects"]
+description: ""
+month: "february"
+year: 2019
+---
+
+
+
+As I have been working on my personal blog, I wanted to include the ability to
+edit code on site, and also preview it live. I started using
+[react-live](https://github.com/FormidableLabs/react-live) which I have had
+prior experience using and setting up, however I wanted to customize the theme
+of the editor a bit and try to work on a new and challenging task over the
+weekend.
+
+So I decided to build `@matthamlin/react-preview-editor`
+([see the project here](https://github.com/hamlim/react-preview-editor)).
+
+## Starting Off with Executing Code
+
+I started off by looking at the source of react-live to figure out how they are
+able to actually call the code that you edit inline. It turns out, that they use
+the `new Function` contructor to pass the code as a string along with an
+assortment of the keys of the things within scope for the code, and then call
+the function.
+
+```js
+function evaluateCode(code, scope) {
+  // scope looks like this: { variableName: 'value' }
+  // construct a new function with the code
+  const func = new Function(...Object.keys(scope), code);
+  // Call the function
+  func(...Object.values(scope));
+}
+```
+
+This allows us to evaluate code that the user types within the editor on the
+site, and probably goes without saying but could be a really bad™️ thing to do
+with live user input.
+
+So now that we know how to actually execute the users code, how do we build the
+editor part?
+
+## The Code Editor
+
+Well that part is actually pretty simple, because other awesome developers out
+there, have already shared open source projects for editing code within the
+browser. Since I wanted to keep the project fairly small, I went with
+[react-simple-code-editor](http://satya164.xyz/react-simple-code-editor/).
+
+This editor allows me to control the highlighting of the code complete, and also
+is really easy to just start using:
+
+```jsx
+<Editor
+  // Give it a value
+  value={code}
+  // Handle changes to the code
+  onValueChange={(code) => updateCode(code)}
+  // Provider it a function that returns a string or a React Node
+  // to highlight the code
+  highlight={highlighter}
+/>;
+```
+
+Great, so we have a way to execute the code, and a way to edit the code, what
+about the syntax highlighting though?
+
+## Highlighting the Code
+
+Well we are just as lucky as we were before, thanks to the
+[prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)
+library, we are able to use a React wrapping API around the `prismjs` library.
+
+This ends up looking like:
+
+```jsx
+// This is the same function we pass to the Editor component above
+function highlighter(code) {
+  return (
+    <Highlight {...defaultProps} code={code} language='jsx'>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={style}>
+          {tokens.map((line, i) => (
+            <div {...getLineProps({ line, key: i })}>
+              {line.map((token, key) => (
+                <span {...getTokenProps({ token, key })} />
+              ))}
+            </div>
+          ))}
+        </pre>
+      )}
+    </Highlight>
+  );
+}
+```
+
+## Wrapping Up
+
+So wrapping it all up, we end up with an API that looks like this:
+
+{/*
+<!-- prettier-ignore -->
+// ==live== template="react" customSetup={"dependencies":{"@matthamlin/react-preview-editor":"latest","@babel/standalone":"latest"}}
+*/}
+```jsx
+import { transform } from '@babel/standalone';
+import { Editor, Preview, Provider } from '@matthamlin/react-preview-editor';
+
+function transformCode(code) {
+  return transform(code, {
+    presets: [['stage-0', { decoratorsLegacy: true }], 'react'],
+  }).code;
+}
+
+const code = `
+function App() {
+  return (
+    <p>Code Here!</p>
+  )
+};
+render(<App />);
+`;
+
+export default function App() {
+  return (
+    <Provider code={code} transformCode={transformCode}>
+      <Preview />
+      <Editor />
+    </Provider>
+  );
+}
+```
+
+Be sure to checkout the project here:
+[github.com/hamlim/react-preview-editor](https://github.com/hamlim/react-preview-editor)
+on GitHub (make sure to ⭐ it too 😆).
+
+And check it out in CodeSandbox [here](https://codesandbox.io/s/wk69q5zv9k).
+

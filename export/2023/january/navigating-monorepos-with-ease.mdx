@@ -1,0 +1,60 @@
+---
+title: "Navigating Monorepos with Ease"
+slug: "navigating-monorepos-with-ease"
+path: "/2023/january/navigating-monorepos-with-ease"
+date: 1675097870000
+status: "public"
+type: "blog-post"
+tags: ["Development","Web Development","Monorepos"]
+description: ""
+month: "january"
+year: 2023
+---
+
+
+A few years back now I wrote [a short blog post](/blog/2021/february/yw) sharing a
+shell function that made it easier to navigate Yarn v1 monorepos. I realized
+today that I haven't updated that post with a new function that works for Yarn
+berry (v2 and v3) releases.
+
+Similar to that original snippet (which I've since re-named to `ywOld`) you'll
+need to install `fzf` and `jq` via homebrew (`brew`), but once you've done that
+you should be able to quickly run any script from any package without typing out
+the whole workspace name or without changing into the directory for the
+workspace.
+
+```sh
+yw() {
+  yarn workspace $(yarn --json workspaces list | jq '.' -r | jq ".name" -r | fzf) "$@"
+}
+```
+
+To "install" this, you can copy and paste the above snippet into your `.bashrc`
+or `.zshrc` file (or whatever config file you use for your shell), and then
+`source` that config (e.g. `source ~/.zshrc`) in your terminal and you should be
+able to use it!
+
+Example usage:
+
+```sh
+# You can use it to run any package.json script within the workspace of
+# your choice via:
+yw <script-name>
+# For example, if you want to run the `test` script on a specific
+# workspace, you can run:
+yw test
+# passing args should "just work":
+yw test some-file-name
+```
+
+Notably, this doesn't let you select multiple workspaces to run a command
+within, I may eventually package this up into a helpful package that you can
+install directly in your monorepo, akin to one of my older projects
+[Zaps](https://github.com/hamlim/projects/blob/master/packages/zaps/README.md)
+🤔.
+
+Also - if you still have some projects using yarn classic, I ended up renaming
+my old `yw` script to `ywold` 😂.
+
+---
+

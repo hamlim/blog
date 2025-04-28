@@ -1,0 +1,42 @@
+---
+title: "Building a Custom Ghostty Theme"
+slug: "building-a-custom-ghostty-theme"
+path: "/2024/october/building-a-custom-ghostty-theme"
+date: 1729588952000
+status: "public"
+type: "blog-post"
+tags: ["Development","Ghostty"]
+description: "How to generate a custom Ghostty theme based on any iterm2 theme!"
+month: "october"
+year: 2024
+---
+
+import {ItermColorParser} from '@/components/iterm-color-parser';
+
+<Callout>
+**Update Oct. 25th, 2024:**
+
+~There's a bug (see [issue here (if you have access)](https://github.com/ghostty-org/ghostty/issues/2495)), where custom themes are blown away when upgrading the application, hopefully this is resolved in the future!~ _Edit:_ You can store custom themes within `~/.config/ghostty/themes`!
+
+**Update Oct. 24th, 2024:**
+
+I've since created a small repo with the pre-converted Vitesse themes for Ghostty [here](https://github.com/hamlim/vitesse-ghostty-theme)!
+</Callout>
+
+I recently got access to [Ghostty](https://mitchellh.com/ghostty) (a new terminal emulator that is still in private beta) after waiting several months in the Discord server, and as I was setting it up I noticed that my go-to theme for my terminal and code editor ([Vitesse Light](https://vscodethemes.com/e/antfu.theme-vitesse/vitesse-light?language=javascript) by [Anthony Fu](https://antfu.me/)) wasn't available as one of the built-in themes.
+
+After scouring the web and the discord server, I couldn't really find a good guide for how to build a custom theme for the terminal, so I set out to attempt to manually make the theme.
+
+Fortunately I stumbled upon the template / converter within the [iterm2-color-schemes repo](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/tools/templates/ghostty), however I didn't really want to clone a repo to run a python script in order to transform the theme to the proper format.
+
+Instead, what I opted to do was reach for [v0](https://v0.dev/chat) to build a minimal UI to paste in iTerm2 `xml` formatted color themes and have it spit out the proper Ghostty theme.
+
+I downloaded the Vitesse Light iterm2 theme file from this [iTerm2-theme-vitesse repo](https://github.com/HiDeoo/iTerm2-theme-vitesse), and then pasted it into the UI that v0 generated for me and got the theme in the right format.
+
+From there, I created a new file within the custom themes directory for the Ghostty app (on mac for me this was in `~/.config/ghostty/themes`), and pasted in the theme.
+
+It immediately started showing up when I viewed the built in themes, and works correctly when I set my theme within my config to the new file I created!
+
+Here's that little UI component that v0 created for me so you can convert themes inline right on this blog post! (if you run into any bugs, please do reach out and let me know!)
+
+<ItermColorParser />

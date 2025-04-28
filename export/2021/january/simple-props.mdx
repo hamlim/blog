@@ -1,0 +1,200 @@
+---
+title: "Simple Props"
+slug: "simple-props"
+path: "/2021/january/simple-props"
+date: 1610971200000
+status: "public"
+type: "blog-post"
+tags: ["Side Projects"]
+description: ""
+month: "january"
+year: 2021
+---
+
+
+
+**Edit: Updated on January 19th, 2021**
+
+A few recent experiments that I've been thinking on have all been around
+exploring CSS variables or custom properties, from those explorations I just
+published a new package called
+[`simple-props`](https://github.com/ds-pack/simple-props).
+
+This package is heavily inspired by <TwitterMention>roginfarrer</TwitterMention>'s [system-props](https://github.com/roginfarrer/system-props) package (both in
+function and implementation), but instead of deriving a value from a theme
+object it derives CSS variables representing the value provided.
+
+Let's see this in action, first with a pretty minimal setup:
+
+```tsx
+import createSimpleProps from 'simple-props'
+
+let simpleProps = createSimpleProps({
+  props: {
+    color: true,
+    bg: {
+      scale: 'color',
+      property: 'backgroundColor',
+    },
+  },
+})
+```
+
+In the above snippet, we've configured `simpleProps` to handle processing of
+both a `color` prop and a `bg` prop, for example:
+
+```tsx highlight=6
+function Box(props) {
+  let styles = simpleProps(props)
+  return <div style={styles} {...props} />
+}
+
+render(
+  <Box color="$primary" bg="$background">
+    Hello World!
+  </Box>,
+)
+```
+
+The `color` and `bg` props in the above example may generate styles that look
+like:
+
+```tsx highlight=2-3
+<div
+  style={{
+    color: 'var(--color-primary)',
+    backgroundColor: 'var(--color-background)',
+  }}
+/>
+```
+
+> Note: The `simple-props` library doesn't manage creating or defining the above
+> CSS variables being used, that part is left up to the implementer
+
+Color and background-color are both fairly basic style props that you could
+support, but you could support any prop at all through the config.
+
+### Responsive Styles
+
+In addition to basic props, you can also support styles that change at different
+breakpoints too! To do this you need to pass in a `breakpoints` array to the
+`createSimpleProps` function:
+
+```tsx highlight=10
+import createSimpleProps from 'simple-props'
+
+let simpleProps = createSimpleProps({
+  props: {
+    color: true,
+    bg: {
+      scale: 'color',
+      property: 'backgroundColor',
+    },
+  },
+})
+```
+
+This config will now allow the style props to accept an object mapping a
+breakpoint to a particular style value:
+
+```tsx
+let style = simpleProps({
+  color: {
+    _: '$primary',
+    200: '$secondary',
+  },
+})
+```
+
+The `_` key is a special reserved key that indicates the value at all
+breakpoints, from there the rest of the key-value pairs represent a breakpoint
+and the value at that breakpoint!
+
+### Pseudo Selectors
+
+One additional feature that I stole from
+[system-props](https://github.com/roginfarrer/system-props) (and that library
+stole from Chakra) is the concept of "pseudo-props", or applying some styles
+based on a pseudo state. This can be configured by providing the `pseudoProps`
+config to `createSimpleProps`:
+
+```tsx highlight=10-13
+import createSimpleProps from 'simple-props'
+
+let simpleProps = createSimpleProps({
+  props: {
+    color: true,
+    bg: {
+      scale: 'color',
+      property: 'backgroundColor',
+    },
+  },
+  pseudoProps: {
+    _hover: '&:hover',
+    _focus: '&:focus',
+  },
+})
+```
+
+You can now use those pseudo props within the `simpleProps` function:
+
+```tsx
+let style = simpleProps({
+  _focus: {
+    color: '$primary',
+  },
+})
+```
+
+### Putting it All Together
+
+For an example of a fully configured usage of the `simple-props` library, feel
+free to look at this [CodeSandbox](https://codesandbox.io/s/simple-props-lf7po)
+or this code snippet:
+
+```tsx
+import createSimpleProps from 'simple-props'
+
+// We call `createSimpleProps` with some config
+// All of this is optional besides the `props` config
+let simpleProps = createSimpleProps({
+  // a mapping of prop name to either a boolean or an object
+  props: {
+    // means that the styles generated will support processing
+    // a color prop that outputs: { color: `var(--color-[value])` }
+    color: true,
+    bg: {
+      // the variable scale to reference
+      scale: 'color',
+      // the CSS property to apply the styles as
+      property: 'backgroundColor',
+    },
+  },
+  // A mapping of pseudo-prop name to pseudo-selector
+  pseudoProps: {
+    _hover: '&:hover',
+    _focus: '&:focus',
+  },
+})
+
+// what we get back is a function that we can call with some props:
+let styles = simpleProps({
+  color: '$primary',
+  bg: 'tomato',
+})
+
+function Component() {
+  return <div style={styles}>Hello World!</div>
+}
+```
+
+<Spacer />
+
+---
+
+<Spacer />
+
+If you're using this new library and have feedback feel free to
+[open an issue](https://github.com/ds-pack/simple-props) or
+[tweet at me](https://twitter.com/immatthamlin)!
+

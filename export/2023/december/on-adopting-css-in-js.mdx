@@ -1,0 +1,158 @@
+---
+title: "On Adopting CSS-in-JS"
+slug: "on-adopting-css-in-js"
+path: "/2023/december/on-adopting-css-in-js"
+date: 1703050170000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","CSS-in-JS"]
+description: "A brief recap of how Wayfair changed it's CSS approach not once but twice in the span of 5 years!"
+month: "december"
+year: 2023
+---
+
+
+> As an aside, this blog post originally started fairly focused on the story of
+> our adoption of Styled Components, including going into some of the pain
+> points we wanted to solve with that adoption, however the recent shift to drop
+> Styled Components caused me to re-write a significant amount of the post.
+
+At Wayfair we've recently started to shift how we approach authoring CSS for our
+web applications, and like most technology shifts across large companies, it's
+been an interesting journey.
+
+I've been meaning to get around to this blog post for quite some time, I think
+my first earliest drafts for this were created around January in 2021. Since
+then I've shifted teams and mostly moved away from having a direct impact on the
+direction for our CSS approach, however I'm still relatively close enough to the
+work to hopefully have an interesting perspective on the topic.
+
+To better set the stage I want to rewind a bit to around mid-2018 (yes, about 5
+years ago at the time of publishing this post) the design systems team at
+Wayfair was essentially maintaining three separate component libraries. We
+supported a library meant for supporting our storefront experiences (those that
+you normally interact with when visiting one of our websites), another library
+for our suite of internal tools that mostly employees of the company used to do
+their jobs, and one other library to support the supplier side of things that
+suppliers selling their products on Wayfair directly interact with to manage
+their offerings on our e-commerce platform.
+
+Additionally, at that time we were a team of 4-5 software engineers maintaining
+these three libraries, each library consisting of roughly 70 unique components!
+
+However, the libraries supporting the internal and supplier experiences were
+essentially copies of one another besides the theming, the internal system used
+some different colors and a different font face than the supplier library but
+they otherwise would receive the same updates.
+
+My teammate <TwitterMention>@roginfarrer</TwitterMention> was mostly focused on
+supporting both of these component libraries, and lobbied the rest of the team
+and our stakeholders to refactor and combine both of these libraries into a
+single library that could leverage dynamic theming to achieve the stylistic
+differences.
+
+> Prior to this we were leveraging SCSS with a relatively custom build setup,
+> including a custom runtime bundler written in PHP paired with a custom
+> transpiler that wrapped babel and node-sass.
+
+We did some investigations into supporting a single library to be shared between
+both the internal and supplier use cases leveraging SCSS in a similar setup that
+we leveraged for our multiple brands across the storefront features, but we
+couldn't come up with a scalable approach that would integrate within our build
+tooling at the time.
+
+Instead, we looked at the available tooling for styling at the time and the
+leaders in the space were Styled Components and Emotion. We ran some rough
+benchmarks, right around the time of the Styled Components v5 release, which was
+backed by React hooks and an overall performance improvement over what Emotion
+was capable of at the time. One of the main criteria that we evaluated during
+this investigation was support for dynamic theming, CSS Variables at the time
+weren't supported in all the browsers that we had to support unfortunately, so
+we opted to look at JS solutions.
+
+We opted to invest in Styled Components, feeling comfortable on the performance
+aspects due to both how the current internal and supplier component libraries
+were used as well as the API similarities between Styled Components and
+Emotion - making a possible shift to the other framework in the future
+relatively easy.
+
+The re-write from two component libraries to a single shared one took a while,
+partially because we were relatively short staffed at the time, but also we had
+many competing priorities and effectively had to re-write while still supporting
+the existing features and functionality.
+
+I want to pause here and say that while many software re-write stories are
+horrific and usually result in failures, I'm still amazed at the work that Rogin
+and the rest of the team did to successfully implement this re-write all while
+continuing to support the existing code, and being able to roll out the changes
+with effectively no visible impact to the teams using the component libraries!
+
+Around the time we wrapped up this large migration, the organizations internally
+that we were supporting were starting to shift towards having very similar
+needs. There were teams that had been asking for features from the storefront,
+e-commerce focused library, within their supplier facing application, and
+sometimes the other way around as well!
+
+The timing was also pretty convenient since the org supporting our supplier
+features opted to do a fairly large re-design and as part of that landed on a
+pretty similar design language that our customer facing features had evolved to.
+
+The design systems team decided to undertake the work to build support for the
+internal and supplier facing themes within a new library that was created as an
+evolution from our storefront library.
+
+This work mostly kicked off at the beginning of 2021, building off of the
+successful adoption of Styled Components across what we called our Enterprise
+component library since mid-2018, we were eager to also begin to adopt it within
+our storefront component library. The timelines coincidentally aligned, so as
+part of supporting this new component library that we called the Core library,
+we began to adopt Styled Components across the new single library.
+
+However, this is where we began to run into hiccups with the adoption. Our
+storefront experiences are rightfully held to a high bar for client side
+performance, including speed index and web vitals. As applications began to
+adopt new versions of the Core library, they reported concerning spikes in
+several of these metrics.
+
+We had spent quite a bit of time working with application owners as well as our
+central performance team and ultimately settled on the main issue just being the
+additional runtime overhead that Styled Components added to our components.
+
+We had always known about this performance issue, even since before we adopted
+the library for our Enterprise components, however we were optimistic that the
+impact wouldn't be as bad as we thought. Partially we were swayed into this
+optimistic thinking based on the various other large sites that had also adopted
+runtime CSS-in-JS solutions like Target, Nike, and the New York Times.
+
+So our adoption of Styled Components was put on pause while we continued to
+follow up in some investigations, as a team it felt like there was no light at
+the end of the tunnel for our migration.
+
+It wasn't until late 2021 and early 2022 that we finally felt like we identified
+a solid path forward for the component library and in general for our feature
+teams.
+
+The key shift that we made was identifying a suitable compile-time CSS-in-JS
+library that offered the correct trade offs between developer experience while
+still optimizing for the end user experience of our website.
+
+We looked at a few options, including a few runtime options, and even some fully
+static options, however we finally identified Vanilla Extract as the most
+suitable replacement for our needs.
+
+There were many different aspects that we used to weigh our available options,
+but I'll say one of the main motivators for us at the time was us as a
+technology org deprecating support for IE entirely and moving to support only
+the main modern browser engines. This allowed us to more seriously consider CSS
+custom properties, which Vanilla Extract uses under the hood to support theming.
+
+While we're still early in our adoption of Vanilla Extract, having only used it
+for about 2 years, I'm optimistic that it has set us on a path that still
+heavily optimizes both the end user experience without hampering the developer
+experience (and the same for the reverse as well)!
+
+Along with some of this work we've also become eager to adopt newer features of
+React (Streaming, Server Side Suspense, and even Server Components), all of
+which would be effectively blocked or de-optimized if we doubled down on a
+runtime CSS-in-JS solution.
+

@@ -1,0 +1,45 @@
+---
+title: "Finding React Artifacts"
+slug: "finding-react-artifacts"
+path: "/2023/september/finding-react-artifacts"
+date: 1695073727000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Development","micropost"]
+description: ""
+month: "september"
+year: 2023
+---
+
+
+A while back I wanted to experiment with a more recent version of React in a few
+projects. Specifically I wanted to enable some of the feature flags that the
+React team uses to gate specific experiemnts. These flags are compile-time
+evaluated, meaning I can't simply change them at runtime and have any version of
+React installed reflect the changes. Instead, I needed to clone the repo, change
+the flags, and then run a build locally.
+
+Now, the React repo may have changed since I last tried this (which was maybe 4
+years ago now), but back then you needed to have Java setup locally (or at least
+JDK setup) in order to complete the builds. At the time this was a decent hurdle
+to overcome, since I was mostly used to more common build toolchains like
+Babel/Webpack/etc.
+
+Since then, I've discovered this amazing resource that someone made that hosts
+build assets for different PRs, commits, or versions of the packages generated
+from the repo. This is the [react-builds](https://react-builds.vercel.app/)
+site.
+
+The really neat thing about this site is that you can download any build
+artifact for any commit within the repo (as far as I understand it, I'm sure you
+probably can't go all the way back to the first commit and download those
+builds).
+
+In addition, you can also use this to download and vendor packages that haven't
+been published yet (👀 looking at you `react-server-dom-esm` 👀).
+
+I was trying to find this resource the other day so I figured I'd blog a bit
+about it as a form of long term memory 😂.
+
+---
+

@@ -1,0 +1,72 @@
+---
+title: "Using Marquee with React and TypeScript"
+slug: "using-marquee-with-react-and-typescript"
+path: "/2023/september/using-marquee-with-react-and-typescript"
+date: 1695468762000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Development","React","TypeScript"]
+description: ""
+month: "september"
+year: 2023
+---
+
+
+I really enjoy using the `<marquee>` HTML element, the fact that it still works
+in browsers today even thought its been deprecated (and its sibling `<blink>`
+has been removed) makes it all the better.
+
+Its always so cool seeing a webpage show up after some work configuring tools,
+or bootstrapping a new app and having the "hello world" message scroll by
+automatically because of the marquee element.
+
+Unfortunately, TypeScript and React's types have really leaned into the whole
+"deprecated" thing, so you get these red underlines and also sometimes build
+fails<FootnoteRef id="1" />.
+
+Fortunately, there's a fix to resolve this pain, unfortunately it's a bit
+archaic so I figured I'd put up this blog post to make it easier to find in the
+future!
+
+The gist is that you override `JSX.IntrinsicElements` to add the marquee
+element.
+
+To fix the issue, create a new `types.d.ts` file in your project, and paste in
+the following content:
+
+```ts
+import * as React from 'react';
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      marquee: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
+  }
+}
+```
+
+Then in your `tsconfig.json` file, add the following:
+
+```json
+{
+  "compilerOptions": {
+    "types": ["./types.d.ts"]
+  }
+}
+```
+
+Then you may need to restart your editor, but it should resolve the missing
+types for the marquee element!
+
+The beauty of this is that you can do the same for any element you may want to
+use!
+
+---
+
+<Footnote id="1">I can't count the number of times that a build has failed when
+I went to deploy a site because of this issue.</Footnote>
+

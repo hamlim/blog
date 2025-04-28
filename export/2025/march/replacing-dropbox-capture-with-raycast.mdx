@@ -1,0 +1,93 @@
+---
+title: "Replacing Dropbox Capture with Raycast"
+slug: "replacing-dropbox-capture-with-raycast"
+path: "/2025/march/replacing-dropbox-capture-with-raycast"
+date: 1741726568526
+status: "public"
+type: "blog-post"
+tags: ["Dropbox","Raycast","Tools","Tip"]
+description: "Recently Dropbox announced that it was shutting down the Capture app/service, so I sought out an alternative that provided a similar user experience!"
+month: "march"
+year: 2025
+---
+
+
+The other week I found out that Dropbox is shutting down the Dropbox Capture app and service:
+
+<BlueskyPost src="https://bsky.app/profile/matthamlin.me/post/3limttz2gac2f">
+  <blockquote className="bluesky-embed" data-bluesky-uri="at://did:plc:j73k5g4hr6qpkgwoalm3cfkh/app.bsky.feed.post/3limttz2gac2f" data-bluesky-cid="bafyreiaejxhximir35ldixx7nsbj73xy2zs77zorekotmwp5ifkwefl5va" data-bluesky-embed-color-mode="system"><p lang="en">Damn, now looking for a good screenshot and screen recording mac app!<br /><br /><a href="https://bsky.app/profile/did:plc:j73k5g4hr6qpkgwoalm3cfkh/post/3limttz2gac2f?ref_src=embed">[image or embed]</a></p>&mdash; Matt Hamlin (<a href="https://bsky.app/profile/did:plc:j73k5g4hr6qpkgwoalm3cfkh?ref_src=embed">@matthamlin.me</a>) <a href="https://bsky.app/profile/did:plc:j73k5g4hr6qpkgwoalm3cfkh/post/3limttz2gac2f?ref_src=embed">February 20, 2025 at 12:46 PM</a></blockquote>
+</BlueskyPost>
+
+For those that don't know, Dropbox Capture provided a really nice user experience for taking screenshots and screen recordings, automatically uploading them to Dropbox, and then copying a share link to easily share all in one go.
+
+I basically used it every day, whether it was capturing a screenshot for a code change I was working on, or clipping a meme somewhere to share in a Discord chat - I heavily used the tool!
+
+Now that its being shut down however, I started to look for a replacement.
+
+I tried out a few of the options that folks recommended, and even tried to go back to the native macOS Screenshot utility, but none seemed to provide the nice UX of both saving the file to my Dropbox but also copying it to the clipboard to let me share it immediately as well.
+
+I then [stumbled across this blog post](https://justin.searls.co/posts/simultaneously-save-and-copy-screenshots-on-the-mac/) which shared a quick shell script and Apple Shortcut to run the script based on a keyboard shortcut.
+
+I tested this workflow out for a bit but it seemed a bit hit or miss on if the keyboard shortcut would trigger the script. After a bit of messing around with it - I think I found a sweet spot building on the script but using Raycast instead of Shortcuts to manage the keyboard shortcut part for me! The gist was using Raycast's `Script Command` feature!
+
+Here's how I built out my "Better Screenshot" workflow using Raycast:
+
+1. Open Raycast
+2. Search for `Create Script Command`
+3. Choose the following:
+	1. Template: `Bash`
+	2. Mode: `Silent`
+	3. Title: Whatever you want! I called it `Better Screenshot`
+	4. You can leave the rest of the inputs as-is / blank
+	5. Create the script
+
+Within the created script, you'll want to paste in the following snippet (copied and slightly edited from the above linked blog post):
+
+```sh
+#!/bin/bash
+
+# Required parameters:
+# @raycast.schemaVersion 1
+# @raycast.title Better Screenshot
+# @raycast.mode silent
+
+# Optional parameters:
+# @raycast.icon 🤖
+
+# Documentation:
+# @raycast.author <your name>
+# @raycast.authorURL <your URL>
+
+# Usage:
+#
+#   $ better-screenshot
+#
+# Then, either:
+#   - drag and release the mouse to select an area to screenshot
+#   - press spacebar and click the mouse to select the current window
+
+# Construct a unique-ish filename like:
+# screenshot-2024-03-16-16h43m48s.png
+isoTime=$(date +"%Y-%m-%d-%Hh%Mm%Ss")
+fileName="$HOME/Library/CloudStorage/Dropbox/Capture/screenshot-$isoTime.png"
+
+# The -i will put the Screenshot app into interactive mode (like cmd-shift-4)
+screencapture -i "$fileName"
+
+if [ -f "$fileName" ]; then
+  # This gnarly "«class PNGf»" incantation is for some reason necessary to copy the file
+  osascript -e "set the clipboard to (read (POSIX file \"${fileName}\") as «class PNGf»)"
+fi
+```
+
+You can then save the file and jump back into Raycast.
+
+Open Raycast and then open it's settings (e.g. `Cmd + ,`), go to `Extensions`, and search for the name of your Script Command, e.g. `Better Screenshot`, once you find it in the table - you'll want to record a keyboard shortcut for it. I opted to use the same shortcut that Dropbox Capture used for screenshots (`Option + shift + s`).
+
+Now when you hit that keyboard short cut it should show the screenshot cursor allowing you to click and drag to select an area of the screen, and once you do it will both copy the screenshot to the clipboard and also save the file to the location in the script above.
+
+<Callout>
+
+A quick note on the file location in the script above - this assumes you're storing the file in the `Dropbox/Capture/` directory. Additionally - I found that you need to update/opt-in to some feature within the Dropbox mac app to have the Dropbox drive mounted under `~/Library/CloudStorage`.
+
+</Callout>

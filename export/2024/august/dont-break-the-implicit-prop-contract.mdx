@@ -1,0 +1,141 @@
+---
+title: "Don't Break the Implicit Prop Contract"
+slug: "dont-break-the-implicit-prop-contract"
+path: "/2024/august/dont-break-the-implicit-prop-contract"
+date: 1722879092000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Tip","React"]
+description: "React components have a fundamental contract that is often unstated in their implementation, and you should know about it!"
+month: "august"
+year: 2024
+---
+
+import NextImage from 'next/image'
+
+There's a _"secret"_ implicit prop contract that comes along with all React components, and in fact with most "pure functions" and their arguments! Most React developers may not realize this contract is there, but they often follow it out of convention anyway. In this post I wanted to dig into this implicit prop contract, and specifically spend some time outlining why you shouldn't break it!
+
+### What is this about an implicit prop contract?!?
+
+React components<FootnoteRef id="1" /> were designed to be pure functions. Many have probably heard or seen the concept of [`ui = f(state)` or "UI as a function of state"](https://rauchg.com/2015/pure-ui), it's a great way to conceptualize this expectation that React sets on us as we use it to build our user interfaces. This expectation implies a strict prop contract - specifically:
+
+> Changes to the props passed to a component, should reflect changes to the user ~interface~ __experience__
+
+This is the implicit prop contract that I'm referring to, and it's not even specific to React but to any pure function<FootnoteRef id="2" />.
+
+Let's look an example; imagine we had a function called `square`, maybe we don't know the internals or implementation details of the function - it might even look like this:
+
+<NextImage
+  priority={true}
+  alt="TypeScript code defining a function that returns the square of a number using a while loop with a comment saying that the code works and it shouldn't be modified"
+  src="/images/dont-break-the-implicit-prop-contract/square.png"
+  width="2080"
+  height="1170"
+/>
+
+> [source](https://x.com/eloffd/status/1819501346829238764)
+
+What we do know however, is that you pass it a single argument that is a type `number`, and it will give you back a number.
+
+After trying it out a few times, we get back some results that seem to indicate that it will square the number we pass into the function and return the expected result:
+
+```ts
+square(1); // === 1
+square(2); // === 4
+square(3); // === 9
+square(4); // === 16
+```
+
+This function is following our implicit ~~prop~~ _argument_ contract we talked about above - if you give it a value it will return the square of that value every single time.
+
+This applies to React components just the same (because they're pure functions also [kinda]), imagine we have a `Greeting` component that will display a greeting for a provided `name`:
+
+```tsx
+function Greeting({name}) {
+  return <marquee>Hello <blink>{name}</blink>!</marquee>
+}
+```
+
+This component will reliably render a greeting for any name that we provide!
+
+### Ok, but what about breaking the contract?
+
+Going back to our `square` function, what if we found out that actually for some values it **doesn't** return the square of the input value? Imagine we call it with `5` and instead of giving us back `25` as we'd normally expect it returns `10`:
+
+```ts
+let result = square(5);
+console.log(result)
+// 10
+// Wait... what?!?!
+```
+
+This breaks our mental model that we had formed around the function - we had thought that it would work as expected for every valid argument that we could provide it, only to find out that it doesn't.
+
+If we had started to adopt this code within a larger system and found out about this unexpected outcome, we'd probably be forced to come in and apply a quick fix:
+
+```ts
+function actualSquare(n: number): number {
+  // workaround to fix WTF-1337
+  if (n === 5) {
+    return 25;
+  }
+  return square(n);
+}
+```
+
+But we need to be clear - we're not fixing the underlying issue here, we're implementing a workaround to bypass the issue. The `square` function broke our expected contract and now we need additional complexity within the system to account for that breakage.
+
+What if our `Greeting` component also had a similar issue, imagine that it only greeted the first name that we rendered with, and any subsequent changes to the name it didn't reflect properly?
+
+```tsx
+<Greeting name="Matt" />
+```
+
+<marquee>Hello <blink>Matt</blink>!</marquee>
+
+```tsx
+// and if we re-render with the following:
+<Greeting name="Scott" />
+```
+
+<marquee>Hello <blink>Matt</blink>!</marquee>
+
+Maybe we'd opt to implement a workaround similar to our `square` function as above, with React we may [reach for using `key`s](/blog/2022/january/my-two-favorite-react-tricks):
+
+```tsx
+// First render
+
+<Greeting name="Matt" />
+
+// Next render
+
+<Greeting
+  name="Scott"
+  // Fix WTF-420
+  key="some-unique-key"
+/>
+```
+
+<marquee>Hello <blink>Scott</blink>!</marquee>
+
+However, as we noted above - this is yet another workaround and isn't fixing the underlying issue!
+
+### How do I avoid this issue?
+
+In React, this broken contract commonly comes up with the following cases:
+
+- Derived state not reflecting changes from props
+- Effects not properly "subscribing to" changing props (props missing from an effect's `dependencies` array)
+- Caching not properly "subscribing to" changing props (props missing from `useCallback` or `useMemo`'s dependencies arrays)
+
+However there's a number of other possible footguns as well (e.g. manual escape hatches like `useRef`). Generally, [following the Rules of Hooks](https://react.dev/reference/rules/rules-of-hooks) will ensure that you don't accidentally break this implicit contract!
+
+While there is nothing explicitly implemented within React itself that will prevent breaking this contract - I'd argue that a majority of developers working within a React codebase implicitly have this assumption about components. So while you could choose to break this contract, you'll eventually find someone that becomes confused as to why the code doesn't do what they'd expect it to do so (even if that individual is you in 6+ months)!
+
+---
+
+#### Footnotes:
+
+<Footnote id="1">Specifically function components, although classes were meant to operate a similar way they just offered more opportunities to break those expectations.</Footnote>
+
+<Footnote id="2">While some may say that React components technically aren't exactly pure functions of state, but for the right perspective of what "state" is, they can be. For example hooks like `useState` rely on the shared React Dispatcher to store state within - if this is considered part of the "state", then the component can be considered pure.</Footnote>

@@ -1,0 +1,120 @@
+---
+title: "Project Deep Dive: Tails"
+slug: "project-deep-dive-tails"
+path: "/2023/december/project-deep-dive-tails"
+date: 1703934329000
+status: "public"
+type: "blog-post"
+tags: ["Project Deep Dive","Projects","Web Development","Cloudflare","Next.js"]
+description: "A(nother) deep dive into one of my recent side projects; tails - a plain and simple cocktail recipe app."
+month: "december"
+year: 2023
+---
+
+
+I took about a week and a half off of work starting just before Christmas and
+ending right after New Years, I usually use this time to dig into a meaty
+project (sometimes related to this blog) and this year was no exception!
+
+I had a few other projects in mind coming into this break but didn't feel too
+motivated to work on them. Instead I took the break slow, mainly focusing on my
+own working process (revamping my Notion setup) and also getting some
+[reading](/bookshelf) in.
+
+However, about halfway into my time off, I found an itch that I just had to
+scratch.
+
+My dad and I share new cocktail recipes back and forth fairly
+often<FootnoteRef id="1"/>, usually in the form of TikTok clips. We've also been
+selecting usually a single (or a couple) specific cocktails that we want to make
+for the holidays.
+
+However, we always ask the same questions:
+
+> What ingredients do we need for that one cocktail you wanted to make?
+
+> What was the recipe for that special cocktail again?
+
+This year also, we made one of our favorites from last year
+([The Polar Empress](https://tails-theta.vercel.app/recipe/1)) for my
+grandparents as well, and the next day my Grandma wanted to get the recipe for
+the drink.
+
+Since she had asked about it, and since both of the above questions are common
+enough, I felt like it'd be interesting to build a quick and dirty web app to
+store cocktail recipes that we can then refer to later<FootnoteRef id="2" />.
+
+And so, I started hacking on [Tails](https://tails-theta.vercel.app/).
+
+<Callout>
+🚧 _Be warned, there's still a ton of things I need to get properly
+setup with this version of the service, but feel free to mess around and report
+any bugs [here](https://github.com/hamlim/tails)_. 🚧
+</Callout>
+
+## What is Tails?
+
+[Tails](https://tails-theta.vercel.app/) is a very basic
+<abbr title="Create Read Update Delete">CRUD</abbr><FootnoteRef id="3" /> web
+app for saving and sharing cocktail recipes. That's it at the moment, no social
+features, no fancy whiz-bang features, just saving recipes!
+
+It has a very basic version of auth/user accounts at the moment, allows you to
+add a recipe (with a title, description, steps, and ingredients), and also
+supports sharing those recipes with universal links (viewable to those without
+an account on Tails).
+
+## How does it work?
+
+Similar to [microfibre](/blog/2023/november/project-deep-dive-microfibre), Tails is
+built with two primary layers:
+
+- API
+- Frontend Web Client
+
+The API is built on Cloudflare Workers (using Cloudflare D1 as the storage
+solution, [honojs](https://hono.dev/) to handle routing, and
+[lucia](https://v3.lucia-auth.com/) for auth), and the frontend web client is
+built with Next.js and deployed to Vercel.
+
+The client interactions are all for the most part plain old forms using React
+Server Components and Server Actions. The Next.js server then interacts with the
+API hosted on Cloudflare.
+
+The code is fully open source and available here:
+[hamlim/tails](https://github.com/hamlim/tails), feel free to peruse the source
+and open issues for questions/comments/contributions.
+
+If you
+[read my microfibre deep dive](/blog/2023/november/project-deep-dive-microfibre),
+this tech stack probably sounds pretty familiar! I've been really enjoying
+Cloudflare's platform offerings, and I'm particularly interested in exploring
+Cloudflare R2 storage soon as well!
+
+<Spacer />
+
+## The Future
+
+There's still a ton of things I want to build into the service, the first of
+which might be building up user profiles a bit more (so you can see who shared
+what cocktails) - however I don't think there's that much future for a social
+aspect built into the site!
+
+<Spacer />
+
+---
+
+<Spacer />
+
+### Footnotes:
+
+<Footnote id="1">Ok ok, it's usually me sending him cocktail recipes, but
+still</Footnote>
+
+<Footnote id="2">Now I know you're saying "but matt, there's a dozen such
+services out there for this use case, why build yet another one?" and to that I
+say - because I wanted to!</Footnote>
+
+<Footnote id="3">At the moment, it doesn't even support updating or deleting
+recipes! I'll have to add that in the future!</Footnote>
+

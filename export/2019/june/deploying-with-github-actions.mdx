@@ -1,0 +1,64 @@
+---
+title: "Deploying Automatically using GitHub Actions"
+slug: "deploying-with-github-actions"
+path: "/2019/june/deploying-with-github-actions"
+date: 1559476800000
+status: "public"
+type: "blog-post"
+tags: ["Web Development"]
+description: ""
+month: "june"
+year: 2019
+---
+
+
+
+I recently picked up a Pixel Slate computer/tablet (I might write a short review
+for it but in the meantime check out
+[this thread](https://twitter.com/immatthamlin/status/1133865845854232577?s=20))
+and I wanted to see if I could configure my personal site, this site, so I could
+write a blog post, publish and deploy it all from my new computer. I also
+haven't setup the linux partition on the device yet either so I wanted to be
+able to do all of this from within Chrome.
+
+Before I dive into how I setup this flow, I wanted to provide some insight into
+this site. Its a Gatsby site, where most of my posts are authored using MDX,
+feel free to check out the source code for the site here:
+[https://github.com/hamlim/blog-2k19](https://github.com/hamlim/blog-2k19). I am
+also using Zeit's `now` product to deploy the site and alias it to the current
+url. In order to automate deployments I would need to have Gatsby build the
+site, and then deploy using now.
+
+A while back I signed up for the GItHub Actions beta, and somehow got access to
+it too! I have been fumbling around with it for the past few weeks, not really
+putting enough time into it to learn how to fully configure a workflow. So this
+new challenge provided the necessity to actually learn how to configure these
+workflows and actions.
+
+At a high level, the mixed manual and automated process looks like this:
+
+- Author blog posts in Notion in their web app
+- Carry the blog post over to Github, where I use their online IDE to add a new
+  entry
+- Open a PR with the new blog post, review it for any grammar issues, typos, etc
+- Merge the PR to master
+- Kickoff a push GitHub workflow that does the following
+  - Filter out pushes to other branches, so it only runs on master
+  - Install dependencies using Yarn
+  - Run `yarn build`
+  - Deploy using `now`
+  - Alias the site using a local now.json file in the repo to my
+    [matthamlin.me](https://matthamlin.me) domain
+- See the updated content on the public site!
+
+I am using the following actions created by several others available on the
+Actions marketplace:
+
+- GitHub Action for Yarn:
+  [https://github.com/nuxt/actions-yarn](https://github.com/nuxt/actions-yarn)
+- GitHub Action for Now:
+  [https://github.com/actions/zeit-now](https://github.com/actions/zeit-now)
+
+Check out the
+[workflow here](https://github.com/hamlim/blog-2k19/blob/master/.github/main.workflow)!
+

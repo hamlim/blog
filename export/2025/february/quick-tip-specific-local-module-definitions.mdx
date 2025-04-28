@@ -1,0 +1,79 @@
+---
+title: "Quick Tip - Specific Local Module Declarations"
+slug: "quick-tip-specific-local-module-definitions"
+path: "/2025/february/quick-tip-specific-local-module-definitions"
+date: 1740434087554
+status: "public"
+type: "blog-post"
+tags: ["TypeScript","Web Development","Tip","Development","Node.js"]
+description: "A quick tip outlining how to provide specific TypeScript type definitions for a local module!"
+month: "february"
+year: 2025
+---
+
+
+I've been working in a codebase lately that uses a shared module across a few different files - in my case the module is a JSON file that I'm importing and I wanted to enforce consistent types for the value when it was imported across the codebase.
+
+As far as I can tell the recommended solution looked something like this:
+
+```ts
+import jsonObject from './some/path/to/the/file.json';
+import type {MyDesiredJSONType} from './some-types';
+
+let actualValue = jsonObject as MyDesiredJSONType;
+```
+
+It felt a bit icky to me to not only copy and paste that across the codebase, but also worry about trying to remind others contributing to the code to do the same thing when they want to import the JSON value.
+
+I instead found a neat little alternative approach that works pretty well, using [module declarations](https://www.totaltypescript.com/books/total-typescript-essentials/modules-scripts-and-declaration-files#declare-module) and import maps (I've written about import maps before in [this blog post](blog/2024/december/a-quick-look-at-import-maps))!
+
+The trick is to do the following:
+
+- Create a local `<some-filename>.d.ts` file (I've opted to call mine `local-types.d.ts` since I have a few other things in there too)
+- Add the following content to the file:
+
+```ts
+declare module "#<some-identifier>" {
+  import type { MyDesiredJSONType } from "./src/types";
+  let jsonObject: MyDesiredJSONType;
+  export default jsonObject;
+}
+```
+
+<Callout>
+I recommend prefixing the identifier with a special character, specifically `#`. This helps to identify it as a local module specifier (as opposed to `@` which might map to a scoped 3rd party package), and easily stands out to others reading the codebase!
+</Callout>
+
+Finally, and **importantly**, configure your import maps / paths configs:
+
+- For Node.js / other node-like tools:
+	- Add a new mapping to your `package.json` `imports` record
+- For TypeScript:
+	- Add a new mapping to your `tsconfig.json` `paths` record
+
+Here's an example configuration within a `package.json` file:
+```json
+{
+  "imports": {
+    "#some-identifier": "./src/some-json-file.json"
+  }
+}
+```
+
+and here's an example configuration within a `tsconfig.json` file:
+
+```json
+{
+  "compilerOptions": {
+    "paths": {
+      "#some-identifier": ["./src/some-json-file.json"]
+    }
+  }
+}
+```
+
+<Callout>
+Note! Just because I'm using a JSON module as an example here doesn't mean this strategy _only_ works with JSON files - you can do this for any kind of file type!
+</Callout>
+
+Thats it! This should then let TypeScript use that declared module type whenever you import from this new identifier!

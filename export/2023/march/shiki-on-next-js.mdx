@@ -1,0 +1,118 @@
+---
+title: "Setting up Shiki on Next.js"
+slug: "shiki-on-next-js"
+path: "/2023/march/shiki-on-next-js"
+date: 1679850459000
+status: "public"
+type: "blog-post"
+tags: ["Development","Web Development","Next.js"]
+description: ""
+month: "march"
+year: 2023
+---
+
+
+I recently updated how I handle syntax highlighting within code blocks on my
+personal site here. After my recent refactor a few months ago, I had adopted
+`highlight.js` originally but then only recently realized that it still doesn't
+support JSX/TSX syntax highlighting.
+
+I did some googling around, almost went down the path of using Prism.js as well,
+and then remembered that [`shiki`](https://shiki.matsu.io/) exists and decided
+to give it a try.
+
+Originally, I thought it was going to be pretty easy, or at least it was easy to
+implement for local development within my React Server Component setup for my
+blog. It was only when I went to deploy it that it started to break.
+
+I ran into the following error and was a bit confused on what it meant:
+
+```sh
+[Error: ENOENT: no such file or directory, open '/var/task/node_modules/shiki/languages/typescript.tmLanguage.json'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/var/task/node_modules/shiki/languages/typescript.tmLanguage.json'
+```
+
+It turns out that by default, Next.js doesn't bundle in `shiki`, which means
+there's a raw `require` or dynamic import for the text grammars and the themes.
+
+After stumbling across a few different issues, each with different ways to
+resolve the problem I was running into, I found the following solution:
+
+1. Import the themes and grammars that are needed manually
+2. Pass them directly into the `highlight` call
+
+Here's a complete example of my current CodeBlock component:
+
+```tsx
+import shiki from 'shiki';
+
+// Manually import themes and grammars
+import cssGrammar from 'shiki/languages/css.tmLanguage.json';
+import diffGrammar from 'shiki/languages/diff.tmLanguage.json';
+import jsonGrammar from 'shiki/languages/json.tmLanguage.json';
+import mdGrammar from 'shiki/languages/markdown.tmLanguage.json';
+import bashGrammar from 'shiki/languages/shellscript.tmLanguage.json';
+import tsxGrammar from 'shiki/languages/tsx.tmLanguage.json';
+import githubDarkDimmed from 'shiki/themes/github-dark-dimmed.json';
+import githubLight from 'shiki/themes/github-light.json';
+
+export default async function CodeBlock({ children, className, ...props }) {
+  let lang = className ? className.split('-')[1] : 'typescript';
+  if (lang === 'tsx' || lang === 'jsx' || lang === 'js') {
+    lang = 'typescript';
+  } else if (lang === 'sh') {
+    lang = 'bash';
+  }
+
+  let codeToHighlight = children;
+
+  let highlighter = await shiki.getHighlighter({
+    // Pass in manually imported themes and grammars
+    // @ts-ignore
+    themes: [githubDarkDimmed, githubLight],
+    langs: [
+      // @ts-ignore
+      { id: 'tsx', scopeName: 'source.tsx', grammar: tsxGrammar },
+      // @ts-ignore
+      { id: 'typescript', scopeName: 'source.tsx', grammar: tsxGrammar },
+      // @ts-ignore
+      { id: 'md', scopeName: 'text.html.markdown', grammar: mdGrammar },
+      // @ts-ignore
+      { id: 'css', scopeName: 'source.css', grammar: cssGrammar },
+      // @ts-ignore
+      { id: 'diff', scopeName: 'source.diff', grammar: diffGrammar },
+      // @ts-ignore
+      { id: 'bash', scopeName: 'source.shell', grammar: bashGrammar },
+      // @ts-ignore
+      { id: 'json', scopeName: 'source.json', grammar: jsonGrammar },
+    ],
+  });
+
+  let html = highlighter.codeToHtml(codeToHighlight, { lang });
+
+  return (
+    <Box
+      is='code'
+      dangerouslySetInnerHTML={{ __html: html }}
+      {...props}
+      className={className ? `${className} ${code}` : `${code}`}
+    />
+  );
+}
+```
+
+For some reason, shiki's TypeScript types don't seem to like me passing in the
+themes or the grammars manually, so I opted to ts-ignore those errors for the
+time being 🙂.
+
+Hopefully this helps others that might run into the same issue!
+
+<Spacer />
+
+---
+
+<Spacer />
+

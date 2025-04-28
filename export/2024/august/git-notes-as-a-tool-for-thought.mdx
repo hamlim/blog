@@ -1,0 +1,98 @@
+---
+title: "Git Notes as a Tool for Thought"
+slug: "git-notes-as-a-tool-for-thought"
+path: "/2024/august/git-notes-as-a-tool-for-thought"
+date: 1723282971000
+status: "public"
+type: "blog-post"
+tags: ["Development","Git","Tools for Thought"]
+description: "(Ab)using Git as yet another tool for thought!"
+month: "august"
+year: 2024
+---
+
+
+While flying back out to the west coast for a week and a half "workation" - I stumbled across a brief tweet talking about [`git-notes`](https://git-scm.com/docs/git-notes). For those that don't know (and don't care to read through Git docs), `git notes` is a way to track additional free form content associated with commits, **without** editing/amending the underlying commit. From what I can tell - these are tracked separately from commits, but Git knows how to connect them behind the scenes.
+
+While there's been other great blog posts about git notes ([like this one](https://tylercipriani.com/blog/2022/11/19/git-notes-gits-coolest-most-unloved-feature/) that I recommend checking out), I wanted to write a bit about a failed idea to use this little used feature as a way to store a daily journal of sorts.
+
+The rough idea was:
+
+- Create a single commit for each day (formatted nicely)
+- Append notes to that commit through out the day (as you see fit)
+- Each of the appended notes stashes the time at which the note was added, e.g. `9:15AM ET`
+
+And that's it! Plain and simple!
+
+I was able to stub out a quick and very dirty Bun-flavored JavaScript snippet that could expose a simple CLI to manage these notes:
+
+```ts
+// bun note.ts "something"
+// bun note.ts show
+
+import { readableStreamToText } from "bun";
+
+// git notes append --separator="\n---\n ### ${timestamp nicely formatted}"
+
+// commit each day
+// check if there is a commit for today or not
+// if not, create a commit
+
+// parse params
+let params = Bun.argv.slice(2);
+
+if (params.includes("show")) {
+  let {stdout} = Bun.spawn(["git", "notes", "show"],);
+  let text = await readableStreamToText(stdout);
+  console.log(text);
+  process.exit(0);
+}
+
+let message = params.join(" ");
+
+let dayFormatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+}).format;
+
+let timeFormatter = new Intl.DateTimeFormat("en-US", {
+  hour: "2-digit",
+  minute: "2-digit",
+}).format;
+
+let day = dayFormatter(new Date());
+// check if current commit message matches the current date
+let res = Bun.spawnSync(["git", "log", "-1", "--pretty=%B"]);
+let commitMessage = res.stdout.toString();
+
+if (!commitMessage || !commitMessage.includes(day)) {
+  Bun.spawn(["git", "commit", "--allow-empty", "-m", day]);
+  Bun.spawn(["git", "notes", 'add', `\# ${day}`])
+}
+
+Bun.spawn([
+  "git",
+  "notes",
+  "append",
+  `--separator=\n\n---\n\n \#\#\# ${timeFormatter(new Date())}`,
+  "-m",
+  JSON.stringify(message),
+]);
+```
+
+<Callout>
+I've also pushed this script up to a [repo here](https://github.com/hamlim/git-notes-experiment) if you want to mess around with the concept more!
+</Callout>
+
+This is very naive - and probably has a number of issues - but seemed to work _alright_ in some of my testing.
+
+I called this a failed experiment because `git notes` feels incredibly "underbaked" compared to other git features. Maybe underbaked isn't the right phrase, but it's seen such low adoption that most tools don't support it, and it seems to break in some cases.
+
+- Notably - GitHub doesn't offer a way to see notes associated with commits in the web ui
+- You need to manually push and fetch these notes (kind of like tags) if you're sharing them with others
+	- I found [this helpful gist](https://gist.github.com/topheman/ec8cde7c54e24a785e52) with a cheat sheet for working with git notes
+- (probably a me problem) The version of Git by default on my mac (AppleGit) somehow didn't support most of the features - I had to `brew install git` to get the latest version with support for `git notes append`!
+- Amending a commit (even if not editing the message), will blow away all your notes!?
+
+Anyway - it was an interesting little adventure to try out, but I think I'll be sticking with Obsidian for the time being, plus there have been quite a few useful git-backed note taking solutions out there that would work better.

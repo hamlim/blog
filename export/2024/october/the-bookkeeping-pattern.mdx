@@ -1,0 +1,153 @@
+---
+title: "The Bookkeeping Pattern"
+slug: "the-bookkeeping-pattern"
+path: "/2024/october/the-bookkeeping-pattern"
+date: 1729870852000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Next.js","JavaScript","Tip","TypeScript","React Server Components","Server Actions","Forms"]
+description: "A quick look at a small but powerful pattern I've been leveraging as of late!"
+month: "october"
+year: 2024
+---
+
+
+I've found myself lately working with a decent number of `Array.prototype.reduce` and `useReducer` uses. With both of these, I've been reaching for what I'm going to call the "bookkeeping pattern"<FootnoteRef id="1" />.
+
+Before diving into the code, I wanted to step back a bit and outline when and where this pattern could be useful.
+
+Let's start with a simple example, imagine you have an array of strings, that can contain some duplicates, and we want to narrow it down to only an array of unique strings. Sure, I know you could also `import {uniq} from 'lodash'` and be done with it (or use `[...new Set([...array])]`), but let's say that we wanted to implement this logic via `Array.prototype.reduce` for a minute! 
+
+In order to remove the duplicates, we need some way to know if we've "seen" a value before, while we could use some external value for that, we could also stash that value within the result of our reducer. Essentially we manage our own bookkeeping within the reduce call!
+
+Let's look at some code:
+
+```ts
+let fruits = [
+  'apple',
+  'banana',
+  'kiwi',
+  'strawberry',
+  'apple'
+];
+
+{
+	// First path, maintaining the bookkeeping separate from the reduce:
+	let seen = new Set();
+	let reducedFruits = fruits.reduce((acc, fruit) => {
+	  if (!seen.has(fruit)) {
+	    seen.add(fruit);
+	    acc.push(fruit)
+	  }
+	  return acc;
+	}, []);
+}
+
+// Second path - bake in the bookkeeping
+// __within__ the reduce accumulator!
+let reducedFruits = fruits.reduce(
+  (acc, fruit) => {
+    if (!acc.seen.has(fruit)) {
+      acc.seen.add(fruit);
+      acc.fruits.push(fruit);
+    }
+    return acc;
+  },
+  // Note: Our default accumulator changed shape!
+  {
+    fruits: [],
+    seen: new Set()
+  }
+)
+  // Note: We need to grab the value we care about from the reduce call
+  .fruits;
+```
+
+Alright, you might be saying that this looks like overkill for this example, clearly that `[...new Set(fruits)]` would be far easier and I would agree for this use case. 
+
+Let's talk about a slightly more difficult use case where I've seen this pattern become really useful: managing incremental form submissions within React with `useActionState`!
+
+Imagine we have a multi-step form, something like a progressive disclosure experience where you enter your name, then your email, and maybe finally a message for example.
+
+We _could_ manage this form state all client side with `useState`'s or a `useReducer`, and then perform a manual form submission (either mimicking it with `fetch`, or calling `form.requestSubmit()`), but we could also build it in a way that should work without JS as well!
+
+Enter `useActionState` and Server Actions in React, we can build a multi-step form building on the concept of accumulating some state within our reducer (server action)!
+
+In our case, we can stash the `formData` value on our state so we can read back from it within components to re-fill the fields in the form after a submission.
+
+You can test this out in [this minimal demo app](https://multi-step-form-xi-black.vercel.app/), the source for that app is available [in this repo](https://github.com/hamlim/multi-step-form).
+
+The gist boils down to both the server action:
+
+```ts
+type State = {
+  status: 'name' | 'email' | 'note' | 'error' | 'complete',
+  formData: FormData
+};
+
+async function incrementalSendAction(
+  prevState: State,
+  formData: FormData,
+): Promise<State> {
+  "use server";
+
+  switch (prevState.status) {
+    case "name": {
+      if (formData.get("back") === "true") {
+        return { status: "name", formData };
+      }
+      return { status: "email", formData };
+    }
+    case "email": {
+      if (formData.get("back") === "true") {
+        return { status: "name", formData };
+      }
+      return { status: "note", formData };
+    }
+    case "note": {
+      if (formData.get("back") === "true") {
+        return { status: "email", formData };
+      }
+      // regular submission after filling out all the fields
+      // validate the form data
+      let { name, email, note } = Object.fromEntries(formData.entries());
+      if (!name || !email || !note) {
+        return { status: "error", formData };
+      }
+      // do something with the form data
+      // success!
+      return { status: "complete", formData };
+    }
+    default:
+      return prevState;
+  }
+}
+```
+
+and the usage of `useActionState`:
+
+```tsx
+let [state, action] = useActionState(incrementalSendAction, initialState);
+```
+
+From this - we can access the previous submitted `formData` via `state.formData`, allowing us to re-fill the inputs with the previous submitted value:
+
+```tsx
+<Input
+  name="name"
+  // undefined on first render, filled in after first submission
+  defaultValue={state.formData.get('name')}
+/>
+```
+
+Now we get all the benefits:
+- Minimal state management
+	- What state there is, lives on the server
+- The form works great with and without JavaScript
+- The rendering logic is easy to reason about
+
+The beauty of this also is that it's "Just React"™ and a minimal pattern built on top of the concepts we learned with `Array.prototype.reduce`!
+### Footnotes:
+
+<Footnote id="1">Although I'm sure that there is an existing name for this concept/pattern - if you know what it is called reach out and I'll update my blog post!</Footnote>
+

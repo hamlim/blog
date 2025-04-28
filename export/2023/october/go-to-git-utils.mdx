@@ -1,0 +1,48 @@
+---
+title: "Go To Git Utils"
+slug: "go-to-git-utils"
+path: "/2023/october/go-to-git-utils"
+date: 1696936441000
+status: "public"
+type: "blog-post"
+tags: ["Development","Web Development","Git"]
+description: ""
+month: "october"
+year: 2023
+---
+
+
+I've been starting to pick up a few additional utilities that I use alongside
+`git` within my development setups, I figured I'd try to collect them here in
+this post in case I need to set them up on another computer in the future, or
+(maybe more likely) I can share this to friends when they ask me "what was that
+command you just ran?!?".
+
+If there's other utilities I should be aware of, reach out to share them!
+
+### gh - [link](https://cli.github.com/)
+
+I probably don't need to say much about this, but I consider this a musthave if
+most of your work is on GitHub (either public or enterprise). Where it really
+shines for my use case is opening PRs, I use `gh` every single time!
+
+### Git Branchless - [link](https://github.com/arxanas/git-branchless)
+
+This is really many utilities wrapped up in a trenchcoat! It comes with
+`git smartlog` (a nicer output on `git log`), and also a `git undo` command
+which I strongly believe that `git` should offer by default!
+
+### Git Pile - [link](https://github.com/keith/git-pile)
+
+This has become my go-to tool for supporting a stacked diff like workflow with
+git and GitHub. I tried out [`spr`](https://github.com/ejoffe/spr) before but it
+enforced that you merge PRs from the command line instead of using the UI (which
+also meant it didn't work for me at work where git permissions are intentionally
+more restrictive).
+
+`git-pile` "just works"™, using `gh` under the hood (the GitHub CLI) for opening
+PRs/interacting with PRs, which means I can use all the same options as I used
+to use with the GitHub CLI!
+
+---
+

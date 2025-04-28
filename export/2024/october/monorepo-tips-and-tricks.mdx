@@ -1,0 +1,96 @@
+---
+title: "Monorepo Tips and Tricks"
+slug: "monorepo-tips-and-tricks"
+path: "/2024/october/monorepo-tips-and-tricks"
+date: 1728311888000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Monorepos"]
+description: "Sharing a few core recommendations when working within monorepos to make your life easier!"
+month: "october"
+year: 2024
+---
+
+
+I've been noodling on monorepos for a while now, and I wasn't sure how I wanted to start sharing some of my thoughts on managing monorepos and making it easier to work within them.
+
+For context, I helped setup and manage a large scale web monorepo while I was at Wayfair, and I've done the same at Fireworks as well. While I don't claim to know everything about monorepos, I have a number of years working within them with a large number of contributors (and 100's of contributions to the main branch per week on average).
+
+This post (and future posts about monorepos), focuses in on "node monorepos", e.g. those that use package managers like `npm`, `bun`, `yarn`, `pnpm`, `deno`, etc and where the code uses JavaScript/TypeScript, or otherwise usually relies on `node_modules`. However some of these recommendations may apply to other kinds of monorepos as well.
+
+I plan to write a bit more about monorepos in the future, but I figured I should start with some top of mind tips and tricks (really [just a set of recommendations](https://www.youtube.com/watch?v=k9ojK9Q_ARE)). These are presented in no particular order - if you have any questions on these feel free to reach out!
+
+---
+
+## Dependency Management
+
+### 1. Always specify dependencies within the workspace that depend on them
+
+Often when working within a monorepo - some dependencies may have been resolved by other workspaces within the repo. For example, if you have a React application and several libraries used within that application, the `react` dependency is most likely installed by either the app or the libraries. This can make it really easy to accidentally forget to properly declare a dependency within a new workspace.
+
+Your tests, or other flows may "just work", however you've created an implicit contract that could break depending on how your package manager resolves dependencies, or if you remove that dependency from other workspaces.
+
+The same applies for in-monorepo dependencies, e.g. if you have a workspace that depends on another workspace within the repo - you should specify that as a dependency as well, usually following the format of `"workspace-pkg": "workspace:*"` which roughly means resolve the `workspace-pkg` dependency from the local workspaces at any version. See below for managing versions of workspace dependencies!
+
+### 2. In-repo dependencies must always be one way
+
+Circular dependencies should always be avoided - even if you're not working within a monorepo you want to avoid introducing circular dependencies because they could lead to undefined behavior at run time, or just generally introduce confusion for contributors.
+
+If you have some code in `pkg-a` (which depends on `pkg-b`), that `pkg-b` would like to use - you should extract that code to a shared library that both can depend on (or copy it into both libraries).
+
+### 3. Workspaces should build themselves
+
+This one is a bit of a 🌶 spicy take 🌶, however I strongly believe that workspaces should have their own build steps, and other workspaces depending on those packages should consume the built artifacts.
+
+This one is particularly important when working with TypeScript, TypeScript doesn't usually understand package boundaries and will continue type checking down through code within dependencies. Not only does this mean that TS will do more work than is necessary - it can sometimes also lead to weird race conditions or generate definition files within the source directory<FootnoteRef id="1" />.
+
+The only solid way I've found to avoid this pitfall is two changes:
+
+- Configure `skipLibCheck` within `tsc`, _and_
+- Build libraries to some kind of `dist` directory
+
+## On Versioning
+
+There's a number of thoughts I have on versioning within monorepos.
+
+### 1. Pin External Dependencies
+
+First and foremost - you should always **pin external dependencies** to a specific version. The only case where you shouldn't pin a dependency, is when you're publishing a package to an external registry (e.g. npm or jsr), and that dependency is a `peerDependency`.
+
+### 2. Always point to the latest version of local dependencies
+
+I don't recommend using versioning for internal dependencies, for example if you have two packages in your repo `pkg-a` and `pkg-b`, and `a` depends on `b`, you don't need to specify a version for `b` within `a`'s `package.json`. You can instead use `workspace:*` to depend on any version of the package, which should resolve the "current version" of that dependency within the repo. This would look like the following `package.json`:
+
+```json
+{
+  "name": "pkg-a",
+  "dependencies": {
+    "pkg-b": "workspace:*"
+  }
+}
+```
+
+<Callout>
+It's worth noting however, that just because you always consume the latest version of a local dependency, doesn't mean that you can leverage versioning as a way to indicate historical significance to changes to the workspace.
+
+I've seen teams adopt a healthy versioning and changelog process for monorepo packages in the past that helps to provide context on what changes have happened and why (with more nuance than git commit history).
+</Callout>
+
+### 3. Adopt a one version rule
+
+This is something I become familiar with while at Wayfair, and have since tried to get others to adopt it as well. The concept comes from a paper by engineers at Google, and boils down to:
+
+> For every dependency in [a] repository, there must be only one version of that dependency to choose.
+
+(originally from the book [Software Engineering at Google](https://www.google.com/books/edition/_/V3TTDwAAQBAJ?hl=en))
+
+I've published the [`one-version`](https://github.com/hamlim/one-version) npm package to help enforce this constraint across monorepos with any package manager.
+
+The gist here is to avoid weird edge cases where some dependencies may resolve to different versions - this has been known to cause issues with popular packages like React.
+
+While this may make it difficult to tackle version upgrades on larger monorepos - the consistency afforded by using a single version for each dependency makes this worthwhile.
+
+
+### Footnotes:
+
+<Footnote id="1">While at Wayfair, we ran into one of these issues, we were seeing inconsistent failures during our CI pipelines, where the associated `.d.ts` files within a dependency would sometimes be present and sometimes they wouldn't. We tracked this down to a race condition when performing builds and also checking types in parallel across workspaces. Enforcing builds + `skipLibCheck` prevented this bug for us.</Footnote>

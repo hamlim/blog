@@ -1,0 +1,57 @@
+---
+title: "yw"
+slug: "yw"
+path: "/2021/february/yw"
+date: 1612785600000
+status: "public"
+type: "blog-post"
+tags: ["Snippets","Yarn","Monorepos","Development"]
+description: ""
+month: "february"
+year: 2021
+---
+
+
+
+#### Update!
+
+Note: This script is only compatible with yarn classic (e.g. v1), I have since
+published an updated version that works with yarn berry (v2 and v3 releases) in
+my
+[Navigating Monorepos with Ease](/blog/2023/january/navigating-monorepos-with-ease)
+blog post!
+
+---
+
+Almost a year or more ago I stumbled across this super useful bash function that
+makes it incredibly easy to run scripts across a
+[Yarn](https://yarnpkg.com/)-based monorepo. Since then I haven't looked back,
+and have been slowly converting the rest of my team to adopt the same function
+in their local workflows as well!
+
+## Script:
+
+```bash
+yw() {
+  yarn workspace $(yarn --json workspaces info | jq '.data' -r | jq "[keys][0] []" -r | fzf) $@
+}
+```
+
+## Requirements:
+
+- `jq`
+- `fzf`
+
+Both should be installable via `homebrew`: `brew install fzf jq`
+
+## Installation:
+
+Copy the above script and dump it into your `.bashrc` or `.zshrc`, or whatever
+other config script your shell uses!
+
+<Spacer />
+
+---
+
+<Spacer />
+

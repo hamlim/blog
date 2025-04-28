@@ -1,0 +1,43 @@
+---
+title: "Principles for Automated Testing"
+slug: "principles-for-automated-testing"
+path: "/2023/july/principles-for-automated-testing"
+date: 1688721133000
+status: "public"
+type: "blog-post"
+tags: ["Development"]
+description: ""
+month: "july"
+year: 2023
+---
+
+
+This post is meant to be a living reference for common patterns and principles
+that I personally find important when working within an automated test suite.
+
+Some of these may only apply to specific scenarios, some you may disagree with,
+but so far they've all proven in my own experience to be incredibly valuable to
+maintaining a large automated test suite for a long time and with a lot of
+contributors.
+
+## Creating a test should be incredibly easy
+
+If you want to encourage that tests get written and that your code is generally
+well covered then it should be dead easy for any contributor to create a (well
+structured) test.
+
+## Test output should be "clean"
+
+Specifically this means that logs to stdout (e.g. `console.log`) should either:
+
+- Fail the test
+- Be mocked during the test
+
+The test output should be incredibly easy to debug failures, if there are
+several logs unrelated to the failure then it will be more difficult to
+understand how the test failed and what needs to be done to fix it.
+
+> More coming soon!
+
+---
+

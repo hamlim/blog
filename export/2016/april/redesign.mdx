@@ -1,0 +1,51 @@
+---
+title: "Redesign"
+slug: "redesign"
+path: "/2016/april/redesign"
+date: 1459771200000
+status: "public"
+type: "blog-post"
+tags: ["Thoughts","Redesign"]
+description: ""
+month: "april"
+year: 2016
+---
+
+
+
+I recently redesigned my entire website for two reasons. The first was that I
+wanted to try and use a CSS library I have started work on, and the second was
+because I felt like my current site was a bit chaotic.
+
+I have written several posts about redesigning certain websites whether they are
+mine or some other sites, and for most of those writeups I went into the
+specific design principles or explained the different reasons as to why I used
+specific things. This writeup will not be like those as I am currently fairly
+short on time. instead I wanted to talk about a few things that I am using and a
+few things that I am cutting entirely from the website.
+
+The first thing that I cut, and not initially by need or want, was any sort of
+external javascript file. I used to be loading in jQuery and a few external
+files because I was using things like mustachejs for templates and loading in a
+ton of data. Now I simply use javascript for Google analytics and thats all. I
+haven't done the due diligence of checking load times of my website before the
+redesign and after the redesign, however I am fairly certain that by removing a
+ton of the waste the site should be loading faster for a lot of people.
+
+The last thing I want to add is to talk a bit about what I used for my css. The
+entire layout is done using <kbd>flexbox</kbd> which made the design part
+incredibly easy. This of course means that the website will look completely
+terrible when viewed from browsers that don't support these css standards, but I
+am alright with that. I was considering using the Grid Layout CSS features but
+decided to not use it because only a small number of browsers actually support
+Grid Layout and I figured it would be easier for me to simply use flexbox.
+
+As I said in the beginning I am using a lot of my own CSS / HTML assets. In fact
+I am only really using Ion Icons and Normalize.css as my external 3rd party
+resources. I am sure I could have optimized my site more but as it stands now I
+am fairly happy with how it works and feels.
+
+As a sidenote, about a month ago I moved all my sites over to Cloudflare in
+order to setup HTTPS on all my domains. This has been really easy to do and I am
+happy with how simple it was to actually setup.
+

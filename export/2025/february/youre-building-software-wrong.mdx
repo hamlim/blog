@@ -1,0 +1,85 @@
+---
+title: "You're Building Software Wrong"
+slug: "youre-building-software-wrong"
+path: "/2025/february/youre-building-software-wrong"
+date: 1739666520691
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Development","Software Development"]
+description: "Slicing software: why vertical is better than horizontal."
+month: "february"
+year: 2025
+---
+
+import {SoftwareSquare, HorizontalSlices, VerticalSlices } from './svgs';
+
+Imagine software as a square. A square has four sides—top, bottom, left, and right. In this metaphor, that square represents your software product in its entirety. Every piece of your project exists within it.
+
+Now, let’s focus on two key edges: the top and the bottom. The top edge represents the surface that users interact with directly. If you’re building a web application, this would be your user interface (UI). Below that, supporting the UI, is everything else—your backend services, infrastructure, databases—extending all the way down to the bottom edge.
+
+<figure className="flex flex-col items-center mb-8">
+  <SoftwareSquare />
+  <figcaption className='mt-6 border-l-2 pl-6 italic'>A square, with the top edge highlighted in yellow with a label of "User Experience", and the bottom edge highlighted in blue with a label of "Infrastructure", filled with purple squiggles and a label of "Implementation".</figcaption>
+</figure>
+
+### The Traditional Approach: Horizontal Slices
+
+Most software teams tend to break down projects into horizontal slices.
+
+1.	They start at the bottom, figuring out infrastructure—where and how to deploy the application.  
+2.	Above that, they choose frameworks and set up backend services.  
+3.	Higher up, they connect data layers and start wiring backend logic.  
+4.	Finally, they work their way up to the UI, assembling components and polishing the user experience.  
+
+At first glance, this approach seems reasonable. Each layer is built in sequence, dependencies are resolved early, and there’s a logical flow from the ground up.
+
+The problem? It delays meaningful user feedback. By the time teams reach the UI, they may realize they’ve built the wrong thing. Maybe they solved Problem Y when they actually set out to solve Problem X—all because of cascading decisions made at lower levels.
+
+<figure className="flex flex-col items-center mb-8">
+  <HorizontalSlices />
+  <figcaption className='mt-6 border-l-2 pl-6 italic'>The previous square diagram broken down into horizontal slices, with each slice shifted slightly left or right, resulting in a top horizontal slice being slightly off from the original expected top edge of the square, labeled as "Resulting UX".</figcaption>
+</figure>
+
+### The Better Approach: Vertical Slices
+
+Instead of cutting the project horizontally, slice it vertically.
+
+A vertical slice means delivering a thin, end-to-end feature that touches every necessary part of the stack—from UI to backend—so that it can be tested, validated, and adjusted before moving forward.
+
+For example, if you’re building a web application, a simple way to slice vertically is by screen or page:
+
+•	The About page can be developed independently of the Homepage.  
+•	A basic version of a key feature (e.g., search functionality) can be built with a minimal UI, a simple API, and a rough data model.
+
+Each slice should result in something that users can interact with—even if it’s rough. This could be beta testers, internal users, or real customers if you’re iterating live.
+
+<figure className="flex flex-col items-center mb-8">
+  <VerticalSlices />
+  <figcaption className='mt-6 border-l-2 pl-6 italic'>The square diagram, this time split into vertical slices. Each slice has a slightly different width, and has different highlighted sections for the top edge of the square. With a label reading "Each slice delivers incremental value".</figcaption>
+</figure>
+
+Why Vertical Slices Work Better
+
+•	**Early user feedback** → Ensures you’re solving the right problem before investing too much.  
+•	**Faster iterations** → Teams can adjust and pivot without reworking foundational layers.  
+•	**More meaningful progress** → Each slice is an actual, usable feature—not just groundwork.  
+
+Instead of reaching the UI after months of backend work, you build user-facing functionality from the start. If something feels wrong or misaligned, you catch it early—before it’s too late.
+
+### Avoiding Pitfalls
+
+This isn’t to say you should create one giant, monolithic slice either. The key is to find logical breakpoints where work can be split cleanly.
+
+For example:
+
+•	If a feature requires a settings page, make that its own vertical slice.  
+•	If a feature involves real-time updates, build an initial version with fake data before tackling backend optimizations.
+
+By keeping slices narrow but functional, teams maintain flexibility without unnecessary complexity.
+
+## Conclusion
+
+If you structure software development horizontally, you risk spending months building something that doesn’t meet user needs. By shifting to vertical slices, you validate user experience early, catch misalignments quickly, and deliver usable software faster.
+
+Next time you start a project, don’t ask “What infrastructure do we need?”. Instead, ask “What’s the smallest, usable feature we can deliver first?”
+

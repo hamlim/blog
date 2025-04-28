@@ -1,0 +1,38 @@
+---
+title: "Using Feature Toggles to De-risk Refactors"
+slug: "using-feature-toggles-to-de-risk-refactors"
+path: "/2024/may/using-feature-toggles-to-de-risk-refactors"
+date: 1716887064000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Refactors","Development","Next.js"]
+description: "Feature toggles are often underused by most software development teams, and yet offer so much value during not only feature development but also refactors"
+month: "may"
+year: 2024
+---
+
+
+There’s countless resources available online praising feature toggles<FootnoteRef id="1" />, yet I still think it’s extremely underused tool that most teams should start using far more often in development, specifically it really shines when tackling a refactor of an existing feature or even a whole service/application.
+
+A couple of months ago, I lead the frontend platform team at Wayfair as we tackled migrating our Next.js experiences from the Pages Router to the App Router. We relied upon feature toggles to iterate quickly and effectively, our integration allowed us to ship two versions (the existing Pages Router experience alongside the new App Router experience) into production at once, and choose which one to show based on the evaluated feature toggle (or a different override).
+
+Without these toggles in place, we would have to attempt to validate the new experience (either via our automated tests or manual testing, or a mix of both), and then deploy the change and cross our fingers that we didn’t break anything. With feature toggles, we were able to send a small amount of traffic to the new experience, ensure healthy business metrics, as well as performance metrics on both the server and the client, all increasing our confidence that the refactor worked as expected. In fact, we had to resolve a couple of bugs that came up from that refactor, without toggles we would have had to rollback the changes, perform more tests internally, and maybe repeat the process several times.
+
+I hinted at this above, however there’s some additional aspects of a good feature toggle setup that I recommend others to consider adopting if possible:
+
+### Support overrides on a per-request basis  
+
+Allowing folks to opt into a different experience by overriding a toggle allows for developers to test their changes in production, as well as other internal stakeholders
+
+### Keep toggles in sync between release environments  
+
+You should still allow for short term drift between environments (e.g. development and production), e.g. someone should be able to override a toggle in one environment and not in another at the same time. However, generally speaking you want to keep all release environments consistent as possible.
+
+In our refactor, we used Unleash to manage the toggles, but built some custom logic within our custom express server around the Next.js application to resolve the toggles as well as cookie-based overrides allowing users to "pin" their override via a cookie.
+
+
+---
+
+### Footnotes:
+
+<Footnote id="1">I refer to feature toggles in this article, but some folks call them feature flags or experiment flags. They’re mostly the same concept - a dynamic flag injected into the code that can be changed without necessarily needing to rebuild the code.</Footnote>

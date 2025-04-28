@@ -1,0 +1,110 @@
+---
+title: "Building Better Beacon"
+slug: "building-better-beacon"
+path: "/2024/january/building-better-beacon"
+date: 1705388698000
+status: "public"
+type: "blog-post"
+tags: ["Development","Web Development","Projects"]
+description: "How we solved an almost show-stopping production bug, and how you can avoid it in your own projects."
+month: "january"
+year: 2024
+---
+
+
+Over the past year or so we've been rebuilding a core library that supports
+tracking business KPI and metrics across our various web and native app
+experiences.
+
+This involved quite a bit of work from a variety of teams, I acted as one of the
+lead architects in designing the web integration for the new system, and worked
+with my team to build it out and get the first iteration in production.
+
+It had been smooth sailing for several months across the first few experiences
+that adopted the new version of the core library, at least until the other week
+where we identified a show stopping bug.
+
+## Background
+
+The library leverages
+[`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon)
+to post event payloads to one of our internal processing gateways, we use this
+data to get an overall sense of how users are browsing and interacting with our
+sites, and it powers key business metrics like our visits, add to cart rate and
+our overall conversion.
+
+We chose sendBeacon because of it's slightly stronger guarantee that the browser
+won't drop the requests when a page is unloaded or navigated away from. This
+gave us confidence that we could send richer content (via JSON payloads) than
+our previous system, and also allow us to track key interactions before they
+resulted in the customer navigating to another page.
+
+Our previous iteration of this system, which was about 6 years old or so,
+heavily relied upon cookies and sending data via image requests (which greatly
+inhibited the size and fidelity of the data we could collect).
+
+## The Bug
+
+We've been adopting this new core library on several experiences as of late, and
+on one of them we noticed that we were queuing up a large number of these events
+via `sendBeacon`, so many in fact that the browser would effectively stall and
+no longer send the requests.
+
+In the DevTools Network panel they'd all show up as `(pending)` without any
+clear indicator on why they weren't being flushed.
+
+At first, we thought it could be due to some limit on the total number of
+connections being made, but there seemed to be no other network requests that
+would similarly get stuck.
+
+We did some research and found out a painful little caveat with `sendBeacon`
+(and one that also applies to `fetch` `keepalive` which we considered as an
+alternative also):
+
+1. The payload to be sent must be smaller that 64kb (for Chrome, seems other
+   browsers also use a similar limit)
+   [source](https://www.w3.org/TR/beacon/#return-value)
+2. The total size of the queued payloads to be sent must be smaller than 64kb
+
+We checked our pending requests and none of them got close to the 64kb limit, we
+then tallied up our total requested payload size and got a bit worried.
+
+Our first read through of the second limitation was that it was 64kb in total
+for the lifetime of a page. In that case it'd only take about a hundred or so
+requests (with an average size of ~500b) before we hit that cap.
+
+Honestly, we were pretty concerned that we'd need to go back to the drawing
+board and consider alternative ways to send these payloads.
+
+## Good Fortune
+
+Fortunately however, some of my teammates re-read the limitations of sendBeacon,
+and found further evidence that the second limitation only applied to _queued_
+requests, not _completed_ requests. So we would only hit this `pending` state
+for requests if there are other requests in-flight and the size of their payload
+in total is over that 64kb limit.
+
+This is where the teammates had a bright idea, we could retry these requests a
+little bit later if they get stuck in the pending state. Fortunately again, the
+`navigator.sendBeacon` api returns a boolean indicating if the browser can send
+the request, if it is `false` then that means we have hit either size
+limitation.
+
+So if we encounter any such request, we can wait a little bit (via `setTimeout`,
+`requestAnimationFrame`, etc), and then retry it.
+
+We opted for a queue, so we can enqueue any pending requests, and otherwise pop
+them from the queue if they can be sent.
+
+## Resolution
+
+In the end, we opted for an implementation that seemed to work quite well.
+
+I've taken the patterns we worked on internally and implemented them within this
+public NPM package so others don't run into the same issue as we did:
+[`better-beacon`](https://www.npmjs.com/package/better-beacon). The code for the
+library is available [on my GitHub](https://github.com/hamlim/better-beacon) as
+well.
+
+---
+

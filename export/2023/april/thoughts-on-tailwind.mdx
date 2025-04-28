@@ -1,0 +1,81 @@
+---
+title: "My Thoughts on Tailwind"
+slug: "thoughts-on-tailwind"
+path: "/2023/april/thoughts-on-tailwind"
+date: 1681159895000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Tailwind","CSS"]
+description: ""
+month: "april"
+year: 2023
+---
+
+
+For a while now I've been pretty dismissive of
+[TailwindCSS](https://tailwindcss.com/), usually brushing it off as yet another
+BootstrapCSS alternative. However, I've started using it in several of my side
+projects and I think I've changed some of my opinions on it as a tool.
+
+## Background:
+
+Before using Tailwind, I was using Vanilla Extract, and before that was using
+Styled Components. I pivoted from each tool to the next one because of other
+technical limitations. In the case of the change from Styled Components to
+Vanilla Extract it was because I wanted to move away from runtime styling
+solutions (partially to prepare for React Server Components).
+
+The shift from Vanilla Extract to Tailwind was similar, but more of a developer
+experience reason rather than for user experience. The short gist is that using
+Vanilla Extract with a Next.js application is incredibly difficult to setup
+"correctly". Yes there is a Next.js "plugin", but that doesn't work at all with
+React Server Components within Next.js<FootnoteRef id="1" />. For Tailwind
+however, all I need to get it working is a `tailwind.config.js` file and Next
+does all the hard work for me!
+
+## Refined Thoughts:
+
+After using Tailwind for a few weeks (both on my personal site here, as well as
+a few other side projects), I've been really enjoying it!
+
+It's been nice not needing to worry about creating a separate file to maintain
+styles (e.g. a `.css.ts` file), or even maintain yet another build process
+during development as well!
+
+There are stil some quirks with using Tailwind in my experience that I'd love to
+polish up a bit more:
+
+- Figuring out what class I need
+- Handling overrides / style composition
+
+#### Figuring out what class I need
+
+This might just be the initial learning curve of using Tailwind, but I feel like
+99 times out of 100 I usually use the wrong `align-items: center` classname, and
+this happens with a number of other things also (e.g. colors, font-weight, etc).
+
+Some things that have helped with this:
+
+- VS Code Tailwind extension
+- Search Tailwind Raycast extension
+- ChatGPT 🙃
+
+#### Handling overrides / style composition
+
+This one is a bit gnarly, and is really two issues:
+
+- Working with a component library that has already defined a classname that I
+  want to override
+- Complex selectors (e.g. the
+  ["lobotomized owl selector"](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/))
+
+I haven't found great solutions for either of these cases, for the second one
+I've been reaching for adding a custom class in my `globals.css` file and using
+`@apply` from Tailwind.
+
+---
+
+<Footnote id="1">See
+[this long running issue](https://github.com/vanilla-extract-css/vanilla-extract/issues/929)
+trying to get it working within Next.js</Footnote>
+

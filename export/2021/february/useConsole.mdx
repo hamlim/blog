@@ -1,0 +1,76 @@
+---
+title: "useConsole"
+slug: "useConsole"
+path: "/2021/february/useConsole"
+date: 1613304000000
+status: "public"
+type: "blog-post"
+tags: ["Snippets","JavaScript","React","Development"]
+description: ""
+month: "february"
+year: 2021
+---
+
+
+
+A decent part of my day-to-day work is iterating on solving UI "problems" by
+using <Link to="/blog/2021/november/fast-feedback-systems">fast feedback
+systems</Link>, such as web sandboxes / REPLs like
+[CodeSandbox](https://codesandbox.io). As I iterate on these UI challenges, I
+tend to want to both look at the UI and also see a feed of the Console from
+devtools without the rest of the devtools panel taking up space on the screen.
+
+To solve this use case I threw together a quick and dirty `useConsole` hook that
+can capture the output of `console.log` calls and then pipe that into some
+element that can be rendered on top of the UI.
+
+```tsx
+export function useConsole() {
+  let [content, setContent] = useState('');
+  useLayoutEffect(() => {
+    let originalConsole = console.log;
+    console.log = (...message) => {
+      setContent((content) => {
+        return `> ${message.join(' ')}${content ? `\n${content}` : ''}`;
+      });
+      originalConsole(...message);
+    };
+  }, []);
+  return content;
+}
+```
+
+### Usage:
+
+```tsx
+function Root() {
+  let content = useConsole();
+
+  return (
+    <>
+      <Box is='pre' position='absolute' top={4} right={4} width={300}>
+        {content}
+      </Box>
+      <App />
+    </>
+  );
+}
+```
+
+### Notes:
+
+This hook only overrides `console.log`, if you want to catch other console
+methods than you'll want to modify the `useEffect` body.
+
+Additionally, this should be run as early as possible in the render of the
+component to catch all calls to `console.log`
+
+> ⚠️ Be careful using this hook and calling `console.log` from within render, as
+> it will cause an infinite render loop!
+
+<Spacer />
+
+---
+
+<Spacer />
+

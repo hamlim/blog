@@ -1,0 +1,45 @@
+---
+title: "Rebuilding Mustache"
+slug: "rebuilding-mustache"
+path: "/2017/march/rebuilding-mustache"
+date: 1488369600000
+status: "public"
+type: "blog-post"
+tags: ["Development","Web Development"]
+description: ""
+month: "march"
+year: 2017
+---
+
+
+I have recently been thinking a lot about template literal strings and their
+power within the scope of javascript.
+
+I know that we have all decided to drop Mustache and move to react and similar
+libraries but I figured I would flex my muscles a bit and try to build out a
+very dead simple rendering function.
+
+```js
+const render = (template, model) => (
+  template.replace(/\{\{\s?([\w.]+)\s?\}\}/g, (match, variable) => (
+    variable.split('.').reduce((previous, current) => {
+      return previous[current];
+    }, model) || ''
+  ))
+);
+
+let temp = `my <span>{{test}}</span>`;
+render(temp, { test: `<h2 class="testing">Test!</h2>` });
+```
+
+Lets break this down a bit. The render method takes in a template and a model or
+store of data, it searches through the template to find any words wrapped in
+`{{}}` with or without spaces, all its matches are then matched and replaced
+with the corresponding values from the model.
+
+This is just a really plain render method, the next step up beyond this would be
+to start caching the template and storing it in the VDOM, well only if we wanted
+this to become a bit more efficient on handling re-renders/data updating.
+
+Either way figured this was a simple little thing worth playing around with.
+

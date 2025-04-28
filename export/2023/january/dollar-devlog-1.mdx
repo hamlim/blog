@@ -1,0 +1,85 @@
+---
+title: "Dollar: Devlog 1"
+slug: "dollar-devlog-1"
+path: "/2023/january/dollar-devlog-1"
+date: 1674917826000
+status: "public"
+type: "blog-post"
+tags: ["Development","Dollar","Projects"]
+description: ""
+month: "january"
+year: 2023
+---
+
+
+About 7 years ago at the time of writing (January 2023), I started a little side
+project while I was in college that I called Dollar. It was meant to be a
+financial tracking web application (very original, I know!) that I could
+hopefully use to get a better understanding of how much money I was spending and
+how I could hopefully become better at budgeting that money as well.
+
+I had kept up development of the application and had something that I was
+actually pretty proud of also! Unfortunately over the years I wasn't able to
+keep up development and use of it, and it fell into disrepair.
+
+The original version was built using synchronous XHR, jQuery, and some hand
+crafted HTML! I had attempted an incremental rewrite into React around 2017 at
+some point, but by then the codebase was such a mess that I gave up on the
+effort.
+
+I've tried several other rewrites of the same application (with different
+designs) since then, but haven't really had the energy to ship any of them and
+make them part of my daily workflow.
+
+---
+
+This afternoon however, I was sitting on the couch and looking for some
+motivation to get back into some coding, so I figured I'd dive back in on
+rewriting Dollar. I found an iteration from last year or maybe even 2021 that
+was looking pretty good so I figure I'll use this as a baseline and work from
+there.
+
+A quick recap of the current codebase:
+
+- Using [Next.js](https://nextjs.org/) (using version 10!)
+- Using [Supabase](https://supabase.com/) to manage the database (the original
+  application used either Fieldbook [now shut down], and then maybe Airtable I
+  think)
+- Using my component library [DS Pack](https://github.com/ds-pack/components) (a
+  really outdated version)
+
+I'm going to start with updating the codebase to some more recent package
+versions and seeing how it works out, hopefully it's possible to do so without
+breaking everything 😂.
+
+I'll also aim to use this blog post as sort of a running log of my notes and
+work at least for today, and who know's maybe tomorrow I'll have a second Devlog
+for this work!
+
+---
+
+An interesting edge case that I haven't accounted for yet within my component
+library is a selection UI (e.g. a Dropdown or `<select>` element). I got around
+this with the previous iteration of the application by using selectable chips
+which I've since stopped supporting within my library. Hmm, will need to think
+about the right way to support this feature.
+
+Another interesting hiccup that I'll need to look into is how I want to
+integrate Vanilla Extract into the application. The VE Next.js plugin at the
+time of writing is still not supported with React Server Components in Next.js
+13 sadly. I worked around this with a really rough process of having two build
+flows setup for my personal site and another site as well, maybe I opt for that
+in this case again as well.
+
+---
+
+I ended up taking a longer break than I expected and wasn't able to get back to
+the project on Sunday, however I had a few ideas over the rest of the weekend
+that I would like to explore eventually.
+
+<Spacer />
+
+---
+
+<Spacer />
+

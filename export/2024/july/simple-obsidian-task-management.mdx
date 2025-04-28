@@ -1,0 +1,60 @@
+---
+title: "Simple Obsidian Task Management"
+slug: "simple-obsidian-task-management"
+path: "/2024/july/simple-obsidian-task-management"
+date: 1721407719000
+status: "public"
+type: "blog-post"
+tags: ["Notes","Note Taking","Obsidian","Task Management"]
+description: "A brief overview of how I manage my tasks in Obsidian"
+month: "july"
+year: 2024
+---
+
+
+<Callout>
+
+**Update:** I've outlined an updated workflow within [this blog post](/blog/2024/november/my-updated-obsidian-task-management), check it out!
+
+</Callout>
+
+The other week I [wrote about switching back to Obsidian](/blog/2024/july/switching-back-to-obsidian) and talked briefly about how I manage my tasks within Obsidian as well. This post is aiming to be a bit more of a deep dive on how I got to my current setup, what it is, and what are some of the still present pain points that I'm thinking about solving going forward.
+
+Before digging in - my task management workflow has changed quite a bit in the past couple of months. There was a short stint where I tried to really lean into the **Reminders** app on my iPhone / mac - but I was missing the nice ability to manage tasks on my work computer and personal computer when they didn't share iCloud accounts. I then moved over to Notion using their Notion Projects offering - but that felt a bit like overkill. When I switched back over to Obsidian I decided to give [Todoist](https://todoist.com/) a try - I had used it ages ago and remembered liking it but also remembered hitting their free plan limits pretty fast.
+
+After about a month of using Obsidian daily - I decided to move my tasks back into Obsidian. I liked the ability to easily refer to my tasks within my notes and even create whole notes for individual tasks (even though this part is still kind of clunky I think).
+
+I tweaked my setup a bit - first landing on keeping the source of truth for my tasks localized to the most relevant note that they are related to. For example I have a "root note entry" for each of my side projects - so I was adding project-related tasks inline in those notes. That worked out alright for side projects - but there wasn't really a good way to see the big picture for the tasks.
+
+I was able to help out a bit with the [Task](https://publish.obsidian.md/tasks/Introduction) plugin's [`queries` feature](https://publish.obsidian.md/tasks/Queries/About+Queries) (where you can create nice views using a custom code block syntax to query all tasks in your vault), but it still felt a bit chaotic to me.
+
+Now what I've landed on as my current workflow is to:
+
+- Manage the source of truth list of tasks within a single note (in my case, `Tasks.md`)
+	- I break this note up into individual sections, one for general catch all tasks like "Frame artwork in the office", one for work and another for side project specific tasks
+- I also include collapsed annotations below each section to every so often hide the completed tasks just below each section
+- In my daily notes - I have a template to show tasks that are due on the current day - or have already come due and haven't been completed yet
+	- I also have another section for capturing the tasks that I completed that day also - which allows me to easily go back and see what I completed on any given day
+- I also use a recurring weekly note to capture those tasks which mirrors a bit of what the `Tasks.md` note looks like but is also using the queries noted above
+
+All in all - this system works fairly well!
+
+As for some of the pain points:
+
+I haven't exactly ironed out how to best add tasks from my phone (I've been opening up the `Tasks.md` note and manually adding it), I think in my ideal world I'd use some kind of quick capture flow to easily add tasks and have them be sorted into the correct section in the note when adding them from my phone.
+
+I haven't figured out a good workflow for managing the long term of what happens to a task when its completed? Should it stick around for several months (or longer)? Or should I routinely clean them up?
+
+Block references and even "live block references" (where it renders the block inline) don't work all that well after I move the task into the completed tasks collapsed annotation. Ideally I wouldn't need to use annotations for that and instead could use a `<details>` section - maybe there's a way to do that better in Obsidian.
+
+Adding reminders doesn't seem to work on my phone - I have some extension (not exactly sure which one it is) that lets me type `(@` and pick a day/time to get a reminder for that block - but this doesn't seem to work nicely on my phone.
+
+Generally - editing tasks using the built in task editor flow doesn't seem to work for me unless I find the task within a queried view - I have to manually edit the source or track down a view of it that shows the 📝 emoji where I can then open the edit task modal.
+
+---
+
+Is this better than a dedicated task management app? Maybe not, but I like that I get to own the data for the tasks and I don't have to pay yet another service to manage syncing those across devices.
+
+Who knows - maybe in a week I'll be using yet another task management app and I'll be changing my tune!
+
+Do you use Obsidian to manage tasks? If so - how do you do it? I'd love to learn a bit about how others are tackling the same use case!

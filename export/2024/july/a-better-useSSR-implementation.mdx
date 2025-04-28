@@ -1,0 +1,67 @@
+---
+title: "A Better useSSR Implementation"
+slug: "a-better-useSSR-implementation"
+path: "/2024/july/a-better-useSSR-implementation"
+date: 1721737661000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Tip","React","Snippets"]
+description: "Replace that old useState and useEffect combo for a new and better option!"
+month: "july"
+year: 2024
+---
+
+
+For teams working within a server side rendered react app (like when using Next.js or Remix), I often see a `useSSR` (or `useClient`) hook within the codebase.
+
+These hooks usually return a boolean indicating if we're on the client or being server rendered - this can be useful to introduce some functionality when we are on the client and now have access to the `window` or `navigator` globals for example, or can be a useful way to render different UI on the server or the client!
+
+Most of these implementations look something like this:
+
+```tsx
+import {useState, useEffect} from 'react';
+
+export function useSSR() {
+  let [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return mounted;
+}
+```
+
+This implementation isn't all that bad - it's relatively easy to understand what's happening!
+
+However, this implementation causes a double render on the client - which can sometimes be less than ideal. The first render is the hydration pass on the server rendered HTML, the second render is after the `setState` is applied within the `useEffect`.
+
+There's now a better way to implement this within React: `useSyncExternalStore`!
+
+The name is pretty confusing - it was original built to help external stores (e.g. Redux, Jotai, etc) integrate better with React's scheduler. However it is pretty flexible to be used for a few other use cases as well!
+
+Here's the new implementation using `useSyncExternalStore`:
+
+```tsx
+import {useSyncExternalStore} from 'react';
+
+let emptySubscribe = () => () => {};
+
+export function useSSR() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    // client value:
+    () => true,
+    // server value:
+    () => false,
+  );
+}
+```
+
+This will return the same values as our old implementation - but skips the need for a re-render after an effect runs. React does the heavy lifting for that now with this new hook!
+
+I first saw this referenced from [this tweet](https://x.com/TkDodo/status/1741068994981826947):
+
+<Tweet id="1741068994981826947">
+<p lang="en" dir="ltr">🤪 Am I going crazy or is this a legit way to avoid hydration errors? Basically abusing `useSyncExternalStore` to safely read server snapshots on the server and on the first client render, and then falling back to the client snapshot.<br /><br />The good thing is that on client side… <a href="https://t.co/9qDJjdbYqj">pic.twitter.com/9qDJjdbYqj</a></p>&mdash; Dominik 🔮 (@TkDodo) <a href="https://twitter.com/TkDodo/status/1741068994981826947?ref_src=twsrc%5Etfw">December 30, 2023</a>
+</Tweet>

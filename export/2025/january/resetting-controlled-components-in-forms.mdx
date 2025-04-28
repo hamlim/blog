@@ -1,0 +1,94 @@
+---
+title: "Resetting Controlled Components in Forms"
+slug: "resetting-controlled-components-in-forms"
+path: "/2025/january/resetting-controlled-components-in-forms"
+date: 1737211335595
+status: "public"
+type: "blog-post"
+tags: ["React","Web Development","React Server Components"]
+description: "A quick way to handle resetting internal state in components when a parent form is submitted!"
+month: "january"
+year: 2025
+---
+
+
+If you're starting to leverage some of React's form primitives (e.g. `action` / `formAction` and Server Actions), you might run into the same conundrum I did with controlled components.
+
+By default, React will reset a form after a submission <FootnoteRef id="1" />, however that doesn't really do much to components that manage their own state, the state managed by React will be preserved on the form submit.
+
+This could lead to possibly weird looking form states after submission, or even bugs with previous values being submitted the next time a form is submitted.
+
+However, there's a really neat way to hook into this automatic form reset behavior within your controlled component, and thats by adding a reset event handler!
+
+Here's a small snippet of a controlled component:
+
+```tsx
+export function MultiSelect({
+  options,
+  label,
+  name,
+  // maybe other props too
+}) {
+  let [inputValue, setInputValue] = useState("");
+  let [selected, setSelected] = useState([]);
+
+  function handleInput(e) {
+    setInputValue(e.target.value);
+  }
+  
+  return (
+    <>
+      <input
+        type="hidden"
+        value={selected.join(',')}
+        name={name}
+      />
+      <label>
+        {label}
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInput}
+        />
+        </label>
+        <OptionMenu
+          filter={inputValue}
+          options={options}
+          selectedValues={selected}
+          onSelect={setSelected}
+        />
+    </>
+  )
+}
+```
+
+When this is used within a form that is submitted, the `inputValue` and `selected` state values will be preserved, meaning the MultiSelect will probably show you the values instead of an empty state.
+
+The neat way to handle this reset behavior is to add an event listener:
+
+```tsx
+// within our `MultiSelect` component
+useEffect(() => {
+  let controller = new AbortController();
+
+  document.addEventListener(
+    'reset',
+    () => {
+      setInputValue("");
+      setSelected([]);
+    },
+    { signal: controller.signal }
+  );
+  
+  return () => {
+    controller.abort();
+  }
+}, [])
+```
+
+And that's it! React, under the hood, effectively calls `formElement.reset()` which will trigger our event listener and clear our managed state!
+
+## Footnotes:
+
+<Footnote id="1">While there is a bit of [contention](https://github.com/facebook/react/issues/29034) in the community on if that's the right behavior</Footnote>
+

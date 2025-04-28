@@ -1,0 +1,68 @@
+---
+title: "A Quick Look at Import Maps"
+slug: "a-quick-look-at-import-maps"
+path: "/2024/december/a-quick-look-at-import-maps"
+date: 1733527329325
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Development","Node.js"]
+description: "A brief look at Import Maps and package.json#imports to support isomorphic JavaScript applications!"
+month: "december"
+year: 2024
+---
+
+
+I know [Import Maps](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap) aren't all that new, however I've recently been messing around with them in a demo app that is natively using ESModules and it's such a nice developer experience!
+
+For those that aren't aware, import maps allow you to configure/tell the browser how it should resolve <abbr title="Import specifiers that aren't relative and don't follow a URL scheme, e.g. `'react'`">bare specifiers</abbr> when it encounters them. Here's an example in practice:
+
+```html
+<!-- Import Map -->
+<script type="importmap">
+{
+  "imports": {
+    "<bare-specifier>": "<where-to-resolve-that-import-from>",
+    "react": "https://esm.sh/react@19.0.0"
+  }
+}
+</script>
+```
+
+This import map will "remap" any `"react"` bare specifier to `"https://esm.sh/react@19.0.0"`, which is using [esm.sh](https://esm.sh) to transform any npm package to a compatible ESModule on the fly!
+
+Now we can ship code that looks like this to the browser and it will work like it would in Node.js, Deno, Bun, or your favorite JS runtime!
+
+```js
+import {createElement} from 'react';
+
+let el = createElement('marquee');
+```
+
+<Spacer />
+
+---
+
+<Spacer />
+
+Import Maps are cool and all - but I also wanted to highlight a really cool feature of using them _along with_ `package.json#imports` within an <abbr title="A collection of code that runs in both a server environment and a client environment, as is usually the case with Server Side Rendering applications">isomorphic application</abbr>.
+
+[`package.json#imports`](https://nodejs.org/api/packages.html#subpath-imports) (the `"imports"` key within a `package.json` file) is similar to the import map concept but for Node.js projects. It allows code being run within Node to similarly resolve import specifiers to different locations, here's an example mapping `#framework/*` imports to a specific directory:
+
+```json
+{
+  "imports": {
+    "#framework/*": "./framework/*.mjs"
+  }
+}
+```
+
+```js
+// will be effectively the same as:
+// import {foo} from './framework/foo.mjs'
+import {foo} from '#framework/foo';
+```
+
+We can combine these two features to build an isomorphic application, and importantly we can also resolve imports differently based on the environment (e.g. resolve a package that uses Node.js features on the server, and then a stub or alternative on the client)!
+
+I'll leave a bit of this as an exercise to the reader, but I do have an [example codebase here](https://github.com/hamlim/simple-react-ssr-framework) that you can look at to see how it works in practice if you don't want to derive the solution yourself 😅.
+

@@ -1,0 +1,44 @@
+---
+title: "Single File Web Apps"
+slug: "single-file-web-apps"
+path: "/2025/february/single-file-web-apps"
+date: 1738603641815
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Development"]
+description: "What if you could author an entire web application in a single file?"
+month: "february"
+year: 2025
+---
+
+
+<Callout>
+
+This article is currently more of a raw "note", than a complete blog post. If you're looking for something really polished on this topic, keep searching 😂.
+
+</Callout>
+
+A couple days ago I was giving [val.town](https://val.town)'s Townie AI system a try, I was tinkering with a small concept and was wondering if it could build it out for me. While that little experiment didn't fully pan out - I did come away with an interesting thought that didn't click until about a week later.
+
+Val.town does something interesting, and I don't think it's limited to their Townie AI assistant either, but present in the fundamental implementation of their system. For those not familiar with val.town, it's effectively GitHub Gists (e.g. small snippets of code) that can be ran as one-off scripts, http handlers, cron jobs, etc. Essentially it's runnable GitHub Gists, which is how they used to (maybe still do) market the service to new users.
+
+The really cool emergent behavior of this concept is that they both host the code and can run the code, what this means is that you can not only run the code on their services, but you can also request it as a plain old module and load it in another runtime!
+
+While that might not sound all that amazing, what it unlocks is pretty interesting in my opinion. This paradigm lets you author a module that can both be used for server handling of a request **and** also be loaded on the client for client logic and behaviors.
+
+Imagine having a single file that could both handle server requests (server rendering, handling form or other misc. server actions) _and_ also be loaded on the client to hydrate the server request and add client interactions.
+
+Traditionally, you'd need two separate entrypoints in your application, one (possibly bundled) for the server, expected to run in a server-only environment, and another (most likely bundled) for the client.
+
+Split entrypoints have benefits;
+
+- Don't need to manually sprinkle in `if (typeof document !== 'undefined')` or similar checks
+- Can reduce code served to the client (or the server)
+
+But, for prototyping (which is where val.town excels), not needing to deal with separate entrypoints (and possibly even separate build steps with separate build config), can really make that iteration speed between make a change and test the change be incredibly fast.
+
+Here's an example val that does exactly that (if it doesn't load, you can [find it here as well](https://www.val.town/v/matthamlin/single_file_web_app)):
+
+<iframe width="100%" height="400px" src="https://www.val.town/embed/matthamlin/single_file_web_app" title="Val Town" frameBorder="0" allow="web-share" allowFullScreen></iframe>
+
+To make this even cooler, you can combine `importMaps` with this approach to fork behavior between server and client (when working on multiple files for the time being, until the [define multiple modules in a single file spec gets shipped, e.g. module declarations](https://github.com/tc39/proposal-module-declarations)), I've talked about `importMaps` previously in [this blog post](/blog/2024/december/a-quick-look-at-import-maps)!

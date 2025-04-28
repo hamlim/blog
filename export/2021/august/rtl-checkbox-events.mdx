@@ -1,0 +1,92 @@
+---
+title: "React Testing Library: Checkboxes and events"
+slug: "rtl-checkbox-events"
+path: "/2021/august/rtl-checkbox-events"
+date: 1628615660000
+status: "public"
+type: "blog-post"
+tags: ["Development","React Testing Library","React"]
+description: ""
+month: "august"
+year: 2021
+---
+
+
+
+<TLDR>
+
+If you're testing a checkbox input element with React Testing Library, you'll
+want to fire a click event on the checkbox _not_ a change event!
+
+Read on to find out how I discovered this!
+
+</TLDR>
+
+I was recently refactoring about 70 individual Enzyme-based unit tests across
+our design system codebase at work to swap it for
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/),
+and encountered an odd quirk that I figured I'd document on my blog.
+
+I was converting some tests for one of our Checkbox Table components, a
+component that allows users to select individual rows or the entire page of
+results shown within a table. The previous tests were quite extensive, the
+entire file was well over 1200 lines of code covering many different and
+difficult edge cases.
+
+As I went through I converted one of the tests that was asserting on an
+`onChange` handler being properly called when one of the checkboxes was
+selected, the previous test code looked something like:
+
+```jsx
+const handleChange = jest.fn();
+const wrapper = mount(<CheckboxTable onChange={handleChange} />);
+
+wrapper
+  .find(`[data-enzyme-id="header-checkbox"]`)
+  .simulate('change', { target: { checked: true } });
+
+expect(handleChange).toHaveBeenCalledTimes(1);
+```
+
+So I started converting as I had other tests within the codebase:
+
+```jsx
+const handleChange = jest.fn();
+render(<CheckboxTable onChange={handleChange} />);
+
+fireEvent.change(screen.getByTestId('header-checkbox'), {
+  target: { checked: true },
+});
+
+expect(handleChange).toHaveBeenCalledTimes(1);
+```
+
+However, the test started failing!
+
+I started scratching my head after debugging this for about 30 minutes without
+making much traction on the failing test, in fact I was about to comment the
+test out and return to it in a follow up ticket but then I did one last google
+search and stumbled upon
+[this stackoverflow result](https://stackoverflow.com/questions/63006476/fireevent-change-does-not-toggle-checkbox),
+linked from there was this issue comment noting that for checkbox elements, we
+actually want to fire a `click` event instead of a `change` event!
+
+So I went back to my test and updated it one last time to the following:
+
+```jsx
+const handleChange = jest.fn();
+render(<CheckboxTable onChange={handleChange} />);
+
+fireEvent.click(screen.getByTestId('header-checkbox'));
+
+expect(handleChange).toHaveBeenCalledTimes(1);
+```
+
+and the test started passing!
+
+<Spacer />
+
+---
+
+<Spacer />
+

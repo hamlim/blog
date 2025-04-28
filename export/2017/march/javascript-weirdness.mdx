@@ -1,0 +1,49 @@
+---
+title: "JavaScript Weirdness"
+slug: "javascript-weirdness"
+path: "/2017/march/javascript-weirdness"
+date: 1489233600000
+status: "public"
+type: "blog-post"
+tags: ["JavaScript","Web Development"]
+description: "A few weird things about JavaScript"
+month: "march"
+year: 2017
+---
+
+
+Okay, in case you didn't know already, Javascript is a funky language.
+
+I am currently working on a simple calendar web app using CSS Grid and a bit of
+react, so I wanted to generate an array of arrays storing the days in each month
+in each year. I was hoping to do this with some fancy forEach loops so I started
+with the following code:
+
+```js
+const year = (new Array(12)).fill([]);
+```
+
+I was hoping this would return something like this:
+
+```js
+year = [[], [], [], [], [], [], [], [], [], [], [], []];
+```
+
+but it instead returned essentially this:
+
+```js
+year = [12 x []];
+```
+
+which basically boils down to an array of 12 pointers all pointing to the same
+virtual array. It took about 45 minutes debugging this with one of my friends
+because it kept returning an array of 12 arrays each holding 365 items.
+
+The way that I got around this issue was by setting `year` to:
+
+```js
+const year = [[], [], [], [], [], [], [], [], [], [], []];
+```
+
+Then I could add in all my days within each array.
+

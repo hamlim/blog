@@ -1,0 +1,96 @@
+---
+title: "My Two Favorite React Tricks"
+slug: "my-two-favorite-react-tricks"
+path: "/2022/january/my-two-favorite-react-tricks"
+date: 1643228713000
+status: "public"
+type: "blog-post"
+tags: ["React","Development"]
+description: ""
+month: "january"
+year: 2022
+---
+
+
+
+There are generally two rarely used patterns in React that I really enjoy
+getting to use in applications that I work on.
+
+These both are:
+
+- Using `key`
+- Throwing within a state setter
+
+## On `Key`
+
+In React, `key` is one of those early concepts that you learn that seems to only
+be documented for use within lists. However it is an incredibly useful feature
+that most developers don't use when building applications!
+
+If you ever find yourself realizing that you need to reset the state, or refs,
+of a particular component based on some value in the parent a `key` that can be
+changed on the component is a really useful way to do so!
+
+I've generally recommended this for updating components that may perform some
+computation when the component mounts, but doesn't re-compute that operation at
+a later point in time.
+
+```tsx
+<Child key={someCondition ? 'a' : 'b'} />
+```
+
+## Throwing Within A State Setter
+
+I've written about this concept briefly in my post on
+[React Error Boundaries](/blog/2019/january/react-error-boundaries#caveat),
+however I figured I'd write about the concept in another post since I really
+enjoy this feature.
+
+If you ever find yourself wanting to trigger an error boundary from an event
+handler, or even an asynchronous function call (e.g. within a promise callback,
+or another microtask), you can call a `setState` function with a function that
+throws in the body!
+
+```diff
+function handleClick() {
+  try {
+    // do some logic
+  } catch (error) {
+-     // How do I trigger an error boundary here?
++     setState(() => {
++       throw error;
++     });
+  }
+}
+```
+
+I use this pattern so often that I usually add a `useErrorBoundary` hook in most
+of my side projects:
+
+```tsx
+import { useState } from 'react'
+
+export default function useErrorBoundary() {
+  let [, set] = useState()
+  return (error) =>
+    set(() => {
+      throw error
+    })
+}
+// in another file...
+function Component() {
+  let trigger = useErrorBoundary()
+
+  function handleClick() {
+    trigger(new Error('Yo!'))
+  }
+  //...
+}
+```
+
+<Spacer />
+
+---
+
+<Spacer />
+

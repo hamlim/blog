@@ -1,0 +1,120 @@
+---
+title: "The Library-Docs Monorepo Template"
+slug: "library-docs-monorepo-template"
+path: "/2024/february/library-docs-monorepo-template"
+date: 1708018253000
+status: "public"
+type: "blog-post"
+tags: ["Development","Web Development","Projects"]
+description: "A monorepo template for managing a library and documentation together."
+month: "february"
+year: 2024
+---
+
+
+I was talking with <TwitterMention>scottykaye</TwitterMention> the other day
+since he was starting to scaffold out a small frontend app to demo and document
+one of his open source libraries, and brought up using a monorepo to support
+both the library (which can be published to NPM) and a documentation site (and
+more).
+
+He wanted to learn a bit more about the setup and recommended that I write a
+brief blog post about the structure that I usually reach for in these cases,
+which I've iterated on quite a bit since some of my very early open source
+endeavors.
+
+If you just want to get started with the template and don't care too much about
+how to set it up yourself, you can start from this
+[template monorepo](https://github.com/hamlim/template-monorepo).
+
+## Recommended Tooling:
+
+These days I mostly use [Bun](https://bun.sh) as my package manager for my
+projects, so I'll be using it in this blog post, but the same setup should work
+perfectly fine with `yarn` and `pnpm` (and probably `npm` as well - but I
+haven't used it personally).
+
+## Setup:
+
+Setup a repo with a root `package.json` that includes a `workspaces` key that
+includes two entries: `["docs", "packages/*"]`.
+
+```json
+{
+  "private": true,
+  "workspaces": [
+    "docs",
+    "packages/*"
+  ]
+}
+```
+
+Then create the `docs` and `packages` directories.
+
+```sh
+mkdir docs packages
+```
+
+Within the `docs` dir, you can create a documentation site using your favorite
+tools (personally I use Next at the moment):
+
+```sh
+cd docs
+bunx create-next-app .
+```
+
+and within the `packages` dir, you can create another directory named the same
+as your package:
+
+```sh
+cd packages
+mkdir my-package
+```
+
+Inside your package directory, you'll want to setup a new package like you
+normally might (either using something like `bun init` or manually creating your
+`package.json` and other config).
+
+To use your package within your docs site, you can add it to the dependencies
+within your `docs/package.json` file:
+
+```json
+{
+  "name": "docs",
+  "dependencies": {
+    "my-package": "workspace:*"
+  }
+}
+```
+
+<Callout>
+
+Tip: The `workspace:*"` specifier is a common pattern supported by modern
+package managers that let's you declare a local workspace dependency, at any
+version!
+
+</Callout>
+
+## Additional Ideas
+
+The great part about this setup - is that you can continue to add on workspaces
+from the repo as you need them.
+
+- Do you need a workspace to add end-to-end tests for your package, create an
+  `e2e` workspace by adding it to the `workspaces` array in the root
+  `package.json` and create a directory for it!
+- Do you want a kitchen-sink like demo application that isn't necessarily the
+  same as your docs site? Create a `kitchen-sink` directory and workspace!
+- Have some additional tools / packages you'd like to split off, you can easily
+  spin up additional workspaces within your `packages/` directory!
+
+The capabilities are endless!
+
+## Summary
+
+While this isn't really that new of a concept - folks have been using monorepos
+for a while within the frontend development space, I feel like it's often
+overlooked for single-package repositories when it still has some nice benefits.
+It's made me wonder if we even need single-workspace repos at all!
+
+---

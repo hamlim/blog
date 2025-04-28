@@ -1,0 +1,32 @@
+---
+title: "TSLite"
+slug: "tslite"
+path: "/2024/october/tslite"
+date: 1729346029000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","TypeScript","JavaScript"]
+description: "A proposal for a minimal variant of TypeScript!"
+month: "october"
+year: 2024
+---
+
+
+I've been thinking a bit about TypeScript as of late, primarily motivated by TypeScript's [Isolated Declarations](https://devblogs.microsoft.com/typescript/announcing-typescript-5-5-beta/#isolated-declarations) feature. Mainly I've been thinking about what a new and fresh variant of typed JavaScript could look like<FootnoteRef id="1" />.
+
+I've mostly narrowed it down to the following feature set that I'm tentatively calling TSLite (kinda like SQLite to SQL), to note though - this is only just a concept at this point in time, I haven't built anything formal for this idea but I might consider leveraging AI to help me build some kind of type checking tool possibly!
+
+Features (or lack of features):
+- Static types are enforced for variables and functions
+  - Essentially no support for type inference
+- Removing some TypeScript specific features like `namespace`'s, `enum`'s, and other TS flavored features (like TypeScript decorators)
+  - It should strictly be a static superset on JavaScript, with no changes to how the code will work at runtime
+- No `any` type, instead prefer `unknown`
+
+I think with these constraints you could design a fairly minimal type checking system that could be as efficient (maybe more efficient) than TypeScript is today.
+
+I think the strict "no inference" rule is probably the most constraining for most developers though, type inference is a really nice feature of TypeScript but it leads to a decent amount of ambiguity.
+
+## Footnotes:
+
+<Footnote id="1">While I'm not too optimistic in a new typed JavaScript language taking off and gaining as much popularity as either Flow type of TypeScript - it's still an interesting thought exercise.</Footnote>

@@ -1,0 +1,179 @@
+---
+title: "NextJS Analytics with Airtable"
+slug: "nextjs-analytics-with-airtable"
+path: "/2020/december/nextjs-analytics-with-airtable"
+date: 1607860800000
+status: "public"
+type: "blog-post"
+tags: ["Side Projects"]
+description: ""
+month: "december"
+year: 2020
+---
+
+
+
+I was recently looking for a quick and easy solution to track page hits on my
+personal site for another small feature add to the site (blog post on that when
+I get around to it!), and figured that I could probably spin up something very
+low-fidelity using [NextJS](https://nextjs.org)'s `/api` routes and
+[Airtable](https://airtable.com).
+
+To get started, you'll want to create a new `Base` on Airtable, and a new table
+within that. I opted to use an empty base as the starting point.
+
+Inside the new table created, I'd recommend making the following changes:
+
+1. Rename the table, it starts off named as `'Table 1'` which isn't all that
+   easy to find, I called mine `page-hits`
+2. Set the primary column to something unique, I opted to name it `id` and set
+   the type to `Autonumber` so I don't need to worry about conflicts
+3. Set the second column to be the `url` that the user is visiting
+4. Add a third column to track "hit counts" (each record will only have a value
+   of 1 here, I use this to automatically rely on Airtable's Sum feature on
+   columns), I called mine `hits`
+
+Once you have your Airtable base and table setup, head over to
+[`api.airtable.com`](https://api.airtable.com), and select the base that you
+just created.
+
+From there, you'll want to change the right-hand-side code preview to
+JavaScript, and select "Show API key"
+
+For now, grab your api key and now jump to your NextJS project.
+
+> Note: This guide assumes you have a NextJS project up and running already, and
+> you at least know of `/api` routes
+
+Within your NextJS project, if you don't yet have a `.env.local` file at the
+root of the project then create one, and add a new line that has some unique
+all-capitilized key name for the Airtable API key:
+
+```bash
+AIRTABLE_API_KEY=your-key-here
+```
+
+> Replace `your-key-here` from the above snippet with the API key from the above
+> Airtable api page
+
+Next, you'll want to setup the api route that you will log to from the frontend
+of your site, for my site I named it `pages/api/record-page.ts`, but you can
+call it whatever!
+
+Then you'll need to install the `airtable` NPM package:
+
+```bash
+yarn add airtable
+```
+
+Within the newly created api file, you'll need to import the airtable package:
+
+```tsx
+import airtable from 'airtable'
+```
+
+and configure it with your API key and create the base:
+
+```tsx
+airtable.configure({
+  apiKey: process.env.AIRTABLE_API_KEY,
+})
+
+let base = airtable.base('your-base-id')
+```
+
+> You can find the base-id from the [Airtable API](https://api.airtable.com)
+> page
+
+Now you'll want to create the function that will handle the request from the
+frontend:
+
+```tsx
+export default function handler(req, res) {
+  let body = JSON.parse(req.body)
+
+  // Handle local dev reporting
+  if (body.url.includes('localhost')) {
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'application/json')
+    res.end(JSON.stringify({ skipped: true }))
+    return
+  }
+
+  // handle creating the record on airtable
+  base('your-table-name')
+    .create([
+      {
+        fields: {
+          // pass the url
+          url: body.url,
+          // and set the hits to 1
+          hit: 1,
+        },
+      },
+    ])
+    .catch((err) => {
+      console.error(err)
+    })
+
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'application/json')
+  res.end(JSON.stringify({ success: true }))
+}
+```
+
+and that's it for the server-side code you need to create!
+
+Finally, to use this api route you need to add some code to your `_app.tsx`
+file:
+
+```tsx
+// Import the next router
+import Router from 'next/router'
+
+Router.events.on('routeChangeComplete', () => {
+  fetch('/api/<your-api-route>', {
+    body: JSON.stringify({
+      // pass the current url to the api route
+      url: window.location.href,
+    }),
+  })
+})
+```
+
+This code will add an event listener to the Next Router that will be called when
+the user has finished a client-side route change between pages.
+
+In addition to the code above, you'll also want to handle tracking fresh page
+hits:
+
+```tsx
+// still within _app.tsx
+import { useEffect } from 'react'
+
+export default function App() {
+  // ...
+
+  useEffect(() => {
+    fetch('/api/<your-api-route>', {
+      body: JSON.stringify({
+        // pass the current url to the api route
+        url: window.location.href,
+      }),
+    })
+  }, [])
+
+  // ...
+}
+```
+
+<Spacer />
+
+---
+
+That should be it! With the above configured, you should now be able to see
+Airtable records created when a visitor lands on one of the routes for your
+NextJS site! Let me know what you thought about this blog post by
+[tweeting at me](https://twitter.com/immatthamlin) or <a href="mailto:matthewjameshamlin@gmail.com?subject=NextJS Analytics with Airtable">emailing
+me</a>!
+

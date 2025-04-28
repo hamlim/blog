@@ -1,0 +1,70 @@
+---
+title: "Next.js with Deno v2"
+slug: "nextjs-with-deno-v2"
+path: "/2024/september/nextjs-with-deno-v2"
+date: 1726844212000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Deno","Next.js"]
+description: "This is a quick post noting that Next.js should now work with Deno v2!"
+month: "september"
+year: 2024
+---
+
+
+[Deno](https://deno.com/), an alternative runtime to Node and Bun, is about to release it's v2 version (it's available [now as a release candidate](https://deno.com/blog/v2.0-release-candidate), and you can upgrade to it via `deno upgrade rc`).
+
+Along with several other changes, this new release should now support various frameworks that previously either didn't work at all or only barely worked in some cases. Fortunately this now means that we should be able to use [Next.js](https://nextjs.org/) with Deno!
+
+I tried this out earlier today with the latest release candidate for v2, and got it mostly working.
+
+### Steps:
+
+1. Install Deno if you don't have it installed already
+
+I'd recommend following the docs here to install Deno on your system: https://deno.com/
+
+2. Upgrade to the `rc` version
+
+```sh
+deno upgrade rc
+```
+
+Don't worry - you should be able to downgrade to the stable release by running `deno upgrade` (**without** the `rc` flag) and it will go back to the 1.46.x release.
+
+3. Init a new Next.js app
+
+You probably could migrate an existing app - but in this case I just spun up a new one:
+
+```sh
+deno run -A npm:create-next-app
+```
+
+This will run the binary associated with the `create-next-app` package published to the NPM registry. It's similar to `npx create-next-app` or `bunx create-next-app`, etc.
+
+__Note:__ Unfortunately at the time of writing, `create-next-app` will use `npm` to install the initial dependencies instead of using `deno install`. So you'll most likely want to do the following:
+
+- Let the `npm install` step finish
+- Remove `package-lock.json` (e.g. `rm package-lock.json`)
+- Run `deno install` to re-install the packages via Deno instead
+
+4. Run the app!
+
+You can then run the app using `deno run dev` like you would with other node script runners (e.g. `bun`, `npm`, `pnpm`, `yarn`, etc).
+
+To verify that the app is using Deno instead of Node, you can add some code to your `layout.tsx`  or `page.tsx` files logging something from the `Deno` global, e.g.
+
+```tsx
+// should print something like 2.0.0-rc.4
+console.log(Deno.version.deno);
+```
+
+### Notes:
+
+At the moment I haven't been able to get `deno check ./app/layout.tsx` (or other Next.js files) working correctly, it seems like Deno isn't able to properly resolve various Next built in files like `next/font`, `next/headers`, `next/link`, etc.
+
+There seems to be [this issue in the Next.js repo](https://github.com/vercel/next.js/issues/46078) tracking some part of this, but it might not be resolved soon.
+
+---
+
+Have you tried out Next.js with Deno? What were some of your take aways / notes / rough edges that you've run into?

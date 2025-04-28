@@ -1,0 +1,100 @@
+---
+title: "AI Driven Development"
+slug: "ai-driven-development"
+path: "/2023/november/ai-driven-development"
+date: 1700405709000
+status: "public"
+type: "blog-post"
+tags: ["Development","Web Development","ChatGPT","AI"]
+description: ""
+month: "november"
+year: 2023
+---
+
+
+Over the past week or so I’ve taken some time off work (for a friends wedding)
+and found myself with a bit of free time - so I figured I’d work on a side
+project. The idea of project was still pretty fresh, and I figured that I’d try
+to lean into using ChatGPT to help me build it out.
+
+Before digging in, I have been thinking more and more about AI as of late, I’m
+still really new to whats available and how it all works, but I’ve been trying
+to use the available integrations where I can. I pay for the upgraded version of
+Notion to use their AI integration (which I honestly haven’t really used all
+that much yet), I also pay for the upgraded version of Raycast with their AI
+version (which I’ve so far found to be really direct and straight to the point -
+I’ll talk a bit more about this later on in the post), and mainly I’ve been
+using ChatGPT.
+
+I’ve formed some rough thoughts that I wanted to try and put them all into a
+post on this blog - I may revisit some of these in the future, but we’ll see!
+
+## Thoughts on AI in general:
+
+It’s pretty decent, but I feel like I haven’t found a really solid fit for how
+it can wedge into my workflow. I don’t often need to write creative prose pieces
+which feels like where it really excels at the moment. However I do want to
+continue to give it a lot of thought and experimentation. There have definitely
+been many times where I’ve thought that different workflows that I do for work
+could be made more efficient, but it feels like no one is exploring them yet (at
+least not publicly).
+
+A core example that comes to mind, and is also top of mind for me at the moment
+is an AI backlog assistant.
+
+I want something that crawls our backlog, triages inbound requests, helps us to
+answer why we approached a problem in a specific way when looking back on it,
+and also helps us to better understand how we can tackle work.
+
+I feel like this would greatly benefit from being integrated into not only our
+project tracker, but also Slack and GitHub where we have most conversations and
+where most of our work happens.
+
+I’m sure I’ll have some more thoughts about AI use cases in general, but for now
+I want to dig into the focus of this post, which is how it works for web
+development.
+
+## Thoughts on AI for web development:
+
+I’ve tried GitHub Copilot in the past for about a month or so (basically the
+free month that you can get from GitHub), and at the time I felt like it didn’t
+really fit into my workflow all that nicely. It felt like a slower version of
+the features/benefits that I got out of the TypeScript Language Server in
+VSCode<FootnoteRef id="1" />.
+
+This past week or so however I dug into a new project using Go lang and SQLite
+leveraging only ChatGPT (v3.5, I haven’t purchased the 4.0 variant yet).
+Overall, I enjoyed the setup quite a bit - it was nice to be able to talk to
+~~someone~~ _something_ about the problem that I wanted to solve, and have it
+work with me to write the code and implement changes.
+
+There was definitely some friction - at best it felt like pairing with a junior
+engineer, but not a great pairing session in that. I often needed to ask the
+question two or three times for it to actually do what I wanted. Only about 4 or
+5 times during the work of the project did I feel like I hit a wall and I just
+needed to implement the changes that I wanted to do manually.
+
+Another point of friction for me was needing to go back and forth between my
+editor and my ChatGPT tab, including several times of pasting in the error /
+code I had to keep it up to date on what the code looked like after I made some
+changes. I think that GitHub Copilot now offers a chat like feature that knows
+about the state of the codebase, so i think that would improve the iteration
+cycles a bit more also.
+
+## In Summary
+
+Overall, the experience was pretty neat - I definitely want to lean on ChatGPT
+more for working on more greenfield projects. I think the place where it really
+excelled was that I was fresh to the project as well - so I could discover the
+problem space and the eventual solutions as well while working with it. I feel
+like it would be relatively complex to dive into an existing large project and
+have it up and running and providing valuable feedback along the way. Maybe when
+it has a deeper integration into the codebase and the history of the project
+then it would be able to be a reliable assistant.
+
+---
+
+<Footnote id="1">
+I do wonder if that opinion would have changed had I start using it in a language that I don’t know as well, such as Go lang.
+</Footnote>
+

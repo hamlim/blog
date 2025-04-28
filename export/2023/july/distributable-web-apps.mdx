@@ -1,0 +1,76 @@
+---
+title: "Idea: Distributable Web Apps"
+slug: "distributable-web-apps"
+path: "/2023/july/distributable-web-apps"
+date: 1690608299000
+status: "public"
+type: "blog-post"
+tags: ["Random","Ideas"]
+description: ""
+month: "july"
+year: 2023
+---
+
+
+I was recently reading this Twitter (X?) thread:
+
+<Tweet id="1684522055696351234">
+Would anyone like to partner on creating an Electron alternative that builds on top of React Server Components?
+It would take the good parts of Electron, Tauri, and React Native. The IPC would be replaced with the server components (React Flight)
+&mdash; Tom Sherman (@tomus_sherman) <a href="https://twitter.com/tomus_sherman/status/1684522055696351234?ref_src=twsrc%5Etfw">July 27, 2023</a>
+</Tweet>
+
+specifically this part:
+
+<Tweet id="1684546326871019521">
+Try building the React parts on top of Electron first, and then replace Electron once you’ve got the abstractions in the right spot — and you’re sure Electron is the problem
+&mdash; Jake (@jitl) <a href="https://twitter.com/jitl/status/1684546326871019521?ref_src=twsrc%5Etfw">July 27, 2023</a>
+</Tweet>
+
+and I got to thinking - what if you could distribute your application as a web
+server + a bundled web app?
+
+One major benefit - you don't need to rebuild some web view framework (or
+leverage the existing ones that seem to be fairly heavy and hated also), and it
+also offers some flexibility to the user for how they want to load the
+application.
+
+> But Matt, how would this work??!?!?
+
+You'd need to do the following:
+
+- Build your frontend web application (and server if you have one)
+- Package it up into a folder if you want (zip or what not)
+- Offer an entrypoint script (really only something to start up the web server -
+  maybe some shenanigans for domains [see caveats below])
+- Share the "app" as a directory download for the user
+
+Users would then download the folder of assets + web server and start script,
+run the start script, and load up your application in their favorite web
+browser!
+
+### Caveats:
+
+AKA open questions!
+
+#### What url would you host the app on?
+
+`localhost:3000` or similar is a bit funky - doesn't tell the user what is
+running there. If possible, would be nice to register something like
+`local.<your-app-name>.app` and tell the OS (via `hosts` file maybe) that the
+url should be resolved against `localhost:<your-port>`.
+
+#### What does the start script look like?
+
+Initially I was thinking that it would be a shell script, but I realized that it
+could also be a Deno script thats compiled to run as a binary - then it could
+package up the web server all in one file too!
+
+## Summary:
+
+That's it - that's the whole idea! Has anyone tried this before? Anyone have
+success? I could see a simple native app that handles the host issue for folks,
+and then web apps "register" with the native app somehow...
+
+---
+

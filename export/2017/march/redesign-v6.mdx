@@ -1,0 +1,59 @@
+---
+title: "Redesign v6"
+slug: "redesign-v6"
+path: "/2017/march/redesign-v6"
+date: 1489579200000
+status: "public"
+type: "blog-post"
+tags: ["Redesign","Thoughts","Next.js","Web Development"]
+description: "A few thoughts on the redesign of my personal site, adopting Next.js and deploying via Now"
+month: "march"
+year: 2017
+---
+
+
+I have recently been looking into the many projects and tools that Zeit has been
+working on. If you don't know what Zeit is, its the company behind many cool
+projects like hyper (the terminal built with web technologies), Now a platform
+for deployments, and also Nextjs a server rendered react framework with support
+for routing both on the client and on the server. I decided to up my plan from
+free to the payed option on Now to give it a try. I have been looking at ways to
+cut down on my dependency on Github Pages because of limitations they have
+implemented and also because of the lack in server side control.
+
+So after I had ponied up the $14.99 for a month of premium Now usage, I decided
+it was time to make use of that. I decided to start from scratch on my personal
+website and build it from Nextjs from the ground up. If you are reading this on
+matthamlin.me right now then you are experiencing that rewrite at the moment.
+
+This is the first website I have made with Next, it took some time to learn how
+to use it properly and how to migrate my old structure over to using it too.
+Prior to this I did a full re-write in react and react-router which I thought
+was pretty advanced at the time. But now that I have used Next to handle all
+this it has made it so much easier to build things.
+
+The core concept of Next is that your website lives in two core root folders,
+`pages` and `static`, there are no limitations on what folders you make or use
+but these are the two most common folders. Pages is where are your root page
+endpoints will live, so if I put a `test.js` file within there, then the
+endpoint of `mydomain.com/test` will render out the react component that that
+file exports. Static on the other hand is where you store static assets like
+.html files, images, external css, videos, etc. You can deploy a site with Next
+and just some HTML if you wanted to by throwing an index.html file within
+`/static`.
+
+On the css side of things I had to change my current implementation quite a bit.
+I moved my css imports into template strings within `<style jsx>` tags. This
+means that the styles within the tag are scoped locally to the component. For
+some things I had to use the Global scope within these style tags. A good reason
+for this is when html is set within elements manually (Like how this page is
+rendered from markdown to html), or if you want to style whole components within
+another component.
+
+I plan on converting my other domain `goexploring.today` to use Next and Now in
+the coming weeks, and also plan on launching another site for documenting my
+families trip to New Zealand coming up really soon.
+
+Let me know what you think about the site. In an ideal world it should just work
+like before.
+

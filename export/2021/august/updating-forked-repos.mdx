@@ -1,0 +1,47 @@
+---
+title: "Updating Forked Repos"
+slug: "updating-forked-repos"
+path: "/2021/august/updating-forked-repos"
+date: 1629644473000
+status: "public"
+type: "blog-post"
+tags: ["Development","Git","Tip"]
+description: ""
+month: "august"
+year: 2021
+---
+
+
+
+I find myself reaching for forked repos more often than direct clones these
+days, however I always inevitably need to find a way to update my fork based on
+the original repo. I usually google the answer and find a helpful stack overflow
+that has the code that I need.
+
+I figured I'd re-share that here both as a personal reference to the snippet of
+code and if others want to find it as well.
+
+```bash
+# First add the original repo as a remote locally
+# here we call that one `upstream`
+git remote add upstream <link-to-original-repo>
+
+# Fetch that upstream repo to ensure we have the latest references
+git fetch upstream
+
+# Checkout the main branch
+git checkout main
+
+# Apply the commits from upstream main to the local main branch
+git rebase upstream/main
+
+# Finally push this back up to the forked remote
+git push origin main
+```
+
+<Spacer />
+
+---
+
+<Spacer />
+

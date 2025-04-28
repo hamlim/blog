@@ -1,0 +1,98 @@
+---
+title: "Clientside"
+slug: "clientside"
+path: "/2016/january/clientside"
+date: 1453204800000
+status: "public"
+type: "blog-post"
+tags: ["Development"]
+description: ""
+month: "january"
+year: 2016
+---
+
+
+
+Recent trend articles are always the popular kind of thing to post on a blog,
+however I wanted to quickly writeup a simple little prediction about web
+development because the web is changing more than it ever has in the past.
+
+In the past web applications were huge codebases, and more importantly the code
+was tightly merged meaning that the front end code (html) was written directly
+in PHP code. This was very helpful for the beginning of the web 1.0 revolution.
+PHP was and is a very powerful language to handle web sites and data, however as
+the web entered a new age browsers got far more powerful. Browsers started
+becoming more amazing, offering more access to the CPU and other OS-level
+features.
+
+Browsers like Chrome and Firefox began to grow in user numbers, as well as
+features. Web developers began to test the limits of their browsers by making
+awesome experiments[^1]. However the whole of web development didn't change that
+much, people shifted over to Node.JS as the fundamental server-side architecture
+from PHP, and their HTML was served in much the same way.
+
+However the major key was that the shift to Node separated the server logic from
+the html through routers and tools like Jade. There was still a strict binding
+between the server and the client, however there was a fundamental shift from
+writing the client-side code on the server-side scripts.
+
+And all was well with this new shift, companies were hiring Node developers and
+Rails developers instead of PHP developers. These companies called their
+positions Full Stack web developers, trying to find a developer who could do it
+all.
+
+Yet, as we have learned from the past developments in the web, things were a
+changing. Companies like Fieldbook, Airtable, and services like
+[formsubmit](https://www.producthunt.com/tech/formsubmit) began to rise and a
+new trend began to take place. Some web developers shifted away from working on
+server-side coding and began to couple the logic on the client-side scripts.
+With these new technologies and entire server-side app could be written with a
+few API calls, and a relatively small sized JS file to run in the browser. A
+complete web app will only consist of a few static files for views
+(html/MST/whatever template you choose) and controllers (JS) and the model will
+be stored on 3rd party services. One could even serve a complete functioning
+application through a CDN, and in fact many full applications can be served from
+Github safely and securely. The entire process of writing javascript on Node is
+and will begin to get out of date.
+
+Another amazing bonus to this new architecture of web development, because of
+how simple it will be to develop complete web applications, and reduced cost for
+servers, more and more people will be able to build things on the web. The web
+has always been in a sense a walled garden with many of the plants growing over
+the walls. People could build little applications and things, yet when they went
+to share that with others there was an immense barrier to buy a domain name and
+a server to make their creation public. So with this new architecture anyone
+could get a free account on Github, Dropbox, or some other cloud storage
+platform, write some JS, HTML, and CSS and upload it to share with others.
+
+However there are yet again some issues with this setup, as there were issues
+with the previous status quo, and the status quo before that. Exposing
+authentication processes to end users could end up being a very bad idea. This
+might change when services like Airtable and Fieldbook add Authentication
+plugins for their database management services. Yet for now most authentication
+needs to happen on the client-side of the application.
+
+One other major flaw in this setup could be slower times, most current web
+frameworks such as Angular and React all have sections talking about fouc (flash
+of unstyled content) and how to prevent it (Angular handles this by having a
+skeleton app layout in the html that will get overwritten when the framework
+loads the data from the data source). With applications that run on the client,
+there are two primary render times, when the static HTML is rendered and when
+the data is ready to be rendered on the page. This can be something that will
+change as browsers get faster (with the new http2 standard and parallelism) and
+also with faster internet speeds, as well as hybrid storage techniques
+(localStorage).
+
+Ultimately the web changes more often than a political candidate. It might start
+with a completely new server language to handle everything for web developers,
+and the next month everyone will shift to using some new JS client-side
+framework to build entire application platforms. One thing will not change as
+web development progresses, more and more applications will begin to be written
+as client-side applications.
+
+### Footnotes:
+
+[^1]: Mr. Doob was one of my most well remembered sites, with cool little
+experiments written for Chrome. More information about these can be found
+<a href="http://mrdoob.com/">here</a>.
+

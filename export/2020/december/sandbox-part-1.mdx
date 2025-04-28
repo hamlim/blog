@@ -1,0 +1,195 @@
+---
+title: "Building a Web Sandbox: Part 1"
+slug: "sandbox-part-1"
+path: "/2020/december/sandbox-part-1"
+date: 1608552000000
+status: "public"
+type: "blog-post"
+tags: ["Side Projects"]
+description: ""
+month: "december"
+year: 2020
+---
+
+
+
+Both at work and in my free time I've been working on an online browser-based
+live sandbox for interpreting JavaScript code and rendering output using React.
+Very much like tools such as [Codesandbox](https://codesandbox.io/),
+[CodePen](https://codepen.io), or the variety of other online REPLs.
+
+Since I've been exploring this concept for a bit of time I figured I would try
+to write about some of my learnings and tips and tricks for others that might be
+interested.
+
+To start off, I figured I'd share the high level concepts for building a sandbox
+for the browser. At a super high level, you'll need:
+
+- An editor component
+- A preview component
+
+A very basic implementation of this, expressed as a React component, might look
+something like this:
+
+```tsx
+export default function Sandbox() {
+  let [code, setCode] = useState(`
+render(
+  createElement('h1', {}, 'Hello World!'),
+  rootElement
+)`);
+
+  let [rootElement, setRootElement] = useState();
+
+  useEffect(() => {
+    if (!rootElement) {
+      return;
+    }
+
+    let func = new Function(
+      'React',
+      'createElement',
+      'render',
+      'rootElement',
+      code,
+    );
+
+    func(React, React.createElement, ReactDOM.render, rootElement);
+  }, [code, rootElement]);
+
+  return (
+    <>
+      <label>
+        Code:
+        <textarea
+          value={code}
+          onChange={(e) => {
+            setCode(e.target.value);
+          }}
+        />
+      </label>
+      <div ref={setRootElement} />
+    </>
+  );
+}
+```
+
+So let's break down the above code snippet a bit to better understand what is
+happening.
+
+Our first concept from above was a code editor, in our above snippet the
+following code is playing that role of the code editor (managing the state and
+rendering the text editor using a `textarea`):
+
+```tsx
+// ==highlight== 1-5,27-35
+export default function Sandbox() {
+  let [code, setCode] = useState(`
+render(
+  createElement('h1', {}, 'Hello World!'),
+  rootElement
+)`);
+
+  let [rootElement, setRootElement] = useState();
+
+  useEffect(() => {
+    if (!rootElement) {
+      return;
+    }
+
+    let func = new Function(
+      'React',
+      'createElement',
+      'render',
+      'rootElement',
+      code,
+    );
+
+    func(React, React.createElement, ReactDOM.render, rootElement);
+  }, [code, rootElement]);
+
+  return (
+    <>
+      <label>
+        Code:
+        <textarea
+          value={code}
+          onChange={(e) => {
+            setCode(e.target.value);
+          }}
+        />
+      </label>
+      <div ref={setRootElement} />
+    </>
+  );
+}
+```
+
+The second concept noted from above is the preview component of the system, in
+this example the preview component is highlighted below (including the system
+that transforms the code that the user authors, and evaluating that code):
+
+```tsx highlight=7,9-23,36
+export default function Sandbox() {
+  let [code, setCode] = useState(`
+render(
+  createElement('h1', {}, 'Hello World!'),
+  rootElement
+)`);
+
+  let [rootElement, setRootElement] = useState();
+
+  useEffect(() => {
+    if (!rootElement) {
+      return;
+    }
+
+    let func = new Function(
+      'React',
+      'createElement',
+      'render',
+      'rootElement',
+      code,
+    );
+
+    func(React, React.createElement, ReactDOM.render, rootElement);
+  }, [code, rootElement]);
+
+  return (
+    <>
+      <label>
+        Code:
+        <textarea
+          value={code}
+          onChange={(e) => {
+            setCode(e.target.value);
+          }}
+        />
+      </label>
+      <div ref={setRootElement} />
+    </>
+  );
+}
+```
+
+Again, this snippet is a pretty basic example of a sandbox REPL in the browser,
+however there are several opportunities for enhancement here:
+
+- We render the preview in-line with the rest of the page, however if we wanted
+  to truly sandbox _no pun intended_ the preview, we should move it over into an
+  iframe
+- We assume that the browser can understand the code that the user writes, but
+  what about experimental syntax options or extensions like JSX?
+- We hardcode the scope that the code inside the editor can access via our
+  `new Function` call, but ideally we'd like to support the user to specify what
+  code they would like to load in the preview
+- A textarea isn't exactly the best code editing experience for developers, you
+  miss out on convinience features that any developers are use to with their
+  current code editors
+
+In future versions of this blog post I'll dive into these points and more to see
+how we can enhance this development experience! If you have comments or
+questions, feel free to [tweet at me](https://twitter.com/immatthamlin) or
+<a href="mailto:matthewjameshamlin@gmail.com?Subject=Sandbox Part 1">email
+me</a>
+

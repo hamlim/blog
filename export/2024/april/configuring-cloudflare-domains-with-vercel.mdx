@@ -1,0 +1,45 @@
+---
+title: "Configuring Cloudflare Domains with Vercel"
+slug: "configuring-cloudflare-domains-with-vercel"
+path: "/2024/april/configuring-cloudflare-domains-with-vercel"
+date: 1712306350000
+status: "public"
+type: "blog-post"
+tags: ["Guides","Development","Cloudflare","Vercel"]
+description: "I've started to use Cloudflare to manage my domains for several side projects, have had to jump through the same hooks multiple times that I figured I should document them here!"
+month: "april"
+year: 2024
+---
+
+
+I've been using Cloudflare to register new domain names a few times in the past few weeks. I've also been using Vercel to host my projects. I've found that the process of configuring a domain name registered with Cloudflare to work with Vercel is a bit tricky. Here's how I did it.
+
+## Step 1: Register the domain with Cloudflare
+
+Visit the Cloudflare [domain registration](https://dash.cloudflare.com/c9bcc2abba841ea49f5f6e1d79f58450/domains/register) website to buy your new domain.
+
+## Step 2: Add the domain to Vercel
+
+If you don't already have a project setup on Vercel, do that first by visiting [vercel.com](https://vercel.com/) and starting a new project. Once you have a project setup, visit the project settings and add the domain to the project.
+
+## Step 3: Configure the domain on Cloudflare
+
+This part is fairly straight forward, the domain settings page for your project on Vercel will outline the records you will need to add to Cloudflare. Add the records to Cloudflare and wait for them to propagate (in my experience this has been effectively within a minute or two).
+
+## Step 4: Configure SSL/TLS on Cloudflare
+
+This is the part that I found a bit tricky. You need to set the SSL/TLS encryption mode to "Full" or "Full (strict)" in the SSL/TLS settings page on Cloudflare. This is because Vercel uses a wildcard certificate for all of its projects, and Cloudflare will not be able to verify the certificate if you don't set this.
+
+<Callout>
+
+**Tip!** If you skip this step, you may end up seeing an `err_too_many_redirects` in your browser when attempting to visit your new domain.
+
+You need to configure the above SSL/TLS setting to at least "Full" in order for this to work!
+
+See these [docs](https://vercel.com/guides/resolve-err-too-many-redirects-when-using-cloudflare-proxy-with-vercel) for more information.
+
+</Callout>
+
+## Step 5: Launch
+
+At this point your domain and project should all be set up and ready to go. You can now visit your new domain and see your project live!

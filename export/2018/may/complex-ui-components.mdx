@@ -1,0 +1,202 @@
+---
+title: "Managing Complex UI Component State"
+slug: "complex-ui-components"
+path: "/2018/may/complex-ui-components"
+date: 1527508800000
+status: "public"
+type: "blog-post"
+tags: ["React","Web Development","Components"]
+description: "A few thoughts on managing complex UI component state within React"
+month: "may"
+year: 2018
+---
+
+
+Managing state in React is difficult. While many suggest that lifting state up
+to the highest level of the app, and frequently even outside of the component
+tree, most apps aren't that simple.
+
+One case where this becomes complicated is when app authors need to interact
+with complex UI components within their application. I internally wrestle with
+this concept frequently as I build these UI components everyday at work.
+
+One of the most recent cases where I am running into this is our new carousel
+component which I started work on about 6 months ago as of the time of writing
+this blog post. This component is perhaps the most complicated UI component we
+have at Wayfair.
+
+It manages quite a bit of internal state, ranging from actual React state to
+many references to the rendered dom nodes as well. The problem here is that we
+also want end users (app developers) the ability to control the carousel from
+their business logic.
+
+We started with the concept that render props and prop getters would be
+sufficient to allow end users to control the carousel, however over the months
+of development, we realized that many (maybe 90%) of frontend developers at
+Wayfair (and really anywhere) don't want to manage a lot of state and helpers
+that comes with a render prop.
+
+So we mostly scrapped the render prop pattern on the carousel
+<FootnoteRef id="1"/>. Since then we have continued to iterate on the carousel
+but we were still blocked by this battle of how to properly let end developers
+control the carousel while also not needing to manage a ton of internal logic
+(and possibly duplicating that across the codebase).
+
+#### Skip forward ~ 2 months
+
+On Memorial day weekend of 2018, I decided to spend some time in Codesandbox to
+work on this problem. One of the rough patterns that I still don't fully grasp
+from the Downshift component published by Paypal, is the idea of passing back up
+functions in event handlers to help compute the next state
+<FootnoteRef id="2" />.
+
+I started with a simple example, a component that can be both controlled as well
+as uncontrolled (a counter component). I broke the problem down into two pieces:
+
+1. Local state management
+2. External state management
+
+The common logic between these two pieces is the actual methods behind how to
+update this state. Locally we call setState with either an object or a function.
+Using an object for setState generally means that we have all the information we
+need to determine the next state. Whereas using a function means that we need to
+know the current state of the world to derive the next state.
+
+As with a counting component, a carousel only really needs to know the current
+slide, the action the user is taking (i.e. clicking next), and the number of
+slides to scroll by. With this information (which can be derived by the event as
+well as the current state and props) we can derive the next active index.
+
+So the solution was a concept I will be calling **State Updaters**, these are
+functions which can be (and often are) curried methods that lastly return a
+function that takes in state and props and returns some new state. They are
+curried because they need additional information, such as selectors and
+transformers to return the correct state.
+
+Lets break down this step by step in some code.
+
+```tsx
+class Counter extends React.Component {
+  state = {
+    count: this.props.defaultCount,
+    propCount: this.props.count,
+  };
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    /* we'll get to this later */
+  }
+
+  // This is used for local control flow
+  // We determine if we call setState or not
+  isControlled = () => typeof this.props.count !== 'undefined';
+
+  handleClick = event => {
+    /* we'll get to this later */
+  };
+
+  render() {
+    return (
+      <Fragment>
+        <button onClick={this.handleClick}>Increment Count</button>
+        {this.state.count}
+      </Fragment>
+    );
+  }
+}
+```
+
+So we start off with some local state, a class method for handling the click
+event from the button, and an `isControlled` method for determining if an
+implementer is controlling the component or not.
+
+The next step is to handle the click logic:
+
+```tsx
+// ...
+handleClick = event => {
+  // If we aren't controlled (i.e. we manage our own state)
+  // call setState with the return value of the state updater
+  if (!this.isControlled()) {
+    this.setState(stateUpdater());
+  }
+  // Always call the prop handleClick handler
+  // first passing the event, and second passing an object
+  // with a stateUpdater argument
+  this.props.handleClick(event, {
+    // defined in the module
+    // could also be exported as well
+    stateUpdater,
+  });
+};
+// ...
+```
+
+Once we have the local handler resolved, now we can dive into the state updater
+method.
+
+```tsx
+// return a function that accepts an object with three key fields
+// 1. transformState: this determines if the returned state should be nested
+// 2. selectState: this selects the correct UI component state within the parent state
+// 3. fieldName: this is a string that is the key inside state that we update
+export const stateUpdater = ({
+  transformState = state => state,
+  selectState = state => state,
+  fieldName = 'count',
+} = {}) =>
+// then return another function that accepts state and props
+(state, props) => {
+  return transformState({
+    ...selectState(state),
+    [fieldName]: selectState(state)[fieldName] + 1,
+  });
+};
+```
+
+Now that we know what the stateUpdater looks like, we can dive back into the
+event handler above. Inside the `!this.isControlled()` check, we setState using
+the returned function after calling `stateUpdater` with undefined (results in
+our default argument for transformState, selectState and fieldName).
+
+There is one other thing we need to cover to fully make the UI component
+controllable:
+
+```tsx
+class Counter extends React.Component {
+  // ...
+  state = {
+    count: this.props.defaultCount,
+    // this needs to be an exact reference to the value provided by props
+    propCount: this.props.count,
+  };
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // if the exact comparison between propCount in local state
+    // and the count provided by the props is false
+    // then its time to update the component
+    if (prevState.propCount !== nextProps.count) {
+      return {
+        count: nextProps.count,
+        propCount: nextProps.count,
+      };
+    }
+    return null;
+  }
+  // ...
+}
+```
+
+Now we can put all this together into a working demo, which you can find here on
+Codesandbox.
+
+<iframe src="https://codesandbox.io/embed/5wx0l7o3wk?autoresize=1&hidenavigation=1&moduleview=1" style={{width: '100%', height: 500, border: 0, borderRadius: 4, overflow: 'hidden'}} sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+
+---
+
+<Footnote id="1">Most of the render prop code still lives in the carousel but it
+will most likely be removed before we open source.</Footnote>
+
+<Footnote id="2">Side note, I haven't even validated that this is what Downshift
+does, I have only some second hand knowledge of their helpers that they pass
+back up.</Footnote>
+

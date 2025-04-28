@@ -1,0 +1,214 @@
+---
+title: "Computed Design Tokens"
+slug: "computed-theme"
+path: "/2021/january/computed-theme"
+date: 1610193600000
+status: "public"
+type: "blog-post"
+tags: ["Design Systems","Theme"]
+description: ""
+month: "january"
+year: 2021
+---
+
+
+
+<Text mt="$3" fontSize="$0" color="$gray400">Alternative titles: Dependent
+design tokens, computed theme values</Text>
+
+For the past few weeks I've been working on updating the theme within my
+[`@ds-pack/components`](https://github.com/ds-pack/components) package,
+specifically around the colors that I'm using within the theme and the ones that
+map to "functional roles" (e.g. `primary`, `secondary`, ... etc). Through this
+work I've been exploring a few different patterns that I wanted to share more
+widely.
+
+Before diving into the two things I've been tinkering with I want to step back
+and define the problem space a bit, specifically with this work I've been
+thinking about how to enable consumers of the above components package to theme
+the system without needing to re-construct the whole `theme` object that the
+components use.
+
+In a traditional theme, this customization might be fairly basic by using object
+spread to override some values:
+
+```tsx
+let newTheme = {
+  ...baseTheme,
+  override: "value",
+};
+```
+
+This works really well for flat theme shapes (which might be worthy of another
+blog post in itself), but for nested themes, this soon gets out of hand:
+
+```tsx
+let newTheme = {
+  ...baseTheme,
+  colors: {
+    ...baseTheme.colors,
+    buttons: {
+      ...baseTheme.colors.buttons,
+      primary: "new value",
+    },
+  },
+};
+```
+
+Another complication that arises when customizing a theme is dependent theme
+values, let's say that the theme shape also contains some styles for different
+variants of a component (e.g. [styled-system](https://styled-system.com/)'s
+`variant`), and those styles use the same values from other parts of theme:
+
+```tsx
+let baseTheme = {
+  colors: {
+    primary: "mediumspringgreen",
+  },
+  buttons: {
+    primary: {
+      color: "mediumspringgreen",
+    },
+  },
+};
+```
+
+If the system defines the theme like above, and a consumer wants to change the
+primary color to `cornflowerblue`, the consumer may not know that they need to
+change the `buttons.primary.color` value as well.
+
+These two issues:
+
+1. Less than ideal ergonomics for overriding themes
+2. Dependent theme values don't react to overrides
+
+make theme overriding a particular indersting challenge.
+
+So let's finally dive into some of the ideas I've been working on, specifically
+two concepts:
+
+### Theme Getters
+
+The first idea that I started workshopping was to use a
+[`getter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
+to define values within theme that can reference other values within the theme.
+
+I didn't mention above, but a common workaround I've seen for the second problem
+noted is defining the theme primitives outside of the scope of the theme object,
+and referencing those later:
+
+```tsx
+let colors = {
+  primary: "mediumspringgreen",
+};
+
+export default {
+  colors,
+  buttons: {
+    primary: {
+      color: colors.primary,
+    },
+  },
+};
+```
+
+However this only solves the referencing issue for the file in which the theme
+is defined (frequently that is within the source package for the system). With
+getters however, you move that derivation time to runtime rather than module
+load time:
+
+```tsx
+export default {
+  colors: {
+    primary: "mediumspringgreen",
+  },
+  get buttons() {
+    return {
+      primary: {
+        color: this.colors.primary,
+      },
+    };
+  },
+};
+```
+
+Now, the button primary color inherits the primary color specified on the theme,
+allowing us to override only that value and have the button styles inherit those
+changes:
+
+```tsx
+let newTheme = {
+  // buttons styles don't need to be modified at all!
+  ...baseTheme,
+  colors: {
+    ...baseTheme.colors,
+    primary: "cornflowerblue",
+  },
+};
+
+// newTheme.buttons.primary.color === 'cornflowerblue'
+```
+
+### "Token References"
+
+The second idea I've been working on is around using token
+references<FootnoteRef id="1" />, popularized by
+[Stitches](https://stitches.dev/) and used by
+[System Props](http://system-props.com/).
+
+Essentially using the same syntax that you might use on a traditional `Box`
+component:
+
+```tsx
+<Box color="$colors.primary" />;
+```
+
+within the theme shape itself:
+
+```tsx
+let theme = themer({
+  colors: {
+    primary: "mediumspringgreen",
+  },
+  buttons: {
+    primary: {
+      color: "$colors.primary",
+    },
+  },
+});
+
+// theme ===
+//   {
+//     colors: {
+//       primary: 'mediumspringgreen',
+//     },
+//     buttons: {
+//       primary: {
+//         color: 'mediumspringgreen',
+//       },
+//     },
+//   }
+```
+
+With this method, we've moved the derivation from the reference of the value
+with the getter method to the callsite of this `themer` function (which has a
+few trade-offs depending on how dynamic your theme needs to be).
+
+To experiment with this more deeply, I built a small package that you can try
+out: [`@ds-pack/themer`](https://github.com/ds-pack/themer).
+
+I'd love to hear if you've found interesting solutions to these problems, feel
+free to reach out on [twitter](https://twitter.com/immatthamlin) or via
+<a href="mailto:matthewjameshamlin@gmail.com?subject=Computed Theme">email</a>.
+
+<Spacer />
+
+---
+
+<Spacer />
+
+### Footnotes:
+
+<Footnote id="1">There is probably a better term for this, if you know of them,
+let me know!</Footnote>
+

@@ -1,0 +1,155 @@
+---
+title: "React Error Boundaries"
+slug: "react-error-boundaries"
+path: "/2019/january/react-error-boundaries"
+date: 1548936000000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","React"]
+description: ""
+month: "january"
+year: 2019
+---
+
+
+
+The other week I got an email from a developer wondering if I could help them
+learn more about Error Boundaries within React.
+
+I figured that instead of sharing that information directly to them, I would
+spend a bit more time writing it up in a blog post so others could learn from
+the content as well. This post is only meant as a brief introduction to the
+concept behind Error Boundaries within React, for more advanced information
+refer to the where can I learn more section at the bottom of the page.
+
+So lets dive in!
+
+## What are Error Boundaries?
+
+Simply put, you can think of Error Boundaries as `try ... catch` blocks within a
+component tree. This is an example of a try catch block:
+
+```js
+try {
+  doSomethingThatMayThrow();
+} catch (error) {
+  handleError(error);
+}
+```
+
+In that snippet above, the `doSomethingThatMayThrow` function can `throw`
+anything (generally an error) and the `catch` block will capture this thrown
+value and continue script execution.
+
+In React this would look like something like the following:
+
+```jsx
+<ErrorBoundary>
+  <ComponentThatMayThrow />
+</ErrorBoundary>;
+```
+
+Great, so we have a rough understanding of what they look like in practice, but
+how do they actually work?
+
+## How do Error Boundaries Work?
+
+An error boundary can be implemented within any component that uses either the:
+
+- `componentDidCatch` or
+- `getDerivedStateFromError`
+
+lifecycle methods. Both of these methods allow the component to catch an error
+thrown from its children.
+
+So lets setup a simple generic Error Boundary component.
+
+```jsx
+class ErrorBoundary extends React.Component {
+  state = {
+    hasCaughtError: false,
+  };
+  componentDidCatch(error) {
+    this.setState({ hasCaughtError: true });
+  }
+  render() {
+    if (this.state.hasCaughtError) {
+      return <p>Oh no, an error has occurred</p>;
+    }
+    return this.props.children;
+  }
+}
+```
+
+In this component above, whenever some component anywhere within its children
+throws an error, React will propagate that error up to this component, and call
+its `componentDidCatch` lifecycle method with the error that was thrown.
+
+This component can then setState to change the children returned from render in
+order to recover from that thrown error.
+
+<h2 id="caveats">Caveats</h2>
+
+As with most things, there are some caveats with this workflow. The first and
+most notable, is that this component will only catch errors thrown during the
+`render` phase. This means that if an error occurs within a callback that is not
+a `setState` updater, the error boundary component will not catch it.
+
+Another caveat, or feature I guess is that if you do want to catch a particular
+error from an event handler higher up in the component tree at your error
+boundary, you can `throw` from within a setState:
+
+{/*
+// ==live== template="react"
+*/}
+```jsx
+import { Component } from 'react';
+
+// Note this is a live editor!
+// Feel free to toy around with the code and see the
+// actual output above!
+export default class Example extends Component {
+  handleChange = (e) => {
+    let {
+      target: { value },
+    } = e;
+    this.setState(() => {
+      if (value.includes('foo')) {
+        throw new Error('Error!');
+      }
+      return null;
+    });
+  };
+  render() {
+    return (
+      <input
+        onChange={this.handleChange}
+        placeholder='Try typing here!'
+        style={{
+          height: 35,
+          fontSize: 18,
+          width: 'calc(100% - 2em)',
+          padding: '1rem',
+        }}
+      />
+    );
+  }
+}
+```
+
+## A note on getDerivedStateFromError
+
+The `getDerivedStateFromError` lifecycle was introduced later than the
+`componentDidCatch` lifecycle, and operates on a similar mechanism as the
+`getDerivedStateFromProps` lifecycle method in that it is a single pass handler.
+This means that React is able to reconcile the error handling within the same
+rendering batch as when the error occurs, _I think_. I don't really understand
+what this actually means however, so take this with a grain of salt 🧂 .
+
+## Where can I learn more?
+
+As always, the ReactJS first party docs site is hands down one of the best
+resources out there about React. Here is a great
+[getting started](https://reactjs.org/docs/error-boundaries.html#introducing-error-boundaries)
+introduction to Error Boundaries on the ReactJS Docs.
+

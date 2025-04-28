@@ -1,0 +1,42 @@
+---
+title: "Dogfooding"
+slug: "dogfooding"
+path: "/2024/august/dogfooding"
+date: 1724254455000
+status: "public"
+type: "blog-post"
+tags: ["Development","Product"]
+description: "The secret to excellent product teams is using your own product, and often!"
+month: "august"
+year: 2024
+---
+
+
+<Callout>
+
+I've written a short follow up to this post! Check it out: [More Thoughts on Dogfooding](/blog/2024/september/more-thoughts-on-dogfooding).
+
+</Callout>
+
+A somewhat common<FootnoteRef id="1" /> concept within software development (and maybe more generalizable to any kind of product development) is the concept of "dogfooding". My definition of dogfooding is;
+
+> Using the product that you're building, to improve the overall user experience
+
+For example - if you work at Google and build their search experience, it would behoove you to use the search experience from time to time to understand the friction that other users may feel using the product.
+
+In many ways, dogfooding is effectively a continuation of [building solutions to your own problems](https://www.paulgraham.com/startupideas.html). If you're not using your own product frequently, how can you know that it solves the problems that it sets out to? 
+
+User research and feedback is second hand feedback, that insight can be valuable, but often it's warped by how the user perceives the product, and then how they may share that feedback.
+
+The key to reducing friction points within your product, and by extension building a great product, is to use it as often as possible!
+
+> I strongly believe that teams that prioritize dogfooding end up shipping better products than their competitors.
+
+Above and beyond just using your product, you can then start to apply things like a [chaos monkey to delete your own accounts](https://graphite.dev/blog/onboarding-roulette) to help improve the login flow, or throw errors in parts of the application to ensure your error messaging is useful to users, or add additional latency to the experience to help you and your team understand what real users feel!<FootnoteRef id="2" />
+
+
+### Footnotes:
+
+<Footnote id="1">At least I had thought that it was a common concept - but a decent number of my colleagues in the past didn't know what it was!</Footnote>
+
+<Footnote id="2">I've heard of cases where Facebook I think it was had given their product engineers slow and old Android phones to use Facebook on (maybe this was made up though - if you have a reference for this please share it!)</Footnote>

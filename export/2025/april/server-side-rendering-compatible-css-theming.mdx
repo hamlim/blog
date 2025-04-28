@@ -1,0 +1,71 @@
+---
+title: "Server Side Rendering Compatible CSS Theming"
+slug: "server-side-rendering-compatible-css-theming"
+path: "/2025/april/server-side-rendering-compatible-css-theming"
+date: 1744749638305
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Theming","CSS","Next.js","Waku","React","Tip"]
+description: "A quick tip to implementing CSS theming that's compatible with Server Side Rendered applications!"
+month: "april"
+year: 2025
+---
+
+
+Earlier today I saw some discussion around how to implement light/dark mode theming for a server side rendered (SSR) React application, in this case it was using [Waku](https://waku.gg), however this pattern is compatible with almost any modern React framework, e.g. Next.js, React Router, etc!
+
+I quickly worked up a [scrappy demo thats over here](https://waku-ssr-theming-example.mhamlin.workers.dev/), but I figured I could expand on it a bit and outline what it does and how it works in more details. If you're just looking for the snippets of code - I recommend jumping to that demo where you can easily copy them!
+
+## Background Context:
+
+Traditionally, handling light mode and dark mode theme differences usually meant writing a decent number of `@media (prefers-color-scheme: dark) {}` media conditions across your CSS. However as Tailwind has increased in popularity - it's becoming increasingly rare to hand write the CSS and instead increasingly more web applications are being authored using utility classes.
+
+Tailwind and similar systems usually offer a nice developer experience for customizing styles based on the preferred color scheme ([the `dark:` modifier in tailwind for example](https://tailwindcss.com/docs/dark-mode)), however this only solves for half of the problem, the remaining issue is how do you determine when to apply the `dark` or `light` classname (or data attribute) to the wrapping element (usually on the `html` or `body` elements)?
+
+## The Pattern:
+
+To resolve that issue, we can reach for an early inline script that we send to the browser that should be evaluated and run before we start to show the content on the page (in order to avoid the flash of unstyled content)!
+
+The trick relies on the behavior of the browser, where it will parse and execute blocking `<script>`'s before proceeding with parsing the rest of the document by default. This allows our inline script to modify the `<html>` element eagerly, and then when our CSS is loaded it can rely on a change to the `<html>` element (either via class name or data attribute) to alter the styles of the page.
+
+The trick for server side rendered React apps is that in React v19, there was support added for "floating" resources found while rendering to the `<head>` (and in fact - this works without SSR as well). If React encounters a `<script>` or `<style>` element (or a few other specific elements), it will move the element up to the `<head>` automatically! 
+
+> This feature isn't strictly necessary however, if you have control over what elements should be rendered in the `<head>` for your page, you can render an inline script there manually, and even if you're not using a React app but instead have some other framework - you can still use the same pattern!
+
+Here's the snippet that I use in most of my websites these days:
+
+```ts
+function themeCheck() {
+  let prefersDarkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  let preferred = prefersDarkModeQuery.matches ? "dark" : "light";
+  document.documentElement.classList.add(preferred);
+  prefersDarkModeQuery.addEventListener("change", (e) => {
+    let newPreferred = e.matches ? "dark" : "light";
+    document.documentElement.classList.remove(preferred);
+    document.documentElement.classList.add(newPreferred);
+    preferred = newPreferred;
+  });
+}
+```
+
+What I usually do is define that function as a regular source code function, and then render it within the script by calling `.toString()` on it, like this:
+
+```tsx
+<script
+  dangerouslySetInnerHtml={{
+    // wrapping parens are necessary in order to invoke the function
+    // when this script is parsed and evaluated by the browser!
+    __html: `(${themeCheck.toString()})()`
+  }}
+/>
+```
+
+> The benefit of authoring the function as an actual value as opposed to maintaining it as a string of JS is that we get the benefit of static analysis during build (e.g. catching typo's or type errors, etc).
+
+This script will manage a few things:
+
+1. Evaluate the `matchMedia` query when the function is called initially
+2. Set the preferred class name on the `html` element
+3. Add an event listener to the query to react to changes to the preferences while the page is active, and update the class name on the element
+
+In this case were using `light` and `dark` classnames on the `<html>` element, but this snippet can be modified to use data attributes, or other classes if you want!

@@ -1,0 +1,61 @@
+---
+title: "Writing Node Scripts"
+slug: "writing-node-scripts"
+path: "/2021/march/writing-node-scripts"
+date: 1614600000000
+status: "public"
+type: "blog-post"
+tags: ["Development","Node"]
+description: ""
+month: "march"
+year: 2021
+---
+
+
+
+When I find myself repeatedly making edits to a large number of files, or if I
+need to collect some metadata about a collection of files I tend to reach for a
+quick and dirty Node script.
+
+Usually I can get by with a `script.js` file written somewhere and then run it
+via `node script.js`, however sometimes I want to turn a script into a small
+node package that I can install and reference elsewhere.
+
+To accomplish that I usually reach for adding a `package.json` with a `bin`
+script entry pointing to the node script.
+
+```json
+{
+  "name": "my-cool-package",
+  "version": "1.0.0",
+  "bin": {
+    "name": "./index.js"
+  }
+}
+```
+
+However, before the traditional node script can be run via `name`, we need to do
+two other things to the `index.js` file that the bin command is referencing.
+
+First we need to add a line at the top of the file:
+
+```js
+#!/usr/bin/env node
+```
+
+In addition to adding that line to the top of the file, we also need to change
+the mode of the file, we can do that via:
+
+```sh
+chmod u+x index.js
+```
+
+For more information, this article on node shell scripting is a great one to
+reference: https://2ality.com/2011/12/nodejs-shell-scripting.html
+
+<Spacer />
+
+---
+
+<Spacer />
+

@@ -1,0 +1,94 @@
+---
+title: "React Error Boundaries: Revisited"
+slug: "react-error-boundaries-revisited"
+path: "/2024/march/react-error-boundaries-revisited"
+date: 1711731624000
+status: "public"
+type: "blog-post"
+tags: ["Guides","Development","React"]
+description: "Revising my previous blog post on React Error Boundaries and my preferred go-to implementation!"
+month: "march"
+year: 2024
+---
+
+
+First off - if you haven't already I recommend giving my old [React Error Boundaries blog post](/blog/2019/january/react-error-boundaries) a read through, that post covers the basics of error boundaries. Once you've read it, jump back here to learn more!
+
+Since I last published that blog post, there have been quite a few advancements in and around React, including but not limited to React Server Components!
+
+Sadly however, we still need to use class components for error boundaries at the time of writing. Who knows, maybe in another 5 years this will have finally changed?!
+
+## My Go To Implementation
+
+In most of my projects I reach for the following Error Boundary implementation, it offers a decent amount of flexibility where I want it, but also isn't too over the top.
+
+```tsx
+"use client";
+import {Component} from "react";
+import type {ComponentType, ReactNode} from "react";
+
+type Props = {
+  children: ReactNode;
+  fallback: ComponentType<{
+    reset(): void;
+    error: Error
+  }>;
+}
+
+type State = {
+  error: Error | null;
+}
+
+class ErrorBoundary extends Component<Props, State> {
+  state: State = {
+    error: null
+  };
+
+  static getDerivedStateFromError(error: Error) {
+    return {error};
+  }
+
+  reset = () => {
+    this.setState({error: null});
+  }
+
+  render() {
+    let {error} = this.state;
+    let {children, fallback: Fallback} = this.props;
+
+    if (error) {
+      return <Fallback reset={this.reset} error={error} />;
+    }
+
+    return children;
+  }
+}
+```
+
+This implementation is pretty simple, it uses the `getDerivedStateFromError` lifecycle method to catch any errors thrown from its children. If an error is caught, it will render the `fallback` component, passing in the error and a `reset` function.
+
+This `reset` function can be used to reset the error state, allowing the user to retry whatever action caused the error in the first place.
+
+Here's an example implementation:
+
+```tsx
+import {ErrorBoundary} from "./ErrorBoundary";
+
+function ErrorFallback({reset, error}) {
+  return (
+    <div>
+      <p>Oh no, an error has occurred</p>
+      <button onClick={reset}>Retry</button>
+    </div>
+  );
+}
+
+function MyComponent() {
+  return (
+    <ErrorBoundary fallback={ErrorFallback}>
+      <ComponentThatMayThrow />
+    </ErrorBoundary>
+  );
+}
+```
+

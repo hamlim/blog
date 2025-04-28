@@ -1,0 +1,88 @@
+---
+title: "Hooks Tips Ep. 1 - The Dependency Array"
+slug: "hooks-tips-dependency-array"
+path: "/2019/february/hooks-tips-dependency-array"
+date: 1549108800000
+status: "public"
+type: "blog-post"
+tags: ["Development","React"]
+description: ""
+month: "february"
+year: 2019
+---
+
+
+
+> This blog post is the first in what I expect to be a series on hooks, this
+> blog post assumes you have a decent initial understanding of them. I highly
+> suggest starting with the
+> [ReactJS Docs](https://reactjs.org/docs/hooks-intro.html) on them first.
+
+Some of the built-in hooks from the React package expose a second argument which
+acts as an indicator or signal to React to determine if the function provided as
+the first argument to the hook should be invoked again.
+
+In this post I will only reference `useEffect`, however there are several hooks
+which follow this pattern:
+
+- `useMemo`
+- `useCallback`
+
+In general, the notes below will apply to these other hooks as well.
+
+I have also ordered the examples below based off of how frequently they will
+most likely be used, the first being the most frequent example and the last
+being the least frequently used.
+
+### Passing Dependencies:
+
+```jsx
+function App() {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    // Gets called on initial render, and every time `count` changes
+  }, [count]);
+  return null;
+}
+```
+
+This example may be the most frequent example of using the `useEffect` hook,
+here we indicate to React that the function we provided to `useEffect` depends
+on the `count` variable from the components own scope. React will then track the
+`count` variable, and call the effect function when the `count` value changes.
+
+### An Empty Dependency Array:
+
+```jsx
+function App() {
+  useEffect(() => {
+    // Only gets called when the component "mounts"
+  }, []);
+  return null;
+}
+```
+
+This example will call the function provided to `useEffect` only on the
+components first render. This can be useful for cases like tracking when a
+component renders, or fetching some initial data that doesn't depend on any
+other values.
+
+### No Dependency Array:
+
+```jsx
+function App() {
+  useEffect(() => {
+    // Gets called on every re-render of the App component
+  });
+  return null;
+}
+```
+
+This will cause the function provided to `useEffect` to be called on every
+render of the App component.
+
+**This should be used rarely within regular code**, frequently the function
+provided in this case is actually dependent on some value from the parent scope
+of the component and should be included in the array of dependencies like shown
+below.
+

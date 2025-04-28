@@ -1,0 +1,136 @@
+---
+title: "Testing Software"
+slug: "testing-software"
+path: "/2018/december/testing-software"
+date: 1543665600000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Testing"]
+description: ""
+month: "december"
+year: 2018
+---
+
+
+
+> Writing unit tests for code is surprisingly a hot button topic within software
+> development. Many developers have very strong opinions in how tests should be
+> approached, written, and implemented.
+
+Over the past few months, several of our engineering departments have been
+pushing for more adoption of frontend tests for their code. Thanks to this push,
+our Frontend Platforms team has found that we need to put a lot more effort into
+the documentation around writing tests. Several engineers, from both our team
+and other feature teams, have been writing docs, pairing with others to write
+tests, and writing guides and presentations around unit testing.
+
+Through all this work, we have slowly shifted our mindset from approaching
+testing as something that is a consistent, unit-based, solid foundation for an
+application to something that is a bit more fluid, a bit farther away from
+testing each unit individually, and something that changes as the application
+changes.
+
+The key takeaway I have learned from a coworker is that the **type** and
+**value** of the tests you write depends on if you are writing the code for the
+application at the same time as the test or if you write the test after the
+feature is code-complete.
+
+> Writing tests before a code-complete feature is completely different from
+> writing them when the feature is done
+
+We have found that a lot of the pain points around writing unit tests are a
+result of attempting to write unit tests after the feature is code complete and
+deployed to production.
+
+A lot of our other learnings have been so simply summarized by this tweet by
+Guillermo Rauch:
+
+<Tweet id="807626710350839808">
+  <div lang="en" dir="ltr">
+    Write tests. Not too many. Mostly integration.
+    &mdash; Guillermo Rauch (@rauchg) <a href="https://twitter.com/rauchg/status/807626710350839808?ref_src=twsrc%5Etfw">December 10, 2016</a>
+  </div>
+</Tweet>
+
+This short tweet is packed with so much wisdom, the core takeaways we have had
+as a team have been:
+
+- Don't focus on code coverage
+- Prefer integration tests over unit tests
+
+## Don't Focus on Code Coverage
+
+Code coverage is one of those feel-good stats that we seek as developers, giving
+us a rush when we see the coverage report come back with a higher percentage
+than we had previously. Unfortunately it has absolutely no value to the end user
+of your application.
+
+> Users do not care what your code coverage percentage is
+
+You never see consumer products showcase these stats to their users in their
+footers, nor have I ever seen another developer choose an npm dependency on
+their code coverage percentage.
+
+Your code will change, and your application will change as well, you shouldn't
+worry about how well covered the code is, and instead focus on how well the user
+flow is covered. Do you have a test for that checkout flow on site? What about
+for the user login flow? These are the things worth capturing coverage for, real
+parts of the application and not the number of lines of code.
+
+## Prefer Integration Tests over Unit Tests
+
+In my experience, preferring to write integration tests rather than unit tests
+is even more contentious than the point above about code coverage, many
+developers seem to extrapolate from TDD that tests must be focused to units of
+code rather than writen for the larger picture of the feature or application as
+a whole.
+
+The tests that I have found that are worth keeping around over time are these
+integration tests, ones that aren't at all worried about the implementation of
+the feature but rather the user flow through the feature.
+
+The most important goal in software development (keep in mind writing tests is
+part of this work) is to deliver a working, enjoyable experience for the
+customer. Your customer won't care about the implementation of the checkout
+button, or if you are using some middleware for authentication. The key, when
+writing code, is to think about the user. Sometimes your user may be another
+developer using your service to implement another feature, or it may be a
+customer looking to buy their favorite bed frame.
+
+## The Half-Life of Code and Tests
+
+I think the key for getting value out of software testing is not that you must
+write integration tests through all stages of development, but rather that
+**over time** the tests that should **remain in the codebase** should be scoped
+as integration tests.
+
+Many of the developers I have talked with consider tests as these solid, never
+changing pillars of a codebase; however in my experience the type of tests, and
+the value of these tests, changes dramatically depending on what I am doing. If
+I am working on a refactor of a component for example, I may want to setup some
+visual regression tests, then I can refactor with confidence, and when the
+refactor work is done I can tear down the tests.
+
+Unfortunately many of our modern testing tools don't really communicate this
+ephemerality of testing software, either through their implementation or through
+their documentation. This leads new developers to approach writing tests as
+something to do once, ship it and then forget it.
+
+Often unit tests, those written to accomplish a code coverage goal or test a
+particular implementation detail, add friction to development that so many
+developers worry about when they try to get into testing their code. A good
+mental model for tests is that often pure unit tests should have a short
+half-life within the codebase, meaning they only exist for a short amount of
+time (frequently only during the very early stages of a new feature or
+application), and the half-life of integration tests is much longer and should
+remain in the codebase for the lifetime of the feature.
+
+> Unit tests should have a short half-life within your codebase, focus on code
+> that has a long half-life instead
+
+<Spacer />
+
+---
+
+<Spacer />
+

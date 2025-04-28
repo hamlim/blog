@@ -1,0 +1,70 @@
+---
+title: "Roll your own Obsidian sync"
+slug: "obsidian-sync"
+path: "/2021/august/obsidian-sync"
+date: 1628596800000
+status: "public"
+type: "blog-post"
+tags: ["Obsidian","Dropbox"]
+description: ""
+month: "august"
+year: 2021
+---
+
+
+
+I recently shifted off of a few other note taking applications to
+[Obsidian](https://obsidian.md) after they announced the new mobile
+applications. I had been looking for a solid editing experience available both
+on a laptop as well as on my phone and Obsidian has seemed to be like the right
+tool for the job so far!
+
+However, I wanted to keep all my notes in sync across my devices, Obsidian does
+offer a paid service to synchronize your notes across platforms but I figure I'd
+look into rolling my own since that was one of the recommendations in their
+documentation.
+
+I figured [Dropbox](https://www.dropbox.com/) would be the ideal platform to
+synchronize my notes since I'm already paying for a decent amount of storage
+there. I started looking into it and I couldn't find a reliable way for both the
+Dropbox android application and the Obsidian android application to reference
+the same vault directory, until I found
+[Dropsync / Autosync for Dropbox](https://play.google.com/store/apps/details?id=com.ttxapps.dropsync).
+This app let's you choose a folder on your device to sync with Dropbox and it
+continues to watch for changes and sync them automatically!
+
+### Setup
+
+So, let's dive in to walk through how you can setup a similar syncing!
+
+First things first, you'll want to install the Dropsync app linked above and
+connect it with your Dropbox account.
+
+Then you'll want to setup a sync folder pair, what this step does as I
+understand it is create a new folder on your device and also uploads it to
+Dropbox. When setting this up you'll need to ensure that it also syncs hidden
+folders, since the `.obsidian` directory within a vault is synchronized across
+your devices.
+
+Next you'll want to create a vault if you haven't already, once created (or if
+you have an existing vault that you want to sync), you'll want to move it on the
+computer it is on into the synced folder that Dropsync has just setup.
+
+Once you've moved the vault into the synced folder, it should be uploaded to
+Dropbox and you can test it out by editing a file in Obsidian on one device and
+checking another device to ensure your edits show up!
+
+### Bonus
+
+I also happen to use a Pixel Slate tablet here and there when I'm away from my
+laptop but want a slightly better writing experience. I was able to follow this
+exact same setup there (since you can install android applications on chrome
+os), and now I'm able to sync content across my phone, my tablet, and my
+laptops!
+
+<Spacer />
+
+---
+
+<Spacer />
+

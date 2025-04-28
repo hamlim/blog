@@ -1,0 +1,39 @@
+---
+title: "Podcasting By Hand"
+slug: "podcasting-by-hand"
+path: "/2025/april/podcasting-by-hand"
+date: 1744629340844
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Podcasting","The Bikeshed Pod"]
+description: "A brief overview on how we launched The Bikeshed Podcast, including a deep dive in our recording and distribution workflows!"
+month: "april"
+year: 2025
+---
+
+
+A couple of my friends ([Scott](https://scottykaye.com/) and [Dillon](https://dilloncurry.vercel.app/)) and I recently [started a podcast called The Bikeshed Podcast](https://bikeshedpod.com/). One of the things that we did differently from other podcasts (at least from what we can tell), is that we decided to manage all the infrastructure around recording and distributing the podcast ourselves instead of offloading to services that manage the recordings and also manage distribution.
+
+We did all of this by effectively reverse engineering other podcasts we follow in the wild (shout out to [runtime rundown](https://runtimerundown.com/) and [syntax.fm](https://syntax.fm/)), digging into their `rss.xml` feeds, and also just generally messing around until we found something that worked.
+
+Here's a brief overview of our current process (this may change in the future):
+
+Currently we record the podcast in a Discord voice chat using [Craig](https://craig.chat/) - we had originally started by recording manually with OBS, but found that it was a pain to edit the audio because everyone was in a single audio track instead of split up. Craig is insanely good - it just works and gives us a variety of formats/options to export the audio files. I'm honestly amazed that its still free!
+
+From there, we (meaning primarily [Scott](https://scottykaye.com/)) edit the audio in GarageBand. I don't have a complete understanding of the steps involved here - maybe I can convince Scott to write up his workflow on his own blog as well!
+
+After we have the edited audio, we run it through [MacWhisper](https://goodsnooze.gumroad.com/l/macwhisper) to generate captions for the episode, and also to summarize the episode that we show in the details page on the website (we use a Google Gemini model to summarize the episodes based on the captions).
+
+When we have the edited audio file (`.mp3`), and the captions file (`.vtt`), we upload both into a Cloudflare R2 bucket, and then are exposed to the public web under the `assets.bikeshedpod.com` domain - this is how we host the files for podcast apps / the website to access!
+
+From here - it's worth taking a brief detour in how our website works (which also powers our `rss.xml` feed too)!
+
+The [bikeshedpod.com](https://bikeshedpod.com) website is built using [Waku](https://waku.gg) (using [Garbanzo](https://github.com/hamlim/garbanzo)) and deployed on Cloudflare Workers. We have a few standard pages (e.g. `/about`, `/search`, etc), and also some "episode detail pages" like [this one](https://bikeshedpod.com/episodes/5/testing-is-it-worth-it).
+
+The "episode detail pages" are built using MDX files for each episode, the MDX files have a bit of frontmatter for defining things like tags on each episode, who the hosts were, a short description, and also contain the links to the audio asset and captions asset.
+
+During builds of the website, we extract all the frontmatter and use it along with the content to build up a generated file with the metadata in a JSON structure. We use this structure to power both the website - e.g. list of episode cards on the homepage or the all episodes page, and search, as well as the rss feed, which is a custom API route hosted at `/rss.xml`.
+
+---
+
+That about covers the current setup for the podcast at the moment, theres small aspects that feel a bit less than ideal at the moment - but all in all the workflow seems to fit us nicely at the moment. 

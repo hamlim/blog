@@ -1,0 +1,93 @@
+---
+title: "Stateful Providers"
+slug: "stateful-providers"
+path: "/2020/march/stateful-providers"
+date: 1585396800000
+status: "public"
+type: "blog-post"
+tags: ["React","Development Practices"]
+description: ""
+month: "march"
+year: 2020
+---
+
+
+
+My team at Wayfair has been hard at work rebuilding our design system
+documentation site over the past few months.
+
+It has been a ground up rewrite, breaking out of our previous monolithic
+codebase into a separate design system focused monorepo (living right next to
+our components and other packages), building on top of a Node.js backend served
+from a docker container running in Kubernetes (previously we used a mostly SPA
+architecture built on top of Wayfair's PHP webstack).
+
+On top of this major backend re-architecture, we have also approached
+architecting the frontend of the site from a fresh viewpoint. The previous site
+was mostly built when render props were all the rage, and only lightly used the
+updated 16.3 `createContext` API.
+
+This new site is built from the ground up using hooks (last I checked the only
+class component we have in the codebase is our ErrorBoundary component), as well
+as a deeper integration with `createContext`.
+
+In addition to using existing React patterns we also decided to build the site
+on top of the experimental builds of React. We have heavily leaned into using
+Suspense for data fetching, async event management, as well as code splitting.
+
+One of the early patterns we identified in our site was around our context
+usage, we knew that defaulting to a single context provider parent for the
+entire site could lead to unnecessary re-renders when changing single fields of
+a larger state object.
+
+To mitigate this risk we started a pattern around using single, stateful
+contexts across the site, where we would previously have a single large stateful
+context provider at the root of the application, we now have several contexts,
+each representing a different slice of state.
+
+We render these context providers only as high as they need to be within the
+application, e.g. if some slice of state is only needed within the header for
+the site then we only wrap the header in the provider.
+
+We call these contexts stateful because the value that they provide aligns with
+the return value of `useState` or `useReducer`, the context provides an array of
+value and a setter or dispatcher to update the value.
+
+These context modules expose an interface that looks roughly like this,
+exporting the Provider and a hook to read the value:
+
+```jsx
+let toggleContext = createContext();
+
+export function Provider({ children, defaultValue = false }) {
+  // value might look like [isToggled, toggle]
+  let value = useToggle(defaultValue);
+  return (
+    <toggleContext.Provider value={value}>{children}</toggleContext.Provider>
+  );
+}
+
+export function useToggleContext() {
+  return useContext(toggleContext);
+}
+```
+
+As our codebase continues to evolve, and we begin to polish the site up for its
+internal launch we may refine this pattern even more. Some of the interesting
+discussions we have had around this pattern include:
+
+- Do we default to `useState` for these contexts? Or should we `useReducer`?
+- Should we expose an explicit `useXContext` hook or should we export the raw
+  context object and have consuming sites call `useContext` locally?
+- How does this interplay with using Suspense and external data caches?
+
+As with any code pattern, this architecture might not be right for your
+application. However it is valuable to be considerate of how you manage state
+within your application. For us, this pattern helps us to avoid using Redux
+which we saw as requiring unnecessary ceremony for maintaining and updating
+state within our application.
+
+If you have other ideas on this pattern, or alternatives I would love to hear
+them! Reach out on Twitter to share your thoughts,
+[@immatthamlin](https://twitter.com/immatthamlin).
+

@@ -1,0 +1,62 @@
+---
+title: "My Updated Obsidian Task Management"
+slug: "my-updated-obsidian-task-management"
+path: "/2024/november/my-updated-obsidian-task-management"
+date: 1732584223913
+status: "public"
+type: "blog-post"
+tags: ["Note Taking","Task Management","Obsidian"]
+description: "A quick update on how I manage my tasks within Obsidian!"
+month: "november"
+year: 2024
+---
+
+
+I previously wrote about how I started to manage my todos within Obsidian directly [within this post](/blog/2024/july/simple-obsidian-task-management), however I've tweaked the workflow just a bit and that previous post also outlined a few open questions I had (mostly for myself) that I think I have some answers to now as well!
+
+## Updates
+
+The previous setup involved a decent amount of manual task management (manually adding tasks to specific sections within a single note, manually sorting them, etc). The primary update I made was automating that bit of the workflow using the [QuickAdd](https://github.com/chhoumann/quickadd) plugin.
+
+This plugin lets you create a few templates and can automatically insert the content provided into specific notes with other content added around it.
+
+I've setup the plugin with a few specific templates for different task categories, at the time of writing those are:
+
+- Personal Tasks (day to day things, e.g. "mail package to someone" etc)
+- Project Tasks (tasks related to specific side projects)
+- Work Tasks (tasks related to my work)
+- Writing Tasks (Blog post ideas that I have)
+
+The plugin then appends the content of the task into an `[[Inbox]]` note - this is a single catch-all note that contains all my tasks (the above categories only apply specific tags to each task to then later be grouped as noted below).
+
+<Callout>
+
+After a few months of using this workflow - I actually found that this single `[[Inbox]]` note was starting to really slow down during syncs across my devices.
+
+I've now opted to semi-regularly manually copy the done/cancelled tasks and move them to a `[[Inbox Archive]]`  note.
+
+</Callout>
+
+Then I primarily use a `[[Tasks]]` note as the primary tool for checking my tasks and updating their statuses. This note is using the [Tasks](https://publish.obsidian.md/tasks/Introduction) plugin and it's [`queries` feature](https://publish.obsidian.md/tasks/Queries/About+Queries) to group my categorized tasks (which is pretty similar to my previous setup in the above mentioned blog post).
+
+## Answers to Open Questions
+
+> I haven't exactly ironed out how to best add tasks from my phone (I've been opening up the `Tasks.md` note and manually adding it), I think in my ideal world I'd use some kind of quick capture flow to easily add tasks and have them be sorted into the correct section in the note when adding them from my phone.
+
+The [QuickAdd](https://github.com/chhoumann/quickadd) plugin has effectively solved this for me, on my phone I need to do the following:
+
+- Swipe down to open the command palette
+- Type `QuickAdd`
+- Select the type of task to add
+- Type the task
+- Submit
+
+Sure it's a bit more steps than it could be - but it's a pretty slick flow compared to what it used to be!
+
+> I haven't figured out a good workflow for managing the long term of what happens to a task when its completed? Should it stick around for several months (or longer)? Or should I routinely clean them up?
+
+See my callout above - at this time I'm going to manually move over old tasks to the `[[Inbox Archive]]`.
+
+---
+
+All in all - this workflow still works pretty nicely, and I think the benefits of being able to link off to other notes from my tasks still provides the killer feature for me and makes it hard to change to a dedicated tasks app.

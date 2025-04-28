@@ -1,0 +1,112 @@
+---
+title: "Bluesky Tips and Tools"
+slug: "bluesky-tips-and-tools"
+path: "/2024/november/bluesky-tips-and-tools"
+date: 1732560530372
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Development","Bluesky","Tip"]
+description: "A (running) collection of Bluesky tips, tools, packages, and other misc things!"
+month: "november"
+year: 2024
+---
+
+
+I've been exploring the [Bluesky](https://bsky.social/about) a lot as of late, fully moving over from Twitter to Bluesky as my go-to social media website, and I figured I should highlight some of the cool things I've found about it so far!
+
+### Domain Names
+
+One of the coolest parts of Bluesky is that you are a domain name on the network, which means you can take your personal domain name (or any random one you might own) and use it as your handle!
+
+<BlueskyPost
+  src="https://bsky.app/profile/robertlin.bsky.social/post/3l7wpu4rrha2q"
+>
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:5wlpm2j3d6can6quf5hotdcc/app.bsky.feed.post/3l7wpu4rrha2q" data-bluesky-cid="bafyreiambef2u7akbgxoey3w73vp6hjgpjakfpnrdvcrkcghskn3xmv2t4">
+This is so cool.  There are TWO ways to do domain verification with #atproto:
+
+1. By DNS
+OR
+2. By uploading your did to `https://&lt;YOUR-DOMAIN&gt;/.well-known/atproto-did`
+
+It works! (Haha, this is why you should always read the docs 😅)
+
+TY, @lepahc.com &amp; @edavis.dev for teaching me this!! 🙏<br/><br/><a href="https://bsky.app/profile/did:plc:5wlpm2j3d6can6quf5hotdcc/post/3l7wpu4rrha2q?ref_src=embed">[image or embed]</a>&mdash; Robert Lin (<a href="https://bsky.app/profile/did:plc:5wlpm2j3d6can6quf5hotdcc?ref_src=embed">@robertlin.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:5wlpm2j3d6can6quf5hotdcc/post/3l7wpu4rrha2q?ref_src=embed">November 1, 2024 at 11:14 PM</a>
+</blockquote>
+</BlueskyPost>
+
+Tools like Vercel and Netlify now offer quick options to use a domain as your username on Bluesky too!
+
+### Intent Links
+
+Twitter used to (maybe still does) support "intent links", essentially plain old anchor links that will pre fill some content in a post, or take some action for the user when they click on the link. Bluesky supports the same!
+
+<BlueskyPost
+  src="https://bsky.app/profile/cory.laviska.com/post/3lad7ydpx2j2j"
+>
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:qkk4yywvh3b3qfdr4uhq3ub4/app.bsky.feed.post/3lad7ydpx2j2j" data-bluesky-cid="bafyreicfn7u66t3apitsqd7bqs27brx4sfaas3gcxpqytphadokwqnluly">
+<p lang="en">ooh you can create intent links for Bluesky<br /><br /><a href="https://bsky.app/profile/did:plc:qkk4yywvh3b3qfdr4uhq3ub4/post/3lad7ydpx2j2j?ref_src=embed">[image or embed]</a></p>&mdash; Cory LaViska (<a href="https://bsky.app/profile/did:plc:qkk4yywvh3b3qfdr4uhq3ub4?ref_src=embed">@cory.laviska.com</a>) <a href="https://bsky.app/profile/did:plc:qkk4yywvh3b3qfdr4uhq3ub4/post/3lad7ydpx2j2j?ref_src=embed">November 6, 2024 at 9:35 PM</a>
+</blockquote>
+</BlueskyPost>
+
+```html
+<a href="https://bsky.app/intent/compose?text=Hello">
+  Share on Bluesky
+</a>
+```
+
+## Open Source Tools:
+
+### Profile Widgets
+
+There's a neat [`bsky-widget`](https://bsky-widget.srbh.dev/) Web Component open sourced by [Saurabh Daware](https://bsky.app/profile/srbh.dev)!
+
+<BlueskyPost
+  src="https://bsky.app/profile/srbh.dev/post/3lah67bbttn2t"
+>
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:g2rca6xid75i3xwcifm5cphp/app.bsky.feed.post/3lah67bbttn2t" data-bluesky-cid="bafyreic4lxw2rac5aqz3owtk6tk3zpgp6fuq7sibab7djqrdskobkvns24">
+
+Hiiii Bluesky friendsss!! I made something for you all 🤗
+
+Presenting `bsky-widget` 🦋
+
+- 💅🏼 Cute profile cards for your websites / blogs
+- ✨ Supports all frameworks and vanilla setups
+- 🏗️ Card generator so you can just copy-paste the code
+
+Do share your profile cards &lt;3
+
+bsky-widget.saurabhdaware.in<br/><br/><a href="https://bsky.app/profile/did:plc:g2rca6xid75i3xwcifm5cphp/post/3lah67bbttn2t?ref_src=embed">[image or embed]</a>&mdash; Saurabh Daware (<a href="https://bsky.app/profile/did:plc:g2rca6xid75i3xwcifm5cphp?ref_src=embed">@srbh.dev</a>) <a href="https://bsky.app/profile/did:plc:g2rca6xid75i3xwcifm5cphp/post/3lah67bbttn2t?ref_src=embed">November 8, 2024 at 11:14 AM</a>
+</blockquote>
+</BlueskyPost>
+
+### Raycast Extension:
+
+There's even a [Raycast extension](https://www.raycast.com/dharamkapila/bluesky) which allows you to view your feeds, make posts, and interact with the app entirely from Raycast (making you feel productive while you're checking in on your friends!)
+
+<BlueskyPost
+  src="https://bsky.app/profile/ped.ro/post/3laozswp32s22"
+>
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:iajrasi3btaj5j4fidztqmao/app.bsky.feed.post/3laozswp32s22" data-bluesky-cid="bafyreidprdjm4rx4iobfcqx572pckpsxejegkfres3lbmtnsbcrpwg2fw4">
+
+<p lang="en">bluesky extension for @raycast.com \n\nwww.raycast.com/dharamkapila...<br/><br/><a href="https://bsky.app/profile/did:plc:iajrasi3btaj5j4fidztqmao/post/3laozswp32s22?ref_src=embed">[image or embed]</a></p>
+&mdash; Pedro Duarte (<a href="https://bsky.app/profile/did:plc:iajrasi3btaj5j4fidztqmao?ref_src=embed">@ped.ro</a>) <a href="https://bsky.app/profile/did:plc:iajrasi3btaj5j4fidztqmao/post/3laozswp32s22?ref_src=embed">November 11, 2024 at 2:17 PM</a>
+
+</blockquote>
+
+</BlueskyPost>
+
+### Post Embeds:
+
+There's a number of open source `Post` components available, so far I've seen these ones:
+
+- [`bluesky-embed`](https://github.com/mary-ext/bluesky-embed)
+- [`bluesky-post`](https://darn.es/bluesky-post-web-component/)
+
+---
+
+There's also this [awesome-bluesky](https://github.com/fishttp/awesome-bluesky) GitHub repo that lists a ton of other tools that you should check out!
+
+---
+
+What other neat tips, tools or open source packages have you found for Bluesky? <Link href={`https://bsky.app/intent/compose?text=${encodeURIComponent('Hey @matthamlin.me, I found this Bluesky tool/tip: ')}`}>Share them with me on Bluesky!</Link>
+

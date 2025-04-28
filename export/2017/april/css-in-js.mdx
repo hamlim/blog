@@ -1,0 +1,124 @@
+---
+title: "CSS in JS"
+slug: "css-in-js"
+path: "/2017/april/css-in-js"
+date: 1491048000000
+status: "public"
+type: "blog-post"
+tags: ["CSS","JavaScript","Web Development"]
+description: "A few thoughts and patterns for using styled-jsx or other CSS-in-JS solutions"
+month: "april"
+year: 2017
+---
+
+
+I have been pretty vocal about writing css within javascript in the past. I used
+to be completely against the pattern. I believed in the power of css on its own
+and all the benefits of being able to use things like pseudo selectors and
+attribute selectors as well. So up until about a month ago I was strictly on the
+side of keeping css outside of the javascript files. Now I can't get enough of
+it.
+
+It started with experimenting with Styled Components, which I thought was a
+pretty cool idea. One of the limitations of styled components is that every dom
+node starts to become a styled component. You begin to have several styled
+`<div>`'s just to handle layout for different components. In small websites/apps
+this can be an alright trade off but in larger applications this gets really
+hairy really fast.
+
+Then about two weeks ago I decided to start messing around with Next JS. With
+Next comes `styled-jsx` which is a really cool way to handle styling components.
+You simply throw a style tag within the component and add your css within a
+template literal.
+
+From here on out you can write your regular old css, include pseudo selectors
+and other cool things.
+
+However one of the benefits of writing css within a template literal is the
+ability to inject things from within your javascript. I started with just
+storing my variables in separate modules like below:
+
+```js
+export default {
+  a: '#F3CC31',
+  b: '#4CD385',
+  c: '#EA6658',
+  d: '#A971C0',
+  e: '#51A7E0',
+  white: '#FEFEFE',
+  black: '#0f0f0f',
+  gray: '#ecf0f1',
+  softWhite: '#F1F4F5',
+};
+```
+
+I used these like this:
+
+```jsx
+<style>
+  {`
+  :root {
+
+    --a: ${colors.a};
+    --a-muted-one: ${color.convert(`color(${colors.a} lightness(+ 5%))`)};
+    --a-muted-two: ${color.convert(`color(${colors.a} lightness(+ 20%))`)};
+    --b: ${colors.b};
+    --b-muted-one: ${color.convert(`color(${colors.b} lightness(+ 5%))`)};
+    --b-muted-two: ${color.convert(`color(${colors.b} lightness(+ 20%))`)};
+    --c: ${colors.c};
+    --c-muted-one: ${color.convert(`color(${colors.c} lightness(+ 5%))`)};
+    --c-muted-two: ${color.convert(`color(${colors.c} lightness(+ 20%))`)};
+    --d: ${colors.d};
+    --d-muted-one: ${color.convert(`color(${colors.d} lightness(+ 5%))`)};
+    --d-muted-two: ${color.convert(`color(${colors.d} lightness(+ 20%))`)};
+    --e: ${colors.e};
+    --e-muted-one: ${color.convert(`color(${colors.e} lightness(+ 5%))`)};
+    --e-muted-two: ${color.convert(`color(${colors.e} lightness(+ 20%))`)};
+  }
+`}
+</style>;
+```
+
+I started to realize that you can do a lot more with template literals and css.
+If you are used to sass or less or similar setups than you probably use a few
+mixins or extends. Turns out mixins are just plain old javascript functions:
+
+```js
+export const tablet = cssString => (
+  `@media screen and (min-width: 25rem) { ${cssString} }`
+);
+export const desktop = cssString => (
+  `@media screen and (min-width: 45rem) { ${cssString} }`
+);
+```
+
+And now I can use these "mixins" like this:
+
+```jsx
+<style jsx>
+  {`
+  ${
+    tablet(`
+    .class {
+      color: red;
+    }
+  `)
+  }
+`}
+</style>;
+```
+
+There is one final caveat with Styled-jsx, first off is that there are some
+minor bugs on how the selectors are actually set up. Every selector generally
+gets an extra `[styled-jsx="some string of numbers here"]` applied to it. This
+adds the convenience of "locally-scoped" css, however external strings added to
+the css don't get this feature. Which might cause css to break in some
+circumstances. There is a pr out currently to add in external css as well which
+might not fix this issue, but will allow you to split out that css from the view
+if you want to.
+
+Ultimately I think this is going to be my go to setup to handle styles for the
+near future. I will always be experimenting with alternative methods, so I will
+be sure to add another post if in two months I start writing some fancy new
+syntax for my styles.
+

@@ -1,0 +1,97 @@
+---
+title: "On File-System Routing Conventions"
+slug: "on-file-system-routing-conventions"
+path: "/2025/february/on-file-system-routing-conventions"
+date: 1740002305473
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Next.js","Garbanzo","Opinion"]
+description: "Some rough thoughts on building a file-system routing based web application"
+month: "february"
+year: 2025
+---
+
+
+Over the past few weeks (and really [past few months](/blog/2024/december/request-for-minimal-rsc-framework)) I've been [tinkering](https://github.com/hamlim/guava/blob/main/packages/guava/src/cli.ts) [with](https://github.com/hamlim/simple-react-ssr-framework) [a](https://github.com/hamlim/fika) [few](https://github.com/hamlim/garbanzo) different ideas to building out a web application framework like Next.js, Remix, or others.
+
+Through that experimentation - I've come to realize that file-system based routing conventions are actually pretty tricky to find the right balance between developer experience, ease to implement (from a framework perspective), and runtime performance.
+
+Let's take a look at a few options:
+
+- folder-as-route-segment<FootnoteRef id="1" />
+- file-as-route-segment
+
+### Folder as Route Segment
+
+This seems to be the most widely adopted pattern that I've seen, you can tell you're working with this pattern when you have a ton of `page.tsx`, `index.tsx`, or `<some-specific-file-name>.tsx` files within your codebase.
+
+This system leverages the names of folders to indicate the route segment that the handler (e.g. `page.tsx`, `route.ts`, etc) should be used to handle the request.
+
+Next.js's `AppRouter` opted to use this paradigm.
+
+An example filesystem might look like:
+
+```txt
+app/
+  page.tsx # handles `/` route
+  blog/
+    page.tsx # handles `/blog` route
+  dashboard/
+    page.tsx # handles `/dashboard` route
+    settings/
+      page.tsx # handles `/dashboard/settings` route
+```
+
+### File as Route Segment
+
+This one seems to be maybe slightly less adopted from what I've seen (but that might be a bit of recency bias). In this abstraction, the name of the file itself is also the name of the route segment.
+
+The Next.js `Pages Router` used this paradigm.
+
+Here's an example filesystem where this paradigm is used:
+
+```txt
+pages/
+  index.tsx # handles `/` route
+  blog.tsx # handles `/blog` route
+  dashboard/
+    index.tsx # handles `/dashboard` route
+    settings.tsx # handles `/dashboard/settings` route
+```
+
+
+## Trade Offs
+
+As I was working on my latest iteration with [exploring building a web framework](https://github.com/hamlim/garbanzo), I was trying to figure out what the best strategy would be. 
+
+One of the trade offs I've personally noticed (and I think a lot of others have as well) with the folder-as-route-segment approach is your codebase fills up with many `page.tsx` files. It can be difficult to easily track down the __right__ handler for a specific route segment. You usually need to search within your codebase for something like `<route-segment-name>/page` (and even then it can get a bit messy when dealing with dynamic route segments or catch all segments).
+
+On the other hand, the file-as-route-segment approach leads to some ambiguity with how routes should be handled. Sometimes this can be exposed to the developer using the framework too! For example, using the above filesystem (copied below):
+
+```txt
+pages/
+  index.tsx # handles `/` route
+  blog.tsx # handles `/blog` route
+  dashboard/
+    index.tsx # handles `/dashboard` route
+    settings.tsx # handles `/dashboard/settings` route
+```
+
+Did you notice that technically we could also use `pages/dashboard.tsx`? In that case, what happens if you have both `dashboard/index.tsx` and `dashboard.tsx`? It's possible different frameworks would handle this differently - and sometimes that handling might be counterintuitive to the end developer.
+
+This one actually gets a bit more confusing when we start introducing "meta route segments", e.g. `layout.tsx` (a layout component that wraps the page contents) - where should that `layout.tsx` live in the file-as-route-segment approach? If its under the `dashboard/` directory - then it might be weird to see `dashboard.tsx` get wrapped in `dashboard/layout.tsx`!
+
+## Summary
+
+I don't think there's one silver bullet approach that makes sense, is easy to disambiguate, and generally "works as expected" for all use cases.
+
+I've sadly opted to continue using the folder-as-route-segment approach to avoid some of the ambiguity that arises with the file-as-route-segment approach - but I still don't like that pages are all named the same!
+
+Have you found a better approach? Please let me know!
+
+
+---
+
+## Footnotes:
+
+<Footnote id="1">For the context of this blog post, a route segment is the name of a specific slice of the requested path. Usually this is `/` delimited, e.g. if we have a path that is `/foo/bar/baz`, then the segments are `'foo'`, `'bar'`, and `'baz'`.</Footnote>

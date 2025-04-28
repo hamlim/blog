@@ -1,0 +1,94 @@
+---
+title: "Maintenance Costs"
+slug: "maintenance-costs"
+path: "/2019/may/maintenance-costs"
+date: 1558267200000
+status: "public"
+type: "blog-post"
+tags: ["Web Development"]
+description: ""
+month: "may"
+year: 2019
+---
+
+
+
+One of the first large-scale projects I worked on at Wayfair as a software
+engineer was on our first ever desktop Grid system. It was late 2016, maybe
+early 2017 at that point, we had a shared mobile grid system that was using
+Flexbox for alignment and spacing, however we did not yet have a layout system
+for desktop browsers. Because we are an e-commerce company we still had to
+support IE8 and other IE browsers, so we couldn't just use the same mobile grid
+we were using elsewhere.
+
+I don't remember exactly what made me do it, but I decided to pick up that work
+to create a shared global grid system for our desktop web experiences. We
+decided to use a progressive enhancement methodology and start with an
+inline-block system for the grid and then enhance to using Flexbox for the
+browsers that supported it. At the time this was a big step forward for us, many
+of our features were not using Flexbox for layouts, floats were the most common
+solutions that other frontend developers were using.
+
+Setting the scene a bit, in early 2017 Wayfair was still using two separate
+codebases for our mobile web and desktop web experiences, responsive design was
+still questioned heavily by design, engineering and product. Our styles,
+authored in scss, were authored in two separate files for the mobile web and
+desktop features. Our bundler would then determine the user agent and serve up
+the appropriate styles to the customers browser.
+
+When we started work on the desktop grid system, we aimed to fit the same model
+that mobile web was using as future looking development for teams to begin
+building responsive layouts using the same grid systems. So we started from the
+mobile web grid, using Flexbox as the backbone and then added in an
+inline-block + font-size 0 fallback system for older IE. We actually even
+started by wrapping our flexbox system behind an `@supports` "barrier", so even
+browsers like IE10 and IE11 wouldn't get the Flexbox based grid. This was a
+mechanism to avoid common flex-bugs that existed within these browsers at the
+time. At this time, we also added support for responsive column widths, meaning
+some columns could take up half the width of the grid on mobile and then take up
+a third or a fourth of the grid on desktop.
+
+Over the two years since we first released the universal grid system for our
+frontend at Wayfair, we have slowly been adopting new technologies and patterns.
+During that time we shifted from using mustache templates to writing our code
+using React and components. We ported the Grid system over to a set of reusable
+components that developers can build layouts with, we pulled out useful parts of
+the grid into smaller atomic components for building simpler layouts as well
+(what we call the Block and Flex components for adding spacing and flexbox
+layout support).
+
+Through these past two years the majority of the fundamentals of the Grid have
+remained solid, we haven't rewritten the whole grid system just yet, but we have
+slowly been adding to the system. Adding new features, all the while keeping the
+existing API working for those really old pages still using the initial versions
+of the Grid for their layout. Over time this has made the code more and more
+unmaintainable for engineers, often when we find a ticket to add a new feature
+to the Grid we find ourselves putting that work off. Hoping that we will come up
+with an elegant solution to this mess of code.
+
+Its gotten to the point that a change to our grid system, will cause a 1-2
+minute scss compile for the grid styles alone 😱. Putting that into scale, the
+Grid is currently around 500 total lines of scss code. That code uses a lot of
+maps, loops, variables, conditionals, dynamic classname construction and many
+other scss language features that we don't use elsewhere within our massive
+codebase.
+
+I think a pessimistic takeaway from this is that all code becomes tech debt over
+time, maintenance costs on code increase as time grows. While this code has
+accrued its fare share of technical debt, it has also stood the test of time.
+It's largely the same API as it was when we first implemented it, and for the
+most part has held the test of time.
+
+As software engineers, we aim to write code that has the lowest maintenance cost
+as possible, often we do this because we will end up maintaining that system in
+the future. However, its difficult to find the right abstraction the when you
+first write the code for the feature. It takes time to understand how the system
+will work, to evaluate how consumers of the API will expect it to work, and to
+also see how the systems around that change.
+
+Accepting maintenance costs for authored code is the first step to understanding
+that you don't need the perfect abstraction. The beauty of software is that it
+continuously evolves over time, the patterns we use today to architect a
+solution will most likely not be the same as the ones we use next year, or 10
+years from now.
+

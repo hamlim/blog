@@ -1,0 +1,74 @@
+---
+title: "My Opinionated Next.js Setup"
+slug: "my-opinionated-nextjs-setup"
+path: "/2022/january/my-opinionated-nextjs-setup"
+date: 1643541028000
+status: "public"
+type: "blog-post"
+tags: ["Development","Next.js"]
+description: ""
+month: "january"
+year: 2022
+---
+
+
+
+_I've since updated this blog post [here](/blog/2022/december/updated-opinionated-nextjs-setup)_
+
+As I've been hacking on a recent
+[side project](https://github.com/hamlim/watch-list), I've started to form some
+loose opinions on my ideal Next.js application structure. Some of these opinions
+are strongly held, and others are still forming and I expect will change in the
+future, however I wanted to document them here to see if others have built up
+similar application code structures!
+
+1. Nest code within a `src` directory
+
+This one is fairly basic, however it aligns with my personal need to keep
+codebases relatively well organized without too much clutter at the root of the
+repository / project root.
+
+2. Group code into the following folders:
+
+```sh
+src/
+  components/
+  pages/
+  views/
+  utils/ (optional)
+  hooks/ (optional)
+```
+
+This structure allows me to easily split off some piece of code into a easily
+identifiable location within the project, without adding too much ceremony to
+creating new files. I still strongly feel that code shouldn't be split out to
+new files when one file gets a bit too long however! (My ideal application would
+have all the code live within a single file, and then let my IDE "slice" that
+file up into easily viewable and editable windows)
+
+Both the `utils` and `hooks` folders are optional, however I will generally want
+to stay away from having any files within this `src` directory **not** in one of
+the above folders.
+
+3. Keep files in `pages/` minimal (Still feeling this one out)
+
+I've included a `views/` folder above to help capture any top level application
+views, the beauty of this structure is that it allows me to colocate styles
+(since I'm leveraging [`vanilla-extract`](https://vanilla-extract.style/) these
+days) along with any tests if I ever find myself wanting to write unit tests.
+
+This one I haven't really given much thought to however, I don't know the right
+point to allow some composition within the file in `pages/` vs the right amount
+left in the `views/` files.
+
+<Spacer />
+
+Do you have any strong (or weak) opinions on how you structure your Next.js
+applications? Reach out on twitter to share them!
+
+<Spacer />
+
+---
+
+<Spacer />
+

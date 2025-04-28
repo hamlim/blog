@@ -1,0 +1,72 @@
+---
+title: "Service Monitors and Observability"
+slug: "service-monitors-and-observability"
+path: "/2023/december/service-monitors-and-observability"
+date: 1703690333000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","micropost","Observability"]
+description: "Leveraging service monitors properly to improve service observability."
+month: "december"
+year: 2023
+---
+
+
+> Thanks to [Scott Kaye](https://www.scottykaye.com/) for reviewing an early
+> draft of this post
+
+Awhile back I ~~tweeted~~ _made this post on X_ about being intentional when
+creating service monitors:
+
+<Tweet id="1685272797512392705">
+  <p lang="en" dir="ltr">This became my go-to question when we were defining additional monitors for our services over the past month or so:<br /><br />“If you get paged by this at 2am, do you know what it means/what to do?”<br /><br />It’s a really solid litmus test to ensure monitors are clear, concise, and actionable <a href="https://t.co/YpFhbCW34G">https://t.co/YpFhbCW34G</a></p>&mdash; Matt Hamlin (@immatthamlin) <a href="https://twitter.com/immatthamlin/status/1685272797512392705?ref_src=twsrc%5Etfw">July 29, 2023</a>
+</Tweet>
+
+I figured I would expand a bit on it within a blog post since I have thought a
+decent amount about it since I posted it.
+
+For those that don't know, service monitors are automatic "tests" that can be
+used to determine the health of a system in production. They can be configured
+for just about anything, latency and up-time are generally the most popular
+monitors.
+
+Traditionally, monitors are configured to automatically raise an incident, which
+usually pages someone that is currently on-call for the service.
+
+However, as uncle Ben says -
+[with great power comes great responsibility](https://i.imgur.com/lIAMtJt.mp4).
+
+It can be nerveracking to be on-call for large and complex services, especially
+if you're new to the team that owns such a service. Now compound that with being
+paged due to a monitor that is missing context about what's actually wrong with
+the service and what to do to resolve it.
+
+This is what I was speaking to in the above post on Twitter/X, at work we
+rapidly spun up a ton of new monitors for our core service after a particularly
+interesting series of incidents (maybe I'll write about those in the near
+future). However, at the start we weren't necessarily thinking about them from
+the framing of the original post and instead we were mainly thinking about
+adding more observability to the systems and service as a whole to help cover
+some of the gaps identified in the previous incidents.
+
+Fortunately, wiser minds on the team prevailed, and we started to become more
+critical about the monitors we were creating. We started to add more context to
+the monitors, outlining what it means for a particular monitor to be tripped,
+and what one should do to help resolve the issue if it is happening.
+
+We even started to cull back some of the many monitors we created for the
+service, this may seem a bit counterintuitive but another risk of creating
+monitors is adding noise to the engineers on-call. We found that we'd be paged
+for issues that would auto-resolve in a short amount of time, or even those that
+we couldn't even do anything about during the time of the incident.
+
+All of these patterns made it more difficult to support our services rather than
+making it easier.
+
+As with everything, there's nuance. Service monitors offer a lot of benefits and
+help improve overall service and system observability. However they must be
+applied appropriately. Try to remember - what can this monitor tell me when I
+get paged at 2 or 3 in the morning?
+
+---
+

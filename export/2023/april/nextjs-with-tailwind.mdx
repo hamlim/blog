@@ -1,0 +1,86 @@
+---
+title: "Setting up Next.js with Tailwind"
+slug: "nextjs-with-tailwind"
+path: "/2023/april/nextjs-with-tailwind"
+date: 1680771054000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Next.js","Tailwind"]
+description: ""
+month: "april"
+year: 2023
+---
+
+
+I've started to use [Tailwind](https://tailwindcss.com/) with my personal
+projects as a replacement for [Vanilla Extract](https://vanilla-extract.style/),
+and I've found myself copying my tailwind settings/setup across a few different
+projects as I'm refreshing their setups.
+
+Since I often need to jump back into the Tailwind docs and find their Next.js
+setup instructions I figured I'd share my settings here (some of which might be
+opinionated), which should make it easier to run this process in different
+projects.
+
+### 1. Install Dependencies:
+
+```sh
+yarn add tailwindcss postcss autoprefixer daisyui @ds-pack/daisyui
+```
+
+### 2. Setup Tailwind Config:
+
+Create the following `tailwind.config.js` file:
+
+```tsx
+let path = require('path');
+
+module.exports = {
+  content: [
+    './app/**/*.tsx',
+    './lib/**/*.tsx',
+    './ui/**/*.tsx',
+    path.join(
+      path.dirname(require.resolve('@ds-pack/daisyui')),
+      '/**/*.js',
+    ),
+  ],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  daisyui: {
+    logs: false,
+  },
+};
+```
+
+### 3. Run the Tailwind Setup Script:
+
+```sh
+yarn dlx tailwindcss init -p
+```
+
+### 4. Configre Base Styles
+
+Create a new `globals.css` file within the `styles/` directory with the below
+content:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+and then import that in your root `layout.tsx` file:
+
+```tsx
+import '@styles/globals.css';
+```
+
+### All Done!
+
+With the above, the application should be setup with Tailwind,
+[Daisyui](https://daisyui.com/), and
+[`@ds-pack/daisyui`](https://github.com/ds-pack/components/tree/main/packages/daisyui).
+I'll update my opinionated Next.js setup blog post with these details soon also!
+
+---
+

@@ -1,0 +1,107 @@
+---
+title: "My New Website"
+slug: "my-new-website"
+path: "/2016/august/my-new-website"
+date: 1472385600000
+status: "public"
+type: "blog-post"
+tags: ["Redesign","Thoughts"]
+description: ""
+month: "august"
+year: 2016
+---
+
+
+
+Over the past 2 or three weeks I have been both busy at work and also busy
+outside of work. Most of my work that I have been doing outside of work has been
+devoted to this website. I originally made this website in (apparently) October
+of 2015, and since then I have redesigned the site only about 5 or 6 times, each
+time fully re-hauling the entire infrastructure and design language. These past
+two or three weeks have been spent building out an infrastructure that will
+hopefully be a bit easier to manage. I still will do a ton of things manually,
+however I generally prefer to touch the code myself more often than not 😄.
+
+I wanted to write out everything that I have done, and also talk a bit about the
+code that I am using to build this site. Don’t worry if you don’t know that much
+about web development you can still read along most of this post will be really
+low level stuff.
+
+I wanted to start this off with a brief timeline of all the visual changes I
+have made to my site. Unfortunately the css for the site snapshots on the
+Wayback machine doesn’t seem to load (either that or it didn’t collect the css).
+In fact I can only find one version of the site that has working css at all and
+unfortunately this version also rendered part of the site via JS so that doesn’t
+show up either[^1]. The version that I can find is
+[here](http://web.archive.org/web/20160111084107/http://matthamlin.me/). I had
+just found out about <a href="//getskeleton.com">skeleton-css</a> and wanted to
+put it to use in my own website. I loved this version of my site, it was clean
+and also a bit colorful.
+
+{/* <!-- The current version of the site, shown below in case it changes in the
+future, is broken down into basically 4 page types as it is now. The first is
+the <a href="#image1" class="link">home page</a> the second is
+<a href="#image2" class="link">my resume</a>, the third is my
+<a href="#image3" class="link">blog archive</a>, and the fourth is the layout of
+a <a href="#image4" class="link">blog post</a>.
+
+<figure class="figure" id="image1">
+  <img src="../../../../../static/images/posts/landing.png" alt="Landing Page" class="img" />
+  <figcaption class="horizontal--center">
+      <h5>Landing Page</h5>
+  </figcaption>
+</figure>
+<figure class="figure" id="image2">
+  <img src="../../../../../static/images/posts/resume.png" alt="Resume Page" class="img" />
+  <figcaption class="horizontal--center">
+      <h5>Resume Page</h5>
+  </figcaption>
+</figure>
+<figure class="figure" id="image3">
+  <img src="../../../../../static/images/posts/archive.png" alt="Archive Page" class="img" />
+  <figcaption class="horizontal--center">
+      <h5>Archive Page</h5>
+  </figcaption>
+</figure>
+<figure class="figure" id="image4">
+  <img src="../../../../../static/images/posts/post.png" alt="Blog post page" class="img" />
+  <figcaption class="horizontal--center">
+      Blog post Page
+  </figcaption>
+</figure> --> */}
+
+### The Design:
+
+I originally came up with the current basic design in June of this year, having
+a very simple and minimal landing page really excited me. I wanted to make it
+very easy for visitors to know just how much I like to keep things minimal.
+
+Any good design article wouldn't be good without showing off the various design
+assets used across the site, so below is a quick demonstration of the various
+assets I used when designing and developing this version of the website.
+
+### Code:
+
+I was going to try and add an interactive file structure map here on this
+article but figured it would be easier to discuss it. My entire site is built
+off of HTML and CSS. I don't use any JS simply because I don't need any
+javascript for functionality. All my HTML is hand written and I use emmet to
+help in writing it efficiently. All my css is compiled from SCSS files. I do the
+compiling myself on my machine before pushing to Github because Github doesn't
+handle compiling when pushing new commits.
+
+For compiling my SCSS I use Grunt, and I know its now considered an out of date
+build system but I like it and I find it works pretty well for what I need it to
+do.
+
+For the most part that is the site. Everything is wired up is done by hand, I do
+this because I really enjoy touching code. So whenever I make a new post I copy
+my template html, edit in the title's and other data and then add a link back to
+it from the archive page when I am ready to publish it.
+
+### Footnotes:
+
+[^1]:
+    To combat this in the future I plan on making a snapshot branch on Github
+    and forking those out into their separate repos (maybe).
+

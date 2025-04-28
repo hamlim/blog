@@ -1,0 +1,244 @@
+---
+title: "Understanding React 16.3 Updates"
+slug: "understanding-react-16-3-updates"
+path: "/2018/april/understanding-react-16-3-updates"
+date: 1523210040000
+status: "public"
+type: "blog-post"
+tags: ["React","JavaScript","Web Development"]
+description: "A quick overview of the new lifecycle methods introduced in React 16.3"
+month: "april"
+year: 2018
+---
+
+
+If you are a frontend engineer working with view libraries than you have most
+likely heard about the recent React updates launched with 16.3.0 (and 16.3.1). I
+have been using some of these features for a bit, and noticed some interesting
+patterns that begin to appear, and some pitfalls that many developers might fall
+into when migrating components and whole applications to use the new 16.3
+features.
+
+## Context
+
+I could write a full blog post about the new `context` api in React 16.3,
+however I want to keep the post relatively short and to the point.
+
+A few of the patterns I have noticed with the new context api are:
+
+**Providing a default context can be useful.**
+
+If you build UI components for use across a larger application, its unreasonable
+to require all of the other react components using your components to also wrap
+your component in a provider. A powerful feature of the new context api is being
+able to define an initial context value for the consumers. This value will be
+used when your context consuming component is rendered in a component tree
+without a provider parent.
+
+```jsx
+import React, { createContext } from 'react';
+
+const { Provider, Consumer } = createContext({
+  theme: {
+    light: '#f8f9f9',
+    dark: '#374047',
+  },
+});
+
+const UIComponent = props => (
+  <Consumer>
+    {({ theme }) => (
+      <button
+        style={{
+          color: theme.light,
+          background: theme.dark,
+        }}
+      >
+        Button
+      </button>
+    )}
+  </Consumer>
+);
+```
+
+**A minor performance improvement for context provider wrappers is to use a key
+from state as the context provided**
+
+If you want to wrap your context provider in some wrapper that provides an
+update method of some sort, you generally will do something like this:
+
+```jsx
+export default class ContextProvider extends Component {
+  state = {
+    light: '#f8f9f9',
+    dark: '#374047',
+  };
+  updateTheme = args => {
+    /* Implementation detail */
+  };
+  render() {
+    return (
+      <Provider
+        // ⚠️⚠️⚠️⚠️
+        value={{
+          ...this.state,
+          updateTheme: this.updateTheme,
+        }}
+      >
+        {this.props.children}
+      </Provider>
+    );
+  }
+}
+```
+
+However! This will potentially cause unnecessary re-renders, as now the value
+provided to the consumers will always be a new object!!!
+
+A simple way to get around this is to construct a nested object in state that is
+the context you want to provide:
+
+```jsx
+export default class ContextProvider extends Component {
+  /* Note this needs to be defined before state below */
+  updateTheme = args => {
+    /* Implementation detail */
+  };
+  state = {
+    light: '#f8f9f9',
+    dark: '#374047',
+    context: {
+      light: '#f8f9f9',
+      dark: '#374047',
+      updateTheme: this.updateTheme,
+    },
+  };
+  render() {
+    return (
+      <Provider value={this.state.context}>
+        {this.props.children}
+      </Provider>
+    );
+  }
+}
+```
+
+## `getDerivedStateFromProps`
+
+So far I have noticed three primary pitfalls of the new static
+`getDerivedStateFromProps` lifecycle method on React components.
+
+**Always return a value at the end of the getDerivedStateFromProps method.**
+
+React will ensure to warn you if you ever return `undefined` (which will be the
+return value if you don't actively return anything) from the method. A good
+example of when this might happen is like this:
+
+```jsx
+class App extends React.Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.value !== prevState.value) {
+      return {
+        value: nextProps.value,
+      };
+    }
+    // ⚠️⚠️⚠️⚠️
+  }
+
+  /* implementation detail */
+}
+```
+
+Note that if `nextProps.value` does equal `prevState.value` then the method will
+return `undefined`.
+
+One tip I suggest to resolve this potential issue is to start by adding one last
+`return null` at the end of the method when you first add
+`getDerivedStateFromProps`:
+
+```jsx
+class App extends React.Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.value !== prevState.value) {
+      return {
+        value: nextProps.value,
+      };
+    }
+    // Start by adding this, then modify the logic above
+    return null;
+  }
+
+  /* implementation detail */
+}
+```
+
+**getDerivedStateFromProps will overwrite any initial state if you conditionally
+fall back to default values**
+
+This was a difficult one to debug, but one key thing to keep in mind when using
+`getDerivedStateFromProps` is that it will run before the first-ever render.
+This can lead to some issues with colliding values between the return of this
+method and your component's initial state, for example:
+
+```jsx
+class App extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.value !== prevState.value) {
+      return {
+        value: nextProps.value,
+      };
+    }
+    return null;
+  }
+
+  state = {
+    // ⚠️⚠️⚠️⚠️
+    value: this.props.value || 0,
+  };
+
+  /* implementation detail */
+}
+```
+
+In the above snippet, if `this.props.value` is null or undefined initially, then
+many would think that the value of `this.state.value` on the initial render will
+be `0`, unfortunately because of `getDerivedStateFromProps`, `this.state.value`
+will be `this.props.value` always and will never be the fallback of `0`.
+
+So far the only way I found to get around this is to either track if it is the
+first time calling `getDerivedStateFromProps`, or to check that
+`nextProps.value` is neither null or undefined before the `!==` comparison.
+
+3. If you need to compare to `prevProps` you need to store that information in
+   state
+
+This is kind of the largest discussion about this new feature, many developers
+have voiced their opinions in adding `prevProps` as another argument to the
+method to compare new props with the previous props. The only way to get around
+this is to store the needed information from prevProps into state:
+
+```jsx
+class App extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { prevProps } = prevState;
+    if (nextProps.value !== prevProps.value) {
+      return {
+        prevProps: nextProps,
+        someDerivedValue: nextProps.value,
+      };
+    }
+    return null;
+  }
+
+  state = {
+    prevProps: this.props,
+    someDerivedValue: 0,
+  };
+}
+```
+
+## `getSnapshotBeforeUpdate`
+
+Coming soon, I haven't written too many components that need this just yet. But
+I have a feeling I will be using this a decent amount!
+

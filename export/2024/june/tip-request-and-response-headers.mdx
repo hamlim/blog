@@ -1,0 +1,44 @@
+---
+title: "Tip: Request and Response Headers"
+slug: "tip-request-and-response-headers"
+path: "/2024/june/tip-request-and-response-headers"
+date: 1718015824000
+status: "public"
+type: "blog-post"
+tags: ["Tip","Development","Web Development"]
+description: "There's a common gotcha when creating Web Request and Response instances with Headers!"
+month: "june"
+year: 2024
+---
+
+
+The other day I was working on some unit tests for a minimal Cloudflare Worker that would redirect the incoming request while forwarding along some of the original request headers. I setup a test to call the worker's `fetch` handler with a `new Request` that had some headers provided:
+
+```ts
+let request = new Request('https://something.com', {
+  headers: {
+    'x-foo': 'bar',
+    'x-baz': 'qux'
+  }
+});
+```
+
+I then called the worker's `fetch` handler with this request:
+
+```ts
+let response = await worker.fetch(request);
+```
+
+However, the headers weren't propagating into the request that my worker's `fetch` handler was seeing - since I was calling the method directly I figured it had to be something with the runtime that I was writing the tests within (in this case, Bun).
+
+I did some sleuthing online and found [this issue](https://github.com/oven-sh/bun/issues/6288). The creator of the issue noted something about this being baked into the spec for `new Request` and `new Response` objects, and that they don't "hydrate" from a `HeadersInit` object.
+
+To instead make it work, I had to write my test like this:
+
+```ts
+let request = new Request('https://something.com');
+request.headers.set('x-foo', 'bar');
+request.headers.set('x-baz', 'qux');
+
+let response = await worker.fetch(request);
+```

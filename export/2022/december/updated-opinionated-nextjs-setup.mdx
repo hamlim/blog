@@ -1,0 +1,80 @@
+---
+title: "My Updated Next.js Setup"
+slug: "updated-opinionated-nextjs-setup"
+path: "/2022/december/updated-opinionated-nextjs-setup"
+date: 1672037995000
+status: "public"
+type: "blog-post"
+tags: ["Web Development","Next.js"]
+description: ""
+month: "december"
+year: 2022
+---
+
+
+_This is an update to one of my previous blog posts published in January of 2022 [here](/blog/2022/january/my-opinionated-nextjs-setup)_
+
+I've been tinkering with the Layouts features and functionality within Next for quite some time now, and even had the time to refactor this personal site to use the new features. With all that tinkering I figured I would share some of the things that I'm generally doing with my Next.js apps. 
+
+Some of this is still a bit rough around the edges, and I’m sure I’ll be re-thinking some of these ideas in the future as well, but I’ll aim to post updates as I make them.
+
+## On Directories:
+
+I used to really like the `src/` directory functionality within Next, it let me colocate all my things into a single place, making the codebase a bit easier to look at. However since originally the app directory functionality within Next (aka Layouts) didn’t support the same setup, I’ve decided to drop that paradigm.
+
+I’ve now centered around the following directories (roughly):
+
+- `app/` - for pages and layouts
+- `lib/` - for shared functionality like hooks or other logic
+- `styles/` - for styles, see [On Styles](#on-styles) below for more details
+- `ui/` - for shared components within the application
+- `scripts/` - for shared project scripts, these are usually `.mjs` files
+
+<Heading is="h2" variant="h2" id="on-styles">On Styles:</Heading>
+
+I still use and really enjoy [vanilla-extract]([https://vanilla-extract.style/](https://vanilla-extract.style/)), and I used to use their default Next.js integration, however it (at the time of writing) still does not work with Layouts in Next.js. So instead what I’ve opted to do is adopt a parallel build step where I’ll compile out `.css.ts` files **before** Next.js builds the application.
+
+My current preferred setup is to leverage their [rollup]([https://vanilla-extract.style/documentation/integrations/rollup/](https://vanilla-extract.style/documentation/integrations/rollup/)) integration, which will take any project `.css.ts` files and compile them to a similar directory structure within the `styles/` directory.
+
+## Path Aliases:
+
+With all these separate directories, I’ve also adopted TypeScript path aliases, allowing me to import code from any of the above directories via `@[directory name]`, for example:
+
+```tsx
+import {cx} from '@lib/classnames'
+```
+
+This can be accomplished by adding the following to your `tsconfig.json` file:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@ui/*": ["./ui/*"],
+      "@lib/*": ["./lib/*"],
+      "@styles/*": ["./styles/*"]
+    },
+  }
+}
+```
+
+## Server Components:
+
+I’m pretty bullish on using a server to power my sites, so I may generally **opt-out** of the static optimizations that Next.js does and instead force pages to operate as runtime server components + server side rendering. The main way I’ve found that lets me do that is to add the following to any of the pages:
+
+```tsx
+export const revalidate = 0
+export const dynamic = 'force-dynamic'
+```
+
+## Summary:
+
+Those are the high level patterns I’ve been following since adopting Layouts, but I’m curious what you have found to be useful! If you have alternative patterns, or additive ones please share them!
+
+<Spacer />
+
+---
+
+<Spacer />
+

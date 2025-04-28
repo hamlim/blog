@@ -1,0 +1,131 @@
+---
+title: "Hooks Tips Ep. 2 - Migrating Instance Variables"
+slug: "hooks-tips-instance-variables"
+path: "/2019/february/hooks-tips-instance-variables"
+date: 1549368000000
+status: "public"
+type: "blog-post"
+tags: ["Development","React"]
+description: ""
+month: "february"
+year: 2019
+---
+
+
+
+> This blog post is part of a series on hooks, this blog post assumes you have a
+> decent initial understanding of React Hooks. I highly suggest starting with
+> the [ReactJS Docs](https://reactjs.org/docs/hooks-intro.html) to learn more.
+
+Frequently, `class` based components can have a decent number of instance
+variables on them that are unrelated to state or props. These might be used to
+store refs for elements, or other data that you may need within the component.
+
+These values are useful to store on the instance because updating them does not
+trigger a re-render of the component. Here is an example of a class based
+component that uses a few instance methods (_Note_: This is using a non-standard
+JavaScript syntax to assign the instance variables.):
+
+```jsx
+class InstanceComponent extends React.Component {
+  someTimer = null;
+  inputRef = null;
+  data = {
+    someData: {
+      foo: 'bar',
+    },
+  };
+
+  // ...
+}
+```
+
+When migrating to Hooks, React offers the `useRef` hook, which is a convenient
+way to store some mutable data through the lifecycle of a component.
+
+Lets take a look at what this looks like with hooks:
+
+```jsx
+function HookComponent() {
+  const someTimer = React.useRef(null);
+  const data = React.useRef({
+    someData: {
+      foo: 'bar',
+    },
+  });
+
+  // Note, the inputRef is just a regular old element ref
+  // in this case, so we can use `createRef` which will assign
+  // the instance for us. We could also still use `useRef` here and it
+  // will continue to work as expected!
+  const inputRef = React.createRef();
+}
+```
+
+Cool, but when I attempt to access `data.someData.foo` I get an error, what
+gives?
+
+```jsx
+function HookComponent() {
+  const data = React.useRef({
+    someData: {
+      foo: 'bar',
+    },
+  });
+
+  // ⚠️ This will throw an error:
+  // Unable to access foo of undefined
+  console.log(data.someData.foo);
+}
+```
+
+Well, `useRef` returns you a wrapper around your current value:
+
+```jsx
+console.log(data);
+// { current: { someData: { foo: 'bar' } } }
+```
+
+We can conceptualize this like the return value of calling `React.createRef()`,
+where our variable is accessible on the `current` property.
+
+### Avoid Large Ref Values
+
+This is more of a preference than an actual bug/issue within the code, however
+it may be tempting to convert your instance variables all down to a single
+`useRef` call:
+
+```jsx
+function UglyHooksComponent() {
+  const instance = React.useRef({
+    someTimer: null,
+    inputRef: React.createRef(),
+    data: {
+      someData: {
+        foo: 'bar',
+      },
+    },
+  });
+}
+```
+
+While this may look beneficial, and may be easier to access the properties, it
+makes it potentially more difficult to split up the logic into separate hooks.
+
+In general, **always prefer to keep `useRef` (and `useState`) calls limited in
+scope**, and bias towards hook composition instead.[^1]
+
+From our first example above, we may want to split the timer instance variable
+into a custom `useTimer` hook that our component can leverage, and the
+`inputRef` can be accomplished using just a top level `createRef`.
+
+For additional insight into how to `useRef`, refer to the
+[ReactJS Docs](https://reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables)
+
+_Thanks to Dillon Curry for reviewing an earlier version of this post_
+
+[^1]: 
+
+I should write yet another blog post about why I have this preference, but for
+now feel free to accept it as a pattern.
+

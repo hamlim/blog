@@ -1,0 +1,123 @@
+---
+title: "Exporting Custom Slack Emoji"
+slug: "exporting-custom-slack-emoji"
+path: "/2024/march/exporting-custom-slack-emoji"
+date: 1711367133000
+status: "public"
+type: "blog-post"
+tags: ["Slack","Tip","Guides"]
+description: "How to easily mass-export your custom slack emoji without API access!"
+month: "march"
+year: 2024
+---
+
+
+<Callout>
+
+This workflow has been proven to work at the end of March 2024, it may break in the future!
+
+</Callout>
+
+At work we recently bypassed over 60k custom slack emoji in our workspace, and I'd been meaning to download them locally so I could reference them in other discussions outside of slack with past and present coworkers.
+
+I did some scavenging on Google (actually Perplexity) and found a fairly active [Gist](https://gist.github.com/lmarkus/8722f56baf8c47045621) that seems to have captured a few different routes to accomplish the use case, but some of the API has changed since then.
+
+So I figured I'd document what I did to accomplish this in case others are looking for a similar solution!
+
+## Steps:
+
+### Download emoji metadata:
+
+1. Visit your `/customize/emoji` page in a browser of your choosing
+  a. This should look roughly like: `https://<organization>.slack.com/customize/emoji`
+2. Open the network panel and look for a request to the `emoji.adminList` endpoint
+3. Copy that request as `fetch` (right click the request, copy as -> `fetch` in Chrome/Arc)
+4. Copy the below snippet and paste it into the console
+  a. This snippet only defines a few helper functions, it won't do anything malicious, but validate it for yourself if you'd like!
+
+```ts
+// Function to fetch a page of emoji
+async function fetchPage(pageNum) {
+  let res = TODO;
+  let json = await res.json();
+  return json;
+}
+
+// function to download a JSON file automatically from the console in devtools
+function downloadFile(content, fileName, contentType) {
+  let anchor = document.createElement("a");
+  document.body.appendChild(anchor);
+  let file = new Blob([content], { type: contentType });
+  anchor.href = URL.createObjectURL(file);
+  anchor.download = fileName;
+  anchor.click();
+}
+
+// Function to batch download emoji
+async function downloadAllEmoji(start, stop) {
+  for (let pageNum = start; pageNum <= stop; pageNum++) {
+    let json = await fetchPage(pageNum);
+    let content = JSON.stringify(json);
+    downloadFile(content, `page-${pageNum}.json`, "application/json");
+  }
+}
+```
+
+5. Replace the `TODO` within `fetchPage` with the copied `fetch` request from the network panel
+6. **Important!** Look in the request body of the `fetch` you copied for a `page: 1` entry, and replace the `1` with `${pageNum}` - you'll also need to change the body to a template string!
+7. Run `downloadAllEmoji` with a start value &gt;= 1 and a stop value &lt;= the max number of pages (you can look at the `emoji.adminList` request for page 1 to see the maximum number of pages)
+
+### Download images:
+
+To download the actual images, you'll want to:
+
+1. Move the downloaded metadata files into a shared directory
+2. Initialize a new [Bun](https://bun.sh/) project within that directory by running `bun init`
+3. Paste in the following snippet into `index.ts`:
+
+```ts
+import fg from "fast-glob";
+
+async function loadAllEmoji() {
+  const files = await fg("page-*.json");
+  const emojis = [];
+  for (const file of files) {
+    const json = await Bun.file(file).json();
+    if (!json.emoji) {
+      throw new Error(
+        "Emoji not found in " +
+          file +
+          ", did the response get rate limited? Check the file and re-download if needed!"
+      );
+    }
+    emojis.push(...json.emoji);
+  }
+  return emojis;
+}
+
+async function downloadEmoji(emojiList) {
+  for (let emoji of emojiList) {
+    let res = await fetch(emoji.url);
+    console.log('Downloading: ' + emoji.name + ' (' + idx + 'of ' + emojiList.length + ')');
+    await Bun.write(
+      "./emojis/" + emoji.name + "." + emoji.url.split(".").at(-1),
+      res
+    );
+  }
+}
+
+let emoji = await loadAllEmoji();
+
+await downloadEmoji(emoji);
+```
+
+4. Install `fast-glob` via `bun add fast-glob`
+5. Run the above script via `bun ./index.ts`
+
+**Note!** If you have a lot of emoji, this will take a while! It downloads the images synchronously to avoid being rate limited.
+
+## Recommendations:
+
+I recommend not trying to run through all pages at once when fetching the emoji metadata, as sometimes Slack may not be able to handle the requests.
+
+In my case, since we had ~600 pages to go through, I started with chunks of 25 then went up to 100 pages at a time.

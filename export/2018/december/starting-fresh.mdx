@@ -1,0 +1,55 @@
+---
+title: "Starting Fresh"
+slug: "starting-fresh"
+path: "/2018/december/starting-fresh"
+date: 1544011200000
+status: "public"
+type: "blog-post"
+tags: ["Thoughts","Redesign"]
+description: ""
+month: "december"
+year: 2018
+---
+
+
+
+Over the past two years or so I think I have tried to rewrite my personal site
+about 3 or 4 times. Each time with the same goal of making a simple blogging
+platform that gets out of the way and just lets me focus on the writing.
+
+Since I find myself with two weeks off of work and its the end of the year /
+beginning of the next year I figured I would go for another rewrite this time
+with the long term goal of doing the following:
+
+- Get the bootstrapping work out of the way and focus on the writing
+- Use this as an opportunity to test out personal projects like `native-bundler`
+  and `reroute`
+- Be easy to setup and get running with simple additions as I go forward (i.e.
+  scale out from an initial product)
+
+## Where to start?
+
+A few months ago I was planning on kicking off this rewrite within the same repo
+and site that I have currently, I started by updating to emotion v10, swapping
+react-router for reach router and changing all my old content from markdown to
+mdx.
+
+This was all too much work to do as part of a rewrite and I begin to question
+the benefit of doing such a task.
+
+I decided the other day that it would be a lot simpler to just drop all the
+current infrastructure I had around my previous blog and just start fresh.
+
+My hope is that without all the technical debt the previous site had, I could
+get this one into a decent spot without much work and focus on the writing.
+
+So this new site is built using a node build script around 150 lines in total,
+building off of the awesome work around the MDX language spec, `babel`,
+`prettier`, and even `eval`!
+
+## What to do next
+
+- [x] Port over some of the front pages from my current site
+- [x] Make a build watch script
+- [x] Deploy to now (see if I can deploy as a subdomain on matthamlin.me)
+
