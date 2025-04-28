@@ -11,7 +11,8 @@
     "format": "biome format --write ./",
     "check": "biome check --files-ignore-unknown=true",
     "check:fix": "biome check --fix --unsafe --files-ignore-unknown=true",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "transform-mdx": "bun run scripts/transform-mdx.ts"
   },
   "dependencies": {
     "@atproto/api": "^0.14.7",
@@ -55,6 +56,7 @@
     "clsx": "^2.1.1",
     "cmdk": "0.2.0",
     "date-fns": "4.1.0",
+    "glob": "^10.3.10",
     "lucide-react": "0.460.0",
     "nanopop": "2.1.0",
     "next": "15.2.4",
