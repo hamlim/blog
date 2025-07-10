@@ -1,3 +1,6 @@
+> [!NOTE] This is an archive of an older version of my personal site!
+
+
 # Matt Hamlin's Blog
 
 A personal site and blog
