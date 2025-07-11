@@ -1,4 +1,6 @@
-> [!NOTE] This is an archive of an older version of my personal site!
+> [!WARNING]
+> This is an archive of an older version of my personal site
+> Which currently lives here: [https://github.com/hamlim/blog-2025](https://github.com/hamlim/blog-2025)
 
 
 # Matt Hamlin's Blog
